@@ -1,0 +1,1033 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue May  6 10:24:15 2025
+# Process ID: 645070
+# Current directory: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1
+# Command line: vivado -log bd_v2_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_v2_wrapper.tcl -notrace
+# Log file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper.vdi
+# Journal file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/vivado.jou
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 3953.869 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+#-----------------------------------------------------------
+source bd_v2_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/ip/v1'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+Command: link_design -top bd_v2_wrapper -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_processing_system7_0_0/bd_v2_processing_system7_0_0.dcp' for cell 'bd_v2_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_rst_ps7_0_50M_0/bd_v2_rst_ps7_0_50M_0.dcp' for cell 'bd_v2_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_shell_top_0_0/bd_v2_shell_top_0_0.dcp' for cell 'bd_v2_i/shell_top_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_xbar_1/bd_v2_xbar_1.dcp' for cell 'bd_v2_i/axi_interconnect_0/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_pc_1/bd_v2_auto_pc_1.dcp' for cell 'bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0.dcp' for cell 'bd_v2_i/axi_interconnect_0/s00_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1.dcp' for cell 'bd_v2_i/axi_interconnect_0/s01_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2.dcp' for cell 'bd_v2_i/axi_interconnect_0/s02_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_xbar_4/bd_v2_xbar_4.dcp' for cell 'bd_v2_i/ps7_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_pc_0/bd_v2_auto_pc_0.dcp' for cell 'bd_v2_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.21 . Memory (MB): peak = 1709.539 ; gain = 0.000 ; free physical = 1997 ; free virtual = 10559
+INFO: [Netlist 29-17] Analyzing 805 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_processing_system7_0_0/bd_v2_processing_system7_0_0.xdc] for cell 'bd_v2_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_processing_system7_0_0/bd_v2_processing_system7_0_0.xdc] for cell 'bd_v2_i/processing_system7_0/inst'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_rst_ps7_0_50M_0/bd_v2_rst_ps7_0_50M_0_board.xdc] for cell 'bd_v2_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_rst_ps7_0_50M_0/bd_v2_rst_ps7_0_50M_0_board.xdc] for cell 'bd_v2_i/rst_ps7_0_50M/U0'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_rst_ps7_0_50M_0/bd_v2_rst_ps7_0_50M_0.xdc] for cell 'bd_v2_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_rst_ps7_0_50M_0/bd_v2_rst_ps7_0_50M_0.xdc] for cell 'bd_v2_i/rst_ps7_0_50M/U0'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.srcs/constrs_1/new/constrs.xdc]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.srcs/constrs_1/new/constrs.xdc]
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc] for cell 'bd_v2_i/axi_interconnect_0/s00_couplers/auto_us/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:9]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:12]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:15]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:18]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:21]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:24]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:27]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:33]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:36]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:39]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:42]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:45]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:48]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:51]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc:54]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_0/bd_v2_auto_us_0_clocks.xdc] for cell 'bd_v2_i/axi_interconnect_0/s00_couplers/auto_us/inst'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc] for cell 'bd_v2_i/axi_interconnect_0/s01_couplers/auto_us/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:9]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:12]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:15]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:18]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:21]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:24]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:27]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:33]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:36]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:39]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:42]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:45]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:48]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:51]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc:54]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_1/bd_v2_auto_us_1_clocks.xdc] for cell 'bd_v2_i/axi_interconnect_0/s01_couplers/auto_us/inst'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc] for cell 'bd_v2_i/axi_interconnect_0/s02_couplers/auto_us/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:9]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:12]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:15]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:18]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:21]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:24]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:27]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:33]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:36]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:39]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:42]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:45]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:48]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:51]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc:54]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_v2/ip/bd_v2_auto_us_2/bd_v2_auto_us_2_clocks.xdc] for cell 'bd_v2_i/axi_interconnect_0/s02_couplers/auto_us/inst'
+INFO: [Project 1-1714] 3 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-1687] 45 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2115.113 ; gain = 0.000 ; free physical = 1816 ; free virtual = 10382
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+
+22 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2115.113 ; gain = 798.699 ; free physical = 1816 ; free virtual = 10382
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.55 . Memory (MB): peak = 2115.113 ; gain = 0.000 ; free physical = 1862 ; free virtual = 10428
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: b8c51e01
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2561.488 ; gain = 446.375 ; free physical = 1464 ; free virtual = 10030
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: b8c51e01
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1034 ; free virtual = 9651
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: b8c51e01
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1034 ; free virtual = 9650
+Phase 1 Initialization | Checksum: b8c51e01
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1026 ; free virtual = 9643
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: b8c51e01
+
+Time (s): cpu = 00:00:00.86 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1027 ; free virtual = 9644
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: b8c51e01
+
+Time (s): cpu = 00:00:00.9 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1016 ; free virtual = 9632
+Phase 2 Timer Update And Timing Data Collection | Checksum: b8c51e01
+
+Time (s): cpu = 00:00:00.91 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1016 ; free virtual = 9632
+
+Phase 3 Retarget
+INFO: [Opt 31-1566] Pulled 25 inverters resulting in an inversion of 205 pins
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 3 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 1245a1934
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.68 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1015 ; free virtual = 9632
+Retarget | Checksum: 1245a1934
+INFO: [Opt 31-389] Phase Retarget created 46 cells and removed 116 cells
+INFO: [Opt 31-1021] In phase Retarget, 27 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 6 inverter(s) to 11 load pin(s).
+Phase 4 Constant propagation | Checksum: 1068f250e
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1014 ; free virtual = 9631
+Constant propagation | Checksum: 1068f250e
+INFO: [Opt 31-389] Phase Constant propagation created 354 cells and removed 991 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 27 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 123b4aa80
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2868.293 ; gain = 0.000 ; free physical = 1014 ; free virtual = 9630
+Sweep | Checksum: 123b4aa80
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 266 cells
+INFO: [Opt 31-1021] In phase Sweep, 96 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 123b4aa80
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2900.309 ; gain = 32.016 ; free physical = 1014 ; free virtual = 9630
+BUFG optimization | Checksum: 123b4aa80
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/fifo_burst/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/fifo_burst/U_fifo_srl/mem_reg[6][0]_srl7__0 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][1]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][2]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][3]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][0]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][10]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][11]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][12]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][13]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][14]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][15]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][16]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][17]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][18]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][19]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][1]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][20]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][21]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][22]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][23]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][24]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][25]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][26]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][27]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][28]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][29]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][2]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][30]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][31]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][32]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][3]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][4]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][5]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][6]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][7]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][8]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][9]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][1]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][2]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][3]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][0]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][10]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][11]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][12]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][13]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][14]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][15]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][16]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][17]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][18]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][19]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][1]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][20]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][21]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][22]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][23]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][24]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][25]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][26]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][27]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][28]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][29]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][2]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][30]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][31]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][32]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][3]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][4]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][5]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][6]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][7]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][8]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][9]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][0]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][10]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][11]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][12]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][13]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][14]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][15]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][16]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][17]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][18]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][19]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][1]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][20]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][21]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][22]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][23]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][24]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][25]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][26]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][27]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][28]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][29]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][2]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_v2_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][33]_srl3 due to none static srl address bits
+INFO: [Common 17-14] Message 'Opt 31-1131' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 123b4aa80
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2900.309 ; gain = 32.016 ; free physical = 1014 ; free virtual = 9630
+Shift Register Optimization | Checksum: 123b4aa80
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 145826b0a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2900.309 ; gain = 32.016 ; free physical = 1014 ; free virtual = 9630
+Post Processing Netlist | Checksum: 145826b0a
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 33 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: bd5326a4
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2900.309 ; gain = 32.016 ; free physical = 1030 ; free virtual = 9647
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2900.309 ; gain = 0.000 ; free physical = 1030 ; free virtual = 9647
+Phase 9.2 Verifying Netlist Connectivity | Checksum: bd5326a4
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2900.309 ; gain = 32.016 ; free physical = 1030 ; free virtual = 9647
+Phase 9 Finalization | Checksum: bd5326a4
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2900.309 ; gain = 32.016 ; free physical = 1030 ; free virtual = 9647
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              46  |             116  |                                             27  |
+|  Constant propagation         |             354  |             991  |                                             27  |
+|  Sweep                        |               0  |             266  |                                             96  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             33  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: bd5326a4
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2900.309 ; gain = 32.016 ; free physical = 1030 ; free virtual = 9647
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2900.309 ; gain = 0.000 ; free physical = 1030 ; free virtual = 9647
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 3 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 1 newly gated: 2 Total Ports: 6
+Ending PowerOpt Patch Enables Task | Checksum: 129463030
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 1031 ; free virtual = 9656
+Ending Power Optimization Task | Checksum: 129463030
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 3167.223 ; gain = 266.914 ; free physical = 1031 ; free virtual = 9655
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 129463030
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 1031 ; free virtual = 9655
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 1031 ; free virtual = 9655
+Ending Netlist Obfuscation Task | Checksum: ebb5fcea
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 1031 ; free virtual = 9655
+INFO: [Common 17-83] Releasing license: Implementation
+51 Infos, 145 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 3167.223 ; gain = 1052.109 ; free physical = 1031 ; free virtual = 9655
+INFO: [runtcl-4] Executing : report_drc -file bd_v2_wrapper_drc_opted.rpt -pb bd_v2_wrapper_drc_opted.pb -rpx bd_v2_wrapper_drc_opted.rpx
+Command: report_drc -file bd_v2_wrapper_drc_opted.rpt -pb bd_v2_wrapper_drc_opted.pb -rpx bd_v2_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 949 ; free virtual = 9575
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 949 ; free virtual = 9575
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 949 ; free virtual = 9576
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 932 ; free virtual = 9560
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 928 ; free virtual = 9556
+Wrote Device Cache: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 921 ; free virtual = 9549
+Write Physdb Complete: Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.13 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 915 ; free virtual = 9543
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 831 ; free virtual = 9491
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 7d99b466
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 831 ; free virtual = 9491
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 831 ; free virtual = 9491
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 7c380727
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 789 ; free virtual = 9486
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 186a255cf
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 770 ; free virtual = 9472
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 186a255cf
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 770 ; free virtual = 9472
+Phase 1 Placer Initialization | Checksum: 186a255cf
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 770 ; free virtual = 9472
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 19ae17f1f
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 811 ; free virtual = 9497
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: e06d53df
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 809 ; free virtual = 9495
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: e06d53df
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 785 ; free virtual = 9488
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 2346c1a75
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:14 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 793 ; free virtual = 9538
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 2246 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 1018 nets or LUTs. Breaked 0 LUT, combined 1018 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 792 ; free virtual = 9537
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |           1018  |                  1018  |           0  |           1  |  00:00:01  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |           1018  |                  1018  |           0  |           9  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 17c896ad1
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:16 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 791 ; free virtual = 9537
+Phase 2.4 Global Placement Core | Checksum: 1f9e1a62d
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:17 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 790 ; free virtual = 9536
+Phase 2 Global Placement | Checksum: 1f9e1a62d
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:17 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 790 ; free virtual = 9536
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1887b748d
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:18 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 789 ; free virtual = 9534
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 11fbd2d00
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:19 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 788 ; free virtual = 9533
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1096f8f9b
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:19 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 791 ; free virtual = 9536
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 16cec8cef
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:19 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 791 ; free virtual = 9536
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 15b9054b4
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:20 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 789 ; free virtual = 9535
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: f667af20
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:24 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 819 ; free virtual = 9564
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 1278546d7
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:24 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 819 ; free virtual = 9564
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: ef6f941d
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:25 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 819 ; free virtual = 9564
+Phase 3 Detail Placement | Checksum: ef6f941d
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:25 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 818 ; free virtual = 9564
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: ca55fc59
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.080 | TNS=-3.848 |
+Phase 1 Physical Synthesis Initialization | Checksum: 12c7f05c0
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.61 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 745 ; free virtual = 9517
+INFO: [Place 46-33] Processed net bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_state208, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net bd_v2_i/shell_top_0/inst/ca_m_axi_U/bus_write/wreq_burst_conv/rs_req/ap_rst_n_0, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 2 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 2, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 12c7f05c0
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 744 ; free virtual = 9516
+Phase 4.1.1.1 BUFG Insertion | Checksum: ca55fc59
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:28 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 744 ; free virtual = 9517
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.501. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1a188f35c
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:31 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:31 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+Phase 4.1 Post Commit Optimization | Checksum: 1a188f35c
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:31 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1a188f35c
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:31 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1a188f35c
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:31 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+Phase 4.3 Placer Reporting | Checksum: 1a188f35c
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:31 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:31 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1c96e38d5
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:32 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+Ending Placer Task | Checksum: 17b484e2c
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:32 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+96 Infos, 145 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:12 ; elapsed = 00:00:33 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 750 ; free virtual = 9517
+INFO: [runtcl-4] Executing : report_io -file bd_v2_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 667 ; free virtual = 9433
+INFO: [runtcl-4] Executing : report_utilization -file bd_v2_wrapper_utilization_placed.rpt -pb bd_v2_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file bd_v2_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.18 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 679 ; free virtual = 9447
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 642 ; free virtual = 9414
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.77 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 619 ; free virtual = 9414
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 619 ; free virtual = 9414
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 619 ; free virtual = 9414
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 615 ; free virtual = 9412
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 615 ; free virtual = 9412
+Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.87 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 615 ; free virtual = 9412
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 649 ; free virtual = 9447
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+105 Infos, 145 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 656 ; free virtual = 9458
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.72 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 631 ; free virtual = 9455
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 631 ; free virtual = 9455
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 631 ; free virtual = 9456
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 631 ; free virtual = 9458
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 630 ; free virtual = 9458
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.81 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 630 ; free virtual = 9458
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: d8479555 ConstDB: 0 ShapeSum: a300b8d7 RouteDB: 0
+Post Restoration Checksum: NetGraph: 2378bab7 | NumContArr: 6b4eaca4 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 214195c95
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 615 ; free virtual = 9421
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 214195c95
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 614 ; free virtual = 9420
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 214195c95
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3167.223 ; gain = 0.000 ; free physical = 614 ; free virtual = 9420
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 209aec471
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:17 . Memory (MB): peak = 3169.898 ; gain = 2.676 ; free physical = 587 ; free virtual = 9393
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.422  | TNS=0.000  | WHS=-0.225 | THS=-185.034|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 20739
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 20739
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 21959acf1
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:18 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 580 ; free virtual = 9386
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 21959acf1
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:18 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 580 ; free virtual = 9386
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 2e756e6ac
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:19 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 582 ; free virtual = 9388
+Phase 3 Initial Routing | Checksum: 2e756e6ac
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:19 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 582 ; free virtual = 9388
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 2829
+ Number of Nodes with overlaps = 813
+ Number of Nodes with overlaps = 349
+ Number of Nodes with overlaps = 169
+ Number of Nodes with overlaps = 79
+ Number of Nodes with overlaps = 23
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.023  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 177d4ed07
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:00:55 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 660 ; free virtual = 9409
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 230
+ Number of Nodes with overlaps = 94
+ Number of Nodes with overlaps = 42
+ Number of Nodes with overlaps = 32
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.063  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 23caeb16b
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:15 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 678 ; free virtual = 9426
+Phase 4 Rip-up And Reroute | Checksum: 23caeb16b
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:15 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 678 ; free virtual = 9426
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 23caeb16b
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:01:15 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 678 ; free virtual = 9426
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 23caeb16b
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:01:15 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 678 ; free virtual = 9426
+Phase 5 Delay and Skew Optimization | Checksum: 23caeb16b
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:01:15 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 678 ; free virtual = 9426
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1b2971797
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:15 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 677 ; free virtual = 9426
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.178  | TNS=0.000  | WHS=0.018  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1e360269d
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:15 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 677 ; free virtual = 9426
+Phase 6 Post Hold Fix | Checksum: 1e360269d
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:15 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 677 ; free virtual = 9426
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 5.45754 %
+  Global Horizontal Routing Utilization  = 8.48952 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1e360269d
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:16 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 677 ; free virtual = 9426
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1e360269d
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:16 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 677 ; free virtual = 9426
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 18e25e04a
+
+Time (s): cpu = 00:01:54 ; elapsed = 00:01:16 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 677 ; free virtual = 9426
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.178  | TNS=0.000  | WHS=0.018  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 18e25e04a
+
+Time (s): cpu = 00:01:56 ; elapsed = 00:01:17 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 676 ; free virtual = 9425
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 14591133f
+
+Time (s): cpu = 00:01:56 ; elapsed = 00:01:17 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 676 ; free virtual = 9425
+Ending Routing Task | Checksum: 14591133f
+
+Time (s): cpu = 00:01:56 ; elapsed = 00:01:18 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 676 ; free virtual = 9425
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+120 Infos, 145 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:59 ; elapsed = 00:01:19 . Memory (MB): peak = 3184.891 ; gain = 17.668 ; free physical = 676 ; free virtual = 9425
+INFO: [runtcl-4] Executing : report_drc -file bd_v2_wrapper_drc_routed.rpt -pb bd_v2_wrapper_drc_routed.pb -rpx bd_v2_wrapper_drc_routed.rpx
+Command: report_drc -file bd_v2_wrapper_drc_routed.rpt -pb bd_v2_wrapper_drc_routed.pb -rpx bd_v2_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file bd_v2_wrapper_methodology_drc_routed.rpt -pb bd_v2_wrapper_methodology_drc_routed.pb -rpx bd_v2_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file bd_v2_wrapper_methodology_drc_routed.rpt -pb bd_v2_wrapper_methodology_drc_routed.pb -rpx bd_v2_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file bd_v2_wrapper_power_routed.rpt -pb bd_v2_wrapper_power_summary_routed.pb -rpx bd_v2_wrapper_power_routed.rpx
+Command: report_power -file bd_v2_wrapper_power_routed.rpt -pb bd_v2_wrapper_power_summary_routed.pb -rpx bd_v2_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+130 Infos, 145 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file bd_v2_wrapper_route_status.rpt -pb bd_v2_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file bd_v2_wrapper_timing_summary_routed.rpt -pb bd_v2_wrapper_timing_summary_routed.pb -rpx bd_v2_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file bd_v2_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file bd_v2_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file bd_v2_wrapper_bus_skew_routed.rpt -pb bd_v2_wrapper_bus_skew_routed.pb -rpx bd_v2_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3293.660 ; gain = 0.000 ; free physical = 508 ; free virtual = 9277
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.76 . Memory (MB): peak = 3293.660 ; gain = 0.000 ; free physical = 496 ; free virtual = 9287
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3293.660 ; gain = 0.000 ; free physical = 496 ; free virtual = 9287
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3293.660 ; gain = 0.000 ; free physical = 501 ; free virtual = 9296
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3293.660 ; gain = 0.000 ; free physical = 501 ; free virtual = 9298
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3293.660 ; gain = 0.000 ; free physical = 501 ; free virtual = 9299
+Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3293.660 ; gain = 0.000 ; free physical = 501 ; free virtual = 9299
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Tue May  6 10:27:00 2025...
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue May  6 10:27:22 2025
+# Process ID: 694180
+# Current directory: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1
+# Command line: vivado -log bd_v2_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_v2_wrapper.tcl -notrace
+# Log file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_v2_wrapper.vdi
+# Journal file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/vivado.jou
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 4267.236 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+#-----------------------------------------------------------
+source bd_v2_wrapper.tcl -notrace
+Command: open_checkpoint bd_v2_wrapper_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1318.453 ; gain = 0.000 ; free physical = 2207 ; free virtual = 10981
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.17 . Memory (MB): peak = 1643.773 ; gain = 0.000 ; free physical = 2000 ; free virtual = 10773
+INFO: [Netlist 29-17] Analyzing 799 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1744.430 ; gain = 5.000 ; free physical = 1874 ; free virtual = 10647
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2380.938 ; gain = 0.000 ; free physical = 1352 ; free virtual = 10125
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2380.938 ; gain = 0.000 ; free physical = 1344 ; free virtual = 10117
+Read PlaceDB: Time (s): cpu = 00:00:00.55 ; elapsed = 00:00:00.55 . Memory (MB): peak = 2386.609 ; gain = 5.672 ; free physical = 1335 ; free virtual = 10108
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2386.609 ; gain = 0.000 ; free physical = 1335 ; free virtual = 10108
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2392.609 ; gain = 6.000 ; free physical = 1331 ; free virtual = 10104
+Read Physdb Files: Time (s): cpu = 00:00:00.88 ; elapsed = 00:00:00.9 . Memory (MB): peak = 2392.609 ; gain = 11.672 ; free physical = 1331 ; free virtual = 10104
+Restored from archive | CPU: 0.930000 secs | Memory: 26.479927 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.92 ; elapsed = 00:00:00.94 . Memory (MB): peak = 2392.609 ; gain = 20.578 ; free physical = 1331 ; free virtual = 10104
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2392.609 ; gain = 0.000 ; free physical = 1331 ; free virtual = 10105
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  SRLC32E => SRL16E: 3 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2023.2 (64-bit) build 4029153
+open_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2400.609 ; gain = 1082.156 ; free physical = 1331 ; free virtual = 10105
+Command: write_bitstream -force bd_v2_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2079_reg input bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2079_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2079_reg input bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2079_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/buff0_reg input bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/buff0_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/tmp_product input bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/tmp_product/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/tmp_product input bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/tmp_product/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mac_muladd_16ns_16ns_16ns_30_4_1_U431/shell_top_mac_muladd_16ns_16ns_16ns_30_4_1_DSP48_2_U/p_reg_reg input bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mac_muladd_16ns_16ns_16ns_30_4_1_U431/shell_top_mac_muladd_16ns_16ns_16ns_30_4_1_DSP48_2_U/p_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_16ns_32s_32_2_1_U429/tmp_product input bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_16ns_32s_32_2_1_U429/tmp_product/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Block_entry68_proc_U0/mul_16ns_18ns_33_1_1_U1/tmp_product output bd_v2_i/shell_top_0/inst/Block_entry68_proc_U0/mul_16ns_18ns_33_1_1_U1/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Block_entry68_proc_U0/mul_16ns_18ns_33_1_1_U2/tmp_product output bd_v2_i/shell_top_0/inst/Block_entry68_proc_U0/mul_16ns_18ns_33_1_1_U2/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/tmp_product output bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_16ns_32s_32_2_1_U429/tmp_product output bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_16ns_32s_32_2_1_U429/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Block_entry68_proc_U0/mul_16ns_18ns_33_1_1_U1/tmp_product multiplier stage bd_v2_i/shell_top_0/inst/Block_entry68_proc_U0/mul_16ns_18ns_33_1_1_U1/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Block_entry68_proc_U0/mul_16ns_18ns_33_1_1_U2/tmp_product multiplier stage bd_v2_i/shell_top_0/inst/Block_entry68_proc_U0/mul_16ns_18ns_33_1_1_U2/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2079_reg multiplier stage bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2079_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/buff0_reg multiplier stage bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/buff0_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/tmp_product multiplier stage bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_766/mul_17s_32s_32_2_1_U7/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_16ns_32s_32_2_1_U429/buff0_reg multiplier stage bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_16ns_32s_32_2_1_U429/buff0_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_16ns_32s_32_2_1_U429/tmp_product multiplier stage bd_v2_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_16ns_32s_32_2_1_U429/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A3' of cell bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A1)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A5' of cell bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A2)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A5' of cell bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A1)+((~A1)*(~A6)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC RTSTAT-10] No routable loads: 33 net(s) have no routable loads. The problem bus(es) and/or net(s) are bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, bd_v2_i/axi_interconnect_0/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i... and (the first 15 of 21 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 22 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./bd_v2_wrapper.bit...
+Creating bitstream...
+Writing bitstream ./bd_v2_wrapper.ebc...
+Creating essential bits data...
+This design has 2417274 essential bits out of 25697632 total (9.41%).
+Creating bitstream...
+Writing bitstream ./bd_v2_wrapper.ebd...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+22 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:44 ; elapsed = 00:00:33 . Memory (MB): peak = 3178.574 ; gain = 777.965 ; free physical = 515 ; free virtual = 9342
+INFO: [Common 17-206] Exiting Vivado at Tue May  6 10:28:12 2025...

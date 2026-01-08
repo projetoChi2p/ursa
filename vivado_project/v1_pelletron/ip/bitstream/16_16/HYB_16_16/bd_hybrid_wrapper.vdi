@@ -1,0 +1,1306 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon May  5 18:57:51 2025
+# Process ID: 378537
+# Current directory: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1
+# Command line: vivado -log bd_hybrid_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_hybrid_wrapper.tcl -notrace
+# Log file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper.vdi
+# Journal file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/vivado.jou
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 2165.057 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+#-----------------------------------------------------------
+source bd_hybrid_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/ip/v1'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+Command: link_design -top bd_hybrid_wrapper -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_axi_bram_ctrl_0_0/bd_hybrid_axi_bram_ctrl_0_0.dcp' for cell 'bd_hybrid_i/axi_bram_ctrl_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_blk_mem_gen_0_0/bd_hybrid_blk_mem_gen_0_0.dcp' for cell 'bd_hybrid_i/blk_mem_gen_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_processing_system7_0_0/bd_hybrid_processing_system7_0_0.dcp' for cell 'bd_hybrid_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0.dcp' for cell 'bd_hybrid_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_shell_top_0_0/bd_hybrid_shell_top_0_0.dcp' for cell 'bd_hybrid_i/shell_top_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_xbar_1/bd_hybrid_xbar_1.dcp' for cell 'bd_hybrid_i/axi_interconnect_0/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_xbar_4/bd_hybrid_xbar_4.dcp' for cell 'bd_hybrid_i/axi_interconnect_1/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_pc_3/bd_hybrid_auto_pc_3.dcp' for cell 'bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0.dcp' for cell 'bd_hybrid_i/axi_interconnect_1/s00_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1.dcp' for cell 'bd_hybrid_i/axi_interconnect_1/s01_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_xbar_0/bd_hybrid_xbar_0.dcp' for cell 'bd_hybrid_i/ps7_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_pc_0/bd_hybrid_auto_pc_0.dcp' for cell 'bd_hybrid_i/ps7_0_axi_periph/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_pc_1/bd_hybrid_auto_pc_1.dcp' for cell 'bd_hybrid_i/ps7_0_axi_periph/m01_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_pc_2/bd_hybrid_auto_pc_2.dcp' for cell 'bd_hybrid_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.35 . Memory (MB): peak = 1759.836 ; gain = 0.000 ; free physical = 3965 ; free virtual = 11299
+INFO: [Netlist 29-17] Analyzing 2684 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_processing_system7_0_0/bd_hybrid_processing_system7_0_0.xdc] for cell 'bd_hybrid_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_processing_system7_0_0/bd_hybrid_processing_system7_0_0.xdc] for cell 'bd_hybrid_i/processing_system7_0/inst'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0_board.xdc] for cell 'bd_hybrid_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0_board.xdc] for cell 'bd_hybrid_i/rst_ps7_0_50M/U0'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0.xdc] for cell 'bd_hybrid_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0.xdc] for cell 'bd_hybrid_i/rst_ps7_0_50M/U0'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.srcs/constrs_1/new/constrs.xdc]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.srcs/constrs_1/new/constrs.xdc]
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc] for cell 'bd_hybrid_i/axi_interconnect_1/s00_couplers/auto_us/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:9]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:12]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:15]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:18]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:21]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:24]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:27]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:33]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:36]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:39]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:42]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:45]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:48]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:51]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:54]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc] for cell 'bd_hybrid_i/axi_interconnect_1/s00_couplers/auto_us/inst'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc] for cell 'bd_hybrid_i/axi_interconnect_1/s01_couplers/auto_us/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:9]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:12]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:15]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:18]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:21]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:24]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:27]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:33]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:36]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:39]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:42]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:45]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:48]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:51]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:54]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc] for cell 'bd_hybrid_i/axi_interconnect_1/s01_couplers/auto_us/inst'
+INFO: [Project 1-1714] 3 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'bd_hybrid_wrapper'...
+INFO: [Project 1-1687] 30 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2238.559 ; gain = 0.000 ; free physical = 3762 ; free virtual = 11097
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+
+26 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2238.559 ; gain = 938.645 ; free physical = 3762 ; free virtual = 11097
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.47 . Memory (MB): peak = 2238.559 ; gain = 0.000 ; free physical = 3723 ; free virtual = 11058
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 872c907f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2663.098 ; gain = 424.539 ; free physical = 3320 ; free virtual = 10655
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 872c907f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3082 ; free virtual = 10417
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 872c907f
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3082 ; free virtual = 10417
+Phase 1 Initialization | Checksum: 872c907f
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3082 ; free virtual = 10417
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 872c907f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3081 ; free virtual = 10416
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 872c907f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.55 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3075 ; free virtual = 10409
+Phase 2 Timer Update And Timing Data Collection | Checksum: 872c907f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.55 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3075 ; free virtual = 10409
+
+Phase 3 Retarget
+INFO: [Opt 31-1566] Pulled 26 inverters resulting in an inversion of 256 pins
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 5 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 181534613
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3075 ; free virtual = 10410
+Retarget | Checksum: 181534613
+INFO: [Opt 31-389] Phase Retarget created 59 cells and removed 147 cells
+INFO: [Opt 31-1021] In phase Retarget, 27 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 80 inverter(s) to 89 load pin(s).
+Phase 4 Constant propagation | Checksum: ca0b03b6
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3077 ; free virtual = 10412
+Constant propagation | Checksum: ca0b03b6
+INFO: [Opt 31-389] Phase Constant propagation created 1418 cells and removed 3853 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 27 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 194e6584d
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2975.871 ; gain = 0.000 ; free physical = 3079 ; free virtual = 10414
+Sweep | Checksum: 194e6584d
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 763 cells
+INFO: [Opt 31-1021] In phase Sweep, 96 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 194e6584d
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3007.887 ; gain = 32.016 ; free physical = 3081 ; free virtual = 10416
+BUFG optimization | Checksum: 194e6584d
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/fifo_burst/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/fifo_burst/U_fifo_srl/mem_reg[6][0]_srl7__0 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][1]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][2]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][3]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][17]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][20]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][21]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][27]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][28]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][32]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][18]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][23]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][3]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][6]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][5]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][30]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][24]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][26]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][19]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][2]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][31]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][29]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][22]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][9]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][8]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][7]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][15]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][25]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][16]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][4]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][1]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][0]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][10]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][11]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][12]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][13]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][14]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][1]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][2]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][3]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][18]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][19]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][23]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][24]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][2]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][30]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][25]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][26]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][9]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][4]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][16]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][28]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][29]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][1]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][5]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][7]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][8]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][27]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][31]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][32]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][20]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][3]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][6]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][21]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][17]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][15]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][22]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][0]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][10]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][11]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][12]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][13]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][14]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][16]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][20]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][21]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][26]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][27]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][23]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][28]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][3]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][5]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][25]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][36]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][17]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][15]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][1]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][8]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][6]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][18]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][24]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][7]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][29]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][2]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][9]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][19]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][22]_srl3 due to none static srl address bits
+INFO: [Common 17-14] Message 'Opt 31-1131' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 194e6584d
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3007.887 ; gain = 32.016 ; free physical = 3081 ; free virtual = 10416
+Shift Register Optimization | Checksum: 194e6584d
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 164ecf2bb
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3007.887 ; gain = 32.016 ; free physical = 3081 ; free virtual = 10416
+Post Processing Netlist | Checksum: 164ecf2bb
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 33 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: f43dca48
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 3007.887 ; gain = 32.016 ; free physical = 3081 ; free virtual = 10416
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3007.887 ; gain = 0.000 ; free physical = 3081 ; free virtual = 10416
+Phase 9.2 Verifying Netlist Connectivity | Checksum: f43dca48
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 3007.887 ; gain = 32.016 ; free physical = 3081 ; free virtual = 10416
+Phase 9 Finalization | Checksum: f43dca48
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 3007.887 ; gain = 32.016 ; free physical = 3081 ; free virtual = 10416
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              59  |             147  |                                             27  |
+|  Constant propagation         |            1418  |            3853  |                                             27  |
+|  Sweep                        |               0  |             763  |                                             96  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             33  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: f43dca48
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 3007.887 ; gain = 32.016 ; free physical = 3081 ; free virtual = 10416
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3007.887 ; gain = 0.000 ; free physical = 3081 ; free virtual = 10416
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 19 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 1 newly gated: 2 Total Ports: 38
+Ending PowerOpt Patch Enables Task | Checksum: 196907320
+
+Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2824 ; free virtual = 10159
+Ending Power Optimization Task | Checksum: 196907320
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 3392.676 ; gain = 384.789 ; free physical = 2824 ; free virtual = 10159
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 196907320
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2824 ; free virtual = 10159
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2824 ; free virtual = 10159
+Ending Netlist Obfuscation Task | Checksum: d17dacfe
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2824 ; free virtual = 10159
+INFO: [Common 17-83] Releasing license: Implementation
+55 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:15 . Memory (MB): peak = 3392.676 ; gain = 1154.117 ; free physical = 2824 ; free virtual = 10159
+INFO: [runtcl-4] Executing : report_drc -file bd_hybrid_wrapper_drc_opted.rpt -pb bd_hybrid_wrapper_drc_opted.pb -rpx bd_hybrid_wrapper_drc_opted.rpx
+Command: report_drc -file bd_hybrid_wrapper_drc_opted.rpt -pb bd_hybrid_wrapper_drc_opted.pb -rpx bd_hybrid_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2758 ; free virtual = 10095
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2758 ; free virtual = 10095
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2805 ; free virtual = 10146
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2804 ; free virtual = 10145
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2804 ; free virtual = 10145
+Wrote Device Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2804 ; free virtual = 10146
+Write Physdb Complete: Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.12 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2802 ; free virtual = 10144
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2835 ; free virtual = 10181
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: c6d64a76
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2835 ; free virtual = 10181
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2835 ; free virtual = 10181
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: d5516530
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2829 ; free virtual = 10175
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 10fed5694
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2841 ; free virtual = 10188
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 10fed5694
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2841 ; free virtual = 10188
+Phase 1 Placer Initialization | Checksum: 10fed5694
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2841 ; free virtual = 10188
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: bea62374
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2908 ; free virtual = 10255
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: feeed4ca
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2909 ; free virtual = 10256
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: feeed4ca
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2909 ; free virtual = 10256
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 1f9a59f3f
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:26 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2852 ; free virtual = 10230
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 119 LUTNM shape to break, 4615 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 58, two critical 61, total 119, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 2327 nets or LUTs. Breaked 119 LUTs, combined 2208 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2892 ; free virtual = 10265
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |          119  |           2208  |                  2327  |           0  |           1  |  00:00:02  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |          119  |           2208  |                  2327  |           0  |           9  |  00:00:02  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 1bc8982ee
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:30 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2891 ; free virtual = 10264
+Phase 2.4 Global Placement Core | Checksum: 1e932d90b
+
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:32 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2889 ; free virtual = 10262
+Phase 2 Global Placement | Checksum: 1e932d90b
+
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:32 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2885 ; free virtual = 10258
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1bddd4d35
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:33 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2884 ; free virtual = 10257
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: f948f1c4
+
+Time (s): cpu = 00:01:34 ; elapsed = 00:00:36 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2890 ; free virtual = 10263
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 14cdcf32b
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2890 ; free virtual = 10263
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 119f06052
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2890 ; free virtual = 10263
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 191633e61
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:00:39 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2892 ; free virtual = 10265
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1dac3bf6d
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:00:48 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2846 ; free virtual = 10219
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 194db7f26
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:00:49 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2848 ; free virtual = 10222
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 117e28ac3
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:00:49 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2848 ; free virtual = 10222
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 1b8a124a6
+
+Time (s): cpu = 00:02:10 ; elapsed = 00:00:54 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2858 ; free virtual = 10232
+Phase 3 Detail Placement | Checksum: 1b8a124a6
+
+Time (s): cpu = 00:02:10 ; elapsed = 00:00:54 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2858 ; free virtual = 10232
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 10757692c
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.476 | TNS=-164.840 |
+Phase 1 Physical Synthesis Initialization | Checksum: b58f958c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2872 ; free virtual = 10246
+INFO: [Place 46-33] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_state520, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818/SS[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mac_muladd_8s_8ns_20s_20_4_1_U89/shell_top_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/ap_CS_fsm_reg[0]_rep[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 3 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 3, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: b58f958c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2873 ; free virtual = 10247
+Phase 4.1.1.1 BUFG Insertion | Checksum: 10757692c
+
+Time (s): cpu = 00:02:28 ; elapsed = 00:01:01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2874 ; free virtual = 10248
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-2.829. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1310ddba4
+
+Time (s): cpu = 00:02:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2869 ; free virtual = 10242
+
+Time (s): cpu = 00:02:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2869 ; free virtual = 10242
+Phase 4.1 Post Commit Optimization | Checksum: 1310ddba4
+
+Time (s): cpu = 00:02:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2868 ; free virtual = 10242
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1310ddba4
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:01:09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2868 ; free virtual = 10242
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                4x4|                4x4|
+|___________|___________________|___________________|
+|      South|                4x4|                4x4|
+|___________|___________________|___________________|
+|       East|                4x4|                8x8|
+|___________|___________________|___________________|
+|       West|                2x2|                2x2|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1310ddba4
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:01:09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2867 ; free virtual = 10241
+Phase 4.3 Placer Reporting | Checksum: 1310ddba4
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:01:10 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2865 ; free virtual = 10239
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2865 ; free virtual = 10239
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:01:10 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2865 ; free virtual = 10239
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1439acbfe
+
+Time (s): cpu = 00:02:46 ; elapsed = 00:01:10 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2865 ; free virtual = 10239
+Ending Placer Task | Checksum: 7760124c
+
+Time (s): cpu = 00:02:46 ; elapsed = 00:01:10 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2865 ; free virtual = 10239
+101 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:48 ; elapsed = 00:01:11 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2865 ; free virtual = 10239
+INFO: [runtcl-4] Executing : report_io -file bd_hybrid_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2817 ; free virtual = 10191
+INFO: [runtcl-4] Executing : report_utilization -file bd_hybrid_wrapper_utilization_placed.rpt -pb bd_hybrid_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file bd_hybrid_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.18 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2711 ; free virtual = 10086
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2663 ; free virtual = 10048
+Wrote PlaceDB: Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2619 ; free virtual = 10053
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2619 ; free virtual = 10053
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2619 ; free virtual = 10053
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2611 ; free virtual = 10051
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2611 ; free virtual = 10051
+Write Physdb Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2611 ; free virtual = 10051
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2658 ; free virtual = 10052
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:03 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2674 ; free virtual = 10068
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 11.69s |  WALL: 3.17s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2674 ; free virtual = 10068
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.829 | TNS=-142.286 |
+Phase 1 Physical Synthesis Initialization | Checksum: 119b56d4f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2686 ; free virtual = 10080
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.829 | TNS=-142.286 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 119b56d4f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2687 ; free virtual = 10080
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.829 | TNS=-142.286 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/D[30]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[11]_i_1_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/PCIN__0[28]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[11]_i_2_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__388_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__387_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__387_i_7__0_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.730 | TNS=-141.835 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/PCIN__0[25]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[7]_i_2_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__387_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__386_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__386_i_7__0_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.614 | TNS=-141.321 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/D[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0[14]_i_4_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/PCIN__0[30]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__389_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__388_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__388_i_7__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__379_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__378_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__378_i_2__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__333_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__332_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][7]_8[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 16 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][8]_7[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.611 | TNS=-141.316 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__387_i_7__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__369_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__368_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__368_i_4__0_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.609 | TNS=-141.212 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 3 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__378_i_1__0_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.571 | TNS=-141.167 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/D[30]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[11]_i_1_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/PCIN[28]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[11]_i_2_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/tmp_product__388_n_15662. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/tmp_product__387_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/tmp_product__387_i_3_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/tmp_product__369_n_15662. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/tmp_product__368_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/tmp_product__368_i_4_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.564 | TNS=-141.017 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__378_i_3__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__342_n_15662. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__341_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][10]_9[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.559 | TNS=-140.984 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__378_n_15662. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__377_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__377_i_7__0_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.555 | TNS=-140.976 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__368_i_3__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__323_n_15660. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][5]_10[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][5]_8[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.551 | TNS=-140.968 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__322_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][4]_8[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.546 | TNS=-140.958 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__377_i_3__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__341_n_15662. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__340_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][10]_8[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.543 | TNS=-140.952 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__385_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__385_i_7__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__376_n_15662. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__375_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__375_i_5__0_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.541 | TNS=-140.940 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__375_i_5__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__330_n_15659. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 16 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][8]_5[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.540 | TNS=-140.850 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][4]_8[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.539 | TNS=-140.848 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__321_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 26 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][4]_7[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.536 | TNS=-140.830 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/tmp_product__368_i_5_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.531 | TNS=-140.730 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__388_i_5__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__379_n_15659. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__379_i_4__0_n_15655.  Re-placed instance bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__379_i_4__0
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__379_i_4__0_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.530 | TNS=-140.695 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__386_i_7__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__368_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__367_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__367_i_3__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__313_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__312_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][1]_8[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][2]_5[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/ap_CS_fsm_reg[7]_11. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__311_i_22_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/ap_CS_fsm_reg[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[14]_i_1_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_pp0_stage5. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_pp0_stage5. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.501 | TNS=-139.297 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/ap_CS_fsm_reg[7]_9. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__311_i_19_n_15655.  Re-placed instance bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__311_i_19
+INFO: [Physopt 32-735] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__311_i_19_n_15655. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.494 | TNS=-139.283 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_pp0_stage5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/D[30]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/PCIN__0[25]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__387_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__386_i_7__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__368_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__367_i_3__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__313_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][1]_8[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][2]_5[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/ap_CS_fsm_reg[7]_11. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__311_i_22_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/ap_CS_fsm_reg[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[14]_i_1_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_pp0_stage5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.494 | TNS=-139.283 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.12 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2666 ; free virtual = 10059
+Phase 3 Critical Path Optimization | Checksum: 119b56d4f
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2666 ; free virtual = 10059
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.494 | TNS=-139.283 |
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/D[30]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[11]_i_1_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/PCIN__0[25]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[7]_i_2_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__387_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__386_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__386_i_7__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__368_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__367_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__367_i_3__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__313_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__312_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][1]_8[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][2]_5[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/ap_CS_fsm_reg[7]_11. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__311_i_22_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/ap_CS_fsm_reg[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[14]_i_1_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_pp0_stage5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/D[30]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/PCIN__0[25]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__387_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__386_i_7__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__368_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__367_i_3__0_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__313_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][1]_8[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/zext_ln142_loc_channel_U/U_shell_top_fifo_w32_d2_S_ShiftReg/SRL_SIG_reg[1][2]_5[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/ap_CS_fsm_reg[7]_11. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/tmp_product__311_i_22_n_15655. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/ap_CS_fsm_reg[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[14]_i_1_n_15661. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_pp0_stage5. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.494 | TNS=-139.283 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2694 ; free virtual = 10088
+Phase 4 Critical Path Optimization | Checksum: 119b56d4f
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2694 ; free virtual = 10088
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2694 ; free virtual = 10088
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-2.494 | TNS=-139.283 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.335  |          3.003  |            4  |              0  |                    19  |           0  |           2  |  00:00:05  |
+|  Total          |          0.335  |          3.003  |            4  |              0  |                    19  |           0  |           3  |  00:00:05  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2689 ; free virtual = 10083
+Ending Physical Synthesis Task | Checksum: d75e58ba
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2690 ; free virtual = 10090
+INFO: [Common 17-83] Releasing license: Implementation
+296 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:11 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2690 ; free virtual = 10090
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2680 ; free virtual = 10086
+Wrote PlaceDB: Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2608 ; free virtual = 10067
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2608 ; free virtual = 10067
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2608 ; free virtual = 10067
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2600 ; free virtual = 10065
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2600 ; free virtual = 10066
+Write Physdb Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2600 ; free virtual = 10066
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 5648c40 ConstDB: 0 ShapeSum: ce2693ed RouteDB: 0
+Post Restoration Checksum: NetGraph: 56449168 | NumContArr: 9e2f718d | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 279c5f82f
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:15 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2494 ; free virtual = 9944
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 279c5f82f
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:15 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2496 ; free virtual = 9946
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 279c5f82f
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:15 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2496 ; free virtual = 9946
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 2f3465b3b
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:21 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2523 ; free virtual = 9975
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-2.470 | TNS=-115.990| WHS=-0.275 | THS=-352.767|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 48280
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 48280
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 26bb17ec4
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:24 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2501 ; free virtual = 9954
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 26bb17ec4
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:24 . Memory (MB): peak = 3392.676 ; gain = 0.000 ; free physical = 2501 ; free virtual = 9954
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 2a2da63f8
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:27 . Memory (MB): peak = 3393.508 ; gain = 0.832 ; free physical = 2476 ; free virtual = 9929
+Phase 3 Initial Routing | Checksum: 2a2da63f8
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:27 . Memory (MB): peak = 3393.508 ; gain = 0.832 ; free physical = 2476 ; free virtual = 9929
+INFO: [Route 35-580] Design has 3 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+===================+============================================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                                        |
++====================+===================+============================================================================+
+| clk_fpga_0         | clk_fpga_0        | bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/raddr_reg[1]/D |
+| clk_fpga_0         | clk_fpga_0        | bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/raddr_reg[0]/D |
+| clk_fpga_0         | clk_fpga_0        | bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/raddr_reg[2]/D |
++--------------------+-------------------+----------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 9475
+ Number of Nodes with overlaps = 2602
+ Number of Nodes with overlaps = 860
+ Number of Nodes with overlaps = 397
+ Number of Nodes with overlaps = 103
+ Number of Nodes with overlaps = 33
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.823 | TNS=-367.048| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 25969e08f
+
+Time (s): cpu = 00:02:39 ; elapsed = 00:01:06 . Memory (MB): peak = 3393.508 ; gain = 0.832 ; free physical = 1759 ; free virtual = 9712
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 1155
+ Number of Nodes with overlaps = 463
+ Number of Nodes with overlaps = 132
+ Number of Nodes with overlaps = 44
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.049 | TNS=-399.722| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 2087b0a9e
+
+Time (s): cpu = 00:03:02 ; elapsed = 00:01:17 . Memory (MB): peak = 3393.508 ; gain = 0.832 ; free physical = 1652 ; free virtual = 9610
+Phase 4 Rip-up And Reroute | Checksum: 2087b0a9e
+
+Time (s): cpu = 00:03:02 ; elapsed = 00:01:17 . Memory (MB): peak = 3393.508 ; gain = 0.832 ; free physical = 1652 ; free virtual = 9610
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 164a9baa0
+
+Time (s): cpu = 00:03:06 ; elapsed = 00:01:18 . Memory (MB): peak = 3393.508 ; gain = 0.832 ; free physical = 1663 ; free virtual = 9621
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.708 | TNS=-350.839| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 28273283e
+
+Time (s): cpu = 00:03:16 ; elapsed = 00:01:21 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1529 ; free virtual = 9487
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 28273283e
+
+Time (s): cpu = 00:03:16 ; elapsed = 00:01:21 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1529 ; free virtual = 9487
+Phase 5 Delay and Skew Optimization | Checksum: 28273283e
+
+Time (s): cpu = 00:03:16 ; elapsed = 00:01:21 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1529 ; free virtual = 9486
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 2c77598d8
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:01:22 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1571 ; free virtual = 9529
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.704 | TNS=-224.295| WHS=0.011  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 21d0cb37f
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:01:22 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1571 ; free virtual = 9529
+Phase 6 Post Hold Fix | Checksum: 21d0cb37f
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:01:22 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1571 ; free virtual = 9529
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 22.0658 %
+  Global Horizontal Routing Utilization  = 24.9997 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 2x2 Area, Max Cong = 86.036%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X40Y60 -> INT_R_X41Y61
+   INT_L_X38Y56 -> INT_R_X39Y57
+South Dir 1x1 Area, Max Cong = 92.7928%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X60Y111 -> INT_L_X60Y111
+   INT_R_X61Y108 -> INT_R_X61Y108
+   INT_L_X58Y104 -> INT_L_X58Y104
+   INT_L_X60Y104 -> INT_L_X60Y104
+   INT_R_X63Y84 -> INT_R_X63Y84
+East Dir 2x2 Area, Max Cong = 90.0735%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X48Y46 -> INT_R_X49Y47
+West Dir 2x2 Area, Max Cong = 92.2794%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X54Y50 -> INT_R_X55Y51
+   INT_L_X56Y50 -> INT_R_X57Y51
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 1
+Effective congestion level: 2 Aspect Ratio: 1 Sparse Ratio: 1.25
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 1 Aspect Ratio: 0.5 Sparse Ratio: 0.5
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 2 Aspect Ratio: 0.6 Sparse Ratio: 0.625
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 2 Aspect Ratio: 0.8 Sparse Ratio: 0.625
+
+Phase 7 Route finalize | Checksum: 21d0cb37f
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:01:22 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1571 ; free virtual = 9529
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 21d0cb37f
+
+Time (s): cpu = 00:03:22 ; elapsed = 00:01:22 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1571 ; free virtual = 9529
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1ef7c7765
+
+Time (s): cpu = 00:03:25 ; elapsed = 00:01:24 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1576 ; free virtual = 9534
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-3.704 | TNS=-224.295| WHS=0.011  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 1ef7c7765
+
+Time (s): cpu = 00:03:28 ; elapsed = 00:01:25 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1576 ; free virtual = 9534
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 193b25a1d
+
+Time (s): cpu = 00:03:29 ; elapsed = 00:01:26 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1577 ; free virtual = 9535
+Ending Routing Task | Checksum: 193b25a1d
+
+Time (s): cpu = 00:03:30 ; elapsed = 00:01:27 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1587 ; free virtual = 9545
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+315 Infos, 131 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:03:34 ; elapsed = 00:01:29 . Memory (MB): peak = 3506.508 ; gain = 113.832 ; free physical = 1587 ; free virtual = 9545
+INFO: [runtcl-4] Executing : report_drc -file bd_hybrid_wrapper_drc_routed.rpt -pb bd_hybrid_wrapper_drc_routed.pb -rpx bd_hybrid_wrapper_drc_routed.rpx
+Command: report_drc -file bd_hybrid_wrapper_drc_routed.rpt -pb bd_hybrid_wrapper_drc_routed.pb -rpx bd_hybrid_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file bd_hybrid_wrapper_methodology_drc_routed.rpt -pb bd_hybrid_wrapper_methodology_drc_routed.pb -rpx bd_hybrid_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file bd_hybrid_wrapper_methodology_drc_routed.rpt -pb bd_hybrid_wrapper_methodology_drc_routed.pb -rpx bd_hybrid_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:25 ; elapsed = 00:00:06 . Memory (MB): peak = 3546.527 ; gain = 0.000 ; free physical = 1566 ; free virtual = 9525
+INFO: [runtcl-4] Executing : report_power -file bd_hybrid_wrapper_power_routed.rpt -pb bd_hybrid_wrapper_power_summary_routed.pb -rpx bd_hybrid_wrapper_power_routed.rpx
+Command: report_power -file bd_hybrid_wrapper_power_routed.rpt -pb bd_hybrid_wrapper_power_summary_routed.pb -rpx bd_hybrid_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+325 Infos, 132 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 3562.535 ; gain = 16.008 ; free physical = 1495 ; free virtual = 9468
+INFO: [runtcl-4] Executing : report_route_status -file bd_hybrid_wrapper_route_status.rpt -pb bd_hybrid_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file bd_hybrid_wrapper_timing_summary_routed.rpt -pb bd_hybrid_wrapper_timing_summary_routed.pb -rpx bd_hybrid_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file bd_hybrid_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file bd_hybrid_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file bd_hybrid_wrapper_bus_skew_routed.rpt -pb bd_hybrid_wrapper_bus_skew_routed.pb -rpx bd_hybrid_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3562.535 ; gain = 0.000 ; free physical = 1542 ; free virtual = 9523
+Wrote PlaceDB: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3562.535 ; gain = 0.000 ; free physical = 1542 ; free virtual = 9572
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3562.535 ; gain = 0.000 ; free physical = 1542 ; free virtual = 9572
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.39 . Memory (MB): peak = 3562.535 ; gain = 0.000 ; free physical = 1538 ; free virtual = 9578
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3562.535 ; gain = 0.000 ; free physical = 1538 ; free virtual = 9583
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3562.535 ; gain = 0.000 ; free physical = 1530 ; free virtual = 9576
+Write Physdb Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3562.535 ; gain = 0.000 ; free physical = 1530 ; free virtual = 9576
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Mon May  5 19:01:52 2025...
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon May  5 19:02:08 2025
+# Process ID: 438656
+# Current directory: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1
+# Command line: vivado -log bd_hybrid_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_hybrid_wrapper.tcl -notrace
+# Log file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper.vdi
+# Journal file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/vivado.jou
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 3439.584 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+#-----------------------------------------------------------
+source bd_hybrid_wrapper.tcl -notrace
+Command: open_checkpoint bd_hybrid_wrapper_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1259.188 ; gain = 2.969 ; free physical = 3646 ; free virtual = 11611
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.33 . Memory (MB): peak = 1688.695 ; gain = 0.000 ; free physical = 3141 ; free virtual = 11105
+INFO: [Netlist 29-17] Analyzing 2361 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1809.539 ; gain = 7.250 ; free physical = 3027 ; free virtual = 10991
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2463.648 ; gain = 0.000 ; free physical = 2444 ; free virtual = 10408
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2463.648 ; gain = 0.000 ; free physical = 2444 ; free virtual = 10407
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2504.719 ; gain = 41.070 ; free physical = 2402 ; free virtual = 10366
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2504.719 ; gain = 0.000 ; free physical = 2402 ; free virtual = 10366
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.72 ; elapsed = 00:00:00.73 . Memory (MB): peak = 2519.719 ; gain = 15.000 ; free physical = 2385 ; free virtual = 10349
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2519.719 ; gain = 56.070 ; free physical = 2385 ; free virtual = 10349
+Restored from archive | CPU: 1.960000 secs | Memory: 59.275932 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2519.719 ; gain = 56.070 ; free physical = 2385 ; free virtual = 10349
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2519.719 ; gain = 0.000 ; free physical = 2385 ; free virtual = 10349
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  SRLC32E => SRL16E: 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2023.2 (64-bit) build 4029153
+open_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2523.719 ; gain = 1267.500 ; free physical = 2384 ; free virtual = 10348
+Command: write_bitstream -force bd_hybrid_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A5' of cell bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A2)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A5' of cell bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A1)+((~A1)*(~A6)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A6' of cell bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A4)*A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC RTSTAT-10] No routable loads: 33 net(s) have no routable loads. The problem bus(es) and/or net(s) are bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i... and (the first 15 of 21 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 4 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./bd_hybrid_wrapper.bit...
+Creating bitstream...
+Writing bitstream ./bd_hybrid_wrapper.ebc...
+Creating essential bits data...
+This design has 6100118 essential bits out of 25697632 total (23.74%).
+Creating bitstream...
+Writing bitstream ./bd_hybrid_wrapper.ebd...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+22 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:01:01 ; elapsed = 00:00:40 . Memory (MB): peak = 3698.105 ; gain = 1174.387 ; free physical = 1384 ; free virtual = 9401
+INFO: [Common 17-206] Exiting Vivado at Mon May  5 19:03:07 2025...

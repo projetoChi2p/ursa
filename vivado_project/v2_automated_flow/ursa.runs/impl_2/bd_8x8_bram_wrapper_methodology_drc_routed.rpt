@@ -1,0 +1,435 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu Aug  7 21:37:02 2025
+| Host         : ulisses-thinkpad running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_methodology -file bd_8x8_bram_wrapper_methodology_drc_routed.rpt -pb bd_8x8_bram_wrapper_methodology_drc_routed.pb -rpx bd_8x8_bram_wrapper_methodology_drc_routed.rpx
+| Design       : bd_8x8_bram_wrapper
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 80
++-----------+----------+-----------------------+------------+
+| Rule      | Severity | Description           | Violations |
++-----------+----------+-----------------------+------------+
+| TIMING-16 | Warning  | Large setup violation | 80         |
++-----------+----------+-----------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.001 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[0]_rep__2/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mac_muladd_8s_8ns_20s_20_4_1_U224/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg/CEC (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.017 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1169_reg[0]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.017 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[11]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.017 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[13]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.017 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[16]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.017 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[17]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.018 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1165_reg[11]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -1.018 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1166_reg[2]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -1.018 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1166_reg[6]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -1.018 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1166_reg[7]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -1.020 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[3] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -1.030 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[6] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -1.039 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_31_reg[12]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -1.039 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_31_reg[14]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -1.039 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_31_reg[15]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -1.039 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_31_reg[18]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -1.040 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[0] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -1.045 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[5] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -1.058 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[10]__0/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -1.065 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[3]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -1.065 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[4]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -1.065 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[5]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -1.065 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[6]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -1.117 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[11]__0/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -1.121 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[12] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -1.126 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIBDI[2] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -1.128 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[8] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -1.135 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[9] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -1.154 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIBDI[1] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -1.197 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[4] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -1.204 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[10]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -1.204 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/ap_CS_fsm_reg[519]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33_reg[9]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -1.240 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[11] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -1.256 ns between bd_8x8_bram_i/rst_ps7_0_100M/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C (clocked by clk_fpga_0) and bd_8x8_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RID_SNG.axi_rid_int_reg[1]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -1.256 ns between bd_8x8_bram_i/rst_ps7_0_100M/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C (clocked by clk_fpga_0) and bd_8x8_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RID_SNG.axi_rid_int_reg[2]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -1.256 ns between bd_8x8_bram_i/rst_ps7_0_100M/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C (clocked by clk_fpga_0) and bd_8x8_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RID_SNG.axi_rid_int_reg[7]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -1.256 ns between bd_8x8_bram_i/rst_ps7_0_100M/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C (clocked by clk_fpga_0) and bd_8x8_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RID_SNG.axi_rid_int_reg[8]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -1.262 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIBDI[0] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -1.262 ns between bd_8x8_bram_i/rst_ps7_0_100M/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C (clocked by clk_fpga_0) and bd_8x8_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RID_SNG.axi_rid_int_reg[6]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -1.262 ns between bd_8x8_bram_i/rst_ps7_0_100M/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C (clocked by clk_fpga_0) and bd_8x8_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/GEN_NO_RD_CMD_OPT.GEN_RID_SNG.axi_rid_int_reg[9]/R (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -1.265 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[12]__0/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -1.281 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[14]__0/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -1.286 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[13] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -1.355 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -1.376 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[13]__0/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -1.382 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[16]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -1.412 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[14] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -1.416 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[1] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -1.435 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/icmp_ln150_reg_17840_reg[0]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.data_valid_reg/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -1.458 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_3818_ap_start_reg_reg/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DIADI[15] (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -2.047 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -2.222 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -2.514 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -2.577 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -2.631 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -2.717 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -2.808 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -2.821 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -2.942 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -3.002 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -3.138 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -3.154 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -3.160 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -3.223 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -3.228 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -3.249 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -3.258 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#68 Warning
+Large setup violation  
+There is a large setup violation of -3.315 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#69 Warning
+Large setup violation  
+There is a large setup violation of -3.369 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#70 Warning
+Large setup violation  
+There is a large setup violation of -3.374 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#71 Warning
+Large setup violation  
+There is a large setup violation of -3.497 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#72 Warning
+Large setup violation  
+There is a large setup violation of -3.522 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#73 Warning
+Large setup violation  
+There is a large setup violation of -3.601 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#74 Warning
+Large setup violation  
+There is a large setup violation of -3.633 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/ap_CS_fsm_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#75 Warning
+Large setup violation  
+There is a large setup violation of -3.670 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_reg_17868_reg[4]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U5/buff0_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#76 Warning
+Large setup violation  
+There is a large setup violation of -3.697 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#77 Warning
+Large setup violation  
+There is a large setup violation of -3.761 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#78 Warning
+Large setup violation  
+There is a large setup violation of -3.884 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#79 Warning
+Large setup violation  
+There is a large setup violation of -3.934 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#80 Warning
+Large setup violation  
+There is a large setup violation of -3.988 ns between bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/add_ln43_7_reg_19242_reg[5]/C (clocked by clk_fpga_0) and bd_8x8_bram_i/mxm_execute_ursa_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1998/mul_17s_32s_32_2_1_U4/buff0_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+

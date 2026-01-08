@@ -1,0 +1,2 @@
+
+set_property BITSTREAM.GENERAL.COMPRESS FALSE [current_design]

@@ -1,0 +1,1044 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue May  6 11:03:32 2025
+# Process ID: 843643
+# Current directory: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1
+# Command line: vivado -log bd_hybrid_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_hybrid_wrapper.tcl -notrace
+# Log file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper.vdi
+# Journal file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/vivado.jou
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 3473.632 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+#-----------------------------------------------------------
+source bd_hybrid_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/ip/v1'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+Command: link_design -top bd_hybrid_wrapper -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_axi_bram_ctrl_0_0/bd_hybrid_axi_bram_ctrl_0_0.dcp' for cell 'bd_hybrid_i/axi_bram_ctrl_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_blk_mem_gen_0_0/bd_hybrid_blk_mem_gen_0_0.dcp' for cell 'bd_hybrid_i/blk_mem_gen_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_processing_system7_0_0/bd_hybrid_processing_system7_0_0.dcp' for cell 'bd_hybrid_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0.dcp' for cell 'bd_hybrid_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_shell_top_0_0/bd_hybrid_shell_top_0_0.dcp' for cell 'bd_hybrid_i/shell_top_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_xbar_1/bd_hybrid_xbar_1.dcp' for cell 'bd_hybrid_i/axi_interconnect_0/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_xbar_4/bd_hybrid_xbar_4.dcp' for cell 'bd_hybrid_i/axi_interconnect_1/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_pc_3/bd_hybrid_auto_pc_3.dcp' for cell 'bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0.dcp' for cell 'bd_hybrid_i/axi_interconnect_1/s00_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1.dcp' for cell 'bd_hybrid_i/axi_interconnect_1/s01_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_xbar_0/bd_hybrid_xbar_0.dcp' for cell 'bd_hybrid_i/ps7_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_pc_0/bd_hybrid_auto_pc_0.dcp' for cell 'bd_hybrid_i/ps7_0_axi_periph/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_pc_1/bd_hybrid_auto_pc_1.dcp' for cell 'bd_hybrid_i/ps7_0_axi_periph/m01_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_pc_2/bd_hybrid_auto_pc_2.dcp' for cell 'bd_hybrid_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.25 . Memory (MB): peak = 1730.453 ; gain = 0.000 ; free physical = 1788 ; free virtual = 10468
+INFO: [Netlist 29-17] Analyzing 1082 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_processing_system7_0_0/bd_hybrid_processing_system7_0_0.xdc] for cell 'bd_hybrid_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_processing_system7_0_0/bd_hybrid_processing_system7_0_0.xdc] for cell 'bd_hybrid_i/processing_system7_0/inst'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0_board.xdc] for cell 'bd_hybrid_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0_board.xdc] for cell 'bd_hybrid_i/rst_ps7_0_50M/U0'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0.xdc] for cell 'bd_hybrid_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_rst_ps7_0_50M_0/bd_hybrid_rst_ps7_0_50M_0.xdc] for cell 'bd_hybrid_i/rst_ps7_0_50M/U0'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.srcs/constrs_1/new/constrs.xdc]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.srcs/constrs_1/new/constrs.xdc]
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc] for cell 'bd_hybrid_i/axi_interconnect_1/s00_couplers/auto_us/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:9]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:12]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:15]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:18]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:21]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:24]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:27]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:33]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:36]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:39]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:42]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:45]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:48]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:51]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc:54]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_0/bd_hybrid_auto_us_0_clocks.xdc] for cell 'bd_hybrid_i/axi_interconnect_1/s00_couplers/auto_us/inst'
+Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc] for cell 'bd_hybrid_i/axi_interconnect_1/s01_couplers/auto_us/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:9]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:12]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:15]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:18]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:21]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:24]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:27]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:33]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:36]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:39]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:42]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:45]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:48]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:51]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc:54]
+Finished Parsing XDC File [/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.gen/sources_1/bd/bd_hybrid/ip/bd_hybrid_auto_us_1/bd_hybrid_auto_us_1_clocks.xdc] for cell 'bd_hybrid_i/axi_interconnect_1/s01_couplers/auto_us/inst'
+INFO: [Project 1-1714] 3 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'bd_hybrid_wrapper'...
+INFO: [Project 1-1687] 30 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2194.988 ; gain = 0.000 ; free physical = 1646 ; free virtual = 10326
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+
+26 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2194.988 ; gain = 878.543 ; free physical = 1647 ; free virtual = 10327
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.61 . Memory (MB): peak = 2194.988 ; gain = 0.000 ; free physical = 1581 ; free virtual = 10261
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 14767b4eb
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2598.340 ; gain = 403.352 ; free physical = 1133 ; free virtual = 9813
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 14767b4eb
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 841 ; free virtual = 9521
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 14767b4eb
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 841 ; free virtual = 9521
+Phase 1 Initialization | Checksum: 14767b4eb
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 841 ; free virtual = 9521
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 14767b4eb
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.38 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 839 ; free virtual = 9519
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 14767b4eb
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 839 ; free virtual = 9519
+Phase 2 Timer Update And Timing Data Collection | Checksum: 14767b4eb
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 839 ; free virtual = 9519
+
+Phase 3 Retarget
+INFO: [Opt 31-1566] Pulled 18 inverters resulting in an inversion of 168 pins
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 5 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 113e195ca
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.89 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 838 ; free virtual = 9518
+Retarget | Checksum: 113e195ca
+INFO: [Opt 31-389] Phase Retarget created 60 cells and removed 112 cells
+INFO: [Opt 31-1021] In phase Retarget, 27 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 6 inverter(s) to 15 load pin(s).
+Phase 4 Constant propagation | Checksum: 1ceab9f12
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 847 ; free virtual = 9527
+Constant propagation | Checksum: 1ceab9f12
+INFO: [Opt 31-389] Phase Constant propagation created 350 cells and removed 1066 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 27 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: ee14ff84
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2908.113 ; gain = 0.000 ; free physical = 847 ; free virtual = 9527
+Sweep | Checksum: ee14ff84
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 689 cells
+INFO: [Opt 31-1021] In phase Sweep, 96 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: ee14ff84
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2940.129 ; gain = 32.016 ; free physical = 851 ; free virtual = 9532
+BUFG optimization | Checksum: ee14ff84
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/fifo_burst/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/fifo_burst/U_fifo_srl/mem_reg[6][0]_srl7__0 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][1]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][2]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][3]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][0]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][10]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][11]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][12]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][13]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][14]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][15]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][16]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][17]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][18]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][19]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][1]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][20]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][21]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][22]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][23]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][24]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][25]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][26]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][27]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][28]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][29]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][2]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][30]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][31]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][32]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][3]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][4]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][5]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][6]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][7]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][8]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][9]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][1]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][2]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][3]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][0]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][10]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][11]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][12]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][13]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][14]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][15]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][16]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][17]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][18]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][19]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][1]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][20]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][21]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][22]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][23]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][24]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][25]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][26]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][27]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][28]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][29]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][2]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][30]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][31]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][32]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][3]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][4]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][5]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][6]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][7]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][8]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][9]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][0]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][10]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][11]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][12]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][13]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][14]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][15]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][16]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][17]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][18]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][19]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][1]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][20]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][21]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][22]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][23]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][24]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][25]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][26]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][27]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][28]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][29]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][2]_srl3 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from bd_hybrid_i/shell_top_0/inst/ca_m_axi_U/store_unit/fifo_wreq/U_fifo_srl/mem_reg[2][34]_srl3 due to none static srl address bits
+INFO: [Common 17-14] Message 'Opt 31-1131' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: ee14ff84
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2940.129 ; gain = 32.016 ; free physical = 851 ; free virtual = 9532
+Shift Register Optimization | Checksum: ee14ff84
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 11e4a5d16
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2940.129 ; gain = 32.016 ; free physical = 852 ; free virtual = 9532
+Post Processing Netlist | Checksum: 11e4a5d16
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 33 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: df8f7834
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2940.129 ; gain = 32.016 ; free physical = 853 ; free virtual = 9533
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2940.129 ; gain = 0.000 ; free physical = 853 ; free virtual = 9533
+Phase 9.2 Verifying Netlist Connectivity | Checksum: df8f7834
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2940.129 ; gain = 32.016 ; free physical = 853 ; free virtual = 9533
+Phase 9 Finalization | Checksum: df8f7834
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2940.129 ; gain = 32.016 ; free physical = 853 ; free virtual = 9533
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              60  |             112  |                                             27  |
+|  Constant propagation         |             350  |            1066  |                                             27  |
+|  Sweep                        |               0  |             689  |                                             96  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             33  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: df8f7834
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2940.129 ; gain = 32.016 ; free physical = 853 ; free virtual = 9533
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2940.129 ; gain = 0.000 ; free physical = 853 ; free virtual = 9533
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 19 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 1 newly gated: 2 Total Ports: 38
+Ending PowerOpt Patch Enables Task | Checksum: 1458bfa48
+
+Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.15 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 629 ; free virtual = 9309
+Ending Power Optimization Task | Checksum: 1458bfa48
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:04 . Memory (MB): peak = 3231.918 ; gain = 291.789 ; free physical = 629 ; free virtual = 9309
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1458bfa48
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 629 ; free virtual = 9309
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 629 ; free virtual = 9309
+Ending Netlist Obfuscation Task | Checksum: b0afd9e5
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 629 ; free virtual = 9309
+INFO: [Common 17-83] Releasing license: Implementation
+55 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3231.918 ; gain = 1036.930 ; free physical = 629 ; free virtual = 9309
+INFO: [runtcl-4] Executing : report_drc -file bd_hybrid_wrapper_drc_opted.rpt -pb bd_hybrid_wrapper_drc_opted.pb -rpx bd_hybrid_wrapper_drc_opted.rpx
+Command: report_drc -file bd_hybrid_wrapper_drc_opted.rpt -pb bd_hybrid_wrapper_drc_opted.pb -rpx bd_hybrid_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 639 ; free virtual = 9320
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 639 ; free virtual = 9320
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 632 ; free virtual = 9315
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.1 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 687 ; free virtual = 9371
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 687 ; free virtual = 9371
+Wrote Device Cache: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 698 ; free virtual = 9382
+Write Physdb Complete: Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.13 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 698 ; free virtual = 9382
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 630 ; free virtual = 9318
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 4ac2c4b6
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 630 ; free virtual = 9318
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 630 ; free virtual = 9318
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 46ed7107
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 656 ; free virtual = 9344
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 6ad2a842
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 637 ; free virtual = 9325
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 6ad2a842
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 637 ; free virtual = 9325
+Phase 1 Placer Initialization | Checksum: 6ad2a842
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 637 ; free virtual = 9325
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 5e6cbf8f
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 592 ; free virtual = 9280
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: f194a353
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:07 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 588 ; free virtual = 9276
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: f194a353
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 588 ; free virtual = 9276
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 158d2fab8
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:18 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 577 ; free virtual = 9264
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 3 LUTNM shape to break, 2976 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 3, two critical 0, total 3, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 1405 nets or LUTs. Breaked 3 LUTs, combined 1402 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 574 ; free virtual = 9262
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            3  |           1402  |                  1405  |           0  |           1  |  00:00:01  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            3  |           1402  |                  1405  |           0  |           9  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 160e7d266
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:21 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 575 ; free virtual = 9263
+Phase 2.4 Global Placement Core | Checksum: 137c1fe8a
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:22 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 576 ; free virtual = 9264
+Phase 2 Global Placement | Checksum: 137c1fe8a
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:22 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 577 ; free virtual = 9264
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 16144ac50
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:23 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 575 ; free virtual = 9262
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 16234b1ed
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:25 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 573 ; free virtual = 9260
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 23f53a870
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:25 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 571 ; free virtual = 9259
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1f9680710
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:25 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 571 ; free virtual = 9259
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 16295d6c8
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:27 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 576 ; free virtual = 9264
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1831b9a0b
+
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:31 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 567 ; free virtual = 9254
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 179a378e4
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:32 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 563 ; free virtual = 9251
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 11bcef26e
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:32 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 563 ; free virtual = 9250
+Phase 3 Detail Placement | Checksum: 11bcef26e
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:33 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 564 ; free virtual = 9252
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: aa6cbda1
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.431 | TNS=-0.912 |
+Phase 1 Physical Synthesis Initialization | Checksum: c1516f11
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.83 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 560 ; free virtual = 9248
+INFO: [Place 46-33] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/shell_top_signed_char_unsigned_short_unsigned_char_unsigned_short_int_un_451, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_sa_store_fu_1849/SR[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 2 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 2, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: c1516f11
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 562 ; free virtual = 9250
+Phase 4.1.1.1 BUFG Insertion | Checksum: aa6cbda1
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:00:38 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 562 ; free virtual = 9250
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.515. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: ea76b302
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:40 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9253
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:40 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9253
+Phase 4.1 Post Commit Optimization | Checksum: ea76b302
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:40 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9253
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: ea76b302
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:41 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9253
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                4x4|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: ea76b302
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:00:41 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9253
+Phase 4.3 Placer Reporting | Checksum: ea76b302
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:00:41 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9252
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9252
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:00:41 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9252
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 17cf3ee65
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:00:41 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9252
+Ending Placer Task | Checksum: 13984dc49
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:00:41 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9253
+100 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:39 ; elapsed = 00:00:42 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 565 ; free virtual = 9253
+INFO: [runtcl-4] Executing : report_io -file bd_hybrid_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.2 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 563 ; free virtual = 9250
+INFO: [runtcl-4] Executing : report_utilization -file bd_hybrid_wrapper_utilization_placed.rpt -pb bd_hybrid_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file bd_hybrid_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 521 ; free virtual = 9209
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 504 ; free virtual = 9198
+Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 469 ; free virtual = 9193
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 469 ; free virtual = 9193
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 469 ; free virtual = 9194
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 461 ; free virtual = 9189
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 461 ; free virtual = 9190
+Write Physdb Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 461 ; free virtual = 9190
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:02 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 432 ; free virtual = 9133
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+109 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 430 ; free virtual = 9135
+Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 409 ; free virtual = 9145
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 409 ; free virtual = 9145
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 408 ; free virtual = 9145
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 400 ; free virtual = 9140
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 400 ; free virtual = 9141
+Write Physdb Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 400 ; free virtual = 9141
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 995515c7 ConstDB: 0 ShapeSum: a02fc682 RouteDB: 0
+Post Restoration Checksum: NetGraph: 864ce9a0 | NumContArr: c644c35c | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2d1e3a236
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:14 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 440 ; free virtual = 9152
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2d1e3a236
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:14 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 441 ; free virtual = 9153
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2d1e3a236
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:14 . Memory (MB): peak = 3231.918 ; gain = 0.000 ; free physical = 440 ; free virtual = 9152
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 1b91091d2
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:19 . Memory (MB): peak = 3233.594 ; gain = 1.676 ; free physical = 409 ; free virtual = 9121
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.596  | TNS=0.000  | WHS=-0.316 | THS=-288.301|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 28595
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 28595
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 21095bde4
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:20 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 393 ; free virtual = 9105
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 21095bde4
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:20 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 393 ; free virtual = 9105
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 29acb14d1
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:23 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 402 ; free virtual = 9114
+Phase 3 Initial Routing | Checksum: 29acb14d1
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:23 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 401 ; free virtual = 9113
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 4493
+ Number of Nodes with overlaps = 1379
+ Number of Nodes with overlaps = 570
+ Number of Nodes with overlaps = 224
+ Number of Nodes with overlaps = 107
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.061  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 21a6ad748
+
+Time (s): cpu = 00:01:54 ; elapsed = 00:01:14 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 388 ; free virtual = 9101
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 39
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.334 | TNS=-0.334 | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 27bbc862e
+
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:27 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 388 ; free virtual = 9101
+Phase 4 Rip-up And Reroute | Checksum: 27bbc862e
+
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:27 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 388 ; free virtual = 9101
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 2b643c0fa
+
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:28 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 387 ; free virtual = 9100
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.211  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 2b643c0fa
+
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:28 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 387 ; free virtual = 9099
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 2b643c0fa
+
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:28 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 387 ; free virtual = 9099
+Phase 5 Delay and Skew Optimization | Checksum: 2b643c0fa
+
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:28 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 386 ; free virtual = 9099
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 225842c76
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:29 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 385 ; free virtual = 9098
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.211  | TNS=0.000  | WHS=-0.028 | THS=-0.042 |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1deb15b3c
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:29 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 385 ; free virtual = 9098
+
+Phase 6.2 Non Free Resource Hold Fix Iter
+Phase 6.2 Non Free Resource Hold Fix Iter | Checksum: 271fc9022
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:29 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 385 ; free virtual = 9098
+Phase 6 Post Hold Fix | Checksum: 271fc9022
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:29 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 385 ; free virtual = 9098
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 9.07181 %
+  Global Horizontal Routing Utilization  = 11.7877 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 271fc9022
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:29 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 385 ; free virtual = 9098
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 271fc9022
+
+Time (s): cpu = 00:02:18 ; elapsed = 00:01:29 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 384 ; free virtual = 9097
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 3293a5ea1
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:30 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 382 ; free virtual = 9095
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: 323223809
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:32 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 378 ; free virtual = 9091
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.211  | TNS=0.000  | WHS=0.050  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 323223809
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:32 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 378 ; free virtual = 9091
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 1f82dad83
+
+Time (s): cpu = 00:02:24 ; elapsed = 00:01:32 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 378 ; free virtual = 9091
+Ending Routing Task | Checksum: 1f82dad83
+
+Time (s): cpu = 00:02:25 ; elapsed = 00:01:33 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 378 ; free virtual = 9092
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+125 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:02:28 ; elapsed = 00:01:34 . Memory (MB): peak = 3248.594 ; gain = 16.676 ; free physical = 378 ; free virtual = 9092
+INFO: [runtcl-4] Executing : report_drc -file bd_hybrid_wrapper_drc_routed.rpt -pb bd_hybrid_wrapper_drc_routed.pb -rpx bd_hybrid_wrapper_drc_routed.rpx
+Command: report_drc -file bd_hybrid_wrapper_drc_routed.rpt -pb bd_hybrid_wrapper_drc_routed.pb -rpx bd_hybrid_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file bd_hybrid_wrapper_methodology_drc_routed.rpt -pb bd_hybrid_wrapper_methodology_drc_routed.pb -rpx bd_hybrid_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file bd_hybrid_wrapper_methodology_drc_routed.rpt -pb bd_hybrid_wrapper_methodology_drc_routed.pb -rpx bd_hybrid_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:21 ; elapsed = 00:00:05 . Memory (MB): peak = 3334.570 ; gain = 0.000 ; free physical = 455 ; free virtual = 9174
+INFO: [runtcl-4] Executing : report_power -file bd_hybrid_wrapper_power_routed.rpt -pb bd_hybrid_wrapper_power_summary_routed.pb -rpx bd_hybrid_wrapper_power_routed.rpx
+Command: report_power -file bd_hybrid_wrapper_power_routed.rpt -pb bd_hybrid_wrapper_power_summary_routed.pb -rpx bd_hybrid_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+135 Infos, 131 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 3370.441 ; gain = 35.871 ; free physical = 462 ; free virtual = 9195
+INFO: [runtcl-4] Executing : report_route_status -file bd_hybrid_wrapper_route_status.rpt -pb bd_hybrid_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file bd_hybrid_wrapper_timing_summary_routed.rpt -pb bd_hybrid_wrapper_timing_summary_routed.pb -rpx bd_hybrid_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file bd_hybrid_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file bd_hybrid_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file bd_hybrid_wrapper_bus_skew_routed.rpt -pb bd_hybrid_wrapper_bus_skew_routed.pb -rpx bd_hybrid_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3370.441 ; gain = 0.000 ; free physical = 412 ; free virtual = 9153
+Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3370.441 ; gain = 0.000 ; free physical = 421 ; free virtual = 9191
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3370.441 ; gain = 0.000 ; free physical = 421 ; free virtual = 9191
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.56 ; elapsed = 00:00:00.29 . Memory (MB): peak = 3370.441 ; gain = 0.000 ; free physical = 422 ; free virtual = 9198
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3370.441 ; gain = 0.000 ; free physical = 423 ; free virtual = 9202
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3370.441 ; gain = 0.000 ; free physical = 423 ; free virtual = 9203
+Write Physdb Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3370.441 ; gain = 0.000 ; free physical = 423 ; free virtual = 9203
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Tue May  6 11:06:52 2025...
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue May  6 11:07:55 2025
+# Process ID: 892227
+# Current directory: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1
+# Command line: vivado -log bd_hybrid_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_hybrid_wrapper.tcl -notrace
+# Log file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/bd_hybrid_wrapper.vdi
+# Journal file: /home/ulisses/Projects/nn-apsoc-sa/exp_studies/ulisses/sa_stationary_results/vivado/sa_v1/sa.runs/impl_1/vivado.jou
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 3891.273 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+#-----------------------------------------------------------
+source bd_hybrid_wrapper.tcl -notrace
+Command: open_checkpoint bd_hybrid_wrapper_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1318.355 ; gain = 0.000 ; free physical = 2148 ; free virtual = 10896
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.24 . Memory (MB): peak = 1658.715 ; gain = 0.000 ; free physical = 1819 ; free virtual = 10568
+INFO: [Netlist 29-17] Analyzing 1070 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 1766.527 ; gain = 6.250 ; free physical = 1728 ; free virtual = 10476
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2406.074 ; gain = 0.000 ; free physical = 1160 ; free virtual = 9907
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2406.074 ; gain = 0.000 ; free physical = 1158 ; free virtual = 9906
+Read PlaceDB: Time (s): cpu = 00:00:00.77 ; elapsed = 00:00:00.78 . Memory (MB): peak = 2424.145 ; gain = 18.070 ; free physical = 1154 ; free virtual = 9902
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2424.145 ; gain = 0.000 ; free physical = 1154 ; free virtual = 9902
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.43 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2433.145 ; gain = 9.000 ; free physical = 1147 ; free virtual = 9895
+Read Physdb Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2433.145 ; gain = 27.070 ; free physical = 1147 ; free virtual = 9895
+Restored from archive | CPU: 1.290000 secs | Memory: 37.860367 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2433.145 ; gain = 33.008 ; free physical = 1147 ; free virtual = 9895
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2433.145 ; gain = 0.000 ; free physical = 1146 ; free virtual = 9894
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  SRLC32E => SRL16E: 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2023.2 (64-bit) build 4029153
+open_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2441.145 ; gain = 1122.789 ; free physical = 1145 ; free virtual = 9893
+Command: write_bitstream -force bd_hybrid_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2772_reg input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2772_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2772_reg input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2772_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/buff0_reg input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/buff0_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/tmp_product input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/tmp_product/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/tmp_product input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/tmp_product/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/buff0_reg input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/buff0_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/tmp_product input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/tmp_product/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/tmp_product input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/tmp_product/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_ln15_reg_9570_reg input bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_ln15_reg_9570_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Block_entry81_proc_U0/mul_16ns_18ns_33_1_1_U1/tmp_product output bd_hybrid_i/shell_top_0/inst/Block_entry81_proc_U0/mul_16ns_18ns_33_1_1_U1/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Block_entry81_proc_U0/mul_16ns_18ns_33_1_1_U2/tmp_product output bd_hybrid_i/shell_top_0/inst/Block_entry81_proc_U0/mul_16ns_18ns_33_1_1_U2/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/tmp_product output bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/tmp_product output bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/tmp_product/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Block_entry81_proc_U0/mul_16ns_18ns_33_1_1_U1/tmp_product multiplier stage bd_hybrid_i/shell_top_0/inst/Block_entry81_proc_U0/mul_16ns_18ns_33_1_1_U1/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Block_entry81_proc_U0/mul_16ns_18ns_33_1_1_U2/tmp_product multiplier stage bd_hybrid_i/shell_top_0/inst/Block_entry81_proc_U0/mul_16ns_18ns_33_1_1_U2/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2772_reg multiplier stage bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/bound_reg_2772_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/buff0_reg multiplier stage bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/buff0_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/tmp_product multiplier stage bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U7/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/buff0_reg multiplier stage bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/buff0_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/tmp_product multiplier stage bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_17s_32s_32_2_1_U8/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_ln15_reg_9570_reg multiplier stage bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/grp_Loop_VITIS_LOOP_144_1_proc_Pipeline_VITIS_LOOP_150_3_fu_1012/mul_ln15_reg_9570_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_ln144_reg_2796_reg multiplier stage bd_hybrid_i/shell_top_0/inst/Loop_VITIS_LOOP_144_1_proc_U0/mul_ln144_reg_2796_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A2' of cell bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A4)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A2' of cell bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A4)+((~A4)*(~A6)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A2' of cell bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A3)+((~A3)*(~A5)*A6)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC RTSTAT-10] No routable loads: 33 net(s) have no routable loads. The problem bus(es) and/or net(s) are bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, bd_hybrid_i/axi_interconnect_1/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i... and (the first 15 of 21 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 26 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./bd_hybrid_wrapper.bit...
+Creating bitstream...
+Writing bitstream ./bd_hybrid_wrapper.ebc...
+Creating essential bits data...
+This design has 3449301 essential bits out of 25697632 total (13.42%).
+Creating bitstream...
+Writing bitstream ./bd_hybrid_wrapper.ebd...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+22 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:55 ; elapsed = 00:00:37 . Memory (MB): peak = 3331.617 ; gain = 890.473 ; free physical = 293 ; free virtual = 9040
+INFO: [Common 17-206] Exiting Vivado at Tue May  6 11:08:51 2025...

@@ -1,0 +1,44 @@
+#zed
+part=xc7z020clg484-1
+
+#nexys
+#part=xc7a100tcsg324-1
+
+[hls]
+flow_target=vivado
+package.output.format=ip_catalog
+package.output.syn=true
+
+tb.file=__ROOT_DIR__/tb/cnn_conv_engine.cpp
+tb.file=__ROOT_DIR__/tb/cnn_conv_engine.h
+tb.file=__ROOT_DIR__/tb/cnn_eval_images.h
+tb.file=__ROOT_DIR__/tb/cnn_eval_images_hwc_8_8_18.cpp
+tb.file=__ROOT_DIR__/tb/cnn_network.h
+tb.file=__ROOT_DIR__/tb/cnn_weights.h
+tb.file=__ROOT_DIR__/tb/cnn_weights_qonnx_t3w8.cpp
+tb.file=__ROOT_DIR__/tb/math_q_scaled_int.cpp
+tb.file=__ROOT_DIR__/tb/math_tb.h
+tb.file=__ROOT_DIR__/tb/tb_cnn_sat_6_1.cpp
+
+syn.file=__ROOT_DIR__/src/math_sa.h
+syn.file=__ROOT_DIR__/src/pe.cpp
+syn.file=__ROOT_DIR__/src/pe.h
+syn.file=__ROOT_DIR__/src/sa.cpp
+syn.file=__ROOT_DIR__/src/sa.h
+syn.file=__ROOT_DIR__/src/shell.cpp
+syn.file=__ROOT_DIR__/src/shell.h
+
+syn.top=mxm_execute_ursa
+
+syn.interface.m_axi_addr64=0
+syn.interface.m_axi_max_bitwidth=32
+
+syn.cflags=-DSA_SIZE=__SZ__ -I__ROOT_DIR__/src
+tb.cflags=-DSA_SIZE=__SZ__ -I__ROOT_DIR__/src
+
+#clock=10ns
+#package.ip.version=__IP_VERSION__
+#package.ip.description=MXM NL __CONFIG_NAME__
+#package.ip.display_name=MXM NL __CONFIG_NAME__
+#package.ip.name=mxm___CONFIG_NAME__
+
