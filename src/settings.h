@@ -144,10 +144,5 @@ typedef struct {
 #define Q 8
 #define M 8
 
-/*TB*/
-#define P 8
-#define Q 8
-#define M 8
-
 #endif /* __SETTINGS_H__ */
  
