@@ -1,7 +1,7 @@
 #ifndef __PE_H__
 #define __PE_H__
 
-#include "math_sa.h"
+#include "../settings.h"
 
 typedef struct {
    data_a_t li; // left inputs Matrix: A

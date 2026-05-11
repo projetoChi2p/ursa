@@ -1,9 +1,8 @@
 #ifndef LABFT_H_
 #define LABFT_H_
 
-#include "shell.h"
+#include "../settings.h"
 #include <cstdint>
-
 
 typedef int64_t labft_acc_t;
 

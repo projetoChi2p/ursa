@@ -16,50 +16,41 @@ add_compile_options(
 
 include_directories("${PROJECT_SOURCE_DIR}/third-party/xilinx/hls/")
 
-include_directories("${PROJECT_SOURCE_DIR}/src") 
-include_directories("${PROJECT_SOURCE_DIR}/tb") 
+# ── Includes ────────────────────────────────────────────────
+include_directories("${PROJECT_SOURCE_DIR}/third-party/xilinx/hls/")
+include_directories("${PROJECT_SOURCE_DIR}/src")
+include_directories("${PROJECT_SOURCE_DIR}/src/core")
+include_directories("${PROJECT_SOURCE_DIR}/src/labft")
+include_directories("${PROJECT_SOURCE_DIR}/src/im2col")
+# include_directories("${PROJECT_SOURCE_DIR}/tb/simple_mxm")
+include_directories("${PROJECT_SOURCE_DIR}/tb/cnn")
 include_directories("${PROJECT_BINARY_DIR}")
 
-# Coleta fontes
-file(GLOB SRC_SOURCES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/*.cpp")
-file(GLOB TB_SOURCES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/tb/simple_mxm/*.cpp")
+# ── Fontes ──────────────────────────────────────────────────
+file(GLOB CORE_SOURCES    CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/core/*.cpp")
+file(GLOB LABFT_SOURCES   CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/labft/*.cpp")
+file(GLOB IM2COL_SOURCES  CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/im2col/*.cpp")
+# file(GLOB TB_SOURCES      CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/tb/simple_mxm/*.cpp")
+file(GLOB TB_SOURCES      CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/tb/cnn/*.cpp")
 
+set(SRC_SOURCES ${CORE_SOURCES} ${LABFT_SOURCES} ${IM2COL_SOURCES})
 
-# Several SA_SIZE
-
+# ── Targets por SA_SIZE ─────────────────────────────────────
+# SA_SIZE aqui sobrescreve o valor em settings.h via -D,
+# permitindo testar múltiplos tamanhos sem editar o header.
 set(SA_SIZES 8)
 
 foreach(sa_size IN LISTS SA_SIZES)
+    set(TARGET_NAME "ursa_${sa_size}x${sa_size}_tb")
 
-  # Cria um nome de executável baseado no tamanho
-  set(TARGET_NAME "ursa_${sa_size}x${sa_size}_tb")
+    add_executable(${TARGET_NAME} ${SRC_SOURCES} ${TB_SOURCES})
 
-  # Cria o executável
-  add_executable(${TARGET_NAME} ${SRC_SOURCES} ${TB_SOURCES})
+    target_compile_definitions(${TARGET_NAME} PRIVATE SA_SIZE=${sa_size})
 
-  # Define o valor de SA_SIZE como macro para o código C++
-  target_compile_definitions(${TARGET_NAME} PRIVATE SA_SIZE=${sa_size})
+    target_compile_options(${TARGET_NAME} PRIVATE
+        -Wno-error=bool-compare
+        -Wno-bool-compare
+    )
 
-  # (Opcional) Define flags extras de compilação, se necessário
-  target_compile_options(${TARGET_NAME} PRIVATE
-    -Wno-error=bool-compare
-    -Wno-bool-compare
-  )
-
-  # (Opcional) Adiciona como teste CTest
-  add_test(NAME ${TARGET_NAME} COMMAND ${TARGET_NAME})
-
+    add_test(NAME ${TARGET_NAME} COMMAND ${TARGET_NAME})
 endforeach()
-
-
-
-# Only SA_SIZE (old)
-# # Juntos todos os fontes
-# set(ALL_SOURCES ${SRC_SOURCES} ${TB_SOURCES})
-
-# # Debug: mostra o que foi coletado
-# message(STATUS "Fontes src: ${SRC_SOURCES}")
-# message(STATUS "Fontes tb: ${TB_SOURCES}")
-
-# # Gera executável
-# add_executable(ursa_tb ${ALL_SOURCES})

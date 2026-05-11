@@ -3,12 +3,6 @@
 
 #include "pe.h"
 
-#define SA_SIZE 8 // SA_SIZE is the size of the array, always squared height and width.
-
-#ifndef SA_SIZE
-   #define SA_SIZE 4 // valor padrão, só para segurança
-#endif
-
 typedef struct {
    PE pe[SA_SIZE][SA_SIZE];
    data_a_t in_mtx_a_li[SA_SIZE];

@@ -6,10 +6,6 @@
 
 // #define DEBUG
 
-#define P 8
-#define Q 8
-#define M 8
-
 void init_matrix_a(uint8_t *a, int rows, int cols);
 void init_matrix_b(int8_t *b, int rows, int cols);
 void print_matrix_a(uint8_t *a, int rows, int cols);

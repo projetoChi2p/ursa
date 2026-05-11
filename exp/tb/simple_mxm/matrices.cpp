@@ -76,19 +76,19 @@ int compare_mxm(int32_t *c, int32_t *c_gold, int p, int q)
             int idx = i * q + j;
             if (c[idx] != c_gold[idx]) 
             {
-#ifdef DEBUG
-                printf("[FAIL] c[%d][%d]: got %d, expected %d\n", 
-                        i, j, c[idx], c_gold[idx]);
-#endif
+// #ifdef DEBUG
+//                 printf("[FAIL] c[%d][%d]: got %d, expected %d\n", 
+//                         i, j, c[idx], c_gold[idx]);
+// #endif
                 pass = 0;
             }
         }
     }
     if (pass)
     {
-#ifdef DEBUG
-        printf("[PASS] URSA output matches gold!\n");
-#endif
+// #ifdef DEBUG
+//         printf("[PASS] URSA output matches gold!\n");
+// #endif
     }
 
     return pass;

@@ -1,9 +1,5 @@
 #include "shell.h"
 
-#ifdef FAULT_INJECT
-#include <cstdlib>
-#endif
-
 /********** FILL INPUTS *****************************************************************************/
 void fill_inputs_a(data_a_t *addr_a, data_a_t in_a[SA_SIZE], uint16_t t, uint16_t m){
     data_a_t value_a;
@@ -73,67 +69,173 @@ void load_inputs_sa(SA *sa, data_a_t in_a[SA_SIZE], data_b_t in_b[SA_SIZE]){
 /*****************************************************************************************************
 TOP FUNCTION
 ******************************************************************************************************/
-#ifdef LABFT
-    sa_result_t mxm_execute_ursa(
-        int8_t  *addr_a0,  
-        uint16_t a0_p, 
-        uint8_t *addr_b0, 
-        uint16_t b0_q,
-        int32_t *addr_c0,  
-        uint16_t m,
-        // bool     &tile_done,
-        // bool     &labft_irq,     // fio direto ao GIC: pulsa 1 ciclo a cada tile com erro
-        uint16_t &labft_count   // registrador AXI-Lite: ARM lê ao final do MxM
-    )
-#else
-    sa_result_t mxm_execute_ursa(
-        int8_t  *addr_a0,  
-        uint16_t a0_p, 
-        uint8_t *addr_b0, 
-        uint16_t b0_q,
-        int32_t *addr_c0,  
-        uint16_t m
-    )
-#endif
+// #ifdef LABFT
+//     sa_result_t mxm_execute_ursa(
+//         int8_t  *addr_a0,  
+//         uint16_t a0_p, 
+//         uint8_t *addr_b0, 
+//         uint16_t b0_q,
+//         int32_t *addr_c0,  
+//         uint16_t m,
+//         // bool    &labft_irq,     // fio direto ao GIC: pulsa 1 ciclo a cada tile com erro
+//         uint16_t &labft_count   // registrador AXI-Lite: ARM lê ao final do MxM
+//     )
+// #else
+//     sa_result_t mxm_execute_ursa(
+//         int8_t  *addr_a0,  
+//         uint16_t a0_p, 
+//         uint8_t *addr_b0, 
+//         uint16_t b0_q,
+//         int32_t *addr_c0,  
+//         uint16_t m
+//     )
+// #endif
+
+#ifdef IM2COL
+    #ifdef LABFT
+        sa_result_t mxm_execute_ursa(
+            int8_t  *addr_a0,
+            uint16_t a0_p,
+            uint8_t *addr_img,
+            uint16_t b0_q,
+            int32_t *addr_c0,
+            uint16_t m,
+            uint8_t  ch_in,
+            uint16_t wh_in,
+            uint8_t  wh_kernel,
+            uint8_t  pad,
+            uint8_t  stride,
+            uint16_t &labft_count
+        )
+    #else
+        sa_result_t mxm_execute_ursa(
+            int8_t  *addr_a0,
+            uint16_t a0_p,
+            uint8_t *addr_img,
+            uint16_t b0_q,
+            int32_t *addr_c0,
+            uint16_t m,
+            uint8_t  ch_in,
+            uint16_t wh_in,
+            uint8_t  wh_kernel,
+            uint8_t  pad,
+            uint8_t  stride
+        )
+    #endif
+ 
+#else /* !IM2COL — assinatura original */
+ 
+    #ifdef LABFT
+        sa_result_t mxm_execute_ursa(
+            int8_t  *addr_a0,
+            uint16_t a0_p,
+            uint8_t *addr_b0,
+            uint16_t b0_q,
+            int32_t *addr_c0,
+            uint16_t m,
+            uint16_t &labft_count
+        )
+    #else
+        sa_result_t mxm_execute_ursa(
+            int8_t  *addr_a0,
+            uint16_t a0_p,
+            uint8_t *addr_b0,
+            uint16_t b0_q,
+            int32_t *addr_c0,
+            uint16_t m
+        )
+    #endif
+ 
+#endif /* IM2COL */
 
 {
-    //Casted apenas do ponteiro, não dos dados
-    data_a_t *casted_a0 = (data_a_t*)addr_a0;
-    data_b_t *casted_b0 = (data_b_t*)addr_b0;
-    data_c_t *casted_c0 = (data_c_t*)addr_c0;
+    // //Casted apenas do ponteiro, não dos dados
+    // data_a_t *casted_a0 = (data_a_t*)addr_a0;
+    // data_b_t *casted_b0 = (data_b_t*)addr_b0;
+    // data_c_t *casted_c0 = (data_c_t*)addr_c0;
     
+    data_a_t *casted_a0 = (data_a_t*)addr_a0;
+    data_c_t *casted_c0 = (data_c_t*)addr_c0;
+ 
+#ifdef IM2COL
+    /* ── Im2col interno ──────────────────────────────────────
+       Transforma a imagem raw CHW em matriz coluna B.
+       b0_q (n_c_cols) foi calculado pelo ARM e passado aqui
+       apenas para o tiling — o im2col usa os parâmetros
+       de convolução para recalcular internamente.           */
+    uint16_t b0_q_check;
+    populate_bi_with_im2col_2(
+        addr_img,
+        ch_in, wh_in, wh_in,
+        wh_kernel, wh_kernel,
+        pad, pad,
+        stride, stride,
+        &b0_q_check,
+        g_bi_im2col
+    );
+    data_b_t *casted_b0 = g_bi_im2col;
+#else
+    data_b_t *casted_b0 = (data_b_t*)addr_b0;
+#endif
+
 
 /********** INTERFACE WITH CPU_ARM ******************************************************************/
-    #pragma HLS INTERFACE mode=m_axi port=casted_a0 bundle=aw offset=slave \
-            num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=16 \
+    // #pragma HLS INTERFACE mode=m_axi port=casted_a0 bundle=aw offset=slave \
+    //         num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=16 \
+    //         max_write_burst_length=16  depth=200
+
+    // #pragma HLS INTERFACE mode=m_axi port=casted_b0 bundle=bi offset=slave \
+    //         num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=16 \
+    //         max_write_burst_length=16  depth=200
+
+    // #pragma HLS INTERFACE mode=m_axi port=casted_c0 bundle=ca offset=slave \
+    //         num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=16 \
+    //         max_write_burst_length=16  depth=200
+
+    // #pragma HLS INTERFACE mode=s_axilite port=return bundle=ap register
+    // #pragma HLS INTERFACE mode=s_axilite port=a0_p   bundle=ap register
+    // #pragma HLS INTERFACE mode=s_axilite port=b0_q   bundle=ap register
+    // #pragma HLS INTERFACE mode=s_axilite port=m      bundle=ap register
+
+/********** INTERFACE WITH CPU_ARM ******************************************************************/
+#pragma HLS INTERFACE mode=m_axi port=casted_a0 bundle=aw offset=slave \
+        num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \
+        max_write_burst_length=16  depth=200
+
+#pragma HLS INTERFACE mode=m_axi port=casted_c0 bundle=ca offset=slave \
+        num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \
+        max_write_burst_length=16  depth=200
+
+#pragma HLS INTERFACE mode=s_axilite port=return bundle=ap register
+#pragma HLS INTERFACE mode=s_axilite port=a0_p   bundle=ap register
+#pragma HLS INTERFACE mode=s_axilite port=b0_q   bundle=ap register
+#pragma HLS INTERFACE mode=s_axilite port=m      bundle=ap register
+
+#ifdef IM2COL
+    #pragma HLS INTERFACE mode=m_axi port=addr_img bundle=bi offset=slave \
+            num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \
             max_write_burst_length=16  depth=200
 
+    // Parâmetros im2col no mesmo bundle=ap — não criam novas interfaces
+    #pragma HLS INTERFACE mode=s_axilite port=ch_in     bundle=ap register
+    #pragma HLS INTERFACE mode=s_axilite port=wh_in     bundle=ap register
+    #pragma HLS INTERFACE mode=s_axilite port=wh_kernel bundle=ap register
+    #pragma HLS INTERFACE mode=s_axilite port=pad       bundle=ap register
+    #pragma HLS INTERFACE mode=s_axilite port=stride    bundle=ap register
+#else
     #pragma HLS INTERFACE mode=m_axi port=casted_b0 bundle=bi offset=slave \
-            num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=16 \
+            num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \
             max_write_burst_length=16  depth=200
-
-    #pragma HLS INTERFACE mode=m_axi port=casted_c0 bundle=ca offset=slave \
-            num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=16 \
-            max_write_burst_length=16  depth=200
-
-
-    #pragma HLS INTERFACE mode=s_axilite port=return bundle=ap register
-    // #pragma HLS INTERFACE mode=s_axilite port=return bundle=ap_status register
-
-    #pragma HLS INTERFACE mode=s_axilite port=a0_p   bundle=ap register
-    #pragma HLS INTERFACE mode=s_axilite port=b0_q   bundle=ap register
-    #pragma HLS INTERFACE mode=s_axilite port=m      bundle=ap register
+#endif
 
 #ifdef LABFT
-    // #pragma HLS INTERFACE mode=ap_none port=tile_done
-    // // labft_irq: fio ap_none, pulsa HIGH por 1 ciclo a cada tile com erro
-    // // Conectar ao GIC configurado para detecção de borda de subida
+    // labft_irq: fio ap_none, pulsa HIGH por 1 ciclo a cada tile com erro
+    // Conectar ao GIC configurado para detecção de borda de subida
     // #pragma HLS INTERFACE mode=ap_none port=labft_irq
 
     // labft_count: registrador AXI-Lite, o ARM lê ao final da execução do MxM
     #pragma HLS INTERFACE mode=s_axilite port=labft_count bundle=labft_ctrl register
 
-    // tile_done   = false;  
     // labft_irq   = false;
     labft_count = 0;
 #endif   
@@ -176,7 +278,6 @@ TOP FUNCTION
                     SA_SIZE, m, b0_q
                 );
                 // labft_irq = false;  // ← limpa no início de cada tile
-                // tile_done = false;
 #endif
                 /* ---- Computação SA ---- */
                 uint16_t t=0;
@@ -202,13 +303,15 @@ TOP FUNCTION
 #ifdef LABFT
   #ifdef FAULT_INJECT
                 // /* Injeta erro somente no tile (0,0) para teste */
-                // if (i == 0 && j == 0) casted_c0[0] += 1;
-
-                // /* Injeta erro em tiles alternados (0, 2, 4...) */
-                // if ((i * call_b + j) % 2 == 0) addr_sa_c[0] += 1; 
-
-                /* Injeta erro em todos os tiles */
-                addr_sa_c[0] += 1;           
+                // if (i == 0 && j == 0) {
+                //     casted_c0[0] += 1;
+                /* Injeta erro em tiles alternados (0, 2, 4...) */
+                if ((i * call_b + j) % 2 == 0) {
+                    addr_sa_c[0] += 1;
+  #ifdef DEBUG
+                    printf("[FAULT] Erro injetado em C[0] (tile 0,0)\n\r");
+  #endif
+                }
   #endif
 
   #ifdef DEBUG
@@ -231,8 +334,6 @@ TOP FUNCTION
                            i, j, labft_count);
     #endif
                 }
-                
-                // tile_done = true;   // ← pulso ao fim do tile, com ou sem erro  
 #endif
             }
         }
