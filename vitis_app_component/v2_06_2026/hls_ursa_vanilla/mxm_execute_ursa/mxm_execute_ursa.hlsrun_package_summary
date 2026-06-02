@@ -1,0 +1,167 @@
+<ENTRY>
+{
+ "thisFile": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/mxm_execute_ursa/mxm_execute_ursa.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Jun  2 13:33:51 2026",
+ "timestampMillis": "1780418031462",
+ "buildStep": {
+  "cmdId": "19d10209-4383-4941-9bb2-37568905d5c1",
+  "name": "vitis-run",
+  "logFile": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/mxm_execute_ursa/logs/mxm_execute_ursa.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --package --config /home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/hls_config.cfg --work_dir mxm_execute_ursa ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/hls_config.cfg",
+   "--work_dir",
+   "mxm_execute_ursa"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun  2 13:33:51 2026",
+ "timestampMillis": "1780418031462",
+ "status": {
+  "cmdId": "19d10209-4383-4941-9bb2-37568905d5c1",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Jun  2 13:33:53 2026",
+ "timestampMillis": "1780418033779",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mxm_execute_ursa",
+     "file": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/mxm_execute_ursa/mxm_execute_ursa.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/ulisses/Projects/ursa/src/core/shell.cpp",
+     "/home/ulisses/Projects/ursa/src/core/shell.h",
+     "/home/ulisses/Projects/ursa/src/core/sa.h",
+     "/home/ulisses/Projects/ursa/src/core/pe.h",
+     "/home/ulisses/Projects/ursa/src/core/sa.cpp",
+     "/home/ulisses/Projects/ursa/src/core/pe.cpp",
+     "/home/ulisses/Projects/ursa/src/labft/labft.h",
+     "/home/ulisses/Projects/ursa/src/labft/labft.cpp",
+     "/home/ulisses/Projects/ursa/src/settings.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Jun  2 13:33:53 2026",
+ "timestampMillis": "1780418033780",
+ "buildStep": {
+  "cmdId": "679871fb-bb1b-4dc2-8216-ccdae612a19a",
+  "name": "export_design",
+  "logFile": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls/hls.log",
+  "commandLine": "export_design -flow none",
+  "args": [
+   "-flow",
+   "none"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun  2 13:33:53 2026",
+ "timestampMillis": "1780418033781",
+ "status": {
+  "cmdId": "679871fb-bb1b-4dc2-8216-ccdae612a19a",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun  2 13:34:08 2026",
+ "timestampMillis": "1780418048536",
+ "status": {
+  "cmdId": "679871fb-bb1b-4dc2-8216-ccdae612a19a",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun  2 13:34:08 2026",
+ "timestampMillis": "1780418048731",
+ "status": {
+  "cmdId": "19d10209-4383-4941-9bb2-37568905d5c1",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun  2 13:34:08 2026",
+ "timestampMillis": "1780418048731",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun  2 13:34:08 2026",
+ "timestampMillis": "1780418048732",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

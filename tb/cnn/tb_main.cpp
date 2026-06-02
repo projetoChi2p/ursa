@@ -494,6 +494,7 @@ int main(void)
         app_timer_init(); 
         #endif
 
+        
         for (test_cycle=0; test_cycle<1; test_cycle++) 
         {
             for (image_index=image_test_begin; image_index<image_test_end; image_index++) 
