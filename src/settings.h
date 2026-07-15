@@ -15,7 +15,7 @@
 #endif
  
 /* ── Dimensão do Systolic Array ────────────────────────── */
-#define SA_SIZE 8
+#define SA_SIZE 9 // mudar isso aqui para 10!
  
 /* ── Fault tolerance ───────────────────────────────────── */
 // #define LABFT

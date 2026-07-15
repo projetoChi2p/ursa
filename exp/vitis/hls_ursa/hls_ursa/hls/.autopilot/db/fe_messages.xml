@@ -1,0 +1,285 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5583" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/pe.cpp:16:9" msg_body="'#pragma HLS unroll' can only be applied inside loop body">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/pe.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="pe_compute" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_init" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sa-&gt;pe complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_init" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sa-&gt;in_mtx_a_li complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_init" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sa-&gt;in_mtx_b_tw complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_init" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_init" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_init" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:26:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_reset" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_reset" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:31:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_reset" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:38:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_input_a_b" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sa-&gt;in_mtx_a_li inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:39:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_input_a_b" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sa-&gt;in_mtx_b_tw inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:48:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:52:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_compute" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:59:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_compute" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:61:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_compute" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:68:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_compute" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:70:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_compute" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:77:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_compute" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:79:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_compute" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:86:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_store" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:89:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_store" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:91:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="sa_store" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5571" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:262:9" msg_body="Only 'for' loop or function body support the dataflow pragma">
+        <args ClangWarningOption="ignored-hls-attributes"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fill_inputs_a" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fill_inputs_a" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:39:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fill_inputs_b" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:41:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fill_inputs_b" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:61:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_inputs_sa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:64:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_inputs_sa" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=9" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mxm_execute_ursa" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:201:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=casted_a0 bundle=aw offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:205:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=casted_c0 bundle=ca offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:209:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=return bundle=ap register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:210:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=a0_p bundle=ap register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:211:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=b0_q bundle=ap register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:212:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=m bundle=ap register" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:226:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=casted_b0 bundle=bi offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:245:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_a complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:248:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_b complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:259:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sa complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:262:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:285:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mxm_execute_ursa" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5584" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/im2col/im2col.cpp:114:9" msg_body="unknown HLS pragma ignored">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/im2col/im2col.cpp:114:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="populate_bi_with_im2col_2" ARG_PragmaIsValid="0" ARG_PragmaType="loop_flatte" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/im2col/im2col.cpp:126:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="populate_bi_with_im2col_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/fi/Documents/GitHub/ursa/src/im2col/im2col.cpp:138:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="populate_bi_with_im2col_2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_DISAGGREGATE" msg_id="214-377" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:263:2" msg_body="Adding 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa' into disaggregation list because there's array-partition pragma applied on the struct field">
+        <args Name="mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa"/>
+    </msg>
+    <msg msg_groups="PRAGMA_DISAGGREGATE" msg_id="214-210" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:258:0" msg_body="Disaggregating variable 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa'">
+        <args Name="mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:28:19" msg_body="Loop 'VITIS_LOOP_28_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_28_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:30:19" msg_body="Loop 'VITIS_LOOP_30_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_30_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:88:19" msg_body="Loop 'VITIS_LOOP_88_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_88_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:90:19" msg_body="Loop 'VITIS_LOOP_90_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_90_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:76:21" msg_body="Loop 'VITIS_LOOP_76_6' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_76_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:78:19" msg_body="Loop 'VITIS_LOOP_78_7' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_78_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:67:21" msg_body="Loop 'VITIS_LOOP_67_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_67_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:69:19" msg_body="Loop 'VITIS_LOOP_69_5' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_69_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:58:21" msg_body="Loop 'VITIS_LOOP_58_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_58_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:60:19" msg_body="Loop 'VITIS_LOOP_60_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_60_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:51:19" msg_body="Loop 'VITIS_LOOP_51_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_51_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:63:19" msg_body="Loop 'VITIS_LOOP_63_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_63_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:40:19" msg_body="Loop 'VITIS_LOOP_40_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_40_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:12:19" msg_body="Loop 'VITIS_LOOP_12_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_12_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:25:0" msg_body="Unrolling loop 'VITIS_LOOP_28_1' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:28:19) in function 'sa_reset' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:28:19" LoopName="VITIS_LOOP_28_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:25:0" msg_body="Unrolling loop 'VITIS_LOOP_30_2' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:30:19) in function 'sa_reset' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:30:19" LoopName="VITIS_LOOP_30_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:85:0" msg_body="Unrolling loop 'VITIS_LOOP_88_1' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:88:19) in function 'sa_store' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:88:19" LoopName="VITIS_LOOP_88_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:85:0" msg_body="Unrolling loop 'VITIS_LOOP_90_2' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:90:19) in function 'sa_store' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:90:19" LoopName="VITIS_LOOP_90_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:45:0" msg_body="Unrolling loop 'VITIS_LOOP_76_6' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:76:21) in function 'sa_compute' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:76:21" LoopName="VITIS_LOOP_76_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:45:0" msg_body="Unrolling loop 'VITIS_LOOP_78_7' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:78:19) in function 'sa_compute' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:78:19" LoopName="VITIS_LOOP_78_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:45:0" msg_body="Unrolling loop 'VITIS_LOOP_67_4' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:67:21) in function 'sa_compute' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:67:21" LoopName="VITIS_LOOP_67_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:45:0" msg_body="Unrolling loop 'VITIS_LOOP_69_5' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:69:19) in function 'sa_compute' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:69:19" LoopName="VITIS_LOOP_69_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:45:0" msg_body="Unrolling loop 'VITIS_LOOP_58_2' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:58:21) in function 'sa_compute' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:58:21" LoopName="VITIS_LOOP_58_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:45:0" msg_body="Unrolling loop 'VITIS_LOOP_60_3' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:60:19) in function 'sa_compute' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:60:19" LoopName="VITIS_LOOP_60_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:45:0" msg_body="Unrolling loop 'VITIS_LOOP_51_1' (/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:51:19) in function 'sa_compute' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:51:19" LoopName="VITIS_LOOP_51_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:60:0" msg_body="Unrolling loop 'VITIS_LOOP_63_1' (/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:63:19) in function 'load_inputs_sa' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:63:19" LoopName="VITIS_LOOP_63_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:32:0" msg_body="Unrolling loop 'VITIS_LOOP_40_1' (/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:40:19) in function 'fill_inputs_b' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:40:19" LoopName="VITIS_LOOP_40_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:4:0" msg_body="Unrolling loop 'VITIS_LOOP_12_1' (/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:12:19) in function 'fill_inputs_a' completely with a factor of 9">
+        <args Factor="9" LoopLoc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:12:19" LoopName="VITIS_LOOP_12_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:60:0" msg_body="Inlining function 'sa_input_a_b(SA*, ap_int&lt;8&gt;, ap_uint&lt;8&gt;, unsigned short)' into 'load_inputs_sa(SA*, ap_int&lt;8&gt;*, ap_uint&lt;8&gt;*)'">
+        <args Callee="sa_input_a_b(SA*, ap_int&lt;8&gt;, ap_uint&lt;8&gt;, unsigned short)" Callee-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/sa.cpp Line 37 Column 0" Caller="load_inputs_sa(SA*, ap_int&lt;8&gt;*, ap_uint&lt;8&gt;*)" Caller-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 60 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:258:0" msg_body="Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:258:0" msg_body="Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.bw': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.bw"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:258:0" msg_body="Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ri': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ri"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:258:0" msg_body="Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.tw': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.tw"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:258:0" msg_body="Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.li': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.li"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:258:0" msg_body="Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_a_li': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_a_li"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:258:0" msg_body="Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_b_tw': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_b_tw"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:244:11" msg_body="Applying array_partition to 'in_a': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="in_a"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:247:11" msg_body="Applying array_partition to 'in_b': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="in_b"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:287:2" msg_body="Automatically inlining function 'fill_inputs_a(ap_int&lt;8&gt;*, ap_int&lt;8&gt;*, unsigned short, unsigned short)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'">
+        <args Callee="fill_inputs_a(ap_int&lt;8&gt;*, ap_int&lt;8&gt;*, unsigned short, unsigned short)" Callee-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 4 Column 0" Caller="mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)" Caller-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 151 Column 0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:288:21" msg_body="Automatically inlining function 'fill_inputs_b(ap_uint&lt;8&gt;*, unsigned short, ap_uint&lt;8&gt;*, unsigned short, unsigned short)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'">
+        <args Callee="fill_inputs_b(ap_uint&lt;8&gt;*, unsigned short, ap_uint&lt;8&gt;*, unsigned short, unsigned short)" Callee-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 32 Column 0" Caller="mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)" Caller-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 151 Column 0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:291:21" msg_body="Automatically inlining function 'load_inputs_sa(SA*, ap_int&lt;8&gt;*, ap_uint&lt;8&gt;*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'">
+        <args Callee="load_inputs_sa(SA*, ap_int&lt;8&gt;*, ap_uint&lt;8&gt;*)" Callee-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 60 Column 0" Caller="mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)" Caller-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 151 Column 0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/shell.cpp:294:21" msg_body="Automatically inlining function 'sa_compute(SA*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'">
+        <args Callee="sa_compute(SA*)" Callee-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/sa.cpp Line 45 Column 0" Caller="mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)" Caller-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 151 Column 0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:80:2" msg_body="Automatically inlining function 'pe_compute(PE*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'">
+        <args Callee="pe_compute(PE*)" Callee-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/pe.cpp Line 15 Column 0" Caller="mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)" Caller-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/shell.cpp Line 151 Column 0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION" msg_id="214-364" msg_severity="INFO" msg_loc="/home/fi/Documents/GitHub/ursa/src/core/sa.cpp:32:2" msg_body="Automatically inlining function 'pe_reset(PE*)' to improve effectiveness of pipeline pragma in function 'sa_reset(SA*)'">
+        <args Callee="pe_reset(PE*)" Callee-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/pe.cpp Line 11 Column 0" Caller="sa_reset(SA*)" Caller-DebugLoc="File /home/fi/Documents/GitHub/ursa/src/core/sa.cpp Line 25 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

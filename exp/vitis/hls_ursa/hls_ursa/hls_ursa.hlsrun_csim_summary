@@ -1,0 +1,166 @@
+<ENTRY>
+{
+ "thisFile": "/home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa/hls_ursa.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed Jul  8 16:48:32 2026",
+ "timestampMillis": "1783540112649",
+ "buildStep": {
+  "cmdId": "f1a3ea1a-4225-4a17-9db4-12ceaf150429",
+  "name": "vitis-run",
+  "logFile": "/home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa/logs/hls_ursa.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg --work_dir hls_ursa ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg",
+   "--work_dir",
+   "hls_ursa"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul  8 16:48:32 2026",
+ "timestampMillis": "1783540112649",
+ "status": {
+  "cmdId": "f1a3ea1a-4225-4a17-9db4-12ceaf150429",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed Jul  8 16:48:33 2026",
+ "timestampMillis": "1783540113890",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mxm_execute_ursa",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/fi/Documents/GitHub/ursa/src/labft/labft.h",
+     "/home/fi/Documents/GitHub/ursa/src/labft/labft.cpp",
+     "/home/fi/Documents/GitHub/ursa/src/im2col/im2col.h",
+     "/home/fi/Documents/GitHub/ursa/src/im2col/im2col.cpp",
+     "/home/fi/Documents/GitHub/ursa/src/core/shell.h",
+     "/home/fi/Documents/GitHub/ursa/src/core/shell.cpp",
+     "/home/fi/Documents/GitHub/ursa/src/core/sa.h",
+     "/home/fi/Documents/GitHub/ursa/src/core/sa.cpp",
+     "/home/fi/Documents/GitHub/ursa/src/core/pe.h",
+     "/home/fi/Documents/GitHub/ursa/src/core/pe.cpp",
+     "/home/fi/Documents/GitHub/ursa/src/settings.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed Jul  8 16:48:33 2026",
+ "timestampMillis": "1783540113890",
+ "buildStep": {
+  "cmdId": "2019fd23-73b8-4f60-a995-99ca3f35fe8d",
+  "name": "csim_design",
+  "logFile": "/home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa/hls/hls.log",
+  "commandLine": "csim_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul  8 16:48:33 2026",
+ "timestampMillis": "1783540113890",
+ "status": {
+  "cmdId": "2019fd23-73b8-4f60-a995-99ca3f35fe8d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul  8 16:48:34 2026",
+ "timestampMillis": "1783540114002",
+ "status": {
+  "cmdId": "2019fd23-73b8-4f60-a995-99ca3f35fe8d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul  8 16:48:34 2026",
+ "timestampMillis": "1783540114063",
+ "status": {
+  "cmdId": "f1a3ea1a-4225-4a17-9db4-12ceaf150429",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul  8 16:48:34 2026",
+ "timestampMillis": "1783540114063",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul  8 16:48:34 2026",
+ "timestampMillis": "1783540114063",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

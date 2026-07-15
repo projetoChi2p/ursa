@@ -1,0 +1,123 @@
+INFO: [vitis-run 60-1548] Creating build summary session with primary output /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa/hls_ursa.hlsrun_cosim_summary, at Mon Jul  6 16:00:33 2026
+INFO: [vitis-run 82-31] Launching vitis_hls: vitis_hls -nolog -run cosim -work_dir /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa -config /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg -cmdlineconfig /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa/hls/config.cmdline
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'fi' on host '67221-1' (Linux_x86_64 version 6.8.0-124-generic) on Mon Jul 06 16:00:34 -03 2026
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa'
+INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg
+INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa/hls/config.cmdline
+INFO: [HLS 200-2005] Using work_dir /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa 
+INFO: [HLS 200-1510] Running: open_project /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa -diskless 
+INFO: [HLS 200-1510] Running: open_solution hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: apply_ini /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg 
+INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/labft/labft.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/labft/labft.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/labft/labft.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/labft/labft.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/im2col/im2col.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/im2col/im2col.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/im2col/im2col.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/im2col/im2col.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/core/shell.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/core/shell.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/core/shell.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/core/shell.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/core/sa.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/core/sa.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/core/sa.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(14)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/core/sa.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/core/pe.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(15)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/core/pe.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/core/pe.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(16)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/core/pe.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/src/settings.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(17)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/src/settings.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/tb_main.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(18)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/tb_main.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/utils.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(19)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/utils.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/utils.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(20)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/utils.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/ursa_math.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(21)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/ursa_math.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/ursa_math.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(22)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/ursa_math.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_weights_qonnx_t3w8.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(23)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_weights_qonnx_t3w8.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_weights.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(24)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_weights.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_network.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(25)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_network.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_eval_images_hwc_8_8_18.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(26)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_eval_images_hwc_8_8_18.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_eval_images.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(27)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_eval_images.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_conv_engine.h' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(28)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_conv_engine.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_conv_engine.cpp' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(29)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/tb/cnn/cnn_conv_engine.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=mxm_execute_ursa' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(30)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xc7z020clg484-1' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1465] Applying ini 'clock=10ns' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(31)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying ini 'package.ip.display_name=ursa_vanilla_6x6' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(34)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(5)
+INFO: [HLS 200-1465] Applying ini 'syn.interface.m_axi_addr64=0' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(33)
+INFO: [HLS 200-1465] Applying ini 'syn.interface.m_axi_max_bitwidth=32' at /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_config.cfg(32)
+INFO: [HLS 200-1510] Running: apply_ini /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa/hls/config.cmdline 
+INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/vitis/hls_ursa/hls_ursa/hls/config.cmdline
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/opt/Xilinx/Vitis_HLS/2023.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_mxm_execute_ursa.cpp
+   Compiling cnn_conv_engine.cpp_pre.cpp.tb.cpp
+   Compiling cnn_eval_images_hwc_8_8_18.cpp_pre.cpp.tb.cpp
+   Compiling cnn_weights_qonnx_t3w8.cpp_pre.cpp.tb.cpp
+   Compiling im2col.cpp_pre.cpp.tb.cpp
+   Compiling labft.cpp_pre.cpp.tb.cpp
+   Compiling pe.cpp_pre.cpp.tb.cpp
+   Compiling sa.cpp_pre.cpp.tb.cpp
+   Compiling shell.cpp_pre.cpp.tb.cpp
+   Compiling tb_main.cpp_pre.cpp.tb.cpp
+   Compiling ursa_math.cpp_pre.cpp.tb.cpp
+   Compiling utils.cpp_pre.cpp.tb.cpp
+   Compiling apatb_mxm_execute_ursa_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ceil(256)=258 [111]
+ERROR: System received a signal named SIGSEGV and the program has to stop immediately!
+This signal was generated when a program tries to read or write outside the memory that is allocated for it, or to write memory that can only be read.
+Possible cause of this problem may be:
+  1) Missing depth information for one or more pointers to arrays in the interface;
+  2) Insufficient depth setting for array argument(s);
+  3) Excessive depth setting for array argument(s), that exceeds the maximum virtual memory size for the process;
+  4) Null pointer etc.
+Current execution stopped during CodeState = DUMP_OUTPUTS.
+You can search CodeState variable name in apatb*.cpp file under ./sim/wrapc dir to locate the position.
+
+ERROR: [COSIM 212-360] Aborting co-simulation: C TB simulation failed.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 1.38 seconds. CPU system time: 0.45 seconds. Elapsed time: 2.16 seconds; current allocated memory: 6.383 MB.
+INFO: [HLS 200-1510] Running: close_project 
+ERROR: 
+INFO: [HLS 200-112] Total CPU user time: 2.11 seconds. Total CPU system time: 0.54 seconds. Total elapsed time: 2.96 seconds; peak allocated memory: 280.977 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Mon Jul  6 16:00:37 2026...
