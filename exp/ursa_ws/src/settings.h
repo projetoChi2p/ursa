@@ -15,7 +15,7 @@
 #endif
  
 /* ── Dimensão do Systolic Array ────────────────────────── */
-#define SA_SIZE 9 // mudar isso aqui para 10!
+#define SA_SIZE 8
  
 /* ── Fault tolerance ───────────────────────────────────── */
 // #define LABFT
@@ -43,12 +43,19 @@
     typedef ap_uint <8>  data_b_t; //pixel
     typedef ap_int  <32> data_c_t; //bramc
     typedef ap_int  <20> macc_t;   //bramc
-#else
-    typedef int8_t  data_a_t; //weight
-    typedef uint8_t data_b_t; //pixel
-    typedef int32_t data_c_t; //bramc
-    typedef int32_t macc_t;   //bramc
 #endif
+
+// Matriz A: Pesos | Matriz B: Inputs | Matriz C: Resultados 
+typedef int8_t  data_a_t; //weight
+typedef uint8_t data_b_t; //pixel
+typedef int32_t data_c_t; //bramc
+typedef int32_t macc_t;   //bramc
+
+
+typedef data_c_t lr_t; //result
+typedef data_b_t tb_t; //pixel 
+typedef data_a_t fixed_t; //weight
+
 
 typedef uint8_t sa_result_t;
  
