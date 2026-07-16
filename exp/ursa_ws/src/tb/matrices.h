@@ -5,10 +5,13 @@
 #include <stdio.h>
 #include "../settings.h"
 
-void matrices_init_lr(lr_t *matrix_lr, int rows, int cols);
-void matrices_init_tb(tb_t *matrix_tb, int rows, int cols);
-void matrices_print_lr(lr_t *matrix_lr, int rows, int cols);
-void matrices_print_tb(lr_t *matrix_tb, int rows, int cols);
-void gold_mxm(lr_t *matrix_lr, tb_t *matrix_tb, fixed_t *matrix_fixed, int p, int m, int q);
+void matrices_init_a(data_a_t *a, int rows, int cols);
+void matrices_init_b(data_b_t *b, int rows, int cols);
+void matrices_init_c(data_c_t *c, int rows, int cols);
+void matrices_print_a(data_a_t *a, int rows, int cols);
+void matrices_print_b(data_b_t *b, int rows, int cols);
+void matrices_print_c(data_c_t *c, int rows, int cols);
+void gold_mxm(data_a_t *a, data_b_t *b, data_c_t *c, int p, int m, int q);
+int compare_mxm(data_c_t *c, data_c_t *c_gold, int p, int q);
 
 #endif
