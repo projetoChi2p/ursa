@@ -1,0 +1,3618 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 69, Column: 2 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'pe_load_weights(PE*)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp, 
+                       Line: 23, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'sa_load_weights(SA*)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                       Line: 45, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 109, Column: 2 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'pe_compute(PE*)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp, 
+                       Line: 16, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'sa_compute(SA*)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                       Line: 74, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-reg2mem-ssa
+Name:            DisaggrReason
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 10, Column: 9 }
+Function:        _Z7sa_initP2SA
+Args:            
+  - String:          'Adding '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa'
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-reg2mem-ssa
+Name:            DisaggrReason
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 9, Column: 9 }
+Function:        _Z7sa_initP2SA
+Args:            
+  - String:          'Adding '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa'
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-reg2mem-ssa
+Name:            DisaggrReason
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 8, Column: 9 }
+Function:        _Z7sa_initP2SA
+Args:            
+  - String:          'Adding '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa'
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrReason
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 255, Column: 2 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Adding '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa'
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrReason
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 255, Column: 2 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Adding '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa'
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrReason
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 255, Column: 2 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Adding '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa'
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrSucc
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 250, Column: 0 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Disaggregating variable '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa'
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 283, Column: 39 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_283_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 60, Column: 19 }
+Function:        _Z19store_right_outputsP2SAP6ap_intILi32EEttt
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 105, Column: 22 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_105_6
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 107, Column: 20 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 96, Column: 21 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_96_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 98, Column: 19 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_98_5
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 87, Column: 21 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_87_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 89, Column: 19 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_89_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 80, Column: 19 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_80_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 50, Column: 19 }
+Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_50_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 21, Column: 19 }
+Function:        _Z15fill_top_inputsP7ap_uintILi8EEtS1_t
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_21_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 65, Column: 21 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_65_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 67, Column: 19 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 56, Column: 21 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_56_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 58, Column: 19 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 50, Column: 21 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_50_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 40, Column: 22 }
+Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_t
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_40_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 140, Column: 0 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_283_4
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:283:39'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mxm_execute_ursa
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 56, Column: 0 }
+Function:        _Z19store_right_outputsP2SAP6ap_intILi32EEttt
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:60:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          store_right_outputs
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_105_6
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:105:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_107_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_96_4
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:96:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '7'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_87_2
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:87:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '7'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_89_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_89_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_89_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_89_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_89_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_89_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_89_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 74, Column: 0 }
+Function:        _Z10sa_computeP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_80_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:80:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_compute
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 47, Column: 0 }
+Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_50_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:50:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          load_inputs_sa
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 19, Column: 0 }
+Function:        _Z15fill_top_inputsP7ap_uintILi8EEtS1_t
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_21_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:21:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          fill_top_inputs
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_65_4
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:65:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_56_2
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:56:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '7'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                   Line: 45, Column: 0 }
+Function:        _Z15sa_load_weightsP2SA
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_50_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:50:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          sa_load_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 33, Column: 0 }
+Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_t
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_40_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          fetch_weight_row
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 47, Column: 0 }
+Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'sa_input_l_t(SA*, ap_int<32>, ap_uint<8>, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                       Line: 37, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'load_inputs_sa(SA*, ap_int<32>*, ap_uint<8>*)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 47, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 250, Column: 0 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 250, Column: 0 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 250, Column: 0 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 250, Column: 0 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 250, Column: 0 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 250, Column: 0 }
+Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_l
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 250, Column: 0 }
+Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_t
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          l_in
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 236, Column: 7 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          t_in
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 239, Column: 10 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fixed_in
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 43, Column: 14 }
+Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_t
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep1seq
+  - ArrayName:       addr_fixed
+  - String:          ' '
+  - BundleName:      aw
+  - String:          ' '
+  - Function:        'fetch_weight_row(ap_int<8>*, unsigned short, ap_int<8>*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 33, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          entry.load.32
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          entry.load.35
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          entry.load.38
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          entry.load.41
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          entry.load.44
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          entry.load.47
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          entry.load.50
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          entry.load.53
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 43, Column: 14 }
+Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_t
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 43, Column: 14 }
+  - OrigDirection:   read
+  - OrigID:          scevgep1seq
+  - ArrayName:       addr_fixed
+  - String:          ' '
+  - BundleName:      aw
+  - String:          ' '
+  - Function:        'fetch_weight_row(ap_int<8>*, unsigned short, ap_int<8>*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 33, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-inline-performance-driven
+Name:            AutoInlinePerf
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 280, Column: 2 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Automatically inlining function '''
+  - Callee:          'fetch_weight_row(ap_int<8>*, unsigned short, ap_int<8>*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 33, Column: 0 }
+  - String:          ''' to improve effectiveness of pipeline pragma in function '''
+  - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 140, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-auto-inline-performance-driven
+Name:            AutoInlinePerf
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 289, Column: 21 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Automatically inlining function '''
+  - Callee:          'sa_load_weights(SA*)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                       Line: 45, Column: 0 }
+  - String:          ''' to improve effectiveness of pipeline pragma in function '''
+  - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 140, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-auto-inline-performance-driven
+Name:            AutoInlinePerf
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 300, Column: 21 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Automatically inlining function '''
+  - Callee:          'fill_top_inputs(ap_uint<8>*, unsigned short, ap_uint<8>*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 19, Column: 0 }
+  - String:          ''' to improve effectiveness of pipeline pragma in function '''
+  - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 140, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-auto-inline-performance-driven
+Name:            AutoInlinePerf
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 303, Column: 21 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Automatically inlining function '''
+  - Callee:          'load_inputs_sa(SA*, ap_int<32>*, ap_uint<8>*)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 47, Column: 0 }
+  - String:          ''' to improve effectiveness of pipeline pragma in function '''
+  - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 140, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-auto-inline-performance-driven
+Name:            AutoInlinePerf
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 306, Column: 21 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Automatically inlining function '''
+  - Callee:          'sa_compute(SA*)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp, 
+                       Line: 74, Column: 0 }
+  - String:          ''' to improve effectiveness of pipeline pragma in function '''
+  - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 140, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-auto-inline-performance-driven
+Name:            AutoInlinePerf
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 309, Column: 21 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Automatically inlining function '''
+  - Callee:          'store_right_outputs(SA*, ap_int<32>*, unsigned short, unsigned short, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 56, Column: 0 }
+  - String:          ''' to improve effectiveness of pipeline pragma in function '''
+  - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 140, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_0)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_0)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_1)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_1)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_2)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_2)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_3'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_3)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_3)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_4'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_4)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_4)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_5'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_5)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_5)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_6'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_6)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_6)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_7'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_7)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_7)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_0)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_0)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_1)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_1)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_2)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_2)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_3'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_3)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_3)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_4'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_4)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_4)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_5'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_5)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_5)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_6'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_6)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_6)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_7'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_7)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_7)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_0)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_0)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_1)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_1)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_2)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_2)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_3'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_3)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_3)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_4'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_4)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_4)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_5'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_5)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_5)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_6'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_6)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_6)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_7'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_7)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_7)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_0)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_0)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_1)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_1)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_2)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_2)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_3'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_3)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_3)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_4'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_4)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_4)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_5'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_5)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_5)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_6'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_6)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_6)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_7'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_7)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_7)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_0)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_0)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_1)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_1)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_2)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_2)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_3'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_3)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_3)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_4'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_4)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_4)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_5'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_5)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_5)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_6'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_6)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_6)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_7'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  mxm_execute_ursa
+  - String:          ' '
+  - VarName:         'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_7)'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_7)'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_7
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_5
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_4
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_3
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_7
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_5
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_4
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_3
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_7
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_5
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_4
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_3
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_7
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_5
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_4
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_3
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_7
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_6
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_5
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_4
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_3
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 43, Column: 14 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      aw
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 140, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 43, Column: 14 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      aw
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

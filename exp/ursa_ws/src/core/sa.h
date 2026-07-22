@@ -5,13 +5,12 @@
 
 typedef struct {
    PE pe[SA_SIZE][SA_SIZE];
-   data_a_t in_mtx_a[SA_SIZE];
-   data_b_t in_mtx_b[SA_SIZE];  
-   data_c_t out_mtx_c[SA_SIZE];
+   lr_t in_mtx_l[SA_SIZE];
+   tb_t in_mtx_t[SA_SIZE];
 }SA;
 
 void sa_init(SA *sa);
-void sa_input_a_b(SA *sa, data_a_t in_a, data_b_t in_b, unsigned short k);
+void sa_input_l_t(SA *sa, lr_t l_in, tb_t t_in, uint16_t k);
 void sa_load_weights(SA *sa);
 void sa_compute(SA *sa);
 // void sa_store(SA *sa, data_c_t *out,unsigned short b0_q);

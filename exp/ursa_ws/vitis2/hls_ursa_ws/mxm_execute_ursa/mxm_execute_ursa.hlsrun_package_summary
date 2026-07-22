@@ -1,0 +1,165 @@
+<ENTRY>
+{
+ "thisFile": "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/mxm_execute_ursa.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed Jul 22 13:28:32 2026",
+ "timestampMillis": "1784737712979",
+ "buildStep": {
+  "cmdId": "4c6d4275-2b46-40e2-a21d-0aa963837dfc",
+  "name": "vitis-run",
+  "logFile": "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/logs/mxm_execute_ursa.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --package --config /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg --work_dir mxm_execute_ursa ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg",
+   "--work_dir",
+   "mxm_execute_ursa"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 22 13:28:32 2026",
+ "timestampMillis": "1784737712979",
+ "status": {
+  "cmdId": "4c6d4275-2b46-40e2-a21d-0aa963837dfc",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed Jul 22 13:28:34 2026",
+ "timestampMillis": "1784737714218",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mxm_execute_ursa",
+     "file": "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/mxm_execute_ursa.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp",
+     "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp",
+     "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.h",
+     "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.h",
+     "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp",
+     "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.h",
+     "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/settings.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed Jul 22 13:28:34 2026",
+ "timestampMillis": "1784737714218",
+ "buildStep": {
+  "cmdId": "20b14790-fc8c-4737-b9a1-1b9f7351d3dc",
+  "name": "export_design",
+  "logFile": "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/hls.log",
+  "commandLine": "export_design -flow none",
+  "args": [
+   "-flow",
+   "none"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 22 13:28:34 2026",
+ "timestampMillis": "1784737714218",
+ "status": {
+  "cmdId": "20b14790-fc8c-4737-b9a1-1b9f7351d3dc",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 22 13:28:42 2026",
+ "timestampMillis": "1784737722776",
+ "status": {
+  "cmdId": "20b14790-fc8c-4737-b9a1-1b9f7351d3dc",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 22 13:28:42 2026",
+ "timestampMillis": "1784737722840",
+ "status": {
+  "cmdId": "4c6d4275-2b46-40e2-a21d-0aa963837dfc",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 22 13:28:42 2026",
+ "timestampMillis": "1784737722841",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 22 13:28:42 2026",
+ "timestampMillis": "1784737722841",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

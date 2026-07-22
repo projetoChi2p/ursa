@@ -1,0 +1,15 @@
+/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:246:65: warning: format specifies type 'int' but the argument has type 'int8_t *' (aka 'signed char *') [-Wformat]
+    printf("[sa_shell] addr_a0: %d  addr_b0: %d addr_c0: %d\n", addr_a0, addr_b0, addr_c0);
+                                ~~                              ^~~~~~~
+                                %s
+/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:246:74: warning: format specifies type 'int' but the argument has type 'uint8_t *' (aka 'unsigned char *') [-Wformat]
+    printf("[sa_shell] addr_a0: %d  addr_b0: %d addr_c0: %d\n", addr_a0, addr_b0, addr_c0);
+                                             ~~                          ^~~~~~~
+                                             %s
+/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:246:83: warning: format specifies type 'int' but the argument has type 'int32_t *' (aka 'int *') [-Wformat]
+    printf("[sa_shell] addr_a0: %d  addr_b0: %d addr_c0: %d\n", addr_a0, addr_b0, addr_c0);
+                                                         ~~                       ^~~~~~~
+/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:254:9: warning: Only 'for' loop or function body support the dataflow pragma [-Wignored-hls-attributes]
+#pragma HLS DATAFLOW
+        ^~~~~~~~~~~~
+4 warnings generated.

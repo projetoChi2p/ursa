@@ -1,0 +1,107 @@
+{
+  "0": {
+    "basicblocks": 11,
+    "calls": "2 3 4 1 5 6",
+    "file": "shell.cpp",
+    "fileloc": 128,
+    "instructions": 138,
+    "loads": {
+      "L": 8
+    },
+    "name": "mxm_execute_ursa",
+    "stores": {
+      "G": 8
+    },
+    "total_instructions": 1950
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "shell.cpp",
+    "fileloc": 47,
+    "instructions": 153,
+    "loads": {
+      "L": 8
+    },
+    "name": "load_inputs_sa",
+    "stores": {
+      "G": 16
+    },
+    "total_instructions": 153
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "shell.cpp",
+    "fileloc": 33,
+    "instructions": 39,
+    "loads": {
+      "L": 8
+    },
+    "name": "fetch_weight_row",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 39
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "sa.cpp",
+    "fileloc": 45,
+    "instructions": 257,
+    "loads": {
+      "G": 64
+    },
+    "name": "sa_load_weights",
+    "stores": {
+      "G": 192
+    },
+    "total_instructions": 257
+  },
+  "4": {
+    "basicblocks": 25,
+    "calls": "",
+    "file": "shell.cpp",
+    "fileloc": 19,
+    "instructions": 146,
+    "loads": {
+      "L": 8
+    },
+    "name": "fill_top_inputs",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 146
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "sa.cpp",
+    "fileloc": 74,
+    "instructions": 1089,
+    "loads": {
+      "G": 192
+    },
+    "name": "sa_compute",
+    "stores": {
+      "G": 256
+    },
+    "total_instructions": 1089
+  },
+  "6": {
+    "basicblocks": 17,
+    "calls": "",
+    "file": "shell.cpp",
+    "fileloc": 56,
+    "instructions": 128,
+    "loads": {
+      "G": 8
+    },
+    "name": "store_right_outputs",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 128
+  }
+}

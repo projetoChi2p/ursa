@@ -14,13 +14,14 @@ void pe_reset (PE *pe){
 }
 
 void pe_compute (PE *pe){
-    #pragma HLS UNROLL
+    #pragma HLS INLINE
     pe->r_out = pe->l_in + (pe->stay * pe->t_in);
     pe->b_out = pe->t_in;
 }
 
 // load weights from top to bottom
 void pe_load_weights(PE *pe){
+    #pragma HLS INLINE
     pe->stay = pe->t_in;
     pe->b_out = pe->t_in;
 }

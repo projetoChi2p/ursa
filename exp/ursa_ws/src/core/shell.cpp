@@ -16,12 +16,12 @@ void fill_left_inputs(lr_t l_in[SA_SIZE], uint16_t t){
     }
 }
 
-void fill_top_inputs(tb_t *addr_t, uint16_t str_t, tb_t t_in[SA_SIZE] ,uint16_t t, uint16_t m){
+void fill_top_inputs(tb_t *addr_t, uint16_t str_t, tb_t t_in[SA_SIZE] ,uint16_t t){
     #pragma HLS PIPELINE II=1
     for(uint16_t j=0; j<SA_SIZE; j++){
         #pragma HLS UNROLL
         // Stream valid columns of Matrix B, accounting for the skew (t >= j)
-        if (t >= j && t < j + m) {
+        if (t >= j && t < j + SA_SIZE) {
             uint16_t col = t - j; // Un-skew time to get the actual column index
             t_in[j] = *(addr_t + (j * str_t) + col); 
         } else {
@@ -49,7 +49,7 @@ void load_inputs_sa(SA *sa, lr_t l_in[SA_SIZE], tb_t t_in[SA_SIZE]){
 
     for(uint16_t k=0;k<SA_SIZE;k++) {
         #pragma HLS UNROLL factor=SA_SIZE
-        sa_input_a_b(sa,l_in[k],t_in[k],k);        
+        sa_input_l_t(sa,l_in[k],t_in[k],k);        
     }
 }
 
@@ -79,27 +79,6 @@ void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16
 /*****************************************************************************************************
 TOP FUNCTION
 ******************************************************************************************************/
-// #ifdef LABFT
-//     sa_result_t mxm_execute_ursa(
-//         int8_t  *addr_a0,  
-//         uint16_t a0_p, 
-//         uint8_t *addr_b0, 
-//         uint16_t b0_q,
-//         int32_t *addr_c0,  
-//         uint16_t m,
-//         // bool    &labft_irq,     // fio direto ao GIC: pulsa 1 ciclo a cada tile com erro
-//         uint16_t &labft_count   // registrador AXI-Lite: ARM lê ao final do MxM
-//     )
-// #else
-//     sa_result_t mxm_execute_ursa(
-//         int8_t  *addr_a0,  
-//         uint16_t a0_p, 
-//         uint8_t *addr_b0, 
-//         uint16_t b0_q,
-//         int32_t *addr_c0,  
-//         uint16_t m
-//     )
-// #endif
 
 #ifdef IM2COL
     #ifdef LABFT
@@ -264,7 +243,7 @@ TOP FUNCTION
     data_b_t *addr_sa_b;
     data_c_t *addr_sa_c;
 
-    // printf("[sa_shell]  P = %d | Q = %d | M = %d\n",a0_p,b0_q,m);
+    printf("[sa_shell] addr_a0: %d  addr_b0: %d addr_c0: %d\n", addr_a0, addr_b0, addr_c0); //
 
 /****************************************************************************************************/
 
@@ -298,13 +277,12 @@ TOP FUNCTION
                     #pragma HLS PIPELINE II=1
                     
                     // Fetch a row of weights from memory
-                    // (You will need to write a simple fetch function for this, similar to fill_inputs_b)
                     fetch_weight_row(addr_sa_a, m, fixed_in, t); 
                     
                     // Push them into the SA's input buffer
                     for(uint16_t k=0; k<SA_SIZE; k++) {
                         #pragma HLS UNROLL
-                        sa.in_mtx_b[k] = fixed_in[k]; // Feeding the top ports
+                        sa.in_mtx_t[k] = fixed_in[k]; // Feeding the top ports
                     }
 
                     // Shift them down into the PEs
@@ -319,7 +297,7 @@ TOP FUNCTION
                     #pragma HLS PIPELINE II=1
                     //Fase 1 - Busca valores da BRAM_B e inicia a injeção dos resultados no SA      
                     fill_left_inputs(l_in,t);
-                    fill_top_inputs(addr_sa_b,b0_q,t_in,t,m);
+                    fill_top_inputs(addr_sa_b,b0_q,t_in,t);
                     
                     // Fase 2 - Carrega valores no SA, todos valores em paralelo
                     load_inputs_sa(&sa,l_in,t_in);

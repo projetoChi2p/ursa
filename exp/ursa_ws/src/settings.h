@@ -43,14 +43,13 @@
     typedef ap_uint <8>  data_b_t; //pixel
     typedef ap_int  <32> data_c_t; //bramc
     typedef ap_int  <20> macc_t;   //bramc
+#else
+    // Matriz A: Pesos | Matriz B: Inputs | Matriz C: Resultados 
+    typedef int8_t  data_a_t; //weight
+    typedef uint8_t data_b_t; //pixel
+    typedef int32_t data_c_t; //bramc
+    typedef int32_t macc_t;   //bramc
 #endif
-
-// Matriz A: Pesos | Matriz B: Inputs | Matriz C: Resultados 
-typedef int8_t  data_a_t; //weight
-typedef uint8_t data_b_t; //pixel
-typedef int32_t data_c_t; //bramc
-typedef int32_t macc_t;   //bramc
-
 
 typedef data_c_t lr_t; //result
 typedef data_b_t tb_t; //pixel 
@@ -147,9 +146,9 @@ typedef struct {
 #endif /* IM2COL */
  
 /*TB*/
-#define P 8
-#define Q 8
-#define M 8
+#define P SA_SIZE
+#define Q SA_SIZE
+#define M SA_SIZE
 
 #endif /* __SETTINGS_H__ */
  

@@ -1,0 +1,646 @@
+
+
+================================================================
+== Vitis HLS Report for 'mxm_execute_ursa'
+================================================================
+* Date:           Wed Jul 22 13:28:25 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        mxm_execute_ursa
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.133 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+-------------+-----------+-------------+-----+-------------+---------+
+    |    Latency (cycles)   |    Latency (absolute)   |      Interval     | Pipeline|
+    |   min   |     max     |    min    |     max     | min |     max     |   Type  |
+    +---------+-------------+-----------+-------------+-----+-------------+---------+
+    |        2|  19725189416|  20.000 ns|  197.252 sec|    3|  19725189417|       no|
+    +---------+-------------+-----------+-------------+-----+-------------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------------------+--------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                        |                                            |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                        Instance                        |                   Module                   |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +--------------------------------------------------------+--------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3_fu_964   |mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3  |       77|       77|  0.770 us|  0.770 us|   77|   77|       no|
+        |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5_fu_1325  |mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5  |      211|      211|  2.110 us|  2.110 us|  211|  211|       no|
+        +--------------------------------------------------------+--------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +-------------------------------------+---------+-------------+----------+-----------+-----------+--------------+----------+
+        |                                     |    Latency (cycles)   | Iteration|  Initiation Interval  |     Trip     |          |
+        |              Loop Name              |   min   |     max     |  Latency |  achieved |   target  |     Count    | Pipelined|
+        +-------------------------------------+---------+-------------+----------+-----------+-----------+--------------+----------+
+        |- VITIS_LOOP_259_1_VITIS_LOOP_260_2  |        0|  19725189414|       294|          -|          -|  0 ~ 67092481|        no|
+        +-------------------------------------+---------+-------------+----------+-----------+-----------+--------------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    173|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        8|   59|   12357|  10582|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|   1146|    -|
+|Register         |        -|    -|    1968|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        8|   59|   14325|  11901|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        2|   26|      13|     22|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------------------------+--------------------------------------------+---------+----+------+------+-----+
+    |                        Instance                        |                   Module                   | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------------------------------+--------------------------------------------+---------+----+------+------+-----+
+    |ap_s_axi_U                                              |ap_s_axi                                    |        0|   0|   110|   152|    0|
+    |aw_m_axi_U                                              |aw_m_axi                                    |        2|   0|   866|   853|    0|
+    |bi_m_axi_U                                              |bi_m_axi                                    |        2|   0|   866|   853|    0|
+    |ca_m_axi_U                                              |ca_m_axi                                    |        4|   0|   830|   733|    0|
+    |control_s_axi_U                                         |control_s_axi                               |        0|   0|   240|   424|    0|
+    |mul_13ns_13ns_26_1_1_U555                               |mul_13ns_13ns_26_1_1                        |        0|   1|     0|     6|    0|
+    |mul_13ns_16ns_29_1_1_U556                               |mul_13ns_16ns_29_1_1                        |        0|   1|     0|     6|    0|
+    |mul_13ns_16ns_29_1_1_U557                               |mul_13ns_16ns_29_1_1                        |        0|   1|     0|     6|    0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3_fu_964   |mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3  |        0|   0|   590|   818|    0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5_fu_1325  |mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5  |        0|  56|  8855|  6731|    0|
+    +--------------------------------------------------------+--------------------------------------------+---------+----+------+------+-----+
+    |Total                                                   |                                            |        8|  59| 12357| 10582|    0|
+    +--------------------------------------------------------+--------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln259_1_fu_2337_p2     |         +|   0|  0|  14|          13|           1|
+    |add_ln259_fu_2312_p2       |         +|   0|  0|  33|          26|           1|
+    |add_ln260_fu_2351_p2       |         +|   0|  0|  14|          13|           1|
+    |add_ln263_fu_2860_p2       |         +|   0|  0|  39|          32|          32|
+    |icmp_ln259_fu_2307_p2      |      icmp|   0|  0|  33|          26|          26|
+    |icmp_ln260_fu_2324_p2      |      icmp|   0|  0|  14|          13|          13|
+    |select_ln259_1_fu_2343_p3  |    select|   0|  0|  13|           1|          13|
+    |select_ln259_fu_2329_p3    |    select|   0|  0|  13|           1|           1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0| 173|         125|          88|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                          Name                                         | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                                                              |  48|          9|    1|          9|
+    |aw_ARVALID                                                                             |   9|          2|    1|          2|
+    |aw_RREADY                                                                              |   9|          2|    1|          2|
+    |bi_ARVALID                                                                             |   9|          2|    1|          2|
+    |bi_RREADY                                                                              |   9|          2|    1|          2|
+    |ca_AWVALID                                                                             |   9|          2|    1|          2|
+    |ca_BREADY                                                                              |   9|          2|    1|          2|
+    |ca_WVALID                                                                              |   9|          2|    1|          2|
+    |i_fu_696                                                                               |   9|          2|   13|         26|
+    |indvar_flatten_fu_700                                                                  |   9|          2|   26|         52|
+    |j_fu_468                                                                               |   9|          2|   13|         26|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13          |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_178         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_179         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_180         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_181         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_182         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_183         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_184         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_185         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_186         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_187         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_189         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_190         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_191         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_192         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_193         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_194         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_195         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_196         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_197         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_198         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_200         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_201         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_202         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_203         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_204         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_205         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_206         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_207         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_208         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_209         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_211         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_212         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_213         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_214         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_215         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_216         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_217         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_218         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_219         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_22          |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_220         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_222         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_223         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_224         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_225         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_226         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_227         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_228         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_229         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_230         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_231         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_233         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_234         |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_251_fu_616  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_252_fu_612  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_253_fu_608  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_254_fu_604  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_255_fu_600  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_256_fu_596  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_257_fu_592  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_258_fu_588  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_259_fu_584  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_260_fu_580  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_261_fu_576  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_262_fu_572  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_263_fu_568  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_264_fu_564  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_265_fu_560  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_266_fu_556  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_267_fu_552  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_268_fu_548  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_269_fu_544  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_270_fu_540  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_271_fu_536  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_272_fu_532  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_273_fu_528  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_274_fu_524  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_275_fu_520  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_276_fu_516  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_277_fu_512  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_278_fu_508  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_279_fu_504  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_280_fu_500  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_281_fu_496  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_282_fu_492  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_283_fu_488  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_284_fu_484  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_285_fu_480  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_286_fu_476  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_287_fu_472  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_30          |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_4           |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_587_fu_620  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_588_fu_624  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_589_fu_628  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_590_fu_632  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_591_fu_636  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_592_fu_640  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_593_fu_644  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_594_fu_648  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_595_fu_652  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_596_fu_656  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_597_fu_660  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_598_fu_664  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_599_fu_668  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_600_fu_672  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_601_fu_676  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_602_fu_680  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_603_fu_684  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_604_fu_688  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_605_fu_692  |   9|          2|    8|         16|
+    +---------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                                  |1146|        253|  956|       1919|
+    +---------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                          Name                                         | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |a0_p_0_data_reg                                                                        |  16|   0|   16|          0|
+    |a0_p_0_vld_reg                                                                         |   0|   0|    1|          1|
+    |add_ln263_reg_4355                                                                     |  29|   0|   32|          3|
+    |addr_a0_read_reg_3611                                                                  |  64|   0|   64|          0|
+    |addr_b0_read_reg_3606                                                                  |  64|   0|   64|          0|
+    |addr_c0_read_reg_3601                                                                  |  64|   0|   64|          0|
+    |ap_CS_fsm                                                                              |   8|   0|    8|          0|
+    |b0_q_0_data_reg                                                                        |  16|   0|   16|          0|
+    |b0_q_0_vld_reg                                                                         |   0|   0|    1|          1|
+    |b0_q_read_reg_3958                                                                     |  16|   0|   16|          0|
+    |bound_reg_3981                                                                         |  26|   0|   26|          0|
+    |call_b_cast_reg_3966                                                                   |  13|   0|   13|          0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3_fu_964_ap_start_reg                     |   1|   0|    1|          0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5_fu_1325_ap_start_reg                    |   1|   0|    1|          0|
+    |i_fu_696                                                                               |  13|   0|   13|          0|
+    |indvar_flatten_fu_700                                                                  |  26|   0|   26|          0|
+    |j_fu_468                                                                               |  13|   0|   13|          0|
+    |m_0_data_reg                                                                           |  16|   0|   16|          0|
+    |m_0_vld_reg                                                                            |   0|   0|    1|          1|
+    |m_cast_reg_3971                                                                        |  16|   0|   29|         13|
+    |m_read_reg_3952                                                                        |  16|   0|   16|          0|
+    |mul_ln259_1_reg_4004                                                                   |  29|   0|   29|          0|
+    |mul_ln259_reg_3999                                                                     |  29|   0|   29|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_175         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_176         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_177         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_178         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_179         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_180         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_181         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_182         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_183         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_184         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_185         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_186         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_187         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_188         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_189         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_190         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_191         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_192         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_193         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_194         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_195         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_196         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_197         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_198         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_199         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_200         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_201         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_202         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_203         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_204         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_205         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_206         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_207         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_208         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_209         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_210         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_211         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_212         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_213         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_214         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_215         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_216         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_217         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_218         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_219         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_22          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_220         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_221         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_222         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_223         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_224         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_225         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_226         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_227         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_228         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_229         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_230         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_231         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_232         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_233         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_234         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_243         |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_251_fu_616  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_252_fu_612  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_253_fu_608  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_254_fu_604  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_255_fu_600  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_256_fu_596  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_257_fu_592  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_258_fu_588  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_259_fu_584  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_260_fu_580  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_261_fu_576  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_262_fu_572  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_263_fu_568  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_264_fu_564  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_265_fu_560  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_266_fu_556  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_267_fu_552  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_268_fu_548  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_269_fu_544  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_270_fu_540  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_271_fu_536  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_272_fu_532  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_273_fu_528  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_274_fu_524  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_275_fu_520  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_276_fu_516  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_277_fu_512  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_278_fu_508  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_279_fu_504  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_280_fu_500  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_281_fu_496  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_282_fu_492  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_283_fu_488  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_284_fu_484  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_285_fu_480  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_286_fu_476  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_287_fu_472  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_30          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_32          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_39          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_4           |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_40          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_41          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_42          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_43          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_44          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_45          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_46          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_47          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_48          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_49          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_50          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_51          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_52          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_53          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_54          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_55          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_56          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_57          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_58          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_587_fu_620  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_588_fu_624  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_589_fu_628  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_59          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_590_fu_632  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_591_fu_636  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_592_fu_640  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_593_fu_644  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_594_fu_648  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_595_fu_652  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_596_fu_656  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_597_fu_660  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_598_fu_664  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_599_fu_668  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_60          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_600_fu_672  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_601_fu_676  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_602_fu_680  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_603_fu_684  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_604_fu_688  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_605_fu_692  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_61          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_62          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_63          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_64          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_65          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_66          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_67          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_68          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_69          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_70          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_71          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_72          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_73          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_74          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_75          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_76          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_77          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_78          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_79          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_80          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_81          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_82          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_83          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_84          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_85          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_86          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_87          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_88          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_89          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_96          |   8|   0|    8|          0|
+    |p_cast37_mid2_v_reg_4177                                                               |  29|   0|   32|          3|
+    |select_ln259_1_reg_3994                                                                |  13|   0|   13|          0|
+    |select_ln259_reg_3989                                                                  |  13|   0|   13|          0|
+    |shl_ln_reg_4350                                                                        |  13|   0|   16|          3|
+    |zext_ln74_reg_3976                                                                     |  16|   0|   29|         13|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                  |1968|   0| 2006|         38|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++-----------------------+-----+-----+------------+------------------+--------------+
+|s_axi_ap_AWVALID       |   in|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_AWREADY       |  out|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_AWADDR        |   in|    6|       s_axi|                ap|        scalar|
+|s_axi_ap_WVALID        |   in|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_WREADY        |  out|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_WDATA         |   in|   32|       s_axi|                ap|        scalar|
+|s_axi_ap_WSTRB         |   in|    4|       s_axi|                ap|        scalar|
+|s_axi_ap_ARVALID       |   in|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_ARREADY       |  out|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_ARADDR        |   in|    6|       s_axi|                ap|        scalar|
+|s_axi_ap_RVALID        |  out|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_RREADY        |   in|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_RDATA         |  out|   32|       s_axi|                ap|        scalar|
+|s_axi_ap_RRESP         |  out|    2|       s_axi|                ap|        scalar|
+|s_axi_ap_BVALID        |  out|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_BREADY        |   in|    1|       s_axi|                ap|        scalar|
+|s_axi_ap_BRESP         |  out|    2|       s_axi|                ap|        scalar|
+|s_axi_control_AWVALID  |   in|    1|       s_axi|           control|        scalar|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|           control|        scalar|
+|s_axi_control_AWADDR   |   in|    6|       s_axi|           control|        scalar|
+|s_axi_control_WVALID   |   in|    1|       s_axi|           control|        scalar|
+|s_axi_control_WREADY   |  out|    1|       s_axi|           control|        scalar|
+|s_axi_control_WDATA    |   in|   32|       s_axi|           control|        scalar|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|           control|        scalar|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|           control|        scalar|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|           control|        scalar|
+|s_axi_control_ARADDR   |   in|    6|       s_axi|           control|        scalar|
+|s_axi_control_RVALID   |  out|    1|       s_axi|           control|        scalar|
+|s_axi_control_RREADY   |   in|    1|       s_axi|           control|        scalar|
+|s_axi_control_RDATA    |  out|   32|       s_axi|           control|        scalar|
+|s_axi_control_RRESP    |  out|    2|       s_axi|           control|        scalar|
+|s_axi_control_BVALID   |  out|    1|       s_axi|           control|        scalar|
+|s_axi_control_BREADY   |   in|    1|       s_axi|           control|        scalar|
+|s_axi_control_BRESP    |  out|    2|       s_axi|           control|        scalar|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|  mxm_execute_ursa|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|  mxm_execute_ursa|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|  mxm_execute_ursa|  return value|
+|m_axi_aw_AWVALID       |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_AWREADY       |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_AWADDR        |  out|   64|       m_axi|                aw|       pointer|
+|m_axi_aw_AWID          |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_AWLEN         |  out|    8|       m_axi|                aw|       pointer|
+|m_axi_aw_AWSIZE        |  out|    3|       m_axi|                aw|       pointer|
+|m_axi_aw_AWBURST       |  out|    2|       m_axi|                aw|       pointer|
+|m_axi_aw_AWLOCK        |  out|    2|       m_axi|                aw|       pointer|
+|m_axi_aw_AWCACHE       |  out|    4|       m_axi|                aw|       pointer|
+|m_axi_aw_AWPROT        |  out|    3|       m_axi|                aw|       pointer|
+|m_axi_aw_AWQOS         |  out|    4|       m_axi|                aw|       pointer|
+|m_axi_aw_AWREGION      |  out|    4|       m_axi|                aw|       pointer|
+|m_axi_aw_AWUSER        |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_WVALID        |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_WREADY        |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_WDATA         |  out|   32|       m_axi|                aw|       pointer|
+|m_axi_aw_WSTRB         |  out|    4|       m_axi|                aw|       pointer|
+|m_axi_aw_WLAST         |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_WID           |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_WUSER         |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_ARVALID       |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_ARREADY       |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_ARADDR        |  out|   64|       m_axi|                aw|       pointer|
+|m_axi_aw_ARID          |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_ARLEN         |  out|    8|       m_axi|                aw|       pointer|
+|m_axi_aw_ARSIZE        |  out|    3|       m_axi|                aw|       pointer|
+|m_axi_aw_ARBURST       |  out|    2|       m_axi|                aw|       pointer|
+|m_axi_aw_ARLOCK        |  out|    2|       m_axi|                aw|       pointer|
+|m_axi_aw_ARCACHE       |  out|    4|       m_axi|                aw|       pointer|
+|m_axi_aw_ARPROT        |  out|    3|       m_axi|                aw|       pointer|
+|m_axi_aw_ARQOS         |  out|    4|       m_axi|                aw|       pointer|
+|m_axi_aw_ARREGION      |  out|    4|       m_axi|                aw|       pointer|
+|m_axi_aw_ARUSER        |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_RVALID        |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_RREADY        |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_RDATA         |   in|   32|       m_axi|                aw|       pointer|
+|m_axi_aw_RLAST         |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_RID           |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_RUSER         |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_RRESP         |   in|    2|       m_axi|                aw|       pointer|
+|m_axi_aw_BVALID        |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_BREADY        |  out|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_BRESP         |   in|    2|       m_axi|                aw|       pointer|
+|m_axi_aw_BID           |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_aw_BUSER         |   in|    1|       m_axi|                aw|       pointer|
+|m_axi_bi_AWVALID       |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_AWREADY       |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_AWADDR        |  out|   64|       m_axi|                bi|       pointer|
+|m_axi_bi_AWID          |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_AWLEN         |  out|    8|       m_axi|                bi|       pointer|
+|m_axi_bi_AWSIZE        |  out|    3|       m_axi|                bi|       pointer|
+|m_axi_bi_AWBURST       |  out|    2|       m_axi|                bi|       pointer|
+|m_axi_bi_AWLOCK        |  out|    2|       m_axi|                bi|       pointer|
+|m_axi_bi_AWCACHE       |  out|    4|       m_axi|                bi|       pointer|
+|m_axi_bi_AWPROT        |  out|    3|       m_axi|                bi|       pointer|
+|m_axi_bi_AWQOS         |  out|    4|       m_axi|                bi|       pointer|
+|m_axi_bi_AWREGION      |  out|    4|       m_axi|                bi|       pointer|
+|m_axi_bi_AWUSER        |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_WVALID        |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_WREADY        |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_WDATA         |  out|   32|       m_axi|                bi|       pointer|
+|m_axi_bi_WSTRB         |  out|    4|       m_axi|                bi|       pointer|
+|m_axi_bi_WLAST         |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_WID           |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_WUSER         |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_ARVALID       |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_ARREADY       |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_ARADDR        |  out|   64|       m_axi|                bi|       pointer|
+|m_axi_bi_ARID          |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_ARLEN         |  out|    8|       m_axi|                bi|       pointer|
+|m_axi_bi_ARSIZE        |  out|    3|       m_axi|                bi|       pointer|
+|m_axi_bi_ARBURST       |  out|    2|       m_axi|                bi|       pointer|
+|m_axi_bi_ARLOCK        |  out|    2|       m_axi|                bi|       pointer|
+|m_axi_bi_ARCACHE       |  out|    4|       m_axi|                bi|       pointer|
+|m_axi_bi_ARPROT        |  out|    3|       m_axi|                bi|       pointer|
+|m_axi_bi_ARQOS         |  out|    4|       m_axi|                bi|       pointer|
+|m_axi_bi_ARREGION      |  out|    4|       m_axi|                bi|       pointer|
+|m_axi_bi_ARUSER        |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_RVALID        |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_RREADY        |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_RDATA         |   in|   32|       m_axi|                bi|       pointer|
+|m_axi_bi_RLAST         |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_RID           |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_RUSER         |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_RRESP         |   in|    2|       m_axi|                bi|       pointer|
+|m_axi_bi_BVALID        |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_BREADY        |  out|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_BRESP         |   in|    2|       m_axi|                bi|       pointer|
+|m_axi_bi_BID           |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_bi_BUSER         |   in|    1|       m_axi|                bi|       pointer|
+|m_axi_ca_AWVALID       |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_AWREADY       |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_AWADDR        |  out|   64|       m_axi|                ca|       pointer|
+|m_axi_ca_AWID          |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_AWLEN         |  out|    8|       m_axi|                ca|       pointer|
+|m_axi_ca_AWSIZE        |  out|    3|       m_axi|                ca|       pointer|
+|m_axi_ca_AWBURST       |  out|    2|       m_axi|                ca|       pointer|
+|m_axi_ca_AWLOCK        |  out|    2|       m_axi|                ca|       pointer|
+|m_axi_ca_AWCACHE       |  out|    4|       m_axi|                ca|       pointer|
+|m_axi_ca_AWPROT        |  out|    3|       m_axi|                ca|       pointer|
+|m_axi_ca_AWQOS         |  out|    4|       m_axi|                ca|       pointer|
+|m_axi_ca_AWREGION      |  out|    4|       m_axi|                ca|       pointer|
+|m_axi_ca_AWUSER        |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_WVALID        |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_WREADY        |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_WDATA         |  out|   32|       m_axi|                ca|       pointer|
+|m_axi_ca_WSTRB         |  out|    4|       m_axi|                ca|       pointer|
+|m_axi_ca_WLAST         |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_WID           |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_WUSER         |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_ARVALID       |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_ARREADY       |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_ARADDR        |  out|   64|       m_axi|                ca|       pointer|
+|m_axi_ca_ARID          |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_ARLEN         |  out|    8|       m_axi|                ca|       pointer|
+|m_axi_ca_ARSIZE        |  out|    3|       m_axi|                ca|       pointer|
+|m_axi_ca_ARBURST       |  out|    2|       m_axi|                ca|       pointer|
+|m_axi_ca_ARLOCK        |  out|    2|       m_axi|                ca|       pointer|
+|m_axi_ca_ARCACHE       |  out|    4|       m_axi|                ca|       pointer|
+|m_axi_ca_ARPROT        |  out|    3|       m_axi|                ca|       pointer|
+|m_axi_ca_ARQOS         |  out|    4|       m_axi|                ca|       pointer|
+|m_axi_ca_ARREGION      |  out|    4|       m_axi|                ca|       pointer|
+|m_axi_ca_ARUSER        |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_RVALID        |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_RREADY        |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_RDATA         |   in|   32|       m_axi|                ca|       pointer|
+|m_axi_ca_RLAST         |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_RID           |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_RUSER         |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_RRESP         |   in|    2|       m_axi|                ca|       pointer|
+|m_axi_ca_BVALID        |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_BREADY        |  out|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_BRESP         |   in|    2|       m_axi|                ca|       pointer|
+|m_axi_ca_BID           |   in|    1|       m_axi|                ca|       pointer|
+|m_axi_ca_BUSER         |   in|    1|       m_axi|                ca|       pointer|
++-----------------------+-----+-----+------------+------------------+--------------+
+

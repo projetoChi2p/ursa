@@ -1,0 +1,586 @@
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/mxm_execute_ursa.hlscompile_summary, at Wed Jul 22 13:28:12 2026
+INFO: [v++ 82-31] Launching vitis_hls: vitis_hls -nolog -run csynth -work_dir /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa -config /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg -cmdlineconfig /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/config.cmdline
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'fi' on host '67221-1' (Linux_x86_64 version 6.8.0-124-generic) on Wed Jul 22 13:28:12 -03 2026
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws'
+INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg
+INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/config.cmdline
+INFO: [HLS 200-2005] Using work_dir /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa 
+INFO: [HLS 200-1510] Running: open_project /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa -diskless 
+INFO: [HLS 200-1510] Running: open_solution hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: apply_ini /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg 
+INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.h' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.h' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.h' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/settings.h' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/settings.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/tb/tb_main.cpp' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(14)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/tb/tb_main.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/tb/matrices.cpp' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(15)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/tb/matrices.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/tb/matrices.h' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(16)
+INFO: [HLS 200-10] Adding test bench file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/tb/matrices.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=mxm_execute_ursa' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(17)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xc7z020clg484-1' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1465] Applying ini 'clock=10ns' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(18)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' at /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg(5)
+INFO: [HLS 200-1510] Running: apply_ini /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/config.cmdline 
+INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/config.cmdline
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 274.418 MB.
+INFO: [HLS 200-10] Analyzing design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp' ... 
+WARNING: [HLS 207-4855] format specifies type 'int' but the argument has type 'int8_t *' (aka 'signed char *') (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:246:65)
+WARNING: [HLS 207-4855] format specifies type 'int' but the argument has type 'uint8_t *' (aka 'unsigned char *') (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:246:74)
+WARNING: [HLS 207-4855] format specifies type 'int' but the argument has type 'int32_t *' (aka 'int *') (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:246:83)
+WARNING: [HLS 207-5571] Only 'for' loop or function body support the dataflow pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:254:9)
+WARNING: [HLS 207-5292] unused parameter 't' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:5:46)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2.9 seconds. CPU system time: 0.45 seconds. Elapsed time: 3.36 seconds; current allocated memory: 277.516 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 1,015 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,320 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,925 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,967 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,837 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,950 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,950 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,950 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,950 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,941 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,940 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,860 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,820 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,796 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,818 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,828 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-131] Inlining function 'pe_load_weights(PE*)' into 'sa_load_weights(SA*)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:69:2)
+INFO: [HLS 214-131] Inlining function 'pe_compute(PE*)' into 'sa_compute(SA*)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:109:2)
+INFO: [HLS 214-377] Adding 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa' into disaggregation list because there's array-partition pragma applied on the struct field (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:255:2)
+INFO: [HLS 214-210] Disaggregating variable 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:250:0)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_283_4' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:283:39)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_60_1' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:60:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_105_6' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:105:22)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_107_7' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_96_4' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:96:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_98_5' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_87_2' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:87:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_89_3' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_80_1' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:80:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_50_1' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:50:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_21_1' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:21:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_65_4' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:65:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_67_5' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_56_2' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:56:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_58_3' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_50_1' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:50:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_40_1' is marked as complete unroll implied by the pipeline pragma (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_283_4' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:283:39) in function 'mxm_execute_ursa' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:140:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_60_1' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:60:19) in function 'store_right_outputs' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:56:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_105_6' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:105:22) in function 'sa_compute' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:74:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_107_7' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:107:20) in function 'sa_compute' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:74:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_96_4' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:96:21) in function 'sa_compute' completely with a factor of 7 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:74:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_98_5' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:98:19) in function 'sa_compute' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:74:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_87_2' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:87:21) in function 'sa_compute' completely with a factor of 7 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:74:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_89_3' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:89:19) in function 'sa_compute' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:74:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_80_1' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:80:19) in function 'sa_compute' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:74:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_50_1' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:50:19) in function 'load_inputs_sa' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:47:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_21_1' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:21:19) in function 'fill_top_inputs' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:19:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_65_4' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:65:21) in function 'sa_load_weights' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_67_5' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:67:19) in function 'sa_load_weights' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_56_2' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:56:21) in function 'sa_load_weights' completely with a factor of 7 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_58_3' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:58:19) in function 'sa_load_weights' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_50_1' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:50:21) in function 'sa_load_weights' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_40_1' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40:22) in function 'fetch_weight_row' completely with a factor of 8 (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:33:0)
+INFO: [HLS 214-178] Inlining function 'sa_input_l_t(SA*, ap_int<32>, ap_uint<8>, unsigned short)' into 'load_inputs_sa(SA*, ap_int<32>*, ap_uint<8>*)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:47:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:250:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:250:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:250:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:250:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:250:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_l': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:250:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_t': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:250:0)
+INFO: [HLS 214-248] Applying array_partition to 'l_in': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to 't_in': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:236:7)
+INFO: [HLS 214-248] Applying array_partition to 'fixed_in': Complete partitioning on dimension 1. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:239:10)
+INFO: [HLS 214-364] Automatically inlining function 'fetch_weight_row(ap_int<8>*, unsigned short, ap_int<8>*, unsigned short)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280:2)
+INFO: [HLS 214-364] Automatically inlining function 'sa_load_weights(SA*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:289:21)
+INFO: [HLS 214-364] Automatically inlining function 'fill_top_inputs(ap_uint<8>*, unsigned short, ap_uint<8>*, unsigned short)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300:21)
+INFO: [HLS 214-364] Automatically inlining function 'load_inputs_sa(SA*, ap_int<32>*, ap_uint<8>*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:303:21)
+INFO: [HLS 214-364] Automatically inlining function 'sa_compute(SA*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:306:21)
+INFO: [HLS 214-364] Automatically inlining function 'store_right_outputs(SA*, ap_int<32>*, unsigned short, unsigned short, unsigned short)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:309:21)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_0)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_1)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_2)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_3)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_4)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_5)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_6)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.b_out_7)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_0)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_1)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_2)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_3)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_4)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_5)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_6)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.l_in_7)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_0)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_1)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_2)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_3)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_4)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_5)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_6)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.r_out_7)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_0)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_1)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_2)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_3)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_4)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_5)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_6)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.stay_7)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_0)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_1)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_2)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_3)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_4)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_5)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_6)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.t_in_7)' due to pipeline pragma
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_7': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_6': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_5': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_4': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_3': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_2': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_1': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.t_in_0': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_7': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_6': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_5': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_4': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_3': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_2': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_1': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.stay_0': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_7': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_6': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_5': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_4': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_3': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_2': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_1': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.r_out_0': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_7': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_6': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_5': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_4': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_3': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_2': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_1': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.l_in_0': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_7': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_6': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_5': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_4': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_3': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_2': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_1': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.b_out_0': Complete partitioning on dimension 1.
+INFO: [HLS 214-115] Multiple burst reads of length 8 and bit width 8 has been inferred on bundle 'aw'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43:14)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.93 seconds. CPU system time: 0.18 seconds. Elapsed time: 6.47 seconds; current allocated memory: 281.184 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 281.184 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 284.059 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 284.359 MB.
+INFO: [XFORM 203-11] Balancing expressions in function 'mxm_execute_ursa' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:18:35)...21 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 312.766 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_259_1' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:259:27) in function 'mxm_execute_ursa'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 332.688 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mxm_execute_ursa' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_276_3'.
+WARNING: [HLS 200-880] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) and bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) and bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) and bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) and bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) and bus read operation ('fixed_in', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on port 'aw' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 8, Depth = 19, loop 'VITIS_LOOP_276_3'
+WARNING: [HLS 200-871] Estimated clock period (8.133 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' consists of the following:
+	'store' operation 0 bit ('t_write_ln33', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:33->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) of constant 0 on local variable 't', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:33->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280 [412]  (1.588 ns)
+	'load' operation 4 bit ('t', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:38->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) on local variable 't', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:33->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280 [415]  (0.000 ns)
+	'xor' operation 3 bit ('row_to_fetch', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:38->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) [481]  (0.965 ns)
+	'mul' operation 19 bit ('mul_i', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:38->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280) [483]  (5.580 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.31 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 338.570 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 338.570 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_55) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_54) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_53) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_52) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_51) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_50) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_49) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_48) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_46) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_45) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_44) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_41) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_40) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_39) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_38) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_37) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_36) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_35) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_34) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_33) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_32) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_31) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_30) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_29) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_27) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_26) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_25) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_24) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_23) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_22) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_21) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_20) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_19) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_18) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_17) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_16) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_15) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_14) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_13) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_12) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_11) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_10) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_9) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_7) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_5) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln18) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_296_5'.
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_2_req', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) on port 'bi' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_4_req', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) on port 'bi' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_6_req', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) on port 'bi' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_8_req', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) on port 'bi' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_14_req', /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) on port 'bi' (/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26->/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300) due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 8, Depth = 35, loop 'VITIS_LOOP_296_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.88 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.89 seconds; current allocated memory: 349.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 349.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mxm_execute_ursa' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 351.016 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 351.016 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' pipeline 'VITIS_LOOP_276_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_3ns_16ns_19_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 354.137 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_38' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_29' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_93' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_249' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_241' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_37' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_28' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_94' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_248' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_240' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_36' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_27' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_95' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_247' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_239' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_35' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_26' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_97' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_246' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_238' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_34' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_25' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_90' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_98' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_245' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_237' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_24' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_91' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_99' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_244' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_236' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_31' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_23' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_92' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_250' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_242' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_235' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' pipeline 'VITIS_LOOP_296_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_8s_16s_17_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_8s_17s_18_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_8s_18s_18_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_8s_18s_19_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_8s_19s_19_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_8s_19s_20_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8ns_8s_20s_20_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_8s_16_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 371.090 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mxm_execute_ursa' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/aw' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/bi' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/ca' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/addr_a0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/a0_p' to 's_axilite & ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/addr_b0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/b0_q' to 's_axilite & ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/addr_c0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/m' to 's_axilite & ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on function 'mxm_execute_ursa' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_234' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_233' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_231' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_230' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_229' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_228' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_227' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_226' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_225' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_224' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_223' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_222' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_220' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_219' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_218' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_217' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_216' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_215' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_214' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_213' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_212' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_211' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_209' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_208' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_207' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_206' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_205' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_204' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_203' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_202' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_201' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_200' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_198' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_197' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_196' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_195' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_194' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_193' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_192' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_191' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_190' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_189' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_187' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_186' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_185' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_184' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_183' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_182' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_181' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_180' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_179' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_178' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_22' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_30' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_39' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_40' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_41' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_42' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_44' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_45' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_46' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_47' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_48' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_49' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_50' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_51' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_52' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_53' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_55' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_56' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_57' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_58' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_59' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_60' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_61' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_62' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_63' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_64' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_66' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_67' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_68' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_69' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_70' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_71' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_72' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_73' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_74' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_75' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_77' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_78' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_79' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_80' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_81' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_82' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_83' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_84' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_85' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_86' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_88' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_89' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_96' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_243' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_232' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_221' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_210' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_199' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_188' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_177' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_32' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_43' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_54' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_65' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_76' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_87' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_176' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_175' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'return', 'a0_p', 'b0_q' and 'm' to AXI-Lite port ap.
+INFO: [RTGEN 206-100] Bundling port 'addr_a0', 'addr_b0' and 'addr_c0' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mul_13ns_13ns_26_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13ns_16ns_29_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mxm_execute_ursa'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.35 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.39 seconds; current allocated memory: 398.738 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.32 seconds; current allocated memory: 407.066 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.55 seconds. CPU system time: 0 seconds. Elapsed time: 0.57 seconds; current allocated memory: 420.324 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for mxm_execute_ursa.
+INFO: [VLOG 209-307] Generating Verilog RTL for mxm_execute_ursa.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 122.96 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 8.23 seconds. CPU system time: 0.75 seconds. Elapsed time: 13.35 seconds; current allocated memory: 146.062 MB.
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 8.99 seconds. Total CPU system time: 0.84 seconds. Total elapsed time: 14.11 seconds; peak allocated memory: 420.480 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Wed Jul 22 13:28:26 2026...
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 17s
