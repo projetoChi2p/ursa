@@ -19,12 +19,17 @@ uint16_t          labft_count_0 = 0;
  Inicialização do IP URSA
 ******************************************************************************************************/
 int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
-{
+{    
     int xil_status;
     XMxm_execute_ursa_Config *xMxmConfigPtr;
     XMxm_execute_ursa_Config xMxmConfig;
 
     xMxmConfigPtr = XMxm_execute_ursa_LookupConfig(baseaddr);
+    
+
+    // xil_printf("[init_debug] %p (stack ~%p)\n\r", xMxmConfigPtr, &xil_status);
+    // xil_printf("[init_debug] %p (stack ~%p)\n\r", xMxmConfigPtr, &xil_status);
+
     if (xMxmConfigPtr == NULL) 
     {
         xil_printf("[init] URSA CONTROL not found.\n\r");
@@ -35,8 +40,8 @@ int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
         // NOTA: Vivado 2023.2 gera Ap e Control invertidos no LookupConfig
         // A troca abaixo é intencional!
         xil_printf("[init] URSA CONTROL FOUND:\n\r");
-        xil_printf("[init] AP CONTROL    0x%08x \n\r", xMxmConfigPtr->Ap_BaseAddress);
-        xil_printf("[init] MEM CONTROL   0x%08x \n\r", xMxmConfigPtr->Control_BaseAddress);
+        xil_printf("[init] AP CONTROL    0x%08x \n\r", (unsigned int) xMxmConfigPtr->Ap_BaseAddress);
+        xil_printf("[init] MEM CONTROL   0x%08x \n\r", (unsigned int) xMxmConfigPtr->Control_BaseAddress);
 #ifdef LABFT
         xil_printf("[init] LABFT CONTROL 0x%08x\n\r", xMxmConfigPtr->Labft_ctrl_BaseAddress);
 #endif
@@ -49,12 +54,9 @@ int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
     xMxmConfig.Control_BaseAddress   = xMxmConfigPtr->Labft_ctrl_BaseAddress;
     xMxmConfig.Labft_ctrl_BaseAddress = xMxmConfigPtr->Ap_BaseAddress;
 #else
-    // ATENÇÂO: essas linhas fazem a atribuição do endereço s_axi_ap e s_axi_control! Se gerado pelo .tcl, não há troca.
+    // ATENÇÂO: essas linhas fazem a atribuição do endereço s_axi_ap e s_axi_control!
     xMxmConfig.Ap_BaseAddress      = xMxmConfigPtr->Ap_BaseAddress;
     xMxmConfig.Control_BaseAddress = xMxmConfigPtr->Control_BaseAddress;
-
-    // xMxmConfig.Ap_BaseAddress      = URSA_0_AP_BASEADDR;
-    // xMxmConfig.Control_BaseAddress = URSA_0_CTRL_BASEADDR;
 #endif    
 
     xil_status = XMxm_execute_ursa_CfgInitialize(pxMxm, &xMxmConfig);
@@ -62,6 +64,7 @@ int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
         xil_printf("[init] MXM Init failed: %d.\n\r", xil_status);
         return xil_status;
     }
+    
     return EXIT_SUCCESS;
 }
 

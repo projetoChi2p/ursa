@@ -4,7 +4,7 @@
 		{
 			"type": "tcf-debug",
 			"request": "launch",
-			"name": "simple_mxm_app_hw_1",
+			"name": "memory_tests_app_hw_1",
 			"debugType": "baremetal-zynq",
 			"attachToRunningTargetOptions": {
 				"targetSetupMode": "standalone",
@@ -23,7 +23,7 @@
 				"resetAPU": false,
 				"bitstreamFile": "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vivado/project_ursa_ws/project_ursa_ws.runs/impl_1/design_1_wrapper.bit",
 				"zynqInitialization": {
-					"isFsbl": true,
+					"isFsbl": false,
 					"usingFSBL": {
 						"initWithFSBL": true,
 						"fsblFile": "${workspaceFolder}/platform_ursa_ws/export/platform_ursa_ws/sw/boot/fsbl.elf",
@@ -32,14 +32,14 @@
 					"usingPs7Init": {
 						"runPs7Init": true,
 						"runPs7PostInit": true,
-						"ps7InitTclFile": "${workspaceFolder}/simple_mxm/_ide/psinit/ps7_init.tcl"
+						"ps7InitTclFile": "${workspaceFolder}/memory_tests/_ide/psinit/ps7_init.tcl"
 					}
 				},
 				"downloadElf": [
 					{
 						"core": "ps7_cortexa9_0",
 						"resetProcessor": true,
-						"elfFile": "${workspaceFolder}/simple_mxm/build/simple_mxm.elf",
+						"elfFile": "${workspaceFolder}/memory_tests/build/memory_tests.elf",
 						"stopAtEntry": false
 					}
 				],

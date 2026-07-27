@@ -22,7 +22,7 @@
 // #define FAULT_INJECT
  
 /* ── Debug ─────────────────────────────────────────────── */
-#define DEBUG
+// #define DEBUG
  
 /*features*/
 // #define IM2COL
