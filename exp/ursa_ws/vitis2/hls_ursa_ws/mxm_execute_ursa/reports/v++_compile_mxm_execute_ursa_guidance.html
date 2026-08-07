@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2023.2 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Wed Jul 22 13:28:26 2026</td></tr>
+<tr><td><b>Date</b></td><td>Fri Aug  7 15:00:24 2026</td></tr>
 <tr><td><b>Host</b></td><td>67221-1 running 64-bit Ubuntu 22.04.5 LTS</td></tr>
 <tr><td><b>Command</b></td><td>/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg --work_dir mxm_execute_ursa </td></tr>
 </table></center><br>
@@ -3416,9 +3416,9 @@ window.onload = function () { addSorting(); }
 <tr><td><a href="#VIOLATION DETAILS">2 VIOLATION DETAILS</a></tr></td>
 </table>
 <a name="REPORT SUMMARY"></a><h1>1 REPORT SUMMARY</h1>
-<pre>Violations found: 18
+<pre>Violations found: 24
 </pre>
-<pre>Rule Specs Violated: 3
+<pre>Rule Specs Violated: 2
 </pre>
 <a name="VIOLATION DETAILS"></a><h1>2 VIOLATION DETAILS</h1>
 <table border="1">
@@ -3434,7 +3434,73 @@ window.onload = function () { addSorting(); }
 <th align="left" width="380">Resolution</th>
 </tr>
 <tr>
-<td align="left">8</td>
+<td align="left">1</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4' (loop 'VITIS_LOOP_341_4'): Unable to schedule bus request operation ('fixed_in_2_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4' (loop 'VITIS_LOOP_341_4'): Unable to schedule bus request operation ('fixed_in_4_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4' (loop 'VITIS_LOOP_341_4'): Unable to schedule bus request operation ('fixed_in_6_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4' (loop 'VITIS_LOOP_341_4'): Unable to schedule bus request operation ('fixed_in_8_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4' (loop 'VITIS_LOOP_341_4'): Unable to schedule bus request operation ('fixed_in_14_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=74">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 8, Depth = 19, loop 'VITIS_LOOP_341_4'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">7</td>
 <td align="left">Kernel</td>
 <td align="left">WARNING</td>
 <td align="left"><undefined></td>
@@ -3445,18 +3511,29 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">9</td>
+<td align="left">8</td>
 <td align="left">Kernel</td>
 <td align="left">WARNING</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The critical path in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' consists of the following:
-	'store' operation 0 bit ('t_write_ln33', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=33">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) of constant 0 on local variable 't', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=33">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a> [412]  (1.588 ns)
-	'load' operation 4 bit ('t', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=38">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on local variable 't', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=33">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a> [415]  (0.000 ns)
-	'xor' operation 3 bit ('row_to_fetch', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=38">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) [481]  (0.965 ns)
-	'mul' operation 19 bit ('mul_i', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=38">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) [483]  (5.580 ns)
+<td align="left">The critical path in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4' consists of the following:
+	'store' operation 0 bit ('t_write_ln56', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=56">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) of constant 0 on local variable 't', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=56">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a> [436]  (1.588 ns)
+	'load' operation 4 bit ('t', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=62">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) on local variable 't', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=56">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a> [439]  (0.000 ns)
+	'xor' operation 3 bit ('row_to_fetch', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=62">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) [497]  (0.965 ns)
+	'mul' operation 19 bit ('mul_i', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=65">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=345">shell.cpp</a>) [501]  (5.580 ns)
 
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">Throughput</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6' (loop 'VITIS_LOOP_361_6'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_23_write_ln18', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp#line=18">pe.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp#line=109">sa.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=371">shell.cpp</a>) of variable 'add_ln18_13', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp#line=18">pe.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp#line=109">sa.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=371">shell.cpp</a> on static variable 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_23' and 'load' operation 32 bit ('mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_412', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp#line=91">sa.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=371">shell.cpp</a>) on static variable 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_23'.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3467,7 +3544,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_2_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6' (loop 'VITIS_LOOP_361_6'): Unable to schedule bus request operation ('t_in_4_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=44">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=44">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3478,7 +3555,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_4_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6' (loop 'VITIS_LOOP_361_6'): Unable to schedule bus request operation ('t_in_6_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=44">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=44">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3489,7 +3566,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_6_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6' (loop 'VITIS_LOOP_361_6'): Unable to schedule bus request operation ('t_in_8_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=44">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=44">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3500,45 +3577,118 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_8_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6' (loop 'VITIS_LOOP_361_6'): Unable to schedule bus request operation ('t_in_14_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=44">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=44">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
 <td align="left">14</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5' (loop 'VITIS_LOOP_296_5'): Unable to schedule bus request operation ('t_in_14_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) on port 'bi' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=26">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=300">shell.cpp</a>) due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">15</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 8, Depth = 35, loop 'VITIS_LOOP_296_5'
+<td align="left">Pipelining result : Target II = 1, Final II = 8, Depth = 25, loop 'VITIS_LOOP_361_6'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">Estimated clock period (7.890 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
 <td align="left">16</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
 <td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Interface</td>
-<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The critical path in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6' consists of the following:
+	'load' operation 5 bit ('t') on local variable 'col', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=36">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a> [620]  (0.000 ns)
+	'add' operation 6 bit ('col', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=20">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=364">shell.cpp</a>) [726]  (1.780 ns)
+	'add' operation 16 bit ('global_col', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=40">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) [855]  (2.077 ns)
+	'icmp' operation 1 bit ('icmp_ln43_4', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) [856]  (2.077 ns)
+	'and' operation 1 bit ('and_ln43_4', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=365">shell.cpp</a>) [857]  (0.978 ns)
+	blocking operation 0.978 ns on control path)
+
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
 <td align="left">17</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7' (loop 'VITIS_LOOP_382_7'): Unable to schedule 'load' operation 32 bit ('c_tile_acc_load_1', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) on array 'c_tile_acc' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'c_tile_acc'.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7' (loop 'VITIS_LOOP_382_7'): Unable to schedule bus request operation ('ca_addr_2_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) on port 'ca' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7' (loop 'VITIS_LOOP_382_7'): Unable to schedule bus request operation ('ca_addr_3_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) on port 'ca' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7' (loop 'VITIS_LOOP_382_7'): Unable to schedule bus request operation ('ca_addr_4_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) on port 'ca' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7' (loop 'VITIS_LOOP_382_7'): Unable to schedule bus request operation ('ca_addr_7_req', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) on port 'ca' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=391">shell.cpp</a>) due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 8, Depth = 16, loop 'VITIS_LOOP_382_7'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">23</td>
 <td align="left">Kernel</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
@@ -3549,90 +3699,13 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">18</td>
+<td align="left">24</td>
 <td align="left">Kernel</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
 <td align="left">**** Estimated Fmax: 122.96 MHz
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Interface</td>
-<td align="left">Multiple burst reads of length 8 and bit width 8 has been inferred on bundle 'aw'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) and bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) and bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) and bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) and bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">Throughput</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3' (loop 'VITIS_LOOP_276_3'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) and bus read operation ('fixed_in', <a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>) on port 'aw' (<a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=43">shell.cpp</a>-><a href="file:///home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp#line=280">shell.cpp</a>).
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 8, Depth = 19, loop 'VITIS_LOOP_276_3'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>

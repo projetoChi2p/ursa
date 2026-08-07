@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'mxm_execute_ursa'
 ================================================================
-* Date:           Wed Jul 22 13:28:25 2026
+* Date:           Fri Aug  7 15:00:23 2026
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        mxm_execute_ursa
@@ -25,12 +25,12 @@
 
 + Latency: 
     * Summary: 
-    +---------+-------------+-----------+-------------+-----+-------------+---------+
-    |    Latency (cycles)   |    Latency (absolute)   |      Interval     | Pipeline|
-    |   min   |     max     |    min    |     max     | min |     max     |   Type  |
-    +---------+-------------+-----------+-------------+-----+-------------+---------+
-    |        2|  19725189416|  20.000 ns|  197.252 sec|    3|  19725189417|       no|
-    +---------+-------------+-----------+-------------+-----+-------------+---------+
+    +---------+-----------------+-----------+-------------+-----+-----------------+---------+
+    |      Latency (cycles)     |    Latency (absolute)   |        Interval       | Pipeline|
+    |   min   |       max       |    min    |     max     | min |       max       |   Type  |
+    +---------+-----------------+-----------+-------------+-----+-----------------+---------+
+    |        3|  155586129821699|  30.000 ns|  1.6e+06 sec|    4|  155586129821700|       no|
+    +---------+-----------------+-----------+-------------+-----+-----------------+---------+
 
     + Detail: 
         * Instance: 
@@ -38,17 +38,19 @@
         |                                                        |                                            |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
         |                        Instance                        |                   Module                   |   min   |   max   |    min   |    max   | min | max |   Type  |
         +--------------------------------------------------------+--------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
-        |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3_fu_964   |mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3  |       77|       77|  0.770 us|  0.770 us|   77|   77|       no|
-        |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5_fu_1325  |mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5  |      211|      211|  2.110 us|  2.110 us|  211|  211|       no|
+        |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4_fu_1035  |mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4  |       77|       77|  0.770 us|  0.770 us|   77|   77|       no|
+        |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6_fu_1408  |mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6  |      201|      201|  2.010 us|  2.010 us|  201|  201|       no|
+        |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7_fu_1831  |mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7  |       73|       73|  0.730 us|  0.730 us|   73|   73|       no|
         +--------------------------------------------------------+--------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
 
         * Loop: 
-        +-------------------------------------+---------+-------------+----------+-----------+-----------+--------------+----------+
-        |                                     |    Latency (cycles)   | Iteration|  Initiation Interval  |     Trip     |          |
-        |              Loop Name              |   min   |     max     |  Latency |  achieved |   target  |     Count    | Pipelined|
-        +-------------------------------------+---------+-------------+----------+-----------+-----------+--------------+----------+
-        |- VITIS_LOOP_259_1_VITIS_LOOP_260_2  |        0|  19725189414|       294|          -|          -|  0 ~ 67092481|        no|
-        +-------------------------------------+---------+-------------+----------+-----------+-----------+--------------+----------+
+        +-------------------------------------+---------+-----------------+--------------+-----------+-----------+--------------+----------+
+        |                                     |      Latency (cycles)     |   Iteration  |  Initiation Interval  |     Trip     |          |
+        |              Loop Name              |   min   |       max       |    Latency   |  achieved |   target  |     Count    | Pipelined|
+        +-------------------------------------+---------+-----------------+--------------+-----------+-----------+--------------+----------+
+        |- VITIS_LOOP_312_1_VITIS_LOOP_313_2  |        0|  155586129821696|  78 ~ 2318414|          -|          -|  0 ~ 67108864|        no|
+        | + VITIS_LOOP_328_3                  |        0|          2318336|           283|          -|          -|      0 ~ 8192|        no|
+        +-------------------------------------+---------+-----------------+--------------+-----------+-----------+--------------+----------+
 
 
 
@@ -60,18 +62,18 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|    173|    -|
+|Expression       |        -|    -|       0|    628|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |        8|   59|   12357|  10582|    -|
-|Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       -|   1146|    -|
-|Register         |        -|    -|    1968|      -|    -|
+|Instance         |        8|   68|   11905|  11553|    -|
+|Memory           |        2|    -|       0|      0|    0|
+|Multiplexer      |        -|    -|       -|   1246|    -|
+|Register         |        -|    -|    2232|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        8|   59|   14325|  11901|    0|
+|Total            |       10|   68|   14137|  13427|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |        2|   26|      13|     22|    0|
+|Utilization (%)  |        3|   30|      13|     25|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
@@ -84,20 +86,27 @@
     |bi_m_axi_U                                              |bi_m_axi                                    |        2|   0|   866|   853|    0|
     |ca_m_axi_U                                              |ca_m_axi                                    |        4|   0|   830|   733|    0|
     |control_s_axi_U                                         |control_s_axi                               |        0|   0|   240|   424|    0|
-    |mul_13ns_13ns_26_1_1_U555                               |mul_13ns_13ns_26_1_1                        |        0|   1|     0|     6|    0|
-    |mul_13ns_16ns_29_1_1_U556                               |mul_13ns_16ns_29_1_1                        |        0|   1|     0|     6|    0|
-    |mul_13ns_16ns_29_1_1_U557                               |mul_13ns_16ns_29_1_1                        |        0|   1|     0|     6|    0|
-    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3_fu_964   |mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3  |        0|   0|   590|   818|    0|
-    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5_fu_1325  |mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5  |        0|  56|  8855|  6731|    0|
+    |mul_13ns_16ns_29_1_1_U591                               |mul_13ns_16ns_29_1_1                        |        0|   1|     0|     6|    0|
+    |mul_13ns_16ns_29_1_1_U592                               |mul_13ns_16ns_29_1_1                        |        0|   1|     0|     6|    0|
+    |mul_14ns_14ns_28_1_1_U590                               |mul_14ns_14ns_28_1_1                        |        0|   1|     0|     6|    0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4_fu_1035  |mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4  |        0|   0|  1874|  2703|    0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6_fu_1408  |mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6  |        0|  64|  6221|  4480|    0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7_fu_1831  |mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7  |        0|   1|   898|  1337|    0|
     +--------------------------------------------------------+--------------------------------------------+---------+----+------+------+-----+
-    |Total                                                   |                                            |        8|  59| 12357| 10582|    0|
+    |Total                                                   |                                            |        8|  68| 11905| 11553|    0|
     +--------------------------------------------------------+--------------------------------------------+---------+----+------+------+-----+
 
     * DSP: 
     N/A
 
     * Memory: 
-    N/A
+    +--------------+--------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |    Memory    |          Module          | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------------+--------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |c_tile_acc_U  |c_tile_acc_RAM_AUTO_1R1W  |        2|  0|   0|    0|    64|   32|     1|         2048|
+    +--------------+--------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total         |                          |        2|  0|   0|    0|    64|   32|     1|         2048|
+    +--------------+--------------------------+---------+---+----+-----+------+-----+------+-------------+
 
     * FIFO: 
     N/A
@@ -106,33 +115,61 @@
     +---------------------------+----------+----+---+----+------------+------------+
     |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------+----------+----+---+----+------------+------------+
-    |add_ln259_1_fu_2337_p2     |         +|   0|  0|  14|          13|           1|
-    |add_ln259_fu_2312_p2       |         +|   0|  0|  33|          26|           1|
-    |add_ln260_fu_2351_p2       |         +|   0|  0|  14|          13|           1|
-    |add_ln263_fu_2860_p2       |         +|   0|  0|  39|          32|          32|
-    |icmp_ln259_fu_2307_p2      |      icmp|   0|  0|  33|          26|          26|
-    |icmp_ln260_fu_2324_p2      |      icmp|   0|  0|  14|          13|          13|
-    |select_ln259_1_fu_2343_p3  |    select|   0|  0|  13|           1|          13|
-    |select_ln259_fu_2329_p3    |    select|   0|  0|  13|           1|           1|
+    |add_ln308_fu_2381_p2       |         +|   0|  0|  24|          17|           3|
+    |add_ln309_fu_2391_p2       |         +|   0|  0|  24|          17|           3|
+    |add_ln310_fu_2420_p2       |         +|   0|  0|  24|          17|           3|
+    |add_ln312_1_fu_2466_p2     |         +|   0|  0|  34|          27|           1|
+    |add_ln312_fu_2478_p2       |         +|   0|  0|  17|          14|           1|
+    |add_ln313_fu_2654_p2       |         +|   0|  0|  17|          14|           1|
+    |add_ln328_fu_2544_p2       |         +|   0|  0|  17|          14|           1|
+    |add_ln330_fu_2566_p2       |         +|   0|  0|  39|          32|          32|
+    |add_ln331_fu_2903_p2       |         +|   0|  0|  39|          32|          32|
+    |cmp124_1_fu_2589_p2        |      icmp|   0|  0|  23|          16|          16|
+    |cmp124_2_fu_2599_p2        |      icmp|   0|  0|  23|          16|          16|
+    |cmp124_3_fu_2609_p2        |      icmp|   0|  0|  23|          16|          16|
+    |cmp124_4_fu_2619_p2        |      icmp|   0|  0|  23|          16|          16|
+    |cmp124_5_fu_2629_p2        |      icmp|   0|  0|  23|          16|          16|
+    |cmp124_6_fu_2639_p2        |      icmp|   0|  0|  23|          16|          16|
+    |cmp124_7_fu_2649_p2        |      icmp|   0|  0|  23|          16|          16|
+    |cmp124_fu_2580_p2          |      icmp|   0|  0|  23|          16|          16|
+    |icmp_ln312_fu_2461_p2      |      icmp|   0|  0|  35|          28|          28|
+    |icmp_ln313_fu_2484_p2      |      icmp|   0|  0|  17|          14|          14|
+    |icmp_ln328_fu_2539_p2      |      icmp|   0|  0|  17|          14|          14|
+    |global_col_10_fu_2624_p2   |        or|   0|  0|  16|          16|           3|
+    |global_col_12_fu_2634_p2   |        or|   0|  0|  16|          16|           3|
+    |global_col_14_fu_2644_p2   |        or|   0|  0|  16|          16|           3|
+    |global_col_2_fu_2584_p2    |        or|   0|  0|  16|          16|           1|
+    |global_col_4_fu_2594_p2    |        or|   0|  0|  16|          16|           2|
+    |global_col_6_fu_2604_p2    |        or|   0|  0|  16|          16|           2|
+    |global_col_8_fu_2614_p2    |        or|   0|  0|  16|          16|           3|
+    |select_ln312_1_fu_2489_p3  |    select|   0|  0|  14|           1|          14|
+    |select_ln312_fu_2501_p3    |    select|   0|  0|  14|           1|           1|
     +---------------------------+----------+----+---+----+------------+------------+
-    |Total                      |          |   0|  0| 173|         125|          88|
+    |Total                      |          |   0|  0| 628|         482|         293|
     +---------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
     +---------------------------------------------------------------------------------------+----+-----------+-----+-----------+
     |                                          Name                                         | LUT| Input Size| Bits| Total Bits|
     +---------------------------------------------------------------------------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm                                                                              |  48|          9|    1|          9|
+    |ap_NS_fsm                                                                              |  65|         13|    1|         13|
     |aw_ARVALID                                                                             |   9|          2|    1|          2|
     |aw_RREADY                                                                              |   9|          2|    1|          2|
     |bi_ARVALID                                                                             |   9|          2|    1|          2|
     |bi_RREADY                                                                              |   9|          2|    1|          2|
+    |c_tile_acc_address0                                                                    |  14|          3|    6|         18|
+    |c_tile_acc_address1                                                                    |  14|          3|    6|         18|
+    |c_tile_acc_ce0                                                                         |  14|          3|    1|          3|
+    |c_tile_acc_ce1                                                                         |  14|          3|    1|          3|
+    |c_tile_acc_we0                                                                         |   9|          2|    1|          2|
+    |c_tile_acc_we1                                                                         |   9|          2|    1|          2|
     |ca_AWVALID                                                                             |   9|          2|    1|          2|
     |ca_BREADY                                                                              |   9|          2|    1|          2|
     |ca_WVALID                                                                              |   9|          2|    1|          2|
-    |i_fu_696                                                                               |   9|          2|   13|         26|
-    |indvar_flatten_fu_700                                                                  |   9|          2|   26|         52|
-    |j_fu_468                                                                               |   9|          2|   13|         26|
+    |i_fu_496                                                                               |   9|          2|   14|         28|
+    |indvar_flatten_fu_500                                                                  |   9|          2|   27|         54|
+    |j_fu_492                                                                               |   9|          2|   14|         28|
+    |k_reg_1024                                                                             |   9|          2|   14|         28|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13          |   9|          2|    8|         16|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_178         |   9|          2|    8|         16|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_179         |   9|          2|    8|         16|
@@ -187,66 +224,66 @@
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_231         |   9|          2|    8|         16|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_233         |   9|          2|    8|         16|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_234         |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_251_fu_616  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_252_fu_612  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_253_fu_608  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_254_fu_604  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_255_fu_600  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_256_fu_596  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_257_fu_592  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_258_fu_588  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_259_fu_584  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_260_fu_580  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_261_fu_576  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_262_fu_572  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_263_fu_568  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_264_fu_564  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_265_fu_560  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_266_fu_556  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_267_fu_552  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_268_fu_548  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_269_fu_544  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_270_fu_540  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_271_fu_536  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_272_fu_532  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_273_fu_528  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_274_fu_524  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_275_fu_520  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_276_fu_516  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_277_fu_512  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_278_fu_508  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_279_fu_504  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_280_fu_500  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_281_fu_496  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_282_fu_492  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_283_fu_488  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_284_fu_484  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_285_fu_480  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_286_fu_476  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_287_fu_472  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_251_fu_648  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_252_fu_644  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_253_fu_640  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_254_fu_636  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_255_fu_632  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_256_fu_628  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_257_fu_624  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_258_fu_620  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_259_fu_616  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_260_fu_612  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_261_fu_608  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_262_fu_604  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_263_fu_600  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_264_fu_596  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_265_fu_592  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_266_fu_588  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_267_fu_584  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_268_fu_580  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_269_fu_576  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_270_fu_572  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_271_fu_568  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_272_fu_564  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_273_fu_560  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_274_fu_556  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_275_fu_552  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_276_fu_548  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_277_fu_544  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_278_fu_540  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_279_fu_536  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_280_fu_532  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_281_fu_528  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_282_fu_524  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_283_fu_520  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_284_fu_516  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_285_fu_512  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_286_fu_508  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_287_fu_504  |   9|          2|    8|         16|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_30          |   9|          2|    8|         16|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_4           |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_587_fu_620  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_588_fu_624  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_589_fu_628  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_590_fu_632  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_591_fu_636  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_592_fu_640  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_593_fu_644  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_594_fu_648  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_595_fu_652  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_596_fu_656  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_597_fu_660  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_598_fu_664  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_599_fu_668  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_600_fu_672  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_601_fu_676  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_602_fu_680  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_603_fu_684  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_604_fu_688  |   9|          2|    8|         16|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_605_fu_692  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_539_fu_652  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_540_fu_656  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_541_fu_660  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_542_fu_664  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_543_fu_668  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_544_fu_672  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_545_fu_676  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_546_fu_680  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_547_fu_684  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_548_fu_688  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_549_fu_692  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_550_fu_696  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_551_fu_700  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_552_fu_704  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_553_fu_708  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_554_fu_712  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_555_fu_716  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_556_fu_720  |   9|          2|    8|         16|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_557_fu_724  |   9|          2|    8|         16|
     +---------------------------------------------------------------------------------------+----+-----------+-----+-----------+
-    |Total                                                                                  |1146|        253|  956|       1919|
+    |Total                                                                                  |1246|        275|  989|       2003|
     +---------------------------------------------------------------------------------------+----+-----------+-----+-----------+
 
     * Register: 
@@ -255,27 +292,51 @@
     +---------------------------------------------------------------------------------------+----+----+-----+-----------+
     |a0_p_0_data_reg                                                                        |  16|   0|   16|          0|
     |a0_p_0_vld_reg                                                                         |   0|   0|    1|          1|
-    |add_ln263_reg_4355                                                                     |  29|   0|   32|          3|
-    |addr_a0_read_reg_3611                                                                  |  64|   0|   64|          0|
-    |addr_b0_read_reg_3606                                                                  |  64|   0|   64|          0|
-    |addr_c0_read_reg_3601                                                                  |  64|   0|   64|          0|
-    |ap_CS_fsm                                                                              |   8|   0|    8|          0|
+    |a0_p_read_reg_4322                                                                     |  16|   0|   16|          0|
+    |add_ln312_1_reg_4362                                                                   |  27|   0|   27|          0|
+    |add_ln328_reg_4419                                                                     |  14|   0|   14|          0|
+    |add_ln330_reg_4434                                                                     |  29|   0|   32|          3|
+    |add_ln331_reg_4687                                                                     |  29|   0|   32|          3|
+    |addr_a0_read_reg_3907                                                                  |  64|   0|   64|          0|
+    |addr_b0_read_reg_3902                                                                  |  64|   0|   64|          0|
+    |addr_c0_read_reg_3897                                                                  |  64|   0|   64|          0|
+    |ap_CS_fsm                                                                              |  12|   0|   12|          0|
     |b0_q_0_data_reg                                                                        |  16|   0|   16|          0|
     |b0_q_0_vld_reg                                                                         |   0|   0|    1|          1|
-    |b0_q_read_reg_3958                                                                     |  16|   0|   16|          0|
-    |bound_reg_3981                                                                         |  26|   0|   26|          0|
-    |call_b_cast_reg_3966                                                                   |  13|   0|   13|          0|
-    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3_fu_964_ap_start_reg                     |   1|   0|    1|          0|
-    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5_fu_1325_ap_start_reg                    |   1|   0|    1|          0|
-    |i_fu_696                                                                               |  13|   0|   13|          0|
-    |indvar_flatten_fu_700                                                                  |  26|   0|   26|          0|
-    |j_fu_468                                                                               |  13|   0|   13|          0|
+    |b0_q_read_reg_4304                                                                     |  16|   0|   16|          0|
+    |base_col_A_reg_4429                                                                    |  13|   0|   16|          3|
+    |base_col_B_cast_reg_4411                                                               |  13|   0|   32|         19|
+    |base_col_B_reg_4397                                                                    |  13|   0|   16|          3|
+    |bound_reg_4354                                                                         |  28|   0|   28|          0|
+    |cmp124_1_reg_4454                                                                      |   1|   0|    1|          0|
+    |cmp124_2_reg_4464                                                                      |   1|   0|    1|          0|
+    |cmp124_3_reg_4474                                                                      |   1|   0|    1|          0|
+    |cmp124_4_reg_4484                                                                      |   1|   0|    1|          0|
+    |cmp124_5_reg_4494                                                                      |   1|   0|    1|          0|
+    |cmp124_6_reg_4504                                                                      |   1|   0|    1|          0|
+    |cmp124_7_reg_4514                                                                      |   1|   0|    1|          0|
+    |cmp124_reg_4444                                                                        |   1|   0|    1|          0|
+    |global_col_10_reg_4489                                                                 |  13|   0|   16|          3|
+    |global_col_12_reg_4499                                                                 |  13|   0|   16|          3|
+    |global_col_14_reg_4509                                                                 |  13|   0|   16|          3|
+    |global_col_2_reg_4449                                                                  |  13|   0|   16|          3|
+    |global_col_4_reg_4459                                                                  |  13|   0|   16|          3|
+    |global_col_6_reg_4469                                                                  |  13|   0|   16|          3|
+    |global_col_8_reg_4479                                                                  |  13|   0|   16|          3|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4_fu_1035_ap_start_reg                    |   1|   0|    1|          0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6_fu_1408_ap_start_reg                    |   1|   0|    1|          0|
+    |grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7_fu_1831_ap_start_reg                    |   1|   0|    1|          0|
+    |i_fu_496                                                                               |  14|   0|   14|          0|
+    |icmp_ln313_reg_4370                                                                    |   1|   0|    1|          0|
+    |indvar_flatten_fu_500                                                                  |  27|   0|   27|          0|
+    |j_fu_492                                                                               |  14|   0|   14|          0|
+    |k_reg_1024                                                                             |  14|   0|   14|          0|
+    |lshr_ln309_cast_reg_4328                                                               |  14|   0|   14|          0|
+    |lshr_ln310_cast_reg_4339                                                               |  14|   0|   14|          0|
     |m_0_data_reg                                                                           |  16|   0|   16|          0|
     |m_0_vld_reg                                                                            |   0|   0|    1|          1|
-    |m_cast_reg_3971                                                                        |  16|   0|   29|         13|
-    |m_read_reg_3952                                                                        |  16|   0|   16|          0|
-    |mul_ln259_1_reg_4004                                                                   |  29|   0|   29|          0|
-    |mul_ln259_reg_3999                                                                     |  29|   0|   29|          0|
+    |m_read_reg_4296                                                                        |  16|   0|   16|          0|
+    |mul_ln331_reg_4439                                                                     |  29|   0|   29|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_175         |   8|   0|    8|          0|
@@ -341,43 +402,43 @@
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_233         |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_234         |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_243         |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_251_fu_616  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_252_fu_612  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_253_fu_608  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_254_fu_604  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_255_fu_600  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_256_fu_596  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_257_fu_592  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_258_fu_588  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_259_fu_584  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_260_fu_580  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_261_fu_576  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_262_fu_572  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_263_fu_568  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_264_fu_564  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_265_fu_560  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_266_fu_556  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_267_fu_552  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_268_fu_548  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_269_fu_544  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_270_fu_540  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_271_fu_536  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_272_fu_532  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_273_fu_528  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_274_fu_524  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_275_fu_520  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_276_fu_516  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_277_fu_512  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_278_fu_508  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_279_fu_504  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_280_fu_500  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_281_fu_496  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_282_fu_492  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_283_fu_488  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_284_fu_484  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_285_fu_480  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_286_fu_476  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_287_fu_472  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_251_fu_648  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_252_fu_644  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_253_fu_640  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_254_fu_636  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_255_fu_632  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_256_fu_628  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_257_fu_624  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_258_fu_620  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_259_fu_616  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_260_fu_612  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_261_fu_608  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_262_fu_604  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_263_fu_600  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_264_fu_596  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_265_fu_592  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_266_fu_588  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_267_fu_584  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_268_fu_580  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_269_fu_576  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_270_fu_572  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_271_fu_568  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_272_fu_564  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_273_fu_560  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_274_fu_556  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_275_fu_552  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_276_fu_548  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_277_fu_544  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_278_fu_540  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_279_fu_536  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_280_fu_532  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_281_fu_528  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_282_fu_524  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_283_fu_520  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_284_fu_516  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_285_fu_512  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_286_fu_508  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_287_fu_504  |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_30          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_32          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_39          |   8|   0|    8|          0|
@@ -396,32 +457,32 @@
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_51          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_52          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_53          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_539_fu_652  |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_54          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_540_fu_656  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_541_fu_660  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_542_fu_664  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_543_fu_668  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_544_fu_672  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_545_fu_676  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_546_fu_680  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_547_fu_684  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_548_fu_688  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_549_fu_692  |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_55          |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_550_fu_696  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_551_fu_700  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_552_fu_704  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_553_fu_708  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_554_fu_712  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_555_fu_716  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_556_fu_720  |   8|   0|    8|          0|
+    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_557_fu_724  |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_56          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_57          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_58          |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_587_fu_620  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_588_fu_624  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_589_fu_628  |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_59          |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_590_fu_632  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_591_fu_636  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_592_fu_640  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_593_fu_644  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_594_fu_648  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_595_fu_652  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_596_fu_656  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_597_fu_660  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_598_fu_664  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_599_fu_668  |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_60          |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_600_fu_672  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_601_fu_676  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_602_fu_680  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_603_fu_684  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_604_fu_688  |   8|   0|    8|          0|
-    |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_605_fu_692  |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_61          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_62          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_63          |   8|   0|    8|          0|
@@ -452,13 +513,16 @@
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_88          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_89          |   8|   0|    8|          0|
     |mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_96          |   8|   0|    8|          0|
-    |p_cast37_mid2_v_reg_4177                                                               |  29|   0|   32|          3|
-    |select_ln259_1_reg_3994                                                                |  13|   0|   13|          0|
-    |select_ln259_reg_3989                                                                  |  13|   0|   13|          0|
-    |shl_ln_reg_4350                                                                        |  13|   0|   16|          3|
-    |zext_ln74_reg_3976                                                                     |  16|   0|   29|         13|
+    |p_mid_reg_4392                                                                         |  29|   0|   32|          3|
+    |select_ln312_1_reg_4375                                                                |  14|   0|   14|          0|
+    |select_ln312_reg_4387                                                                  |  14|   0|   14|          0|
+    |trunc_ln312_reg_4380                                                                   |  13|   0|   13|          0|
+    |trunc_ln334_reg_4424                                                                   |  13|   0|   13|          0|
+    |trunc_ln_reg_4334                                                                      |  14|   0|   14|          0|
+    |zext_ln312_reg_4349                                                                    |  16|   0|   29|         13|
+    |zext_ln331_reg_4344                                                                    |  16|   0|   29|         13|
     +---------------------------------------------------------------------------------------+----+----+-----+-----------+
-    |Total                                                                                  |1968|   0| 2006|         38|
+    |Total                                                                                  |2232|   0| 2316|         84|
     +---------------------------------------------------------------------------------------+----+----+-----+-----------+
 
 

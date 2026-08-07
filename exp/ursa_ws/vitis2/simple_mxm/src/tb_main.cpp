@@ -124,7 +124,7 @@ int main()
     int pass=0;
 	pass=compare_mxm(g_mem_c, g_mem_c_gold, P, Q);
     
-    printf("SA_SIZE = %d\n", SA_SIZE);
+    printf("SA_SIZE = %d | P = %d | M = %d | Q = %d \n", SA_SIZE, P, M, Q);
 
     if(pass)  {
         printf("[PASS] URSA output matches gold!\n");

@@ -7009,90 +7009,118 @@ typedef struct {
 }SA;
 
 void sa_init(SA *sa);
+void sa_reset(SA *sa);
 void sa_input_l_t(SA *sa, lr_t l_in, tb_t t_in, uint16_t k);
 void sa_load_weights(SA *sa);
 void sa_compute(SA *sa);
-
-void sa_reset(SA *sa);
 # 5 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.h" 2
 # 2 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp" 2
 
 
 
-void fill_left_inputs(lr_t l_in[8], uint16_t t){
 
-
-
-
-
+void fill_left_inputs(lr_t l_in[8], uint16_t t, lr_t c_tile_acc[8][8], uint16_t k){
 #pragma HLS PIPELINE II=1
 
- VITIS_LOOP_13_1: for(uint16_t i=0;i<8;i++){
+ VITIS_LOOP_9_1: for(uint16_t i=0;i<8;i++){
 #pragma HLS UNROLL
- l_in[i] = 0;
+
+ if (k==0) {
+
+            l_in[i] = 0;
+        }
+        else {
+
+            if (t>= i && t < i + 8){
+                uint16_t col = t - i;
+                l_in[i] = c_tile_acc[i][col];
+            }
+            else{
+                l_in[i] = 0;
+            }
+        }
     }
 }
 
-void fill_top_inputs(tb_t *addr_t, uint16_t str_t, tb_t t_in[8] ,uint16_t t){
+void fill_top_inputs(tb_t *addr_t, uint16_t str_t, tb_t t_in[8] ,uint16_t t,
+                     uint16_t base_row_B, uint16_t base_col_B, uint16_t limit_m, uint16_t limit_q){
 #pragma HLS PIPELINE II=1
- VITIS_LOOP_21_1: for(uint16_t j=0; j<8; j++){
+ VITIS_LOOP_32_1: for(uint16_t j=0; j<8; j++){
 #pragma HLS UNROLL
 
  if (t >= j && t < j + 8) {
             uint16_t col = t - j;
-            t_in[j] = *(addr_t + (j * str_t) + col);
+
+
+            uint16_t global_row = base_row_B + j;
+            uint16_t global_col = base_col_B + col;
+
+
+            if (global_row < limit_m && global_col < limit_q){
+                t_in[j] = *(addr_t + (j *str_t) + col);
+            }
+            else {
+                t_in[j] = 0;
+            }
+
         } else {
             t_in[j] = 0;
         }
     }
 }
 
-void fetch_weight_row(fixed_t *addr_fixed, uint16_t m, fixed_t in_fixed[8], uint16_t t) {
+void fetch_weight_row(fixed_t *addr_fixed, uint16_t m, fixed_t in_fixed[8], uint16_t t,
+                      uint16_t base_row_A, uint16_t base_col_A, uint16_t limit_p, uint16_t limit_m) {
 #pragma HLS PIPELINE II=1
 
 
 
  uint16_t row_to_fetch = (8 - 1) - t;
 
-    VITIS_LOOP_40_1: for(uint16_t j = 0; j < 8; j++) {
+
+    uint16_t global_row = base_row_A + row_to_fetch;
+
+    VITIS_LOOP_67_1: for(uint16_t j = 0; j < 8; j++) {
 #pragma HLS UNROLL
 
- in_fixed[j] = *(addr_fixed + (row_to_fetch * m) + j);
+ uint16_t global_col = base_col_A + j;
+
+
+        if (global_row < limit_p && global_col < limit_m){
+            in_fixed[j] = *(addr_fixed + (row_to_fetch * m) + j);
+        }
+        else {
+
+            in_fixed[j] = 0;
+        }
+
     }
 }
 
 void load_inputs_sa(SA *sa, lr_t l_in[8], tb_t t_in[8]){
 #pragma HLS PIPELINE II=1
 
- VITIS_LOOP_50_1: for(uint16_t k=0;k<8;k++) {
+ VITIS_LOOP_87_1: for(uint16_t k=0;k<8;k++) {
 #pragma HLS UNROLL factor=8
  sa_input_l_t(sa,l_in[k],t_in[k],k);
     }
 }
 
-void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16_t m) {
+void store_right_outputs(SA *sa, lr_t c_tile_acc[8][8], uint16_t t) {
 #pragma HLS PIPELINE II=1
 
-
- VITIS_LOOP_60_1: for(uint16_t i = 0; i < 8; i++){
+ VITIS_LOOP_96_1: for(uint16_t i = 0; i < 8; i++){
 #pragma HLS UNROLL
-
-
  uint16_t output_start_time = i + 8 -1;
 
+        if(t >= output_start_time && t < output_start_time + 8){
+            uint16_t col = t -output_start_time;
 
-        if (t >= output_start_time && t < output_start_time + m) {
-
-
-            uint16_t col_idx = t - output_start_time;
-
-
-
-            *(addr_c + (i * b0_q) + col_idx) = sa->pe[i][8 - 1].r_out;
+            c_tile_acc[i][col] = sa -> pe[i][8 -1].r_out;
         }
     }
 }
-# 128 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
+# 180 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
         __attribute__((sdx_kernel("mxm_execute_ursa", 0))) sa_result_t mxm_execute_ursa(
             int8_t *addr_a0,
             uint16_t a0_p,
@@ -7108,7 +7136,7 @@ void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16
 {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=mxm_execute_ursa
-# 140 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
+# 192 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
 
 
 
@@ -7117,9 +7145,9 @@ void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16
 
     data_a_t *casted_a0 = (data_a_t*)addr_a0;
     data_c_t *casted_c0 = (data_c_t*)addr_c0;
-# 167 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
+# 219 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
     data_b_t *casted_b0 = (data_b_t*)addr_b0;
-# 190 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
+# 242 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
 #pragma HLS INTERFACE mode=m_axi port=casted_a0 bundle=aw offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200
 
 
@@ -7132,9 +7160,9 @@ void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16
 #pragma HLS INTERFACE mode=s_axilite port=a0_p bundle=ap register
 #pragma HLS INTERFACE mode=s_axilite port=b0_q bundle=ap register
 #pragma HLS INTERFACE mode=s_axilite port=m bundle=ap register
-# 215 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
+# 267 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
 #pragma HLS INTERFACE mode=m_axi port=casted_b0 bundle=bi offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200
-# 233 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
+# 285 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
  lr_t l_in[8];
 #pragma HLS ARRAY_PARTITION variable=l_in complete dim=1
 
@@ -7148,7 +7176,7 @@ void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16
     data_b_t *addr_sa_b;
     data_c_t *addr_sa_c;
 
-    printf("[sa_shell] addr_a0: %d  addr_b0: %d addr_c0: %d\n", addr_a0, addr_b0, addr_c0);
+
 
 
 
@@ -7158,51 +7186,83 @@ void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16
  {
 #pragma HLS DATAFLOW
  sa_init(&sa);
-        uint16_t call_c = a0_p/8;
-        uint16_t call_b = b0_q/8;
+        uint16_t call_p = (a0_p + 8 - 1)/8;
+        uint16_t call_q = (b0_q + 8 - 1)/8;
+        uint16_t call_m = (m + 8 - 1)/8;
 
-        VITIS_LOOP_259_1: for(uint16_t i=0;i<call_c;i++){
-            VITIS_LOOP_260_2: for(uint16_t j=0;j<call_b;j++){
-                addr_sa_a = (data_a_t*)(casted_a0 + i * 8 * m);
-                addr_sa_b = (data_b_t*)(casted_b0 + j * 8);
-                addr_sa_c = (data_c_t*)(casted_c0 + (i * 8 * b0_q) + (j * 8));
-# 276 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
-                VITIS_LOOP_276_3: for(uint16_t t = 0; t < 8; t++){
+        VITIS_LOOP_312_1: for(uint16_t i=0;i<call_p;i++){
+            VITIS_LOOP_313_2: for(uint16_t j=0;j<call_q;j++){
+
+                lr_t c_tile_acc[8][8];
+# 328 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
+                VITIS_LOOP_328_3: for (uint16_t k = 0; k < call_m; k++){
+
+                    addr_sa_a = (data_a_t*)(casted_a0 + (i * 8 * m) + (k * 8));
+                    addr_sa_b = (data_b_t*)(casted_b0 + (k * 8 * b0_q) + (j * 8));
+
+                    uint16_t base_row_A = i * 8;
+                    uint16_t base_col_A = k * 8;
+
+                    uint16_t base_row_B = k * 8;
+                    uint16_t base_col_B = j * 8;
+
+
+
+                    VITIS_LOOP_341_4: for(uint16_t t = 0; t < 8; t++){
 #pragma HLS PIPELINE II=1
 
 
- fetch_weight_row(addr_sa_a, m, fixed_in, t);
+ fetch_weight_row(addr_sa_a, m, fixed_in, t, base_row_A, base_col_A, a0_p, m);
 
 
-                    VITIS_LOOP_283_4: for(uint16_t k=0; k<8; k++) {
+                        VITIS_LOOP_348_5: for(uint16_t idx=0; idx<8; idx++) {
 #pragma HLS UNROLL
- sa.in_mtx_t[k] = fixed_in[k];
+ sa.in_mtx_t[idx] = fixed_in[idx];
+                        }
+
+
+                        sa_load_weights(&sa);
                     }
 
 
-                    sa_load_weights(&sa);
-                }
 
+                    uint16_t total_cycles = 8 + 8 + (8 - 1);
 
-
-                uint16_t total_cycles = 8 + 8 + (8 - 1);
-
-                VITIS_LOOP_296_5: for(uint16_t t = 0; t < total_cycles; t++){
+                    VITIS_LOOP_361_6: for(uint16_t t = 0; t < total_cycles; t++){
 #pragma HLS PIPELINE II=1
 
- fill_left_inputs(l_in,t);
-                    fill_top_inputs(addr_sa_b,b0_q,t_in,t);
+ fill_left_inputs(l_in,t, c_tile_acc, k);
+                        fill_top_inputs(addr_sa_b, b0_q, t_in, t, base_row_B, base_col_B, m, b0_q);
 
 
-                    load_inputs_sa(&sa,l_in,t_in);
+                        load_inputs_sa(&sa,l_in,t_in);
 
 
-                    sa_compute(&sa);
+                        sa_compute(&sa);
 
 
-                    store_right_outputs(&sa, addr_sa_c, b0_q, t, m);
+                        store_right_outputs(&sa, c_tile_acc, t);
+                    }
                 }
-# 352 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
+
+
+
+                addr_sa_c = (data_c_t*)(casted_c0 + (i*8*b0_q) + (j*8));
+
+                VITIS_LOOP_382_7: for (uint16_t r = 0; r < 8; r++){
+#pragma HLS PIPELINE II=1
+ VITIS_LOOP_384_8: for (uint16_t c =0; c < 8; c++){
+
+                        uint16_t global_row = i * 8 + r;
+                        uint16_t global_col = j * 8 + c;
+
+
+                        if (global_row < a0_p && global_col < b0_q) {
+                            *(casted_c0 + (global_row * b0_q) + global_col) = c_tile_acc[r][c];
+                        }
+                    }
+                }
+# 430 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp"
             }
         }
     }

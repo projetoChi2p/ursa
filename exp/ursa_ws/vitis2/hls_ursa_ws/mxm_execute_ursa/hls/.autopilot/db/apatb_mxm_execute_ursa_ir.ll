@@ -3,8 +3,8 @@ source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:2048-i4096:4096-n8:16:32:64-S128-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024"
 target triple = "fpga64-xilinx-none"
 
-; Function Attrs: noinline
-define i8 @apatb_mxm_execute_ursa_ir(i8* noalias nonnull %addr_a0, i16 zeroext %a0_p, i8* noalias nonnull %addr_b0, i16 zeroext %b0_q, i32* noalias nonnull %addr_c0, i16 zeroext %m) local_unnamed_addr #0 {
+; Function Attrs: noinline willreturn
+define i8 @apatb_mxm_execute_ursa_ir(i8* noalias nocapture nonnull readonly %addr_a0, i16 zeroext %a0_p, i8* noalias nocapture nonnull readonly %addr_b0, i16 zeroext %b0_q, i32* noalias nocapture nonnull %addr_c0, i16 zeroext %m) local_unnamed_addr #0 {
 entry:
   %addr_a0_copy = alloca [200 x i8], align 512
   %addr_b0_copy = alloca [200 x i8], align 512
@@ -13,9 +13,10 @@ entry:
   %1 = bitcast i8* %addr_b0 to [200 x i8]*
   %2 = bitcast i32* %addr_c0 to [200 x i32]*
   call fastcc void @copy_in([200 x i8]* nonnull %0, [200 x i8]* nonnull align 512 %addr_a0_copy, [200 x i8]* nonnull %1, [200 x i8]* nonnull align 512 %addr_b0_copy, [200 x i32]* nonnull %2, [200 x i32]* nonnull align 512 %addr_c0_copy)
-  %3 = call i8 @apatb_mxm_execute_ursa_hw([200 x i8]* %addr_a0_copy, i16 %a0_p, [200 x i8]* %addr_b0_copy, i16 %b0_q, [200 x i32]* %addr_c0_copy, i16 %m)
+  %3 = getelementptr inbounds [200 x i32], [200 x i32]* %addr_c0_copy, i64 0, i64 0
+  %4 = call i8 @apatb_mxm_execute_ursa_hw([200 x i8]* %addr_a0_copy, i16 %a0_p, [200 x i8]* %addr_b0_copy, i16 %b0_q, i32* %3, i16 %m)
   call void @copy_back([200 x i8]* %0, [200 x i8]* %addr_a0_copy, [200 x i8]* %1, [200 x i8]* %addr_b0_copy, [200 x i32]* %2, [200 x i32]* %addr_c0_copy)
-  ret i8 %3
+  ret i8 %4
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
@@ -132,31 +133,30 @@ entry:
   ret void
 }
 
-declare i8 @apatb_mxm_execute_ursa_hw([200 x i8]*, i16, [200 x i8]*, i16, [200 x i32]*, i16)
+declare i8 @apatb_mxm_execute_ursa_hw([200 x i8]*, i16, [200 x i8]*, i16, i32*, i16)
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
 define internal fastcc void @copy_back([200 x i8]* noalias, [200 x i8]* noalias readonly align 512, [200 x i8]* noalias, [200 x i8]* noalias readonly align 512, [200 x i32]* noalias, [200 x i32]* noalias readonly align 512) unnamed_addr #4 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a200i8([200 x i8]* %0, [200 x i8]* align 512 %1)
-  call fastcc void @onebyonecpy_hls.p0a200i8([200 x i8]* %2, [200 x i8]* align 512 %3)
   call fastcc void @onebyonecpy_hls.p0a200i32([200 x i32]* %4, [200 x i32]* align 512 %5)
   ret void
 }
 
-define i8 @mxm_execute_ursa_hw_stub_wrapper([200 x i8]*, i16, [200 x i8]*, i16, [200 x i32]*, i16) #5 {
+define i8 @mxm_execute_ursa_hw_stub_wrapper([200 x i8]*, i16, [200 x i8]*, i16, i32*, i16) #5 {
 entry:
-  call void @copy_out([200 x i8]* null, [200 x i8]* %0, [200 x i8]* null, [200 x i8]* %2, [200 x i32]* null, [200 x i32]* %4)
-  %6 = bitcast [200 x i8]* %0 to i8*
-  %7 = bitcast [200 x i8]* %2 to i8*
-  %8 = bitcast [200 x i32]* %4 to i32*
-  %9 = call i8 @mxm_execute_ursa_hw_stub(i8* %6, i16 %1, i8* %7, i16 %3, i32* %8, i16 %5)
-  call void @copy_in([200 x i8]* null, [200 x i8]* %0, [200 x i8]* null, [200 x i8]* %2, [200 x i32]* null, [200 x i32]* %4)
-  ret i8 %9
+  %6 = bitcast i32* %4 to [200 x i32]*
+  call void @copy_out([200 x i8]* null, [200 x i8]* %0, [200 x i8]* null, [200 x i8]* %2, [200 x i32]* null, [200 x i32]* %6)
+  %7 = bitcast [200 x i8]* %0 to i8*
+  %8 = bitcast [200 x i8]* %2 to i8*
+  %9 = bitcast [200 x i32]* %6 to i32*
+  %10 = call i8 @mxm_execute_ursa_hw_stub(i8* %7, i16 %1, i8* %8, i16 %3, i32* %9, i16 %5)
+  call void @copy_in([200 x i8]* null, [200 x i8]* %0, [200 x i8]* null, [200 x i8]* %2, [200 x i32]* null, [200 x i32]* %6)
+  ret i8 %10
 }
 
 declare i8 @mxm_execute_ursa_hw_stub(i8*, i16, i8*, i16, i32*, i16)
 
-attributes #0 = { noinline "fpga.wrapper.func"="wrapper" }
+attributes #0 = { noinline willreturn "fpga.wrapper.func"="wrapper" }
 attributes #1 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="copyin" }
 attributes #2 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="onebyonecpy_hls" }
 attributes #3 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="arraycpy_hls" }

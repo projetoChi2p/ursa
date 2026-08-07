@@ -72,7 +72,7 @@ Args:
 Pass:            reflow-disaggr
 Name:            DisaggrReason
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 255, Column: 2 }
+                   Line: 307, Column: 2 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Adding '''
@@ -84,7 +84,7 @@ Args:
 Pass:            reflow-disaggr
 Name:            DisaggrReason
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 255, Column: 2 }
+                   Line: 307, Column: 2 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Adding '''
@@ -96,7 +96,7 @@ Args:
 Pass:            reflow-disaggr
 Name:            DisaggrReason
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 255, Column: 2 }
+                   Line: 307, Column: 2 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Adding '''
@@ -108,7 +108,7 @@ Args:
 Pass:            reflow-disaggr
 Name:            DisaggrSucc
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 250, Column: 0 }
+                   Line: 302, Column: 0 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Disaggregating variable '''
@@ -119,22 +119,33 @@ Args:
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 283, Column: 39 }
+                   Line: 348, Column: 43 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_283_4
+  - LoopName:        VITIS_LOOP_348_5
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 60, Column: 19 }
-Function:        _Z19store_right_outputsP2SAP6ap_intILi32EEttt
+                   Line: 384, Column: 20 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_60_1
+  - LoopName:        VITIS_LOOP_384_8
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 96, Column: 19 }
+Function:        _Z19store_right_outputsP2SAPA8_6ap_intILi32EEt
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_96_1
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
@@ -218,22 +229,33 @@ Args:
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 50, Column: 19 }
+                   Line: 87, Column: 19 }
 Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_50_1
+  - LoopName:        VITIS_LOOP_87_1
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 21, Column: 19 }
-Function:        _Z15fill_top_inputsP7ap_uintILi8EEtS1_t
+                   Line: 32, Column: 19 }
+Function:        _Z15fill_top_inputsP7ap_uintILi8EEtS1_ttttt
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_21_1
+  - LoopName:        VITIS_LOOP_32_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 9, Column: 18 }
+Function:        _Z16fill_left_inputsP6ap_intILi32EEtPA8_S0_t
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_9_1
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
@@ -295,24 +317,24 @@ Args:
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 40, Column: 22 }
-Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_t
+                   Line: 67, Column: 22 }
+Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_ttttt
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_40_1
+  - LoopName:        VITIS_LOOP_67_1
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 140, Column: 0 }
+                   Line: 192, Column: 0 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_283_4
+  - LoopName:        VITIS_LOOP_348_5
   - String:          ''' ('
-  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:283:39'
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:348:43'
   - String:          ') '
   - String:          'in function '''
   - String:          mxm_execute_ursa
@@ -323,13 +345,30 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 56, Column: 0 }
-Function:        _Z19store_right_outputsP2SAP6ap_intILi32EEttt
+                   Line: 192, Column: 0 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_60_1
+  - LoopName:        VITIS_LOOP_384_8
   - String:          ''' ('
-  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:60:19'
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:384:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mxm_execute_ursa
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 93, Column: 0 }
+Function:        _Z19store_right_outputsP2SAPA8_6ap_intILi32EEt
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_96_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:96:19'
   - String:          ') '
   - String:          'in function '''
   - String:          store_right_outputs
@@ -782,13 +821,13 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 47, Column: 0 }
+                   Line: 84, Column: 0 }
 Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_50_1
+  - LoopName:        VITIS_LOOP_87_1
   - String:          ''' ('
-  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:50:19'
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:87:19'
   - String:          ') '
   - String:          'in function '''
   - String:          load_inputs_sa
@@ -799,16 +838,33 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 19, Column: 0 }
-Function:        _Z15fill_top_inputsP7ap_uintILi8EEtS1_t
+                   Line: 30, Column: 0 }
+Function:        _Z15fill_top_inputsP7ap_uintILi8EEtS1_ttttt
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_21_1
+  - LoopName:        VITIS_LOOP_32_1
   - String:          ''' ('
-  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:21:19'
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:32:19'
   - String:          ') '
   - String:          'in function '''
   - String:          fill_top_inputs
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 6, Column: 0 }
+Function:        _Z16fill_left_inputsP6ap_intILi32EEtPA8_S0_t
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_9_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:9:18'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          fill_left_inputs
   - String:          ''' completely with a factor of '
   - Factor:          '8'
 ...
@@ -1122,13 +1178,13 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 33, Column: 0 }
-Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_t
+                   Line: 57, Column: 0 }
+Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_ttttt
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_40_1
+  - LoopName:        VITIS_LOOP_67_1
   - String:          ''' ('
-  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40:22'
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67:22'
   - String:          ') '
   - String:          'in function '''
   - String:          fetch_weight_row
@@ -1139,7 +1195,7 @@ Args:
 Pass:            reflow-inliner
 Name:            Inline
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 47, Column: 0 }
+                   Line: 84, Column: 0 }
 Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
 Args:            
   - String:          'Inlining function '''
@@ -1149,14 +1205,14 @@ Args:
   - String:          ''' into '''
   - Caller:          'load_inputs_sa(SA*, ap_int<32>*, ap_uint<8>*)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 47, Column: 0 }
+                       Line: 84, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 250, Column: 0 }
+                   Line: 302, Column: 0 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Applying '
@@ -1175,7 +1231,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 250, Column: 0 }
+                   Line: 302, Column: 0 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Applying '
@@ -1194,7 +1250,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 250, Column: 0 }
+                   Line: 302, Column: 0 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Applying '
@@ -1213,7 +1269,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 250, Column: 0 }
+                   Line: 302, Column: 0 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Applying '
@@ -1232,7 +1288,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 250, Column: 0 }
+                   Line: 302, Column: 0 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Applying '
@@ -1251,7 +1307,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 250, Column: 0 }
+                   Line: 302, Column: 0 }
 Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
 Args:            
   - String:          'Applying '
@@ -1270,7 +1326,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 250, Column: 0 }
+                   Line: 302, Column: 0 }
 Function:        _Z14load_inputs_saP2SAP6ap_intILi32EEP7ap_uintILi8EE
 Args:            
   - String:          'Applying '
@@ -1288,6 +1344,8 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 285, Column: 7 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Applying '
@@ -1306,7 +1364,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 236, Column: 7 }
+                   Line: 288, Column: 7 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Applying '
@@ -1325,7 +1383,7 @@ Args:
 Pass:            reflow-array-partition
 Name:            ArrayXform
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 239, Column: 10 }
+                   Line: 291, Column: 10 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Applying '
@@ -1340,118 +1398,276 @@ Args:
   - Dim:             '1'
   - String:          .
 ...
---- !Passed
+--- !Missed
 Pass:            reflow-burst-inference
-Name:            BurstInferred
+Name:            AccessInCondBranch
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 43, Column: 14 }
-Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_t
+                   Line: 391, Column: 77 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
-  - String:          'Sequential '
-  - Direction:       read
-  - String:          ' of length '
-  - Length:          '8'
-  - String:          ' has been inferred'
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - String:          ' is in the conditional branch'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        scevgep1seq
-  - ArrayName:       addr_fixed
+  - OrigAccess:      store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - OrigDirection:   write
+  - OrigID:          if.then.store.4
+  - ArrayName:       addr_c0
   - String:          ' '
-  - BundleName:      aw
+  - BundleName:      ca
   - String:          ' '
-  - Function:        'fetch_weight_row(ap_int<8>*, unsigned short, ap_int<8>*, unsigned short)'
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 33, Column: 0 }
+  - LoopName:        VITIS_LOOP_382_7
   - String:          ' '
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      load
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35'
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          entry.load.32
-  - OrigAccess:      load
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          entry.load.35
-  - OrigAccess:      load
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          entry.load.38
-  - OrigAccess:      load
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          entry.load.41
-  - OrigAccess:      load
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          entry.load.44
-  - OrigAccess:      load
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          entry.load.47
-  - OrigAccess:      load
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          entry.load.50
-  - OrigAccess:      load
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          entry.load.53
+                       Line: 192, Column: 0 }
+  - String:          ' '
 ...
 --- !Missed
-Pass:            reflow-burst-widen
-Name:            GreaterOrEqualThreshold
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 43, Column: 14 }
-Function:        _Z16fetch_weight_rowP6ap_intILi8EEtS1_t
+                   Line: 391, Column: 77 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
-  - String:          'Could not widen since type '
-  - Type:            i8
-  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
-  - Threshold:       '0'
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - String:          ' is in the conditional branch'
   - String:          ' _XLX_SEP_ '
-  - OrigAccess:      call
+  - OrigAccess:      store
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 43, Column: 14 }
-  - OrigDirection:   read
-  - OrigID:          scevgep1seq
-  - ArrayName:       addr_fixed
+                       Line: 391, Column: 77 }
+  - OrigDirection:   write
+  - OrigID:          if.then.1.store.4
+  - ArrayName:       addr_c0
   - String:          ' '
-  - BundleName:      aw
+  - BundleName:      ca
   - String:          ' '
-  - Function:        'fetch_weight_row(ap_int<8>*, unsigned short, ap_int<8>*, unsigned short)'
+  - LoopName:        VITIS_LOOP_382_7
+  - String:          ' '
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35'
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 33, Column: 0 }
+                       Line: 192, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 391, Column: 77 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - OrigDirection:   write
+  - OrigID:          if.then.2.store.4
+  - ArrayName:       addr_c0
+  - String:          ' '
+  - BundleName:      ca
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_382_7
+  - String:          ' '
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35'
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 192, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 391, Column: 77 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - OrigDirection:   write
+  - OrigID:          if.then.3.store.4
+  - ArrayName:       addr_c0
+  - String:          ' '
+  - BundleName:      ca
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_382_7
+  - String:          ' '
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35'
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 192, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 391, Column: 77 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - OrigDirection:   write
+  - OrigID:          if.then.4.store.4
+  - ArrayName:       addr_c0
+  - String:          ' '
+  - BundleName:      ca
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_382_7
+  - String:          ' '
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35'
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 192, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 391, Column: 77 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - OrigDirection:   write
+  - OrigID:          if.then.5.store.4
+  - ArrayName:       addr_c0
+  - String:          ' '
+  - BundleName:      ca
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_382_7
+  - String:          ' '
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35'
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 192, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 391, Column: 77 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - OrigDirection:   write
+  - OrigID:          if.then.6.store.4
+  - ArrayName:       addr_c0
+  - String:          ' '
+  - BundleName:      ca
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_382_7
+  - String:          ' '
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35'
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 192, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 391, Column: 77 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 391, Column: 77 }
+  - OrigDirection:   write
+  - OrigID:          if.then.7.store.4
+  - ArrayName:       addr_c0
+  - String:          ' '
+  - BundleName:      ca
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_382_7
+  - String:          ' '
+  - LoopLoc:         '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35'
+  - String:          ' '
+  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 192, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-auto-inline-performance-driven
 Name:            AutoInlinePerf
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 280, Column: 2 }
+                   Line: 345, Column: 2 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Automatically inlining function '''
-  - Callee:          'fetch_weight_row(ap_int<8>*, unsigned short, ap_int<8>*, unsigned short)'
+  - Callee:          'fetch_weight_row(ap_int<8>*, unsigned short, ap_int<8>*, unsigned short, unsigned short, unsigned short, unsigned short, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 33, Column: 0 }
+                       Line: 57, Column: 0 }
   - String:          ''' to improve effectiveness of pipeline pragma in function '''
   - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 140, Column: 0 }
+                       Line: 192, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-auto-inline-performance-driven
 Name:            AutoInlinePerf
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 289, Column: 21 }
+                   Line: 354, Column: 25 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Automatically inlining function '''
@@ -1461,48 +1677,65 @@ Args:
   - String:          ''' to improve effectiveness of pipeline pragma in function '''
   - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 140, Column: 0 }
+                       Line: 192, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-auto-inline-performance-driven
 Name:            AutoInlinePerf
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 300, Column: 21 }
+                   Line: 364, Column: 2 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Automatically inlining function '''
-  - Callee:          'fill_top_inputs(ap_uint<8>*, unsigned short, ap_uint<8>*, unsigned short)'
+  - Callee:          'fill_left_inputs(ap_int<32>*, unsigned short, ap_int<32> (*) [8], unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 19, Column: 0 }
+                       Line: 6, Column: 0 }
   - String:          ''' to improve effectiveness of pipeline pragma in function '''
   - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 140, Column: 0 }
+                       Line: 192, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-auto-inline-performance-driven
 Name:            AutoInlinePerf
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 303, Column: 21 }
+                   Line: 365, Column: 25 }
+Function:        _Z16mxm_execute_ursaPatPhtPit
+Args:            
+  - String:          'Automatically inlining function '''
+  - Callee:          'fill_top_inputs(ap_uint<8>*, unsigned short, ap_uint<8>*, unsigned short, unsigned short, unsigned short, unsigned short, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 30, Column: 0 }
+  - String:          ''' to improve effectiveness of pipeline pragma in function '''
+  - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
+    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                       Line: 192, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-auto-inline-performance-driven
+Name:            AutoInlinePerf
+DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
+                   Line: 368, Column: 25 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Automatically inlining function '''
   - Callee:          'load_inputs_sa(SA*, ap_int<32>*, ap_uint<8>*)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 47, Column: 0 }
+                       Line: 84, Column: 0 }
   - String:          ''' to improve effectiveness of pipeline pragma in function '''
   - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 140, Column: 0 }
+                       Line: 192, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-auto-inline-performance-driven
 Name:            AutoInlinePerf
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 306, Column: 21 }
+                   Line: 371, Column: 25 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Automatically inlining function '''
@@ -1512,24 +1745,24 @@ Args:
   - String:          ''' to improve effectiveness of pipeline pragma in function '''
   - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 140, Column: 0 }
+                       Line: 192, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-auto-inline-performance-driven
 Name:            AutoInlinePerf
 DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 309, Column: 21 }
+                   Line: 374, Column: 25 }
 Function:        _Z16mxm_execute_ursaPatPhtPit
 Args:            
   - String:          'Automatically inlining function '''
-  - Callee:          'store_right_outputs(SA*, ap_int<32>*, unsigned short, unsigned short, unsigned short)'
+  - Callee:          'store_right_outputs(SA*, ap_int<32> (*) [8], unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 56, Column: 0 }
+                       Line: 93, Column: 0 }
   - String:          ''' to improve effectiveness of pipeline pragma in function '''
   - Caller:          'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
     DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 140, Column: 0 }
+                       Line: 192, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
@@ -3571,48 +3804,4 @@ Args:
   - String:          ' on dimension '
   - Dim:             '1'
   - String:          .
-...
---- !Passed
-Pass:            reflow-burst-summary
-Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 43, Column: 14 }
-Function:        _Z16mxm_execute_ursaPatPhtPit
-Args:            
-  - String:          'Multiple burst '
-  - Direction:       reads
-  - String:          ' of length '
-  - Length:          '8'
-  - String:          ' and bit width '
-  - Width:           '8'
-  - String:          ' has been inferred.'
-  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
-  - String:          ' _XLX_SEP_ '
-  - AccessID:        seq
-  - ArrayName:       ''
-  - String:          ' '
-  - BundleName:      aw
-  - String:          ' '
-  - Function:        'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)'
-    DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                       Line: 140, Column: 0 }
-  - String:          ' '
-...
---- !Passed
-Pass:            reflow-burst-summary
-Name:            BurstInferredSummary
-DebugLoc:        { File: /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp, 
-                   Line: 43, Column: 14 }
-Function:        _Z16mxm_execute_ursaPatPhtPit
-Args:            
-  - String:          'Multiple burst '
-  - Direction:       reads
-  - String:          ' of length '
-  - Length:          '8'
-  - String:          ' and bit width '
-  - Width:           '8'
-  - String:          ' has been inferred on bundle '''
-  - BundleName:      aw
-  - String:          '''.'
-  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
 ...

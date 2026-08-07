@@ -1,48 +1,49 @@
 {
   "0": {
-    "basicblocks": 31,
-    "calls": "12 6 1 2 8 3 7 5",
+    "basicblocks": 52,
+    "calls": "12 7 6 1 5 10 4 3",
     "file": "shell.cpp",
-    "fileloc": 128,
-    "instructions": 135,
+    "fileloc": 180,
+    "instructions": 236,
     "loads": {
-      "L": 1
+      "L": 2
     },
     "name": "mxm_execute_ursa",
     "stores": {
-      "G": 1
+      "G": 1,
+      "T": 1
     },
-    "total_instructions": 1015
+    "total_instructions": 1254
   },
   "1": {
-    "basicblocks": 26,
-    "calls": "10",
-    "file": "sa.cpp",
-    "fileloc": 45,
-    "instructions": 78,
+    "basicblocks": 14,
+    "calls": "",
+    "file": "shell.cpp",
+    "fileloc": 6,
+    "instructions": 59,
     "loads": {
-      "L": 2
+      "L": 3
     },
-    "name": "sa_load_weights",
+    "name": "fill_left_inputs",
     "stores": {
-      "L": 2
+      "L": 3
     },
-    "total_instructions": 129
+    "total_instructions": 89
   },
   "10": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "pe.cpp",
-    "fileloc": 23,
-    "instructions": 15,
+    "basicblocks": 7,
+    "calls": "9",
+    "file": "shell.cpp",
+    "fileloc": 84,
+    "instructions": 22,
     "loads": {
       "L": 2
     },
-    "name": "pe_load_weights",
+    "name": "load_inputs_sa",
     "stores": {
       "L": 2
     },
-    "total_instructions": 51
+    "total_instructions": 37
   },
   "11": {
     "basicblocks": 1,
@@ -69,56 +70,26 @@
     "total_instructions": 158
   },
   "2": {
-    "basicblocks": 7,
-    "calls": "",
-    "file": "shell.cpp",
-    "fileloc": 5,
-    "instructions": 21,
-    "loads": {
-      "L": 1
-    },
-    "name": "fill_left_inputs",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 36
-  },
-  "3": {
-    "basicblocks": 7,
-    "calls": "4",
-    "file": "shell.cpp",
-    "fileloc": 47,
-    "instructions": 22,
-    "loads": {
-      "L": 2
-    },
-    "name": "load_inputs_sa",
-    "stores": {
-      "L": 2
-    },
-    "total_instructions": 37
-  },
-  "4": {
     "basicblocks": 1,
     "calls": "",
-    "file": "sa.cpp",
-    "fileloc": 37,
+    "file": "pe.cpp",
+    "fileloc": 23,
     "instructions": 15,
     "loads": {
       "L": 2
     },
-    "name": "sa_input_l_t",
+    "name": "pe_load_weights",
     "stores": {
       "L": 2
     },
-    "total_instructions": 15
+    "total_instructions": 51
   },
-  "5": {
+  "3": {
     "basicblocks": 10,
     "calls": "",
     "file": "shell.cpp",
-    "fileloc": 56,
-    "instructions": 45,
+    "fileloc": 93,
+    "instructions": 40,
     "loads": {
       "L": 1
     },
@@ -126,26 +97,11 @@
     "stores": {
       "L": 1
     },
-    "total_instructions": 45
+    "total_instructions": 40
   },
-  "6": {
-    "basicblocks": 7,
-    "calls": "",
-    "file": "shell.cpp",
-    "fileloc": 33,
-    "instructions": 26,
-    "loads": {
-      "L": 1
-    },
-    "name": "fetch_weight_row",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 26
-  },
-  "7": {
+  "4": {
     "basicblocks": 36,
-    "calls": "9",
+    "calls": "8",
     "file": "sa.cpp",
     "fileloc": 74,
     "instructions": 122,
@@ -158,22 +114,52 @@
     },
     "total_instructions": 355
   },
-  "8": {
-    "basicblocks": 11,
+  "5": {
+    "basicblocks": 15,
     "calls": "",
     "file": "shell.cpp",
-    "fileloc": 19,
-    "instructions": 48,
+    "fileloc": 29,
+    "instructions": 76,
     "loads": {
-      "L": 2
+      "L": 3
     },
     "name": "fill_top_inputs",
     "stores": {
+      "L": 3
+    },
+    "total_instructions": 110
+  },
+  "6": {
+    "basicblocks": 26,
+    "calls": "2",
+    "file": "sa.cpp",
+    "fileloc": 45,
+    "instructions": 78,
+    "loads": {
       "L": 2
     },
-    "total_instructions": 65
+    "name": "sa_load_weights",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 129
   },
-  "9": {
+  "7": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "shell.cpp",
+    "fileloc": 56,
+    "instructions": 54,
+    "loads": {
+      "L": 2
+    },
+    "name": "fetch_weight_row",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 71
+  },
+  "8": {
     "basicblocks": 1,
     "calls": "",
     "file": "pe.cpp",
@@ -187,5 +173,20 @@
       "L": 2
     },
     "total_instructions": 233
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "sa.cpp",
+    "fileloc": 37,
+    "instructions": 15,
+    "loads": {
+      "L": 2
+    },
+    "name": "sa_input_l_t",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 15
   }
 }

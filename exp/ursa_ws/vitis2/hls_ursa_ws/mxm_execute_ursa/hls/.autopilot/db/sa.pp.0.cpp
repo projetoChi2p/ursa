@@ -7005,11 +7005,10 @@ typedef struct {
 }SA;
 
 void sa_init(SA *sa);
+void sa_reset(SA *sa);
 void sa_input_l_t(SA *sa, lr_t l_in, tb_t t_in, uint16_t k);
 void sa_load_weights(SA *sa);
 void sa_compute(SA *sa);
-
-void sa_reset(SA *sa);
 # 2 "/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp" 2
 
 

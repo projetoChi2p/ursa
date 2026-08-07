@@ -1,4 +1,4 @@
-INFO: [vitis-run 60-1548] Creating build summary session with primary output /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/mxm_execute_ursa.hlsrun_csim_summary, at Wed Jul 22 13:28:03 2026
+INFO: [vitis-run 60-1548] Creating build summary session with primary output /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/mxm_execute_ursa.hlsrun_csim_summary, at Fri Aug  7 14:59:59 2026
 INFO: [vitis-run 82-31] Launching vitis_hls: vitis_hls -nolog -run csim -work_dir /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa -config /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg -cmdlineconfig /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/mxm_execute_ursa/hls/config.cmdline
 
 ****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
@@ -10,7 +10,7 @@ INFO: [vitis-run 82-31] Launching vitis_hls: vitis_hls -nolog -run csim -work_di
 
 source /opt/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'fi' on host '67221-1' (Linux_x86_64 version 6.8.0-124-generic) on Wed Jul 22 13:28:04 -03 2026
+INFO: [HLS 200-10] For user 'fi' on host '67221-1' (Linux_x86_64 version 6.8.0-136-generic) on Fri Aug 07 15:00:00 -03 2026
 INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
 INFO: [HLS 200-10] In directory '/home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws'
 INFO: [HLS 200-1909] Reading HLS ini file /home/fi/Documents/GitHub/ursa/exp/ursa_ws/vitis2/hls_ursa_ws/hls_config.cfg
@@ -57,14 +57,17 @@ INFO: [HLS 200-1510] Running: csim_design
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../src/tb/matrices.cpp in debug mode
+   Compiling ../../../../../../src/tb/tb_main.cpp in debug mode
+   Compiling ../../../../../../src/core/pe.cpp in debug mode
+   Compiling ../../../../../../src/core/sa.cpp in debug mode
    Compiling ../../../../../../src/core/shell.cpp in debug mode
    Generating csim.exe
-[sa_shell] addr_a0: 4214880  addr_b0: 4214944 addr_c0: 4215008
 [PASS] URSA output matches gold!
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.07 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.11 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.1 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.2 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-1510] Running: close_project 
-INFO: [HLS 200-112] Total CPU user time: 0.81 seconds. Total CPU system time: 0.12 seconds. Total elapsed time: 0.83 seconds; peak allocated memory: 274.457 MB.
-INFO: [Common 17-206] Exiting vitis_hls at Wed Jul 22 13:28:04 2026...
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 3s
+INFO: [HLS 200-112] Total CPU user time: 0.85 seconds. Total CPU system time: 0.17 seconds. Total elapsed time: 1.17 seconds; peak allocated memory: 274.586 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Fri Aug  7 15:00:01 2026...
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 4s

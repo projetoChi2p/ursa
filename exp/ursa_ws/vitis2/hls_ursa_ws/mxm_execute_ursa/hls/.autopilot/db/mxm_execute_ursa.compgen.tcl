@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set name mxm_execute_ursa_mul_13ns_13ns_26_1_1
+set name mxm_execute_ursa_mul_14ns_14ns_28_1_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
 }
@@ -9,6 +9,11 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 set name mxm_execute_ursa_mul_13ns_16ns_29_1_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler mxm_execute_ursa_c_tile_acc_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
@@ -82,7 +87,7 @@ dict set axilite_register_dict ap $port_ap
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 560 \
+			id 596 \
 			corename mxm_execute_ursa_ap_axilite \
 			name mxm_execute_ursa_ap_s_axi \
 			ports {$port_ap} \
@@ -135,7 +140,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 561 \
+			id 597 \
 			corename mxm_execute_ursa_control_axilite \
 			name mxm_execute_ursa_control_s_axi \
 			ports {$port_control} \

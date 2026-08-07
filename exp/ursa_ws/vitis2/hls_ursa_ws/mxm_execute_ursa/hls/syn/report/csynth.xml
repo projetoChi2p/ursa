@@ -19,60 +19,94 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>2</Best-caseLatency>
-            <Average-caseLatency>4930093352</Average-caseLatency>
-            <Worst-caseLatency>19725189416</Worst-caseLatency>
-            <Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>49.301 sec</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>197.252 sec</Worst-caseRealTimeLatency>
-            <Interval-min>3</Interval-min>
-            <Interval-max>19725189417</Interval-max>
+            <Best-caseLatency>3</Best-caseLatency>
+            <Average-caseLatency>155529160073014</Average-caseLatency>
+            <Worst-caseLatency>155586129821699</Worst-caseLatency>
+            <Best-caseRealTimeLatency>30.000 ns</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>1.6e+06 sec</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>1.6e+06 sec</Worst-caseRealTimeLatency>
+            <Interval-min>4</Interval-min>
+            <Interval-max>155586129821700</Interval-max>
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
-            <VITIS_LOOP_259_1_VITIS_LOOP_260_2>
+            <VITIS_LOOP_312_1_VITIS_LOOP_313_2>
                 <Slack>7.30</Slack>
                 <TripCount>
                     <range>
                         <min>0</min>
-                        <max>67092481</max>
+                        <max>67108864</max>
                     </range>
                 </TripCount>
                 <Latency>
                     <range>
                         <min>0</min>
-                        <max>19725189414</max>
+                        <max>155586129821696</max>
                     </range>
                 </Latency>
                 <AbsoluteTimeLatency>
                     <range>
                         <min>0</min>
-                        <max>197251894140</max>
+                        <max>1555861298216960</max>
                     </range>
                 </AbsoluteTimeLatency>
-                <IterationLatency>294</IterationLatency>
+                <IterationLatency>
+                    <range>
+                        <min>78</min>
+                        <max>2318414</max>
+                    </range>
+                </IterationLatency>
                 <InstanceList/>
-            </VITIS_LOOP_259_1_VITIS_LOOP_260_2>
+                <VITIS_LOOP_328_3>
+                    <Slack>7.30</Slack>
+                    <TripCount>
+                        <range>
+                            <min>0</min>
+                            <max>8192</max>
+                        </range>
+                    </TripCount>
+                    <Latency>
+                        <range>
+                            <min>0</min>
+                            <max>2318336</max>
+                        </range>
+                    </Latency>
+                    <AbsoluteTimeLatency>
+                        <range>
+                            <min>0</min>
+                            <max>23183360</max>
+                        </range>
+                    </AbsoluteTimeLatency>
+                    <IterationLatency>283</IterationLatency>
+                    <InstanceList/>
+                </VITIS_LOOP_328_3>
+            </VITIS_LOOP_312_1_VITIS_LOOP_313_2>
         </SummaryOfLoopLatency>
         <SummaryOfViolations>
             <IssueType>-</IssueType>
             <ViolationType>-</ViolationType>
-            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:260</SourceLocation>
+            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:313</SourceLocation>
             <SummaryOfLoopViolations>
-                <VITIS_LOOP_259_1_VITIS_LOOP_260_2>
-                    <Name>VITIS_LOOP_259_1_VITIS_LOOP_260_2</Name>
+                <VITIS_LOOP_312_1_VITIS_LOOP_313_2>
+                    <Name>VITIS_LOOP_312_1_VITIS_LOOP_313_2</Name>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:259</SourceLocation>
-                </VITIS_LOOP_259_1_VITIS_LOOP_260_2>
+                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:312</SourceLocation>
+                    <VITIS_LOOP_328_3>
+                        <Name>VITIS_LOOP_328_3</Name>
+                        <IssueType>-</IssueType>
+                        <ViolationType>-</ViolationType>
+                        <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:328</SourceLocation>
+                    </VITIS_LOOP_328_3>
+                </VITIS_LOOP_312_1_VITIS_LOOP_313_2>
             </SummaryOfLoopViolations>
         </SummaryOfViolations>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>8</BRAM_18K>
-            <DSP>59</DSP>
-            <FF>14325</FF>
-            <LUT>11901</LUT>
+            <BRAM_18K>10</BRAM_18K>
+            <DSP>68</DSP>
+            <FF>14137</FF>
+            <LUT>13427</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -2134,28 +2168,35 @@
             <ModuleName>mxm_execute_ursa</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3_fu_964</InstName>
-                    <ModuleName>mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3</ModuleName>
+                    <InstName>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4_fu_1035</InstName>
+                    <ModuleName>mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>964</ID>
-                    <BindInstances>add_ln276_fu_1820_p2 mul_3ns_16ns_19_1_1_U1</BindInstances>
+                    <ID>1035</ID>
+                    <BindInstances>add_ln341_fu_2160_p2 mul_3ns_16ns_19_1_1_U1 add_ln74_3_fu_2402_p2 add_ln74_6_fu_2407_p2 add_ln74_9_fu_2412_p2 add_ln74_12_fu_2417_p2 add_ln74_15_fu_2422_p2 add_ln74_18_fu_2427_p2 add_ln74_21_fu_2432_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5_fu_1325</InstName>
-                    <ModuleName>mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5</ModuleName>
+                    <InstName>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6_fu_1408</InstName>
+                    <ModuleName>mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>1325</ID>
-                    <BindInstances>add_ln296_fu_4220_p2 col_9_fu_2720_p2 add_ln26_3_fu_2734_p2 col_10_fu_3049_p2 add_ln26_6_fu_3073_p2 col_11_fu_3178_p2 sub_ln26_fu_3194_p2 add_ln26_9_fu_3215_p2 col_12_fu_3247_p2 add_ln26_12_fu_3271_p2 col_13_fu_3293_p2 col_14_fu_3344_p2 sub_ln26_1_fu_3371_p2 add_ln26_20_fu_3393_p2 col_15_fu_3399_p2 sub_ln26_2_fu_3415_p2 add_ln26_23_fu_3436_p2 mul_8ns_8s_16_1_1_U246 mac_muladd_8ns_8s_16s_17_4_1_U295 mac_muladd_8ns_8s_16s_17_4_1_U295 mac_muladd_8ns_8s_17s_18_4_1_U296 mac_muladd_8ns_8s_17s_18_4_1_U296 mac_muladd_8ns_8s_18s_18_4_1_U297 mac_muladd_8ns_8s_18s_18_4_1_U297 mac_muladd_8ns_8s_18s_19_4_1_U298 mac_muladd_8ns_8s_18s_19_4_1_U298 mac_muladd_8ns_8s_19s_19_4_1_U299 mac_muladd_8ns_8s_19s_19_4_1_U299 mac_muladd_8ns_8s_19s_20_4_1_U301 mac_muladd_8ns_8s_19s_20_4_1_U301 mac_muladd_8ns_8s_20s_20_4_1_U302 mac_muladd_8ns_8s_20s_20_4_1_U302 mul_8ns_8s_16_1_1_U245 mac_muladd_8ns_8s_16s_17_4_1_U285 mac_muladd_8ns_8s_16s_17_4_1_U285 mac_muladd_8ns_8s_17s_18_4_1_U286 mac_muladd_8ns_8s_17s_18_4_1_U286 mac_muladd_8ns_8s_18s_18_4_1_U287 mac_muladd_8ns_8s_18s_18_4_1_U287 mac_muladd_8ns_8s_18s_19_4_1_U292 mac_muladd_8ns_8s_18s_19_4_1_U292 mac_muladd_8ns_8s_19s_19_4_1_U300 mac_muladd_8ns_8s_19s_19_4_1_U300 mac_muladd_8ns_8s_19s_20_4_1_U293 mac_muladd_8ns_8s_19s_20_4_1_U293 mac_muladd_8ns_8s_20s_20_4_1_U294 mac_muladd_8ns_8s_20s_20_4_1_U294 mul_8ns_8s_16_1_1_U239 mac_muladd_8ns_8s_16s_17_4_1_U253 mac_muladd_8ns_8s_16s_17_4_1_U253 mac_muladd_8ns_8s_17s_18_4_1_U254 mac_muladd_8ns_8s_17s_18_4_1_U254 mac_muladd_8ns_8s_18s_18_4_1_U258 mac_muladd_8ns_8s_18s_18_4_1_U258 mac_muladd_8ns_8s_18s_19_4_1_U259 mac_muladd_8ns_8s_18s_19_4_1_U259 mac_muladd_8ns_8s_19s_19_4_1_U288 mac_muladd_8ns_8s_19s_19_4_1_U288 mac_muladd_8ns_8s_19s_20_4_1_U260 mac_muladd_8ns_8s_19s_20_4_1_U260 mac_muladd_8ns_8s_20s_20_4_1_U264 mac_muladd_8ns_8s_20s_20_4_1_U264 mul_8ns_8s_16_1_1_U240 mac_muladd_8ns_8s_16s_17_4_1_U261 mac_muladd_8ns_8s_16s_17_4_1_U261 mac_muladd_8ns_8s_17s_18_4_1_U262 mac_muladd_8ns_8s_17s_18_4_1_U262 mac_muladd_8ns_8s_18s_18_4_1_U263 mac_muladd_8ns_8s_18s_18_4_1_U263 mac_muladd_8ns_8s_18s_19_4_1_U265 mac_muladd_8ns_8s_18s_19_4_1_U265 mac_muladd_8ns_8s_19s_19_4_1_U266 mac_muladd_8ns_8s_19s_19_4_1_U266 mac_muladd_8ns_8s_19s_20_4_1_U247 mac_muladd_8ns_8s_19s_20_4_1_U247 mac_muladd_8ns_8s_20s_20_4_1_U248 mac_muladd_8ns_8s_20s_20_4_1_U248 mul_8ns_8s_16_1_1_U241 mac_muladd_8ns_8s_16s_17_4_1_U267 mac_muladd_8ns_8s_16s_17_4_1_U267 mac_muladd_8ns_8s_17s_18_4_1_U268 mac_muladd_8ns_8s_17s_18_4_1_U268 mac_muladd_8ns_8s_18s_18_4_1_U269 mac_muladd_8ns_8s_18s_18_4_1_U269 mac_muladd_8ns_8s_18s_19_4_1_U270 mac_muladd_8ns_8s_18s_19_4_1_U270 mac_muladd_8ns_8s_19s_19_4_1_U271 mac_muladd_8ns_8s_19s_19_4_1_U271 mac_muladd_8ns_8s_19s_20_4_1_U255 mac_muladd_8ns_8s_19s_20_4_1_U255 mac_muladd_8ns_8s_20s_20_4_1_U249 mac_muladd_8ns_8s_20s_20_4_1_U249 mul_8ns_8s_16_1_1_U242 mac_muladd_8ns_8s_16s_17_4_1_U272 mac_muladd_8ns_8s_16s_17_4_1_U272 mac_muladd_8ns_8s_17s_18_4_1_U273 mac_muladd_8ns_8s_17s_18_4_1_U273 mac_muladd_8ns_8s_18s_18_4_1_U274 mac_muladd_8ns_8s_18s_18_4_1_U274 mac_muladd_8ns_8s_18s_19_4_1_U275 mac_muladd_8ns_8s_18s_19_4_1_U275 mac_muladd_8ns_8s_19s_19_4_1_U276 mac_muladd_8ns_8s_19s_19_4_1_U276 mac_muladd_8ns_8s_19s_20_4_1_U256 mac_muladd_8ns_8s_19s_20_4_1_U256 mac_muladd_8ns_8s_20s_20_4_1_U250 mac_muladd_8ns_8s_20s_20_4_1_U250 mul_8ns_8s_16_1_1_U243 mac_muladd_8ns_8s_16s_17_4_1_U277 mac_muladd_8ns_8s_16s_17_4_1_U277 mac_muladd_8ns_8s_17s_18_4_1_U278 mac_muladd_8ns_8s_17s_18_4_1_U278 mac_muladd_8ns_8s_18s_18_4_1_U279 mac_muladd_8ns_8s_18s_18_4_1_U279 mac_muladd_8ns_8s_18s_19_4_1_U280 mac_muladd_8ns_8s_18s_19_4_1_U280 mac_muladd_8ns_8s_19s_19_4_1_U281 mac_muladd_8ns_8s_19s_19_4_1_U281 mac_muladd_8ns_8s_19s_20_4_1_U257 mac_muladd_8ns_8s_19s_20_4_1_U257 mac_muladd_8ns_8s_20s_20_4_1_U251 mac_muladd_8ns_8s_20s_20_4_1_U251 mul_8ns_8s_16_1_1_U244 mac_muladd_8ns_8s_16s_17_4_1_U282 mac_muladd_8ns_8s_16s_17_4_1_U282 mac_muladd_8ns_8s_17s_18_4_1_U283 mac_muladd_8ns_8s_17s_18_4_1_U283 mac_muladd_8ns_8s_18s_18_4_1_U284 mac_muladd_8ns_8s_18s_18_4_1_U284 mac_muladd_8ns_8s_18s_19_4_1_U289 mac_muladd_8ns_8s_18s_19_4_1_U289 mac_muladd_8ns_8s_19s_19_4_1_U290 mac_muladd_8ns_8s_19s_19_4_1_U290 mac_muladd_8ns_8s_19s_20_4_1_U291 mac_muladd_8ns_8s_19s_20_4_1_U291 mac_muladd_8ns_8s_20s_20_4_1_U252 mac_muladd_8ns_8s_20s_20_4_1_U252 add_ln67_fu_2815_p2 col_idx_fu_5054_p2 add_ln74_fu_5075_p2 add_ln74_1_fu_5092_p2 add_ln67_1_fu_2838_p2 col_idx_1_fu_5117_p2 add_ln74_2_fu_5130_p2 add_ln74_3_fu_5138_p2 add_ln74_4_fu_5155_p2 add_ln67_2_fu_2861_p2 col_idx_2_fu_5180_p2 add_ln74_5_fu_5204_p2 add_ln74_6_fu_5217_p2 add_ln74_7_fu_5234_p2 add_ln67_3_fu_2884_p2 col_idx_3_fu_5259_p2 sub_ln74_fu_5275_p2 add_ln74_10_fu_5322_p2 add_ln67_4_fu_2907_p2 col_idx_4_fu_5347_p2 add_ln74_11_fu_5371_p2 add_ln74_12_fu_5399_p2 add_ln74_13_fu_5416_p2 add_ln67_5_fu_2930_p2 col_idx_5_fu_5441_p2 add_ln74_17_fu_5483_p2 add_ln74_16_fu_5500_p2 add_ln67_6_fu_2953_p2 col_idx_6_fu_5525_p2 sub_ln74_1_fu_5552_p2 add_ln74_19_fu_5648_p2 add_ln67_7_fu_2976_p2 col_idx_7_fu_5585_p2 sub_ln74_2_fu_5601_p2 add_ln74_22_fu_5684_p2</BindInstances>
+                    <ID>1408</ID>
+                    <BindInstances>add_ln361_fu_4858_p2 col_15_fu_2829_p2 add_ln20_fu_4809_p2 col_16_fu_2875_p2 add_ln20_2_fu_2885_p2 col_17_fu_2918_p2 add_ln20_4_fu_3729_p2 col_18_fu_2960_p2 add_ln20_6_fu_3739_p2 col_19_fu_2992_p2 add_ln20_8_fu_4088_p2 col_20_fu_3024_p2 add_ln20_10_fu_4098_p2 col_21_fu_3056_p2 add_ln20_11_fu_4312_p2 global_col_fu_3070_p2 global_col_1_fu_3105_p2 add_ln44_3_fu_3120_p2 global_col_2_fu_3125_p2 add_ln44_6_fu_3151_p2 global_col_3_fu_3157_p2 sub_ln44_fu_3183_p2 add_ln44_9_fu_3196_p2 global_col_4_fu_3202_p2 add_ln44_12_fu_3228_p2 global_col_5_fu_3234_p2 global_col_6_fu_3271_p2 sub_ln44_1_fu_3308_p2 add_ln44_20_fu_3322_p2 mac_muladd_8ns_8s_32s_32_4_1_U304 mac_muladd_8ns_8s_32s_32_4_1_U304 mac_muladd_8ns_8s_32s_32_4_1_U308 mac_muladd_8ns_8s_32s_32_4_1_U308 mac_muladd_8ns_8s_32s_32_4_1_U309 mac_muladd_8ns_8s_32s_32_4_1_U309 mac_muladd_8ns_8s_32s_32_4_1_U310 mac_muladd_8ns_8s_32s_32_4_1_U310 mac_muladd_8ns_8s_32s_32_4_1_U311 mac_muladd_8ns_8s_32s_32_4_1_U311 mac_muladd_8ns_8s_32s_32_4_1_U312 mac_muladd_8ns_8s_32s_32_4_1_U312 mac_muladd_8ns_8s_32s_32_4_1_U313 mac_muladd_8ns_8s_32s_32_4_1_U313 mac_muladd_8ns_8s_32s_32_4_1_U300 mac_muladd_8ns_8s_32s_32_4_1_U300 mac_muladd_8ns_8s_32s_32_4_1_U299 mac_muladd_8ns_8s_32s_32_4_1_U299 mac_muladd_8ns_8s_32s_32_4_1_U301 mac_muladd_8ns_8s_32s_32_4_1_U301 mac_muladd_8ns_8s_32s_32_4_1_U302 mac_muladd_8ns_8s_32s_32_4_1_U302 mac_muladd_8ns_8s_32s_32_4_1_U303 mac_muladd_8ns_8s_32s_32_4_1_U303 mac_muladd_8ns_8s_32s_32_4_1_U305 mac_muladd_8ns_8s_32s_32_4_1_U305 mac_muladd_8ns_8s_32s_32_4_1_U306 mac_muladd_8ns_8s_32s_32_4_1_U306 mac_muladd_8ns_8s_32s_32_4_1_U307 mac_muladd_8ns_8s_32s_32_4_1_U307 mac_muladd_8ns_8s_32s_32_4_1_U251 mac_muladd_8ns_8s_32s_32_4_1_U251 mac_muladd_8ns_8s_32s_32_4_1_U252 mac_muladd_8ns_8s_32s_32_4_1_U252 mac_muladd_8ns_8s_32s_32_4_1_U253 mac_muladd_8ns_8s_32s_32_4_1_U253 mac_muladd_8ns_8s_32s_32_4_1_U254 mac_muladd_8ns_8s_32s_32_4_1_U254 mac_muladd_8ns_8s_32s_32_4_1_U255 mac_muladd_8ns_8s_32s_32_4_1_U255 mac_muladd_8ns_8s_32s_32_4_1_U285 mac_muladd_8ns_8s_32s_32_4_1_U285 mac_muladd_8ns_8s_32s_32_4_1_U286 mac_muladd_8ns_8s_32s_32_4_1_U286 mac_muladd_8ns_8s_32s_32_4_1_U298 mac_muladd_8ns_8s_32s_32_4_1_U298 mac_muladd_8ns_8s_32s_32_4_1_U256 mac_muladd_8ns_8s_32s_32_4_1_U256 mac_muladd_8ns_8s_32s_32_4_1_U257 mac_muladd_8ns_8s_32s_32_4_1_U257 mac_muladd_8ns_8s_32s_32_4_1_U258 mac_muladd_8ns_8s_32s_32_4_1_U258 mac_muladd_8ns_8s_32s_32_4_1_U259 mac_muladd_8ns_8s_32s_32_4_1_U259 mac_muladd_8ns_8s_32s_32_4_1_U260 mac_muladd_8ns_8s_32s_32_4_1_U260 mac_muladd_8ns_8s_32s_32_4_1_U261 mac_muladd_8ns_8s_32s_32_4_1_U261 mac_muladd_8ns_8s_32s_32_4_1_U262 mac_muladd_8ns_8s_32s_32_4_1_U262 mac_muladd_8ns_8s_32s_32_4_1_U263 mac_muladd_8ns_8s_32s_32_4_1_U263 mac_muladd_8ns_8s_32s_32_4_1_U264 mac_muladd_8ns_8s_32s_32_4_1_U264 mac_muladd_8ns_8s_32s_32_4_1_U265 mac_muladd_8ns_8s_32s_32_4_1_U265 mac_muladd_8ns_8s_32s_32_4_1_U266 mac_muladd_8ns_8s_32s_32_4_1_U266 mac_muladd_8ns_8s_32s_32_4_1_U267 mac_muladd_8ns_8s_32s_32_4_1_U267 mac_muladd_8ns_8s_32s_32_4_1_U268 mac_muladd_8ns_8s_32s_32_4_1_U268 mac_muladd_8ns_8s_32s_32_4_1_U269 mac_muladd_8ns_8s_32s_32_4_1_U269 mac_muladd_8ns_8s_32s_32_4_1_U270 mac_muladd_8ns_8s_32s_32_4_1_U270 mac_muladd_8ns_8s_32s_32_4_1_U271 mac_muladd_8ns_8s_32s_32_4_1_U271 mac_muladd_8ns_8s_32s_32_4_1_U272 mac_muladd_8ns_8s_32s_32_4_1_U272 mac_muladd_8ns_8s_32s_32_4_1_U273 mac_muladd_8ns_8s_32s_32_4_1_U273 mac_muladd_8ns_8s_32s_32_4_1_U274 mac_muladd_8ns_8s_32s_32_4_1_U274 mac_muladd_8ns_8s_32s_32_4_1_U275 mac_muladd_8ns_8s_32s_32_4_1_U275 mac_muladd_8ns_8s_32s_32_4_1_U276 mac_muladd_8ns_8s_32s_32_4_1_U276 mac_muladd_8ns_8s_32s_32_4_1_U277 mac_muladd_8ns_8s_32s_32_4_1_U277 mac_muladd_8ns_8s_32s_32_4_1_U278 mac_muladd_8ns_8s_32s_32_4_1_U278 global_col_7_fu_3498_p2 sub_ln44_2_fu_3524_p2 add_ln44_23_fu_3537_p2 mac_muladd_8ns_8s_32s_32_4_1_U314 mac_muladd_8ns_8s_32s_32_4_1_U314 mac_muladd_8ns_8s_32s_32_4_1_U279 mac_muladd_8ns_8s_32s_32_4_1_U279 mac_muladd_8ns_8s_32s_32_4_1_U280 mac_muladd_8ns_8s_32s_32_4_1_U280 mac_muladd_8ns_8s_32s_32_4_1_U281 mac_muladd_8ns_8s_32s_32_4_1_U281 mac_muladd_8ns_8s_32s_32_4_1_U282 mac_muladd_8ns_8s_32s_32_4_1_U282 mac_muladd_8ns_8s_32s_32_4_1_U283 mac_muladd_8ns_8s_32s_32_4_1_U283 mac_muladd_8ns_8s_32s_32_4_1_U284 mac_muladd_8ns_8s_32s_32_4_1_U284 mac_muladd_8ns_8s_32s_32_4_1_U287 mac_muladd_8ns_8s_32s_32_4_1_U287 mac_muladd_8ns_8s_32s_32_4_1_U288 mac_muladd_8ns_8s_32s_32_4_1_U288 mac_muladd_8ns_8s_32s_32_4_1_U289 mac_muladd_8ns_8s_32s_32_4_1_U289 mac_muladd_8ns_8s_32s_32_4_1_U290 mac_muladd_8ns_8s_32s_32_4_1_U290 mac_muladd_8ns_8s_32s_32_4_1_U291 mac_muladd_8ns_8s_32s_32_4_1_U291 mac_muladd_8ns_8s_32s_32_4_1_U292 mac_muladd_8ns_8s_32s_32_4_1_U292 mac_muladd_8ns_8s_32s_32_4_1_U293 mac_muladd_8ns_8s_32s_32_4_1_U293 mac_muladd_8ns_8s_32s_32_4_1_U294 mac_muladd_8ns_8s_32s_32_4_1_U294 mac_muladd_8ns_8s_32s_32_4_1_U295 mac_muladd_8ns_8s_32s_32_4_1_U295 mac_muladd_8ns_8s_32s_32_4_1_U296 mac_muladd_8ns_8s_32s_32_4_1_U296 mac_muladd_8ns_8s_32s_32_4_1_U297 mac_muladd_8ns_8s_32s_32_4_1_U297 col_24_fu_4896_p2 col_25_fu_4491_p2 col_26_fu_4663_p2 col_28_fu_4784_p2 col_29_fu_4833_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7_fu_1831</InstName>
+                    <ModuleName>mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>1831</ID>
+                    <BindInstances>add_ln382_fu_526_p2 mul_16ns_16ns_32_1_1_U566 add_ln391_fu_653_p2 add_ln391_1_fu_669_p2 add_ln391_2_fu_714_p2 add_ln391_3_fu_730_p2 add_ln391_4_fu_775_p2 add_ln391_5_fu_791_p2 add_ln391_6_fu_816_p2 add_ln391_7_fu_832_p2 add_ln391_8_fu_857_p2 add_ln391_9_fu_873_p2 add_ln391_10_fu_898_p2 add_ln391_11_fu_914_p2 add_ln391_12_fu_939_p2 add_ln391_13_fu_955_p2 add_ln391_14_fu_980_p2 add_ln391_15_fu_996_p2</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>mul_13ns_13ns_26_1_1_U555 add_ln259_fu_2312_p2 add_ln259_1_fu_2337_p2 mul_13ns_16ns_29_1_1_U556 mul_13ns_16ns_29_1_1_U557 add_ln263_fu_2860_p2 add_ln260_fu_2351_p2 ap_s_axi_U control_s_axi_U aw_m_axi_U bi_m_axi_U ca_m_axi_U</BindInstances>
+            <BindInstances>c_tile_acc_U add_ln308_fu_2381_p2 add_ln309_fu_2391_p2 add_ln310_fu_2420_p2 mul_14ns_14ns_28_1_1_U590 add_ln312_1_fu_2466_p2 add_ln312_fu_2478_p2 mul_13ns_16ns_29_1_1_U591 add_ln328_fu_2544_p2 add_ln330_fu_2566_p2 mul_13ns_16ns_29_1_1_U592 add_ln331_fu_2903_p2 add_ln313_fu_2654_p2 ap_s_axi_U control_s_axi_U aw_m_axi_U bi_m_axi_U ca_m_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3</Name>
+            <Name>mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4</Name>
             <Loops>
-                <VITIS_LOOP_276_3/>
+                <VITIS_LOOP_341_4/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -2174,8 +2215,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_276_3>
-                        <Name>VITIS_LOOP_276_3</Name>
+                    <VITIS_LOOP_341_4>
+                        <Name>VITIS_LOOP_341_4</Name>
                         <Slack>7.30</Slack>
                         <TripCount>8</TripCount>
                         <Latency>75</Latency>
@@ -2184,20 +2225,19 @@
                         <PipelineDepth>19</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_276_3>
+                    </VITIS_LOOP_341_4>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>Timing Violation</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:33~/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280</SourceLocation>
+                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:56~/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:345</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_276_3>
-                            <Name>VITIS_LOOP_276_3</Name>
+                        <VITIS_LOOP_341_4>
+                            <Name>VITIS_LOOP_341_4</Name>
                             <IssueType>II Violation</IssueType>
-                            <ViolationType>Memory Dependency</ViolationType>
-                            <IterationDistance>1</IterationDistance>
-                            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:38~/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:280</SourceLocation>
-                        </VITIS_LOOP_276_3>
+                            <ViolationType>Resource Limitation</ViolationType>
+                            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:62~/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:345</SourceLocation>
+                        </VITIS_LOOP_341_4>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
@@ -2206,12 +2246,12 @@
                     <DSP>0</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>0</UTIL_DSP>
-                    <FF>590</FF>
+                    <FF>1874</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>818</LUT>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>2703</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>1</UTIL_LUT>
+                    <UTIL_LUT>5</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -2221,14 +2261,256 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_276_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln276_fu_1820_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:276" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln276"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_276_3" OPTYPE="mul" PRAGMA="" RTLNAME="mul_3ns_16ns_19_1_1_U1" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_i"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln341_fu_2160_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:341" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln341"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="mul" PRAGMA="" RTLNAME="mul_3ns_16ns_19_1_1_U1" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:65" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_i"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_3_fu_2402_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_6_fu_2407_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_9_fu_2412_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_12_fu_2417_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_15_fu_2422_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_18_fu_2427_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_341_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_21_fu_2432_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_21"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5</Name>
+            <Name>mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6</Name>
             <Loops>
-                <VITIS_LOOP_296_5/>
+                <VITIS_LOOP_361_6/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.890</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>201</Best-caseLatency>
+                    <Average-caseLatency>201</Average-caseLatency>
+                    <Worst-caseLatency>201</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.010 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.010 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>2.010 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>201</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_361_6>
+                        <Name>VITIS_LOOP_361_6</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>23</TripCount>
+                        <Latency>199</Latency>
+                        <AbsoluteTimeLatency>1.990 us</AbsoluteTimeLatency>
+                        <PipelineII>8</PipelineII>
+                        <PipelineDepth>24</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </VITIS_LOOP_361_6>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:36~/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:365</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <VITIS_LOOP_361_6>
+                            <Name>VITIS_LOOP_361_6</Name>
+                            <IssueType>II Violation</IssueType>
+                            <ViolationType>Resource Limitation</ViolationType>
+                            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:361</SourceLocation>
+                        </VITIS_LOOP_361_6>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>64</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>29</UTIL_DSP>
+                    <FF>6221</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>5</UTIL_FF>
+                    <LUT>4480</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>8</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln361_fu_4858_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:361" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln361"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_15_fu_2829_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="col_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_fu_4809_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_16_fu_2875_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="col_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_2_fu_2885_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln20_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_17_fu_2918_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="col_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_4_fu_3729_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln20_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_18_fu_2960_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="col_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_6_fu_3739_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln20_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_19_fu_2992_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="col_19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_8_fu_4088_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln20_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_20_fu_3024_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="col_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_10_fu_4098_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln20_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_21_fu_3056_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:19" STORAGESUBTYPE="" URAM="0" VARIABLE="col_21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_11_fu_4312_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:20" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln20_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="global_col_fu_3070_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="global_col"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="global_col_1_fu_3105_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="global_col_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln44_3_fu_3120_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln44_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="global_col_2_fu_3125_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="global_col_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln44_6_fu_3151_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln44_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="global_col_3_fu_3157_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="global_col_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln44_fu_3183_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln44_9_fu_3196_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln44_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="global_col_4_fu_3202_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="global_col_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln44_12_fu_3228_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln44_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="global_col_5_fu_3234_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="global_col_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="global_col_6_fu_3271_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="global_col_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln44_1_fu_3308_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln44_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln44_20_fu_3322_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln44_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U304" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U304" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U308" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U308" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U309" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U309" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U310" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U310" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U311" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U311" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U312" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U312" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U313" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U313" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U300" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U300" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U299" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U299" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U301" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U301" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U302" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U302" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U303" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U303" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U305" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U305" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U306" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U306" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U307" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U307" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U251" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U251" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U252" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U252" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U253" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U253" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U254" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U254" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U255" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U255" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U285" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U285" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U286" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U286" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U298" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_22"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U298" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_22"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U256" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_23"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U256" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_23"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U257" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_24"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U257" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_24"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U258" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U258" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U259" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U259" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U260" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_27"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U260" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_27"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U261" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U261" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U262" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U262" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U263" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U263" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U264" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_31"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U264" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_31"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U265" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U265" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U266" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U266" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U267" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U267" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U268" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U268" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U269" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U269" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U270" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U270" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U271" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U271" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U272" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_39"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U272" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_39"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U273" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U273" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U274" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U274" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U275" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_42"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U275" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_42"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U276" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U276" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U277" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U277" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U278" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U278" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="global_col_7_fu_3498_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="global_col_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln44_2_fu_3524_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln44_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln44_23_fu_3537_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln44_23"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U314" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U314" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U279" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_47"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U279" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_47"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U280" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U280" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U281" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U281" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U282" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_50"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U282" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_50"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U283" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U283" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U284" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U284" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U287" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U287" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U288" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_54"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U288" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_54"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U289" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_55"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U289" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_55"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U290" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U290" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U291" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_57"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U291" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_57"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U292" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U292" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U293" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U293" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U294" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_60"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U294" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_60"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U295" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_61"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U295" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_61"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U296" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_62"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U296" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_62"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U297" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_32s_32_4_1_U297" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_24_fu_4896_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:101" STORAGESUBTYPE="" URAM="0" VARIABLE="col_24"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_25_fu_4491_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:101" STORAGESUBTYPE="" URAM="0" VARIABLE="col_25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_26_fu_4663_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:101" STORAGESUBTYPE="" URAM="0" VARIABLE="col_26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_28_fu_4784_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:101" STORAGESUBTYPE="" URAM="0" VARIABLE="col_28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_361_6" OPTYPE="add" PRAGMA="" RTLNAME="col_29_fu_4833_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:101" STORAGESUBTYPE="" URAM="0" VARIABLE="col_29"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7</Name>
+            <Loops>
+                <VITIS_LOOP_382_7/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -2237,53 +2519,53 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>211</Best-caseLatency>
-                    <Average-caseLatency>211</Average-caseLatency>
-                    <Worst-caseLatency>211</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>2.110 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>2.110 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>2.110 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>211</PipelineInitiationInterval>
+                    <Best-caseLatency>73</Best-caseLatency>
+                    <Average-caseLatency>73</Average-caseLatency>
+                    <Worst-caseLatency>73</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.730 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.730 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.730 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>73</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_296_5>
-                        <Name>VITIS_LOOP_296_5</Name>
+                    <VITIS_LOOP_382_7>
+                        <Name>VITIS_LOOP_382_7</Name>
                         <Slack>7.30</Slack>
-                        <TripCount>23</TripCount>
-                        <Latency>209</Latency>
-                        <AbsoluteTimeLatency>2.090 us</AbsoluteTimeLatency>
+                        <TripCount>8</TripCount>
+                        <Latency>71</Latency>
+                        <AbsoluteTimeLatency>0.710 us</AbsoluteTimeLatency>
                         <PipelineII>8</PipelineII>
-                        <PipelineDepth>34</PipelineDepth>
+                        <PipelineDepth>16</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_296_5>
+                    </VITIS_LOOP_382_7>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:25~/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:300</SourceLocation>
+                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_296_5>
-                            <Name>VITIS_LOOP_296_5</Name>
+                        <VITIS_LOOP_382_7>
+                            <Name>VITIS_LOOP_382_7</Name>
                             <IssueType>II Violation</IssueType>
                             <ViolationType>Resource Limitation</ViolationType>
-                            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:296</SourceLocation>
-                        </VITIS_LOOP_296_5>
+                            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382</SourceLocation>
+                        </VITIS_LOOP_382_7>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <DSP>56</DSP>
+                    <DSP>1</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
-                    <UTIL_DSP>25</UTIL_DSP>
-                    <FF>8855</FF>
+                    <UTIL_DSP>~0</UTIL_DSP>
+                    <FF>898</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>8</UTIL_FF>
-                    <LUT>6731</LUT>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1337</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>12</UTIL_LUT>
+                    <UTIL_LUT>2</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -2293,184 +2575,32 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln296_fu_4220_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:296" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln296"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_9_fu_2720_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="col_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_3_fu_2734_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_10_fu_3049_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="col_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_6_fu_3073_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_11_fu_3178_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="col_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln26_fu_3194_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln26"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_9_fu_3215_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_12_fu_3247_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="col_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_12_fu_3271_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_13_fu_3293_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="col_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_14_fu_3344_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="col_14"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln26_1_fu_3371_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln26_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_20_fu_3393_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_20"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_15_fu_3399_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="col_15"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln26_2_fu_3415_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln26_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_23_fu_3436_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_23"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mul_8ns_8s_16_1_1_U246" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U295" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U295" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U296" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U296" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U297" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U297" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U298" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U298" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U299" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U299" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U301" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U301" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U302" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U302" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mul_8ns_8s_16_1_1_U245" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U285" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U285" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U286" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U286" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U287" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U287" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U292" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U292" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U300" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U300" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U293" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_14"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U293" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U294" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_15"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U294" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mul_8ns_8s_16_1_1_U239" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_16"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U253" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_17"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U253" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_14"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U254" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_18"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U254" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_15"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U258" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_19"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U258" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_16"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U259" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_20"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U259" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_17"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U288" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_21"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U288" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_18"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U260" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_22"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U260" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_19"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U264" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_23"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U264" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_20"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mul_8ns_8s_16_1_1_U240" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_24"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U261" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_25"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U261" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_21"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U262" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_26"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U262" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_22"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U263" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_27"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U263" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_23"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U265" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_28"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U265" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_24"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U266" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_29"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U266" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_25"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U247" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_30"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U247" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_26"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U248" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_31"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U248" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_27"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mul_8ns_8s_16_1_1_U241" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_32"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U267" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_33"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U267" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_28"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U268" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_34"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U268" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_29"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U269" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_35"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U269" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_30"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U270" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_36"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U270" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_31"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U271" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_37"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U271" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_32"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U255" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_38"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U255" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_33"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U249" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_39"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U249" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_34"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mul_8ns_8s_16_1_1_U242" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_40"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U272" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_41"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U272" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_35"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U273" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_42"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U273" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_36"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U274" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_43"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U274" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_37"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U275" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_44"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U275" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_38"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U276" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_45"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U276" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_39"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U256" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_46"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U256" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_40"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U250" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_47"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U250" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_41"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mul_8ns_8s_16_1_1_U243" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_48"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U277" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_49"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U277" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_42"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U278" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_50"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U278" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_43"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U279" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_51"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U279" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_44"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U280" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_52"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U280" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_45"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U281" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_53"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U281" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_46"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U257" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_54"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U257" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_47"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U251" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_55"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U251" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_48"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mul_8ns_8s_16_1_1_U244" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_56"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U282" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_57"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_16s_17_4_1_U282" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_49"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U283" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_58"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_17s_18_4_1_U283" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_50"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U284" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_59"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_18_4_1_U284" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_51"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U289" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_60"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_18s_19_4_1_U289" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_52"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U290" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_61"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_19_4_1_U290" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_53"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U291" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_62"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_19s_20_4_1_U291" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_54"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U252" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln18_63"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp_slice" LATENCY="3" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_8ns_8s_20s_20_4_1_U252" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/pe.cpp:18" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln18_55"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_fu_2815_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_idx_fu_5054_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="col_idx"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_fu_5075_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_1_fu_5092_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_1_fu_2838_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_idx_1_fu_5117_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="col_idx_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_2_fu_5130_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_3_fu_5138_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_4_fu_5155_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_2_fu_2861_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_idx_2_fu_5180_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="col_idx_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_5_fu_5204_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_6_fu_5217_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_7_fu_5234_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_3_fu_2884_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_idx_3_fu_5259_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="col_idx_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln74_fu_5275_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln74"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_10_fu_5322_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_4_fu_2907_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_idx_4_fu_5347_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="col_idx_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_11_fu_5371_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_12_fu_5399_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_13_fu_5416_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_5_fu_2930_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_idx_5_fu_5441_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="col_idx_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_17_fu_5483_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_17"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_16_fu_5500_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_16"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_6_fu_2953_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_idx_6_fu_5525_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="col_idx_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln74_1_fu_5552_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln74_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_19_fu_5648_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_19"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_7_fu_2976_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="col_idx_7_fu_5585_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="col_idx_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln74_2_fu_5601_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln74_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_296_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln74_22_fu_5684_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:74" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln74_22"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln382_fu_526_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln382"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="mul" PRAGMA="" RTLNAME="mul_16ns_16ns_32_1_1_U566" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="mul131"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_fu_653_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_1_fu_669_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_2_fu_714_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_3_fu_730_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_4_fu_775_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_5_fu_791_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_6_fu_816_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_7_fu_832_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_8_fu_857_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_9_fu_873_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_10_fu_898_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_11_fu_914_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_12_fu_939_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_13_fu_955_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_14_fu_980_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_382_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln391_15_fu_996_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln391_15"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>mxm_execute_ursa</Name>
             <Loops>
-                <VITIS_LOOP_259_1_VITIS_LOOP_260_2/>
+                <VITIS_LOOP_312_1_VITIS_LOOP_313_2>
+                    <VITIS_LOOP_328_3/>
+                </VITIS_LOOP_312_1_VITIS_LOOP_313_2>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -2479,77 +2609,112 @@
                     <EstimatedClockPeriod>8.133</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>2</Best-caseLatency>
-                    <Average-caseLatency>4930093352</Average-caseLatency>
-                    <Worst-caseLatency>19725189416</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>49.301 sec</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>197.252 sec</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>3 ~ 19725189417</PipelineInitiationInterval>
+                    <Best-caseLatency>3</Best-caseLatency>
+                    <Average-caseLatency>155529160073014</Average-caseLatency>
+                    <Worst-caseLatency>155586129821699</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>30.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.6e+06 sec</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.6e+06 sec</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>4 ~ 155586129821700</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_259_1_VITIS_LOOP_260_2>
-                        <Name>VITIS_LOOP_259_1_VITIS_LOOP_260_2</Name>
+                    <VITIS_LOOP_312_1_VITIS_LOOP_313_2>
+                        <Name>VITIS_LOOP_312_1_VITIS_LOOP_313_2</Name>
                         <Slack>7.30</Slack>
                         <TripCount>
                             <range>
                                 <min>0</min>
-                                <max>67092481</max>
+                                <max>67108864</max>
                             </range>
                         </TripCount>
-                        <Latency>0 ~ 19725189414</Latency>
-                        <AbsoluteTimeLatency>0 ns ~ 197.252 sec</AbsoluteTimeLatency>
-                        <IterationLatency>294</IterationLatency>
-                        <PipelineDepth>294</PipelineDepth>
+                        <Latency>0 ~ 155586129821696</Latency>
+                        <AbsoluteTimeLatency>0 ns ~ 1.6e+06 sec</AbsoluteTimeLatency>
+                        <IterationLatency>
+                            <range>
+                                <min>78</min>
+                                <max>2318414</max>
+                            </range>
+                        </IterationLatency>
+                        <PipelineDepth>78 ~ 2318414</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <InstanceList>
-                            <Instance>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_276_3_fu_964</Instance>
-                            <Instance>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_296_5_fu_1325</Instance>
+                            <Instance>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_382_7_fu_1831</Instance>
                         </InstanceList>
-                    </VITIS_LOOP_259_1_VITIS_LOOP_260_2>
+                        <VITIS_LOOP_328_3>
+                            <Name>VITIS_LOOP_328_3</Name>
+                            <Slack>7.30</Slack>
+                            <TripCount>
+                                <range>
+                                    <min>0</min>
+                                    <max>8192</max>
+                                </range>
+                            </TripCount>
+                            <Latency>0 ~ 2318336</Latency>
+                            <AbsoluteTimeLatency>0 ns ~ 23.183 ms</AbsoluteTimeLatency>
+                            <IterationLatency>283</IterationLatency>
+                            <PipelineDepth>283</PipelineDepth>
+                            <PipelineType>no</PipelineType>
+                            <InstanceList>
+                                <Instance>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_341_4_fu_1035</Instance>
+                                <Instance>grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_361_6_fu_1408</Instance>
+                            </InstanceList>
+                        </VITIS_LOOP_328_3>
+                    </VITIS_LOOP_312_1_VITIS_LOOP_313_2>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:260</SourceLocation>
+                    <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:313</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_259_1_VITIS_LOOP_260_2>
-                            <Name>VITIS_LOOP_259_1_VITIS_LOOP_260_2</Name>
+                        <VITIS_LOOP_312_1_VITIS_LOOP_313_2>
+                            <Name>VITIS_LOOP_312_1_VITIS_LOOP_313_2</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:259</SourceLocation>
-                        </VITIS_LOOP_259_1_VITIS_LOOP_260_2>
+                            <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:312</SourceLocation>
+                            <VITIS_LOOP_328_3>
+                                <Name>VITIS_LOOP_328_3</Name>
+                                <IssueType>-</IssueType>
+                                <ViolationType>-</ViolationType>
+                                <SourceLocation>/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:328</SourceLocation>
+                            </VITIS_LOOP_328_3>
+                        </VITIS_LOOP_312_1_VITIS_LOOP_313_2>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>8</BRAM_18K>
+                    <BRAM_18K>10</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
-                    <UTIL_BRAM>2</UTIL_BRAM>
-                    <DSP>59</DSP>
+                    <UTIL_BRAM>3</UTIL_BRAM>
+                    <DSP>68</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
-                    <UTIL_DSP>26</UTIL_DSP>
-                    <FF>14325</FF>
+                    <UTIL_DSP>30</UTIL_DSP>
+                    <FF>14137</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>13</UTIL_FF>
-                    <LUT>11901</LUT>
+                    <LUT>13427</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>22</UTIL_LUT>
+                    <UTIL_LUT>25</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_13ns_13ns_26_1_1_U555" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:60" STORAGESUBTYPE="" URAM="0" VARIABLE="bound"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_259_1_VITIS_LOOP_260_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln259_fu_2312_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:259" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln259"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_259_1_VITIS_LOOP_260_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln259_1_fu_2337_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:259" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln259_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_259_1_VITIS_LOOP_260_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_13ns_16ns_29_1_1_U556" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:259" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln259"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_259_1_VITIS_LOOP_260_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_13ns_16ns_29_1_1_U557" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:259" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln259_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_259_1_VITIS_LOOP_260_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln263_fu_2860_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:263" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln263"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_259_1_VITIS_LOOP_260_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln260_fu_2351_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:260" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln260"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="c_tile_acc_U" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:315" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p array" URAM="0" VARIABLE="c_tile_acc"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln308_fu_2381_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:308" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln308"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln309_fu_2391_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:309" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln309"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln310_fu_2420_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:310" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln310"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_14ns_14ns_28_1_1_U590" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/sa.cpp:60" STORAGESUBTYPE="" URAM="0" VARIABLE="bound"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_312_1_VITIS_LOOP_313_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln312_1_fu_2466_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:312" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln312_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_312_1_VITIS_LOOP_313_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln312_fu_2478_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:312" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln312"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_312_1_VITIS_LOOP_313_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_13ns_16ns_29_1_1_U591" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:312" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln312"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_328_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln328_fu_2544_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:328" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln328"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_328_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln330_fu_2566_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:330" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln330"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_328_3" OPTYPE="mul" PRAGMA="" RTLNAME="mul_13ns_16ns_29_1_1_U592" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:331" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln331"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_328_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln331_fu_2903_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:331" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln331"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_312_1_VITIS_LOOP_313_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln313_fu_2654_p2" SOURCE="/home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:313" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln313"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="ap" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="ap_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="2" BUNDLEDNAME="aw" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="aw_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
@@ -3056,17 +3221,10 @@
     <ResolutionUrl key="ZZZ">docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
     <ReportBurst>
         <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.">
-            <item name="Inferred Burst Summary">
-                <table>
-                    <keys size="4">HW Interface, Direction, Length, Width</keys>
-                    <column name="m_axi_aw">read, 8, 8</column>
-                </table>
-            </item>
             <item name="All M_AXI Variable Accesses">
                 <table>
-                    <keys size="8">HW Interface, Variable, Access Location, Direction, Burst Status, Length, Resolution, Problem</keys>
-                    <column name="m_axi_aw">addr_fixed, /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43:14, read, Widen Fail, , 214-353, Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_aw">addr_fixed, /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:43:14, read, Inferred, 8, , </column>
+                    <keys size="9">HW Interface, Variable, Access Location, Direction, Burst Status, Loop, Loop Location, Resolution, Problem</keys>
+                    <column name="m_axi_ca">addr_c0, /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:391:77, write, Fail, VITIS_LOOP_382_7, /home/fi/Documents/GitHub/ursa/exp/ursa_ws/src/core/shell.cpp:382:35, 214-232, Access store is in the conditional branch</column>
                 </table>
             </item>
         </section>
@@ -3099,33 +3257,34 @@
         <Pragma type="unroll" location="../../src/core/sa.cpp:99" status="valid" parentFunction="sa_compute" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="../../src/core/sa.cpp:106" status="valid" parentFunction="sa_compute" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="../../src/core/sa.cpp:108" status="valid" parentFunction="sa_compute" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="../../src/core/shell.cpp:11" status="valid" parentFunction="fill_left_inputs" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="unroll" location="../../src/core/shell.cpp:14" status="valid" parentFunction="fill_left_inputs" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="../../src/core/shell.cpp:20" status="valid" parentFunction="fill_top_inputs" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="unroll" location="../../src/core/shell.cpp:22" status="valid" parentFunction="fill_top_inputs" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="../../src/core/shell.cpp:34" status="valid" parentFunction="fetch_weight_row" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="unroll" location="../../src/core/shell.cpp:41" status="valid" parentFunction="fetch_weight_row" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="../../src/core/shell.cpp:48" status="valid" parentFunction="load_inputs_sa" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="unroll" location="../../src/core/shell.cpp:51" status="valid" parentFunction="load_inputs_sa" variable="" isDirective="0" options="factor=8"/>
-        <Pragma type="pipeline" location="../../src/core/shell.cpp:57" status="valid" parentFunction="store_right_outputs" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="unroll" location="../../src/core/shell.cpp:61" status="valid" parentFunction="store_right_outputs" variable="" isDirective="0" options=""/>
-        <Pragma type="interface" location="../../src/core/shell.cpp:190" status="valid" parentFunction="mxm_execute_ursa" variable="casted_a0" isDirective="0" options="mode=m_axi port=casted_a0 bundle=aw offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200"/>
-        <Pragma type="interface" location="../../src/core/shell.cpp:194" status="valid" parentFunction="mxm_execute_ursa" variable="casted_c0" isDirective="0" options="mode=m_axi port=casted_c0 bundle=ca offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200"/>
-        <Pragma type="interface" location="../../src/core/shell.cpp:198" status="valid" parentFunction="mxm_execute_ursa" variable="return" isDirective="0" options="mode=s_axilite port=return bundle=ap register"/>
-        <Pragma type="interface" location="../../src/core/shell.cpp:199" status="valid" parentFunction="mxm_execute_ursa" variable="a0_p" isDirective="0" options="mode=s_axilite port=a0_p bundle=ap register"/>
-        <Pragma type="interface" location="../../src/core/shell.cpp:200" status="valid" parentFunction="mxm_execute_ursa" variable="b0_q" isDirective="0" options="mode=s_axilite port=b0_q bundle=ap register"/>
-        <Pragma type="interface" location="../../src/core/shell.cpp:201" status="valid" parentFunction="mxm_execute_ursa" variable="m" isDirective="0" options="mode=s_axilite port=m bundle=ap register"/>
-        <Pragma type="interface" location="../../src/core/shell.cpp:215" status="valid" parentFunction="mxm_execute_ursa" variable="casted_b0" isDirective="0" options="mode=m_axi port=casted_b0 bundle=bi offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200"/>
-        <Pragma type="array_partition" location="../../src/core/shell.cpp:234" status="valid" parentFunction="mxm_execute_ursa" variable="l_in" isDirective="0" options="variable=l_in complete dim=1"/>
-        <Pragma type="array_partition" location="../../src/core/shell.cpp:237" status="valid" parentFunction="mxm_execute_ursa" variable="t_in" isDirective="0" options="variable=t_in complete dim=1"/>
-        <Pragma type="array_partition" location="../../src/core/shell.cpp:240" status="valid" parentFunction="mxm_execute_ursa" variable="fixed_in" isDirective="0" options="variable=fixed_in complete dim=1"/>
-        <Pragma type="array_partition" location="../../src/core/shell.cpp:251" status="valid" parentFunction="mxm_execute_ursa" variable="sa" isDirective="0" options="variable=sa complete dim=1"/>
-        <Pragma type="dataflow" location="../../src/core/shell.cpp:254" status="warning" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options="">
+        <Pragma type="pipeline" location="../../src/core/shell.cpp:7" status="valid" parentFunction="fill_left_inputs" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="../../src/core/shell.cpp:10" status="valid" parentFunction="fill_left_inputs" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="../../src/core/shell.cpp:31" status="valid" parentFunction="fill_top_inputs" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="../../src/core/shell.cpp:33" status="valid" parentFunction="fill_top_inputs" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="../../src/core/shell.cpp:58" status="valid" parentFunction="fetch_weight_row" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="../../src/core/shell.cpp:68" status="valid" parentFunction="fetch_weight_row" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="../../src/core/shell.cpp:85" status="valid" parentFunction="load_inputs_sa" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="../../src/core/shell.cpp:88" status="valid" parentFunction="load_inputs_sa" variable="" isDirective="0" options="factor=8"/>
+        <Pragma type="pipeline" location="../../src/core/shell.cpp:94" status="valid" parentFunction="store_right_outputs" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="../../src/core/shell.cpp:97" status="valid" parentFunction="store_right_outputs" variable="" isDirective="0" options=""/>
+        <Pragma type="interface" location="../../src/core/shell.cpp:242" status="valid" parentFunction="mxm_execute_ursa" variable="casted_a0" isDirective="0" options="mode=m_axi port=casted_a0 bundle=aw offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200"/>
+        <Pragma type="interface" location="../../src/core/shell.cpp:246" status="valid" parentFunction="mxm_execute_ursa" variable="casted_c0" isDirective="0" options="mode=m_axi port=casted_c0 bundle=ca offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200"/>
+        <Pragma type="interface" location="../../src/core/shell.cpp:250" status="valid" parentFunction="mxm_execute_ursa" variable="return" isDirective="0" options="mode=s_axilite port=return bundle=ap register"/>
+        <Pragma type="interface" location="../../src/core/shell.cpp:251" status="valid" parentFunction="mxm_execute_ursa" variable="a0_p" isDirective="0" options="mode=s_axilite port=a0_p bundle=ap register"/>
+        <Pragma type="interface" location="../../src/core/shell.cpp:252" status="valid" parentFunction="mxm_execute_ursa" variable="b0_q" isDirective="0" options="mode=s_axilite port=b0_q bundle=ap register"/>
+        <Pragma type="interface" location="../../src/core/shell.cpp:253" status="valid" parentFunction="mxm_execute_ursa" variable="m" isDirective="0" options="mode=s_axilite port=m bundle=ap register"/>
+        <Pragma type="interface" location="../../src/core/shell.cpp:267" status="valid" parentFunction="mxm_execute_ursa" variable="casted_b0" isDirective="0" options="mode=m_axi port=casted_b0 bundle=bi offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200"/>
+        <Pragma type="array_partition" location="../../src/core/shell.cpp:286" status="valid" parentFunction="mxm_execute_ursa" variable="l_in" isDirective="0" options="variable=l_in complete dim=1"/>
+        <Pragma type="array_partition" location="../../src/core/shell.cpp:289" status="valid" parentFunction="mxm_execute_ursa" variable="t_in" isDirective="0" options="variable=t_in complete dim=1"/>
+        <Pragma type="array_partition" location="../../src/core/shell.cpp:292" status="valid" parentFunction="mxm_execute_ursa" variable="fixed_in" isDirective="0" options="variable=fixed_in complete dim=1"/>
+        <Pragma type="array_partition" location="../../src/core/shell.cpp:303" status="valid" parentFunction="mxm_execute_ursa" variable="sa" isDirective="0" options="variable=sa complete dim=1"/>
+        <Pragma type="dataflow" location="../../src/core/shell.cpp:306" status="warning" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options="">
             <Msg msg_id="207-5571" msg_severity="WARNING" msg_body="Only 'for' loop or function body support the dataflow pragma"/>
         </Pragma>
-        <Pragma type="pipeline" location="../../src/core/shell.cpp:277" status="valid" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="unroll" location="../../src/core/shell.cpp:284" status="valid" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="../../src/core/shell.cpp:297" status="valid" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="pipeline" location="../../src/core/shell.cpp:342" status="valid" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="../../src/core/shell.cpp:349" status="valid" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="../../src/core/shell.cpp:362" status="valid" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="pipeline" location="../../src/core/shell.cpp:383" status="valid" parentFunction="mxm_execute_ursa" variable="" isDirective="0" options="II=1"/>
     </PragmaReport>
 </profile>
 
