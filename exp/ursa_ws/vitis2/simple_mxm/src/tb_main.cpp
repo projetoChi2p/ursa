@@ -81,6 +81,8 @@ int main()
     // start timer
     app_timer_start(0);
 
+    // implementar tiling aqui!
+
     // MxM execute
     uint8_t sa_status = mxm_execute_ursa(
         &xUrsa0,

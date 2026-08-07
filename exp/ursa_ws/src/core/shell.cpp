@@ -1,46 +1,83 @@
 #include "shell.h"
+#include <stdint.h>
 
 
 /********** FILL INPUTS *****************************************************************************/
-void fill_left_inputs(lr_t l_in[SA_SIZE], uint16_t t){
-    
-    //printf("[sa_shell] fill sa inputs a\n");
-    /************************************************
-    INSERT A DATA LAYER IN THE LATERAL INTERFACE
-    ************************************************/
+void fill_left_inputs(lr_t l_in[SA_SIZE], uint16_t t, lr_t c_tile_acc[SA_SIZE][SA_SIZE], uint16_t k){
     #pragma HLS PIPELINE II=1
-    // Left inputs just feed 0s to start the accumulation
+
     for(uint16_t i=0;i<SA_SIZE;i++){
         #pragma HLS UNROLL
-        l_in[i] = 0;
+        
+        if (k==0) {
+            // first block: start feeding the SA with zeros
+            l_in[i] = 0; 
+        }
+        else {
+            // subsequent blocks: feed previous sums back in (accounting for skew)
+            if (t>= i && t < i + SA_SIZE){
+                uint16_t col = t - i;
+                l_in[i] = c_tile_acc[i][col];
+            }
+            else{
+                l_in[i] = 0;
+            }
+        }   
     }
 }
 
-void fill_top_inputs(tb_t *addr_t, uint16_t str_t, tb_t t_in[SA_SIZE] ,uint16_t t){
+void fill_top_inputs(tb_t *addr_t, uint16_t str_t, tb_t t_in[SA_SIZE] ,uint16_t t,
+                     uint16_t base_row_B, uint16_t base_col_B, uint16_t limit_m, uint16_t limit_q){
     #pragma HLS PIPELINE II=1
     for(uint16_t j=0; j<SA_SIZE; j++){
         #pragma HLS UNROLL
         // Stream valid columns of Matrix B, accounting for the skew (t >= j)
         if (t >= j && t < j + SA_SIZE) {
             uint16_t col = t - j; // Un-skew time to get the actual column index
-            t_in[j] = *(addr_t + (j * str_t) + col); 
+
+            // calculate absolute global coordinates in B
+            uint16_t global_row = base_row_B + j;
+            uint16_t global_col = base_col_B + col;
+
+            // boundary guard: only read from memory if inside B dimensions
+            if (global_row < limit_m && global_col < limit_q){
+                t_in[j] = *(addr_t + (j *str_t) + col);
+            }
+            else {
+                t_in[j] = 0;
+            }
+
         } else {
             t_in[j] = 0;
         }
     }
 }
 
-void fetch_weight_row(fixed_t *addr_fixed, uint16_t m, fixed_t in_fixed[SA_SIZE], uint16_t t) {
+void fetch_weight_row(fixed_t *addr_fixed, uint16_t m, fixed_t in_fixed[SA_SIZE], uint16_t t,
+                      uint16_t base_row_A, uint16_t base_col_A, uint16_t limit_p, uint16_t limit_m) {
     #pragma HLS PIPELINE II=1
     
     // Reverse the row order: 
     // t=0 fetches row 7, t=1 fetches row 6... t=7 fetches row 0
     uint16_t row_to_fetch = (SA_SIZE - 1) - t; 
 
+    // calculate absolute global row in A
+    uint16_t global_row = base_row_A + row_to_fetch;
+
     for(uint16_t j = 0; j < SA_SIZE; j++) {
         #pragma HLS UNROLL
-        // Move down by 'row_to_fetch' rows (stride is m), and across by 'j' columns
-        in_fixed[j] = *(addr_fixed + (row_to_fetch * m) + j);
+        // calculate absolute global column in A
+        uint16_t global_col = base_col_A + j;
+
+        // boundary guard: only read from memory if inside the matrix A dimensions
+        if (global_row < limit_p && global_col < limit_m){
+            in_fixed[j] = *(addr_fixed + (row_to_fetch * m) + j);
+        }
+        else {
+            // pad out-of-bounds space with 0s
+            in_fixed[j] = 0;
+        }
+        
     }
 }
 
@@ -53,28 +90,43 @@ void load_inputs_sa(SA *sa, lr_t l_in[SA_SIZE], tb_t t_in[SA_SIZE]){
     }
 }
 
-void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16_t m) {
+void store_right_outputs(SA *sa, lr_t c_tile_acc[SA_SIZE][SA_SIZE], uint16_t t) {
     #pragma HLS PIPELINE II=1
     
-    // Check the rightmost PE of every row
     for(uint16_t i = 0; i < SA_SIZE; i++){
         #pragma HLS UNROLL
-        
-        // Calculate when valid data starts popping out for this specific row
-        uint16_t output_start_time = i + SA_SIZE-1;
-        
-        // Only capture if we are inside the valid data window for this row
-        if (t >= output_start_time && t < output_start_time + m) {
-            
-            // Un-skew the time to figure out which column of Matrix C this is
-            uint16_t col_idx = t - output_start_time;
-            
-            // Write directly to memory.
-            // Move down 'i' rows (stride b0_q) and across 'col_idx' columns
-            *(addr_c + (i * b0_q) + col_idx) = sa->pe[i][SA_SIZE - 1].r_out;
-        }
+        uint16_t output_start_time = i + SA_SIZE -1;
+
+        if(t >= output_start_time && t < output_start_time + SA_SIZE){
+            uint16_t col = t -output_start_time;
+            // write directly to the local accumulator buffer
+            c_tile_acc[i][col] = sa -> pe[i][SA_SIZE-1].r_out;
+        }        
     }
 }
+
+// void store_right_outputs(SA *sa, lr_t *addr_c, uint16_t b0_q, uint16_t t, uint16_t m) {
+//     #pragma HLS PIPELINE II=1
+    
+//     // Check the rightmost PE of every row
+//     for(uint16_t i = 0; i < SA_SIZE; i++){
+//         #pragma HLS UNROLL
+        
+//         // Calculate when valid data starts popping out for this specific row
+//         uint16_t output_start_time = i + SA_SIZE-1;
+        
+//         // Only capture if we are inside the valid data window for this row
+//         if (t >= output_start_time && t < output_start_time + m) {
+            
+//             // Un-skew the time to figure out which column of Matrix C this is
+//             uint16_t col_idx = t - output_start_time;
+            
+//             // Write directly to memory.
+//             // Move down 'i' rows (stride b0_q) and across 'col_idx' columns
+//             *(addr_c + (i * b0_q) + col_idx) = sa->pe[i][SA_SIZE - 1].r_out;
+//         }
+//     }
+// }
 
 /*****************************************************************************************************
 TOP FUNCTION
@@ -243,7 +295,7 @@ TOP FUNCTION
     data_b_t *addr_sa_b;
     data_c_t *addr_sa_c;
 
-    printf("[sa_shell] addr_a0: %d  addr_b0: %d addr_c0: %d\n", addr_a0, addr_b0, addr_c0); //
+    // printf("[sa_shell] addr_a0: %d  addr_b0: %d addr_c0: %d\n", addr_a0, addr_b0, addr_c0); //
 
 /****************************************************************************************************/
 
@@ -253,14 +305,14 @@ TOP FUNCTION
     {
         #pragma HLS DATAFLOW
         sa_init(&sa);
-        uint16_t call_c = a0_p/SA_SIZE;  // C has the same number of lines as A
-        uint16_t call_b = b0_q/SA_SIZE;
+        uint16_t call_p = (a0_p + SA_SIZE - 1)/SA_SIZE;  // C has the same number of lines as A
+        uint16_t call_q = (b0_q + SA_SIZE - 1)/SA_SIZE;
+        uint16_t call_m = (m + SA_SIZE - 1)/SA_SIZE; // new loop k bound
 
-        for(uint16_t i=0;i<call_c;i++){
-            for(uint16_t j=0;j<call_b;j++){
-                addr_sa_a = (data_a_t*)(casted_a0 + i * SA_SIZE * m);
-                addr_sa_b = (data_b_t*)(casted_b0 + j * SA_SIZE);
-                addr_sa_c = (data_c_t*)(casted_c0 + (i * SA_SIZE * b0_q) + (j * SA_SIZE));
+        for(uint16_t i=0;i<call_p;i++){
+            for(uint16_t j=0;j<call_q;j++){
+                // local partitioned buffer to hold the tile results
+                lr_t c_tile_acc[SA_SIZE][SA_SIZE];
 
 #ifdef LABFT
                 /* ---- L do tile (i,j): calculado ANTES da computação SA ---- */
@@ -272,48 +324,74 @@ TOP FUNCTION
                 );
                 // labft_irq = false;  // ← limpa no início de cada tile
 #endif
-                /* ---- Carregamento dos pesos para o SA ---- */
-                for(uint16_t t = 0; t < SA_SIZE; t++){
-                    #pragma HLS PIPELINE II=1
-                    
-                    // Fetch a row of weights from memory
-                    fetch_weight_row(addr_sa_a, m, fixed_in, t); 
-                    
-                    // Push them into the SA's input buffer
-                    for(uint16_t k=0; k<SA_SIZE; k++) {
-                        #pragma HLS UNROLL
-                        sa.in_mtx_t[k] = fixed_in[k]; // Feeding the top ports
+
+                for (uint16_t k = 0; k < call_m; k++){
+                    // shift A and B pointers for inner dimension 'k'
+                    addr_sa_a = (data_a_t*)(casted_a0 + (i * SA_SIZE * m) + (k * SA_SIZE));
+                    addr_sa_b = (data_b_t*)(casted_b0 + (k * SA_SIZE * b0_q) + (j * SA_SIZE));
+
+                    uint16_t base_row_A = i * SA_SIZE;
+                    uint16_t base_col_A = k * SA_SIZE;
+
+                    uint16_t base_row_B = k * SA_SIZE;
+                    uint16_t base_col_B = j * SA_SIZE;
+                
+
+                    /* ---- Carregamento dos pesos para o SA ---- */
+                    for(uint16_t t = 0; t < SA_SIZE; t++){
+                        #pragma HLS PIPELINE II=1
+                        
+                        // Fetch a row of weights from memory
+                        fetch_weight_row(addr_sa_a, m, fixed_in, t, base_row_A, base_col_A, a0_p, m); 
+                        
+                        // Push them into the SA's input buffer
+                        for(uint16_t idx=0; idx<SA_SIZE; idx++) {
+                            #pragma HLS UNROLL
+                            sa.in_mtx_t[idx] = fixed_in[idx]; // Feeding the top ports
+                        }
+
+                        // Shift them down into the PEs
+                        sa_load_weights(&sa);
                     }
 
-                    // Shift them down into the PEs
-                    sa_load_weights(&sa);
-                }
+                    /* ---- Computação SA ---- */
+                    // The loop runs long enough to push all columns + flush the pipeline
+                    uint16_t total_cycles = SA_SIZE + SA_SIZE + (SA_SIZE - 1);
 
-                /* ---- Computação SA ---- */
-                // The loop runs long enough to push all columns + flush the pipeline
-                uint16_t total_cycles = SA_SIZE + SA_SIZE + (SA_SIZE - 1);
+                    for(uint16_t t = 0; t < total_cycles; t++){    
+                        #pragma HLS PIPELINE II=1
+                        // Phase 1 - pass the accumulator and k to the left inputs     
+                        fill_left_inputs(l_in,t, c_tile_acc, k);
+                        fill_top_inputs(addr_sa_b, b0_q, t_in, t, base_row_B, base_col_B, m, b0_q);
+                        
+                        // Phase 2 - load values onto the SA, all in parallel
+                        load_inputs_sa(&sa,l_in,t_in);
 
-                for(uint16_t t = 0; t < total_cycles; t++){    
-                    #pragma HLS PIPELINE II=1
-                    //Fase 1 - Busca valores da BRAM_B e inicia a injeção dos resultados no SA      
-                    fill_left_inputs(l_in,t);
-                    fill_top_inputs(addr_sa_b,b0_q,t_in,t);
-                    
-                    // Fase 2 - Carrega valores no SA, todos valores em paralelo
-                    load_inputs_sa(&sa,l_in,t_in);
+                        // Phase 3 - SA Compute
+                        sa_compute(&sa);
 
-                    // Fase 3 - SA Compute
-                    sa_compute(&sa);
+                        // Phase 4 - capture right outputs back into the accumulator
+                        store_right_outputs(&sa, c_tile_acc, t);
+                    }
+                } // end k loop
 
-                    // Fase 4 - Pega os resultados do lado direito e escreve na BRAM_C
-                    store_right_outputs(&sa, addr_sa_c, b0_q, t, m);
-                }
+                /* ---- Flush tile to memory ---- */
+                // k loop is donem cc_tile_acc holds the final answer for C          
+                addr_sa_c = (data_c_t*)(casted_c0 + (i*SA_SIZE*b0_q) + (j*SA_SIZE));
                 
-                /* ---- Flush do tile para C ---- */
-                // Fase 4 - Flush SA to BRAM_C            
-                // addr_sa_c = (data_c_t*)(casted_c0 + (i*SA_SIZE*b0_q) + (j*SA_SIZE));
-                // sa_store(&sa,addr_sa_c,b0_q);               
-                // sa_reset(&sa);
+                for (uint16_t r = 0; r < SA_SIZE; r++){
+                    #pragma HLS PIPELINE II=1
+                    for (uint16_t c =0; c < SA_SIZE; c++){
+                        // calculate the absolute global coordinates in the final matrix
+                        uint16_t global_row = i * SA_SIZE + r;
+                        uint16_t global_col = j * SA_SIZE + c;
+
+                        // boundary guard: only write to the memory if it belongs to the actual matrix size
+                        if (global_row < a0_p && global_col < b0_q) {
+                            *(casted_c0 + (global_row * b0_q) + global_col) = c_tile_acc[r][c];
+                        }
+                    }
+                }
 #ifdef LABFT
   #ifdef FAULT_INJECT
                 // /* Injeta erro somente no tile (0,0) para teste */

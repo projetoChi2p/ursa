@@ -146,9 +146,9 @@ typedef struct {
 #endif /* IM2COL */
  
 /*TB*/
-#define P SA_SIZE
-#define Q SA_SIZE
-#define M SA_SIZE
+#define P 12
+#define Q 12
+#define M 12
 
 #endif /* __SETTINGS_H__ */
  
