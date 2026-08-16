@@ -1,4 +1,3 @@
-[ENG]
 # URSA (UFRGS Reconfigurable Systolic Array)
 
 URSA is a parameter-tunable GEMM accelerator synthesized in the Programmable Logic (PL) of an AMD Xilinx Zynq-7000 APSoC. It is designed as a flexible systolic array whose geometry and memory organization can be configured at design time.
@@ -45,43 +44,3 @@ To test the system on ZedBoard, you must:
 
 The program used for testing, compatible with IPs generated via HLS, is located in vitis_app_component.
 - Note: If there are changes to the neural network, HLS parameters, or project structure, the program may require adjustments and may stop working correctly.
-
-[PT-BR]
-# URSA (UFRGS Reconfigurable Systolic Array)
-
-## Fontes
-
-Os arquivos-fonte do URSA estão nas pastas `src/` e `tb/`.  
-Use `./do_cmake.sh` para gerar os arquivos de build na pasta `build/`,  
-depois entre em `build/` e rode `make` para compilar o programa em C++.
-
-1. Fontes: `src/` e `tb/`  
-2. Gere o Makefile: `./do_cmake.sh`  
-3. Compile: `cd build && make`
-
-**Nota:** múltiplos executáveis são gerados com diferentes valores de `SA_SIZE` (4, 8 e 16), definidos em tempo de compilação.  
-Cada executável tem o nome `ursa_<SA_SIZE>_x_<SA_SIZE>_tb` e pode ser executado individualmente.
-
-4. Execute: `./build/ursa_4_x_4_tb`
-
-## HLS
-
-Para gerar os IPs via HLS utilizando o Vitis 2023.2, execute o script do_hls_all.sh.
-As configurações devem ser ajustadas no arquivo do_hls_config.cfg.in.
-Em /ursa_prebuilt_ips existem IPs gerados.
-
-## VIVADO
-
-O projeto Vivado v1 foi utilizado na campanha do Pelletron, quando o processo de geração dos IPs via HLS ainda não estava automatizado por script.
-Já a versão v2 consome diretamente os IPs gerados automaticamente pelo script de HLS (pasta:ip_ursa).
-Esse processo foi validado na ZedBoard, com suporte a BRAMs organizadas em uma matriz 8x8.
-
-## Test Board
-
-Para testar o sistema na ZedBoard, é necessário:
-- Exportar o hardware (arquivo .xsa) a partir do projeto Vivado.
-- Criar uma plataforma personalizada no Vitis com base nesse .xsa.
-- Exportar o bitstream no projeto Vivado.
-
-O programa utilizado para teste, compatível com os IPs gerados via HLS, está localizado em vitis_app_component.
-- Nota: caso haja modificações na rede neural, nos parâmetros do HLS ou na estrutura do projeto, o programa pode precisar de ajustes e poderá deixar de funcionar corretamente.

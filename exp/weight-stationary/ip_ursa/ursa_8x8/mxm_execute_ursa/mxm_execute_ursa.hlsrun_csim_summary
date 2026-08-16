@@ -1,0 +1,164 @@
+<ENTRY>
+{
+ "thisFile": "/home/ulisses/Projects/ursa/exp/vitis/hls_ursa_8x8/mxm_execute_ursa/mxm_execute_ursa.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Apr 10 14:37:42 2026",
+ "timestampMillis": "1775842662837",
+ "buildStep": {
+  "cmdId": "b6fb6a8f-43eb-4437-a1af-083bc4be8c43",
+  "name": "vitis-run",
+  "logFile": "/home/ulisses/Projects/ursa/exp/vitis/hls_ursa_8x8/mxm_execute_ursa/logs/mxm_execute_ursa.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/ulisses/Projects/ursa/exp/vitis/hls_ursa_8x8/hls_config.cfg --work_dir mxm_execute_ursa ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/ulisses/Projects/ursa/exp/vitis/hls_ursa_8x8/hls_config.cfg",
+   "--work_dir",
+   "mxm_execute_ursa"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/exp/vitis/hls_ursa_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:37:42 2026",
+ "timestampMillis": "1775842662837",
+ "status": {
+  "cmdId": "b6fb6a8f-43eb-4437-a1af-083bc4be8c43",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Apr 10 14:37:45 2026",
+ "timestampMillis": "1775842665416",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mxm_execute_ursa",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/ulisses/Projects/ursa/exp/src/labft.cpp",
+     "/home/ulisses/Projects/ursa/exp/src/labft.h",
+     "/home/ulisses/Projects/ursa/exp/src/math_sa.h",
+     "/home/ulisses/Projects/ursa/exp/src/pe.cpp",
+     "/home/ulisses/Projects/ursa/exp/src/pe.h",
+     "/home/ulisses/Projects/ursa/exp/src/sa.cpp",
+     "/home/ulisses/Projects/ursa/exp/src/sa.h",
+     "/home/ulisses/Projects/ursa/exp/src/shell.cpp",
+     "/home/ulisses/Projects/ursa/exp/src/shell.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Apr 10 14:37:45 2026",
+ "timestampMillis": "1775842665417",
+ "buildStep": {
+  "cmdId": "2c4ebf20-73b8-464d-b4f4-d4483b420dc2",
+  "name": "csim_design",
+  "logFile": "/home/ulisses/Projects/ursa/exp/vitis/hls_ursa_8x8/mxm_execute_ursa/hls/hls.log",
+  "commandLine": "csim_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/exp/vitis/hls_ursa_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:37:45 2026",
+ "timestampMillis": "1775842665418",
+ "status": {
+  "cmdId": "2c4ebf20-73b8-464d-b4f4-d4483b420dc2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:37:45 2026",
+ "timestampMillis": "1775842665930",
+ "status": {
+  "cmdId": "2c4ebf20-73b8-464d-b4f4-d4483b420dc2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Apr 10 14:37:46 2026",
+ "timestampMillis": "1775842666103",
+ "status": {
+  "cmdId": "b6fb6a8f-43eb-4437-a1af-083bc4be8c43",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:37:46 2026",
+ "timestampMillis": "1775842666104",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Apr 10 14:37:46 2026",
+ "timestampMillis": "1775842666104",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
