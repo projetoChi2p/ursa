@@ -1,0 +1,12 @@
+CMakeFiles/fsbl.elf.dir/fsbl_hooks.c.obj: \
+ /home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/fsbl_hooks.c \
+ /home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/fsbl.h \
+ /home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/pcap.h \
+ /home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/fsbl_debug.h \
+ /home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/ps7_init.h \
+ /home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/fsbl_hooks.h
+/home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/fsbl.h:
+/home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/pcap.h:
+/home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/fsbl_debug.h:
+/home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/ps7_init.h:
+/home/ulisses/Projects/ursa/vitis/platform_vanilla/zynq_fsbl/fsbl_hooks.h:
