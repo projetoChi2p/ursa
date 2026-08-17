@@ -13,11 +13,11 @@
 // ⠀⠀⠀⠀⠉⠁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀
 // URSA (UFRGS Reconfigurable Systolic Array)
 XMxm_execute_ursa xUrsa0;
-uint16_t          labft_count_0 = 0;
 
-/*****************************************************************************************************
- Inicialização do IP URSA
-******************************************************************************************************/
+
+//===============================================
+// init to ursa-ip
+//===============================================
 int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
 {
     int xil_status;
@@ -37,21 +37,12 @@ int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
         xil_printf("[init] URSA CONTROL FOUND:\n\r");
         xil_printf("[init] AP CONTROL    0x%08x \n\r", xMxmConfigPtr->Ap_BaseAddress);
         xil_printf("[init] MEM CONTROL   0x%08x \n\r", xMxmConfigPtr->Control_BaseAddress);
-#ifdef LABFT
-        xil_printf("[init] LABFT CONTROL 0x%08x\n\r", xMxmConfigPtr->Labft_ctrl_BaseAddress);
-#endif
     }
 
     // NOTA: Vivado 2023.2 gera Ap e Control invertidos no LookupConfig
     // A troca abaixo é intencional!
-#ifdef LABFT
-    xMxmConfig.Ap_BaseAddress        = xMxmConfigPtr->Control_BaseAddress;
-    xMxmConfig.Control_BaseAddress   = xMxmConfigPtr->Labft_ctrl_BaseAddress;
-    xMxmConfig.Labft_ctrl_BaseAddress = xMxmConfigPtr->Ap_BaseAddress;
-#else
     xMxmConfig.Ap_BaseAddress      = xMxmConfigPtr->Control_BaseAddress;
     xMxmConfig.Control_BaseAddress = xMxmConfigPtr->Ap_BaseAddress;
-#endif    
 
     xil_status = XMxm_execute_ursa_CfgInitialize(pxMxm, &xMxmConfig);
     if (xil_status != XST_SUCCESS) {
@@ -61,9 +52,9 @@ int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
     return EXIT_SUCCESS;
 }
 
-/*****************************************************************************************************
- Configuração pós-reset
-******************************************************************************************************/
+//===============================================
+// post reset config
+//===============================================
 int ursa_post_reset_setup(XMxm_execute_ursa *pxMxm)
 {
     XMxm_execute_ursa_InterruptGlobalDisable(pxMxm);
@@ -73,9 +64,9 @@ int ursa_post_reset_setup(XMxm_execute_ursa *pxMxm)
     return EXIT_SUCCESS;
 }
 
-/*****************************************************************************************************
- Execução MxM — common body (shared between IM2COL and non-IM2COL)
-******************************************************************************************************/
+//===============================================
+// mxm-execute
+//===============================================
 static uint8_t ursa_run(XMxm_execute_ursa *pxMxm, uint32_t p, uint32_t q, uint32_t m)
 {
     uint32_t k;
@@ -98,46 +89,6 @@ static uint8_t ursa_run(XMxm_execute_ursa *pxMxm, uint32_t p, uint32_t q, uint32
 
     return (uint8_t)u32Return;
 }
-
-/*****************************************************************************************************
- Execução MxM
-******************************************************************************************************/
-#ifdef IM2COL
-uint8_t mxm_execute_ursa(
-    XMxm_execute_ursa *pxMxm,
-    uint32_t p, uint32_t q, uint32_t m,
-    uint32_t addr_a, uint32_t addr_img, uint32_t addr_c,
-    uint8_t  ch_in,
-    uint16_t wh_in,
-    uint8_t  wh_kernel,
-    uint8_t  pad,
-    uint8_t  stride)
-{
-    uint32_t k;
-
-    k = TIMEOUT_STEPS_FOR_REGS;
-    while ((XMxm_execute_ursa_IsIdle(pxMxm) == 0) && (k != 0)) {
-        usleep(TIMEOUT_USLEEP); k--;
-    }
-    if (k == 0) { send_status(0, __LINE__); return SA_ERROR; }
-
-    XMxm_execute_ursa_Set_a0_p    (pxMxm, p);
-    XMxm_execute_ursa_Set_b0_q    (pxMxm, q);
-    XMxm_execute_ursa_Set_m       (pxMxm, m);
-    XMxm_execute_ursa_Set_addr_a0 (pxMxm, addr_a);
-    XMxm_execute_ursa_Set_addr_img(pxMxm, addr_img);   // imagem raw CHW
-    XMxm_execute_ursa_Set_addr_c0 (pxMxm, addr_c);
-    XMxm_execute_ursa_Set_ch_in   (pxMxm, ch_in);
-    XMxm_execute_ursa_Set_wh_in   (pxMxm, wh_in);
-    XMxm_execute_ursa_Set_wh_kernel(pxMxm, wh_kernel);
-    XMxm_execute_ursa_Set_pad     (pxMxm, pad);
-    XMxm_execute_ursa_Set_stride  (pxMxm, stride);
-
-    return ursa_run(pxMxm, p, q, m);
-}
-
-#else
-
 uint8_t mxm_execute_ursa(
     XMxm_execute_ursa *pxMxm,
     uint32_t p, uint32_t q, uint32_t m,
@@ -160,5 +111,3 @@ uint8_t mxm_execute_ursa(
 
     return ursa_run(pxMxm, p, q, m);
 }
-
-#endif /* IM2COL */

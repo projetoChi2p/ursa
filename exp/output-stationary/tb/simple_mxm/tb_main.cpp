@@ -11,12 +11,6 @@ int8_t  g_mem_b[M*Q];
 int32_t g_mem_c[P*Q];
 int32_t g_mem_c_gold[P*Q];
 
-#ifdef LABFT
-    // bool     labft_irq;
-    uint16_t labft_count;
-#endif
-
-
 int main() 
 {
 	init_matrix_a(g_mem_a, P, M);
@@ -32,43 +26,11 @@ int main()
    	print_matrix_c(g_mem_c_gold, P, Q);
 #endif
 
-#ifdef LABFT
-    uint8_t sa_status = mxm_execute_ursa(
-        (int8_t*)g_mem_a,  P,
-        (uint8_t*)g_mem_b, Q,
-        g_mem_c,           M,
-        // labft_irq,
-        labft_count
-    );
-#else
     uint8_t sa_status = mxm_execute_ursa(
         (int8_t*)g_mem_a,  P,
         (uint8_t*)g_mem_b, Q,
         g_mem_c,           M
     );
-#endif
-	
-#ifdef LABFT
-    if (sa_status != SA_SUCCESS)
-    {
-        if (sa_status == SA_LABFT_ERROR)
-        {
-            uint16_t total_tiles = (P / SA_SIZE) * (Q / SA_SIZE);
-            printf("[LABFT ERROR] %d de %d tiles com erro detectado (%.1f%%)\n",
-                   labft_count, total_tiles,
-                   100.0f * labft_count / total_tiles);
-        }
-        else
-        {
-            printf("[ERROR] mxm_execute_ursa falhou!\n");
-            return EXIT_FAILURE;
-        }
-    }
-    else
-    {
-        printf("[LABFT] Nenhum erro detectado em nenhum tile.\n");
-    }
-#endif
 
 #ifdef DEBUG
     printf("=== URSA Result ===\n");

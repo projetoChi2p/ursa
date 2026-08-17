@@ -20,20 +20,18 @@ include_directories("${PROJECT_SOURCE_DIR}/third-party/xilinx/hls/")
 include_directories("${PROJECT_SOURCE_DIR}/third-party/xilinx/hls/")
 include_directories("${PROJECT_SOURCE_DIR}/src")
 include_directories("${PROJECT_SOURCE_DIR}/src/core")
-include_directories("${PROJECT_SOURCE_DIR}/src/labft")
-include_directories("${PROJECT_SOURCE_DIR}/src/im2col")
 # include_directories("${PROJECT_SOURCE_DIR}/tb/simple_mxm")
-include_directories("${PROJECT_SOURCE_DIR}/tb/cnn")
+# include_directories("${PROJECT_SOURCE_DIR}/tb/cnn")
+include_directories("${PROJECT_SOURCE_DIR}/tb/bench_mxm")
 include_directories("${PROJECT_BINARY_DIR}")
 
 # ── Fontes ──────────────────────────────────────────────────
 file(GLOB CORE_SOURCES    CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/core/*.cpp")
-file(GLOB LABFT_SOURCES   CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/labft/*.cpp")
-file(GLOB IM2COL_SOURCES  CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/im2col/*.cpp")
 # file(GLOB TB_SOURCES      CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/tb/simple_mxm/*.cpp")
-file(GLOB TB_SOURCES      CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/tb/cnn/*.cpp")
+# file(GLOB TB_SOURCES      CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/tb/cnn/*.cpp")
+file(GLOB TB_SOURCES      CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/tb/bench_mxm/*.cpp")
 
-set(SRC_SOURCES ${CORE_SOURCES} ${LABFT_SOURCES} ${IM2COL_SOURCES})
+set(SRC_SOURCES ${CORE_SOURCES})
 
 # ── Targets por SA_SIZE ─────────────────────────────────────
 # SA_SIZE aqui sobrescreve o valor em settings.h via -D,

@@ -5,37 +5,28 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <limits.h>
- 
-/* ── Síntese HLS ───────────────────────────────────────────
-   AP_FIXED é ativado automaticamente pelo __SYNTHESIS__
-   definido pelo Vitis HLS. Não edite aqui.                */
+
+//===============================================
+// Settings for output-stationary only
+//===============================================
+
+// Synthesis HLS
 #ifdef __SYNTHESIS__
     #define AP_FIXED
     #include "hls_stream.h"
 #endif
- 
-/* ── Dimensão do Systolic Array ────────────────────────── */
-#define SA_SIZE 9 // mudar isso aqui para 10!
- 
-/* ── Fault tolerance ───────────────────────────────────── */
-// #define LABFT
-// #define FAULT_INJECT
- 
-/* ── Debug ─────────────────────────────────────────────── */
-// #define DEBUG
- 
-/*features*/
-// #define IM2COL
 
-/* ── Códigos de retorno da top function ────────────────── */
+// Systolic Array Size
+#define SA_SIZE 8
+
+// Enable for debug
+// #define DEBUG
+
+// Intern Codes
 #define SA_SUCCESS      0
 #define SA_ERROR        1
-#define SA_LABFT_ERROR  2
 
-/* ── Dimensão interna máxima (para buffers estáticos) ── */
-#define M_MAX 144
-
-/* ── Math SA ───────────────────────────────────────────── */
+// Math SA
 #ifdef AP_FIXED
     #include "ap_fixed.h"
 
@@ -52,97 +43,19 @@
 
 typedef uint8_t sa_result_t;
  
-/* ── Stream element ─────────────────────────────────────── */
-typedef struct {
-    data_a_t a[SA_SIZE];
-    data_b_t b[SA_SIZE];
-} axis_ab_t;
- 
+// Public API
+sa_result_t mxm_execute_ursa(
+    int8_t  *addr_a0,
+    uint16_t a0_p,
+    uint8_t *addr_b0,
+    uint16_t b0_q,
+    int32_t *addr_c0,
+    uint16_t m
+);
 
-/* ── Public API ─────────────────────────────────────────── */
-// #ifdef LABFT
-//     sa_result_t mxm_execute_ursa(
-//         int8_t   *addr_a0,
-//         uint16_t  a0_p,
-//         uint8_t  *addr_b0,
-//         uint16_t  b0_q,
-//         int32_t  *addr_c0,
-//         uint16_t  m,
-//         uint16_t &labft_count
-//     );
-// #else
-//     sa_result_t mxm_execute_ursa(
-//         int8_t  *addr_a0,
-//         uint16_t a0_p,
-//         uint8_t *addr_b0,
-//         uint16_t b0_q,
-//         int32_t *addr_c0,
-//         uint16_t m
-//     );
-// #endif
-
-#ifdef IM2COL
- 
-    #ifdef LABFT
-        sa_result_t mxm_execute_ursa(
-            int8_t   *addr_a0,
-            uint16_t  a0_p,
-            uint8_t  *addr_img,   // imagem raw CHW
-            uint16_t  b0_q,
-            int32_t  *addr_c0,
-            uint16_t  m,
-            uint8_t   ch_in,
-            uint16_t  wh_in,
-            uint8_t   wh_kernel,
-            uint8_t   pad,
-            uint8_t   stride,
-            uint16_t &labft_count
-        );
-    #else
-        sa_result_t mxm_execute_ursa(
-            int8_t  *addr_a0,
-            uint16_t a0_p,
-            uint8_t *addr_img,    // imagem raw CHW
-            uint16_t b0_q,
-            int32_t *addr_c0,
-            uint16_t m,
-            uint8_t  ch_in,
-            uint16_t wh_in,
-            uint8_t  wh_kernel,
-            uint8_t  pad,
-            uint8_t  stride
-        );
-    #endif
- 
-#else /* !IM2COL — assinatura original, sem im2col */
- 
-    #ifdef LABFT
-        sa_result_t mxm_execute_ursa(
-            int8_t   *addr_a0,
-            uint16_t  a0_p,
-            uint8_t  *addr_b0,
-            uint16_t  b0_q,
-            int32_t  *addr_c0,
-            uint16_t  m,
-            uint16_t &labft_count
-        );
-    #else
-        sa_result_t mxm_execute_ursa(
-            int8_t  *addr_a0,
-            uint16_t a0_p,
-            uint8_t *addr_b0,
-            uint16_t b0_q,
-            int32_t *addr_c0,
-            uint16_t m
-        );
-    #endif
- 
-#endif /* IM2COL */
- 
-/*TB*/
-#define P 8
-#define Q 8
-#define M 8
+// // Testbench
+// #define P 8
+// #define Q 8
+// #define M 8
 
 #endif /* __SETTINGS_H__ */
- 
