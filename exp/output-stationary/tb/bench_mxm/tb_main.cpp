@@ -129,6 +129,7 @@ int main(int argc, char **argv)
         bench_fill(tc, A, B);
         memset(C, 0, nc * sizeof(bench_c_t));        
 
+        // call accelerator
         double t0 = now_ms();
         sa_result_t st = mxm_execute_ursa(
             (int8_t  *)A, tc->P,
@@ -168,85 +169,5 @@ int main(int argc, char **argv)
     return fail ? 1 : 0;
 }
 
-
-// int main(int argc, char **argv)
-// {
-//     int verbose = (argc > 1 && strcmp(argv[1], "-v") == 0);
-//     uint32_t idx;
-//     uint32_t pass = 0, fail = 0, skipped = 0;
-
-//     printf("URSA testbench, SA_SIZE=%d, %d cases, acc=%d bits\n\n",
-//            SA_SIZE, BENCH_NUM_CASES, BENCH_ACC_BITS);
-//     printf("%-16s %6s %6s %6s %10s  %s\n",
-//            "case", "P", "Q", "M", "ms", "check");
-//     printf("------------------------------------------------------------------\n");
-
-//     for (idx = 0; idx < BENCH_NUM_CASES; ++idx) {
-//         const bench_case_t *tc = &bench_cases[idx];
-
-//         /* The shell tiles by SA_SIZE with integer division. */
-//         if (tc->P % SA_SIZE != 0 || tc->Q % SA_SIZE != 0) {
-//             printf("%-16s %6u %6u %6u %10s  skipped (not a multiple of SA_SIZE)\n",
-//                    tc->name, tc->P, tc->Q, tc->M, "-");
-//             ++skipped;
-//             continue;
-//         }
-
-//         size_t na = (size_t)tc->P * tc->M;
-//         size_t nb = (size_t)tc->M * tc->Q;
-//         size_t nc = (size_t)tc->P * tc->Q;
-
-//         bench_a_t *A = (bench_a_t *)malloc(na * sizeof(bench_a_t));
-//         bench_b_t *B = (bench_b_t *)malloc(nb * sizeof(bench_b_t));
-//         bench_c_t *C = (bench_c_t *)malloc(nc * sizeof(bench_c_t));
-
-//         if (A == NULL || B == NULL || C == NULL) {
-//             printf("%-16s allocation failed, skipped\n", tc->name);
-//             free(A); free(B); free(C);
-//             ++skipped;
-//             continue;
-//         }
-
-//         bench_fill(tc, A, B);
-//         memset(C, 0, nc * sizeof(bench_c_t));
-
-//         double t0 = now_ms();
-//         sa_result_t st = mxm_execute_ursa(
-//             (int8_t  *)A, tc->P,
-//             (uint8_t *)B, tc->Q,
-//             (int32_t *)C, tc->M
-//         );
-//         double dt = now_ms() - t0;
-
-//         uint32_t got = bench_checksum(C, (uint32_t)nc);
-//         int ok = (st == SA_SUCCESS) && (got == tc->golden);
-//         if (ok) ++pass; else ++fail;
-
-//         printf("%-16s %6u %6u %6u %10.2f  %s",
-//                tc->name, tc->P, tc->Q, tc->M, dt, ok ? "ok" : "FAIL");
-//         if (st != SA_SUCCESS)
-//             printf(" (status=%u)", (unsigned)st);
-//         if (!ok || verbose)
-//             printf(" (golden=0x%08X got=0x%08X)", tc->golden, got);
-//         printf("\n");
-
-//         /* Only on failure: recompute in software to find where it broke. */
-//         if (!ok && st == SA_SUCCESS) {
-//             bench_c_t *ref = (bench_c_t *)malloc(nc * sizeof(bench_c_t));
-//             if (ref != NULL) {
-//                 gemm_ref(A, B, ref, tc->P, tc->Q, tc->M);
-//                 locate_mismatch(C, ref, tc->P, tc->Q);
-//                 free(ref);
-//             }
-//         }
-
-//         free(A); free(B); free(C);
-//     }
-
-//     printf("\n%u passed, %u failed", pass, fail);
-//     if (skipped) printf(", %u skipped", skipped);
-//     printf("\n");
-//     return fail ? 1 : 0;
-// }
 
 
