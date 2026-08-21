@@ -1,0 +1,251 @@
+<ENTRY>
+{
+ "thisFile": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/mxm_execute_ursa.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Aug 20 13:57:26 2026",
+ "timestampMillis": "1787245046553",
+ "buildStep": {
+  "cmdId": "732d668c-969b-4200-8686-857a42894207",
+  "name": "v++",
+  "logFile": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/logs/mxm_execute_ursa.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/hls_config.cfg --work_dir mxm_execute_ursa ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/hls_config.cfg",
+   "--work_dir",
+   "mxm_execute_ursa"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/hls_config.cfg",
+    "content": "part=xc7z020clg484-1\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.h\nsyn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp\nsyn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.h\nsyn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp\nsyn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.h\nsyn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.cpp\nsyn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/settings.h\ntb.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_tb/simple_mxm/tb_main.cpp\ntb.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_tb/simple_mxm/matrices.h\ntb.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_tb/simple_mxm/matrices.cpp\nsyn.top=mxm_execute_ursa\nclock=10\n\nsyn.interface.m_axi_max_bitwidth=32\nsyn.interface.m_axi_addr64=0\npackage.ip.display_name=ursa_vanilla_8x8"
+   }
+  ],
+  "cwd": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Aug 20 13:57:26 2026",
+ "timestampMillis": "1787245046553",
+ "status": {
+  "cmdId": "732d668c-969b-4200-8686-857a42894207",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Aug 20 13:57:29 2026",
+ "timestampMillis": "1787245049242",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mxm_execute_ursa",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/settings.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Aug 20 13:57:29 2026",
+ "timestampMillis": "1787245049244",
+ "buildStep": {
+  "cmdId": "d020fe44-64e5-440d-9e3b-9afa10beac78",
+  "name": "csynth_design",
+  "logFile": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls/hls.log",
+  "commandLine": "csynth_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Aug 20 13:57:29 2026",
+ "timestampMillis": "1787245049244",
+ "status": {
+  "cmdId": "d020fe44-64e5-440d-9e3b-9afa10beac78",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Aug 20 13:57:29 2026",
+ "timestampMillis": "1787245049244",
+ "report": {
+  "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Aug 20 13:57:29 2026",
+ "timestampMillis": "1787245049244",
+ "report": {
+  "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Aug 20 13:57:29 2026",
+ "timestampMillis": "1787245049244",
+ "report": {
+  "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Aug 20 13:57:54 2026",
+ "timestampMillis": "1787245074546",
+ "report": {
+  "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Aug 20 13:57:54 2026",
+ "timestampMillis": "1787245074546",
+ "report": {
+  "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Aug 20 13:57:54 2026",
+ "timestampMillis": "1787245074546",
+ "report": {
+  "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Aug 20 13:57:54 2026",
+ "timestampMillis": "1787245074547",
+ "status": {
+  "cmdId": "d020fe44-64e5-440d-9e3b-9afa10beac78",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Aug 20 13:57:54 2026",
+ "timestampMillis": "1787245074846",
+ "status": {
+  "cmdId": "732d668c-969b-4200-8686-857a42894207",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Aug 20 13:57:54 2026",
+ "timestampMillis": "1787245074915",
+ "report": {
+  "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/reports/v++_compile_mxm_execute_ursa_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Aug 20 13:57:54 2026",
+ "timestampMillis": "1787245074916",
+ "report": {
+  "path": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla/mxm_execute_ursa/reports/.db/v++_compile_mxm_execute_ursa_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

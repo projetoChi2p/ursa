@@ -1,0 +1,955 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Aug 21 14:17:17 2026
+# Process ID: 584155
+# Current directory: /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1
+# Command line: vivado -log ursa_vanilla_bram_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ursa_vanilla_bram_wrapper.tcl -notrace
+# Log file: /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper.vdi
+# Journal file: /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/vivado.jou
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 3762.051 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+#-----------------------------------------------------------
+source ursa_vanilla_bram_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/out_data/ursa_vanilla_8x8'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+Command: link_design -top ursa_vanilla_bram_wrapper -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_axi_bram_ctrl_0_0/ursa_vanilla_bram_axi_bram_ctrl_0_0.dcp' for cell 'ursa_vanilla_bram_i/axi_bram_ctrl_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_axi_bram_ctrl_0_1/ursa_vanilla_bram_axi_bram_ctrl_0_1.dcp' for cell 'ursa_vanilla_bram_i/axi_bram_ctrl_1'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_axi_bram_ctrl_1_0/ursa_vanilla_bram_axi_bram_ctrl_1_0.dcp' for cell 'ursa_vanilla_bram_i/axi_bram_ctrl_2'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_blk_mem_gen_0_0/ursa_vanilla_bram_blk_mem_gen_0_0.dcp' for cell 'ursa_vanilla_bram_i/blk_mem_gen_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_blk_mem_gen_0_1/ursa_vanilla_bram_blk_mem_gen_0_1.dcp' for cell 'ursa_vanilla_bram_i/blk_mem_gen_1'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_blk_mem_gen_0_2/ursa_vanilla_bram_blk_mem_gen_0_2.dcp' for cell 'ursa_vanilla_bram_i/blk_mem_gen_2'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_mxm_execute_ursa_0_0/ursa_vanilla_bram_mxm_execute_ursa_0_0.dcp' for cell 'ursa_vanilla_bram_i/mxm_execute_ursa_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_proc_sys_reset_0_0/ursa_vanilla_bram_proc_sys_reset_0_0.dcp' for cell 'ursa_vanilla_bram_i/proc_sys_reset_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_processing_system7_0_0/ursa_vanilla_bram_processing_system7_0_0.dcp' for cell 'ursa_vanilla_bram_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_xbar_0/ursa_vanilla_bram_xbar_0.dcp' for cell 'ursa_vanilla_bram_i/axi_interconnect_0/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_auto_pc_0/ursa_vanilla_bram_auto_pc_0.dcp' for cell 'ursa_vanilla_bram_i/axi_interconnect_0/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_auto_pc_1/ursa_vanilla_bram_auto_pc_1.dcp' for cell 'ursa_vanilla_bram_i/axi_interconnect_0/m01_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_auto_pc_2/ursa_vanilla_bram_auto_pc_2.dcp' for cell 'ursa_vanilla_bram_i/axi_interconnect_0/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_xbar_1/ursa_vanilla_bram_xbar_1.dcp' for cell 'ursa_vanilla_bram_i/axi_interconnect_1/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_xbar_2/ursa_vanilla_bram_xbar_2.dcp' for cell 'ursa_vanilla_bram_i/axi_interconnect_2/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_xbar_3/ursa_vanilla_bram_xbar_3.dcp' for cell 'ursa_vanilla_bram_i/axi_interconnect_3/xbar'
+Netlist sorting complete. Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1792.773 ; gain = 2.000 ; free physical = 2718 ; free virtual = 7689
+INFO: [Netlist 29-17] Analyzing 835 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_processing_system7_0_0/ursa_vanilla_bram_processing_system7_0_0.xdc] for cell 'ursa_vanilla_bram_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_processing_system7_0_0/ursa_vanilla_bram_processing_system7_0_0.xdc] for cell 'ursa_vanilla_bram_i/processing_system7_0/inst'
+Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_proc_sys_reset_0_0/ursa_vanilla_bram_proc_sys_reset_0_0_board.xdc] for cell 'ursa_vanilla_bram_i/proc_sys_reset_0/U0'
+Finished Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_proc_sys_reset_0_0/ursa_vanilla_bram_proc_sys_reset_0_0_board.xdc] for cell 'ursa_vanilla_bram_i/proc_sys_reset_0/U0'
+Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_proc_sys_reset_0_0/ursa_vanilla_bram_proc_sys_reset_0_0.xdc] for cell 'ursa_vanilla_bram_i/proc_sys_reset_0/U0'
+Finished Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.gen/sources_1/bd/ursa_vanilla_bram/ip/ursa_vanilla_bram_proc_sys_reset_0_0/ursa_vanilla_bram_proc_sys_reset_0_0.xdc] for cell 'ursa_vanilla_bram_i/proc_sys_reset_0/U0'
+Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.srcs/constrs_1/new/constr.xdc]
+Finished Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.srcs/constrs_1/new/constr.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'ursa_vanilla_bram_wrapper'...
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2292.195 ; gain = 0.000 ; free physical = 2485 ; free virtual = 7458
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+26 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2292.195 ; gain = 903.516 ; free physical = 2485 ; free virtual = 7458
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2292.195 ; gain = 0.000 ; free physical = 2442 ; free virtual = 7412
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 19bfd2d18
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2662.566 ; gain = 370.371 ; free physical = 2054 ; free virtual = 7026
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 19bfd2d18
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1752 ; free virtual = 6728
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 19bfd2d18
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1752 ; free virtual = 6728
+Phase 1 Initialization | Checksum: 19bfd2d18
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1752 ; free virtual = 6728
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 19bfd2d18
+
+Time (s): cpu = 00:00:00.76 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1752 ; free virtual = 6728
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 19bfd2d18
+
+Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1752 ; free virtual = 6728
+Phase 2 Timer Update And Timing Data Collection | Checksum: 19bfd2d18
+
+Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1752 ; free virtual = 6728
+
+Phase 3 Retarget
+INFO: [Opt 31-1566] Pulled 21 inverters resulting in an inversion of 230 pins
+INFO: [Opt 31-138] Pushed 4 inverter(s) to 9 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: ef6683f1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.58 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1759 ; free virtual = 6735
+Retarget | Checksum: ef6683f1
+INFO: [Opt 31-389] Phase Retarget created 127 cells and removed 173 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+Phase 4 Constant propagation | Checksum: 1362d05c8
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1695 ; free virtual = 6734
+Constant propagation | Checksum: 1362d05c8
+INFO: [Opt 31-389] Phase Constant propagation created 121 cells and removed 424 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: fa9f46fc
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2970.340 ; gain = 0.000 ; free physical = 1625 ; free virtual = 6708
+Sweep | Checksum: fa9f46fc
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 867 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: fa9f46fc
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3002.355 ; gain = 32.016 ; free physical = 1622 ; free virtual = 6705
+BUFG optimization | Checksum: fa9f46fc
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/fifo_burst/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/fifo_burst/U_fifo_srl/mem_reg[6][0]_srl7__0 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[10].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[11].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[12].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[1].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[2].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[3].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[4].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[5].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[6].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[7].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[8].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[9].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[10].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[11].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[12].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[1].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[2].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[3].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[4].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[5].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[6].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[7].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[8].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[9].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[0].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[10].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[11].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[12].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[1].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[2].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[3].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[4].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[5].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[6].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[7].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[8].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/axi_bram_ctrl_2/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/FIFO_RAM[9].SRL16E_I due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][1]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][2]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][3]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][0]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][10]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][11]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][12]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][13]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][14]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][15]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][16]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][17]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][18]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][19]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][1]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][20]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][21]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][22]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][23]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][24]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][25]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][26]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][27]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][28]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][29]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][2]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][30]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][31]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][32]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][3]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][4]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][5]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][6]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][7]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][8]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][9]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][0]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][1]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][2]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/bus_wide_gen.rreq_offset/U_fifo_srl/mem_reg[6][3]_srl7 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][0]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][10]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][11]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][12]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][13]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][14]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][15]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][16]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][17]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][18]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][19]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][1]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][20]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][21]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][22]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][23]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][24]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][25]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][26]_srl6 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bi_m_axi_U/load_unit/fifo_rreq/U_fifo_srl/mem_reg[5][27]_srl6 due to none static srl address bits
+INFO: [Common 17-14] Message 'Opt 31-1131' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: fa9f46fc
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3002.355 ; gain = 32.016 ; free physical = 1622 ; free virtual = 6705
+Shift Register Optimization | Checksum: fa9f46fc
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 1523e9911
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3002.355 ; gain = 32.016 ; free physical = 1622 ; free virtual = 6705
+Post Processing Netlist | Checksum: 1523e9911
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 11e740cdd
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3002.355 ; gain = 32.016 ; free physical = 1617 ; free virtual = 6704
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3002.355 ; gain = 0.000 ; free physical = 1617 ; free virtual = 6703
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 11e740cdd
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3002.355 ; gain = 32.016 ; free physical = 1617 ; free virtual = 6703
+Phase 9 Finalization | Checksum: 11e740cdd
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3002.355 ; gain = 32.016 ; free physical = 1617 ; free virtual = 6703
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |             127  |             173  |                                              0  |
+|  Constant propagation         |             121  |             424  |                                              0  |
+|  Sweep                        |               0  |             867  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 11e740cdd
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3002.355 ; gain = 32.016 ; free physical = 1617 ; free virtual = 6703
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3002.355 ; gain = 0.000 ; free physical = 1615 ; free virtual = 6701
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 12 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 1 newly gated: 2 Total Ports: 24
+Ending PowerOpt Patch Enables Task | Checksum: 179128fa7
+
+Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1420 ; free virtual = 6505
+Ending Power Optimization Task | Checksum: 179128fa7
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3278.246 ; gain = 275.891 ; free physical = 1420 ; free virtual = 6505
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 179128fa7
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1420 ; free virtual = 6505
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1420 ; free virtual = 6505
+Ending Netlist Obfuscation Task | Checksum: 1329d2e7f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1420 ; free virtual = 6505
+INFO: [Common 17-83] Releasing license: Implementation
+51 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 3278.246 ; gain = 986.051 ; free physical = 1420 ; free virtual = 6505
+INFO: [runtcl-4] Executing : report_drc -file ursa_vanilla_bram_wrapper_drc_opted.rpt -pb ursa_vanilla_bram_wrapper_drc_opted.pb -rpx ursa_vanilla_bram_wrapper_drc_opted.rpx
+Command: report_drc -file ursa_vanilla_bram_wrapper_drc_opted.rpt -pb ursa_vanilla_bram_wrapper_drc_opted.pb -rpx ursa_vanilla_bram_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1379 ; free virtual = 6481
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1379 ; free virtual = 6481
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1379 ; free virtual = 6482
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1379 ; free virtual = 6482
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1379 ; free virtual = 6482
+Wrote Device Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1378 ; free virtual = 6482
+Write Physdb Complete: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1378 ; free virtual = 6482
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1376 ; free virtual = 6480
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: f9b2cfca
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1376 ; free virtual = 6480
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1376 ; free virtual = 6480
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 259da08a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1358 ; free virtual = 6461
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 117925dff
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1344 ; free virtual = 6449
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 117925dff
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1344 ; free virtual = 6448
+Phase 1 Placer Initialization | Checksum: 117925dff
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1344 ; free virtual = 6448
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: bc93614f
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:04 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1379 ; free virtual = 6484
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1045db80d
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1380 ; free virtual = 6483
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1045db80d
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1380 ; free virtual = 6483
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 201924e4d
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:11 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1523 ; free virtual = 6631
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 1207 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 557 nets or LUTs. Breaked 0 LUT, combined 557 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1519 ; free virtual = 6628
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            557  |                   557  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            557  |                   557  |           0  |           9  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 22e8c74ce
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:12 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1519 ; free virtual = 6627
+Phase 2.4 Global Placement Core | Checksum: 1eb58ca20
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:12 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1518 ; free virtual = 6627
+Phase 2 Global Placement | Checksum: 1eb58ca20
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:12 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1518 ; free virtual = 6627
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 2a1dc0076
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:13 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1518 ; free virtual = 6626
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 22ef1a00c
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1519 ; free virtual = 6625
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 295099a50
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:14 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1519 ; free virtual = 6625
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 2438aca16
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:14 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1519 ; free virtual = 6625
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 1cf8edcc2
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:17 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1523 ; free virtual = 6623
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 22150a929
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:18 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1528 ; free virtual = 6627
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 207a7bf37
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:18 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1528 ; free virtual = 6627
+Phase 3 Detail Placement | Checksum: 207a7bf37
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:18 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1528 ; free virtual = 6627
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1a3bcf8c5
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.118 | TNS=-0.118 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1cd5fe980
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.48 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1525 ; free virtual = 6625
+INFO: [Place 46-33] Processed net ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/ca_m_axi_U/bus_write/wreq_burst_conv/rs_req/SR[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/ap_CS_fsm_state135, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 2 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 2, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 1cd5fe980
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.82 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1526 ; free virtual = 6626
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1a3bcf8c5
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:21 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1526 ; free virtual = 6626
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.579. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 16cdac549
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:21 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1526 ; free virtual = 6626
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:21 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1526 ; free virtual = 6626
+Phase 4.1 Post Commit Optimization | Checksum: 16cdac549
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:22 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6627
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 16cdac549
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:22 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6627
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                4x4|
+|___________|___________________|___________________|
+|      South|                1x1|                4x4|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 16cdac549
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:22 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6627
+Phase 4.3 Placer Reporting | Checksum: 16cdac549
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:22 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6627
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6627
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:22 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6627
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 172d2681d
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:22 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6626
+Ending Placer Task | Checksum: 1245859c3
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:22 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6627
+96 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:23 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1527 ; free virtual = 6627
+INFO: [runtcl-4] Executing : report_io -file ursa_vanilla_bram_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.19 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1504 ; free virtual = 6604
+INFO: [runtcl-4] Executing : report_utilization -file ursa_vanilla_bram_wrapper_utilization_placed.rpt -pb ursa_vanilla_bram_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file ursa_vanilla_bram_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.18 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1504 ; free virtual = 6604
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1503 ; free virtual = 6607
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.69 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1479 ; free virtual = 6605
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1479 ; free virtual = 6605
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1479 ; free virtual = 6606
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1479 ; free virtual = 6608
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1472 ; free virtual = 6601
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.77 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1468 ; free virtual = 6597
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1432 ; free virtual = 6542
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+105 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1411 ; free virtual = 6524
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.67 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1378 ; free virtual = 6513
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1378 ; free virtual = 6513
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1378 ; free virtual = 6513
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1376 ; free virtual = 6514
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1374 ; free virtual = 6512
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1373 ; free virtual = 6511
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 380ceceb ConstDB: 0 ShapeSum: ec4b6cd8 RouteDB: 0
+Post Restoration Checksum: NetGraph: 7a90083 | NumContArr: 5a952db0 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 1e790236d
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1426 ; free virtual = 6544
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 1e790236d
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1426 ; free virtual = 6544
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 1e790236d
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1426 ; free virtual = 6544
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 266f57dd7
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:15 . Memory (MB): peak = 3278.246 ; gain = 0.000 ; free physical = 1387 ; free virtual = 6505
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.751  | TNS=0.000  | WHS=-0.348 | THS=-215.073|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 20267
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 20267
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 1facde350
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:16 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 1363 ; free virtual = 6481
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 1facde350
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:16 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 1363 ; free virtual = 6481
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 28276eeac
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:17 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 1364 ; free virtual = 6482
+Phase 3 Initial Routing | Checksum: 28276eeac
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:17 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 1364 ; free virtual = 6482
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 3160
+ Number of Nodes with overlaps = 803
+ Number of Nodes with overlaps = 339
+ Number of Nodes with overlaps = 178
+ Number of Nodes with overlaps = 76
+ Number of Nodes with overlaps = 25
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.332  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 22ff28240
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:39 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2258 ; free virtual = 7380
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.332  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1f82f4c09
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:40 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2255 ; free virtual = 7379
+Phase 4 Rip-up And Reroute | Checksum: 1f82f4c09
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:40 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2255 ; free virtual = 7379
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 1f82f4c09
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:40 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2255 ; free virtual = 7379
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1f82f4c09
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:40 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2255 ; free virtual = 7379
+Phase 5 Delay and Skew Optimization | Checksum: 1f82f4c09
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:40 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2255 ; free virtual = 7379
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1cf72cf61
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:40 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2255 ; free virtual = 7378
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.345  | TNS=0.000  | WHS=0.008  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 206e08b20
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:40 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2255 ; free virtual = 7378
+Phase 6 Post Hold Fix | Checksum: 206e08b20
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:40 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2255 ; free virtual = 7378
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 5.06959 %
+  Global Horizontal Routing Utilization  = 6.86908 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 206e08b20
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:41 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2253 ; free virtual = 7377
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 206e08b20
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:41 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2253 ; free virtual = 7377
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 24042da5a
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:41 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2253 ; free virtual = 7376
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.345  | TNS=0.000  | WHS=0.008  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 24042da5a
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:42 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2257 ; free virtual = 7380
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 27144b577
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:42 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2218 ; free virtual = 7342
+Ending Routing Task | Checksum: 27144b577
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:43 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2219 ; free virtual = 7344
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+120 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:11 ; elapsed = 00:00:43 . Memory (MB): peak = 3295.922 ; gain = 17.676 ; free physical = 2219 ; free virtual = 7344
+INFO: [runtcl-4] Executing : report_drc -file ursa_vanilla_bram_wrapper_drc_routed.rpt -pb ursa_vanilla_bram_wrapper_drc_routed.pb -rpx ursa_vanilla_bram_wrapper_drc_routed.rpx
+Command: report_drc -file ursa_vanilla_bram_wrapper_drc_routed.rpt -pb ursa_vanilla_bram_wrapper_drc_routed.pb -rpx ursa_vanilla_bram_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file ursa_vanilla_bram_wrapper_methodology_drc_routed.rpt -pb ursa_vanilla_bram_wrapper_methodology_drc_routed.pb -rpx ursa_vanilla_bram_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file ursa_vanilla_bram_wrapper_methodology_drc_routed.rpt -pb ursa_vanilla_bram_wrapper_methodology_drc_routed.pb -rpx ursa_vanilla_bram_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file ursa_vanilla_bram_wrapper_power_routed.rpt -pb ursa_vanilla_bram_wrapper_power_summary_routed.pb -rpx ursa_vanilla_bram_wrapper_power_routed.rpx
+Command: report_power -file ursa_vanilla_bram_wrapper_power_routed.rpt -pb ursa_vanilla_bram_wrapper_power_summary_routed.pb -rpx ursa_vanilla_bram_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+130 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file ursa_vanilla_bram_wrapper_route_status.rpt -pb ursa_vanilla_bram_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file ursa_vanilla_bram_wrapper_timing_summary_routed.rpt -pb ursa_vanilla_bram_wrapper_timing_summary_routed.pb -rpx ursa_vanilla_bram_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file ursa_vanilla_bram_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file ursa_vanilla_bram_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file ursa_vanilla_bram_wrapper_bus_skew_routed.rpt -pb ursa_vanilla_bram_wrapper_bus_skew_routed.pb -rpx ursa_vanilla_bram_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3397.824 ; gain = 0.000 ; free physical = 1996 ; free virtual = 7137
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.68 . Memory (MB): peak = 3397.824 ; gain = 0.000 ; free physical = 1973 ; free virtual = 7135
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3397.824 ; gain = 0.000 ; free physical = 1973 ; free virtual = 7135
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3397.824 ; gain = 0.000 ; free physical = 1973 ; free virtual = 7139
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3397.824 ; gain = 0.000 ; free physical = 1973 ; free virtual = 7141
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3397.824 ; gain = 0.000 ; free physical = 1973 ; free virtual = 7142
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.88 . Memory (MB): peak = 3397.824 ; gain = 0.000 ; free physical = 1973 ; free virtual = 7142
+INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 21 14:19:11 2026...
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Aug 21 14:19:24 2026
+# Process ID: 628061
+# Current directory: /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1
+# Command line: vivado -log ursa_vanilla_bram_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ursa_vanilla_bram_wrapper.tcl -notrace
+# Log file: /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/ursa_vanilla_bram_wrapper.vdi
+# Journal file: /home/ulisses/Projects/ursa/exp/output-stationary/vivado/ursa_vanilla/ursa_vanilla.runs/impl_1/vivado.jou
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 3377.811 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+#-----------------------------------------------------------
+source ursa_vanilla_bram_wrapper.tcl -notrace
+Command: open_checkpoint ursa_vanilla_bram_wrapper_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1343.199 ; gain = 0.000 ; free physical = 3737 ; free virtual = 8901
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1723.637 ; gain = 0.000 ; free physical = 3297 ; free virtual = 8506
+INFO: [Netlist 29-17] Analyzing 822 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1825.199 ; gain = 5.000 ; free physical = 3195 ; free virtual = 8402
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2459.707 ; gain = 0.000 ; free physical = 2739 ; free virtual = 7941
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2459.707 ; gain = 0.000 ; free physical = 2739 ; free virtual = 7941
+Read PlaceDB: Time (s): cpu = 00:00:00.5 ; elapsed = 00:00:00.5 . Memory (MB): peak = 2461.707 ; gain = 2.000 ; free physical = 2741 ; free virtual = 7943
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2461.707 ; gain = 0.000 ; free physical = 2741 ; free virtual = 7943
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2467.707 ; gain = 6.000 ; free physical = 2735 ; free virtual = 7937
+Read Physdb Files: Time (s): cpu = 00:00:00.78 ; elapsed = 00:00:00.8 . Memory (MB): peak = 2467.707 ; gain = 8.000 ; free physical = 2735 ; free virtual = 7937
+Restored from archive | CPU: 0.830000 secs | Memory: 26.456413 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.81 ; elapsed = 00:00:00.83 . Memory (MB): peak = 2467.707 ; gain = 16.906 ; free physical = 2735 ; free virtual = 7937
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2467.707 ; gain = 0.000 ; free physical = 2735 ; free virtual = 7937
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  SRLC32E => SRL16E: 9 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2023.2 (64-bit) build 4029153
+open_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2475.707 ; gain = 1132.508 ; free physical = 2735 ; free virtual = 7937
+Command: write_bitstream -force ursa_vanilla_bram_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bound_reg_1425_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/bound_reg_1425_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_i_reg_4939_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_i_reg_4939_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_1_reg_5233_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_1_reg_5233_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_2_reg_5379_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_2_reg_5379_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_3_reg_5470_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_3_reg_5470_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_4_reg_5551_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_4_reg_5551_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_5_reg_5614_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_5_reg_5614_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_6_reg_5660_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_6_reg_5660_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_reg_5072_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_522/mul_ln44_reg_5072_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/mul_ln131_1_reg_1449_reg multiplier stage ursa_vanilla_bram_i/mxm_execute_ursa_0/inst/mul_ln131_1_reg_1449_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 10 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./ursa_vanilla_bram_wrapper.bit...
+Creating bitstream...
+Writing bitstream ./ursa_vanilla_bram_wrapper.ebc...
+Creating essential bits data...
+This design has 2457305 essential bits out of 25697632 total (9.56%).
+Creating bitstream...
+Writing bitstream ./ursa_vanilla_bram_wrapper.ebd...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+22 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:40 ; elapsed = 00:00:31 . Memory (MB): peak = 3262.703 ; gain = 786.996 ; free physical = 2041 ; free virtual = 7297
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 21 14:20:12 2026...
