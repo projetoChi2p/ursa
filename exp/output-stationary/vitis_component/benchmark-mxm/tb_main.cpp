@@ -32,7 +32,7 @@ int32_t   *g_ca = (int32_t*)  BRAM_CA_BASEADDR;
 #else
 /* Off the board, mirror the BRAM windows exactly, so the host run exercises
    the same capacity limit the hardware has. */
-#define BRAM_AW_SIZE (16*1024)
+#define BRAM_AW_SIZE (4*1024)
 #define BRAM_BI_SIZE (16*1024)
 #define BRAM_CA_SIZE (16*1024)
 static bench_a_t g_aw_buf[BRAM_AW_SIZE / sizeof(bench_a_t)];
@@ -48,7 +48,7 @@ bench_c_t *g_ca = g_ca_buf;
    ones that fit the BRAM windows, and at most CASES_PER_GROUP of each group.
    Raise the limit, or drop the fit test, once the block design has larger
    buffers.                                                                   */
-#define CASES_PER_GROUP 3
+#define CASES_PER_GROUP 6
 
 static int case_fits(const bench_case_t *tc)
 {
@@ -97,9 +97,18 @@ int main(void)
     Xil_ICacheDisable();
     Xil_DCacheDisable();
   #else
-    fprintf(stderr, "\n### Benchmark-mxm URSA [v1.0] ###\n");
-  #endif
+    #ifdef BRAM
+    fprintf(stderr, "\n### Benchmark-mxm URSA BRAM [v1.0] ###\n");
+    #endif
+    
+    #ifdef OCM
+    fprintf(stderr, "\n### Benchmark-mxm URSA OCM [v1.0] ###\n");
+    #endif
 
+    #ifdef HYBRID
+    fprintf(stderr, "\n### Benchmark-mxm URSA HYBRID [v1.0] ###\n");
+    #endif
+  #endif
     //init
     init_platform();
 
@@ -151,10 +160,9 @@ int main(void)
   #endif
 
     //test mode (VITIS and LINUX)
-    fprintf(stderr, "\n### Benchmark-mxm URSA [v1.0] ###\n");
     fprintf(stderr, "SA_SIZE=%d, acc=%d bits, up to %d cases per group\n",
             SA_SIZE, BENCH_ACC_BITS, CASES_PER_GROUP);
-    fprintf(stderr, "suite has %d cases; running those that fit BRAM\n\n",
+    fprintf(stderr, "suite has %d cases; running those that fit Memory\n\n",
             BENCH_NUM_CASES);
     fprintf(stderr, "%-16s %6s %6s %6s %10s  %s\n",
             "case", "P", "Q", "M", "us", "check");
@@ -183,16 +191,33 @@ int main(void)
         /* Regenerate A and B in place, zero C. */
         bench_fill(tc, g_aw, g_bi);
         memset(g_ca, 0, nc * sizeof(bench_c_t));
+        // Xil_DCacheFlush();
 
   #ifdef VITIS
+    #ifdef OCM
+        Xil_DCacheFlushRange((INTPTR)g_aw, (uint32_t)tc->P * tc->M * sizeof(bench_a_t));
+        Xil_DCacheFlushRange((INTPTR)g_bi, (uint32_t)tc->M * tc->Q * sizeof(bench_b_t));
+        Xil_DCacheFlushRange((INTPTR)g_ca, nc * sizeof(bench_c_t));
+    #endif
+
+    #ifdef HYBRID
+        Xil_DCacheFlushRange((INTPTR)g_bi, (uint32_t)tc->M * tc->Q * sizeof(bench_b_t));
+        Xil_DCacheFlushRange((INTPTR)g_ca, nc * sizeof(bench_c_t));
+    #endif
+
         app_timer_start(0);
   #endif
         st = run_ursa(tc->P, tc->Q, tc->M);
   #ifdef VITIS
         app_timer_stop(0);
         us = app_timer_total_us(0);
+        #if defined(OCM) || defined(HYBRID)
+            Xil_DCacheInvalidateRange((INTPTR)g_ca, nc * sizeof(bench_c_t));
+        #endif
+        
   #endif
-
+  
+        // Xil_DCacheFlush();
         got = bench_checksum(g_ca, nc);
 
         if (st == SA_SUCCESS && got == tc->golden) {
@@ -225,110 +250,3 @@ int main(void)
 
     return (fail == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-
-// //use for vitis
-// #include "platform.h"
-
-// #include <cstdlib>
-// #include <stdio.h>
-
-// #include "utils.h"
-// #include "ursa_math.h"
-// #include "ursa_bench.h"
-
-// #ifdef VITIS
-//     #include "ursa.h"
-//     #include "timer.h"
-//     #include "xparameters.h"
-//     #include "xil_printf.h"
-//     #include "xil_cache.h"
-// #endif
-
-// //Endereços das matrizes A, B e C
-// #ifdef VITIS
-//     weight_t  *g_aw  = (weight_t*) BRAM_AW_BASEADDR;
-//     pixel_t   *g_bi  = (pixel_t*)  BRAM_BI_BASEADDR;
-//     int32_t   *g_ca = (int32_t*)  BRAM_CA_BASEADDR; 
-// #else
-//     //Endereços das matrizes A, B e C
-//     // weight_t g_aw[TOTAL_NUM_WEIGHTS];
-//     // pixel_t  g_bi[PIXEL_BUFFER_SIZE];
-//     // int32_t  g_ca[FEATURE_BUFFER_SIZE];
-// #endif
-
-
-// // http://patorjk.com/software/taag/#f=Colossal
-// // 888b     d888          d8b          
-// // 8888b   d8888          Y8P          
-// // 88888b.d88888                       
-// // 888Y88888P888  8888b.  888 88888b.  
-// // 888 Y888P 888     "88b 888 888 "88b 
-// // 888  Y8P  888 .d888888 888 888  888 
-// // 888   "   888 888  888 888 888  888 
-// // 888       888 "Y888888 888 888  888 
-// int main(void)
-// {
-// #ifdef VITIS
-// 	int xil_status;
-// #ifdef CAMPAIGN
-//     //no print
-//     //cache
-//     Xil_ICacheDisable();
-// 	Xil_DCacheDisable();
-// #else
-//     fprintf(stderr, "\n### Benchmark-mxm URSA [v1.0] ###\n");
-// #endif
-    
-//     //init
-// 	init_platform();
-
-//     //dut
-//     xil_status = ursa_init(&xUrsa0, XPAR_MXM_EXECUTE_URSA_0_BASEADDR);
-//     if (xil_status != XST_SUCCESS) {
-//         xil_printf("[main] URSA_0 init failed 0x%08x. Abort.\n\r", xil_status);
-//         return xil_status;
-//     }
-
-//     xil_status = ursa_post_reset_setup(&xUrsa0);
-//     if (xil_status != XST_SUCCESS) {
-//         xil_printf("[main] URSA_0 setup failed 0x%08x. Abort.\n\r", xil_status);
-//         return xil_status;
-//     }
-
-// #endif //VITIS
-
-//     #ifdef CAMPAIGN
-//         outbyte(0XAA);
-//         //campaign mode
-
-//     #else
-//         #ifdef VITIS
-//             //test mode
-//             //timer
-//             app_timer_init(); 
-//         #endif
-//             //test mode (VITIS and LINUX)
-//             app_timer_start(0);
-//             fprintf(stderr, "\n### Benchmark-mxm URSA [v1.0] ###\n");
-//             app_timer_stop(0);
-
-//         #ifdef VITIS
-//             xil_printf("\r\nTotal Time: %lu[us]\r\n",(unsigned long)app_timer_total_us(0));
-//             xil_printf("Total Tickes: %lu\r\n\r\n",(unsigned long)app_timer_total_ticks(0));
-//         #endif
-
-//     #endif
-        
-
-//     #ifdef VITIS
-// 	/* never reached */
-// 	cleanup_platform();
-//     #endif
-
-// 	return EXIT_SUCCESS;
-
-//     terminate_failed:
-//         fprintf(stderr, "### benchmark-mxm failed ###\n");
-// 	    return EXIT_FAILURE;
-// }
