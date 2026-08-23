@@ -1,0 +1,285 @@
+
+
+================================================================
+== Synthesis Summary Report of 'mxm_execute_ursa'
+================================================================
++ General Information: 
+    * Date:           Sat Aug 22 19:26:15 2026
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        ursa
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------------------+------+------+----------------+-----------+----------+----------------+-----------+----------+--------+----------+-----------+------------+-----+
+    |                     Modules                    | Issue|      |    Latency     |  Latency  | Iteration|                |    Trip   |          |        |          |           |            |     |
+    |                     & Loops                    | Type | Slack|    (cycles)    |    (ns)   |  Latency |    Interval    |   Count   | Pipelined|  BRAM  |    DSP   |     FF    |     LUT    | URAM|
+    +------------------------------------------------+------+------+----------------+-----------+----------+----------------+-----------+----------+--------+----------+-----------+------------+-----+
+    |+ mxm_execute_ursa                              |     -|  0.00|  70379747901515|  7.038e+14|         -|  70379747901516|          -|        no|  8 (2%)|  23 (10%)|  5105 (4%)|  5954 (11%)|    -|
+    | o VITIS_LOOP_131_1_VITIS_LOOP_132_2            |     -|  7.30|  70379747901513|  7.038e+14|    262217|               -|  268402689|        no|       -|         -|          -|           -|    -|
+    |  + mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3  |     -|  0.00|          262180|  2.622e+06|         -|          262180|          -|        no|       -|   20 (9%)|  1287 (1%)|   2019 (3%)|    -|
+    |   o VITIS_LOOP_138_3                           |    II|  7.30|          262178|  2.622e+06|        19|               4|      65541|       yes|       -|         -|          -|           -|    -|
+    |  + sa_store                                    |    II|  0.00|              21|    210.000|         -|              16|          -|       yes|       -|         -|  156 (~0%)|   407 (~0%)|    -|
+    |  + sa_reset                                    |     -|  7.30|               0|      0.000|         -|               1|          -|       yes|       -|         -|          -|           -|    -|
+    +------------------------------------------------+------+------+----------------+-----------+----------+----------------+-----------+----------+--------+----------+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|           | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_aw  | 8 -> 8     | 32            | 0       | slave  | 0        | 0         | 64           | 16           | 8           | 8           | BRAM=2            |
+| m_axi_bi  | 8 -> 8     | 32            | 0       | slave  | 0        | 0         | 64           | 16           | 8           | 8           | BRAM=2            |
+| m_axi_ca  | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 64           | 16           | 8           | 8           | BRAM=4            |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_ap      | 32         | 6             | 24     | 1        |
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register  | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_ap      | CTRL      | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_ap      | GIER      | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_ap      | IP_IER    | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_ap      | IP_ISR    | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_ap      | ap_return | 0x10   | 32    | R      | Data signal of ap_return         |                                                                      |
+| s_axi_ap      | a0_p      | 0x18   | 32    | W      | Data signal of a0_p              |                                                                      |
+| s_axi_ap      | b0_q      | 0x20   | 32    | W      | Data signal of b0_q              |                                                                      |
+| s_axi_ap      | m         | 0x28   | 32    | W      | Data signal of m                 |                                                                      |
+| s_axi_control | addr_a0   | 0x10   | 32    | W      | Data signal of addr_a0           |                                                                      |
+| s_axi_control | addr_b0   | 0x18   | 32    | W      | Data signal of addr_b0           |                                                                      |
+| s_axi_control | addr_c0   | 0x20   | 32    | W      | Data signal of addr_c0           |                                                                      |
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------------+
+| Argument | Direction | Datatype       |
++----------+-----------+----------------+
+| addr_a0  | in        | signed char*   |
+| a0_p     | in        | unsigned short |
+| addr_b0  | in        | unsigned char* |
+| b0_q     | in        | unsigned short |
+| addr_c0  | out       | int*           |
+| m        | in        | unsigned short |
+| return   | out       | unsigned char  |
++----------+-----------+----------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+-------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                             |
++----------+---------------+-----------+----------+-------------------------------------+
+| addr_a0  | m_axi_aw      | interface |          |                                     |
+| addr_a0  | s_axi_control | register  | offset   | name=addr_a0 offset=0x10 range=32   |
+| a0_p     | s_axi_ap      | register  |          | name=a0_p offset=0x18 range=32      |
+| addr_b0  | m_axi_bi      | interface |          |                                     |
+| addr_b0  | s_axi_control | register  | offset   | name=addr_b0 offset=0x18 range=32   |
+| b0_q     | s_axi_ap      | register  |          | name=b0_q offset=0x20 range=32      |
+| addr_c0  | m_axi_ca      | interface |          |                                     |
+| addr_c0  | s_axi_control | register  | offset   | name=addr_c0 offset=0x20 range=32   |
+| m        | s_axi_ap      | register  |          | name=m offset=0x28 range=32         |
+| return   | s_axi_ap      | register  |          | name=ap_return offset=0x10 range=32 |
++----------+---------------+-----------+----------+-------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+
+| HW Interface | Direction | Length | Width |
++--------------+-----------+--------+-------+
+| m_axi_ca     | write     | 4      | 32    |
++--------------+-----------+--------+-------+
+
+* All M_AXI Variable Accesses
++--------------+----------+-------------------------------------------------------------------------+-----------+--------------+--------+------------+-------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location                                                         | Direction | Burst Status | Length | Resolution | Problem                                                                                               |
++--------------+----------+-------------------------------------------------------------------------+-----------+--------------+--------+------------+-------------------------------------------------------------------------------------------------------+
+| m_axi_ca     | out      | /home/ulisses/Projects/ursa/exp/output-stationary/src/core/sa.cpp:92:17 | write     | Widen Fail   |        | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_ca     | out      | /home/ulisses/Projects/ursa/exp/output-stationary/src/core/sa.cpp:92:17 | write     | Inferred     | 4      |            |                                                                                                       |
++--------------+----------+-------------------------------------------------------------------------+-----------+--------------+--------+------------+-------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------------+-----+--------+-------------+-----+-----------+---------+
+| Name                                          | DSP | Pragma | Variable    | Op  | Impl      | Latency |
++-----------------------------------------------+-----+--------+-------------+-----+-----------+---------+
+| + mxm_execute_ursa                            | 23  |        |             |     |           |         |
+|   sub24_fu_438_p2                             |     |        | sub24       | add | fabric    | 0       |
+|   mul_14ns_14ns_28_1_1_U86                    | 1   |        | bound       | mul | auto      | 0       |
+|   add_ln131_fu_494_p2                         |     |        | add_ln131   | add | fabric    | 0       |
+|   add_ln131_1_fu_519_p2                       |     |        | add_ln131_1 | add | fabric    | 0       |
+|   mul_14ns_16ns_30_1_1_U87                    | 1   |        | mul_ln131   | mul | auto      | 0       |
+|   mul_14ns_16ns_28_1_1_U88                    | 1   |        | mul_ln131_1 | mul | auto      | 0       |
+|   add_ln154_fu_598_p2                         |     |        | add_ln154   | add | fabric    | 0       |
+|   addr_sa_c_fu_612_p2                         |     |        | addr_sa_c   | add | fabric    | 0       |
+|   add_ln132_fu_533_p2                         |     |        | add_ln132   | add | fabric    | 0       |
+|  + mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3 | 20  |        |             |     |           |         |
+|    k_fu_472_p2                                |     |        | k           | add | fabric    | 0       |
+|    add_ln23_fu_488_p2                         |     |        | add_ln23    | add | fabric    | 0       |
+|    add_ln23_1_fu_494_p2                       |     |        | add_ln23_1  | add | fabric    | 0       |
+|    add_ln22_fu_621_p2                         |     |        | add_ln22    | add | fabric    | 0       |
+|    add_ln23_3_fu_647_p2                       |     |        | add_ln23_3  | add | fabric    | 0       |
+|    add_ln22_1_fu_556_p2                       |     |        | add_ln22_1  | add | fabric    | 0       |
+|    add_ln22_2_fu_592_p2                       |     |        | add_ln22_2  | add | fabric    | 0       |
+|    add_ln23_8_fu_695_p2                       |     |        | add_ln23_8  | add | fabric    | 0       |
+|    sub_i_fu_610_p2                            |     |        | sub_i       | add | fabric    | 0       |
+|    mul_17s_16ns_32_1_1_U1                     | 1   |        | mul_i       | mul | auto      | 0       |
+|    add_ln44_3_fu_742_p2                       |     |        | add_ln44_3  | add | fabric    | 0       |
+|    add_ln51_4_fu_747_p2                       |     |        | add_ln51_4  | add | fabric    | 0       |
+|    add_ln44_fu_734_p2                         |     |        | add_ln44    | add | fabric    | 0       |
+|    mul_17s_16ns_32_1_1_U2                     | 1   |        | mul_ln44    | mul | auto      | 0       |
+|    add_ln51_5_fu_795_p2                       |     |        | add_ln51_5  | add | fabric    | 0       |
+|    add_ln44_1_fu_776_p2                       |     |        | add_ln44_1  | add | fabric    | 0       |
+|    mul_17s_16ns_32_1_1_U3                     | 1   |        | mul_ln44_1  | mul | auto      | 0       |
+|    add_ln51_6_fu_838_p2                       |     |        | add_ln51_6  | add | fabric    | 0       |
+|    add_ln44_2_fu_824_p2                       |     |        | add_ln44_2  | add | fabric    | 0       |
+|    mul_17s_16ns_32_1_1_U4                     | 1   |        | mul_ln44_2  | mul | auto      | 0       |
+|    add_ln51_7_fu_876_p2                       |     |        | add_ln51_7  | add | fabric    | 0       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U14           | 1   |        | mul_ln19    | mul | dsp_slice | 3       |
+|    mac_muladd_8s_8ns_20s_20_4_1_U17           | 1   |        | mul_ln19_1  | mul | dsp_slice | 3       |
+|    mac_muladd_8s_8ns_20s_20_4_1_U19           | 1   |        | mul_ln19_2  | mul | dsp_slice | 3       |
+|    mac_muladd_8s_8ns_20s_20_4_1_U20           | 1   |        | mul_ln19_3  | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U12           | 1   |        | mul_ln19_4  | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U10           | 1   |        | mul_ln19_5  | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U13           | 1   |        | mul_ln19_6  | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U15           | 1   |        | mul_ln19_7  | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U16           | 1   |        | mul_ln19_8  | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U8            | 1   |        | mul_ln19_9  | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U7            | 1   |        | mul_ln19_10 | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U9            | 1   |        | mul_ln19_11 | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U18           | 1   |        | mul_ln19_12 | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U11           | 1   |        | mul_ln19_13 | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U6            | 1   |        | mul_ln19_14 | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U5            | 1   |        | mul_ln19_15 | mul | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U14           | 1   |        | add_ln19    | add | dsp_slice | 3       |
+|    mac_muladd_8s_8ns_20s_20_4_1_U17           | 1   |        | add_ln19_1  | add | dsp_slice | 3       |
+|    mac_muladd_8s_8ns_20s_20_4_1_U19           | 1   |        | add_ln19_2  | add | dsp_slice | 3       |
+|    mac_muladd_8s_8ns_20s_20_4_1_U20           | 1   |        | add_ln19_3  | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U12           | 1   |        | add_ln19_4  | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U10           | 1   |        | add_ln19_5  | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U13           | 1   |        | add_ln19_6  | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U15           | 1   |        | add_ln19_7  | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U16           | 1   |        | add_ln19_8  | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U8            | 1   |        | add_ln19_9  | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U7            | 1   |        | add_ln19_10 | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U9            | 1   |        | add_ln19_11 | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U18           | 1   |        | add_ln19_12 | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U11           | 1   |        | add_ln19_13 | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U6            | 1   |        | add_ln19_14 | add | dsp_slice | 3       |
+|    mac_muladd_8ns_8s_20s_20_4_1_U5            | 1   |        | add_ln19_15 | add | dsp_slice | 3       |
+|  + sa_store                                   | 0   |        |             |     |           |         |
+|    empty_25_fu_330_p2                         |     |        | empty_25    | add | fabric    | 0       |
+|    empty_28_fu_357_p2                         |     |        | empty_28    | add | fabric    | 0       |
+|    empty_31_fu_384_p2                         |     |        | empty_31    | sub | fabric    | 0       |
+|    empty_32_fu_394_p2                         |     |        | empty_32    | add | fabric    | 0       |
++-----------------------------------------------+-----+--------+-------------+-----+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++--------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name               | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                    |           |           |      |      |        |          |      |         | Banks            |
++--------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + mxm_execute_ursa |           |           | 8    | 0    |        |          |      |         |                  |
+|   ap_s_axi_U       | interface | s_axilite |      |      |        |          |      |         |                  |
+|   control_s_axi_U  | interface | s_axilite |      |      |        |          |      |         |                  |
+|   aw_m_axi_U       | interface | m_axi     | 2    |      |        |          |      |         |                  |
+|   bi_m_axi_U       | interface | m_axi     | 2    |      |        |          |      |         |                  |
+|   ca_m_axi_U       | interface | m_axi     | 4    |      |        |          |      |         |                  |
++--------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+---------+-----------------------------------------------+--------------------------------------------------------------+
+| Type     | Options | Location                                      | Messages                                                     |
++----------+---------+-----------------------------------------------+--------------------------------------------------------------+
+| unroll   |         | ../src/core/pe.cpp:16 in pe_compute           | '#pragma HLS unroll' can only be applied inside loop body    |
+| dataflow |         | ../src/core/shell.cpp:126 in mxm_execute_ursa | Only 'for' loop or function body support the dataflow pragma |
++----------+---------+-----------------------------------------------+--------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Type            | Options                                                                                                                                                      | Location                                                 |
++-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| array_partition | variable=sa->pe complete                                                                                                                                     | ../src/core/sa.cpp:8 in sa_init, sa->pe                  |
+| array_partition | variable=sa->in_mtx_a_li complete                                                                                                                            | ../src/core/sa.cpp:9 in sa_init, sa->in_mtx_a_li         |
+| array_partition | variable=sa->in_mtx_b_tw complete                                                                                                                            | ../src/core/sa.cpp:10 in sa_init, sa->in_mtx_b_tw        |
+| pipeline        | II=1                                                                                                                                                         | ../src/core/sa.cpp:14 in sa_init                         |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:17 in sa_init                         |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:19 in sa_init                         |
+| pipeline        | II=1                                                                                                                                                         | ../src/core/sa.cpp:26 in sa_reset                        |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:29 in sa_reset                        |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:31 in sa_reset                        |
+| dependence      | variable=sa->in_mtx_a_li inter false                                                                                                                         | ../src/core/sa.cpp:38 in sa_input_a_b, sa->in_mtx_a_li   |
+| dependence      | variable=sa->in_mtx_b_tw inter false                                                                                                                         | ../src/core/sa.cpp:39 in sa_input_a_b, sa->in_mtx_b_tw   |
+| pipeline        | II=1                                                                                                                                                         | ../src/core/sa.cpp:48 in sa_compute                      |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:52 in sa_compute                      |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:59 in sa_compute                      |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:61 in sa_compute                      |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:68 in sa_compute                      |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:70 in sa_compute                      |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:77 in sa_compute                      |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:79 in sa_compute                      |
+| pipeline        | II=1                                                                                                                                                         | ../src/core/sa.cpp:86 in sa_store                        |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:89 in sa_store                        |
+| unroll          |                                                                                                                                                              | ../src/core/sa.cpp:91 in sa_store                        |
+| pipeline        | II=1                                                                                                                                                         | ../src/core/shell.cpp:13 in fill_inputs_a                |
+| unroll          |                                                                                                                                                              | ../src/core/shell.cpp:15 in fill_inputs_a                |
+| pipeline        | II=1                                                                                                                                                         | ../src/core/shell.cpp:41 in fill_inputs_b                |
+| unroll          |                                                                                                                                                              | ../src/core/shell.cpp:43 in fill_inputs_b                |
+| pipeline        | II=1                                                                                                                                                         | ../src/core/shell.cpp:66 in load_inputs_sa               |
+| unroll          | factor=4                                                                                                                                                     | ../src/core/shell.cpp:69 in load_inputs_sa               |
+| interface       | mode=m_axi port=casted_a0 bundle=aw offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200 | ../src/core/shell.cpp:92 in mxm_execute_ursa, casted_a0  |
+| interface       | mode=m_axi port=casted_b0 bundle=bi offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200 | ../src/core/shell.cpp:96 in mxm_execute_ursa, casted_b0  |
+| interface       | mode=m_axi port=casted_c0 bundle=ca offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=200 | ../src/core/shell.cpp:100 in mxm_execute_ursa, casted_c0 |
+| interface       | mode=s_axilite port=return bundle=ap register                                                                                                                | ../src/core/shell.cpp:104 in mxm_execute_ursa, return    |
+| interface       | mode=s_axilite port=a0_p bundle=ap register                                                                                                                  | ../src/core/shell.cpp:105 in mxm_execute_ursa, a0_p      |
+| interface       | mode=s_axilite port=b0_q bundle=ap register                                                                                                                  | ../src/core/shell.cpp:106 in mxm_execute_ursa, b0_q      |
+| interface       | mode=s_axilite port=m bundle=ap register                                                                                                                     | ../src/core/shell.cpp:107 in mxm_execute_ursa, m         |
+| array_partition | variable=in_a complete dim=1                                                                                                                                 | ../src/core/shell.cpp:111 in mxm_execute_ursa, in_a      |
+| array_partition | variable=in_b complete dim=1                                                                                                                                 | ../src/core/shell.cpp:114 in mxm_execute_ursa, in_b      |
+| array_partition | variable=sa complete dim=1                                                                                                                                   | ../src/core/shell.cpp:123 in mxm_execute_ursa, sa        |
+| pipeline        | II=1                                                                                                                                                         | ../src/core/shell.cpp:139 in mxm_execute_ursa            |
++-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+
+

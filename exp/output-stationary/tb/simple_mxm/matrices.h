@@ -4,6 +4,10 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#define P (SA_SIZE)
+#define Q (SA_SIZE)
+#define M (SA_SIZE)
+
 // #define DEBUG
 
 void init_matrix_a(uint8_t *a, int rows, int cols);

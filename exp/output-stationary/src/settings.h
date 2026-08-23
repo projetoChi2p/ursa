@@ -16,9 +16,23 @@
     #include "hls_stream.h"
 #endif
 
-// Systolic Array Size
-#define SA_SIZE 8
+//===============================================
+// Build parameters
+// Every value below can be overridden with -D from the command line.
+// The batch synthesis script uses this to sweep configurations without
+// editing the source. The values here are defaults for a local build.
+//===============================================
 
+// Systolic Array Size
+#ifndef SA_SIZE
+    #define SA_SIZE 8
+#endif
+
+// Width of macc_t, the accumulator inside each PE
+#ifndef ACC_BITS
+    #define ACC_BITS 20
+#endif
+ 
 // Enable for debug
 // #define DEBUG
 
@@ -30,15 +44,15 @@
 #ifdef AP_FIXED
     #include "ap_fixed.h"
 
-    typedef ap_int  <8>  data_a_t; //weight
-    typedef ap_uint <8>  data_b_t; //pixel
-    typedef ap_int  <32> data_c_t; //bramc
-    typedef ap_int  <20> macc_t;   //bramc
+    typedef ap_int  <8>  data_a_t;  //weight
+    typedef ap_uint <8>  data_b_t;  //pixel
+    typedef ap_int  <32> data_c_t;  //bramc
+    typedef ap_int  <ACC_BITS> macc_t;    //bramc
 #else
-    typedef int8_t  data_a_t; //weight
-    typedef uint8_t data_b_t; //pixel
-    typedef int32_t data_c_t; //bramc
-    typedef int32_t macc_t;   //bramc
+    typedef int8_t  data_a_t;       //weight
+    typedef uint8_t data_b_t;       //pixel
+    typedef int32_t data_c_t;       //bramc
+    typedef int32_t macc_t;         //bramc
 #endif
 
 typedef uint8_t sa_result_t;
@@ -52,10 +66,5 @@ sa_result_t mxm_execute_ursa(
     int32_t *addr_c0,
     uint16_t m
 );
-
-// // Testbench
-// #define P 8
-// #define Q 8
-// #define M 8
 
 #endif /* __SETTINGS_H__ */
