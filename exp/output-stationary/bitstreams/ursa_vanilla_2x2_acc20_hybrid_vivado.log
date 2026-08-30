@@ -3,13 +3,13 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Sat Aug 22 20:38:15 2026
-# Process ID: 1292509
+# Start of session at: Sun Aug 30 14:20:00 2026
+# Process ID: 1316293
 # Current directory: /home/ulisses/Projects/ursa/exp/output-stationary
 # Command line: vivado -mode batch -nojournal -notrace -log /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid_vivado.log -source /home/ulisses/Projects/ursa/exp/output-stationary/tcl/build_one.tcl -tclargs /home/ulisses/Projects/ursa/exp/output-stationary/ip_ursa/ursa_vanilla_2x2_acc20 /home/ulisses/Projects/ursa/exp/output-stationary/tcl/bd_hybrid.tcl /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams ursa_vanilla_2x2_acc20_hybrid 4
 # Log file: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid_vivado.log
 # Journal file: 
-# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 400.000 MHz, CPU Physical cores: 12, Host memory: 15491 MB
+# Running On: ulisses-thinkpad, OS: Linux, CPU Frequency: 3429.541 MHz, CPU Physical cores: 12, Host memory: 15491 MB
 #-----------------------------------------------------------
 source /home/ulisses/Projects/ursa/exp/output-stationary/tcl/build_one.tcl -notrace
 ==============================================================
@@ -252,39 +252,39 @@ INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP 
 INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP ursa_vanilla_hybrid_xbar_2
 INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork()
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_auto_pc_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_auto_pc_1
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_auto_pc_2
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_auto_pc_3
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_auto_us_0
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_auto_us_1
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_auto_pc_1
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_axi_bram_ctrl_0_0
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_xbar_0
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_auto_us_0
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_blk_mem_gen_0_0
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_xbar_1
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_mxm_execute_ursa_0_0
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_xbar_2
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ursa_vanilla_hybrid_proc_sys_reset_0_0
 WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
-[Sat Aug 22 20:38:42 2026] Launched ursa_vanilla_hybrid_mxm_execute_ursa_0_0_synth_1, ursa_vanilla_hybrid_xbar_1_synth_1, ursa_vanilla_hybrid_xbar_2_synth_1, ursa_vanilla_hybrid_axi_bram_ctrl_0_0_synth_1, ursa_vanilla_hybrid_blk_mem_gen_0_0_synth_1, ursa_vanilla_hybrid_auto_pc_3_synth_1, ursa_vanilla_hybrid_auto_us_1_synth_1, ursa_vanilla_hybrid_auto_us_0_synth_1, ursa_vanilla_hybrid_proc_sys_reset_0_0_synth_1, ursa_vanilla_hybrid_processing_system7_0_0_synth_1, ursa_vanilla_hybrid_auto_pc_1_synth_1, ursa_vanilla_hybrid_auto_pc_0_synth_1, ursa_vanilla_hybrid_auto_pc_2_synth_1, ursa_vanilla_hybrid_xbar_0_synth_1...
+[Sun Aug 30 14:20:27 2026] Launched ursa_vanilla_hybrid_xbar_1_synth_1, ursa_vanilla_hybrid_axi_bram_ctrl_0_0_synth_1, ursa_vanilla_hybrid_mxm_execute_ursa_0_0_synth_1, ursa_vanilla_hybrid_xbar_2_synth_1, ursa_vanilla_hybrid_blk_mem_gen_0_0_synth_1, ursa_vanilla_hybrid_auto_us_1_synth_1, ursa_vanilla_hybrid_auto_us_0_synth_1, ursa_vanilla_hybrid_proc_sys_reset_0_0_synth_1, ursa_vanilla_hybrid_processing_system7_0_0_synth_1, ursa_vanilla_hybrid_auto_pc_3_synth_1, ursa_vanilla_hybrid_auto_pc_1_synth_1, ursa_vanilla_hybrid_auto_pc_0_synth_1, ursa_vanilla_hybrid_auto_pc_2_synth_1, ursa_vanilla_hybrid_xbar_0_synth_1...
 Run output will be captured here:
-ursa_vanilla_hybrid_mxm_execute_ursa_0_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_mxm_execute_ursa_0_0_synth_1/runme.log
 ursa_vanilla_hybrid_xbar_1_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_xbar_1_synth_1/runme.log
-ursa_vanilla_hybrid_xbar_2_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_xbar_2_synth_1/runme.log
 ursa_vanilla_hybrid_axi_bram_ctrl_0_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_axi_bram_ctrl_0_0_synth_1/runme.log
+ursa_vanilla_hybrid_mxm_execute_ursa_0_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_mxm_execute_ursa_0_0_synth_1/runme.log
+ursa_vanilla_hybrid_xbar_2_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_xbar_2_synth_1/runme.log
 ursa_vanilla_hybrid_blk_mem_gen_0_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_blk_mem_gen_0_0_synth_1/runme.log
-ursa_vanilla_hybrid_auto_pc_3_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_auto_pc_3_synth_1/runme.log
 ursa_vanilla_hybrid_auto_us_1_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_auto_us_1_synth_1/runme.log
 ursa_vanilla_hybrid_auto_us_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_auto_us_0_synth_1/runme.log
 ursa_vanilla_hybrid_proc_sys_reset_0_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_proc_sys_reset_0_0_synth_1/runme.log
 ursa_vanilla_hybrid_processing_system7_0_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_processing_system7_0_0_synth_1/runme.log
+ursa_vanilla_hybrid_auto_pc_3_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_auto_pc_3_synth_1/runme.log
 ursa_vanilla_hybrid_auto_pc_1_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_auto_pc_1_synth_1/runme.log
 ursa_vanilla_hybrid_auto_pc_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_auto_pc_0_synth_1/runme.log
 ursa_vanilla_hybrid_auto_pc_2_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_auto_pc_2_synth_1/runme.log
 ursa_vanilla_hybrid_xbar_0_synth_1: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/ursa_vanilla_hybrid_xbar_0_synth_1/runme.log
-[Sat Aug 22 20:38:42 2026] Launched synth_1...
+[Sun Aug 30 14:20:27 2026] Launched synth_1...
 Run output will be captured here: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/runme.log
-launch_runs: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2133.750 ; gain = 157.066 ; free physical = 7125 ; free virtual = 17056
-[Sat Aug 22 20:38:42 2026] Waiting for synth_1 to finish...
+launch_runs: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2131.961 ; gain = 155.000 ; free physical = 8949 ; free virtual = 19392
+[Sun Aug 30 14:20:27 2026] Waiting for synth_1 to finish...
 
 *** Running vivado
     with args -log ursa_vanilla_hybrid_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ursa_vanilla_hybrid_wrapper.tcl
@@ -308,25 +308,25 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1294625
+INFO: [Synth 8-7075] Helper process launched with PID 1318414
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2134.980 ; gain = 405.715 ; free physical = 5565 ; free virtual = 15536
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2133.195 ; gain = 403.746 ; free physical = 7344 ; free virtual = 17827
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_wrapper' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.srcs/sources_1/imports/hdl/ursa_vanilla_hybrid_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2887]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_axi_bram_ctrl_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_axi_bram_ctrl_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_axi_bram_ctrl_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_axi_bram_ctrl_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_axi_bram_ctrl_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_axi_bram_ctrl_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_axi_interconnect_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3840]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_8UGKWK' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:13]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_pc_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_pc_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_pc_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_pc_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'ursa_vanilla_hybrid_auto_pc_0' is unconnected for instance 'auto_pc' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:252]
 WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'ursa_vanilla_hybrid_auto_pc_0' is unconnected for instance 'auto_pc' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:252]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'ursa_vanilla_hybrid_auto_pc_0' has 60 connections declared, but only 58 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:252]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_8UGKWK' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:13]
 INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_YNKTTC' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:976]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_pc_1' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_pc_1' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_pc_1' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_pc_1' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_1_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'ursa_vanilla_hybrid_auto_pc_1' is unconnected for instance 'auto_pc' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:1215]
 WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'ursa_vanilla_hybrid_auto_pc_1' is unconnected for instance 'auto_pc' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:1215]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'ursa_vanilla_hybrid_auto_pc_1' has 60 connections declared, but only 58 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:1215]
@@ -334,14 +334,14 @@ INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_YNKTTC' (0#1) [/
 INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_1OGUV8C' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:1276]
 INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_1OGUV8C' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:1276]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_18NKS6I' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:1820]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_pc_2' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_pc_2' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_pc_2' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_pc_2' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_2_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'ursa_vanilla_hybrid_auto_pc_2' is unconnected for instance 'auto_pc' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2135]
 WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'ursa_vanilla_hybrid_auto_pc_2' is unconnected for instance 'auto_pc' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2135]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'ursa_vanilla_hybrid_auto_pc_2' has 79 connections declared, but only 77 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2135]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_18NKS6I' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:1820]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_xbar_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_xbar_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_xbar_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_xbar_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_0_stub.v:6]
 WARNING: [Synth 8-689] width (8) of port connection 'm_axi_arregion' does not match port width (12) of module 'ursa_vanilla_hybrid_xbar_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:4748]
 WARNING: [Synth 8-689] width (8) of port connection 'm_axi_awregion' does not match port width (12) of module 'ursa_vanilla_hybrid_xbar_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:4760]
 INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_axi_interconnect_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3840]
@@ -352,8 +352,8 @@ INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_15MF595' [/home/uliss
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_15MF595' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:1548]
 INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1VZFVCT' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2615]
 INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1VZFVCT' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2615]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_xbar_1' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_xbar_1' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_xbar_1' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_xbar_1' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_1_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'ursa_vanilla_hybrid_xbar_1' is unconnected for instance 'xbar' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:5618]
 WARNING: [Synth 8-7071] port 'm_axi_awqos' of module 'ursa_vanilla_hybrid_xbar_1' is unconnected for instance 'xbar' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:5618]
 WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'ursa_vanilla_hybrid_xbar_1' is unconnected for instance 'xbar' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:5618]
@@ -362,23 +362,23 @@ WARNING: [Synth 8-7023] instance 'xbar' of module 'ursa_vanilla_hybrid_xbar_1' h
 INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_axi_interconnect_1_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:4817]
 INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_axi_interconnect_2_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:5695]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_VMWM5U' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:571]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_pc_3' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_pc_3' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_pc_3' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_pc_3' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_pc_3_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_VMWM5U' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:571]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1KWIPU4' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2215]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_us_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_us_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_us_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_us_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_us_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_us_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_us_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_us_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'ursa_vanilla_hybrid_auto_us_0' is unconnected for instance 'auto_us' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2362]
 WARNING: [Synth 8-7023] instance 'auto_us' of module 'ursa_vanilla_hybrid_auto_us_0' has 36 connections declared, but only 35 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2362]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1KWIPU4' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2215]
 INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1CARE5K' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2400]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_us_1' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_us_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_us_1' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_us_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_auto_us_1' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_us_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_auto_us_1' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_auto_us_1_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'ursa_vanilla_hybrid_auto_us_1' is unconnected for instance 'auto_us' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2571]
 WARNING: [Synth 8-7023] instance 'auto_us' of module 'ursa_vanilla_hybrid_auto_us_1' has 42 connections declared, but only 41 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2571]
 INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1CARE5K' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:2400]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_xbar_2' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_xbar_2' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_xbar_2' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_xbar_2' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_xbar_2_stub.v:6]
 WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'ursa_vanilla_hybrid_xbar_2' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:6316]
 WARNING: [Synth 8-689] width (64) of port connection 's_axi_rdata' does not match port width (128) of module 'ursa_vanilla_hybrid_xbar_2' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:6333]
 WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'ursa_vanilla_hybrid_xbar_2' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:6334]
@@ -388,12 +388,12 @@ WARNING: [Synth 8-7071] port 's_axi_bid' of module 'ursa_vanilla_hybrid_xbar_2' 
 WARNING: [Synth 8-7071] port 's_axi_rid' of module 'ursa_vanilla_hybrid_xbar_2' is unconnected for instance 'xbar' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:6266]
 WARNING: [Synth 8-7023] instance 'xbar' of module 'ursa_vanilla_hybrid_xbar_2' has 78 connections declared, but only 76 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:6266]
 INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_axi_interconnect_2_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:5695]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_blk_mem_gen_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_blk_mem_gen_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_blk_mem_gen_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_blk_mem_gen_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_blk_mem_gen_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_blk_mem_gen_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'rsta_busy' of module 'ursa_vanilla_hybrid_blk_mem_gen_0_0' is unconnected for instance 'blk_mem_gen_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3593]
 WARNING: [Synth 8-7023] instance 'blk_mem_gen_0' of module 'ursa_vanilla_hybrid_blk_mem_gen_0_0' has 8 connections declared, but only 7 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3593]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_mxm_execute_ursa_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_mxm_execute_ursa_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_mxm_execute_ursa_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_mxm_execute_ursa_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'interrupt' of module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' is unconnected for instance 'mxm_execute_ursa_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3601]
 WARNING: [Synth 8-7071] port 'm_axi_aw_AWREGION' of module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' is unconnected for instance 'mxm_execute_ursa_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3601]
 WARNING: [Synth 8-7071] port 'm_axi_aw_WID' of module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' is unconnected for instance 'mxm_execute_ursa_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3601]
@@ -429,15 +429,15 @@ WARNING: [Synth 8-7071] port 'm_axi_ca_ARQOS' of module 'ursa_vanilla_hybrid_mxm
 WARNING: [Synth 8-7071] port 'm_axi_ca_ARVALID' of module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' is unconnected for instance 'mxm_execute_ursa_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3601]
 WARNING: [Synth 8-7071] port 'm_axi_ca_RREADY' of module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' is unconnected for instance 'mxm_execute_ursa_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3601]
 WARNING: [Synth 8-7023] instance 'mxm_execute_ursa_0' of module 'ursa_vanilla_hybrid_mxm_execute_ursa_0_0' has 157 connections declared, but only 123 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3601]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_proc_sys_reset_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_proc_sys_reset_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3725]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3725]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3725]
 WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3725]
 WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'ursa_vanilla_hybrid_proc_sys_reset_0_0' has 10 connections declared, but only 6 given [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3725]
-INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_processing_system7_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_processing_system7_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1294619-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ursa_vanilla_hybrid_processing_system7_0_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ursa_vanilla_hybrid_processing_system7_0_0' (0#1) [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/.Xil/Vivado-1318408-ulisses-thinkpad/realtime/ursa_vanilla_hybrid_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'ursa_vanilla_hybrid_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3734]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'ursa_vanilla_hybrid_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3734]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'ursa_vanilla_hybrid_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/synth/ursa_vanilla_hybrid.v:3734]
@@ -499,18 +499,18 @@ WARNING: [Synth 8-7129] Port M02_ARESETN in module ursa_vanilla_hybrid_axi_inter
 WARNING: [Synth 8-7129] Port S00_ACLK in module ursa_vanilla_hybrid_axi_interconnect_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ARESETN in module ursa_vanilla_hybrid_axi_interconnect_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2227.949 ; gain = 498.684 ; free physical = 5455 ; free virtual = 15427
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2228.164 ; gain = 498.715 ; free physical = 7233 ; free virtual = 17718
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2242.793 ; gain = 513.527 ; free physical = 5455 ; free virtual = 15427
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2243.008 ; gain = 513.559 ; free physical = 7233 ; free virtual = 17718
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2242.793 ; gain = 513.527 ; free physical = 5455 ; free virtual = 15427
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2243.008 ; gain = 513.559 ; free physical = 7233 ; free virtual = 17718
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2242.793 ; gain = 0.000 ; free physical = 5455 ; free virtual = 15427
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2243.008 ; gain = 0.000 ; free physical = 7233 ; free virtual = 17718
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -547,21 +547,21 @@ Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/u
 Finished Parsing XDC File [/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2315.730 ; gain = 0.000 ; free physical = 5454 ; free virtual = 15425
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2315.945 ; gain = 0.000 ; free physical = 7226 ; free virtual = 17710
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2315.766 ; gain = 0.000 ; free physical = 5454 ; free virtual = 15425
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2315.980 ; gain = 0.000 ; free physical = 7226 ; free virtual = 17710
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'ursa_vanilla_hybrid_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5449 ; free virtual = 15422
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7222 ; free virtual = 17707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5449 ; free virtual = 15422
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7222 ; free virtual = 17707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -845,10 +845,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for ursa_vanilla_hybrid_i/axi_interco
 Applied set_property KEEP_HIERARCHY = SOFT for ursa_vanilla_hybrid_i/axi_bram_ctrl_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for ursa_vanilla_hybrid_i/blk_mem_gen_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5449 ; free virtual = 15422
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7222 ; free virtual = 17707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5448 ; free virtual = 15421
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7222 ; free virtual = 17708
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -901,25 +901,25 @@ WARNING: [Synth 8-7129] Port M02_AXI_rid[12] in module ursa_vanilla_hybrid_axi_i
 WARNING: [Synth 8-7129] Port S00_ACLK in module ursa_vanilla_hybrid_axi_interconnect_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ARESETN in module ursa_vanilla_hybrid_axi_interconnect_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7220 ; free virtual = 17711
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -937,37 +937,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1007,16 +1007,16 @@ Report Cell Usage:
 |12    |ursa_vanilla_hybrid_xbar                 |     3|
 +------+-----------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2315.766 ; gain = 513.527 ; free physical = 5447 ; free virtual = 15425
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.766 ; gain = 586.500 ; free physical = 5447 ; free virtual = 15425
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2315.980 ; gain = 513.559 ; free physical = 7218 ; free virtual = 17709
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2315.980 ; gain = 586.531 ; free physical = 7218 ; free virtual = 17709
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2315.766 ; gain = 0.000 ; free physical = 5722 ; free virtual = 15701
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2315.980 ; gain = 0.000 ; free physical = 7487 ; free virtual = 17978
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2315.766 ; gain = 0.000 ; free physical = 5721 ; free virtual = 15699
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2315.980 ; gain = 0.000 ; free physical = 7487 ; free virtual = 17978
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -1024,18 +1024,18 @@ Synth Design complete | Checksum: b5af7eb3
 INFO: [Common 17-83] Releasing license: Synthesis
 73 Infos, 160 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 2315.766 ; gain = 955.844 ; free physical = 5720 ; free virtual = 15699
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1919.595; main = 1590.619; forked = 377.871
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3272.961; main = 2283.719; forked = 989.242
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 2315.980 ; gain = 956.875 ; free physical = 7487 ; free virtual = 17978
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1921.136; main = 1592.362; forked = 377.843
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3273.176; main = 2283.934; forked = 989.242
 INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/synth_1/ursa_vanilla_hybrid_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ursa_vanilla_hybrid_wrapper_utilization_synth.rpt -pb ursa_vanilla_hybrid_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Aug 22 20:41:33 2026...
-[Sat Aug 22 20:41:37 2026] synth_1 finished
-wait_on_runs: Time (s): cpu = 00:08:20 ; elapsed = 00:02:55 . Memory (MB): peak = 2133.750 ; gain = 0.000 ; free physical = 7081 ; free virtual = 17053
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 30 14:23:21 2026...
+[Sun Aug 30 14:23:24 2026] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:08:24 ; elapsed = 00:02:57 . Memory (MB): peak = 2131.961 ; gain = 0.000 ; free physical = 8861 ; free virtual = 19346
 Synthesis done.
-[Sat Aug 22 20:41:38 2026] Launched impl_1...
+[Sun Aug 30 14:23:26 2026] Launched impl_1...
 Run output will be captured here: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/impl_1/runme.log
-[Sat Aug 22 20:41:38 2026] Waiting for impl_1 to finish...
+[Sun Aug 30 14:23:26 2026] Waiting for impl_1 to finish...
 
 *** Running vivado
     with args -log ursa_vanilla_hybrid_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ursa_vanilla_hybrid_wrapper.tcl -notrace
@@ -1070,7 +1070,7 @@ INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp
 INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/ip/ursa_vanilla_hybrid_auto_pc_3/ursa_vanilla_hybrid_auto_pc_3.dcp' for cell 'ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc'
 INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/ip/ursa_vanilla_hybrid_auto_us_0/ursa_vanilla_hybrid_auto_us_0.dcp' for cell 'ursa_vanilla_hybrid_i/axi_interconnect_2/s00_couplers/auto_us'
 INFO: [Project 1-454] Reading design checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.gen/sources_1/bd/ursa_vanilla_hybrid/ip/ursa_vanilla_hybrid_auto_us_1/ursa_vanilla_hybrid_auto_us_1.dcp' for cell 'ursa_vanilla_hybrid_i/axi_interconnect_2/s01_couplers/auto_us'
-Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1792.840 ; gain = 0.000 ; free physical = 6199 ; free virtual = 16171
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1792.855 ; gain = 0.000 ; free physical = 8008 ; free virtual = 18493
 INFO: [Netlist 29-17] Analyzing 357 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2023.2
@@ -1119,7 +1119,7 @@ INFO: [Project 1-1714] 3 XPM XDC files have been applied to the design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 Generating merged BMM file for the design top 'ursa_vanilla_hybrid_wrapper'...
 INFO: [Project 1-1687] 30 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2238.469 ; gain = 0.000 ; free physical = 6042 ; free virtual = 16015
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2238.484 ; gain = 0.000 ; free physical = 7826 ; free virtual = 18310
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
@@ -1127,7 +1127,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 
 26 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2238.469 ; gain = 860.504 ; free physical = 6042 ; free virtual = 16015
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2238.484 ; gain = 861.504 ; free physical = 7826 ; free virtual = 18310
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
@@ -1138,13 +1138,13 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:00.89 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2238.469 ; gain = 0.000 ; free physical = 6034 ; free virtual = 16007
+Time (s): cpu = 00:00:00.9 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2238.484 ; gain = 0.000 ; free physical = 7801 ; free virtual = 18286
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Ending Cache Timing Information Task | Checksum: 18380c3a1
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2596.820 ; gain = 358.352 ; free physical = 5633 ; free virtual = 15606
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2596.836 ; gain = 358.352 ; free physical = 7431 ; free virtual = 17916
 
 Starting Logic Optimization Task
 
@@ -1153,30 +1153,30 @@ Phase 1 Initialization
 Phase 1.1 Core Generation And Design Setup
 Phase 1.1 Core Generation And Design Setup | Checksum: 18380c3a1
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 
 Phase 1.2 Setup Constraints And Sort Netlist
 Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 18380c3a1
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 Phase 1 Initialization | Checksum: 18380c3a1
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 
 Phase 2 Timer Update And Timing Data Collection
 
 Phase 2.1 Timer Update
 Phase 2.1 Timer Update | Checksum: 18380c3a1
 
-Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 
 Phase 2.2 Timing Data Collection
 Phase 2.2 Timing Data Collection | Checksum: 18380c3a1
 
-Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 Phase 2 Timer Update And Timing Data Collection | Checksum: 18380c3a1
 
-Time (s): cpu = 00:00:00.4 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 
 Phase 3 Retarget
 INFO: [Opt 31-1566] Pulled 34 inverters resulting in an inversion of 278 pins
@@ -1184,7 +1184,7 @@ INFO: [Opt 31-138] Pushed 2 inverter(s) to 5 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
 Phase 3 Retarget | Checksum: 1fd76de99
 
-Time (s): cpu = 00:00:00.6 ; elapsed = 00:00:00.3 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00.6 ; elapsed = 00:00:00.3 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 Retarget | Checksum: 1fd76de99
 INFO: [Opt 31-389] Phase Retarget created 57 cells and removed 125 cells
 INFO: [Opt 31-1021] In phase Retarget, 27 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
@@ -1193,7 +1193,7 @@ Phase 4 Constant propagation
 INFO: [Opt 31-138] Pushed 4 inverter(s) to 9 load pin(s).
 Phase 4 Constant propagation | Checksum: 11d842531
 
-Time (s): cpu = 00:00:00.81 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00.81 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 Constant propagation | Checksum: 11d842531
 INFO: [Opt 31-389] Phase Constant propagation created 341 cells and removed 1033 cells
 INFO: [Opt 31-1021] In phase Constant propagation, 27 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
@@ -1201,7 +1201,7 @@ INFO: [Opt 31-1021] In phase Constant propagation, 27 netlist objects are constr
 Phase 5 Sweep
 Phase 5 Sweep | Checksum: 168ea78fe
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.83 . Memory (MB): peak = 2902.625 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.83 . Memory (MB): peak = 2903.641 ; gain = 0.000 ; free physical = 7125 ; free virtual = 17610
 Sweep | Checksum: 168ea78fe
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 706 cells
 INFO: [Opt 31-1021] In phase Sweep, 96 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
@@ -1209,7 +1209,7 @@ INFO: [Opt 31-1021] In phase Sweep, 96 netlist objects are constrained preventin
 Phase 6 BUFG optimization
 Phase 6 BUFG optimization | Checksum: 168ea78fe
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.89 . Memory (MB): peak = 2934.641 ; gain = 32.016 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.89 . Memory (MB): peak = 2935.656 ; gain = 32.016 ; free physical = 7117 ; free virtual = 17602
 BUFG optimization | Checksum: 168ea78fe
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
@@ -1318,14 +1318,14 @@ INFO: [Common 17-14] Message 'Opt 31-1131' appears 100 times and further instanc
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
 Phase 7 Shift Register Optimization | Checksum: 168ea78fe
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.91 . Memory (MB): peak = 2934.641 ; gain = 32.016 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.9 . Memory (MB): peak = 2935.656 ; gain = 32.016 ; free physical = 7117 ; free virtual = 17602
 Shift Register Optimization | Checksum: 168ea78fe
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 8 Post Processing Netlist
 Phase 8 Post Processing Netlist | Checksum: 2110329b4
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.95 . Memory (MB): peak = 2934.641 ; gain = 32.016 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.94 . Memory (MB): peak = 2935.656 ; gain = 32.016 ; free physical = 7117 ; free virtual = 17602
 Post Processing Netlist | Checksum: 2110329b4
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 INFO: [Opt 31-1021] In phase Post Processing Netlist, 33 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
@@ -1335,19 +1335,19 @@ Phase 9 Finalization
 Phase 9.1 Finalizing Design Cores and Updating Shapes
 Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: d517a7b7
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2934.641 ; gain = 32.016 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2935.656 ; gain = 32.016 ; free physical = 7117 ; free virtual = 17602
 
 Phase 9.2 Verifying Netlist Connectivity
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2934.641 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2935.656 ; gain = 0.000 ; free physical = 7117 ; free virtual = 17602
 Phase 9.2 Verifying Netlist Connectivity | Checksum: d517a7b7
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2934.641 ; gain = 32.016 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2935.656 ; gain = 32.016 ; free physical = 7117 ; free virtual = 17602
 Phase 9 Finalization | Checksum: d517a7b7
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2934.641 ; gain = 32.016 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2935.656 ; gain = 32.016 ; free physical = 7117 ; free virtual = 17602
 Opt_design Change Summary
 =========================
 
@@ -1366,9 +1366,9 @@ Opt_design Change Summary
 
 Ending Logic Optimization Task | Checksum: d517a7b7
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2934.641 ; gain = 32.016 ; free physical = 5327 ; free virtual = 15300
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2935.656 ; gain = 32.016 ; free physical = 7117 ; free virtual = 17602
 INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2934.641 ; gain = 0.000 ; free physical = 5327 ; free virtual = 15300
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2935.656 ; gain = 0.000 ; free physical = 7117 ; free virtual = 17602
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -1386,25 +1386,25 @@ INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
 Number of BRAM Ports augmented: 1 newly gated: 2 Total Ports: 8
 Ending PowerOpt Patch Enables Task | Checksum: d5f14ee4
 
-Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15133
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6990 ; free virtual = 17475
 Ending Power Optimization Task | Checksum: d5f14ee4
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3218.539 ; gain = 283.898 ; free physical = 5161 ; free virtual = 15133
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3219.555 ; gain = 283.898 ; free physical = 6990 ; free virtual = 17475
 
 Starting Final Cleanup Task
 Ending Final Cleanup Task | Checksum: d5f14ee4
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15133
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6990 ; free virtual = 17475
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15133
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6990 ; free virtual = 17475
 Ending Netlist Obfuscation Task | Checksum: c43f5e08
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15133
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6990 ; free virtual = 17475
 INFO: [Common 17-83] Releasing license: Implementation
 55 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3218.539 ; gain = 980.070 ; free physical = 5161 ; free virtual = 15133
+opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3219.555 ; gain = 981.070 ; free physical = 6990 ; free virtual = 17475
 INFO: [runtcl-4] Executing : report_drc -file ursa_vanilla_hybrid_wrapper_drc_opted.rpt -pb ursa_vanilla_hybrid_wrapper_drc_opted.pb -rpx ursa_vanilla_hybrid_wrapper_drc_opted.rpx
 Command: report_drc -file ursa_vanilla_hybrid_wrapper_drc_opted.rpt -pb ursa_vanilla_hybrid_wrapper_drc_opted.pb -rpx ursa_vanilla_hybrid_wrapper_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
@@ -1412,16 +1412,16 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/impl_1/ursa_vanilla_hybrid_wrapper_drc_opted.rpt.
 report_drc completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Wrote PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5136 ; free virtual = 15110
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5136 ; free virtual = 15110
+Wrote PlaceDB: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6972 ; free virtual = 17459
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6972 ; free virtual = 17459
 Writing XDEF routing.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5136 ; free virtual = 15111
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6972 ; free virtual = 17460
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5136 ; free virtual = 15111
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5136 ; free virtual = 15111
-Wrote Device Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5136 ; free virtual = 15112
-Write Physdb Complete: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5136 ; free virtual = 15112
+Wrote RouteStorage: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6972 ; free virtual = 17459
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6972 ; free virtual = 17459
+Wrote Device Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6970 ; free virtual = 17459
+Write Physdb Complete: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6970 ; free virtual = 17459
 INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/impl_1/ursa_vanilla_hybrid_wrapper_opt.dcp' has been generated.
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
@@ -1441,54 +1441,54 @@ Starting Placer Task
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5113 ; free virtual = 15091
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6964 ; free virtual = 17454
 Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 67cc6d11
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5113 ; free virtual = 15091
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5113 ; free virtual = 15091
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6964 ; free virtual = 17454
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6964 ; free virtual = 17454
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 3b5d7498
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.62 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5113 ; free virtual = 15091
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.62 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6964 ; free virtual = 17454
 
 Phase 1.3 Build Placer Netlist Model
 Phase 1.3 Build Placer Netlist Model | Checksum: bb137b45
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5113 ; free virtual = 15090
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6963 ; free virtual = 17453
 
 Phase 1.4 Constrain Clocks/Macros
 Phase 1.4 Constrain Clocks/Macros | Checksum: bb137b45
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5113 ; free virtual = 15090
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6963 ; free virtual = 17453
 Phase 1 Placer Initialization | Checksum: bb137b45
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5113 ; free virtual = 15090
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6963 ; free virtual = 17453
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
 Phase 2.1 Floorplanning | Checksum: b4ed4e36
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5140 ; free virtual = 15118
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 7017 ; free virtual = 17508
 
 Phase 2.2 Update Timing before SLR Path Opt
 Phase 2.2 Update Timing before SLR Path Opt | Checksum: c452c486
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5143 ; free virtual = 15121
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 7017 ; free virtual = 17508
 
 Phase 2.3 Post-Processing in Floorplanning
 Phase 2.3 Post-Processing in Floorplanning | Checksum: c452c486
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5143 ; free virtual = 15121
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 7017 ; free virtual = 17508
 
 Phase 2.4 Global Placement Core
 
 Phase 2.4.1 UpdateTiming Before Physical Synthesis
 Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 77058f91
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5158 ; free virtual = 15135
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 2.4.2 Physical Synthesis In Placer
 INFO: [Physopt 32-1035] Found 1 LUTNM shape to break, 312 LUT instances to create LUTNM shape
@@ -1512,7 +1512,7 @@ INFO: [Physopt 32-846] No candidate cells for URAM register optimization found i
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5158 ; free virtual = 15135
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -1536,58 +1536,58 @@ Summary of Physical Synthesis Optimizations
 
 Phase 2.4.2 Physical Synthesis In Placer | Checksum: 1d23e9a08
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5158 ; free virtual = 15136
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 Phase 2.4 Global Placement Core | Checksum: 1cd34c7be
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5158 ; free virtual = 15136
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 Phase 2 Global Placement | Checksum: 1cd34c7be
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5158 ; free virtual = 15136
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
 Phase 3.1 Commit Multi Column Macros | Checksum: 16bd8ab71
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5159 ; free virtual = 15137
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 3.2 Commit Most Macros & LUTRAMs
 Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 21dfc2593
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5159 ; free virtual = 15137
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 3.3 Area Swap Optimization
 Phase 3.3 Area Swap Optimization | Checksum: 1885bf99d
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5159 ; free virtual = 15137
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 3.4 Pipeline Register Optimization
 Phase 3.4 Pipeline Register Optimization | Checksum: 15085fce4
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5159 ; free virtual = 15137
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 3.5 Fast Optimization
 Phase 3.5 Fast Optimization | Checksum: 1318298f0
 
-Time (s): cpu = 00:00:22 ; elapsed = 00:00:08 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15138
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:08 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 3.6 Small Shape Detail Placement
 Phase 3.6 Small Shape Detail Placement | Checksum: 102a2a397
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:09 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15138
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:09 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 3.7 Re-assign LUT pins
 Phase 3.7 Re-assign LUT pins | Checksum: 1b01f5bc6
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15138
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:09 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 3.8 Pipeline Register Optimization
 Phase 3.8 Pipeline Register Optimization | Checksum: 1eb296acf
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15138
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 Phase 3 Detail Placement | Checksum: 1eb296acf
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5161 ; free virtual = 15138
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6999 ; free virtual = 17490
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -1606,31 +1606,31 @@ INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximu
 INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.675 | TNS=-3.004 |
 Phase 1 Physical Synthesis Initialization | Checksum: 1d2b2929f
 
-Time (s): cpu = 00:00:00.61 ; elapsed = 00:00:00.26 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5166 ; free virtual = 15143
+Time (s): cpu = 00:00:00.61 ; elapsed = 00:00:00.26 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 INFO: [Place 46-33] Processed net ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/ca_m_axi_U/bus_write/wreq_burst_conv/rs_req/SR[0], BUFG insertion was skipped due to placement/routing conflicts.
 INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 1, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
 Ending Physical Synthesis Task | Checksum: 1d2b2929f
 
-Time (s): cpu = 00:00:00.78 ; elapsed = 00:00:00.4 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5166 ; free virtual = 15143
+Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.4 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 Phase 4.1.1.1 BUFG Insertion | Checksum: 2411ca964
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:11 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5166 ; free virtual = 15143
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:11 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 
 Phase 4.1.1.2 Post Placement Timing Optimization
 INFO: [Place 30-746] Post Placement Timing Summary WNS=0.564. For the most accurate timing information please run report_timing.
 Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 23c6665e3
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5166 ; free virtual = 15143
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5166 ; free virtual = 15143
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 Phase 4.1 Post Commit Optimization | Checksum: 23c6665e3
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5166 ; free virtual = 15143
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 
 Phase 4.2 Post Placement Cleanup
 Phase 4.2 Post Placement Cleanup | Checksum: 23c6665e3
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5169 ; free virtual = 15146
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 
 Phase 4.3 Placer Reporting
 
@@ -1651,40 +1651,40 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 
 Phase 4.3.1 Print Estimated Congestion | Checksum: 23c6665e3
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5169 ; free virtual = 15146
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 Phase 4.3 Placer Reporting | Checksum: 23c6665e3
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5169 ; free virtual = 15146
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5169 ; free virtual = 15146
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5169 ; free virtual = 15146
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1f197c09a
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5169 ; free virtual = 15146
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 Ending Placer Task | Checksum: f768083a
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5169 ; free virtual = 15146
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 99 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5169 ; free virtual = 15146
+place_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6997 ; free virtual = 17488
 INFO: [runtcl-4] Executing : report_io -file ursa_vanilla_hybrid_wrapper_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.16 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5145 ; free virtual = 15122
+report_io: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6974 ; free virtual = 17465
 INFO: [runtcl-4] Executing : report_utilization -file ursa_vanilla_hybrid_wrapper_utilization_placed.rpt -pb ursa_vanilla_hybrid_wrapper_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file ursa_vanilla_hybrid_wrapper_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.13 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5131 ; free virtual = 15109
+report_control_sets: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.14 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6967 ; free virtual = 17459
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5123 ; free virtual = 15104
-Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5117 ; free virtual = 15109
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5117 ; free virtual = 15109
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6956 ; free virtual = 17451
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6943 ; free virtual = 17448
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6943 ; free virtual = 17448
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5117 ; free virtual = 15109
-Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5117 ; free virtual = 15110
-Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5117 ; free virtual = 15111
-Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.38 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5117 ; free virtual = 15111
+Wrote RouteStorage: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6943 ; free virtual = 17449
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6943 ; free virtual = 17450
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6943 ; free virtual = 17451
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.39 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6943 ; free virtual = 17451
 INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/impl_1/ursa_vanilla_hybrid_wrapper_placed.dcp' has been generated.
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
@@ -1692,23 +1692,23 @@ INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc
 
 Starting Initial Update Timing Task
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.7 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5112 ; free virtual = 15096
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.69 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6919 ; free virtual = 17417
 INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
 INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
 INFO: [Common 17-83] Releasing license: Implementation
 108 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5110 ; free virtual = 15096
-Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5099 ; free virtual = 15096
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5099 ; free virtual = 15096
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6919 ; free virtual = 17420
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6913 ; free virtual = 17425
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6913 ; free virtual = 17425
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5097 ; free virtual = 15094
-Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5097 ; free virtual = 15096
-Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5097 ; free virtual = 15096
-Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.38 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5097 ; free virtual = 15096
+Wrote RouteStorage: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6913 ; free virtual = 17425
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6912 ; free virtual = 17424
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6906 ; free virtual = 17419
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.38 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6906 ; free virtual = 17419
 INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/impl_1/ursa_vanilla_hybrid_wrapper_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
@@ -1727,25 +1727,25 @@ Checksum: PlaceDB: 91e2cf4b ConstDB: 0 ShapeSum: 658538ef RouteDB: 0
 Post Restoration Checksum: NetGraph: 1f40a394 | NumContArr: 626dfb63 | Constraints: c2a8fa9d | Timing: c2a8fa9d
 Phase 1 Build RT Design | Checksum: 207009431
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5051 ; free virtual = 15040
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6863 ; free virtual = 17366
 
 Phase 2 Router Initialization
 
 Phase 2.1 Fix Topology Constraints
 Phase 2.1 Fix Topology Constraints | Checksum: 207009431
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5051 ; free virtual = 15040
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6863 ; free virtual = 17366
 
 Phase 2.2 Pre Route Cleanup
 Phase 2.2 Pre Route Cleanup | Checksum: 207009431
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5051 ; free virtual = 15040
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6863 ; free virtual = 17366
  Number of Nodes with overlaps = 0
 
 Phase 2.3 Update Timing
 Phase 2.3 Update Timing | Checksum: 2d26648e8
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5021 ; free virtual = 15011
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6834 ; free virtual = 17337
 INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.592  | TNS=0.000  | WHS=-0.315 | THS=-136.664|
 
 
@@ -1763,22 +1763,22 @@ Router Utilization Summary
 
 Phase 2 Router Initialization | Checksum: 289456c1a
 
-Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5009 ; free virtual = 14998
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 3 Initial Routing
 
 Phase 3.1 Global Routing
 Phase 3.1 Global Routing | Checksum: 289456c1a
 
-Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5009 ; free virtual = 14998
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 3.2 Initial Net Routing
 Phase 3.2 Initial Net Routing | Checksum: 2aa74509a
 
-Time (s): cpu = 00:00:23 ; elapsed = 00:00:14 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5010 ; free virtual = 14999
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:14 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 Phase 3 Initial Routing | Checksum: 2aa74509a
 
-Time (s): cpu = 00:00:23 ; elapsed = 00:00:14 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5010 ; free virtual = 14999
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:14 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 4 Rip-up And Reroute
 
@@ -1796,7 +1796,7 @@ INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.635  | TNS=0.000  | WHS
 
 Phase 4.1 Global Iteration 0 | Checksum: 260b4413e
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 4.2 Global Iteration 1
  Number of Nodes with overlaps = 6
@@ -1806,7 +1806,7 @@ INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.635  | TNS=0.000  | WHS
 
 Phase 4.2 Global Iteration 1 | Checksum: 25bca7f70
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 4.3 Global Iteration 2
  Number of Nodes with overlaps = 0
@@ -1814,25 +1814,25 @@ INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.635  | TNS=0.000  | WHS
 
 Phase 4.3 Global Iteration 2 | Checksum: 2ca590f59
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 Phase 4 Rip-up And Reroute | Checksum: 2ca590f59
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 Phase 5.1 Delay CleanUp | Checksum: 2ca590f59
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 5.2 Clock Skew Optimization
 Phase 5.2 Clock Skew Optimization | Checksum: 2ca590f59
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 Phase 5 Delay and Skew Optimization | Checksum: 2ca590f59
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 6 Post Hold Fix
 
@@ -1841,15 +1841,15 @@ Phase 6.1 Hold Fix Iter
 Phase 6.1.1 Update Timing
 Phase 6.1.1 Update Timing | Checksum: 2d08456c6
 
-Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.750  | TNS=0.000  | WHS=0.016  | THS=0.000  |
 
 Phase 6.1 Hold Fix Iter | Checksum: 2849f6034
 
-Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 Phase 6 Post Hold Fix | Checksum: 2849f6034
 
-Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 7 Route finalize
 
@@ -1867,19 +1867,19 @@ Router Utilization Summary
 
 Phase 7 Route finalize | Checksum: 2849f6034
 
-Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17331
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
 Phase 8 Verifying routed nets | Checksum: 2849f6034
 
-Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:19 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17330
 
 Phase 9 Depositing Routes
 Phase 9 Depositing Routes | Checksum: 29203cb1d
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:19 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5016 ; free virtual = 15005
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:19 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17330
 
 Phase 10 Post Router Timing
 INFO: [Route 35-57] Estimated Timing Summary | WNS=0.750  | TNS=0.000  | WHS=0.016  | THS=0.000  |
@@ -1887,22 +1887,22 @@ INFO: [Route 35-57] Estimated Timing Summary | WNS=0.750  | TNS=0.000  | WHS=0.0
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
 Phase 10 Post Router Timing | Checksum: 29203cb1d
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:19 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5017 ; free virtual = 15006
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:19 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17330
 INFO: [Route 35-16] Router Completed Successfully
 
 Phase 11 Post-Route Event Processing
 Phase 11 Post-Route Event Processing | Checksum: 12674cb62
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:20 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5017 ; free virtual = 15006
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:20 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17330
 Ending Routing Task | Checksum: 12674cb62
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:20 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5017 ; free virtual = 15006
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:20 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17330
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
 124 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:20 . Memory (MB): peak = 3218.539 ; gain = 0.000 ; free physical = 5017 ; free virtual = 15006
+route_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:20 . Memory (MB): peak = 3219.555 ; gain = 0.000 ; free physical = 6827 ; free virtual = 17330
 INFO: [runtcl-4] Executing : report_drc -file ursa_vanilla_hybrid_wrapper_drc_routed.rpt -pb ursa_vanilla_hybrid_wrapper_drc_routed.pb -rpx ursa_vanilla_hybrid_wrapper_drc_routed.rpx
 Command: report_drc -file ursa_vanilla_hybrid_wrapper_drc_routed.rpt -pb ursa_vanilla_hybrid_wrapper_drc_routed.pb -rpx ursa_vanilla_hybrid_wrapper_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
@@ -1934,16 +1934,16 @@ INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file ursa_vanil
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3287.328 ; gain = 0.000 ; free physical = 4941 ; free virtual = 14941
-Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3287.328 ; gain = 0.000 ; free physical = 4941 ; free virtual = 14953
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3287.328 ; gain = 0.000 ; free physical = 4941 ; free virtual = 14953
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3284.773 ; gain = 0.000 ; free physical = 6754 ; free virtual = 17268
+Wrote PlaceDB: Time (s): cpu = 00:00:00.99 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3284.773 ; gain = 0.000 ; free physical = 6748 ; free virtual = 17274
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3284.773 ; gain = 0.000 ; free physical = 6748 ; free virtual = 17274
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3287.328 ; gain = 0.000 ; free physical = 4941 ; free virtual = 14955
-Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3287.328 ; gain = 0.000 ; free physical = 4940 ; free virtual = 14955
-Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3287.328 ; gain = 0.000 ; free physical = 4939 ; free virtual = 14955
-Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.44 . Memory (MB): peak = 3287.328 ; gain = 0.000 ; free physical = 4939 ; free virtual = 14955
+Wrote RouteStorage: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3284.773 ; gain = 0.000 ; free physical = 6748 ; free virtual = 17276
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3284.773 ; gain = 0.000 ; free physical = 6744 ; free virtual = 17273
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3284.773 ; gain = 0.000 ; free physical = 6744 ; free virtual = 17274
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.44 . Memory (MB): peak = 3284.773 ; gain = 0.000 ; free physical = 6744 ; free virtual = 17274
 INFO: [Common 17-1381] The checkpoint '/home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.proj/ursa_vanilla_2x2_acc20_hybrid.runs/impl_1/ursa_vanilla_hybrid_wrapper_routed.dcp' has been generated.
 Command: write_bitstream -force ursa_vanilla_hybrid_wrapper.bit
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
@@ -1960,7 +1960,7 @@ WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_hybrid_i/mxm_exec
 WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A2' of cell ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A3)*A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A4' of cell ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A3)+((~A3)*(~A6)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A6' of cell ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A1)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
-WARNING: [DRC RTSTAT-10] No routable loads: 33 net(s) have no routable loads. The problem bus(es) and/or net(s) are ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i... and (the first 15 of 21 listed).
+WARNING: [DRC RTSTAT-10] No routable loads: 33 net(s) have no routable loads. The problem bus(es) and/or net(s) are ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i... and (the first 15 of 21 listed).
 INFO: [Vivado 12-3199] DRC finished with 0 Errors, 10 Warnings
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
@@ -1975,50 +1975,88 @@ INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Common 17-83] Releasing license: Implementation
 13 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 3549.246 ; gain = 261.918 ; free physical = 4635 ; free virtual = 14642
-INFO: [Common 17-206] Exiting Vivado at Sat Aug 22 20:42:56 2026...
-[Sat Aug 22 20:42:57 2026] impl_1 finished
-wait_on_runs: Time (s): cpu = 00:02:09 ; elapsed = 00:01:19 . Memory (MB): peak = 2133.750 ; gain = 0.000 ; free physical = 7005 ; free virtual = 17012
+write_bitstream: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 3551.629 ; gain = 266.855 ; free physical = 6445 ; free virtual = 16967
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 30 14:24:45 2026...
+[Sun Aug 30 14:24:50 2026] impl_1 finished
+wait_on_runs: Time (s): cpu = 00:00:00.73 ; elapsed = 00:01:24 . Memory (MB): peak = 2131.961 ; gain = 0.000 ; free physical = 8854 ; free virtual = 19376
 Implementation done.
 INFO: [Device 21-403] Loading part xc7z020clg484-1
-Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2133.750 ; gain = 0.000 ; free physical = 6905 ; free virtual = 16912
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2131.961 ; gain = 0.000 ; free physical = 8688 ; free virtual = 19209
 INFO: [Netlist 29-17] Analyzing 345 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2023.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Read ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2133.750 ; gain = 0.000 ; free physical = 6807 ; free virtual = 16814
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2131.961 ; gain = 0.000 ; free physical = 8586 ; free virtual = 19107
 INFO: [Timing 38-478] Restoring timing data from binary archive.
 INFO: [Timing 38-479] Binary timing data restore complete.
 INFO: [Project 1-856] Restoring constraints from binary archive.
 INFO: [Project 1-853] Binary constraint restore complete.
 INFO: [Designutils 20-5722] Start Reading Physical Databases.
 Reading placement.
-Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2695.492 ; gain = 0.000 ; free physical = 6302 ; free virtual = 16309
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2694.707 ; gain = 0.000 ; free physical = 8084 ; free virtual = 18605
 Reading placer database...
-Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2695.492 ; gain = 0.000 ; free physical = 6302 ; free virtual = 16309
-Read PlaceDB: Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2695.492 ; gain = 0.000 ; free physical = 6294 ; free virtual = 16302
-Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2695.492 ; gain = 0.000 ; free physical = 6294 ; free virtual = 16302
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2694.707 ; gain = 0.000 ; free physical = 8084 ; free virtual = 18605
+Read PlaceDB: Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2694.707 ; gain = 0.000 ; free physical = 8076 ; free virtual = 18597
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2694.707 ; gain = 0.000 ; free physical = 8076 ; free virtual = 18597
 Reading routing.
-Read RouteStorage: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2695.492 ; gain = 0.000 ; free physical = 6294 ; free virtual = 16302
-Read Physdb Files: Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2695.492 ; gain = 0.000 ; free physical = 6294 ; free virtual = 16302
-Restored from archive | CPU: 0.450000 secs | Memory: 14.152199 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2695.492 ; gain = 8.906 ; free physical = 6294 ; free virtual = 16302
+Read RouteStorage: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2694.707 ; gain = 0.000 ; free physical = 8076 ; free virtual = 18597
+Read Physdb Files: Time (s): cpu = 00:00:00.43 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2694.707 ; gain = 0.000 ; free physical = 8076 ; free virtual = 18597
+Restored from archive | CPU: 0.460000 secs | Memory: 14.152199 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2694.707 ; gain = 8.906 ; free physical = 8076 ; free virtual = 18597
 Generating merged BMM file for the design top 'ursa_vanilla_hybrid_wrapper'...
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2711.336 ; gain = 0.000 ; free physical = 6294 ; free virtual = 16302
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2710.551 ; gain = 0.000 ; free physical = 8076 ; free virtual = 18597
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 9 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
   SRLC32E => SRL16E: 6 instances
 
-open_run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2711.371 ; gain = 577.621 ; free physical = 6294 ; free virtual = 16302
+open_run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2710.586 ; gain = 578.625 ; free physical = 8076 ; free virtual = 18597
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 INFO: [Project 1-1918] Creating Hardware Platform: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.xsa ...
 INFO: [Project 1-1943] The Hardware Platform can be used for Hardware
 INFO: [Project 1-1941] Successfully created Hardware Platform: /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.xsa
 INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/Vivado/2023.2/data/embeddedsw) loading 0 seconds
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+Command: write_bitstream -force /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC DPIP-1] Input pipelining: DSP ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/shl_ln23_1_mid2_reg_529_reg input ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/shl_ln23_1_mid2_reg_529_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/bound_reg_511_reg multiplier stage ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/bound_reg_511_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_182/mul_i_reg_714_reg multiplier stage ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_182/mul_i_reg_714_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_182/mul_ln44_reg_731_reg multiplier stage ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_182/mul_ln44_reg_731_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/mul_ln131_1_reg_541_reg multiplier stage ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/mul_ln131_1_reg_541_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/shl_ln23_1_mid2_reg_529_reg multiplier stage ursa_vanilla_hybrid_i/mxm_execute_ursa_0/inst/shl_ln23_1_mid2_reg_529_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A2' of cell ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A3)*A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A4' of cell ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A3)+((~A3)*(~A6)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A6' of cell ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A1)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC RTSTAT-10] No routable loads: 33 net(s) have no routable loads. The problem bus(es) and/or net(s) are ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, ursa_vanilla_hybrid_i/axi_interconnect_2/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i... and (the first 15 of 21 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 10 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.bit...
+Creating bitstream...
+Writing bitstream /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.ebc...
+Creating essential bits data...
+This design has 1200344 essential bits out of 25697632 total (4.67%).
+Creating bitstream...
+Writing bitstream /home/ulisses/Projects/ursa/exp/output-stationary/bitstreams/ursa_vanilla_2x2_acc20_hybrid.ebd...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+84 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 3385.395 ; gain = 489.441 ; free physical = 7465 ; free virtual = 18042
 ==============================================================
- ursa_vanilla_2x2_acc20_hybrid OK. WNS = 0.015 ns
+ ursa_vanilla_2x2_acc20_hybrid OK. WNS = 0.749 ns, WHS = 0.015 ns
+ LUT 5417  FF 6286  DSP 9  BRAM 2.5
 ==============================================================
-INFO: [Common 17-206] Exiting Vivado at Sat Aug 22 20:43:08 2026...
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 30 14:25:27 2026...

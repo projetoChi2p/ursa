@@ -1,0 +1,28 @@
+/ {
+	amba_pl: amba_pl {
+		ranges;
+		compatible = "simple-bus";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		mxm_execute_ursa_0: mxm_execute_ursa@40000000 {
+			compatible = "xlnx,mxm-execute-ursa-1.0";
+			xlnx,ii = "x";
+			xlnx,s-axi-control-addr-width = <6>;
+			xlnx,s-axi-ap-addr-width = <6>;
+			xlnx,machine = <64>;
+			xlnx,rable = <0>;
+			xlnx,ip-name = "mxm_execute_ursa";
+			reg = <0x40000000 0x2000 0x40010000 0x2000>;
+			clocks = <&clkc 15>;
+			xlnx,clk-period = <10>;
+			xlnx,s-axi-control-data-width = <32>;
+			xlnx,s-axi-ap-data-width = <32>;
+			xlnx,edk-iptype = "PERIPHERAL";
+			status = "okay";
+			clock-names = "ap_clk";
+			xlnx,combinational = <0>;
+			xlnx,latency = <2>;
+			xlnx,name = "mxm_execute_ursa_0";
+		};
+	};
+};
