@@ -56,7 +56,7 @@ echo "Using $(${CMAKE_BIN} --version | head -1) from ${CMAKE_BIN}"
 
 cd ${ROOT_DIR}
 
-VITIS_DIR=${ROOT_DIR}/vitis
+VITIS_DIR=${ROOT_DIR}/vitis_component
 SRC_DIR=${VITIS_DIR}/src          # shared application sources
 OUT_DIR=${ROOT_DIR}/elfs
 WORK_DIR=${ROOT_DIR}/build_vitis  # scratch, one subdirectory per build

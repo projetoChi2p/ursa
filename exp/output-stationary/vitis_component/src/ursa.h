@@ -27,6 +27,11 @@
     #define BRAM
 #endif
 
+/* 0 = generated benchmark suite, 1 = shape table in free_run.cpp */
+#ifndef FREE_RUN
+  #define FREE_RUN 0
+#endif
+
 // ─── URSA control ────────────────────────────────────────────────────────────
 #define URSA_0_AP_BASEADDR          0x40000000  // s_axi_ap
 #define URSA_0_CTRL_BASEADDR        0x40010000  // s_axi_control
