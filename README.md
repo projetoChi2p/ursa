@@ -44,3 +44,16 @@ To test the system on ZedBoard, you must:
 
 The program used for testing, compatible with IPs generated via HLS, is located in vitis_app_component.
 - Note: If there are changes to the neural network, HLS parameters, or project structure, the program may require adjustments and may stop working correctly.
+
+
+
+
+To review
+python3 05_run_board.py --mode bench --variant vanilla-nci --hw-variant vanilla \
+        --layouts bram   --out results/times_bram_nci.csv
+
+python3 05_run_board.py --mode bench --variant vanilla-nci --hw-variant vanilla \
+        --layouts ocm    --out results/times_ocm_nci.csv
+
+python3 05_run_board.py --mode bench --variant vanilla-nci --hw-variant vanilla \
+        --layouts hybrid --out results/times_hybrid_nci.csv
