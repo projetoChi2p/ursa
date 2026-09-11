@@ -16,8 +16,22 @@
     #include "hls_stream.h"
 #endif
 
+//===============================================
+// Build parameters
+// Every value below can be overridden with -D from the command line.
+// The batch synthesis script uses this to sweep configurations without
+// editing the source. The values here are defaults for a local build.
+//===============================================
+
 // Systolic Array Size
-#define SA_SIZE 8
+#ifndef SA_SIZE
+    #define SA_SIZE 2
+#endif
+
+// Width of macc_t, the accumulator inside each PE
+#ifndef ACC_BITS
+    #define ACC_BITS 20
+#endif
 
 // Enable for debug
 // #define DEBUG
@@ -52,10 +66,5 @@ sa_result_t mxm_execute_ursa(
     int32_t *addr_c0,
     uint16_t m
 );
-
-// // Testbench
-// #define P 8
-// #define Q 8
-// #define M 8
 
 #endif /* __SETTINGS_H__ */

@@ -250,3 +250,22 @@ only 8 of those run, since the rest have P or Q equal to 8.
 
 Anything on OCM needs cache maintenance around the accelerator call. BRAM at
 0x40000000 is device memory and does not.
+
+
+
+MODE=cnn CACHE_I=off ./04_do_vitis.sh
+
+python3 05_run_board.py --mode cnn \
+        --variant vanilla-nci --hw-variant vanilla \
+        --layouts bram \
+        --out results/cnn_nci_bram.csv
+
+python3 05_run_board.py --mode cnn \
+        --variant vanilla-nci --hw-variant vanilla \
+        --layouts hybrid \
+        --out results/cnn_nci_hybrid.csv
+
+python3 05_run_board.py --mode cnn \
+        --variant vanilla-nci --hw-variant vanilla \
+        --layouts ocm \
+        --out results/cnn_nci_ocm.csv

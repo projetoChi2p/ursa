@@ -11,7 +11,7 @@ void fill_inputs_a(data_a_t *addr_a, data_a_t in_a[SA_SIZE], uint16_t t, uint16_
     INSERT A DATA LAYER IN THE LATERAL INTERFACE
     ************************************************/
     #pragma HLS PIPELINE II=1
-    for(uint16_t i=0;i<SA_SIZE;i++){
+    FILL_A: for(uint16_t i=0;i<SA_SIZE;i++){
         #pragma HLS UNROLL
         data_a_t *line_base_a = addr_a + i * m;
         /*...... INITIAL ZERO REGION .........*/
@@ -39,7 +39,7 @@ void fill_inputs_b(data_b_t *addr_b, uint16_t str_b, data_b_t in_b[SA_SIZE] ,uin
     INSERT A DATA LAYER IN THE UPPER INTERFACE
     ************************************************/
     #pragma HLS PIPELINE II=1
-    for(uint16_t j=0;j<SA_SIZE;j++){
+    FILL_B: for(uint16_t j=0;j<SA_SIZE;j++){
         #pragma HLS UNROLL
         data_b_t *line_base_b = addr_b + ( (str_b * (m-1) ) - (str_b*(t-j)) );
         /*...... INITIAL ZERO REGION .........*/
@@ -65,7 +65,7 @@ void fill_inputs_b(data_b_t *addr_b, uint16_t str_b, data_b_t in_b[SA_SIZE] ,uin
 void load_inputs_sa(SA *sa, data_a_t in_a[SA_SIZE], data_b_t in_b[SA_SIZE]){
     #pragma HLS PIPELINE II=1
 
-    for(uint16_t k=0;k<SA_SIZE;k++) {
+    LOAD_SA: for(uint16_t k=0;k<SA_SIZE;k++) {
         #pragma HLS UNROLL factor=SA_SIZE
         sa_input_a_b(sa,in_a[k],in_b[k],k);        
     }
@@ -91,15 +91,15 @@ sa_result_t mxm_execute_ursa(
     // processor arm interface
     #pragma HLS INTERFACE mode=m_axi port=casted_a0 bundle=aw offset=slave \
             num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \
-            max_write_burst_length=16  depth=200
+            max_write_burst_length=16  depth=4096
     
     #pragma HLS INTERFACE mode=m_axi port=casted_b0 bundle=bi offset=slave \
             num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \
-            max_write_burst_length=16  depth=200
+            max_write_burst_length=16  depth=4096
     
     #pragma HLS INTERFACE mode=m_axi port=casted_c0 bundle=ca offset=slave \
             num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \
-            max_write_burst_length=16  depth=200
+            max_write_burst_length=16  depth=4096
     
     #pragma HLS INTERFACE mode=s_axilite port=return bundle=ap register
     #pragma HLS INTERFACE mode=s_axilite port=a0_p   bundle=ap register
@@ -128,14 +128,29 @@ sa_result_t mxm_execute_ursa(
         uint16_t call_a = a0_p/SA_SIZE;
         uint16_t call_b = b0_q/SA_SIZE;
 
-        for(uint16_t i=0;i<call_a;i++){
-            for(uint16_t j=0;j<call_b;j++){
-                addr_sa_a = (data_a_t*)(casted_a0 + i * SA_SIZE * m);
-                addr_sa_b = (data_b_t*)(casted_b0 + j * SA_SIZE);
-                
+        //UM: 09/09/26
+        const uint32_t stride_a = (uint32_t)SA_SIZE * m;
+        const uint32_t stride_c = (uint32_t)SA_SIZE * b0_q;
+
+        uint32_t off_a = 0;   /* start of the current row of tiles, in A */
+        uint32_t off_c = 0;   /* start of the current row of tiles, in C */
+
+        TILE_ROW: for(uint16_t i=0;i<call_a;i++){
+            
+            //UM: 09/09/26
+            uint32_t off_b  = 0;        /* column offset within B */
+            uint32_t off_cj = off_c;    /* tile offset within C, carries both terms */
+
+            TILE_COL: for(uint16_t j=0;j<call_b;j++){
+                //UM: 09/09/26
+                // addr_sa_a = (data_a_t*)(casted_a0 + i * SA_SIZE * m);
+                // addr_sa_b = (data_b_t*)(casted_b0 + j * SA_SIZE);
+                addr_sa_a = (data_a_t*)(casted_a0 + off_a);
+                addr_sa_b = (data_b_t*)(casted_b0 + off_b);
+
                 /* ---- Computação SA ---- */
                 uint16_t t=0;
-                for(uint16_t k=0;k<m+SA_SIZE-1+SA_SIZE-1;k++){    
+                STREAM_K: for(uint16_t k=0;k<m+SA_SIZE-1+SA_SIZE-1;k++){    
                     #pragma HLS PIPELINE II=1
                     // step 1 - Fetches values ​​from BRAM_A and BRAM_B in parallel.      
                     fill_inputs_a(addr_sa_a,in_a,t,m);
@@ -148,13 +163,26 @@ sa_result_t mxm_execute_ursa(
                     sa_compute(&sa);
                     t++;
                 }
-                
-                /* ---- Flush do tile para C ---- */
-                // Fase 4 - Flush SA to BRAM_C            
-                addr_sa_c = (data_c_t*)(casted_c0 + (i*SA_SIZE*b0_q) + (j*SA_SIZE));
-                sa_store(&sa,addr_sa_c,b0_q);               
+            
+            // UM:09/09/26    
+            //     /* ---- Flush do tile para C ---- */
+            //     // Fase 4 - Flush SA to BRAM_C            
+            //     addr_sa_c = (data_c_t*)(casted_c0 + (i*SA_SIZE*b0_q) + (j*SA_SIZE));
+            //     sa_store(&sa,addr_sa_c,b0_q);               
+            //     sa_reset(&sa);
+            // }
+                /* ---- Flush the tile to C ---- */
+                // step 4 - Flush SA to BRAM_C
+                addr_sa_c = (data_c_t*)(casted_c0 + off_cj);
+                sa_store(&sa,addr_sa_c,b0_q);
                 sa_reset(&sa);
+
+                off_b  += SA_SIZE;
+                off_cj += SA_SIZE;
             }
+
+            off_a += stride_a;
+            off_c += stride_c;
         }
     }
 

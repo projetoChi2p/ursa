@@ -1,0 +1,113 @@
+
+
+================================================================
+== Vitis HLS Report for 'sa_reset'
+================================================================
+* Date:           Wed Sep  9 20:18:38 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        mxm_execute_ursa
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|      0 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specpipeline_ln12 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_0" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.cpp:12->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:32]   --->   Operation 2 'specpipeline' 'specpipeline_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%store_ln12 = store i20 0, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.cpp:12->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:32]   --->   Operation 3 'store' 'store_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%store_ln12 = store i20 0, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.cpp:12->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:32]   --->   Operation 4 'store' 'store_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%store_ln12 = store i20 0, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.cpp:12->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:32]   --->   Operation 5 'store' 'store_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%store_ln12 = store i20 0, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/pe.cpp:12->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:32]   --->   Operation 6 'store' 'store_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ret_ln35 = ret" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:35]   --->   Operation 7 'ret' 'ret_ln35' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,154 @@
+<stg><name>sa_reset</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="2" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="5" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<![CDATA[
+entry:0 %specpipeline_ln12 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_0
+
+]]></Node>
+<StgValue><ssdm name="specpipeline_ln12"/></StgValue>
+</operation>
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="0" op_0_bw="20" op_1_bw="20">
+<![CDATA[
+entry:1 %store_ln12 = store i20 0, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3
+
+]]></Node>
+<StgValue><ssdm name="store_ln12"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="0" op_0_bw="20" op_1_bw="20">
+<![CDATA[
+entry:2 %store_ln12 = store i20 0, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2
+
+]]></Node>
+<StgValue><ssdm name="store_ln12"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="0" op_0_bw="20" op_1_bw="20">
+<![CDATA[
+entry:3 %store_ln12 = store i20 0, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1
+
+]]></Node>
+<StgValue><ssdm name="store_ln12"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="0" op_0_bw="20" op_1_bw="20">
+<![CDATA[
+entry:4 %store_ln12 = store i20 0, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i
+
+]]></Node>
+<StgValue><ssdm name="store_ln12"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="0">
+<![CDATA[
+entry:5 %ret_ln35 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln35"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="9" name="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3"/></StgValue>
+</port>
+<port id="10" name="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2"/></StgValue>
+</port>
+<port id="11" name="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1"/></StgValue>
+</port>
+<port id="12" name="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="14" from="_ssdm_op_SpecPipeline" to="specpipeline_ln12" fromId="13" toId="2">
+</dataflow>
+<dataflow id="16" from="StgValue_15" to="specpipeline_ln12" fromId="15" toId="2">
+</dataflow>
+<dataflow id="18" from="StgValue_17" to="specpipeline_ln12" fromId="17" toId="2">
+</dataflow>
+<dataflow id="19" from="StgValue_17" to="specpipeline_ln12" fromId="17" toId="2">
+</dataflow>
+<dataflow id="20" from="StgValue_17" to="specpipeline_ln12" fromId="17" toId="2">
+</dataflow>
+<dataflow id="22" from="empty_0" to="specpipeline_ln12" fromId="21" toId="2">
+</dataflow>
+<dataflow id="24" from="StgValue_23" to="store_ln12" fromId="23" toId="3">
+</dataflow>
+<dataflow id="25" from="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3" to="store_ln12" fromId="9" toId="3">
+</dataflow>
+<dataflow id="26" from="StgValue_23" to="store_ln12" fromId="23" toId="4">
+</dataflow>
+<dataflow id="27" from="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2" to="store_ln12" fromId="10" toId="4">
+</dataflow>
+<dataflow id="28" from="StgValue_23" to="store_ln12" fromId="23" toId="5">
+</dataflow>
+<dataflow id="29" from="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1" to="store_ln12" fromId="11" toId="5">
+</dataflow>
+<dataflow id="30" from="StgValue_23" to="store_ln12" fromId="23" toId="6">
+</dataflow>
+<dataflow id="31" from="mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i" to="store_ln12" fromId="12" toId="6">
+</dataflow>
+</dataflows>
+
+
+</stg>

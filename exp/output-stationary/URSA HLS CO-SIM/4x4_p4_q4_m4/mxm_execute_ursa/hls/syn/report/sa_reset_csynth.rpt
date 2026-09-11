@@ -1,0 +1,131 @@
+
+
+================================================================
+== Vitis HLS Report for 'sa_reset'
+================================================================
+* Date:           Wed Sep  9 20:08:03 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        mxm_execute_ursa
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|      0 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|      -|    -|
+|Register         |        -|    -|       -|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|       0|      0|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|       0|      0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------------------------------------------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+|                                       RTL Ports                                      | Dir | Bits|  Protocol  |                                 Source Object                                 |    C Type    |
++--------------------------------------------------------------------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+|ap_ready                                                                              |  out|    1|  ap_ctrl_hs|                                                                       sa_reset|  return value|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10         |  out|   20|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld  |  out|    1|      ap_vld|  mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9          |  out|   20|      ap_vld|   mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld   |  out|    1|      ap_vld|   mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8          |  out|   20|      ap_vld|   mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld   |  out|    1|      ap_vld|   mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7          |  out|   20|      ap_vld|   mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld   |  out|    1|      ap_vld|   mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6          |  out|   20|      ap_vld|   mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6|       pointer|
+|mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld   |  out|    1|      ap_vld|   mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6|       pointer|
++--------------------------------------------------------------------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+
