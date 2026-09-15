@@ -70,8 +70,10 @@ ACC_BITS_LIST=(20)
 # mechanism. Later rounds will add the hardened variants.
 VARIANT=vanilla
 
-SUMMARY=${IP_REPO_PATH}/summary.csv
-echo "config,variant,sa_size,acc_bits,status" > ${SUMMARY}
+SUMMARY=${IP_REPO_PATH}/summary_ip-ursa.csv
+if [ ! -f ${SUMMARY} ]; then
+    echo "config,variant,sa_size,acc_bits,status" > ${SUMMARY}
+fi
 
 for sz in ${ARRAY_SZ[*]}; do
 for acc in ${ACC_BITS_LIST[*]}; do

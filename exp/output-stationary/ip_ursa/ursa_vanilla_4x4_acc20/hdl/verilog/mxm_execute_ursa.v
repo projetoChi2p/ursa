@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="mxm_execute_ursa_mxm_execute_ursa,hls_ip_2023_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=8,HLS_SYN_DSP=0,HLS_SYN_FF=5105,HLS_SYN_LUT=5954,HLS_VERSION=2023_2}" *)
+(* CORE_GENERATION_INFO="mxm_execute_ursa_mxm_execute_ursa,hls_ip_2023_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=8,HLS_SYN_DSP=0,HLS_SYN_FF=5095,HLS_SYN_LUT=6068,HLS_VERSION=2023_2}" *)
 
 module mxm_execute_ursa (
         ap_clk,
@@ -481,9 +481,9 @@ reg   [19:0] mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_
 reg   [19:0] mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8;
 reg   [19:0] mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7;
 reg   [19:0] mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6;
-wire    grp_sa_store_fu_343_ca_blk_n_AW;
-wire    grp_sa_store_fu_343_ca_blk_n_W;
-wire    grp_sa_store_fu_343_ca_blk_n_B;
+wire    grp_sa_store_fu_363_ca_blk_n_AW;
+wire    grp_sa_store_fu_363_ca_blk_n_W;
+wire    grp_sa_store_fu_363_ca_blk_n_B;
 reg    ca_blk_n_AW;
 reg    ca_blk_n_W;
 reg    ca_blk_n_B;
@@ -506,208 +506,205 @@ wire    ap_CS_fsm_state32;
 wire    ap_CS_fsm_state33;
 wire    ap_CS_fsm_state34;
 wire    ap_CS_fsm_state38;
-reg   [31:0] addr_c0_read_reg_638;
-reg   [31:0] addr_b0_read_reg_643;
-reg   [31:0] addr_a0_read_reg_648;
-reg   [15:0] m_read_reg_653;
+reg   [31:0] addr_c0_read_reg_720;
+reg   [31:0] addr_b0_read_reg_725;
+reg   [31:0] addr_a0_read_reg_730;
+reg   [15:0] m_read_reg_735;
 wire    ap_CS_fsm_state2;
-reg   [15:0] b0_q_read_reg_659;
-wire   [16:0] sub24_fu_438_p2;
-reg   [16:0] sub24_reg_665;
-wire   [13:0] call_b_cast_fu_444_p4;
-reg   [13:0] call_b_cast_reg_670;
-wire   [29:0] zext_ln154_1_fu_464_p1;
-reg   [29:0] zext_ln154_1_reg_675;
-wire   [27:0] zext_ln154_fu_468_p1;
-reg   [27:0] zext_ln154_reg_680;
-wire   [27:0] bound_fu_480_p2;
-reg   [27:0] bound_reg_685;
-wire   [13:0] select_ln131_fu_511_p3;
-reg   [13:0] select_ln131_reg_693;
+reg   [15:0] b0_q_read_reg_741;
+wire   [13:0] trunc_ln2_fu_479_p4;
+reg   [13:0] trunc_ln2_reg_750;
+wire   [17:0] stride_a_fu_493_p3;
+reg   [17:0] stride_a_reg_755;
+wire   [31:0] zext_ln186_1_fu_501_p1;
+reg   [31:0] zext_ln186_1_reg_760;
+wire   [17:0] stride_c_fu_505_p3;
+reg   [17:0] stride_c_reg_765;
+wire   [31:0] zext_ln187_fu_513_p1;
+reg   [31:0] zext_ln187_reg_770;
+wire   [16:0] sub22_fu_517_p2;
+reg   [16:0] sub22_reg_775;
+wire   [27:0] bound_fu_531_p2;
+reg   [27:0] bound_reg_780;
+wire   [15:0] select_ln189_fu_571_p3;
+reg   [15:0] select_ln189_reg_788;
 wire    ap_CS_fsm_state3;
-wire   [13:0] select_ln131_1_fu_525_p3;
-reg   [13:0] select_ln131_1_reg_698;
-wire   [29:0] mul_ln131_fu_557_p2;
-reg   [29:0] mul_ln131_reg_704;
+wire   [31:0] select_ln189_1_fu_584_p3;
+reg   [31:0] select_ln189_1_reg_795;
+wire   [31:0] select_ln192_1_fu_605_p3;
+reg   [31:0] select_ln192_1_reg_801;
+wire   [31:0] addr_sa_c_fu_663_p2;
+reg   [31:0] addr_sa_c_reg_806;
 wire    ap_CS_fsm_state4;
-wire   [27:0] mul_ln131_1_fu_565_p2;
-reg   [27:0] mul_ln131_1_reg_709;
-wire   [31:0] shl_ln23_1_mid2_fu_570_p3;
-reg   [31:0] shl_ln23_1_mid2_reg_714;
-wire    ap_CS_fsm_state5;
-wire   [15:0] shl_ln_fu_585_p3;
-reg   [15:0] shl_ln_reg_719;
-wire   [31:0] addr_sa_c_fu_612_p2;
-reg   [31:0] addr_sa_c_reg_725;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_done;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_idle;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_ready;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWVALID;
-wire   [31:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWADDR;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWID;
-wire   [31:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWLEN;
-wire   [2:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWSIZE;
-wire   [1:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWBURST;
-wire   [1:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWLOCK;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWCACHE;
-wire   [2:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWPROT;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWQOS;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWREGION;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWUSER;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WVALID;
-wire   [7:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WDATA;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WSTRB;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WLAST;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WID;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WUSER;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARVALID;
-wire   [31:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARADDR;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARID;
-wire   [31:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARLEN;
-wire   [2:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARSIZE;
-wire   [1:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARBURST;
-wire   [1:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARLOCK;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARCACHE;
-wire   [2:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARPROT;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARQOS;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARREGION;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARUSER;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_RREADY;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_BREADY;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWVALID;
-wire   [31:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWADDR;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWID;
-wire   [31:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWLEN;
-wire   [2:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWSIZE;
-wire   [1:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWBURST;
-wire   [1:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWLOCK;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWCACHE;
-wire   [2:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWPROT;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWQOS;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWREGION;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWUSER;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WVALID;
-wire   [7:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WDATA;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WSTRB;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WLAST;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WID;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WUSER;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARVALID;
-wire   [31:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARADDR;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARID;
-wire   [31:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARLEN;
-wire   [2:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARSIZE;
-wire   [1:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARBURST;
-wire   [1:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARLOCK;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARCACHE;
-wire   [2:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARPROT;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARQOS;
-wire   [3:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARREGION;
-wire   [0:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARUSER;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_RREADY;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_BREADY;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o_ap_vld;
-wire   [19:0] grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o;
-wire    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o_ap_vld;
-wire    grp_sa_store_fu_343_ap_start;
-wire    grp_sa_store_fu_343_ap_done;
-wire    grp_sa_store_fu_343_ap_idle;
-wire    grp_sa_store_fu_343_ap_ready;
-wire    grp_sa_store_fu_343_m_axi_ca_AWVALID;
-wire   [31:0] grp_sa_store_fu_343_m_axi_ca_AWADDR;
-wire   [0:0] grp_sa_store_fu_343_m_axi_ca_AWID;
-wire   [31:0] grp_sa_store_fu_343_m_axi_ca_AWLEN;
-wire   [2:0] grp_sa_store_fu_343_m_axi_ca_AWSIZE;
-wire   [1:0] grp_sa_store_fu_343_m_axi_ca_AWBURST;
-wire   [1:0] grp_sa_store_fu_343_m_axi_ca_AWLOCK;
-wire   [3:0] grp_sa_store_fu_343_m_axi_ca_AWCACHE;
-wire   [2:0] grp_sa_store_fu_343_m_axi_ca_AWPROT;
-wire   [3:0] grp_sa_store_fu_343_m_axi_ca_AWQOS;
-wire   [3:0] grp_sa_store_fu_343_m_axi_ca_AWREGION;
-wire   [0:0] grp_sa_store_fu_343_m_axi_ca_AWUSER;
-wire    grp_sa_store_fu_343_m_axi_ca_WVALID;
-wire   [31:0] grp_sa_store_fu_343_m_axi_ca_WDATA;
-wire   [3:0] grp_sa_store_fu_343_m_axi_ca_WSTRB;
-wire    grp_sa_store_fu_343_m_axi_ca_WLAST;
-wire   [0:0] grp_sa_store_fu_343_m_axi_ca_WID;
-wire   [0:0] grp_sa_store_fu_343_m_axi_ca_WUSER;
-wire    grp_sa_store_fu_343_m_axi_ca_ARVALID;
-wire   [31:0] grp_sa_store_fu_343_m_axi_ca_ARADDR;
-wire   [0:0] grp_sa_store_fu_343_m_axi_ca_ARID;
-wire   [31:0] grp_sa_store_fu_343_m_axi_ca_ARLEN;
-wire   [2:0] grp_sa_store_fu_343_m_axi_ca_ARSIZE;
-wire   [1:0] grp_sa_store_fu_343_m_axi_ca_ARBURST;
-wire   [1:0] grp_sa_store_fu_343_m_axi_ca_ARLOCK;
-wire   [3:0] grp_sa_store_fu_343_m_axi_ca_ARCACHE;
-wire   [2:0] grp_sa_store_fu_343_m_axi_ca_ARPROT;
-wire   [3:0] grp_sa_store_fu_343_m_axi_ca_ARQOS;
-wire   [3:0] grp_sa_store_fu_343_m_axi_ca_ARREGION;
-wire   [0:0] grp_sa_store_fu_343_m_axi_ca_ARUSER;
-wire    grp_sa_store_fu_343_m_axi_ca_RREADY;
-wire    grp_sa_store_fu_343_m_axi_ca_BREADY;
-wire    call_ln156_sa_reset_fu_383_ap_ready;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld;
-wire   [19:0] call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6;
-wire    call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_done;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_idle;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_ready;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWVALID;
+wire   [31:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWADDR;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWID;
+wire   [31:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWLEN;
+wire   [2:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWSIZE;
+wire   [1:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWBURST;
+wire   [1:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWLOCK;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWCACHE;
+wire   [2:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWPROT;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWQOS;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWREGION;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWUSER;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WVALID;
+wire   [7:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WDATA;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WSTRB;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WLAST;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WID;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WUSER;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARVALID;
+wire   [31:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARADDR;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARID;
+wire   [31:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARLEN;
+wire   [2:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARSIZE;
+wire   [1:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARBURST;
+wire   [1:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARLOCK;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARCACHE;
+wire   [2:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARPROT;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARQOS;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARREGION;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARUSER;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_RREADY;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_BREADY;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWVALID;
+wire   [31:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWADDR;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWID;
+wire   [31:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWLEN;
+wire   [2:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWSIZE;
+wire   [1:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWBURST;
+wire   [1:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWLOCK;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWCACHE;
+wire   [2:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWPROT;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWQOS;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWREGION;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWUSER;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WVALID;
+wire   [7:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WDATA;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WSTRB;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WLAST;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WID;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WUSER;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARVALID;
+wire   [31:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARADDR;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARID;
+wire   [31:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARLEN;
+wire   [2:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARSIZE;
+wire   [1:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARBURST;
+wire   [1:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARLOCK;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARCACHE;
+wire   [2:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARPROT;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARQOS;
+wire   [3:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARREGION;
+wire   [0:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARUSER;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_RREADY;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_BREADY;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o_ap_vld;
+wire   [19:0] grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o;
+wire    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o_ap_vld;
+wire    grp_sa_store_fu_363_ap_start;
+wire    grp_sa_store_fu_363_ap_done;
+wire    grp_sa_store_fu_363_ap_idle;
+wire    grp_sa_store_fu_363_ap_ready;
+wire    grp_sa_store_fu_363_m_axi_ca_AWVALID;
+wire   [31:0] grp_sa_store_fu_363_m_axi_ca_AWADDR;
+wire   [0:0] grp_sa_store_fu_363_m_axi_ca_AWID;
+wire   [31:0] grp_sa_store_fu_363_m_axi_ca_AWLEN;
+wire   [2:0] grp_sa_store_fu_363_m_axi_ca_AWSIZE;
+wire   [1:0] grp_sa_store_fu_363_m_axi_ca_AWBURST;
+wire   [1:0] grp_sa_store_fu_363_m_axi_ca_AWLOCK;
+wire   [3:0] grp_sa_store_fu_363_m_axi_ca_AWCACHE;
+wire   [2:0] grp_sa_store_fu_363_m_axi_ca_AWPROT;
+wire   [3:0] grp_sa_store_fu_363_m_axi_ca_AWQOS;
+wire   [3:0] grp_sa_store_fu_363_m_axi_ca_AWREGION;
+wire   [0:0] grp_sa_store_fu_363_m_axi_ca_AWUSER;
+wire    grp_sa_store_fu_363_m_axi_ca_WVALID;
+wire   [31:0] grp_sa_store_fu_363_m_axi_ca_WDATA;
+wire   [3:0] grp_sa_store_fu_363_m_axi_ca_WSTRB;
+wire    grp_sa_store_fu_363_m_axi_ca_WLAST;
+wire   [0:0] grp_sa_store_fu_363_m_axi_ca_WID;
+wire   [0:0] grp_sa_store_fu_363_m_axi_ca_WUSER;
+wire    grp_sa_store_fu_363_m_axi_ca_ARVALID;
+wire   [31:0] grp_sa_store_fu_363_m_axi_ca_ARADDR;
+wire   [0:0] grp_sa_store_fu_363_m_axi_ca_ARID;
+wire   [31:0] grp_sa_store_fu_363_m_axi_ca_ARLEN;
+wire   [2:0] grp_sa_store_fu_363_m_axi_ca_ARSIZE;
+wire   [1:0] grp_sa_store_fu_363_m_axi_ca_ARBURST;
+wire   [1:0] grp_sa_store_fu_363_m_axi_ca_ARLOCK;
+wire   [3:0] grp_sa_store_fu_363_m_axi_ca_ARCACHE;
+wire   [2:0] grp_sa_store_fu_363_m_axi_ca_ARPROT;
+wire   [3:0] grp_sa_store_fu_363_m_axi_ca_ARQOS;
+wire   [3:0] grp_sa_store_fu_363_m_axi_ca_ARREGION;
+wire   [0:0] grp_sa_store_fu_363_m_axi_ca_ARUSER;
+wire    grp_sa_store_fu_363_m_axi_ca_RREADY;
+wire    grp_sa_store_fu_363_m_axi_ca_BREADY;
+wire    call_ln232_sa_reset_fu_403_ap_ready;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld;
+wire   [19:0] call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6;
+wire    call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld;
 wire    aw_AWREADY;
 wire    aw_WREADY;
 reg    aw_ARVALID;
@@ -736,9 +733,9 @@ wire   [31:0] ca_RDATA;
 wire   [9:0] ca_RFIFONUM;
 wire    ca_BVALID;
 reg    ca_BREADY;
-reg    grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start_reg;
-wire    ap_CS_fsm_state6;
-reg    grp_sa_store_fu_343_ap_start_reg;
+reg    grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start_reg;
+wire    ap_CS_fsm_state5;
+reg    grp_sa_store_fu_363_ap_start_reg;
 wire    ap_CS_fsm_state16;
 reg   [38:0] ap_NS_fsm;
 wire    ap_NS_fsm_state17;
@@ -746,32 +743,33 @@ wire    ap_CS_fsm_state35;
 wire    ap_CS_fsm_state36;
 wire    ap_CS_fsm_state37;
 wire    ap_CS_fsm_state39;
-reg   [13:0] j_fu_198;
-wire   [13:0] add_ln132_fu_533_p2;
-wire   [0:0] icmp_ln131_fu_489_p2;
-reg   [13:0] i_fu_202;
-reg   [27:0] indvar_flatten_fu_206;
-wire   [27:0] add_ln131_fu_494_p2;
-wire   [16:0] m_cast_fu_434_p1;
-wire   [13:0] trunc_ln_fu_454_p4;
-wire   [13:0] bound_fu_480_p0;
-wire   [13:0] bound_fu_480_p1;
-wire   [0:0] icmp_ln132_fu_506_p2;
-wire   [13:0] add_ln131_1_fu_519_p2;
-wire   [13:0] mul_ln131_fu_557_p0;
-wire   [15:0] mul_ln131_fu_557_p1;
-wire   [13:0] mul_ln131_1_fu_565_p0;
-wire   [15:0] mul_ln131_1_fu_565_p1;
-wire   [29:0] zext_ln154_2_fu_594_p1;
-wire   [29:0] shl_ln154_mid2_fu_578_p3;
-wire   [29:0] add_ln154_fu_598_p2;
-wire   [31:0] shl_ln154_1_fu_604_p3;
+reg   [31:0] off_cj_fu_200;
+wire   [31:0] off_cj_2_fu_668_p2;
+wire   [0:0] icmp_ln192_fu_540_p2;
+reg   [13:0] j_fu_204;
+wire   [13:0] j_1_fu_625_p3;
+reg   [15:0] off_b_fu_208;
+wire   [15:0] add_ln234_fu_613_p2;
+reg   [31:0] off_a_fu_212;
+reg   [31:0] off_cj_1_fu_216;
+wire   [31:0] select_ln192_fu_592_p3;
+reg   [27:0] indvar_flatten_fu_220;
+wire   [27:0] add_ln192_fu_545_p2;
+wire   [16:0] zext_ln186_fu_489_p1;
+wire   [13:0] trunc_ln_fu_469_p4;
+wire   [13:0] bound_fu_531_p0;
+wire   [13:0] bound_fu_531_p1;
+wire   [0:0] icmp_ln198_fu_566_p2;
+wire   [31:0] add_ln239_fu_579_p2;
+wire   [31:0] add_ln238_fu_600_p2;
+wire   [13:0] add_ln198_fu_619_p2;
+wire   [31:0] shl_ln230_fu_658_p2;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
 wire    ap_ST_fsm_state3_blk;
 wire    ap_ST_fsm_state4_blk;
-wire    ap_ST_fsm_state5_blk;
-reg    ap_ST_fsm_state6_blk;
+reg    ap_ST_fsm_state5_blk;
+wire    ap_ST_fsm_state6_blk;
 wire    ap_ST_fsm_state7_blk;
 wire    ap_ST_fsm_state8_blk;
 wire    ap_ST_fsm_state9_blk;
@@ -824,10 +822,8 @@ wire    ap_ST_fsm_state37_blk;
 reg    ap_block_state38;
 reg    ap_ST_fsm_state38_blk;
 wire    ap_ST_fsm_state39_blk;
-wire   [27:0] bound_fu_480_p00;
-wire   [27:0] bound_fu_480_p10;
-wire   [27:0] mul_ln131_1_fu_565_p00;
-wire   [29:0] mul_ln131_fu_557_p00;
+wire   [27:0] bound_fu_531_p00;
+wire   [27:0] bound_fu_531_p10;
 wire    ap_ce_reg;
 wire   [7:0] ap_return;
 
@@ -856,55 +852,58 @@ initial begin
 #0 mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8 = 20'd0;
 #0 mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7 = 20'd0;
 #0 mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6 = 20'd0;
-#0 grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start_reg = 1'b0;
-#0 grp_sa_store_fu_343_ap_start_reg = 1'b0;
-#0 j_fu_198 = 14'd0;
-#0 i_fu_202 = 14'd0;
-#0 indvar_flatten_fu_206 = 28'd0;
+#0 grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start_reg = 1'b0;
+#0 grp_sa_store_fu_363_ap_start_reg = 1'b0;
+#0 off_cj_fu_200 = 32'd0;
+#0 j_fu_204 = 14'd0;
+#0 off_b_fu_208 = 16'd0;
+#0 off_a_fu_212 = 32'd0;
+#0 off_cj_1_fu_216 = 32'd0;
+#0 indvar_flatten_fu_220 = 28'd0;
 end
 
-mxm_execute_ursa_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3 grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246(
+mxm_execute_ursa_mxm_execute_ursa_Pipeline_STREAM_K grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start),
-    .ap_done(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_done),
-    .ap_idle(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_idle),
-    .ap_ready(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_ready),
-    .m_axi_aw_AWVALID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWVALID),
+    .ap_start(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start),
+    .ap_done(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_done),
+    .ap_idle(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_idle),
+    .ap_ready(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_ready),
+    .m_axi_aw_AWVALID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWVALID),
     .m_axi_aw_AWREADY(1'b0),
-    .m_axi_aw_AWADDR(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWADDR),
-    .m_axi_aw_AWID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWID),
-    .m_axi_aw_AWLEN(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWLEN),
-    .m_axi_aw_AWSIZE(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWSIZE),
-    .m_axi_aw_AWBURST(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWBURST),
-    .m_axi_aw_AWLOCK(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWLOCK),
-    .m_axi_aw_AWCACHE(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWCACHE),
-    .m_axi_aw_AWPROT(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWPROT),
-    .m_axi_aw_AWQOS(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWQOS),
-    .m_axi_aw_AWREGION(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWREGION),
-    .m_axi_aw_AWUSER(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_AWUSER),
-    .m_axi_aw_WVALID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WVALID),
+    .m_axi_aw_AWADDR(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWADDR),
+    .m_axi_aw_AWID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWID),
+    .m_axi_aw_AWLEN(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWLEN),
+    .m_axi_aw_AWSIZE(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWSIZE),
+    .m_axi_aw_AWBURST(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWBURST),
+    .m_axi_aw_AWLOCK(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWLOCK),
+    .m_axi_aw_AWCACHE(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWCACHE),
+    .m_axi_aw_AWPROT(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWPROT),
+    .m_axi_aw_AWQOS(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWQOS),
+    .m_axi_aw_AWREGION(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWREGION),
+    .m_axi_aw_AWUSER(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_AWUSER),
+    .m_axi_aw_WVALID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WVALID),
     .m_axi_aw_WREADY(1'b0),
-    .m_axi_aw_WDATA(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WDATA),
-    .m_axi_aw_WSTRB(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WSTRB),
-    .m_axi_aw_WLAST(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WLAST),
-    .m_axi_aw_WID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WID),
-    .m_axi_aw_WUSER(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_WUSER),
-    .m_axi_aw_ARVALID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARVALID),
+    .m_axi_aw_WDATA(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WDATA),
+    .m_axi_aw_WSTRB(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WSTRB),
+    .m_axi_aw_WLAST(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WLAST),
+    .m_axi_aw_WID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WID),
+    .m_axi_aw_WUSER(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_WUSER),
+    .m_axi_aw_ARVALID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARVALID),
     .m_axi_aw_ARREADY(aw_ARREADY),
-    .m_axi_aw_ARADDR(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARADDR),
-    .m_axi_aw_ARID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARID),
-    .m_axi_aw_ARLEN(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARLEN),
-    .m_axi_aw_ARSIZE(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARSIZE),
-    .m_axi_aw_ARBURST(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARBURST),
-    .m_axi_aw_ARLOCK(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARLOCK),
-    .m_axi_aw_ARCACHE(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARCACHE),
-    .m_axi_aw_ARPROT(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARPROT),
-    .m_axi_aw_ARQOS(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARQOS),
-    .m_axi_aw_ARREGION(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARREGION),
-    .m_axi_aw_ARUSER(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARUSER),
+    .m_axi_aw_ARADDR(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARADDR),
+    .m_axi_aw_ARID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARID),
+    .m_axi_aw_ARLEN(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARLEN),
+    .m_axi_aw_ARSIZE(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARSIZE),
+    .m_axi_aw_ARBURST(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARBURST),
+    .m_axi_aw_ARLOCK(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARLOCK),
+    .m_axi_aw_ARCACHE(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARCACHE),
+    .m_axi_aw_ARPROT(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARPROT),
+    .m_axi_aw_ARQOS(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARQOS),
+    .m_axi_aw_ARREGION(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARREGION),
+    .m_axi_aw_ARUSER(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARUSER),
     .m_axi_aw_RVALID(aw_RVALID),
-    .m_axi_aw_RREADY(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_RREADY),
+    .m_axi_aw_RREADY(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_RREADY),
     .m_axi_aw_RDATA(aw_RDATA),
     .m_axi_aw_RLAST(1'b0),
     .m_axi_aw_RID(1'd0),
@@ -912,45 +911,45 @@ mxm_execute_ursa_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3 grp_mxm_execute_ursa
     .m_axi_aw_RUSER(1'd0),
     .m_axi_aw_RRESP(2'd0),
     .m_axi_aw_BVALID(1'b0),
-    .m_axi_aw_BREADY(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_BREADY),
+    .m_axi_aw_BREADY(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_BREADY),
     .m_axi_aw_BRESP(2'd0),
     .m_axi_aw_BID(1'd0),
     .m_axi_aw_BUSER(1'd0),
-    .m_axi_bi_AWVALID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWVALID),
+    .m_axi_bi_AWVALID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWVALID),
     .m_axi_bi_AWREADY(1'b0),
-    .m_axi_bi_AWADDR(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWADDR),
-    .m_axi_bi_AWID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWID),
-    .m_axi_bi_AWLEN(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWLEN),
-    .m_axi_bi_AWSIZE(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWSIZE),
-    .m_axi_bi_AWBURST(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWBURST),
-    .m_axi_bi_AWLOCK(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWLOCK),
-    .m_axi_bi_AWCACHE(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWCACHE),
-    .m_axi_bi_AWPROT(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWPROT),
-    .m_axi_bi_AWQOS(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWQOS),
-    .m_axi_bi_AWREGION(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWREGION),
-    .m_axi_bi_AWUSER(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_AWUSER),
-    .m_axi_bi_WVALID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WVALID),
+    .m_axi_bi_AWADDR(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWADDR),
+    .m_axi_bi_AWID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWID),
+    .m_axi_bi_AWLEN(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWLEN),
+    .m_axi_bi_AWSIZE(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWSIZE),
+    .m_axi_bi_AWBURST(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWBURST),
+    .m_axi_bi_AWLOCK(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWLOCK),
+    .m_axi_bi_AWCACHE(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWCACHE),
+    .m_axi_bi_AWPROT(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWPROT),
+    .m_axi_bi_AWQOS(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWQOS),
+    .m_axi_bi_AWREGION(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWREGION),
+    .m_axi_bi_AWUSER(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_AWUSER),
+    .m_axi_bi_WVALID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WVALID),
     .m_axi_bi_WREADY(1'b0),
-    .m_axi_bi_WDATA(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WDATA),
-    .m_axi_bi_WSTRB(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WSTRB),
-    .m_axi_bi_WLAST(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WLAST),
-    .m_axi_bi_WID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WID),
-    .m_axi_bi_WUSER(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_WUSER),
-    .m_axi_bi_ARVALID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARVALID),
+    .m_axi_bi_WDATA(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WDATA),
+    .m_axi_bi_WSTRB(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WSTRB),
+    .m_axi_bi_WLAST(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WLAST),
+    .m_axi_bi_WID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WID),
+    .m_axi_bi_WUSER(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_WUSER),
+    .m_axi_bi_ARVALID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARVALID),
     .m_axi_bi_ARREADY(bi_ARREADY),
-    .m_axi_bi_ARADDR(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARADDR),
-    .m_axi_bi_ARID(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARID),
-    .m_axi_bi_ARLEN(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARLEN),
-    .m_axi_bi_ARSIZE(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARSIZE),
-    .m_axi_bi_ARBURST(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARBURST),
-    .m_axi_bi_ARLOCK(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARLOCK),
-    .m_axi_bi_ARCACHE(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARCACHE),
-    .m_axi_bi_ARPROT(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARPROT),
-    .m_axi_bi_ARQOS(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARQOS),
-    .m_axi_bi_ARREGION(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARREGION),
-    .m_axi_bi_ARUSER(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARUSER),
+    .m_axi_bi_ARADDR(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARADDR),
+    .m_axi_bi_ARID(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARID),
+    .m_axi_bi_ARLEN(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARLEN),
+    .m_axi_bi_ARSIZE(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARSIZE),
+    .m_axi_bi_ARBURST(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARBURST),
+    .m_axi_bi_ARLOCK(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARLOCK),
+    .m_axi_bi_ARCACHE(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARCACHE),
+    .m_axi_bi_ARPROT(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARPROT),
+    .m_axi_bi_ARQOS(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARQOS),
+    .m_axi_bi_ARREGION(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARREGION),
+    .m_axi_bi_ARUSER(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARUSER),
     .m_axi_bi_RVALID(bi_RVALID),
-    .m_axi_bi_RREADY(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_RREADY),
+    .m_axi_bi_RREADY(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_RREADY),
     .m_axi_bi_RDATA(bi_RDATA),
     .m_axi_bi_RLAST(1'b0),
     .m_axi_bi_RID(1'd0),
@@ -958,111 +957,117 @@ mxm_execute_ursa_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3 grp_mxm_execute_ursa
     .m_axi_bi_RUSER(1'd0),
     .m_axi_bi_RRESP(2'd0),
     .m_axi_bi_BVALID(1'b0),
-    .m_axi_bi_BREADY(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_BREADY),
+    .m_axi_bi_BREADY(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_BREADY),
     .m_axi_bi_BRESP(2'd0),
     .m_axi_bi_BID(1'd0),
     .m_axi_bi_BUSER(1'd0),
-    .sub24(sub24_reg_665),
-    .zext_ln129(b0_q_read_reg_659),
-    .m_cast(m_read_reg_653),
-    .m(m_read_reg_653),
-    .shl_ln23_1_mid2(shl_ln23_1_mid2_reg_714),
-    .addr_a0(addr_a0_read_reg_648),
-    .zext_ln51(shl_ln_reg_719),
-    .addr_b0(addr_b0_read_reg_643),
-    .shl_ln(shl_ln_reg_719),
+    .sub22(sub22_reg_775),
+    .zext_ln187_1(stride_c_reg_765),
+    .zext_ln183_1(b0_q_read_reg_741),
+    .b0_q(b0_q_read_reg_741),
+    .zext_ln186(m_read_reg_735),
+    .zext_ln183(b0_q_read_reg_741),
+    .m(m_read_reg_735),
+    .select_ln192_1(select_ln192_1_reg_801),
+    .addr_a0(addr_a0_read_reg_730),
+    .zext_ln186_1(stride_a_reg_755),
+    .addr_b0(addr_b0_read_reg_725),
+    .zext_ln76(select_ln189_reg_788),
+    .zext_ln183_2(b0_q_read_reg_741),
+    .zext_ln207_2(select_ln189_reg_788),
+    .zext_ln207_1(select_ln189_reg_788),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o_ap_vld),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_i(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o_ap_vld(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o_ap_vld)
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o_ap_vld(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o_ap_vld)
 );
 
-mxm_execute_ursa_sa_store grp_sa_store_fu_343(
+mxm_execute_ursa_sa_store grp_sa_store_fu_363(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_sa_store_fu_343_ap_start),
-    .ap_done(grp_sa_store_fu_343_ap_done),
-    .ap_idle(grp_sa_store_fu_343_ap_idle),
-    .ap_ready(grp_sa_store_fu_343_ap_ready),
-    .m_axi_ca_AWVALID(grp_sa_store_fu_343_m_axi_ca_AWVALID),
+    .ap_start(grp_sa_store_fu_363_ap_start),
+    .ap_done(grp_sa_store_fu_363_ap_done),
+    .ap_idle(grp_sa_store_fu_363_ap_idle),
+    .ap_ready(grp_sa_store_fu_363_ap_ready),
+    .m_axi_ca_AWVALID(grp_sa_store_fu_363_m_axi_ca_AWVALID),
     .m_axi_ca_AWREADY(ca_AWREADY),
-    .m_axi_ca_AWADDR(grp_sa_store_fu_343_m_axi_ca_AWADDR),
-    .m_axi_ca_AWID(grp_sa_store_fu_343_m_axi_ca_AWID),
-    .m_axi_ca_AWLEN(grp_sa_store_fu_343_m_axi_ca_AWLEN),
-    .m_axi_ca_AWSIZE(grp_sa_store_fu_343_m_axi_ca_AWSIZE),
-    .m_axi_ca_AWBURST(grp_sa_store_fu_343_m_axi_ca_AWBURST),
-    .m_axi_ca_AWLOCK(grp_sa_store_fu_343_m_axi_ca_AWLOCK),
-    .m_axi_ca_AWCACHE(grp_sa_store_fu_343_m_axi_ca_AWCACHE),
-    .m_axi_ca_AWPROT(grp_sa_store_fu_343_m_axi_ca_AWPROT),
-    .m_axi_ca_AWQOS(grp_sa_store_fu_343_m_axi_ca_AWQOS),
-    .m_axi_ca_AWREGION(grp_sa_store_fu_343_m_axi_ca_AWREGION),
-    .m_axi_ca_AWUSER(grp_sa_store_fu_343_m_axi_ca_AWUSER),
-    .m_axi_ca_WVALID(grp_sa_store_fu_343_m_axi_ca_WVALID),
+    .m_axi_ca_AWADDR(grp_sa_store_fu_363_m_axi_ca_AWADDR),
+    .m_axi_ca_AWID(grp_sa_store_fu_363_m_axi_ca_AWID),
+    .m_axi_ca_AWLEN(grp_sa_store_fu_363_m_axi_ca_AWLEN),
+    .m_axi_ca_AWSIZE(grp_sa_store_fu_363_m_axi_ca_AWSIZE),
+    .m_axi_ca_AWBURST(grp_sa_store_fu_363_m_axi_ca_AWBURST),
+    .m_axi_ca_AWLOCK(grp_sa_store_fu_363_m_axi_ca_AWLOCK),
+    .m_axi_ca_AWCACHE(grp_sa_store_fu_363_m_axi_ca_AWCACHE),
+    .m_axi_ca_AWPROT(grp_sa_store_fu_363_m_axi_ca_AWPROT),
+    .m_axi_ca_AWQOS(grp_sa_store_fu_363_m_axi_ca_AWQOS),
+    .m_axi_ca_AWREGION(grp_sa_store_fu_363_m_axi_ca_AWREGION),
+    .m_axi_ca_AWUSER(grp_sa_store_fu_363_m_axi_ca_AWUSER),
+    .m_axi_ca_WVALID(grp_sa_store_fu_363_m_axi_ca_WVALID),
     .m_axi_ca_WREADY(ca_WREADY),
-    .m_axi_ca_WDATA(grp_sa_store_fu_343_m_axi_ca_WDATA),
-    .m_axi_ca_WSTRB(grp_sa_store_fu_343_m_axi_ca_WSTRB),
-    .m_axi_ca_WLAST(grp_sa_store_fu_343_m_axi_ca_WLAST),
-    .m_axi_ca_WID(grp_sa_store_fu_343_m_axi_ca_WID),
-    .m_axi_ca_WUSER(grp_sa_store_fu_343_m_axi_ca_WUSER),
-    .m_axi_ca_ARVALID(grp_sa_store_fu_343_m_axi_ca_ARVALID),
+    .m_axi_ca_WDATA(grp_sa_store_fu_363_m_axi_ca_WDATA),
+    .m_axi_ca_WSTRB(grp_sa_store_fu_363_m_axi_ca_WSTRB),
+    .m_axi_ca_WLAST(grp_sa_store_fu_363_m_axi_ca_WLAST),
+    .m_axi_ca_WID(grp_sa_store_fu_363_m_axi_ca_WID),
+    .m_axi_ca_WUSER(grp_sa_store_fu_363_m_axi_ca_WUSER),
+    .m_axi_ca_ARVALID(grp_sa_store_fu_363_m_axi_ca_ARVALID),
     .m_axi_ca_ARREADY(1'b0),
-    .m_axi_ca_ARADDR(grp_sa_store_fu_343_m_axi_ca_ARADDR),
-    .m_axi_ca_ARID(grp_sa_store_fu_343_m_axi_ca_ARID),
-    .m_axi_ca_ARLEN(grp_sa_store_fu_343_m_axi_ca_ARLEN),
-    .m_axi_ca_ARSIZE(grp_sa_store_fu_343_m_axi_ca_ARSIZE),
-    .m_axi_ca_ARBURST(grp_sa_store_fu_343_m_axi_ca_ARBURST),
-    .m_axi_ca_ARLOCK(grp_sa_store_fu_343_m_axi_ca_ARLOCK),
-    .m_axi_ca_ARCACHE(grp_sa_store_fu_343_m_axi_ca_ARCACHE),
-    .m_axi_ca_ARPROT(grp_sa_store_fu_343_m_axi_ca_ARPROT),
-    .m_axi_ca_ARQOS(grp_sa_store_fu_343_m_axi_ca_ARQOS),
-    .m_axi_ca_ARREGION(grp_sa_store_fu_343_m_axi_ca_ARREGION),
-    .m_axi_ca_ARUSER(grp_sa_store_fu_343_m_axi_ca_ARUSER),
+    .m_axi_ca_ARADDR(grp_sa_store_fu_363_m_axi_ca_ARADDR),
+    .m_axi_ca_ARID(grp_sa_store_fu_363_m_axi_ca_ARID),
+    .m_axi_ca_ARLEN(grp_sa_store_fu_363_m_axi_ca_ARLEN),
+    .m_axi_ca_ARSIZE(grp_sa_store_fu_363_m_axi_ca_ARSIZE),
+    .m_axi_ca_ARBURST(grp_sa_store_fu_363_m_axi_ca_ARBURST),
+    .m_axi_ca_ARLOCK(grp_sa_store_fu_363_m_axi_ca_ARLOCK),
+    .m_axi_ca_ARCACHE(grp_sa_store_fu_363_m_axi_ca_ARCACHE),
+    .m_axi_ca_ARPROT(grp_sa_store_fu_363_m_axi_ca_ARPROT),
+    .m_axi_ca_ARQOS(grp_sa_store_fu_363_m_axi_ca_ARQOS),
+    .m_axi_ca_ARREGION(grp_sa_store_fu_363_m_axi_ca_ARREGION),
+    .m_axi_ca_ARUSER(grp_sa_store_fu_363_m_axi_ca_ARUSER),
     .m_axi_ca_RVALID(1'b0),
-    .m_axi_ca_RREADY(grp_sa_store_fu_343_m_axi_ca_RREADY),
+    .m_axi_ca_RREADY(grp_sa_store_fu_363_m_axi_ca_RREADY),
     .m_axi_ca_RDATA(32'd0),
     .m_axi_ca_RLAST(1'b0),
     .m_axi_ca_RID(1'd0),
@@ -1070,12 +1075,12 @@ mxm_execute_ursa_sa_store grp_sa_store_fu_343(
     .m_axi_ca_RUSER(1'd0),
     .m_axi_ca_RRESP(2'd0),
     .m_axi_ca_BVALID(ca_BVALID),
-    .m_axi_ca_BREADY(grp_sa_store_fu_343_m_axi_ca_BREADY),
+    .m_axi_ca_BREADY(grp_sa_store_fu_363_m_axi_ca_BREADY),
     .m_axi_ca_BRESP(2'd0),
     .m_axi_ca_BID(1'd0),
     .m_axi_ca_BUSER(1'd0),
-    .out_r(addr_sa_c_reg_725),
-    .b0_q(b0_q_read_reg_659),
+    .out_r(addr_sa_c_reg_806),
+    .b0_q(b0_q_read_reg_741),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19),
@@ -1092,45 +1097,45 @@ mxm_execute_ursa_sa_store grp_sa_store_fu_343(
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7),
     .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6(mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6),
-    .ca_blk_n_AW(grp_sa_store_fu_343_ca_blk_n_AW),
-    .ca_blk_n_W(grp_sa_store_fu_343_ca_blk_n_W),
-    .ca_blk_n_B(grp_sa_store_fu_343_ca_blk_n_B)
+    .ca_blk_n_AW(grp_sa_store_fu_363_ca_blk_n_AW),
+    .ca_blk_n_W(grp_sa_store_fu_363_ca_blk_n_W),
+    .ca_blk_n_B(grp_sa_store_fu_363_ca_blk_n_B)
 );
 
-mxm_execute_ursa_sa_reset call_ln156_sa_reset_fu_383(
-    .ap_ready(call_ln156_sa_reset_fu_383_ap_ready),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6),
-    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld(call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld)
+mxm_execute_ursa_sa_reset call_ln232_sa_reset_fu_403(
+    .ap_ready(call_ln232_sa_reset_fu_403_ap_ready),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6),
+    .mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld(call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld)
 );
 
 mxm_execute_ursa_ap_s_axi #(
@@ -1269,8 +1274,8 @@ aw_m_axi_U(
     .ACLK_EN(1'b1),
     .I_ARVALID(aw_ARVALID),
     .I_ARREADY(aw_ARREADY),
-    .I_ARADDR(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARADDR),
-    .I_ARLEN(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARLEN),
+    .I_ARADDR(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARADDR),
+    .I_ARLEN(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARLEN),
     .I_RVALID(aw_RVALID),
     .I_RREADY(aw_RREADY),
     .I_RDATA(aw_RDATA),
@@ -1359,8 +1364,8 @@ bi_m_axi_U(
     .ACLK_EN(1'b1),
     .I_ARVALID(bi_ARVALID),
     .I_ARREADY(bi_ARREADY),
-    .I_ARADDR(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARADDR),
-    .I_ARLEN(grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARLEN),
+    .I_ARADDR(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARADDR),
+    .I_ARLEN(grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARLEN),
     .I_RVALID(bi_RVALID),
     .I_RREADY(bi_RREADY),
     .I_RDATA(bi_RDATA),
@@ -1457,12 +1462,12 @@ ca_m_axi_U(
     .I_RFIFONUM(ca_RFIFONUM),
     .I_AWVALID(ca_AWVALID),
     .I_AWREADY(ca_AWREADY),
-    .I_AWADDR(grp_sa_store_fu_343_m_axi_ca_AWADDR),
-    .I_AWLEN(grp_sa_store_fu_343_m_axi_ca_AWLEN),
+    .I_AWADDR(grp_sa_store_fu_363_m_axi_ca_AWADDR),
+    .I_AWLEN(grp_sa_store_fu_363_m_axi_ca_AWLEN),
     .I_WVALID(ca_WVALID),
     .I_WREADY(ca_WREADY),
-    .I_WDATA(grp_sa_store_fu_343_m_axi_ca_WDATA),
-    .I_WSTRB(grp_sa_store_fu_343_m_axi_ca_WSTRB),
+    .I_WDATA(grp_sa_store_fu_363_m_axi_ca_WDATA),
+    .I_WSTRB(grp_sa_store_fu_363_m_axi_ca_WSTRB),
     .I_BVALID(ca_BVALID),
     .I_BREADY(ca_BREADY)
 );
@@ -1473,34 +1478,10 @@ mxm_execute_ursa_mul_14ns_14ns_28_1_1 #(
     .din0_WIDTH( 14 ),
     .din1_WIDTH( 14 ),
     .dout_WIDTH( 28 ))
-mul_14ns_14ns_28_1_1_U86(
-    .din0(bound_fu_480_p0),
-    .din1(bound_fu_480_p1),
-    .dout(bound_fu_480_p2)
-);
-
-mxm_execute_ursa_mul_14ns_16ns_30_1_1 #(
-    .ID( 1 ),
-    .NUM_STAGE( 1 ),
-    .din0_WIDTH( 14 ),
-    .din1_WIDTH( 16 ),
-    .dout_WIDTH( 30 ))
-mul_14ns_16ns_30_1_1_U87(
-    .din0(mul_ln131_fu_557_p0),
-    .din1(mul_ln131_fu_557_p1),
-    .dout(mul_ln131_fu_557_p2)
-);
-
-mxm_execute_ursa_mul_14ns_16ns_28_1_1 #(
-    .ID( 1 ),
-    .NUM_STAGE( 1 ),
-    .din0_WIDTH( 14 ),
-    .din1_WIDTH( 16 ),
-    .dout_WIDTH( 28 ))
-mul_14ns_16ns_28_1_1_U88(
-    .din0(mul_ln131_1_fu_565_p0),
-    .din1(mul_ln131_1_fu_565_p1),
-    .dout(mul_ln131_1_fu_565_p2)
+mul_14ns_14ns_28_1_1_U89(
+    .din0(bound_fu_531_p0),
+    .din1(bound_fu_531_p1),
+    .dout(bound_fu_531_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -1513,177 +1494,201 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start_reg <= 1'b0;
+        grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state5)) begin
-            grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start_reg <= 1'b1;
-        end else if ((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_ready == 1'b1)) begin
-            grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state4)) begin
+            grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start_reg <= 1'b1;
+        end else if ((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_ready == 1'b1)) begin
+            grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_sa_store_fu_343_ap_start_reg <= 1'b0;
+        grp_sa_store_fu_363_ap_start_reg <= 1'b0;
     end else begin
         if (((1'b1 == ap_NS_fsm_state17) & (1'b1 == ap_CS_fsm_state16))) begin
-            grp_sa_store_fu_343_ap_start_reg <= 1'b1;
-        end else if ((grp_sa_store_fu_343_ap_ready == 1'b1)) begin
-            grp_sa_store_fu_343_ap_start_reg <= 1'b0;
+            grp_sa_store_fu_363_ap_start_reg <= 1'b1;
+        end else if ((grp_sa_store_fu_363_ap_ready == 1'b1)) begin
+            grp_sa_store_fu_363_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        i_fu_202 <= 14'd0;
-    end else if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd0))) begin
-        i_fu_202 <= select_ln131_1_fu_525_p3;
+        indvar_flatten_fu_220 <= 28'd0;
+    end else if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd0))) begin
+        indvar_flatten_fu_220 <= add_ln192_fu_545_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        indvar_flatten_fu_206 <= 28'd0;
-    end else if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd0))) begin
-        indvar_flatten_fu_206 <= add_ln131_fu_494_p2;
+        j_fu_204 <= 14'd0;
+    end else if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd0))) begin
+        j_fu_204 <= j_1_fu_625_p3;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9 <= call_ln232_sa_reset_fu_403_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9;
+    end else if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9 <= grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        j_fu_198 <= 14'd0;
-    end else if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd0))) begin
-        j_fu_198 <= add_ln132_fu_533_p2;
+        off_a_fu_212 <= 32'd0;
+    end else if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd0))) begin
+        off_a_fu_212 <= select_ln192_1_fu_605_p3;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10_o;
+    if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        off_b_fu_208 <= 16'd0;
+    end else if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd0))) begin
+        off_b_fu_208 <= add_ln234_fu_613_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11_o;
+    if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        off_cj_1_fu_216 <= 32'd0;
+    end else if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd0))) begin
+        off_cj_1_fu_216 <= select_ln192_fu_592_p3;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8_o;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state39))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9 <= call_ln156_sa_reset_fu_383_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9;
-    end else if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9 <= grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9_o;
+    if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        off_cj_fu_200 <= 32'd0;
+    end else if ((1'b1 == ap_CS_fsm_state4)) begin
+        off_cj_fu_200 <= off_cj_2_fu_668_p2;
     end
 end
 
@@ -1695,17 +1700,15 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        addr_a0_read_reg_648 <= addr_a0;
-        addr_b0_read_reg_643 <= addr_b0;
-        addr_c0_read_reg_638 <= addr_c0;
+        addr_a0_read_reg_730 <= addr_a0;
+        addr_b0_read_reg_725 <= addr_b0;
+        addr_c0_read_reg_720 <= addr_c0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state5)) begin
-        addr_sa_c_reg_725 <= addr_sa_c_fu_612_p2;
-        shl_ln23_1_mid2_reg_714[31 : 2] <= shl_ln23_1_mid2_fu_570_p3[31 : 2];
-        shl_ln_reg_719[15 : 2] <= shl_ln_fu_585_p3[15 : 2];
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        addr_sa_c_reg_806 <= addr_sa_c_fu_663_p2;
     end
 end
 
@@ -1717,13 +1720,15 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        b0_q_read_reg_659 <= b0_q_0_data_reg;
-        bound_reg_685 <= bound_fu_480_p2;
-        call_b_cast_reg_670 <= {{b0_q_0_data_reg[15:2]}};
-        m_read_reg_653 <= m_0_data_reg;
-        sub24_reg_665 <= sub24_fu_438_p2;
-        zext_ln154_1_reg_675[15 : 0] <= zext_ln154_1_fu_464_p1[15 : 0];
-        zext_ln154_reg_680[15 : 0] <= zext_ln154_fu_468_p1[15 : 0];
+        b0_q_read_reg_741 <= b0_q_0_data_reg;
+        bound_reg_780 <= bound_fu_531_p2;
+        m_read_reg_735 <= m_0_data_reg;
+        stride_a_reg_755[17 : 2] <= stride_a_fu_493_p3[17 : 2];
+        stride_c_reg_765[17 : 2] <= stride_c_fu_505_p3[17 : 2];
+        sub22_reg_775 <= sub22_fu_517_p2;
+        trunc_ln2_reg_750 <= {{b0_q_0_data_reg[15:2]}};
+        zext_ln186_1_reg_760[17 : 2] <= zext_ln186_1_fu_501_p1[17 : 2];
+        zext_ln187_reg_770[17 : 2] <= zext_ln187_fu_513_p1[17 : 2];
     end
 end
 
@@ -1734,21 +1739,15 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        mul_ln131_1_reg_709 <= mul_ln131_1_fu_565_p2;
-        mul_ln131_reg_704 <= mul_ln131_fu_557_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        select_ln131_1_reg_698 <= select_ln131_1_fu_525_p3;
-        select_ln131_reg_693 <= select_ln131_fu_511_p3;
+        select_ln189_1_reg_795 <= select_ln189_1_fu_584_p3;
+        select_ln189_reg_788 <= select_ln189_fu_571_p3;
+        select_ln192_1_reg_801 <= select_ln192_1_fu_605_p3;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state2) | ((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd1)))) begin
+    if (((1'b1 == ap_CS_fsm_state2) | ((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd1)))) begin
         a0_p_0_ack_out = 1'b1;
     end else begin
         a0_p_0_ack_out = 1'b0;
@@ -1943,15 +1942,15 @@ assign ap_ST_fsm_state3_blk = 1'b0;
 
 assign ap_ST_fsm_state4_blk = 1'b0;
 
-assign ap_ST_fsm_state5_blk = 1'b0;
-
 always @ (*) begin
-    if ((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_done == 1'b0)) begin
-        ap_ST_fsm_state6_blk = 1'b1;
+    if ((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_done == 1'b0)) begin
+        ap_ST_fsm_state5_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state6_blk = 1'b0;
+        ap_ST_fsm_state5_blk = 1'b0;
     end
 end
+
+assign ap_ST_fsm_state6_blk = 1'b0;
 
 assign ap_ST_fsm_state7_blk = 1'b0;
 
@@ -1960,7 +1959,7 @@ assign ap_ST_fsm_state8_blk = 1'b0;
 assign ap_ST_fsm_state9_blk = 1'b0;
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd1))) begin
+    if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -1976,7 +1975,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd1))) begin
+    if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd1))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -1984,23 +1983,23 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state6))) begin
-        aw_ARVALID = grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_ARVALID;
+    if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state5))) begin
+        aw_ARVALID = grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_ARVALID;
     end else begin
         aw_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state6))) begin
-        aw_RREADY = grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_aw_RREADY;
+    if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state5))) begin
+        aw_RREADY = grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_aw_RREADY;
     end else begin
         aw_RREADY = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state2) | ((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd1)))) begin
+    if (((1'b1 == ap_CS_fsm_state2) | ((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd1)))) begin
         b0_q_0_ack_out = 1'b1;
     end else begin
         b0_q_0_ack_out = 1'b0;
@@ -2008,16 +2007,16 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state6))) begin
-        bi_ARVALID = grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_ARVALID;
+    if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state5))) begin
+        bi_ARVALID = grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_ARVALID;
     end else begin
         bi_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state6))) begin
-        bi_RREADY = grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_m_axi_bi_RREADY;
+    if (((1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state5))) begin
+        bi_RREADY = grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_m_axi_bi_RREADY;
     end else begin
         bi_RREADY = 1'b0;
     end
@@ -2025,7 +2024,7 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state38) | (1'b1 == ap_CS_fsm_state34) | (1'b1 == ap_CS_fsm_state33) | (1'b1 == ap_CS_fsm_state32) | (1'b1 == ap_CS_fsm_state31) | (1'b1 == ap_CS_fsm_state30) | (1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28) | (1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26) | (1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state24) | (1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21) | (1'b1 == ap_CS_fsm_state20) | (1'b1 == ap_CS_fsm_state19) | (1'b1 == ap_CS_fsm_state18) | (1'b1 == ap_CS_fsm_state17) | (1'b1 == ap_CS_fsm_state37) | (1'b1 == ap_CS_fsm_state36) | (1'b1 == ap_CS_fsm_state35))) begin
-        ca_AWVALID = grp_sa_store_fu_343_m_axi_ca_AWVALID;
+        ca_AWVALID = grp_sa_store_fu_363_m_axi_ca_AWVALID;
     end else begin
         ca_AWVALID = 1'b0;
     end
@@ -2033,7 +2032,7 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state38) | (1'b1 == ap_CS_fsm_state34) | (1'b1 == ap_CS_fsm_state33) | (1'b1 == ap_CS_fsm_state32) | (1'b1 == ap_CS_fsm_state31) | (1'b1 == ap_CS_fsm_state30) | (1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28) | (1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26) | (1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state24) | (1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21) | (1'b1 == ap_CS_fsm_state20) | (1'b1 == ap_CS_fsm_state19) | (1'b1 == ap_CS_fsm_state18) | (1'b1 == ap_CS_fsm_state17) | (1'b1 == ap_CS_fsm_state37) | (1'b1 == ap_CS_fsm_state36) | (1'b1 == ap_CS_fsm_state35))) begin
-        ca_BREADY = grp_sa_store_fu_343_m_axi_ca_BREADY;
+        ca_BREADY = grp_sa_store_fu_363_m_axi_ca_BREADY;
     end else begin
         ca_BREADY = 1'b0;
     end
@@ -2041,7 +2040,7 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state38) | (1'b1 == ap_CS_fsm_state34) | (1'b1 == ap_CS_fsm_state33) | (1'b1 == ap_CS_fsm_state32) | (1'b1 == ap_CS_fsm_state31) | (1'b1 == ap_CS_fsm_state30) | (1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28) | (1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26) | (1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state24) | (1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21) | (1'b1 == ap_CS_fsm_state20) | (1'b1 == ap_CS_fsm_state19) | (1'b1 == ap_CS_fsm_state18) | (1'b1 == ap_CS_fsm_state17) | (1'b1 == ap_CS_fsm_state37) | (1'b1 == ap_CS_fsm_state36) | (1'b1 == ap_CS_fsm_state35))) begin
-        ca_WVALID = grp_sa_store_fu_343_m_axi_ca_WVALID;
+        ca_WVALID = grp_sa_store_fu_363_m_axi_ca_WVALID;
     end else begin
         ca_WVALID = 1'b0;
     end
@@ -2049,7 +2048,7 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state38) | (1'b1 == ap_CS_fsm_state34) | (1'b1 == ap_CS_fsm_state33) | (1'b1 == ap_CS_fsm_state32) | (1'b1 == ap_CS_fsm_state31) | (1'b1 == ap_CS_fsm_state30) | (1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28) | (1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26) | (1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state24) | (1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21) | (1'b1 == ap_CS_fsm_state20) | (1'b1 == ap_CS_fsm_state19) | (1'b1 == ap_CS_fsm_state18) | (1'b1 == ap_CS_fsm_state17))) begin
-        ca_blk_n_AW = grp_sa_store_fu_343_ca_blk_n_AW;
+        ca_blk_n_AW = grp_sa_store_fu_363_ca_blk_n_AW;
     end else begin
         ca_blk_n_AW = 1'b1;
     end
@@ -2057,7 +2056,7 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state38) | (1'b1 == ap_CS_fsm_state34) | (1'b1 == ap_CS_fsm_state33) | (1'b1 == ap_CS_fsm_state32) | (1'b1 == ap_CS_fsm_state31) | (1'b1 == ap_CS_fsm_state30) | (1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28) | (1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26) | (1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state24) | (1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21) | (1'b1 == ap_CS_fsm_state20) | (1'b1 == ap_CS_fsm_state19) | (1'b1 == ap_CS_fsm_state18) | (1'b1 == ap_CS_fsm_state17))) begin
-        ca_blk_n_B = grp_sa_store_fu_343_ca_blk_n_B;
+        ca_blk_n_B = grp_sa_store_fu_363_ca_blk_n_B;
     end else begin
         ca_blk_n_B = 1'b1;
     end
@@ -2065,14 +2064,14 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state38) | (1'b1 == ap_CS_fsm_state34) | (1'b1 == ap_CS_fsm_state33) | (1'b1 == ap_CS_fsm_state32) | (1'b1 == ap_CS_fsm_state31) | (1'b1 == ap_CS_fsm_state30) | (1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28) | (1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26) | (1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state24) | (1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21) | (1'b1 == ap_CS_fsm_state20) | (1'b1 == ap_CS_fsm_state19) | (1'b1 == ap_CS_fsm_state18) | (1'b1 == ap_CS_fsm_state17))) begin
-        ca_blk_n_W = grp_sa_store_fu_343_ca_blk_n_W;
+        ca_blk_n_W = grp_sa_store_fu_363_ca_blk_n_W;
     end else begin
         ca_blk_n_W = 1'b1;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state2) | ((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd1)))) begin
+    if (((1'b1 == ap_CS_fsm_state2) | ((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd1)))) begin
         m_0_ack_out = 1'b1;
     end else begin
         m_0_ack_out = 1'b0;
@@ -2092,7 +2091,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state3;
         end
         ap_ST_fsm_state3 : begin
-            if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln131_fu_489_p2 == 1'd1))) begin
+            if (((1'b1 == ap_CS_fsm_state3) & (icmp_ln192_fu_540_p2 == 1'd1))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state4;
@@ -2102,14 +2101,14 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state5;
         end
         ap_ST_fsm_state5 : begin
-            ap_NS_fsm = ap_ST_fsm_state6;
+            if (((grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+                ap_NS_fsm = ap_ST_fsm_state6;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state5;
+            end
         end
         ap_ST_fsm_state6 : begin
-            if (((grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-                ap_NS_fsm = ap_ST_fsm_state7;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state6;
-            end
+            ap_NS_fsm = ap_ST_fsm_state7;
         end
         ap_ST_fsm_state7 : begin
             ap_NS_fsm = ap_ST_fsm_state8;
@@ -2292,15 +2291,17 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln131_1_fu_519_p2 = (i_fu_202 + 14'd1);
+assign add_ln192_fu_545_p2 = (indvar_flatten_fu_220 + 28'd1);
 
-assign add_ln131_fu_494_p2 = (indvar_flatten_fu_206 + 28'd1);
+assign add_ln198_fu_619_p2 = (j_fu_204 + 14'd1);
 
-assign add_ln132_fu_533_p2 = (select_ln131_fu_511_p3 + 14'd1);
+assign add_ln234_fu_613_p2 = (select_ln189_fu_571_p3 + 16'd4);
 
-assign add_ln154_fu_598_p2 = (zext_ln154_2_fu_594_p1 + shl_ln154_mid2_fu_578_p3);
+assign add_ln238_fu_600_p2 = (zext_ln186_1_reg_760 + off_a_fu_212);
 
-assign addr_sa_c_fu_612_p2 = (shl_ln154_1_fu_604_p3 + addr_c0_read_reg_638);
+assign add_ln239_fu_579_p2 = (zext_ln187_reg_770 + off_cj_1_fu_216);
+
+assign addr_sa_c_fu_663_p2 = (shl_ln230_fu_658_p2 + addr_c0_read_reg_720);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -2360,149 +2361,141 @@ assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
 assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
 
-assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
-
 assign ap_NS_fsm_state17 = ap_NS_fsm[32'd16];
 
 always @ (*) begin
-    ap_block_state17 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state17 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state18 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state18 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state19 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state19 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state20 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state20 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state21 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state21 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state22 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state22 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state23 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state23 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state24 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state24 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state25 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state25 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state26 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state26 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state27 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state27 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state28 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state28 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state29 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state29 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state30 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state30 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state31 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state31 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state32 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state32 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state33 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state33 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state34 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state34 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
-    ap_block_state38 = ((grp_sa_store_fu_343_ca_blk_n_W & grp_sa_store_fu_343_ca_blk_n_B & grp_sa_store_fu_343_ca_blk_n_AW) == 1'b0);
+    ap_block_state38 = ((grp_sa_store_fu_363_ca_blk_n_W & grp_sa_store_fu_363_ca_blk_n_B & grp_sa_store_fu_363_ca_blk_n_AW) == 1'b0);
 end
 
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign bound_fu_480_p0 = bound_fu_480_p00;
+assign bound_fu_531_p0 = bound_fu_531_p00;
 
-assign bound_fu_480_p00 = trunc_ln_fu_454_p4;
+assign bound_fu_531_p00 = trunc_ln_fu_469_p4;
 
-assign bound_fu_480_p1 = bound_fu_480_p10;
+assign bound_fu_531_p1 = bound_fu_531_p10;
 
-assign bound_fu_480_p10 = call_b_cast_fu_444_p4;
+assign bound_fu_531_p10 = trunc_ln2_fu_479_p4;
 
-assign call_b_cast_fu_444_p4 = {{b0_q_0_data_reg[15:2]}};
+assign grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start = grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_260_ap_start_reg;
 
-assign grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start = grp_mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3_fu_246_ap_start_reg;
+assign grp_sa_store_fu_363_ap_start = grp_sa_store_fu_363_ap_start_reg;
 
-assign grp_sa_store_fu_343_ap_start = grp_sa_store_fu_343_ap_start_reg;
+assign icmp_ln192_fu_540_p2 = ((indvar_flatten_fu_220 == bound_reg_780) ? 1'b1 : 1'b0);
 
-assign icmp_ln131_fu_489_p2 = ((indvar_flatten_fu_206 == bound_reg_685) ? 1'b1 : 1'b0);
+assign icmp_ln198_fu_566_p2 = ((j_fu_204 == trunc_ln2_reg_750) ? 1'b1 : 1'b0);
 
-assign icmp_ln132_fu_506_p2 = ((j_fu_198 == call_b_cast_reg_670) ? 1'b1 : 1'b0);
+assign j_1_fu_625_p3 = ((icmp_ln198_fu_566_p2[0:0] == 1'b1) ? 14'd1 : add_ln198_fu_619_p2);
 
-assign m_cast_fu_434_p1 = m_0_data_reg;
+assign off_cj_2_fu_668_p2 = (select_ln189_1_reg_795 + 32'd4);
 
-assign mul_ln131_1_fu_565_p0 = mul_ln131_1_fu_565_p00;
+assign select_ln189_1_fu_584_p3 = ((icmp_ln198_fu_566_p2[0:0] == 1'b1) ? add_ln239_fu_579_p2 : off_cj_fu_200);
 
-assign mul_ln131_1_fu_565_p00 = select_ln131_1_reg_698;
+assign select_ln189_fu_571_p3 = ((icmp_ln198_fu_566_p2[0:0] == 1'b1) ? 16'd0 : off_b_fu_208);
 
-assign mul_ln131_1_fu_565_p1 = zext_ln154_reg_680;
+assign select_ln192_1_fu_605_p3 = ((icmp_ln198_fu_566_p2[0:0] == 1'b1) ? add_ln238_fu_600_p2 : off_a_fu_212);
 
-assign mul_ln131_fu_557_p0 = mul_ln131_fu_557_p00;
+assign select_ln192_fu_592_p3 = ((icmp_ln198_fu_566_p2[0:0] == 1'b1) ? add_ln239_fu_579_p2 : off_cj_1_fu_216);
 
-assign mul_ln131_fu_557_p00 = select_ln131_1_reg_698;
+assign shl_ln230_fu_658_p2 = select_ln189_1_reg_795 << 32'd2;
 
-assign mul_ln131_fu_557_p1 = zext_ln154_1_reg_675;
+assign stride_a_fu_493_p3 = {{m_0_data_reg}, {2'd0}};
 
-assign select_ln131_1_fu_525_p3 = ((icmp_ln132_fu_506_p2[0:0] == 1'b1) ? add_ln131_1_fu_519_p2 : i_fu_202);
+assign stride_c_fu_505_p3 = {{b0_q_0_data_reg}, {2'd0}};
 
-assign select_ln131_fu_511_p3 = ((icmp_ln132_fu_506_p2[0:0] == 1'b1) ? 14'd0 : j_fu_198);
+assign sub22_fu_517_p2 = (zext_ln186_fu_489_p1 + 17'd6);
 
-assign shl_ln154_1_fu_604_p3 = {{add_ln154_fu_598_p2}, {2'd0}};
+assign trunc_ln2_fu_479_p4 = {{b0_q_0_data_reg[15:2]}};
 
-assign shl_ln154_mid2_fu_578_p3 = {{mul_ln131_1_reg_709}, {2'd0}};
+assign trunc_ln_fu_469_p4 = {{a0_p_0_data_reg[15:2]}};
 
-assign shl_ln23_1_mid2_fu_570_p3 = {{mul_ln131_reg_704}, {2'd0}};
+assign zext_ln186_1_fu_501_p1 = stride_a_fu_493_p3;
 
-assign shl_ln_fu_585_p3 = {{select_ln131_reg_693}, {2'd0}};
+assign zext_ln186_fu_489_p1 = m_0_data_reg;
 
-assign sub24_fu_438_p2 = (m_cast_fu_434_p1 + 17'd6);
-
-assign trunc_ln_fu_454_p4 = {{a0_p_0_data_reg[15:2]}};
-
-assign zext_ln154_1_fu_464_p1 = m_0_data_reg;
-
-assign zext_ln154_2_fu_594_p1 = shl_ln_fu_585_p3;
-
-assign zext_ln154_fu_468_p1 = b0_q_0_data_reg;
+assign zext_ln187_fu_513_p1 = stride_c_fu_505_p3;
 
 always @ (posedge ap_clk) begin
-    zext_ln154_1_reg_675[29:16] <= 14'b00000000000000;
-    zext_ln154_reg_680[27:16] <= 12'b000000000000;
-    shl_ln23_1_mid2_reg_714[1:0] <= 2'b00;
-    shl_ln_reg_719[1:0] <= 2'b00;
+    stride_a_reg_755[1:0] <= 2'b00;
+    zext_ln186_1_reg_760[1:0] <= 2'b00;
+    zext_ln186_1_reg_760[31:18] <= 14'b00000000000000;
+    stride_c_reg_765[1:0] <= 2'b00;
+    zext_ln187_reg_770[1:0] <= 2'b00;
+    zext_ln187_reg_770[31:18] <= 14'b00000000000000;
 end
 
 endmodule //mxm_execute_ursa

@@ -10,8 +10,7 @@ void fill_inputs_a(data_a_t *addr_a, data_a_t in_a[SA_SIZE], uint16_t t, uint16_
     /************************************************
     INSERT A DATA LAYER IN THE LATERAL INTERFACE
     ************************************************/
-    // #pragma HLS PIPELINE II=1
-    #pragma HLS INLINE off
+    #pragma HLS PIPELINE II=1
     FILL_A: for(uint16_t i=0;i<SA_SIZE;i++){
         #pragma HLS UNROLL
         data_a_t *line_base_a = addr_a + i * m;
@@ -39,8 +38,7 @@ void fill_inputs_b(data_b_t *addr_b, uint16_t str_b, data_b_t in_b[SA_SIZE] ,uin
     /************************************************
     INSERT A DATA LAYER IN THE UPPER INTERFACE
     ************************************************/
-    // #pragma HLS PIPELINE II=1
-    #pragma HLS INLINE off
+    #pragma HLS PIPELINE II=1
     FILL_B: for(uint16_t j=0;j<SA_SIZE;j++){
         #pragma HLS UNROLL
         /* The address is computed inside the guard. Hoisting it above the
@@ -69,8 +67,7 @@ void fill_inputs_b(data_b_t *addr_b, uint16_t str_b, data_b_t in_b[SA_SIZE] ,uin
 // loading inputs in SA
 //===============================================
 void load_inputs_sa(SA *sa, data_a_t in_a[SA_SIZE], data_b_t in_b[SA_SIZE]){
-    // #pragma HLS PIPELINE II=1
-    #pragma HLS INLINE off
+    #pragma HLS PIPELINE II=1
     LOAD_SA: for(uint16_t k=0;k<SA_SIZE;k++) {
         #pragma HLS UNROLL factor=SA_SIZE
         sa_input_a_b(sa,in_a[k],in_b[k],k);        
@@ -170,8 +167,7 @@ sa_result_t mxm_execute_ursa(
                 /* ---- SA computation ---- */
                 uint16_t t=0;
                 STREAM_K: for(uint16_t k=0;k<m+SA_SIZE-1+SA_SIZE-1;k++){
-                    // #pragma HLS PIPELINE II=1
-                    #pragma HLS PIPELINE off
+                    #pragma HLS PIPELINE II=1
 
                     // step 1 - Fetches values from BRAM_A and BRAM_B in parallel.
                     fill_inputs_a(addr_sa_a,in_a,t,m);

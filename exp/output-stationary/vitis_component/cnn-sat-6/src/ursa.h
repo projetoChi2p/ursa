@@ -20,11 +20,11 @@
 // tree serves every configuration. The defaults below only apply to a manual
 // build with no -D flags.
 #ifndef SA_SIZE
-    #define SA_SIZE 8
+    #define SA_SIZE 16
 #endif
 
 #if !defined(BRAM) && !defined(OCM) && !defined(HYBRID)
-    #define OCM
+    #define HYBRID
 #endif
 
 /* Cache axis. Both are passed by the build script; the defaults only apply to

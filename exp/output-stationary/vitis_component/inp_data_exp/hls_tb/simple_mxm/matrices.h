@@ -18,7 +18,7 @@
  * and M sets how many iterations the shell's k loop makes.
  */
 #ifndef P
-  #define P 2
+  #define P 4
 #endif
 #ifndef Q
   #define Q 2

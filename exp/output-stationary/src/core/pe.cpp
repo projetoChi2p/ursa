@@ -13,7 +13,8 @@ void pe_reset(PE *pe) {
 }
 
 void pe_compute(PE *pe) {
-    #pragma HLS UNROLL
+    // this pragma does not working
+    // #pragma HLS UNROLL
     pe->ri = pe->li;
     pe->bw = pe->tw;
     pe->ba += pe->li * pe->tw;

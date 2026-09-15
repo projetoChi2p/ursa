@@ -377,7 +377,6 @@ static void print_inference(uint16_t image_index, uint8_t gold, uint8_t predicte
 }
 #endif
 
-
 // http://patorjk.com/software/taag/#f=Colossal
 // 888b     d888          d8b
 // 8888b   d8888          Y8P

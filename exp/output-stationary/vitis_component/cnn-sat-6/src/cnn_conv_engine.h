@@ -53,6 +53,19 @@ extern gpool_t g_pooling_buffer[POOLING_CH_OUT];
 #define TIMER_TRANSFER  2
 #define TIMER_GEMM      3
 
+
+#if !defined(SA_SIZE) || !defined(BRAM_AW_SIZE)
+    #error "SA_SIZE ou BRAM_AW_SIZE nao definidos. Inclua ursa.h antes."
+#endif
+
+#define AW_READ_END_1 (ADDR_WEIGHTS_CONV1 + CONV1_PADDED_ROW * CONV1_COL)
+#define AW_READ_END_2 (ADDR_WEIGHTS_CONV2 + CONV2_PADDED_ROW * CONV2_COL)
+#define AW_READ_END_3 (ADDR_WEIGHTS_CONV3 + CONV3_PADDED_ROW * CONV3_COL)
+
+#if (AW_READ_END_1 > BRAM_AW_SIZE) || (AW_READ_END_2 > BRAM_AW_SIZE) || (AW_READ_END_3 > BRAM_AW_SIZE)
+    #error "Leitura de A pelo URSA ultrapassa BRAM_AW_SIZE. Reordene as camadas."
+#endif
+
 /* Zeroes the three stage channels. Call once before the timed pass. */
 void conv_engine_profile_reset(void);
 

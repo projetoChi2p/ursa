@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2023.2 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Sat Aug 22 19:25:47 2026</td></tr>
+<tr><td><b>Date</b></td><td>Mon Sep 14 22:21:15 2026</td></tr>
 <tr><td><b>Host</b></td><td>ulisses-thinkpad running 64-bit Ubuntu 22.04.5 LTS</td></tr>
 <tr><td><b>Command</b></td><td>/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/ulisses/Projects/ursa/exp/output-stationary/build_hls.ws/ursa/hls_config.cfg --work_dir /home/ulisses/Projects/ursa/exp/output-stationary/build_hls.ws/ursa </td></tr>
 </table></center><br>
@@ -3432,6 +3432,17 @@ window.onload = function () { addSorting(); }
 <th align="left">Categories</th>
 <th align="left" width="350">Details</th>
 <th align="left" width="380">Resolution</th>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">Kernel</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">**** Estimated Fmax: 98.30 MHz
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
 <td align="left">1</td>
@@ -3462,7 +3473,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Latency Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Latency</td>
-<td align="left">Cannot flatten loop 'VITIS_LOOP_132_2' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=132">shell.cpp</a>) in function 'mxm_execute_ursa' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+<td align="left">Cannot flatten loop 'TILE_COL' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=198">shell.cpp</a>) in function 'mxm_execute_ursa' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3473,7 +3484,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3' (loop 'VITIS_LOOP_138_3'): Unable to schedule bus request operation ('aw_load_1_req', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=141">shell.cpp</a>) on port 'aw' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=141">shell.cpp</a>) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_1_req', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=210">shell.cpp</a>) on port 'aw' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=210">shell.cpp</a>) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3484,7 +3495,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 2, Depth = 17, loop 'VITIS_LOOP_138_3'
+<td align="left">Pipelining result : Target II = 1, Final II = 2, Depth = 17, loop 'STREAM_K'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3550,7 +3561,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">Estimated clock period (15.201 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+<td align="left">Estimated clock period (10.173 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3562,11 +3573,10 @@ window.onload = function () { addSorting(); }
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
 <td align="left">The critical path in module 'mxm_execute_ursa' consists of the following:
-	'load' operation 15 bit ('j_load', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=132">shell.cpp</a>) on local variable 'j', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=132">shell.cpp</a> [70]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln132', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=132">shell.cpp</a>) [74]  (1.944 ns)
-	'select' operation 15 bit ('select_ln131_1', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=131">shell.cpp</a>) [77]  (0.754 ns)
-	'mul' operation 31 bit ('mul_ln131', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=131">shell.cpp</a>) [79]  (5.580 ns)
-	'call' operation 0 bit ('_ln78', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=78">shell.cpp</a>) to 'mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3' [85]  (6.923 ns)
+	'load' operation 32 bit ('off_a_load', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=238">shell.cpp</a>) on local variable 'off_a', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=189">shell.cpp</a> [81]  (0.000 ns)
+	'add' operation 32 bit ('add_ln238', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=238">shell.cpp</a>) [90]  (2.552 ns)
+	'select' operation 32 bit ('select_ln192_1', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=192">shell.cpp</a>) [91]  (0.698 ns)
+	'call' operation 0 bit ('_ln186', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=186">shell.cpp</a>) to 'mxm_execute_ursa_Pipeline_STREAM_K' [92]  (6.923 ns)
 
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
@@ -3590,17 +3600,6 @@ window.onload = function () { addSorting(); }
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
 <td align="left">**** Loop Constraint Status: All loop constraints were NOT satisfied.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">15</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">**** Estimated Fmax: 65.79 MHz
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>

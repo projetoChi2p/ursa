@@ -236,7 +236,7 @@ static int populate_outdata_with_ca(
             }
         }
     }
-
+  
     return EXIT_SUCCESS;
 }
 
@@ -278,6 +278,20 @@ static unsigned int save_layer_with_padding(
         }
     }
 
+    return count;
+}
+
+static unsigned int save_layer_compact(
+    volatile weight_t *mem,
+    unsigned int      *index_ptr,
+    const weight_t    *weights,
+    unsigned int       row,
+    unsigned int       col)
+{
+    unsigned int count = row * col;
+    for (unsigned int i = 0; i < count; i++) {
+        mem[(*index_ptr)++] = weights[i];
+    }
     return count;
 }
 
@@ -327,44 +341,79 @@ static int check_weigths_into_mem(weight_t* mem_check)
 }
 #endif /* CHECK_WEIGHTS */
 
-// Used by INPUT
-int populate_aw_with_all_the_weights(weight_t* aw)
-{
-    unsigned int index = 0;
-    unsigned int total_weights = 0;
+#if SA_SIZE >= 16
+    int populate_aw_with_all_the_weights(weight_t* aw)
+    {
+        unsigned int index = 0;
+        unsigned int total_weights = 0;
 
-#ifdef CNN_NETWORK_T3
+    #ifdef CNN_NETWORK_T3
 
-    unsigned int count_weights_1 = save_layer_with_padding(aw, &index, g_weights_q_1.weights,
-                                CONV1_CH_OUT, CONV1_WH_KERNEL * CONV1_WH_KERNEL * CONV1_CH_IN, 1);
+        unsigned int count_weights_3 = save_layer_compact(aw, &index, g_weights_q_3.weights,
+                                        CONV3_CH_OUT, CONV3_WH_KERNEL * CONV3_WH_KERNEL * CONV3_CH_IN);
 
-    unsigned int count_weights_2 = save_layer_with_padding(aw, &index, g_weights_q_2.weights,
-                                CONV2_CH_OUT, CONV2_WH_KERNEL * CONV2_WH_KERNEL * CONV2_CH_IN, 2);
+        unsigned int count_weights_1 = save_layer_compact(aw, &index, g_weights_q_1.weights,
+                                        CONV1_CH_OUT, CONV1_WH_KERNEL * CONV1_WH_KERNEL * CONV1_CH_IN);
 
-    unsigned int count_weights_3 = save_layer_with_padding(aw, &index, g_weights_q_3.weights,
-                                CONV3_CH_OUT, CONV3_WH_KERNEL * CONV3_WH_KERNEL * CONV3_CH_IN, 3);
+        unsigned int count_weights_2 = save_layer_compact(aw, &index, g_weights_q_2.weights,
+                                        CONV2_CH_OUT, CONV2_WH_KERNEL * CONV2_WH_KERNEL * CONV2_CH_IN);
 
-    total_weights = count_weights_1 + count_weights_2 + count_weights_3;
+        total_weights = count_weights_1 + count_weights_2 + count_weights_3;
 
-    if (total_weights != TOTAL_NUM_WEIGHTS) {
-        send_status(total_weights, __LINE__);
-        return EXIT_FAILURE;
+        if (total_weights != TOTAL_NUM_WEIGHTS) {
+            send_status(total_weights, __LINE__);
+            return EXIT_FAILURE;
+        }
+
+        /* Weights are static. This is the only flush of A in the whole run, and
+        it sits outside the timed interval. */
+        FLUSH_A(aw, (uint32_t)total_weights * sizeof(weight_t));
+
+    #endif /* CNN_NETWORK_T3 */
+
+        return EXIT_SUCCESS;
     }
 
-#ifdef CHECK_WEIGHTS
-    if (check_weigths_into_mem(aw) != EXIT_SUCCESS) {
-        return EXIT_FAILURE;
+#else
+    //Used by INPUT
+    int populate_aw_with_all_the_weights(weight_t* aw)
+    {
+        unsigned int index = 0;
+        unsigned int total_weights = 0;
+
+    #ifdef CNN_NETWORK_T3
+
+        unsigned int count_weights_1 = save_layer_with_padding(aw, &index, g_weights_q_1.weights,
+                                    CONV1_CH_OUT, CONV1_WH_KERNEL * CONV1_WH_KERNEL * CONV1_CH_IN, 1);
+
+        unsigned int count_weights_2 = save_layer_with_padding(aw, &index, g_weights_q_2.weights,
+                                    CONV2_CH_OUT, CONV2_WH_KERNEL * CONV2_WH_KERNEL * CONV2_CH_IN, 2);
+
+        unsigned int count_weights_3 = save_layer_with_padding(aw, &index, g_weights_q_3.weights,
+                                    CONV3_CH_OUT, CONV3_WH_KERNEL * CONV3_WH_KERNEL * CONV3_CH_IN, 3);
+
+        total_weights = count_weights_1 + count_weights_2 + count_weights_3;
+
+        if (total_weights != TOTAL_NUM_WEIGHTS) {
+            send_status(total_weights, __LINE__);
+            return EXIT_FAILURE;
+        }
+
+    #ifdef CHECK_WEIGHTS
+        if (check_weigths_into_mem(aw) != EXIT_SUCCESS) {
+            return EXIT_FAILURE;
+        }
+    #endif
+
+        /* Weights are static. This is the only flush of A in the whole run, and
+        it sits outside the timed interval. */
+        FLUSH_A(aw, (uint32_t)total_weights * sizeof(weight_t));
+
+    #endif /* CNN_NETWORK_T3 */
+
+        return EXIT_SUCCESS;
     }
 #endif
-
-    /* Weights are static. This is the only flush of A in the whole run, and
-       it sits outside the timed interval. */
-    FLUSH_A(aw, (uint32_t)total_weights * sizeof(weight_t));
-
-#endif /* CNN_NETWORK_T3 */
-
-    return EXIT_SUCCESS;
-}
 
 #ifdef USE_URSA
 static int populate_bi_with_scratchpad_bi(

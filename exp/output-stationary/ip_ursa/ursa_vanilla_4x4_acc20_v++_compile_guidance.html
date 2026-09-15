@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2023.2 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Sat Aug 22 19:26:29 2026</td></tr>
+<tr><td><b>Date</b></td><td>Mon Sep 14 22:21:58 2026</td></tr>
 <tr><td><b>Host</b></td><td>ulisses-thinkpad running 64-bit Ubuntu 22.04.5 LTS</td></tr>
 <tr><td><b>Command</b></td><td>/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/ulisses/Projects/ursa/exp/output-stationary/build_hls.ws/ursa/hls_config.cfg --work_dir /home/ulisses/Projects/ursa/exp/output-stationary/build_hls.ws/ursa </td></tr>
 </table></center><br>
@@ -3434,13 +3434,90 @@ window.onload = function () { addSorting(); }
 <th align="left" width="380">Resolution</th>
 </tr>
 <tr>
+<td align="left">1</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Interface</td>
+<td align="left">Multiple burst writes of length 4 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/sa.cpp#line=92">sa.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Interface</td>
+<td align="left">Multiple burst writes of length 4 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Interface</td>
+<td align="left">Multiple burst writes of length 4 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/sa.cpp#line=95">sa.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Latency</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Latency Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Latency</td>
+<td align="left">Cannot flatten loop 'TILE_COL' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=198">shell.cpp</a>) in function 'mxm_execute_ursa' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_1_req', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=210">shell.cpp</a>) on port 'aw' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=210">shell.cpp</a>) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_2_req', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=210">shell.cpp</a>) on port 'aw' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=210">shell.cpp</a>) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">Kernel</td>
+<td align="left">WARNING</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
+<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_3_req', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=210">shell.cpp</a>) on port 'aw' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=210">shell.cpp</a>) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
 <td align="left">8</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 4, Depth = 19, loop 'VITIS_LOOP_138_3'
+<td align="left">Pipelining result : Target II = 1, Final II = 4, Depth = 19, loop 'STREAM_K'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3562,83 +3639,6 @@ window.onload = function () { addSorting(); }
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
 <td align="left">**** Estimated Fmax: 136.99 MHz
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Interface</td>
-<td align="left">Multiple burst writes of length 4 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/sa.cpp#line=92">sa.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Interface</td>
-<td align="left">Multiple burst writes of length 4 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Interface</td>
-<td align="left">Multiple burst writes of length 4 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/sa.cpp#line=95">sa.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">Latency</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Latency Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Latency</td>
-<td align="left">Cannot flatten loop 'VITIS_LOOP_132_2' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=132">shell.cpp</a>) in function 'mxm_execute_ursa' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3' (loop 'VITIS_LOOP_138_3'): Unable to schedule bus request operation ('aw_load_1_req', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=141">shell.cpp</a>) on port 'aw' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=141">shell.cpp</a>) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3' (loop 'VITIS_LOOP_138_3'): Unable to schedule bus request operation ('aw_load_2_req', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=141">shell.cpp</a>) on port 'aw' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=141">shell.cpp</a>) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">Kernel</td>
-<td align="left">WARNING</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.mxm_execute_ursa.Kernel</td>
-<td align="left">The II Violation in module 'mxm_execute_ursa_Pipeline_VITIS_LOOP_138_3' (loop 'VITIS_LOOP_138_3'): Unable to schedule bus request operation ('aw_load_3_req', <a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=141">shell.cpp</a>) on port 'aw' (<a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=23">shell.cpp</a>-><a href="file:///home/ulisses/Projects/ursa/exp/output-stationary/src/core/shell.cpp#line=141">shell.cpp</a>) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2023.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>

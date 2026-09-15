@@ -1,6 +1,8 @@
 #ifndef _NETWORK_H_
 #define _NETWORK_H_
 
+#include "ursa.h"
+
 /* Network selection comes from the build script. The default below applies
    only when none was passed; a bare #define here would collide with a
    -DCNN_NETWORK_T2 and leave two networks defined at once. */
@@ -145,24 +147,46 @@
 
     #define TOTAL_NUM_WEIGHTS_WITH_PADDING_3  (CONV3_PADDED_ROW * CONV3_COL) 
 
-    // ---------- Total ----------
-    #define TOTAL_NUM_WEIGHTS ( \
-        TOTAL_NUM_WEIGHTS_WITH_PADDING_1 + \
-        TOTAL_NUM_WEIGHTS_WITH_PADDING_2 + \
-        TOTAL_NUM_WEIGHTS_WITH_PADDING_3 )
+    // // ---------- Total ----------
+    // #define TOTAL_NUM_WEIGHTS ( \
+    //     TOTAL_NUM_WEIGHTS_WITH_PADDING_1 + \
+    //     TOTAL_NUM_WEIGHTS_WITH_PADDING_2 + \
+    //     TOTAL_NUM_WEIGHTS_WITH_PADDING_3 )
 
-    // ======================= Endereços base dos pesos (para o acelerador) ==========================
+    // // ======================= Endereços base dos pesos (para o acelerador) ==========================
 
-    // Início da CONV1
-    #define ADDR_WEIGHTS_CONV1  0
+    // // Início da CONV1
+    // #define ADDR_WEIGHTS_CONV1  0
 
-    // Início da CONV2: logo após o bloco de CONV1
-    #define ADDR_WEIGHTS_CONV2  (ADDR_WEIGHTS_CONV1 + TOTAL_NUM_WEIGHTS_WITH_PADDING_1)  // 576
+    // // Início da CONV2: logo após o bloco de CONV1
+    // #define ADDR_WEIGHTS_CONV2  (ADDR_WEIGHTS_CONV1 + TOTAL_NUM_WEIGHTS_WITH_PADDING_1)  // 576
 
-    // Início da CONV3: logo após o bloco de CONV2
-    #define ADDR_WEIGHTS_CONV3  (ADDR_WEIGHTS_CONV2 + TOTAL_NUM_WEIGHTS_WITH_PADDING_2)  // 2880
+    // // Início da CONV3: logo após o bloco de CONV2
+    // #define ADDR_WEIGHTS_CONV3  (ADDR_WEIGHTS_CONV2 + TOTAL_NUM_WEIGHTS_WITH_PADDING_2)  // 2880
 
-    #define TOTAL_CONV 3
+    #if SA_SIZE >= 16
+        #define TOTAL_CONV 3
+
+        #define TOTAL_NUM_WEIGHTS ( TOTAL_NUM_WEIGHTS_1 + \
+                                    TOTAL_NUM_WEIGHTS_2 + \
+                                    TOTAL_NUM_WEIGHTS_3 )   // 3744
+
+        #define ADDR_WEIGHTS_CONV3  0
+        #define ADDR_WEIGHTS_CONV1  (ADDR_WEIGHTS_CONV3 + TOTAL_NUM_WEIGHTS_3)  // 864
+        #define ADDR_WEIGHTS_CONV2  (ADDR_WEIGHTS_CONV1 + TOTAL_NUM_WEIGHTS_1)  // 1440
+    #else
+        // ---------- Total ----------
+        #define TOTAL_NUM_WEIGHTS ( \
+            TOTAL_NUM_WEIGHTS_WITH_PADDING_1 + \
+            TOTAL_NUM_WEIGHTS_WITH_PADDING_2 + \
+            TOTAL_NUM_WEIGHTS_WITH_PADDING_3 )
+        // Início da CONV1
+        #define ADDR_WEIGHTS_CONV1  0
+        // Início da CONV2: logo após o bloco de CONV1
+        #define ADDR_WEIGHTS_CONV2  (ADDR_WEIGHTS_CONV1 + TOTAL_NUM_WEIGHTS_WITH_PADDING_1)  // 576
+        // Início da CONV3: logo após o bloco de CONV2
+        #define ADDR_WEIGHTS_CONV3  (ADDR_WEIGHTS_CONV2 + TOTAL_NUM_WEIGHTS_WITH_PADDING_2)  // 2880
+    #endif
 
 #endif /* CNN_NETWORK_T3 */
 
