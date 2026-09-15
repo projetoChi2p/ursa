@@ -16,10 +16,10 @@
 # Two things keep the second group short:
 #
 #   - One block design script serves every array size, because the IP
-#     repository is what selects the geometry. ursa_vanilla_tmr_ocm.tcl covers
-#     both the 4x4 and the 8x8 triplicated OCM designs.
-#   - Scrubbing is a bitstream property, so scrub=both produces the unscrubbed
-#     and the scrubbed bitstream from a single implementation.
+#     repository is what selects the geometry. bd_ocm_tmr.tcl covers both the
+#     4x4 and the 8x8 triplicated OCM designs.
+#   - Scrubbing is a bitstream property, so the scrubbed variant of a design
+#     comes off the same implementation as the unscrubbed one.
 #
 # Assumes do_hls.sh has already produced the IP directories under ip_ursa, and
 # that the block design scripts were exported from Vivado with write_bd_tcl.
@@ -64,8 +64,8 @@ BUILD_TCL=${TCL_DIR}/build_one.tcl
 mkdir -p ${OUT_DIR}
 
 # ─── Sweep ────────────────────────────────────────────────────────────────
-#ARRAY_SZ=(2 4 8 16)
-ARRAY_SZ=(8)
+ARRAY_SZ=(2 4 8 16)
+#ARRAY_SZ=(8)
 
 ACC_BITS_LIST=(20)
 VARIANT=vanilla
@@ -75,11 +75,32 @@ VARIANT=vanilla
 #   bram   : all three in PL block RAM
 #   ocm    : all three in on-chip memory, through the ACP port
 #   hybrid : A in block RAM, B and C in on-chip memory
-#LAYOUTS=(bram ocm hybrid)
-LAYOUTS=(bram)
+LAYOUTS=(bram ocm hybrid)
+#LAYOUTS=(bram)
 
 # Parallel jobs for synthesis and implementation.
 JOBS=${JOBS:-4}
+
+# Scrubbing. Off by default: no scrubbed bitstream is written, whatever the
+# build table asks for.
+#
+#   off     nothing scrubbed. Every build writes only <name>.bit.
+#   table   honour the scrub column of the build table. This is what the
+#           campaign designs need.
+#   both    write the scrubbed and the unscrubbed bitstream for every build.
+#
+#   SCRUB=table ./03_do_bitstreams.sh
+#
+# Note that the build name does not record the scrub setting, so a design
+# built once with SCRUB=off is not rebuilt by a later SCRUB=table run only
+# because its _scrub.bit is missing: it is, and that costs a full
+# implementation again. If both bitstreams are wanted, ask for them in the
+# same run.
+SCRUB=${SCRUB:-off}
+case "${SCRUB}" in
+    off|table|both) ;;
+    *) echo "ERROR: SCRUB must be off, table or both (got: ${SCRUB})"; exit 1 ;;
+esac
 
 # ─── Naming ───────────────────────────────────────────────────────────────
 #
@@ -100,11 +121,14 @@ build_name_of() {
 #
 # mitig is "none" for the unmitigated designs and becomes part of the build
 # name otherwise, so a mitigated design never overwrites its vanilla twin.
+#
+# The scrub column records what each campaign design needs. SCRUB above
+# decides how much of that a given run actually writes.
 BUILDS=()
 
-# Group 1: the vanilla matrix. scrub=both costs one extra write_bitstream per
-# build and gives every design a scrubbed twin, which is what campaign designs
-# 15 and 5 need.
+# Group 1: the vanilla matrix. The scrub column is "both" because campaign
+# designs 15 and 5 are a vanilla design plus scrubbing, and the extra
+# write_bitstream comes off the same implementation.
 for sz in ${ARRAY_SZ[*]}; do
 for acc in ${ACC_BITS_LIST[*]}; do
 for layout in ${LAYOUTS[*]}; do
@@ -113,16 +137,17 @@ done
 done
 done
 
-# Group 2: the mitigated designs. The campaign IDs in the comments refer to
-# Table 5.1 of the dissertation.
+# Group 2: the mitigated designs. Every one of them was irradiated with
+# scrubbing enabled. The campaign IDs in the comments refer to Table 5.1 of
+# the dissertation.
 ACC=${ACC_BITS_LIST[0]}
 BUILDS+=(
-#  "4  ${ACC} ocm    tmr      bd_ocm_tmr.tcl         none on"  # 22
-#  "8  ${ACC} ocm    tmr      bd_ocm_tmr.tcl         none on"  # 16
+  "4  ${ACC} ocm    tmr      bd_ocm_tmr.tcl         none on"  # 22
+  "8  ${ACC} ocm    tmr      bd_ocm_tmr.tcl         none on"  # 16
   "8  ${ACC} bram   tmr      bd_bram_tmr.tcl        none on"  # 14
-#  "8  ${ACC} hybrid tmr      bd_hybrid_tmr.tcl      none on"  # 21
-#  "8  ${ACC} hybrid tmr_edac bd_hybrid_tmr_edac.tcl none on"  # 17
-#  "8  ${ACC} bram   tmr_edac bd_bram_tmr_edac.tcl   none on"  # 25 without floorplanning
+  "8  ${ACC} hybrid tmr      bd_hybrid_tmr.tcl      none on"  # 21
+  "8  ${ACC} hybrid tmr_edac bd_hybrid_tmr_edac.tcl none on"  # 17
+  "8  ${ACC} bram   tmr_edac bd_bram_tmr_edac.tcl   none on"  # 25 without floorplanning
 )
 
 # Pending block designs. Uncomment once they exist.
@@ -163,11 +188,20 @@ if [ ${TOTAL} -eq 0 ]; then
     exit 0
 fi
 
+echo "Scrub mode: ${SCRUB}. ${TOTAL} build(s) to go."
+
 START_ALL=$(date +%s)
 
 for entry in "${BUILDS[@]}"; do
 
     read -r sz acc layout mitig bd xdc scrub <<< "${entry}"
+
+    # The table says what the design needs; SCRUB says what this run writes.
+    case "${SCRUB}" in
+        off)   scrub=off  ;;
+        both)  scrub=both ;;
+        table)             ;;  # keep the table value
+    esac
 
     COUNT=$((COUNT+1))
 
