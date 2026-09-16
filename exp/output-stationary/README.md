@@ -4,11 +4,22 @@ Four scripts, run in order. Each one feeds the next.
 
 ```
 02_do_hls_all.sh  ->  03_do_bitstreams.sh  ->  04_do_vitis.sh  ->  05_run_board.py
-     IP cores            bitstreams              ELFs               times.csv
+     IP cores            bitstreams              ELFs               results/*.csv
 ```
 
 `01_do_cmake.sh` is older and not part of this chain. It builds the benchmark
 for Linux, which is useful to check the suite before touching the board.
+
+Three axes run through the whole flow and it helps to keep them apart:
+
+- **array size and layout** decide the hardware, so they reach `02` and `03`
+- **test mode** (`bench`, `free`, `cnn`) and **cache configuration** decide the
+  software, so they reach `04` only
+- **mitigation** (TMR, scrubbing, EDAC) decides the bitstream, so it reaches
+  `03` only
+
+The board run in `05` pairs one bitstream with one ELF, and the two are chosen
+independently.
 
 ---
 
@@ -37,8 +48,7 @@ Skips any IP whose `.zip` already exists.
 Builds every bitstream this work needs: the vanilla characterization matrix and
 the mitigated designs of the irradiation campaign.
 
-**Reads:** `ip_ursa/`, `tcl/bd_{bram,ocm,hybrid}.tcl`,
-`tcl/ursa_vanilla_tmr_*.tcl`, `xdc/*.xdc`, `tcl/build_one.tcl`
+**Reads:** `ip_ursa/`, `tcl/bd_*.tcl`, `xdc/*.xdc`, `tcl/build_one.tcl`
 **Writes:** `bitstreams/*.bit`, `*_scrub.bit`, `*.ebc`, `*.ebd`, `*.xsa`,
 reports, logs, `summary.csv`
 
@@ -68,14 +78,45 @@ otherwise, so a mitigated design never overwrites its vanilla twin.
 
 Two things keep the mitigated list short. One block design script serves every
 array size, because the IP repository is what selects the geometry:
-`ursa_vanilla_tmr_ocm.tcl` covers both the 4x4 and the 8x8 triplicated OCM
-designs. And scrubbing needs no block design of its own, so `scrub=both`
-produces the unscrubbed and the scrubbed bitstream from one implementation.
+`bd_ocm_tmr.tcl` covers both the 4x4 and the 8x8 triplicated OCM designs. And
+scrubbing needs no block design of its own.
 
-Two block designs are still missing, `bd_bram_ecc.tcl` (EDAC without TMR) and
+Two block designs are still missing, `bd_bram_edac.tcl` (EDAC without TMR) and
 `xdc/pblocks_tmr_fp.xdc` (the floorplanned variant). Their lines are commented
 out at the end of the table. Missing files are not fatal in any case: the build
 is recorded as `no_bd` or `no_xdc` in `summary.csv` and the sweep continues.
+
+### Selecting what to build
+
+Two environment variables, neither of which requires editing the table.
+
+`ONLY` is an extended regular expression matched against the build name, so a
+single design can be rebuilt without touching anything:
+
+```bash
+ONLY='bram_tmr$' ./03_do_bitstreams.sh   # one build
+ONLY='tmr'       ./03_do_bitstreams.sh   # the six mitigated designs
+ONLY='_ocm'      ./03_do_bitstreams.sh   # everything on the OCM layout
+```
+
+The count of selected builds is printed before the sweep starts, which is the
+cheapest way to confirm the pattern did what was intended.
+
+`SCRUB` decides how much of the scrub column the run honours:
+
+```bash
+./03_do_bitstreams.sh              # off: no scrubbed bitstream at all
+SCRUB=table ./03_do_bitstreams.sh  # honour the table, what the campaign needs
+SCRUB=both  ./03_do_bitstreams.sh  # scrubbed and unscrubbed for every build
+```
+
+The build name does not record the scrub setting, so a design built once with
+`SCRUB=off` **is** rebuilt from scratch by a later `SCRUB=table` run, because
+its `_scrub.bit` is missing and the script cannot tell that the implementation
+already exists. If both bitstreams are wanted, ask for them in the same run.
+
+Skipping is by file: a build whose bitstreams all exist is skipped, whatever
+the summary says.
 
 ### Scrubbing
 
@@ -137,9 +178,9 @@ lut, lut_pct, ff, ff_pct, dsp, dsp_pct, bram, bram_pct,
 essential_bits, total_cram_bits
 ```
 
-`mitig` and `scrub` are new. A `summary.csv` written by an earlier version of
-this script has a header two columns short and its rows will not line up with
-the new ones; rename or delete it before rerunning.
+`mitig` and `scrub` were added when mitigation became an axis. A `summary.csv`
+written before that has a header two columns short and its rows will not line
+up with the new ones; rename or delete it before rerunning.
 
 Utilisation is read out of `report_utilization` rather than counted with
 `get_cells`. The report adjusts the LUT count for LUT combining, where two
@@ -167,10 +208,11 @@ triplicated in the campaign: a single instance already exhausts the DSP column.
 
 Compiles the application, one ELF per (array size, layout).
 
-**Reads:** `vitis/src/` (shared sources), `vitis/platform-ursa-vanilla-<layout>/`
-**Writes:** `elfs/*.elf`, `summary.csv`
+**Reads:** `vitis_component/<app>/src/`,
+`vitis_component/platform-ursa-vanilla-<layout>/`
+**Writes:** `elfs/*.elf`, `elfs/summary_<mode>.csv`
 
-**Sweep:** 4 sizes x 3 layouts = 12 ELFs
+**Sweep:** 4 sizes x 3 layouts = 12 ELFs per invocation
 
 Three platforms cover the whole sweep. The platform fixes the address map and
 the BSP, and those are the same for every array size; only the bitstream
@@ -182,21 +224,96 @@ to miss:
 - the system CMake, because the one bundled with Vitis wants `libidn.so.11`
 - `ESW_REPO`, which the toolchain file uses to build the specs path
 
-`vitis/src/` must hold the sources **and** `CMakeLists.txt`,
+The source directory must hold the sources **and** `CMakeLists.txt`,
 `UserConfig.cmake`, `Empty_applicationExample.cmake` and `lscript.ld`, because
 the stock CMakeLists picks up sources from its own directory.
 
-`SA_SIZE` and the layout arrive as `-D` flags, so `ursa.h` needs the same
-`#ifndef` guards that `settings.h` has.
+### Test mode
+
+`MODE` selects the application and, for the GEMM app, which shape table runs:
+
+| MODE | application | what it runs |
+|------|-------------|--------------|
+| `bench` (default) | `mxm-ursa` | the generated 14-case suite |
+| `free` | `mxm-ursa` | the hand-written shape table in `tb_main.cpp` |
+| `cnn` | `cnn-sat-6` | SAT-6 inference, one row per image |
+
+The mode is part of the ELF name and of the summary file name, so the three
+sets coexist and it stays clear which one produced a given measurement.
+
+### Cache configuration
+
+`CACHE_I` and `CACHE_D` are orthogonal to `MODE`. The instruction cache is the
+axis that matters: the irradiation campaign ran with it off, so `CACHE_I=off`
+produces the timings that can be combined with the reliability data.
+
+A disabled cache adds a suffix to the ELF name (`-nci`, `-ncd`), so both
+configurations sit in `elfs/` at once.
+
+```bash
+MODE=cnn ./04_do_vitis.sh                  # CNN, both caches on
+MODE=cnn CACHE_I=off ./04_do_vitis.sh      # CNN, I-cache off
+MODE=free ./04_do_vitis.sh                 # free run, both caches on
+MODE=free CACHE_I=off ./04_do_vitis.sh     # free run, I-cache off
+```
+
+The data cache stays on in practice, because the OCM and hybrid layouts hand A
+and B to the accelerator through `Xil_DCacheFlushRange`, but the switch exists
+so that condition can be measured too. The all-software CNN baseline with the
+data cache disabled was tried and dropped: throughput fell below 17 frames per
+second.
+
+### Flags reaching the compiler
+
+`SA_SIZE`, the layout, `FREE_RUN`, `CACHE_EN_I` and `CACHE_EN_D` arrive as `-D`
+flags, so `ursa.h` guards all of them with `#ifndef`, the same way `settings.h`
+guards the HLS flags.
+
+**The define is `FREE_RUN`, not `RUN_FREE`.** The shell variable inside the
+script and the macro the code reads must agree. They did not for a while, and
+the symptom is silent: `ursa.h` falls back to its `#ifndef` default of 0 and
+every `MODE=free` build quietly compiles the benchmark instead. Nothing fails,
+the board runs, and the output is simply the wrong table. If a free run prints
+`up to 6 cases per group` rather than `### MODE RUN FREE ###`, this is why.
+
+### Skipping
+
+A build whose ELF already exists is skipped and recorded as `skipped`. After
+editing the shape table or any source, delete the ELFs first or the old binary
+is what goes to the board:
+
+```bash
+rm -f elfs/free_vanilla_*.elf
+MODE=free ./04_do_vitis.sh
+```
+
+### summary_<mode>.csv
+
+```
+elf, mode, variant, cache_i, cache_d, sa_size, layout, status, text, data, bss
+```
+
+The section sizes are the cheapest check that the `-D` flags arrived. With the
+instruction cache off, `text` must differ from the cached build: that is
+`Xil_ICacheDisable` entering the binary. The size of that difference varies by
+layout, and a small one is not a red flag: on BRAM the gap is around 2.7 kB,
+because the cached build drops the cache library entirely, while on OCM and
+hybrid it is a few bytes, because those layouts already call
+`Xil_DCacheFlushRange` and link the library either way.
+
+ELF sizes also differ slightly across array sizes within a layout, by tens of
+bytes. `SA_SIZE` reaches the host only for the banner, the case filter and the
+tile arithmetic, so the difference is constant folding, not a different
+program.
 
 ---
 
 ## 05_run_board.py
 
-Programs the board, runs each benchmark, captures the serial output.
+Programs the board, runs one test, captures the serial output into a CSV.
 
 **Reads:** `bitstreams/*.bit`, `bitstreams/*.xsa`, `elfs/*.elf`
-**Writes:** `results/times_<layout>.csv`
+**Writes:** the CSV named by `--out`
 
 `xsct` has to be on the `PATH`, which this script does not arrange for itself:
 
@@ -204,49 +321,91 @@ Programs the board, runs each benchmark, captures the serial output.
 source /opt/Xilinx/Vitis/2023.2/settings64.sh
 ```
 
-Otherwise pass `--xsct /opt/Xilinx/Vitis/2023.2/bin/xsct`. Without either, the
-failure is a `subprocess` traceback rather than a clear message.
+Otherwise pass `--xsct /opt/Xilinx/Vitis/2023.2/bin/xsct`.
 
-Run one layout at a time, power cycling the board in between. The board does
-not survive switching between block designs in one go: the JTAG link wedges
-with an AHB AP transaction error and only a power cycle clears it.
+### Picking the ELF and the bitstream separately
+
+`--mode` selects the table format to parse and the ELF prefix. `--variant` is
+the variant in the ELF name, suffix included. `--hw-variant` is the variant in
+the `.bit` and `.xsa` names, and defaults to `--variant`.
+
+The two are separate because the cache configuration is a software-only sweep:
+the same hardware runs both. Without `--hw-variant`, a `-nci` run would look
+for a bitstream named `ursa_vanilla-nci_8x8_acc20_bram.bit`, which does not
+exist.
 
 ```bash
-python3 05_run_board.py --root . --layouts bram   --out results/times_bram.csv
-# power cycle the board
-python3 05_run_board.py --root . --layouts ocm    --out results/times_ocm.csv
-# power cycle the board
-python3 05_run_board.py --root . --layouts hybrid --out results/times_hybrid.csv
+# caches on: variant and hardware variant coincide
+python3 05_run_board.py --mode cnn --layouts bram --out results/cnn_bram.csv
+
+# I-cache off: same hardware, different ELF
+python3 05_run_board.py --mode cnn \
+        --variant vanilla-nci --hw-variant vanilla \
+        --layouts bram --out results/cnn_nci_bram.csv
 ```
 
-Then join the three:
+### One layout at a time
+
+Run one layout per invocation, power cycling the board in between. The board
+does not survive switching between block designs in one go: the JTAG link
+wedges with an AHB AP transaction error and only a power cycle clears it.
 
 ```bash
-head -1 results/times_bram.csv > results/times.csv
-tail -q -n +2 results/times_*.csv >> results/times.csv
+python3 05_run_board.py --mode free --layouts bram   --out results/free_bram.csv
+# power cycle
+python3 05_run_board.py --mode free --layouts hybrid --out results/free_hybrid.csv
+# power cycle
+python3 05_run_board.py --mode free --layouts ocm    --out results/free_ocm.csv
 ```
 
 Each call writes its own file, so a failed run never destroys results already
-collected. Other useful flags:
+collected. Joining afterwards is a `head` and a `tail`:
+
+```bash
+head -1 results/free_bram.csv > results/free_all.csv
+tail -q -n +2 results/free_{bram,ocm,hybrid}.csv >> results/free_all.csv
+```
+
+Name the files explicitly rather than globbing, or the joined file gets
+included in its own input on a second run.
+
+Other useful flags:
 
 ```bash
 --sizes 8            # one array size only
 --echo               # print the serial output as it arrives
---port /dev/ttyUSB0  # if the board enumerates elsewhere
---xsct <path>        # if Vitis is not on the PATH
+--timeout 600        # a run that legitimately takes longer than 120 s
+--port /dev/ttyUSB1  # if the board enumerates elsewhere
 ```
 
-The port default is `/dev/ttyUSB1`, but the board exposes two FTDI interfaces
-and which one carries the UART depends on enumeration order, so it is often
-`/dev/ttyUSB0`. Zero bytes captured with no other error means the wrong port.
+The port default is `/dev/ttyUSB0`, but the board exposes two FTDI interfaces
+and which one carries the UART depends on enumeration order, so it is sometimes
+`/dev/ttyUSB1`. Zero bytes captured with no other error means the wrong port.
 Check with `ls -l /dev/ttyUSB*` and confirm against `dmesg | grep -i tty`.
 
-Always pass `--out`. The default is a single `results/times.csv`, so running
-layout by layout without it overwrites the previous result.
+Needs `pyserial`. Close any terminal on the port first, since only one process
+can hold it.
 
-For each case it drives xsct to program the FPGA, run `ps7_init`, load the ELF
-and start it, while a background thread reads the UART. A run ends when the
-summary line arrives, not after a fixed delay.
+### How a run ends
+
+A background thread reads the UART while xsct programs the board and starts the
+program. The run ends when the terminator line arrives, not after a fixed
+delay: `N passed, M failed` for `bench` and `free`, the last line of the stage
+breakdown for `cnn`.
+
+**A missing terminator costs the full timeout, not the data.** The rows are
+still captured; the reader simply waits out `--timeout` before giving up, and
+the script reports `N rows captured (no summary line)`. The free run lacked
+that line for a while, which made every case sit for 120 seconds with the
+results already in the buffer. If a mode is added later, give it a terminator
+in the same format and the parser needs no change.
+
+### What the script checks for you
+
+The board prints the `SA_SIZE` it was built with and its cache configuration,
+and the script compares both against what the file names promised. A mismatch
+means the wrong ELF is running, and the measurement is of something other than
+what was asked for.
 
 **Both cores must be halted before `ps7_init`.** Stopping only core 0 leaves
 core 1 running, and on the OCM and hybrid designs that wedges the link: those
@@ -258,13 +417,70 @@ optional.
 `ps7_init.tcl` comes from the XSA of the build being loaded. The three block
 designs configure the PS differently, so the files are not interchangeable.
 
-Needs `pyserial`. Close any terminal on the port first, since only one process
-can hold it.
+### Output columns
 
-The board prints the `SA_SIZE` it was built with, and the script compares that
-against what it expected. A mismatch means the wrong ELF is running.
+The GEMM modes and the CNN share no useful column layout, so the header depends
+on `--mode`.
 
-**Output columns:** `sa_size, layout, case, P, Q, M, us, check`
+`bench` and `free`:
+
+```
+mode, variant, cache_i, sa_size, layout, case,
+P, Q, M, tiles, k_it, us_tot, us, cyc_kit, checksum, check
+```
+
+`tiles`, `k_it`, `us_tot`, `cyc_kit` and `checksum` are filled only by `free`:
+the benchmark prints a pass/fail verdict against a golden value instead.
+
+`cnn`:
+
+```
+mode, variant, cache_i, sa_size, layout,
+image, image_id, gold, pred, correct,
+us_tot, us, fps,
+accuracy, inferences, us_per_image, fps_run,
+im2col_us, transfer_us, gemm_us, other_us,
+pooling
+```
+
+Everything from `accuracy` onwards is per run, not per image, and is copied
+onto every row so the CSV can be grouped without a join.
+
+---
+
+## The free run
+
+`MODE=free` runs a hand-written shape table in `tb_main.cpp` instead of the
+generated suite. It exists because the suite cannot answer two questions: it
+never runs `P = Q = SA_SIZE`, so it cannot show what a single tile costs, and
+it has `Q = M` in every case, so it cannot tell the tile count apart from the
+reduction depth.
+
+The table is in three blocks. The first holds `P = Q = SA_SIZE` with M swept,
+which pins the tile count at 1 and makes the time a straight line in M whose
+slope is the cost of one iteration of the shell's k loop. The second sweeps P
+with Q pinned, the third sweeps Q with P pinned, both at several values of M.
+
+P and Q in the second and third blocks are absolute, not `SA_SIZE`-relative, so
+the same shapes run on every array size and what changes between configurations
+is the tile count. Every value is a multiple of 16, which is a multiple of all
+four array sizes.
+
+There is no golden value: a free shape never went through `gen_bench.py`. The
+checksum is printed instead, and has to stay the same when the same shape runs
+again.
+
+Operands are capped at `amax = bmax = 3`, so the accumulator cannot overflow at
+any M in the table. This also means the free run exercises a different data
+distribution from the benchmark, which matters for the checksums and not for
+the times.
+
+`free_iters` is 100 calls per shape, timed as one batch. `app_timer_total_us`
+truncates to whole microseconds, and the smallest shapes take well under one,
+so timing each call separately would truncate a hundred times over. Dropping to
+10 calls pushes the truncation error on a single 2x2 tile from 3 percent to
+over 30, which is exactly where the model's intercept is measured, so the
+iteration count is not the thing to cut when a sweep feels slow.
 
 ---
 
@@ -272,12 +488,15 @@ against what it expected. A mismatch means the wrong ELF is running.
 
 The three things to check, in order.
 
-**Correctness.** Every row `ok`. A single FAIL invalidates everything
-downstream and has to be understood before the times mean anything.
+**Correctness.** Every row `ok` in the GEMM modes, `accuracy` at the expected
+value in `cnn`. A single FAIL invalidates everything downstream and has to be
+understood before the times mean anything.
 
-**Coverage.** 14 cases each for sizes 2, 4 and 8, and 8 cases for 16, so 50
-rows per layout and 150 in total. Fewer means a case was not captured off the
-serial port and that measurement simply does not exist.
+**Coverage.** Count the rows against what the mode should produce. In `bench`,
+14 cases each for sizes 2, 4 and 8, and 8 cases for 16, so 50 rows per layout.
+In `free`, one row per shape in the table, for every size. Fewer means a case
+was not captured off the serial port and that measurement simply does not
+exist.
 
 **Agreement with the previous sweep.** Keep the old CSVs and compare point by
 point. Differences of a few microseconds come from timer resolution. A
@@ -288,10 +507,23 @@ Runs are single-shot. Repeating each layout and keeping both files is cheap and
 is what makes the roughly 10 percent gap between hybrid and bram defensible as
 a measurement rather than noise.
 
-The ELFs are identical in size across array sizes within a layout (70873 bytes
-for bram, 73709 for ocm, 73721 for hybrid). That is expected: tiling happens
-inside the IP, and `SA_SIZE` reaches the host only for the banner and the case
-filter. Sizes differing between layouts confirms the `-D` flags arrived.
+Two sets of performance numbers exist for this project, measured under
+different conditions and with different instrumentation. Do not mix them in one
+comparison.
+
+---
+
+## Known issues
+
+**The 16x16 free run hangs at initialization.** The board prints the banner and
+the `[init]` lines and stops before the first shape. The other three sizes
+complete. The 16x16 builds are also the ones with negative setup slack, so
+timing is the first suspect; the same bitstream has run the benchmark
+successfully, which makes it worth comparing layouts (OCM has the least
+negative slack) before blaming the shape table.
+
+**The 16x16 geometry saturates the DSP column** at 220 of 220, so part of the
+multiplications map to logic. This is why no 16x16 design is triplicated.
 
 ---
 
@@ -309,22 +541,3 @@ only 8 of those run, since the rest have P or Q equal to 8.
 
 Anything on OCM needs cache maintenance around the accelerator call. BRAM at
 0x40000000 is device memory and does not.
-
-
-
-MODE=cnn CACHE_I=off ./04_do_vitis.sh
-
-python3 05_run_board.py --mode cnn \
-        --variant vanilla-nci --hw-variant vanilla \
-        --layouts bram \
-        --out results/cnn_nci_bram.csv
-
-python3 05_run_board.py --mode cnn \
-        --variant vanilla-nci --hw-variant vanilla \
-        --layouts hybrid \
-        --out results/cnn_nci_hybrid.csv
-
-python3 05_run_board.py --mode cnn \
-        --variant vanilla-nci --hw-variant vanilla \
-        --layouts ocm \
-        --out results/cnn_nci_ocm.csv

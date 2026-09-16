@@ -14,8 +14,8 @@
 # a directory of symlinks back to the shared tree rather than a copy.
 #
 # Two test modes, selected with MODE:
-#   bench  the generated 14-case suite            (RUN_FREE=0, default)
-#   free   the hand-written shape table           (RUN_FREE=1)
+#   bench  the generated 14-case suite            (FREE_RUN=0, default)
+#   free   the hand-written shape table           (FREE_RUN=1)
 # The mode is part of the ELF name, so the two sets of binaries coexist and
 # it stays clear which one produced a given measurement.
 #
@@ -33,7 +33,7 @@
 #   MODE=free CACHE_I=off ./04_do_vitis.sh  # free run, I-cache off
 #
 # Requires: platforms already exported, and ursa.h guarded so that SA_SIZE,
-# the layout, RUN_FREE and the cache flags can arrive as -D flags.
+# the layout, FREE_RUN and the cache flags can arrive as -D flags.
 #===============================================================================
 
 THIS_SCRIPT_FULLNAME=$(realpath "${BASH_SOURCE[0]}")
@@ -92,39 +92,39 @@ VARIANT=vanilla
 # # Test mode. Anything other than "free" builds the benchmark suite.
 # MODE=${MODE:-bench}
 # if [ "${MODE}" = "free" ]; then
-#     RUN_FREE=1
+#     FREE_RUN=1
 # else
 #     MODE=bench
-#     RUN_FREE=0
+#     FREE_RUN=0
 # fi
-# echo "Mode: ${MODE} (RUN_FREE=${RUN_FREE})"
+# echo "Mode: ${MODE} (FREE_RUN=${FREE_RUN})"
 
 # ─── Test mode ────────────────────────────────────────────────────────────
 # MODE selects both the application and, for the GEMM app, which shape table
 # it runs:
-#   bench  GEMM app, generated 14-case suite   (RUN_FREE=0)
-#   free   GEMM app, hand-written shape table  (RUN_FREE=1)
-#   cnn    CNN SAT-6 inference app             (RUN_FREE unused)
+#   bench  GEMM app, generated 14-case suite   (FREE_RUN=0)
+#   free   GEMM app, hand-written shape table  (FREE_RUN=1)
+#   cnn    CNN SAT-6 inference app             (FREE_RUN unused)
 MODE=${MODE:-bench}
 
 case "${MODE}" in
     cnn)
         APP_SUBDIR=cnn-sat-6
-        RUN_FREE=0
+        FREE_RUN=0
         ;;
     free)
         APP_SUBDIR=mxm-ursa
-        RUN_FREE=1
+        FREE_RUN=1
         ;;
     *)
         MODE=bench
         APP_SUBDIR=mxm-ursa
-        RUN_FREE=0
+        FREE_RUN=0
         ;;
 esac
 
 SRC_DIR=${VITIS_DIR}/${APP_SUBDIR}/src
-echo "Mode: ${MODE} (app ${APP_SUBDIR}, RUN_FREE=${RUN_FREE})"
+echo "Mode: ${MODE} (app ${APP_SUBDIR}, FREE_RUN=${FREE_RUN})"
 
 # ─── Cache configuration ──────────────────────────────────────────────────
 # Orthogonal to MODE. Both reach the application as -D flags, and a disabled
@@ -240,7 +240,7 @@ for sz in ${ARRAY_SZ[*]}; do
           -DCMAKE_MODULE_PATH=${DOMAIN} \
           -DCMAKE_LIBRARY_PATH=${DOMAIN}/lib \
           -DCMAKE_INCLUDE_PATH=${DOMAIN}/include \
-          -DUSER_COMPILE_DEFINITIONS="SA_SIZE=${sz};${layout^^};RUN_FREE=${RUN_FREE};CACHE_EN_I=${CACHE_EN_I};CACHE_EN_D=${CACHE_EN_D}" \
+          -DUSER_COMPILE_DEFINITIONS="SA_SIZE=${sz};${layout^^};FREE_RUN=${FREE_RUN};CACHE_EN_I=${CACHE_EN_I};CACHE_EN_D=${CACHE_EN_D}" \
           > ${BUILD}/cmake.log 2>&1
     RC=$?
 

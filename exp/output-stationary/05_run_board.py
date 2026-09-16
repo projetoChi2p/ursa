@@ -16,12 +16,21 @@ Three test modes, matching 04_do_vitis.sh:
     cnn     the CNN SAT-6 inference app, one row per image
 The mode picks which ELF to load and which table format to parse.
 
+The ELF and the bitstream are chosen independently, because the two vary
+along different axes:
+
+    --variant      variant in the ELF name, suffix included
+    --hw-variant   variant in the .bit and .xsa names, defaults to --variant
+    --mitig        mitigation suffix on the bitstream only
+    --scrub        load <name>_scrub.bit instead of <name>.bit
+
 Software-only sweeps, such as the cache configuration, change the ELF name
-but not the hardware. --hw-variant keeps the bitstream lookup pointing at the
-unsuffixed name while --variant carries the suffix.
+but not the hardware, which is what --hw-variant is for. Mitigation is the
+mirror image: it changes the bitstream and not the ELF, because a triplicated
+design keeps the accelerator at the same base address as its unmitigated twin
+and the host code is unchanged.
 
 Usage:
-    python3 run_board.py --root ~/Projects/ursa/exp/output-stationary
     python3 run_board.py --sizes 8 --layouts bram          # single case
     python3 run_board.py --mode free --sizes 2             # free run
     python3 run_board.py --port /dev/ttyUSB1               # different port
@@ -30,6 +39,11 @@ Usage:
     python3 run_board.py --mode cnn \\
                          --variant vanilla-nci --hw-variant vanilla \\
                          --out results/cnn_nci.csv
+
+    # Campaign design 14: same ELF as the vanilla 8x8 bram, TMR bitstream
+    python3 run_board.py --mode cnn --sizes 8 --layouts bram \\
+                         --mitig tmr \\
+                         --out results/cnn_bram_tmr.csv
 
 Needs pyserial:  pip install pyserial --user
 """
@@ -379,11 +393,18 @@ def run_one(xsct, bit, elf, ps7_init, workdir, verbose=False):
 # The GEMM modes report one shape per row; the CNN reports one image per row
 # plus a stage breakdown, so the two share no column layout worth forcing
 # together.
-FIELDS_GEMM = ["mode", "variant", "cache_i", "sa_size", "layout", "case",
+#
+# mitig and scrub describe the bitstream. They matter because two campaign
+# designs can share everything else: 14 and 25 are both an 8x8 bram CNN run,
+# and differ only in mitigation. Without these columns their rows would be
+# indistinguishable once the CSVs are joined.
+FIELDS_GEMM = ["mode", "variant", "mitig", "scrub", "cache_i",
+               "sa_size", "layout", "case",
                "P", "Q", "M", "tiles", "k_it", "us_tot", "us", "cyc_kit",
                "checksum", "check"]
 
-FIELDS_CNN = ["mode", "variant", "cache_i", "sa_size", "layout",
+FIELDS_CNN = ["mode", "variant", "mitig", "scrub", "cache_i",
+              "sa_size", "layout",
               "image", "image_id", "gold", "pred", "correct",
               "us_tot", "us", "fps",
               "accuracy", "inferences", "us_per_image", "fps_run",
@@ -394,13 +415,14 @@ FIELDS_CNN = ["mode", "variant", "cache_i", "sa_size", "layout",
 FIELDS = FIELDS_GEMM
 
 
-def blank_row(fields, mode, variant, sz, layout, status):
+def blank_row(fields, mode, variant, mitig, scrub, sz, layout, status):
     """A row standing in for a run that never produced output.
 
     The status lands in whichever column carries the verdict for this mode.
     """
     r = {k: "" for k in fields}
-    r.update(mode=mode, variant=variant, sa_size=sz, layout=layout)
+    r.update(mode=mode, variant=variant, mitig=mitig, scrub=scrub,
+             sa_size=sz, layout=layout)
     if "check" in r:
         r["check"] = status
     else:
@@ -426,6 +448,16 @@ def main():
                          "--variant. Set it when the ELF name carries a "
                          "software-only suffix, such as a cache "
                          "configuration, that the hardware does not have.")
+    ap.add_argument("--mitig", default="none",
+                    help="mitigation suffix on the bitstream name, as built "
+                         "by 03_do_bitstreams.sh (for example tmr, "
+                         "tmr_edac). The ELF is unaffected: a mitigated "
+                         "design keeps the accelerator at the same base "
+                         "address as its unmitigated twin.")
+    ap.add_argument("--scrub", action="store_true",
+                    help="load <name>_scrub.bit instead of <name>.bit. The "
+                         "XSA is the same either way, since scrubbing is a "
+                         "bitstream property and does not change the design.")
     ap.add_argument("--acc", type=int, default=20)
     ap.add_argument("--out", default=None, help="output CSV")
     ap.add_argument("--timeout", type=float, default=120.0,
@@ -443,6 +475,8 @@ def main():
     # keeps the plain variant name unless told otherwise.
     hw_variant = a.hw_variant or a.variant
 
+    scrub_s = "on" if a.scrub else "off"
+
     # xsct is not on the PATH unless settings64.sh has been sourced. Failing
     # here says so, instead of raising a subprocess traceback later.
     if shutil.which(a.xsct) is None and not os.path.isfile(a.xsct):
@@ -454,15 +488,22 @@ def main():
     bitdir = os.path.join(root, "bitstreams")
     elfdir = os.path.join(root, "elfs")
 
-    # Default name carries the mode and the variant, so neither a free run nor
-    # a different cache configuration overwrites an earlier record.
-    default_name = "times_%s_%s.csv" % (a.mode, a.variant)
+    # Default name carries the mode, the variant and the mitigation, so no two
+    # configurations overwrite each other's record.
+    default_name = "times_%s_%s" % (a.mode, a.variant)
+    if a.mitig != "none":
+        default_name += "_" + a.mitig
+    if a.scrub:
+        default_name += "_scrub"
+    default_name += ".csv"
+
     out_csv = a.out or os.path.join(root, "results", default_name)
     out_dir = os.path.dirname(os.path.abspath(out_csv))
     os.makedirs(out_dir, exist_ok=True)
 
-    print("Mode: %s   ELF variant: %s   hardware variant: %s"
-          % (a.mode, a.variant, hw_variant))
+    print("Mode: %s   ELF variant: %s   hardware variant: %s   "
+          "mitigation: %s   scrub: %s"
+          % (a.mode, a.variant, hw_variant, a.mitig, scrub_s))
 
     rows = []
     workdir = tempfile.mkdtemp(prefix="ursa_run_")
@@ -472,31 +513,42 @@ def main():
     for layout in a.layouts:
         for sz in a.sizes:
             count += 1
+
+            # The build name in 03_do_bitstreams.sh puts the mitigation after
+            # the layout, so the tag is built the same way here.
             tag = "%s_%dx%d_acc%d_%s" % (hw_variant, sz, sz, a.acc, layout)
-            bit = os.path.join(bitdir, "ursa_%s.bit" % tag)
+            if a.mitig != "none":
+                tag += "_" + a.mitig
+
+            # Only the .bit carries the scrub suffix. The XSA is written once,
+            # before the bitstream properties are applied.
+            bit_name = "ursa_%s_scrub.bit" % tag if a.scrub else "ursa_%s.bit" % tag
+            bit = os.path.join(bitdir, bit_name)
             xsa = os.path.join(bitdir, "ursa_%s.xsa" % tag)
+
+            # The ELF never carries the mitigation: the host code is the same.
             elf = os.path.join(elfdir, "%s_%s_%dx%d_%s.elf"
                                % (a.mode, a.variant, sz, sz, layout))
 
             print("\n" + "=" * 70)
-            print(" [%d/%d] mode=%s  SA_SIZE=%d  layout=%s  variant=%s"
-                  % (count, total, a.mode, sz, layout, a.variant))
+            print(" [%d/%d] mode=%s  SA_SIZE=%d  layout=%s  variant=%s  mitig=%s"
+                  % (count, total, a.mode, sz, layout, a.variant, a.mitig))
             print("=" * 70)
 
             missing = [p for p in (bit, xsa, elf) if not os.path.exists(p)]
             if missing:
                 for p in missing:
                     print("  missing: " + p)
-                rows.append(blank_row(fields, a.mode, a.variant, sz, layout,
-                                      "missing_file"))
+                rows.append(blank_row(fields, a.mode, a.variant, a.mitig,
+                                      scrub_s, sz, layout, "missing_file"))
                 continue
 
             try:
                 ps7 = extract_ps7_init(xsa, workdir)
             except Exception as e:
                 print("  could not get ps7_init.tcl: %s" % e)
-                rows.append(blank_row(fields, a.mode, a.variant, sz, layout,
-                                      "no_ps7_init"))
+                rows.append(blank_row(fields, a.mode, a.variant, a.mitig,
+                                      scrub_s, sz, layout, "no_ps7_init"))
                 continue
 
             reader = SerialReader(a.port, a.baud, echo=a.echo, done_re=done_re)
@@ -507,8 +559,8 @@ def main():
             if rc != 0:
                 print("  xsct returned %d, skipping" % rc)
                 reader.close()
-                rows.append(blank_row(fields, a.mode, a.variant, sz, layout,
-                                      "xsct_failed"))
+                rows.append(blank_row(fields, a.mode, a.variant, a.mitig,
+                                      scrub_s, sz, layout, "xsct_failed"))
                 continue
 
             # Wait for the terminator line instead of a flat sleep.
@@ -525,8 +577,8 @@ def main():
                 if text and not a.echo:
                     print("  ---- tail ----")
                     print("\n".join(text.splitlines()[-10:]))
-                rows.append(blank_row(fields, a.mode, a.variant, sz, layout,
-                                      "no_output"))
+                rows.append(blank_row(fields, a.mode, a.variant, a.mitig,
+                                      scrub_s, sz, layout, "no_output"))
                 continue
 
             # The board reports the SA_SIZE it was built with. If that does
@@ -549,7 +601,8 @@ def main():
 
             for c in got:
                 r = {k: "" for k in fields}
-                r.update(mode=a.mode, variant=a.variant, cache_i=cache_i,
+                r.update(mode=a.mode, variant=a.variant, mitig=a.mitig,
+                         scrub=scrub_s, cache_i=cache_i,
                          sa_size=sz, layout=layout)
                 r.update({k: v for k, v in c.items() if k in r})
                 rows.append(r)

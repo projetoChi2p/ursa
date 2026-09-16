@@ -192,7 +192,19 @@ int main(void)
     {
         /* Shapes to run. Edit this table. P and Q must be multiples of
            SA_SIZE, otherwise the shell leaves the remainder uncomputed. */
+        // static const uint16_t shapes[][3] = {   /* P, Q, M */
+        //     { SA_SIZE, SA_SIZE,   2 },
+        //     { SA_SIZE, SA_SIZE,   4 },
+        //     { SA_SIZE, SA_SIZE,   8 },
+        //     { SA_SIZE, SA_SIZE,  16 },
+        //     { SA_SIZE, SA_SIZE,  32 },
+        //     { SA_SIZE, SA_SIZE,  64 },
+        //     { SA_SIZE, SA_SIZE, 128 },
+		// 	{ SA_SIZE, SA_SIZE, 256 },
+        //     { SA_SIZE, SA_SIZE, 512 },
+        // };
         static const uint16_t shapes[][3] = {   /* P, Q, M */
+            /* one tile, M swept */
             { SA_SIZE, SA_SIZE,   2 },
             { SA_SIZE, SA_SIZE,   4 },
             { SA_SIZE, SA_SIZE,   8 },
@@ -200,9 +212,22 @@ int main(void)
             { SA_SIZE, SA_SIZE,  32 },
             { SA_SIZE, SA_SIZE,  64 },
             { SA_SIZE, SA_SIZE, 128 },
-						{ SA_SIZE, SA_SIZE, 256 },
-            { SA_SIZE, SA_SIZE, 512 },
+
+            /* P swept, Q = 16 */
+            {  16,  16,   2 }, {  32,  16,   2 }, {  64,  16,   2 }, { 128,  16,   2 },
+            {  16,  16,   4 }, {  32,  16,   4 }, {  64,  16,   4 }, { 128,  16,   4 },
+            {  16,  16,   8 }, {  32,  16,   8 }, {  64,  16,   8 }, { 128,  16,   8 },
+            {  16,  16,  16 }, {  32,  16,  16 }, {  64,  16,  16 }, { 128,  16,  16 },
+            {  16,  16,  64 }, {  32,  16,  64 }, {  64,  16,  64 },
+
+            /* Q swept, P = 16 */
+            {  16,  32,   2 }, {  16,  64,   2 }, {  16, 128,   2 },
+            {  16,  32,   4 }, {  16,  64,   4 }, {  16, 128,   4 },
+            {  16,  32,   8 }, {  16,  64,   8 }, {  16, 128,   8 },
+            {  16,  32,  16 }, {  16,  64,  16 }, {  16, 128,  16 },
+            {  16,  32,  64 }, {  16,  64,  64 }, {  16, 128,  64 },
         };
+
         const uint32_t nshapes    = sizeof(shapes) / sizeof(shapes[0]);
         const uint32_t free_iters = 100;
         uint32_t si, rep;
@@ -315,11 +340,23 @@ int main(void)
                     (unsigned long)(us_x100 / 100u),
                     (unsigned long)(us_x100 % 100u),
                     (unsigned long)(us_total * 100u / free_iters / tiles / k_it),
+//                     (unsigned long)got,
+//                     (st == SA_SUCCESS) ? "" : "  STATUS-ERR");
+//         }
+//     }
+//   #else
                     (unsigned long)got,
                     (st == SA_SUCCESS) ? "" : "  STATUS-ERR");
         }
+
+        /* Terminator. The host reader stops on this line instead of sitting
+           out the full timeout, and it is the same format the benchmark
+           branch prints, so the parser needs no second pattern. */
+        fprintf(stderr, "\n%lu passed, %lu failed\n",
+                (unsigned long)pass, (unsigned long)fail);
     }
   #else
+
 
 		//here is benchmark mxm
     //test mode (VITIS and LINUX)
@@ -420,7 +457,7 @@ int main(void)
 
     fprintf(stderr, "\n%lu passed, %lu failed\n",
             (unsigned long)pass, (unsigned long)fail);
-	#endif //RUN_FREE
+	#endif //FREE_RUN
   #ifdef VITIS
     xil_printf("\r\nTotal Time: %lu[us]\r\n",(unsigned long)app_timer_total_us(0));
     xil_printf("Total Tickes: %lu\r\n\r\n",(unsigned long)app_timer_total_ticks(0));
