@@ -1,1 +1,0 @@
-Simple version of the URSA
