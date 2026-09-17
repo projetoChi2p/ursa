@@ -1,0 +1,499 @@
+
+
+================================================================
+== Vitis HLS Report for 'mxm_execute_ursa'
+================================================================
+* Date:           Wed Sep  9 20:08:03 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        mxm_execute_ursa
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+----------------+-----------+-------------+-----+----------------+---------+
+    |     Latency (cycles)     |    Latency (absolute)   |       Interval       | Pipeline|
+    |   min   |       max      |    min    |     max     | min |       max      |   Type  |
+    +---------+----------------+-----------+-------------+-----+----------------+---------+
+    |        2|  70379747901515|  20.000 ns|  7.0e+05 sec|    3|  70379747901516|       no|
+    +---------+----------------+-----------+-------------+-----+----------------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+----------------+-------------+-----------+-----------+---------------+----------+
+        |                     |     Latency (cycles)     |  Iteration  |  Initiation Interval  |      Trip     |          |
+        |      Loop Name      |   min   |       max      |   Latency   |  achieved |   target  |     Count     | Pipelined|
+        +---------------------+---------+----------------+-------------+-----------+-----------+---------------+----------+
+        |- TILE_ROW_TILE_COL  |        0|  70379747901513|  77 ~ 262217|          -|          -|  0 ~ 268402689|        no|
+        +---------------------+---------+----------------+-------------+-----------+-----------+---------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 39
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 3 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%off_cj = alloca i32 1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:142]   --->   Operation 40 'alloca' 'off_cj' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%j = alloca i32 1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144]   --->   Operation 41 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%off_b = alloca i32 1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:141]   --->   Operation 42 'alloca' 'off_b' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%off_a = alloca i32 1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:135]   --->   Operation 43 'alloca' 'off_a' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%off_cj_1 = alloca i32 1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:142]   --->   Operation 44 'alloca' 'off_cj_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 45 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [2/2] (1.00ns)   --->   "%m_read = read i16 @_ssdm_op_Read.s_axilite.i16, i16 %m" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 46 'read' 'm_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 47 [1/1] (1.00ns)   --->   "%addr_c0_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %addr_c0" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 47 'read' 'addr_c0_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 48 [2/2] (1.00ns)   --->   "%b0_q_read = read i16 @_ssdm_op_Read.s_axilite.i16, i16 %b0_q" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 48 'read' 'b0_q_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 49 [1/1] (1.00ns)   --->   "%addr_b0_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %addr_b0" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 49 'read' 'addr_b0_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 50 [2/2] (1.00ns)   --->   "%a0_p_read = read i16 @_ssdm_op_Read.s_axilite.i16, i16 %a0_p" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 50 'read' 'a0_p_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 51 [1/1] (1.00ns)   --->   "%addr_a0_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %addr_a0" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 51 'read' 'addr_a0_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 52 [1/1] (1.58ns)   --->   "%store_ln0 = store i28 0, i28 %indvar_flatten"   --->   Operation 52 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 53 [1/1] (1.58ns)   --->   "%store_ln142 = store i32 0, i32 %off_cj_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:142]   --->   Operation 53 'store' 'store_ln142' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 54 [1/1] (1.58ns)   --->   "%store_ln135 = store i32 0, i32 %off_a" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:135]   --->   Operation 54 'store' 'store_ln135' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 55 [1/1] (1.58ns)   --->   "%store_ln141 = store i16 0, i16 %off_b" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:141]   --->   Operation 55 'store' 'store_ln141' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 56 [1/1] (1.58ns)   --->   "%store_ln144 = store i14 0, i14 %j" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144]   --->   Operation 56 'store' 'store_ln144' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 57 [1/1] (1.58ns)   --->   "%store_ln142 = store i32 0, i32 %off_cj" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:142]   --->   Operation 57 'store' 'store_ln142' <Predicate = true> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 6.60>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 0"   --->   Operation 58 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%spectopmodule_ln77 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_11" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:77]   --->   Operation 59 'spectopmodule' 'spectopmodule_ln77' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %aw, void @empty_2, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_4, void @empty_1, void @empty_3, i32 8, i32 8, i32 64, i32 16, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %aw"   --->   Operation 61 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %bi, void @empty_2, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_6, void @empty_1, void @empty_3, i32 8, i32 8, i32 64, i32 16, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 62 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %bi"   --->   Operation 63 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %ca, void @empty_2, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty, void @empty_1, void @empty_3, i32 8, i32 8, i32 64, i32 16, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 64 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %ca"   --->   Operation 65 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %addr_a0, void @empty_5, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_8, void @empty_9, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_0, i32 4294967295, i32 0"   --->   Operation 66 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %addr_a0, void @empty_16, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_0, i32 4294967295, i32 0"   --->   Operation 67 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %a0_p"   --->   Operation 68 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %a0_p, void @empty_5, i32 1, i32 1, void @empty_14, i32 0, i32 0, void @empty_15, void @empty_7, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 69 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %a0_p, void @empty_16, i32 1, i32 1, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 70 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %addr_b0, void @empty_5, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_8, void @empty_7, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_0, i32 4294967295, i32 0"   --->   Operation 71 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %addr_b0, void @empty_16, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_0, i32 4294967295, i32 0"   --->   Operation 72 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %b0_q"   --->   Operation 73 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %b0_q, void @empty_5, i32 1, i32 1, void @empty_14, i32 0, i32 0, void @empty_15, void @empty_13, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 74 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %b0_q, void @empty_16, i32 1, i32 1, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 75 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %addr_c0, void @empty_5, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_8, void @empty_13, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_0, i32 4294967295, i32 0"   --->   Operation 76 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %addr_c0, void @empty_16, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_0, i32 4294967295, i32 0"   --->   Operation 77 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %m"   --->   Operation 78 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %m, void @empty_5, i32 1, i32 1, void @empty_14, i32 0, i32 0, void @empty_15, void @empty_12, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 79 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %m, void @empty_16, i32 1, i32 1, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 80 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_5, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_15, void @empty_9, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3, i32 4294967295, i32 0"   --->   Operation 81 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 82 [1/2] (1.00ns)   --->   "%m_read = read i16 @_ssdm_op_Read.s_axilite.i16, i16 %m" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 82 'read' 'm_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 83 [1/2] (1.00ns)   --->   "%b0_q_read = read i16 @_ssdm_op_Read.s_axilite.i16, i16 %b0_q" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 83 'read' 'b0_q_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 84 [1/2] (1.00ns)   --->   "%a0_p_read = read i16 @_ssdm_op_Read.s_axilite.i16, i16 %a0_p" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78]   --->   Operation 84 'read' 'a0_p_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i14 @_ssdm_op_PartSelect.i14.i16.i32.i32, i16 %a0_p_read, i32 2, i32 15" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:128]   --->   Operation 85 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%trunc_ln2 = partselect i14 @_ssdm_op_PartSelect.i14.i16.i32.i32, i16 %b0_q_read, i32 2, i32 15" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:129]   --->   Operation 86 'partselect' 'trunc_ln2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%zext_ln132 = zext i16 %m_read" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:132]   --->   Operation 87 'zext' 'zext_ln132' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%stride_a = bitconcatenate i18 @_ssdm_op_BitConcatenate.i18.i16.i2, i16 %m_read, i2 0" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:132]   --->   Operation 88 'bitconcatenate' 'stride_a' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%zext_ln132_1 = zext i18 %stride_a" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:132]   --->   Operation 89 'zext' 'zext_ln132_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "%stride_c = bitconcatenate i18 @_ssdm_op_BitConcatenate.i18.i16.i2, i16 %b0_q_read, i2 0" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:133]   --->   Operation 90 'bitconcatenate' 'stride_c' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%zext_ln133 = zext i18 %stride_c" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:133]   --->   Operation 91 'zext' 'zext_ln133' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (2.07ns)   --->   "%sub22 = add i17 %zext_ln132, i17 6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:132]   --->   Operation 92 'add' 'sub22' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "%cast = zext i14 %trunc_ln" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:128]   --->   Operation 93 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%cast1 = zext i14 %trunc_ln2" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:129]   --->   Operation 94 'zext' 'cast1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (5.60ns)   --->   "%bound = mul i28 %cast, i28 %cast1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:128]   --->   Operation 95 'mul' 'bound' <Predicate = true> <Delay = 5.60> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 5.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "%br_ln138 = br void %STREAM_K" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:138]   --->   Operation 96 'br' 'br_ln138' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 6.28>
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i28 %indvar_flatten" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:138]   --->   Operation 97 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (2.43ns)   --->   "%icmp_ln138 = icmp_eq  i28 %indvar_flatten_load, i28 %bound" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:138]   --->   Operation 98 'icmp' 'icmp_ln138' <Predicate = true> <Delay = 2.43> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 99 [1/1] (2.43ns)   --->   "%add_ln138 = add i28 %indvar_flatten_load, i28 1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:138]   --->   Operation 99 'add' 'add_ln138' <Predicate = true> <Delay = 2.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "%br_ln138 = br i1 %icmp_ln138, void %for.inc39.loopexit, void %for.end41.loopexit" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:138]   --->   Operation 100 'br' 'br_ln138' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%off_cj_load = load i32 %off_cj" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:135]   --->   Operation 101 'load' 'off_cj_load' <Predicate = (!icmp_ln138)> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%j_load = load i14 %j" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144]   --->   Operation 102 'load' 'j_load' <Predicate = (!icmp_ln138)> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%off_b_load = load i16 %off_b" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:135]   --->   Operation 103 'load' 'off_b_load' <Predicate = (!icmp_ln138)> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%off_a_load = load i32 %off_a" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:184]   --->   Operation 104 'load' 'off_a_load' <Predicate = (!icmp_ln138)> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "%off_cj_1_load = load i32 %off_cj_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:185]   --->   Operation 105 'load' 'off_cj_1_load' <Predicate = (!icmp_ln138)> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (1.81ns)   --->   "%icmp_ln144 = icmp_eq  i14 %j_load, i14 %trunc_ln2" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144]   --->   Operation 106 'icmp' 'icmp_ln144' <Predicate = (!icmp_ln138)> <Delay = 1.81> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 107 [1/1] (0.80ns)   --->   "%select_ln135 = select i1 %icmp_ln144, i16 0, i16 %off_b_load" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:135]   --->   Operation 107 'select' 'select_ln135' <Predicate = (!icmp_ln138)> <Delay = 0.80> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 108 [1/1] (2.55ns)   --->   "%add_ln185 = add i32 %zext_ln133, i32 %off_cj_1_load" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:185]   --->   Operation 108 'add' 'add_ln185' <Predicate = (!icmp_ln138)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 109 [1/1] (0.69ns)   --->   "%select_ln135_1 = select i1 %icmp_ln144, i32 %add_ln185, i32 %off_cj_load" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:135]   --->   Operation 109 'select' 'select_ln135_1' <Predicate = (!icmp_ln138)> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 110 [1/1] (0.69ns)   --->   "%select_ln138 = select i1 %icmp_ln144, i32 %add_ln185, i32 %off_cj_1_load" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:138]   --->   Operation 110 'select' 'select_ln138' <Predicate = (!icmp_ln138)> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 111 [1/1] (2.55ns)   --->   "%add_ln184 = add i32 %zext_ln132_1, i32 %off_a_load" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:184]   --->   Operation 111 'add' 'add_ln184' <Predicate = (!icmp_ln138)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 112 [1/1] (0.69ns)   --->   "%select_ln138_1 = select i1 %icmp_ln144, i32 %add_ln184, i32 %off_a_load" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:138]   --->   Operation 112 'select' 'select_ln138_1' <Predicate = (!icmp_ln138)> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 113 [1/1] (2.07ns)   --->   "%add_ln180 = add i16 %select_ln135, i16 4" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:180]   --->   Operation 113 'add' 'add_ln180' <Predicate = (!icmp_ln138)> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 114 [1/1] (1.81ns)   --->   "%add_ln144 = add i14 %j_load, i14 1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144]   --->   Operation 114 'add' 'add_ln144' <Predicate = (!icmp_ln138)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 115 [1/1] (0.70ns)   --->   "%j_1 = select i1 %icmp_ln144, i14 1, i14 %add_ln144" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144]   --->   Operation 115 'select' 'j_1' <Predicate = (!icmp_ln138)> <Delay = 0.70> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 116 [1/1] (1.58ns)   --->   "%store_ln138 = store i28 %add_ln138, i28 %indvar_flatten" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:138]   --->   Operation 116 'store' 'store_ln138' <Predicate = (!icmp_ln138)> <Delay = 1.58>
+ST_3 : Operation 117 [1/1] (1.58ns)   --->   "%store_ln142 = store i32 %select_ln138, i32 %off_cj_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:142]   --->   Operation 117 'store' 'store_ln142' <Predicate = (!icmp_ln138)> <Delay = 1.58>
+ST_3 : Operation 118 [1/1] (1.58ns)   --->   "%store_ln135 = store i32 %select_ln138_1, i32 %off_a" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:135]   --->   Operation 118 'store' 'store_ln135' <Predicate = (!icmp_ln138)> <Delay = 1.58>
+ST_3 : Operation 119 [1/1] (1.58ns)   --->   "%store_ln141 = store i16 %add_ln180, i16 %off_b" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:141]   --->   Operation 119 'store' 'store_ln141' <Predicate = (!icmp_ln138)> <Delay = 1.58>
+ST_3 : Operation 120 [1/1] (1.58ns)   --->   "%store_ln144 = store i14 %j_1, i14 %j" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144]   --->   Operation 120 'store' 'store_ln144' <Predicate = (!icmp_ln138)> <Delay = 1.58>
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "%ret_ln189 = ret i8 0" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:189]   --->   Operation 121 'ret' 'ret_ln189' <Predicate = (icmp_ln138)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 6.92>
+ST_4 : Operation 122 [2/2] (6.92ns)   --->   "%call_ln132 = call void @mxm_execute_ursa_Pipeline_STREAM_K, i8 %bi, i8 %aw, i17 %sub22, i16 %b0_q_read, i16 %m_read, i16 %m_read, i32 %select_ln138_1, i32 %addr_a0_read, i18 %stride_a, i16 %select_ln135, i32 %addr_b0_read, i16 %select_ln135, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_5, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_39, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_36, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_4, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_38, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_35, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_37, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_34, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_32, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_31, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_30, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_29, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_28, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_27, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_26, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_25, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_24, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_23, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_22, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:132]   --->   Operation 122 'call' 'call_ln132' <Predicate = true> <Delay = 6.92> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 123 [1/1] (0.00ns) (grouped into LUT with out node addr_sa_c)   --->   "%shl_ln176 = shl i32 %select_ln135_1, i32 2" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:176]   --->   Operation 123 'shl' 'shl_ln176' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 124 [1/1] (2.55ns) (out node of the LUT)   --->   "%addr_sa_c = add i32 %shl_ln176, i32 %addr_c0_read" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:176]   --->   Operation 124 'add' 'addr_sa_c' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 125 [1/1] (2.55ns)   --->   "%off_cj_2 = add i32 %select_ln135_1, i32 4" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:181]   --->   Operation 125 'add' 'off_cj_2' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 126 [1/1] (1.58ns)   --->   "%store_ln142 = store i32 %off_cj_2, i32 %off_cj" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:142]   --->   Operation 126 'store' 'store_ln142' <Predicate = true> <Delay = 1.58>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 127 [1/2] (0.00ns)   --->   "%call_ln132 = call void @mxm_execute_ursa_Pipeline_STREAM_K, i8 %bi, i8 %aw, i17 %sub22, i16 %b0_q_read, i16 %m_read, i16 %m_read, i32 %select_ln138_1, i32 %addr_a0_read, i18 %stride_a, i16 %select_ln135, i32 %addr_b0_read, i16 %select_ln135, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_5, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_39, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_36, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_4, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_38, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_35, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_37, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_34, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_32, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_31, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_30, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_29, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_28, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_27, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_26, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_25, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_24, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_23, i8 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_22, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:132]   --->   Operation 127 'call' 'call_ln132' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 0.00>
+
+State 11 <SV = 10> <Delay = 0.00>
+
+State 12 <SV = 11> <Delay = 0.00>
+
+State 13 <SV = 12> <Delay = 0.00>
+
+State 14 <SV = 13> <Delay = 0.00>
+
+State 15 <SV = 14> <Delay = 0.00>
+
+State 16 <SV = 15> <Delay = 0.00>
+
+State 17 <SV = 16> <Delay = 7.30>
+ST_17 : Operation 128 [22/22] (7.30ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 128 'call' 'call_ln177' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 0.00>
+ST_18 : Operation 129 [21/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 129 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 0.00>
+ST_19 : Operation 130 [20/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 130 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 0.00>
+ST_20 : Operation 131 [19/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 131 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 0.00>
+ST_21 : Operation 132 [18/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 132 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 0.00>
+ST_22 : Operation 133 [17/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 133 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 0.00>
+ST_23 : Operation 134 [16/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 134 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 0.00>
+ST_24 : Operation 135 [15/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 135 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 24> <Delay = 0.00>
+ST_25 : Operation 136 [14/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 136 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 0.00>
+ST_26 : Operation 137 [13/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 137 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 0.00>
+ST_27 : Operation 138 [12/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 138 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 27> <Delay = 0.00>
+ST_28 : Operation 139 [11/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 139 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 28> <Delay = 0.00>
+ST_29 : Operation 140 [10/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 140 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 29> <Delay = 0.00>
+ST_30 : Operation 141 [9/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 141 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 30> <Delay = 0.00>
+ST_31 : Operation 142 [8/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 142 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 32 <SV = 31> <Delay = 0.00>
+ST_32 : Operation 143 [7/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 143 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 33 <SV = 32> <Delay = 0.00>
+ST_33 : Operation 144 [6/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 144 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 34 <SV = 33> <Delay = 0.00>
+ST_34 : Operation 145 [5/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 145 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 34> <Delay = 0.00>
+ST_35 : Operation 146 [4/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 146 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 36 <SV = 35> <Delay = 0.00>
+ST_36 : Operation 147 [3/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 147 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 37 <SV = 36> <Delay = 0.00>
+ST_37 : Operation 148 [2/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 148 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 38 <SV = 37> <Delay = 0.00>
+ST_38 : Operation 149 [1/22] (0.00ns)   --->   "%call_ln177 = call void @sa_store, i32 %ca, i32 %addr_sa_c, i16 %b0_q_read, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177]   --->   Operation 149 'call' 'call_ln177' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 39 <SV = 38> <Delay = 0.00>
+ST_39 : Operation 150 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @TILE_ROW_TILE_COL_str"   --->   Operation 150 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 151 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 0, i64 268402689, i64 67092481"   --->   Operation 151 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 152 [1/1] (0.00ns)   --->   "%call_ln178 = call void @sa_reset, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7, i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:178]   --->   Operation 152 'call' 'call_ln178' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_39 : Operation 153 [1/1] (0.00ns)   --->   "%br_ln144 = br void %STREAM_K" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144]   --->   Operation 153 'br' 'br_ln144' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.588ns
+The critical path consists of the following:
+	'alloca' operation 28 bit ('indvar_flatten') [55]  (0.000 ns)
+	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'indvar_flatten' [97]  (1.588 ns)
+
+ <State 2>: 6.600ns
+The critical path consists of the following:
+	s_axi read operation ('b0_q_read', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78) on port 'b0_q' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:78) [82]  (1.000 ns)
+	'mul' operation 28 bit ('bound', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:128) [96]  (5.600 ns)
+
+ <State 3>: 6.282ns
+The critical path consists of the following:
+	'load' operation 14 bit ('j_load', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144) on local variable 'j', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144 [111]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln144', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:144) [117]  (1.812 ns)
+	'select' operation 16 bit ('select_ln135', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:135) [118]  (0.805 ns)
+	'add' operation 16 bit ('add_ln180', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:180) [129]  (2.077 ns)
+	'store' operation 0 bit ('store_ln141', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:141) of variable 'add_ln180', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:180 on local variable 'off_b', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:141 [136]  (1.588 ns)
+
+ <State 4>: 6.923ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln132', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:132) to 'mxm_execute_ursa_Pipeline_STREAM_K' [124]  (6.923 ns)
+
+ <State 5>: 0.000ns
+The critical path consists of the following:
+
+ <State 6>: 0.000ns
+The critical path consists of the following:
+
+ <State 7>: 0.000ns
+The critical path consists of the following:
+
+ <State 8>: 0.000ns
+The critical path consists of the following:
+
+ <State 9>: 0.000ns
+The critical path consists of the following:
+
+ <State 10>: 0.000ns
+The critical path consists of the following:
+
+ <State 11>: 0.000ns
+The critical path consists of the following:
+
+ <State 12>: 0.000ns
+The critical path consists of the following:
+
+ <State 13>: 0.000ns
+The critical path consists of the following:
+
+ <State 14>: 0.000ns
+The critical path consists of the following:
+
+ <State 15>: 0.000ns
+The critical path consists of the following:
+
+ <State 16>: 0.000ns
+The critical path consists of the following:
+
+ <State 17>: 7.300ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln177', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/shell.cpp:177) to 'sa_store' [127]  (7.300 ns)
+
+ <State 18>: 0.000ns
+The critical path consists of the following:
+
+ <State 19>: 0.000ns
+The critical path consists of the following:
+
+ <State 20>: 0.000ns
+The critical path consists of the following:
+
+ <State 21>: 0.000ns
+The critical path consists of the following:
+
+ <State 22>: 0.000ns
+The critical path consists of the following:
+
+ <State 23>: 0.000ns
+The critical path consists of the following:
+
+ <State 24>: 0.000ns
+The critical path consists of the following:
+
+ <State 25>: 0.000ns
+The critical path consists of the following:
+
+ <State 26>: 0.000ns
+The critical path consists of the following:
+
+ <State 27>: 0.000ns
+The critical path consists of the following:
+
+ <State 28>: 0.000ns
+The critical path consists of the following:
+
+ <State 29>: 0.000ns
+The critical path consists of the following:
+
+ <State 30>: 0.000ns
+The critical path consists of the following:
+
+ <State 31>: 0.000ns
+The critical path consists of the following:
+
+ <State 32>: 0.000ns
+The critical path consists of the following:
+
+ <State 33>: 0.000ns
+The critical path consists of the following:
+
+ <State 34>: 0.000ns
+The critical path consists of the following:
+
+ <State 35>: 0.000ns
+The critical path consists of the following:
+
+ <State 36>: 0.000ns
+The critical path consists of the following:
+
+ <State 37>: 0.000ns
+The critical path consists of the following:
+
+ <State 38>: 0.000ns
+The critical path consists of the following:
+
+ <State 39>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
