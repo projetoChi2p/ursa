@@ -1,0 +1,164 @@
+<ENTRY>
+{
+ "thisFile": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/mxm_execute_ursa/mxm_execute_ursa.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Jun  2 13:32:53 2026",
+ "timestampMillis": "1780417973179",
+ "buildStep": {
+  "cmdId": "968a78aa-06f5-4ed8-8e8e-4cc7206bd704",
+  "name": "vitis-run",
+  "logFile": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/mxm_execute_ursa/logs/mxm_execute_ursa.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/hls_config.cfg --work_dir mxm_execute_ursa ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/hls_config.cfg",
+   "--work_dir",
+   "mxm_execute_ursa"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun  2 13:32:53 2026",
+ "timestampMillis": "1780417973179",
+ "status": {
+  "cmdId": "968a78aa-06f5-4ed8-8e8e-4cc7206bd704",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Jun  2 13:32:56 2026",
+ "timestampMillis": "1780417976069",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mxm_execute_ursa",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/ulisses/Projects/ursa/src/core/shell.cpp",
+     "/home/ulisses/Projects/ursa/src/core/shell.h",
+     "/home/ulisses/Projects/ursa/src/core/sa.h",
+     "/home/ulisses/Projects/ursa/src/core/pe.h",
+     "/home/ulisses/Projects/ursa/src/core/sa.cpp",
+     "/home/ulisses/Projects/ursa/src/core/pe.cpp",
+     "/home/ulisses/Projects/ursa/src/labft/labft.h",
+     "/home/ulisses/Projects/ursa/src/labft/labft.cpp",
+     "/home/ulisses/Projects/ursa/src/settings.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Jun  2 13:32:56 2026",
+ "timestampMillis": "1780417976070",
+ "buildStep": {
+  "cmdId": "0a9da1e1-186b-48a1-a1e8-d0735df137d8",
+  "name": "csim_design",
+  "logFile": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls/hls.log",
+  "commandLine": "csim_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/vitis/hls_ursa_vanilla"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun  2 13:32:56 2026",
+ "timestampMillis": "1780417976071",
+ "status": {
+  "cmdId": "0a9da1e1-186b-48a1-a1e8-d0735df137d8",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun  2 13:32:56 2026",
+ "timestampMillis": "1780417976540",
+ "status": {
+  "cmdId": "0a9da1e1-186b-48a1-a1e8-d0735df137d8",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Jun  2 13:32:56 2026",
+ "timestampMillis": "1780417976682",
+ "status": {
+  "cmdId": "968a78aa-06f5-4ed8-8e8e-4cc7206bd704",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun  2 13:32:56 2026",
+ "timestampMillis": "1780417976682",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Jun  2 13:32:56 2026",
+ "timestampMillis": "1780417976683",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
