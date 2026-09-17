@@ -1,0 +1,545 @@
+// ----------------------------------------------------------------------------
+// Copyright (c) 2020-2025 RVX contributors
+//
+// This work is licensed under the MIT License, see LICENSE file for details.
+// SPDX-License-Identifier: MIT
+// ----------------------------------------------------------------------------
+
+(* keep_hierarchy = "yes", dont_touch = "true", keep = "true", preserve = "true", mark_debug = "true" *)
+module rvx_soc_axi #(
+
+    // Frequency of 'clock' signal
+    parameter CLOCK_FREQUENCY = 50000000  ,
+    // Desired baud rate for UART unit
+    parameter UART_BAUD_RATE = 9600       ,
+    // Memory size in bytes - must be a power of 2
+    parameter MEMORY_SIZE = 8192          ,
+    // External bus addressable size in bytes
+    parameter EXTERNAL_SIZE = 8192        ,
+    // Text file with program and data (one hex value per line)
+    parameter MEMORY_INIT_FILE = ""       ,
+    // Address of the first instruction to fetch from memory
+    parameter BOOT_ADDRESS = 32'h00000000 ,
+    // Number of available I/O ports
+    parameter GPIO_WIDTH = 1
+    ) (
+    
+    input   wire                            clock       ,
+    input   wire                            reset       ,
+    input   wire                            halt        ,
+    input   wire                            uart_rx     ,
+    output  wire                            uart_tx     ,
+    input   wire  [GPIO_WIDTH-1:0]          gpio_input  ,
+    output  wire  [GPIO_WIDTH-1:0]          gpio_oe     ,
+    output  wire  [GPIO_WIDTH-1:0]          gpio_output ,
+    
+    
+    //
+    // AXI side
+    //
+
+   /**************** Write Address Channel Signals ****************/
+    output wire  [31:0]               axi_awaddr,
+    output wire  [2:0]                axi_awprot,
+    input  wire                       axi_awready,
+    output wire                       axi_awvalid,
+    
+    /**************** Read Address Channel Signals ****************/
+    output wire  [31:0]               axi_araddr,
+    output wire  [2:0]                axi_arprot,
+    input  wire                       axi_arready,
+    output wire                       axi_arvalid,
+
+    /**************** Write Data Channel Signals ****************/
+    output wire                       axi_wvalid,
+    output wire  [31:0]               axi_wdata,
+    output wire  [3:0]                axi_wstrb,
+    input  wire                       axi_wready,
+    
+    /**************** Read Data Channel Signals ****************/
+    input  wire  [31:0]               axi_rdata,
+    input  wire  [1:0]                axi_rresp,
+    output wire                       axi_rready,
+    input  wire                       axi_rvalid,
+    
+    /**************** Write Response Channel Signals ****************/
+    input  wire  [1:0]                axi_bresp,
+    output wire                       axi_bready,
+    input  wire                       axi_bvalid
+  );
+
+  // System bus configuration
+
+  localparam NUM_DEVICES    = 5;
+  localparam D0_RAM         = 0;
+  localparam D1_UART        = 1;
+  localparam D2_MTIMER      = 2;
+  localparam D3_GPIO        = 3;
+  localparam D4_AXI         = 4;
+
+  wire  [NUM_DEVICES*32-1:0] device_start_address;
+  wire  [NUM_DEVICES*32-1:0] device_region_size;
+
+  assign device_start_address [32*D0_RAM      +: 32]  = 32'h0000_0000;
+  assign device_region_size   [32*D0_RAM      +: 32]  = MEMORY_SIZE;
+
+  assign device_start_address [32*D1_UART     +: 32]  = 32'h8000_0000;
+  assign device_region_size   [32*D1_UART     +: 32]  = 16;
+
+  assign device_start_address [32*D2_MTIMER   +: 32]  = 32'h8001_0000;
+  assign device_region_size   [32*D2_MTIMER   +: 32]  = 32;
+
+  assign device_start_address [32*D3_GPIO     +: 32]  = 32'h8002_0000;
+  assign device_region_size   [32*D3_GPIO     +: 32]  = 32;
+
+  assign device_start_address [32*D4_AXI      +: 32]  = 32'h4000_0000;
+  assign device_region_size   [32*D4_AXI      +: 32]  = EXTERNAL_SIZE;
+
+  // RVX 32-bit Processor (Manager Device) <=> System Bus
+
+
+  (* mark_debug = "true" *) wire  [31:0]                manager_rw_address      ;
+  (* mark_debug = "true" *) wire  [31:0]                manager_read_data       ;
+  (* mark_debug = "true" *) wire                        manager_read_request    ;
+  (* mark_debug = "true" *) wire                        manager_read_response   ;
+  (* mark_debug = "true" *) wire  [31:0]                manager_write_data      ;
+  (* mark_debug = "true" *) wire  [3:0 ]                manager_write_strobe    ;
+  (* mark_debug = "true" *) wire                        manager_write_request   ;
+  (* mark_debug = "true" *) wire                        manager_write_response  ;
+
+  // System Bus <=> Managed Devices
+
+  (* mark_debug = "true" *) wire  [31:0]                device_rw_address       ;
+  (* mark_debug = "true" *) wire  [NUM_DEVICES*32-1:0]  device_read_data        ;
+  (* mark_debug = "true" *) wire  [NUM_DEVICES-1:0]     device_read_request     ;
+  (* mark_debug = "true" *) wire  [NUM_DEVICES-1:0]     device_read_response    ;
+  (* mark_debug = "true" *) wire  [31:0]                device_write_data       ;
+  (* mark_debug = "true" *) wire  [3:0]                 device_write_strobe     ;
+  (* mark_debug = "true" *) wire  [NUM_DEVICES-1:0]     device_write_request    ;
+  (* mark_debug = "true" *) wire  [NUM_DEVICES-1:0]     device_write_response   ;
+
+  // Real-time clock (unused)
+
+  wire  [63:0] real_time_clock;
+
+  assign real_time_clock = 64'b0;
+
+  // Interrupt signals
+
+  wire  [15:0] irq_fast;
+  wire         irq_external;
+  wire         irq_timer;
+  wire         irq_software;
+
+  wire  [15:0] irq_fast_response;
+  wire         irq_external_response;
+  wire         irq_timer_response;
+  wire         irq_software_response;
+
+  wire         irq_uart;
+  wire         irq_uart_response;
+
+  // Interrupt signals map
+
+  assign irq_fast               = {15'b0, irq_uart}; // Give UART interrupts the highest priority
+  assign irq_uart_response      = irq_fast_response[0];
+
+  assign irq_external           = 1'b0; // unused
+  assign irq_software           = 1'b0; // unused
+
+
+  rvx_core #(
+
+    .BOOT_ADDRESS                   (BOOT_ADDRESS                       )
+
+  ) rvx_core_instance (
+
+    // Global signals
+
+    .clock                          (clock                              ),
+    .reset                          (reset                              ),
+    .halt                           (halt                               ),
+
+    // IO interface
+
+    .rw_address                     (manager_rw_address                 ),
+    .read_data                      (manager_read_data                  ),
+    .read_request                   (manager_read_request               ),
+    .read_response                  (manager_read_response              ),
+    .write_data                     (manager_write_data                 ),
+    .write_strobe                   (manager_write_strobe               ),
+    .write_request                  (manager_write_request              ),
+    .write_response                 (manager_write_response             ),
+
+    // Interrupt request signals
+
+    .irq_fast                       (irq_fast                           ),
+    .irq_external                   (irq_external                       ),
+    .irq_timer                      (irq_timer                          ),
+    .irq_software                   (irq_software                       ),
+
+    // Interrupt response signals
+
+    .irq_fast_response              (irq_fast_response                  ),
+    .irq_external_response          (irq_external_response              ),
+    .irq_timer_response             (irq_timer_response                 ),
+    .irq_software_response          (irq_software_response              ),
+
+    // Real Time Clock
+
+    .real_time_clock                (real_time_clock                    )
+
+  );
+
+  rvx_bus #(
+
+    .NUM_DEVICES(NUM_DEVICES)
+
+  ) rvx_bus_instance (
+
+    // Global signals
+
+    .clock                          (clock                              ),
+    .reset                          (reset                              ),
+
+    // Interface with the manager device (Processor Core IP)
+
+    .manager_rw_address             (manager_rw_address                 ),
+    .manager_read_data              (manager_read_data                  ),
+    .manager_read_request           (manager_read_request               ),
+    .manager_read_response          (manager_read_response              ),
+    .manager_write_data             (manager_write_data                 ),
+    .manager_write_strobe           (manager_write_strobe               ),
+    .manager_write_request          (manager_write_request              ),
+    .manager_write_response         (manager_write_response             ),
+
+    // Interface with the managed devices
+
+    .device_rw_address              (device_rw_address                  ),
+    .device_read_data               (device_read_data                   ),
+    .device_read_request            (device_read_request                ),
+    .device_read_response           (device_read_response               ),
+    .device_write_data              (device_write_data                  ),
+    .device_write_strobe            (device_write_strobe                ),
+    .device_write_request           (device_write_request               ),
+    .device_write_response          (device_write_response              ),
+
+    // Base addresses and masks of the managed devices
+
+    .device_start_address          (device_start_address                ),
+    .device_region_size            (device_region_size                  )
+
+  );
+
+  rvx_ram #(
+
+    .MEMORY_SIZE                    (MEMORY_SIZE                        ),
+    .MEMORY_INIT_FILE               (MEMORY_INIT_FILE                   )
+
+  ) rvx_ram_instance (
+
+    // Global signals
+
+    .clock                          (clock                              ),
+    .reset                          (reset                              ),
+
+    // IO interface
+
+    .rw_address                     (device_rw_address                  ),
+    .read_data                      (device_read_data[32*D0_RAM +: 32]  ),
+    .read_request                   (device_read_request[D0_RAM]        ),
+    .read_response                  (device_read_response[D0_RAM]       ),
+    .write_data                     (device_write_data                  ),
+    .write_strobe                   (device_write_strobe                ),
+    .write_request                  (device_write_request[D0_RAM]       ),
+    .write_response                 (device_write_response[D0_RAM]      )
+
+  );
+
+  rvx_uart #(
+
+    .CLOCK_FREQUENCY                (CLOCK_FREQUENCY                    ),
+    .UART_BAUD_RATE                 (UART_BAUD_RATE                     )
+
+  ) rvx_uart_instance (
+
+    // Global signals
+
+    .clock                          (clock                              ),
+    .reset                          (reset                              ),
+
+    // IO interface
+
+    .rw_address                     (device_rw_address[4:0]             ),
+    .read_data                      (device_read_data[32*D1_UART +: 32] ),
+    .read_request                   (device_read_request[D1_UART]       ),
+    .read_response                  (device_read_response[D1_UART]      ),
+    .write_data                     (device_write_data[7:0]             ),
+    .write_request                  (device_write_request[D1_UART]      ),
+    .write_response                 (device_write_response[D1_UART]     ),
+
+    // RX/TX signals
+
+    .uart_tx                        (uart_tx                            ),
+    .uart_rx                        (uart_rx                            ),
+
+    // Interrupt signaling
+
+    .uart_irq                       (irq_uart                           ),
+    .uart_irq_response              (irq_uart_response                  )
+
+  );
+
+  rvx_mtimer
+  rvx_mtimer_instance (
+
+    // Global signals
+
+    .clock                          (clock                                  ),
+    .reset                          (reset                                  ),
+
+    // IO interface
+
+    .rw_address                     (device_rw_address[4:0]                 ),
+    .read_data                      (device_read_data[32*D2_MTIMER +: 32]   ),
+    .read_request                   (device_read_request[D2_MTIMER]         ),
+    .read_response                  (device_read_response[D2_MTIMER]        ),
+    .write_data                     (device_write_data                      ),
+    .write_strobe                   (device_write_strobe                    ),
+    .write_request                  (device_write_request[D2_MTIMER]        ),
+    .write_response                 (device_write_response[D2_MTIMER]       ),
+
+    // Interrupt signaling
+
+    .irq                            (irq_timer                              )
+
+  );
+
+  rvx_gpio #(
+
+    .GPIO_WIDTH                     (GPIO_WIDTH                             )
+
+  ) rvx_gpio_instance (
+
+    // Global signals
+
+    .clock                          (clock                                  ),
+    .reset                          (reset                                  ),
+
+    // IO interface
+
+    .rw_address                     (device_rw_address[4:0]                 ),
+    .read_data                      (device_read_data[32*D3_GPIO +: 32]     ),
+    .read_request                   (device_read_request[D3_GPIO]           ),
+    .read_response                  (device_read_response[D3_GPIO]          ),
+    .write_data                     (device_write_data[GPIO_WIDTH-1:0]      ),
+    .write_strobe                   (device_write_strobe                    ),
+    .write_request                  (device_write_request[D3_GPIO]          ),
+    .write_response                 (device_write_response[D3_GPIO]         ),
+
+    // I/O signals
+
+    .gpio_input                     (gpio_input                             ),
+    .gpio_oe                        (gpio_oe                                ),
+    .gpio_output                    (gpio_output                            )
+
+  );
+
+
+  localparam AXI_IS_PICORV32 = 1;
+  localparam AXI_IS_PULP     = 2;
+  localparam AXI_IS_WB       = 3;
+  localparam AXI_IS_XIL      = 4;
+  localparam AXI_IMPL        = AXI_IS_XIL;
+
+  generate 
+  if ( AXI_IMPL==AXI_IS_PULP ) begin : axi_by_pulp_g
+  
+      rvx_axi_pulp
+      rvx_axi_instance (
+    
+        // Global signals
+    
+        .clock                          (clock                              ),
+        .reset                          (reset                              ),
+    
+        // IO interface
+    
+        .rvx_rw_address_i               (device_rw_address                  ),
+        .rvx_read_data_o                (device_read_data[32*D4_AXI +: 32]  ),
+        .rvx_read_request_i             (device_read_request[D4_AXI]        ),
+        .rvx_read_response_o            (device_read_response[D4_AXI]       ),
+        .rvx_write_data_i               (device_write_data                  ),
+        .rvx_write_strobe_i             (device_write_strobe                ),
+        .rvx_write_request_i            (device_write_request[D4_AXI]       ),
+        .rvx_write_response_o           (device_write_response[D4_AXI]      ),
+    
+        // AXI signals
+        .axi_awvalid                    (axi_awvalid                        ),
+        .axi_awready                    (axi_awready                        ),
+        .axi_awaddr                     (axi_awaddr                         ),
+        .axi_awprot                     (axi_awprot                         ),
+        .axi_wvalid                     (axi_wvalid                         ),
+        .axi_wready                     (axi_wready                         ),
+        .axi_wdata                      (axi_wdata                          ),
+        .axi_wstrb                      (axi_wstrb                          ),
+        .axi_bvalid                     (axi_bvalid                         ),
+        .axi_bresp                      (axi_bresp                          ),
+        .axi_bready                     (axi_bready                         ),
+        .axi_arvalid                    (axi_arvalid                        ),
+        .axi_arready                    (axi_arready                        ),
+        .axi_araddr                     (axi_araddr                         ),
+        .axi_arprot                     (axi_arprot                         ),
+        .axi_rvalid                     (axi_rvalid                         ),
+        .axi_rresp                      (axi_rresp                          ),
+        .axi_rready                     (axi_rready                         ),
+        .axi_rdata                      (axi_rdata                          )
+      );
+      
+  end
+  else if ( AXI_IMPL==AXI_IS_PICORV32 ) begin : axi_by_picorv32_g
+
+      rvx_axi_picorv32
+      rvx_axi_instance (
+    
+        // Global signals
+    
+        .clock                          (clock                              ),
+        .reset                          (reset                              ),
+    
+        // IO interface
+    
+        .rvx_rw_address_i               (device_rw_address                  ),
+        .rvx_read_data_o                (device_read_data[32*D4_AXI +: 32]  ),
+        .rvx_read_request_i             (device_read_request[D4_AXI]        ),
+        .rvx_read_response_o            (device_read_response[D4_AXI]       ),
+        .rvx_write_data_i               (device_write_data                  ),
+        .rvx_write_strobe_i             (device_write_strobe                ),
+        .rvx_write_request_i            (device_write_request[D4_AXI]       ),
+        .rvx_write_response_o           (device_write_response[D4_AXI]      ),
+    
+        // AXI signals
+        .axi_awvalid                    (axi_awvalid                        ),
+        .axi_awready                    (axi_awready                        ),
+        .axi_awaddr                     (axi_awaddr                         ),
+        .axi_awprot                     (axi_awprot                         ),
+        .axi_wvalid                     (axi_wvalid                         ),
+        .axi_wready                     (axi_wready                         ),
+        .axi_wdata                      (axi_wdata                          ),
+        .axi_wstrb                      (axi_wstrb                          ),
+        .axi_bvalid                     (axi_bvalid                         ),
+        .axi_bresp                      (axi_bresp                          ),
+        .axi_bready                     (axi_bready                         ),
+        .axi_arvalid                    (axi_arvalid                        ),
+        .axi_arready                    (axi_arready                        ),
+        .axi_araddr                     (axi_araddr                         ),
+        .axi_arprot                     (axi_arprot                         ),
+        .axi_rvalid                     (axi_rvalid                         ),
+        .axi_rresp                      (axi_rresp                          ),
+        .axi_rready                     (axi_rready                         ),
+        .axi_rdata                      (axi_rdata                          )
+      );
+
+  end
+  else if ( AXI_IMPL==AXI_IS_WB ) begin : axi_via_wishbone_g
+
+      rvx_axi_wb
+      rvx_axi_instance (
+    
+        // Global signals
+    
+        .clock                          (clock                              ),
+        .reset                          (reset                              ),
+    
+        // IO interface
+    
+        .rvx_rw_address_i               (device_rw_address                  ),
+        .rvx_read_data_o                (device_read_data[32*D4_AXI +: 32]  ),
+        .rvx_read_request_i             (device_read_request[D4_AXI]        ),
+        .rvx_read_response_o            (device_read_response[D4_AXI]       ),
+        .rvx_write_data_i               (device_write_data                  ),
+        .rvx_write_strobe_i             (device_write_strobe                ),
+        .rvx_write_request_i            (device_write_request[D4_AXI]       ),
+        .rvx_write_response_o           (device_write_response[D4_AXI]      ),
+    
+        // AXI signals
+        .axi_awvalid                    (axi_awvalid                        ),
+        .axi_awready                    (axi_awready                        ),
+        .axi_awaddr                     (axi_awaddr                         ),
+        .axi_awprot                     (axi_awprot                         ),
+        .axi_wvalid                     (axi_wvalid                         ),
+        .axi_wready                     (axi_wready                         ),
+        .axi_wdata                      (axi_wdata                          ),
+        .axi_wstrb                      (axi_wstrb                          ),
+        .axi_bvalid                     (axi_bvalid                         ),
+        .axi_bresp                      (axi_bresp                          ),
+        .axi_bready                     (axi_bready                         ),
+        .axi_arvalid                    (axi_arvalid                        ),
+        .axi_arready                    (axi_arready                        ),
+        .axi_araddr                     (axi_araddr                         ),
+        .axi_arprot                     (axi_arprot                         ),
+        .axi_rvalid                     (axi_rvalid                         ),
+        .axi_rresp                      (axi_rresp                          ),
+        .axi_rready                     (axi_rready                         ),
+        .axi_rdata                      (axi_rdata                          )
+      );
+
+  end
+  else if ( AXI_IMPL==AXI_IS_XIL ) begin : axi_xilinx_style_g
+
+      rvx_axi_xil_v2
+      rvx_axi_instance (
+    
+        // Global signals
+    
+        .clock                          (clock                              ),
+        .reset                          (reset                              ),
+    
+        // IO interface
+    
+        .rvx_rw_address_i               (device_rw_address                  ),
+        .rvx_read_data_o                (device_read_data[32*D4_AXI +: 32]  ),
+        .rvx_read_request_i             (device_read_request[D4_AXI]        ),
+        .rvx_read_response_o            (device_read_response[D4_AXI]       ),
+        .rvx_write_data_i               (device_write_data                  ),
+        .rvx_write_strobe_i             (device_write_strobe                ),
+        .rvx_write_request_i            (device_write_request[D4_AXI]       ),
+        .rvx_write_response_o           (device_write_response[D4_AXI]      ),
+    
+        // AXI signals
+        .axi_awvalid                    (axi_awvalid                        ),
+        .axi_awready                    (axi_awready                        ),
+        .axi_awaddr                     (axi_awaddr                         ),
+        .axi_awprot                     (axi_awprot                         ),
+        .axi_wvalid                     (axi_wvalid                         ),
+        .axi_wready                     (axi_wready                         ),
+        .axi_wdata                      (axi_wdata                          ),
+        .axi_wstrb                      (axi_wstrb                          ),
+        .axi_bvalid                     (axi_bvalid                         ),
+        .axi_bresp                      (axi_bresp                          ),
+        .axi_bready                     (axi_bready                         ),
+        .axi_arvalid                    (axi_arvalid                        ),
+        .axi_arready                    (axi_arready                        ),
+        .axi_araddr                     (axi_araddr                         ),
+        .axi_arprot                     (axi_arprot                         ),
+        .axi_rvalid                     (axi_rvalid                         ),
+        .axi_rresp                      (axi_rresp                          ),
+        .axi_rready                     (axi_rready                         ),
+        .axi_rdata                      (axi_rdata                          )
+      );
+
+  end
+  endgenerate
+    
+  // Avoid warnings about intentionally unused pins/wires
+  wire unused_ok =
+    &{1'b0,
+    irq_external,
+    irq_software,
+    irq_external_response,
+    irq_software_response,
+    irq_timer_response,
+    irq_fast_response[15:1],
+    1'b0};
+
+endmodule
