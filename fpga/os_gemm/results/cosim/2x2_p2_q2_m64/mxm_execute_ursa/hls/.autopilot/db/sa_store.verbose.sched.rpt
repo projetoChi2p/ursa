@@ -1,0 +1,222 @@
+
+
+================================================================
+== Vitis HLS Report for 'sa_store'
+================================================================
+* Date:           Wed Sep  9 20:18:38 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        mxm_execute_ursa
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        9|        9|  90.000 ns|  90.000 ns|    4|    4|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 4, depth = 10
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 1
+  Pipeline-0 : II = 4, D = 10, States = { 1 2 3 4 5 6 7 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 7.30>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%b0_q_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b0_q" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 11 'read' 'b0_q_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%out_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %out_r" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 12 'read' 'out_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i30 @_ssdm_op_PartSelect.i30.i32.i32.i32, i32 %out_read, i32 2, i32 31" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 13 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%sext_ln92_4 = sext i30 %trunc_ln" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 14 'sext' 'sext_ln92_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%ca_addr = getelementptr i32 %ca, i32 %sext_ln92_4" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 15 'getelementptr' 'ca_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (7.30ns)   --->   "%empty = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %ca_addr, i32 2" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 16 'writereq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i18 @_ssdm_op_BitConcatenate.i18.i16.i2, i16 %b0_q_read, i2 0" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 17 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%p_cast = zext i18 %tmp" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 18 'zext' 'p_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (2.55ns)   --->   "%empty_25 = add i32 %p_cast, i32 %out_read" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 19 'add' 'empty_25' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln1 = partselect i30 @_ssdm_op_PartSelect.i30.i32.i32.i32, i32 %empty_25, i32 2, i32 31" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 20 'partselect' 'trunc_ln1' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.30>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8 = load i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 21 'load' 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%sext_ln92 = sext i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 22 'sext' 'sext_ln92' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (7.30ns)   --->   "%write_ln92 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %ca_addr, i32 %sext_ln92, i4 15" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 23 'write' 'write_ln92' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 7.30>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9 = load i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 24 'load' 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%sext_ln92_1 = sext i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 25 'sext' 'sext_ln92_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (7.30ns)   --->   "%write_ln92 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %ca_addr, i32 %sext_ln92_1, i4 15" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 26 'write' 'write_ln92' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%sext_ln95 = sext i30 %trunc_ln1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 27 'sext' 'sext_ln95' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%ca_addr_1 = getelementptr i32 %ca, i32 %sext_ln95" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 28 'getelementptr' 'ca_addr_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (7.30ns)   --->   "%empty_26 = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %ca_addr_1, i32 2" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 29 'writereq' 'empty_26' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 7.30>
+ST_4 : Operation 30 [5/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 30 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10 = load i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 31 'load' 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%sext_ln92_2 = sext i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 32 'sext' 'sext_ln92_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (7.30ns)   --->   "%write_ln95 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %ca_addr_1, i32 %sext_ln92_2, i4 15" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 33 'write' 'write_ln95' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 34 [4/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 34 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 35 [1/1] (0.00ns)   --->   "%mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11 = load i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 35 'load' 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 36 [1/1] (0.00ns)   --->   "%sext_ln92_3 = sext i20 %mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 36 'sext' 'sext_ln92_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 37 [1/1] (7.30ns)   --->   "%write_ln95 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %ca_addr_1, i32 %sext_ln92_3, i4 15" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 37 'write' 'write_ln95' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 38 [3/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 38 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 39 [5/5] (7.30ns)   --->   "%empty_27 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 39 'writeresp' 'empty_27' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 40 [2/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 40 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 41 [4/5] (7.30ns)   --->   "%empty_27 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 41 'writeresp' 'empty_27' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 42 [1/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92]   --->   Operation 42 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 43 [3/5] (7.30ns)   --->   "%empty_27 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 43 'writeresp' 'empty_27' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 44 [2/5] (7.30ns)   --->   "%empty_27 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 44 'writeresp' 'empty_27' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 7.30>
+ST_10 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %ca, void @empty_7, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_9, void @empty_2, void @empty_0, i32 8, i32 8, i32 64, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 46 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_0"   --->   Operation 46 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 47 [1/5] (7.30ns)   --->   "%empty_27 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %ca_addr_1" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 47 'writeresp' 'empty_27' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 48 [1/1] (0.00ns)   --->   "%ret_ln95 = ret" [/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95]   --->   Operation 48 'ret' 'ret_ln95' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('out_read', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'out_r' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [11]  (0.000 ns)
+	'getelementptr' operation 32 bit ('ca_addr', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [18]  (0.000 ns)
+	bus request operation ('empty', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [19]  (7.300 ns)
+
+ <State 2>: 7.300ns
+The critical path consists of the following:
+	'load' operation 20 bit ('mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on static variable 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3' [12]  (0.000 ns)
+	bus write operation ('write_ln92', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [20]  (7.300 ns)
+
+ <State 3>: 7.300ns
+The critical path consists of the following:
+	'load' operation 20 bit ('mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on static variable 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2' [14]  (0.000 ns)
+	bus write operation ('write_ln92', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [21]  (7.300 ns)
+
+ <State 4>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [22]  (7.300 ns)
+
+ <State 5>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [22]  (7.300 ns)
+
+ <State 6>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [22]  (7.300 ns)
+
+ <State 7>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [22]  (7.300 ns)
+
+ <State 8>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:92) [22]  (7.300 ns)
+
+ <State 9>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_27', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95) [36]  (7.300 ns)
+
+ <State 10>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_27', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95) on port 'ca' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data/hls_src/core/sa.cpp:95) [36]  (7.300 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
