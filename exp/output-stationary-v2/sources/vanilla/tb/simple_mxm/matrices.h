@@ -18,13 +18,13 @@
  * and M sets how many iterations the shell's k loop makes.
  */
 #ifndef P
-  #define P 4
+  #define P 8
 #endif
 #ifndef Q
-  #define Q 4
+  #define Q 8
 #endif
 #ifndef M
-  #define M 4
+  #define M 8
 #endif
 
 #define MEM_DEPTH 4096

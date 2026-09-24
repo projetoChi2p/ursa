@@ -34,7 +34,7 @@
 
 // Systolic Array Size
 #ifndef SA_SIZE
-    #define SA_SIZE 4
+    #define SA_SIZE 8
 #endif
 
 // Width of macc_t, the accumulator inside each PE

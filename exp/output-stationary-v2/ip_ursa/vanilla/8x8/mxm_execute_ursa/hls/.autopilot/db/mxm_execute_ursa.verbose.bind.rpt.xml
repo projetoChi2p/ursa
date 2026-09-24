@@ -1,0 +1,52 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'mxm_execute_ursa'" level="0">
+<item name = "Date">Thu Sep 24 17:27:10 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">mxm_execute_ursa</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 8.511 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">2, 111743, 20.000 ns, 1.117 ms, 3, 111744, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_mxm_execute_ursa_Pipeline_LOAD_A_fu_676">mxm_execute_ursa_Pipeline_LOAD_A, 39, 147, 0.390 us, 1.470 us, 39, 147, no</column>
+<column name="grp_mxm_execute_ursa_Pipeline_LOAD_B_fu_693">mxm_execute_ursa_Pipeline_LOAD_B, 47, 155, 0.470 us, 1.550 us, 47, 155, no</column>
+<column name="grp_mxm_execute_ursa_Pipeline_STREAM_K_fu_712">mxm_execute_ursa_Pipeline_STREAM_K, 48, 156, 0.480 us, 1.560 us, 48, 156, no</column>
+<column name="grp_sa_store_fu_1101">sa_store, 69, 69, 0.690 us, 0.690 us, 64, 64, yes</column>
+<column name="call_ln236_sa_reset_fu_1237">sa_reset, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- TILE_ROW">7078, 111740, 3539 ~ 27935, -, -, 2 ~ 4, no</column>
+<column name=" + TILE_COL">3488, 27776, 218 ~ 434, -, -, 16 ~ 64, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

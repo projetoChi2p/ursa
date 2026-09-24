@@ -1,0 +1,165 @@
+<ENTRY>
+{
+ "thisFile": "/home/ulisses/Projects/ursa/exp/output-stationary-v2/vitis/hls_ursa_vanilla/mxm_execute_ursa/mxm_execute_ursa.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Sep 24 17:28:14 2026",
+ "timestampMillis": "1790281694135",
+ "buildStep": {
+  "cmdId": "669313b6-3b7d-40f0-901a-c6d0a58b0bcd",
+  "name": "vitis-run",
+  "logFile": "/home/ulisses/Projects/ursa/exp/output-stationary-v2/vitis/hls_ursa_vanilla/mxm_execute_ursa/logs/mxm_execute_ursa.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --package --config /home/ulisses/Projects/ursa/exp/output-stationary-v2/vitis/hls_ursa_vanilla/hls_config.cfg --work_dir mxm_execute_ursa ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "/home/ulisses/Projects/ursa/exp/output-stationary-v2/vitis/hls_ursa_vanilla/hls_config.cfg",
+   "--work_dir",
+   "mxm_execute_ursa"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/exp/output-stationary-v2/vitis/hls_ursa_vanilla"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Sep 24 17:28:14 2026",
+ "timestampMillis": "1790281694135",
+ "status": {
+  "cmdId": "669313b6-3b7d-40f0-901a-c6d0a58b0bcd",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Sep 24 17:28:15 2026",
+ "timestampMillis": "1790281695813",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mxm_execute_ursa",
+     "file": "/home/ulisses/Projects/ursa/exp/output-stationary-v2/vitis/hls_ursa_vanilla/mxm_execute_ursa/mxm_execute_ursa.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/ulisses/Projects/ursa/exp/output-stationary-v2/sources/vanilla/src/settings.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary-v2/sources/vanilla/src/core/pe.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary-v2/sources/vanilla/src/core/pe.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary-v2/sources/vanilla/src/core/sa.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary-v2/sources/vanilla/src/core/sa.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary-v2/sources/vanilla/src/core/shell.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary-v2/sources/vanilla/src/core/shell.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Sep 24 17:28:15 2026",
+ "timestampMillis": "1790281695815",
+ "buildStep": {
+  "cmdId": "507ae281-b4c3-4d4b-869b-a4624fd62d85",
+  "name": "export_design",
+  "logFile": "/home/ulisses/Projects/ursa/exp/output-stationary-v2/vitis/hls_ursa_vanilla/mxm_execute_ursa/hls/hls.log",
+  "commandLine": "export_design -flow none",
+  "args": [
+   "-flow",
+   "none"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/exp/output-stationary-v2/vitis/hls_ursa_vanilla"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Sep 24 17:28:15 2026",
+ "timestampMillis": "1790281695815",
+ "status": {
+  "cmdId": "507ae281-b4c3-4d4b-869b-a4624fd62d85",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Sep 24 17:28:34 2026",
+ "timestampMillis": "1790281714388",
+ "status": {
+  "cmdId": "507ae281-b4c3-4d4b-869b-a4624fd62d85",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Sep 24 17:28:34 2026",
+ "timestampMillis": "1790281714446",
+ "status": {
+  "cmdId": "669313b6-3b7d-40f0-901a-c6d0a58b0bcd",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Sep 24 17:28:34 2026",
+ "timestampMillis": "1790281714446",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Sep 24 17:28:34 2026",
+ "timestampMillis": "1790281714447",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -155,7 +155,8 @@ sa_result_t mxm_execute_ursa(
 
     #pragma HLS INTERFACE mode=m_axi port=addr_b0 bundle=bi offset=slave \
             num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \
-            max_write_burst_length=16  depth=1024
+            max_write_burst_length=16  depth=2048
+            // max_write_burst_length=16  depth=1024 ;//4x4
 
     #pragma HLS INTERFACE mode=m_axi port=casted_c0 bundle=ca offset=slave \
             num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 \

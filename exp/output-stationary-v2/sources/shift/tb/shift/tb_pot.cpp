@@ -1,5 +1,5 @@
 // C-sim of the PoT IP with the real ap_int types, against a plain reference.
-#include "../../hls_src/settings.h"
+#include "../../src/settings.h"
 #include <cstdio>
 #include <cstdlib>
 int main(){
