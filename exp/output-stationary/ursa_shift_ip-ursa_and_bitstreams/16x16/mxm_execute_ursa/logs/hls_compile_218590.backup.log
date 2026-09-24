@@ -1,0 +1,1071 @@
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/mxm_execute_ursa.hlscompile_summary, at Mon Sep 21 21:56:22 2026
+INFO: [v++ 82-31] Launching vitis_hls: vitis_hls -nolog -run csynth -work_dir /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa -config /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg -cmdlineconfig /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/config.cmdline
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'ulisses' on host 'ulisses-thinkpad' (Linux_x86_64 version 6.8.0-138-generic) on Mon Sep 21 21:56:24 -03 2026
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp'
+INFO: [HLS 200-1909] Reading HLS ini file /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg
+INFO: [HLS 200-1909] Reading HLS ini file /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/config.cmdline
+INFO: [HLS 200-2005] Using work_dir /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa 
+INFO: [HLS 200-1510] Running: open_project /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa -diskless 
+INFO: [HLS 200-1510] Running: open_solution hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: apply_ini /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg 
+INFO: [HLS 200-1909] Reading HLS ini file /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg
+WARNING: [HLS 200-1921] Skipping unknown ini [hls] entry '// tb.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_tb/simple_mxm/matrices.cpp' from /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(14)
+WARNING: [HLS 200-1921] Skipping unknown ini [hls] entry '// tb.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_tb/simple_mxm/matrices.h' from /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(15)
+WARNING: [HLS 200-1921] Skipping unknown ini [hls] entry '// tb.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_tb/simple_mxm/tb_main.cpp' from /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(16)
+WARNING: [HLS 200-1921] Skipping unknown ini [hls] entry '// syn.interface.m_axi_max_widen_bitwidth=64' from /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(27)
+WARNING: [HLS 200-1921] Skipping unknown ini [hls] entry '// syn.interface.m_axi_alignment_byte_size=8' from /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(28)
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/pe.cpp' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/pe.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/pe.h' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/pe.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.h' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.h' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/settings.h' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/settings.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_tb/shift/tb_pot.cpp' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(17)
+INFO: [HLS 200-10] Adding test bench file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_tb/shift/tb_pot.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=mxm_execute_ursa' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(19)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xc7z020clg484-1' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1465] Applying ini 'clock=5ns' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(20)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1465] Applying ini 'cosim.trace_level=all' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(23)
+INFO: [HLS 200-1465] Applying ini 'cosim.wave_debug=true' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(24)
+INFO: [HLS 200-1465] Applying ini 'package.ip.display_name=ursa_shift_16x16' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(22)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(5)
+INFO: [HLS 200-1465] Applying ini 'syn.interface.m_axi_addr64=0' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(21)
+INFO: [HLS 200-1465] Applying ini 'syn.interface.m_axi_max_bitwidth=32' at /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg(26)
+INFO: [HLS 200-1510] Running: apply_ini /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/config.cmdline 
+INFO: [HLS 200-1909] Reading HLS ini file /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/config.cmdline
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 274.430 MB.
+INFO: [HLS 200-10] Analyzing design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/pe.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.87 seconds. CPU system time: 1.57 seconds. Elapsed time: 8.64 seconds; current allocated memory: 277.062 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 1,416 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,604 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,056 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,058 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 14,546 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,147 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,795 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,795 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,779 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,138 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,057 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 12,605 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 12,643 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 12,643 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 12,743 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 12,685 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-377] Adding 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa' into disaggregation list because there's array-partition pragma applied on the struct field (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:185:9)
+INFO: [HLS 214-210] Disaggregating variable 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:179:0)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-291] Loop 'RESET_ROW' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:28:13)
+INFO: [HLS 214-291] Loop 'RESET_COL' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:30:13)
+INFO: [HLS 214-291] Loop 'PE_ROW' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:76:12)
+INFO: [HLS 214-291] Loop 'PE_COL' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:78:10)
+INFO: [HLS 214-291] Loop 'LINK_V_ROW' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:67:16)
+INFO: [HLS 214-291] Loop 'LINK_V_COL' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:69:14)
+INFO: [HLS 214-291] Loop 'LINK_H_COL' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:58:16)
+INFO: [HLS 214-291] Loop 'LINK_H_ROW' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:60:14)
+INFO: [HLS 214-291] Loop 'EDGE_INPUTS' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:51:15)
+INFO: [HLS 214-291] Loop 'LOAD_SA' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:125:11)
+INFO: [HLS 214-291] Loop 'FILL_B' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:66:13)
+INFO: [HLS 214-291] Loop 'FILL_A' is marked as complete unroll implied by the pipeline pragma (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:14:10)
+INFO: [HLS 214-186] Unrolling loop 'RESET_ROW' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:28:13) in function 'sa_reset' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:25:0)
+INFO: [HLS 214-186] Unrolling loop 'RESET_COL' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:30:13) in function 'sa_reset' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:25:0)
+INFO: [HLS 214-186] Unrolling loop 'STORE_ROW' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:103:12) in function 'sa_store' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:97:0)
+INFO: [HLS 214-186] Unrolling loop 'STORE_COL' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:105:12) in function 'sa_store' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:97:0)
+INFO: [HLS 214-186] Unrolling loop 'PE_ROW' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:76:12) in function 'sa_compute' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'PE_COL' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:78:10) in function 'sa_compute' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'LINK_V_ROW' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:67:16) in function 'sa_compute' completely with a factor of 15 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'LINK_V_COL' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:69:14) in function 'sa_compute' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'LINK_H_COL' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:58:16) in function 'sa_compute' completely with a factor of 15 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'LINK_H_ROW' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:60:14) in function 'sa_compute' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'EDGE_INPUTS' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:51:15) in function 'sa_compute' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:45:0)
+INFO: [HLS 214-186] Unrolling loop 'LOAD_SA' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:125:11) in function 'load_inputs_sa' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:122:0)
+INFO: [HLS 214-186] Unrolling loop 'FILL_B' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:66:13) in function 'fill_inputs_b' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:38:0)
+INFO: [HLS 214-186] Unrolling loop 'FILL_A' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:14:10) in function 'fill_inputs_a' completely with a factor of 16 (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:6:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:179:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.bw': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:179:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ri': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:179:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.tw': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:179:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.li': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:179:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_a_li': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:179:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.in_mtx_b_tw': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:179:0)
+INFO: [HLS 214-248] Applying array_partition to 'in_a': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:167:11)
+INFO: [HLS 214-248] Applying array_partition to 'in_b': Complete partitioning on dimension 1. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:170:11)
+INFO: [HLS 214-364] Automatically inlining function 'fill_inputs_a(ap_int<8>*, ap_uint<4>*, unsigned short, unsigned short)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214:2)
+INFO: [HLS 214-364] Automatically inlining function 'fill_inputs_b(ap_uint<8>*, unsigned short, ap_uint<8>*, unsigned short, unsigned short)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:215:21)
+INFO: [HLS 214-364] Automatically inlining function 'load_inputs_sa(SA*, ap_uint<4>*, ap_uint<8>*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:218:21)
+INFO: [HLS 214-364] Automatically inlining function 'sa_compute(SA*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:221:21)
+INFO: [HLS 214-364] Automatically inlining function 'sa_input_a_b(SA*, ap_uint<4>, ap_uint<8>, unsigned short)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:127:2)
+INFO: [HLS 214-364] Automatically inlining function 'pe_compute(PE*)' to improve effectiveness of pipeline pragma in function 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:80:2)
+INFO: [HLS 214-364] Automatically inlining function 'pe_reset(PE*)' to improve effectiveness of pipeline pragma in function 'sa_reset(SA*)' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:32:2)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_0)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_1)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_10)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_11)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_12)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_13)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_14)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_15)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_2)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_3)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_4)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_5)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_6)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_7)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_8)' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)::sa (.pe.ba_9)' due to pipeline pragma
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_9': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_8': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_7': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_6': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_5': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_4': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_3': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_2': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_15': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_14': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_13': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_12': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_11': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_10': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_1': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to '_ZZ16mxm_execute_ursaPatPhtPitE2sa.pe.ba_0': Complete partitioning on dimension 1.
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:107:19)
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 32 has been inferred on bundle 'ca'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp:110:1)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 13.15 seconds. CPU system time: 0.88 seconds. Elapsed time: 15.62 seconds; current allocated memory: 290.004 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 290.004 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.09 seconds; current allocated memory: 310.496 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 311.480 MB.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.62' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.61' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.60' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.59' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.58' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.57' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.56' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.55' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.54' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.53' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.52' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.51' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.50' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.49' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.48' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.47' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.46' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.45' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.44' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.43' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.42' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.41' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.40' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.39' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.38' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.37' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.36' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.35' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.34' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.33' automatically.
+INFO: [XFORM 203-102] Partitioning array 'mxm_execute_ursa(signed char*, unsigned short, unsigned char*, unsigned short, int*, unsigned short)sa.32' automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:39:14) to (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:211:27) in function 'mxm_execute_ursa'... converting 513 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'mxm_execute_ursa' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/pe.cpp:16:12)...122 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 3.52 seconds. CPU system time: 0.03 seconds. Elapsed time: 3.57 seconds; current allocated memory: 370.160 MB.
+INFO: [HLS 200-2060] Failed to convert nested loops 'TILE_COL'(/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:202:23) and 'STREAM_K'(/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:211:27) in function 'mxm_execute_ursa' into perfectly nested loops.
+WARNING: [HLS 200-960] Cannot flatten loop 'TILE_COL' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:202:23) in function 'mxm_execute_ursa' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+INFO: [XFORM 203-541] Flattening a loop nest 'TILE_ROW' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:196:19) in function 'mxm_execute_ursa'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 4.09 seconds. CPU system time: 0.02 seconds. Elapsed time: 4.12 seconds; current allocated memory: 412.348 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mxm_execute_ursa' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mxm_execute_ursa_Pipeline_STREAM_K' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'STREAM_K'.
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_1_req', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) on port 'aw' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_2_req', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) on port 'aw' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_3_req', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) on port 'aw' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_4_req', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) on port 'aw' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_11_req', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) on port 'aw' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'mxm_execute_ursa_Pipeline_STREAM_K' (loop 'STREAM_K'): Unable to schedule bus request operation ('aw_load_15_req', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) on port 'aw' (/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:24->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:214) due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 16, Depth = 35, loop 'STREAM_K'
+WARNING: [HLS 200-871] Estimated clock period (3.695 ns) exceeds the target (target clock period: 5.000 ns, clock uncertainty: 1.350 ns, effective delay budget: 3.650 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mxm_execute_ursa_Pipeline_STREAM_K' consists of the following:
+	'store' operation 0 bit ('t_write_ln38', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:38->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:215) of constant 0 on local variable 't', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:38->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:215 [805]  (1.588 ns)
+	'load' operation 16 bit ('t', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:211) on local variable 't', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:38->/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:215 [808]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln211', /home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp:211) [812]  (2.107 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 17.96 seconds. CPU system time: 0.05 seconds. Elapsed time: 18.05 seconds; current allocated memory: 464.270 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.27 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.3 seconds; current allocated memory: 480.270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sa_store' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=empty_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=empty_59) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.76 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.79 seconds; current allocated memory: 480.270 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 480.270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sa_reset' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sa_reset'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sa_reset'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 480.270 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 480.270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mxm_execute_ursa' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 480.270 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 480.836 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mxm_execute_ursa_Pipeline_STREAM_K' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_918' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_934' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_950' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_966' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_982' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_998' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1014' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1030' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1047' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1063' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1079' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1095' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1111' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1127' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1143' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1159' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_919' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_935' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_951' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_967' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_983' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_999' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1015' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1031' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1048' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1064' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1080' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1096' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1112' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1128' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1144' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1160' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_925' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_941' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_957' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_973' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_989' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1005' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1021' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1037' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1054' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1070' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1086' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1102' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1118' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1134' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1150' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1166' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_926' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_942' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_958' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_974' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_990' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1006' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1022' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1038' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1055' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1071' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1087' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1103' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1119' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1135' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1151' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1167' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_927' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_943' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_959' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_975' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_991' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1007' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1023' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1039' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1056' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1072' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1088' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1104' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1120' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1136' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1152' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1168' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_928' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_944' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_960' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_976' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_992' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1008' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1024' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1040' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1057' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1073' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1089' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1105' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1121' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1137' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1153' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1169' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_929' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_945' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_961' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_977' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_993' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1009' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1025' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1041' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1058' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1074' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1090' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1106' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1122' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1138' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1154' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1170' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_930' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_946' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_962' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_978' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_994' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1010' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1026' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1042' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1059' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1075' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1091' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1107' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1123' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1139' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1155' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1171' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_931' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_947' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_963' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_979' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_995' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1011' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1027' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1043' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1060' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1076' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1092' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1108' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1124' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1140' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1156' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1172' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_932' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_948' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_964' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_980' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_996' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1012' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1028' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1044' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1061' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1077' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1093' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1109' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1125' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1141' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1157' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1173' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_920' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_936' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_952' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_968' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_984' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1000' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1016' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1032' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1049' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1065' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1081' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1097' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1113' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1129' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1145' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1161' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_921' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_937' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_953' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_969' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_985' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1001' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1017' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1033' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1050' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1066' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1082' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1098' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1114' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1130' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1146' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1162' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_922' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_938' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_954' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_970' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_986' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1002' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1018' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1034' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1051' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1067' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1083' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1099' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1115' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1131' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1147' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1163' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_923' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_939' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_955' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_971' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_987' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1003' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1019' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1035' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1052' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1068' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1084' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1100' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1116' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1132' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1148' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1164' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_924' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_940' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_956' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_972' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_988' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1004' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1020' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1036' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1053' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1069' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1085' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1101' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1117' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1133' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1149' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1165' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1175' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1176' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1183' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1184' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1185' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1186' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1187' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1188' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1189' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1190' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1177' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1178' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1179' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1180' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1181' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1182' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1192' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1193' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1200' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1201' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1202' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1203' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1204' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1205' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1206' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1207' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1194' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1195' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1196' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1197' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1198' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1199' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1210' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1211' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1218' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1219' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1220' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1221' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1222' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1223' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1224' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1225' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1212' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1213' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1214' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1215' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1216' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1217' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1227' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1228' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1235' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1236' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1237' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1238' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1239' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1240' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1241' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1242' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1229' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1230' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1231' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1232' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1233' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1234' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1244' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1245' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1252' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1253' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1254' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1255' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1256' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1257' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1258' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1259' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1246' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1247' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1248' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1249' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1250' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1251' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1261' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1262' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1269' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1270' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1271' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1272' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1273' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1274' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1275' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1276' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1263' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1264' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1265' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1266' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1267' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1268' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1278' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1279' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1286' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1287' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1288' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1289' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1290' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1291' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1292' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1293' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1280' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1281' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1282' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1283' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1284' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1285' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1295' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1296' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1303' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1304' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1305' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1306' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1307' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1308' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1309' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1310' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1297' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1298' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1299' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1300' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1301' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1302' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1312' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1313' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1320' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1321' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1322' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1323' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1324' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1325' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1326' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1327' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1314' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1315' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1316' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1317' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1318' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1319' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1329' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1330' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1337' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1338' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1339' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1340' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1341' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1342' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1343' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1344' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1331' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1332' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1333' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1334' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1335' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1336' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1346' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1347' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1354' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1355' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1356' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1357' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1358' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1359' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1360' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1361' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1348' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1349' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1350' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1351' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1352' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1353' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1363' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1364' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_99' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_98' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_97' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_96' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_95' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_94' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_93' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_92' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1365' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1366' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1367' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1368' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1369' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1370' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_89' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_88' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_81' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_80' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_79' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_78' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_77' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_76' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_75' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_74' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_87' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_86' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_85' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_84' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_83' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_82' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_72' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_71' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_64' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_63' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_62' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_61' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_60' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_59' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_58' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_57' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_70' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_69' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_68' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_67' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_66' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_65' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_55' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_54' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_47' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_46' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_45' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_44' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_43' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_42' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_41' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_40' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_53' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_52' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_51' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_50' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_49' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_48' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mxm_execute_ursa_Pipeline_STREAM_K' pipeline 'STREAM_K' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_16ns_5ns_20_2_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_17s_16ns_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mxm_execute_ursa_Pipeline_STREAM_K'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.45 seconds. CPU system time: 0.18 seconds. Elapsed time: 2.63 seconds; current allocated memory: 525.246 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sa_store' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16ns_6ns_32s_32_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sa_store'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.33 seconds. CPU system time: 0.33 seconds. Elapsed time: 2.68 seconds; current allocated memory: 631.758 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sa_reset' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sa_reset'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.32 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.38 seconds; current allocated memory: 647.066 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mxm_execute_ursa' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/aw' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/bi' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/ca' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/addr_a0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/a0_p' to 's_axilite & ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/addr_b0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/b0_q' to 's_axilite & ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/addr_c0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mxm_execute_ursa/m' to 's_axilite & ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on function 'mxm_execute_ursa' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_38' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_37' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_36' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_35' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_34' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_33' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_31' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_30' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_29' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_28' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_27' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_26' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_25' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_24' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_23' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_22' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_20' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_19' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_18' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_17' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_16' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_15' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_909' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_908' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_907' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_906' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_905' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_904' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_902' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_901' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_900' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_899' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_898' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_897' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_896' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_895' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_894' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_893' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_891' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_890' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_889' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_888' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_887' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_886' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_885' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_884' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_883' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_882' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_880' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_879' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_878' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_877' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_876' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_875' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_874' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_873' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_872' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_871' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_869' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_868' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_867' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_866' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_865' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_864' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_863' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_862' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_861' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_860' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_858' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_857' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_856' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_855' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_854' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_853' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_852' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_851' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_850' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_849' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_846' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_845' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_844' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_843' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_842' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_841' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_840' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_839' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_838' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_837' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_835' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_834' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_833' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_832' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_831' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_830' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_829' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_828' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_827' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_826' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_824' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_823' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_822' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_821' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_820' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_819' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_818' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_817' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_816' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_815' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_813' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_812' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_811' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_810' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_809' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_808' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_807' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_806' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_805' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_804' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_802' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_801' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_800' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_799' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_798' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_797' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_796' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_795' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_794' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_793' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_791' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_790' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_789' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_788' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_787' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_786' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_785' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_784' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_783' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_782' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_780' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_779' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_778' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_777' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_776' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_775' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_774' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_773' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_772' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_771' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_769' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_768' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_767' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_766' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_765' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_764' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_763' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_762' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_761' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_760' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_758' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_757' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_756' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_755' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_754' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_753' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_752' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_751' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_750' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_749' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_747' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_746' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_745' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_744' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_743' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_742' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_741' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_740' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_739' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_738' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_56' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_73' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_90' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1362' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1345' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1328' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1311' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1294' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1277' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1260' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1243' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1226' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1209' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1191' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1174' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1158' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1142' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1126' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1110' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1094' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1078' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1062' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1046' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1029' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1013' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_997' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_981' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_965' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_949' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_933' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_917' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_39' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_916' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_915' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_913' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_912' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_911' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_910' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_903' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_892' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_881' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_870' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_859' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_848' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_836' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_825' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_814' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_803' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_792' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_781' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_770' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_759' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_748' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_737' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_21' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_32' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_91' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1208' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_1045' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_914' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_847' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_736' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'mxm_execute_ursa_signed_char_unsigned_short_unsigned_char_unsigned_short_i_735' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'return', 'b0_q' and 'm' to AXI-Lite port ap.
+INFO: [RTGEN 206-100] Bundling port 'addr_a0', 'addr_b0' and 'addr_c0' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mul_12ns_12ns_24_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mxm_execute_ursa'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.38 seconds. CPU system time: 0.16 seconds. Elapsed time: 1.54 seconds; current allocated memory: 664.500 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.62 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.67 seconds; current allocated memory: 675.090 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2.52 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.56 seconds; current allocated memory: 696.512 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for mxm_execute_ursa.
+INFO: [VLOG 209-307] Generating Verilog RTL for mxm_execute_ursa.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 270.66 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 60.18 seconds. CPU system time: 3.51 seconds. Elapsed time: 65.58 seconds; current allocated memory: 422.215 MB.
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 61.82 seconds. Total CPU system time: 3.82 seconds. Total elapsed time: 67.37 seconds; peak allocated memory: 696.645 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Mon Sep 21 21:57:31 2026...
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 11s

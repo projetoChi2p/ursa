@@ -1,0 +1,109 @@
+### CNN SAT-6 T3 URSA BRAM [v1.0] ###
+SA_SIZE=8, acc=20 bits
+net=T3 (trained weights)
+pe=POT (shift-add, weights rounded to 2^k, no retraining)
+cache I=on
+cache D=on
+FCLK0 = 123.075 MHz (fdiv=48 div0=13 div1=1 src=0)
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40010000 
+[init] MEM CONTROL   0x40000000 
+
+calibration
+  tick rate        333 ticks/us
+  usleep(1)        1.206 us
+  register read    0.167 us
+  polling          tight
+  bss pad          0 bytes
+
+engine=URSA layout=BRAM, 6 images (one per class), 50 inferences each
+------------------------------------------------------------
+V3= i 0 I 6223 g 5 n 5 40 0 0 0 817 3007
+V3= i 1 I 73380 g 2 n 2 156 1147 2199 1204 842 0
+V3= i 2 I 6744 g 4 n 4 168 450 0 0 951 0
+V3! i 3 I 66768 g 3 n 1 239 1064 464 726 479 2
+V3! i 4 I 79150 g 0 n 4 509 368 76 0 1130 33
+V3= i 6 I 76951 g 1 n 1 21 2679 1914 2060 1555 0
+------------------------------------------------------------
+ image  class     us_tot           us        fps
+------------------------------------------------------------
+     0      5     190759      3815.18     262.11
+     1      2     190895      3817.90     261.92
+     2      4     190339      3806.78     262.68
+     3      3     190250      3805.00     262.81
+     4      0     190910      3818.20     261.90
+     6      1     190041      3800.82     263.10
+------------------------------------------------------------
+accuracy      4/6
+inferences    300
+us total      1143194
+us per image  3810.64
+fps           262.42
+  im2col           233 us/image
+  transfer         579 us/image
+  gemm            1759 us/image
+  other           1239 us/image
+  per layer (us/image)      CONV1     CONV2     CONV3
+    im2col                  87.73    70.25    75.67
+    transfer               193.19   193.39   193.10
+    gemm                   787.86   648.50   325.45
+    conv call             1746.29  1087.48   660.19
+    (conv call = im2col + transfer + gemm + de-tiling of C;
+     scale, ReLU and pooling run outside it, in 'other')
+
+
+=========================================================
+### CNN SAT-6 T3 URSA BRAM [v1.0] ###
+SA_SIZE=8, acc=20 bits
+net=T3 (trained weights)
+pe=POT (shift-add, weights rounded to 2^k, no retraining)
+cache I=on
+cache D=on
+FCLK0 = 199.998 MHz (fdiv=48 div0=8 div1=1 src=0)
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40010000 
+[init] MEM CONTROL   0x40000000 
+
+calibration
+  tick rate        333 ticks/us
+  usleep(1)        1.206 us
+  register read    0.135 us
+  polling          tight
+  bss pad          0 bytes
+
+engine=URSA layout=BRAM, 6 images (one per class), 50 inferences each
+------------------------------------------------------------
+V3= i 0 I 6223 g 5 n 5 40 0 0 0 817 3007
+V3= i 1 I 73380 g 2 n 2 156 1147 2199 1204 842 0
+V3= i 2 I 6744 g 4 n 4 168 450 0 0 951 0
+V3! i 3 I 66768 g 3 n 1 239 1064 464 726 479 2
+V3! i 4 I 79150 g 0 n 4 509 368 76 0 1130 33
+V3= i 6 I 76951 g 1 n 1 21 2679 1914 2060 1555 0
+------------------------------------------------------------
+ image  class     us_tot           us        fps
+------------------------------------------------------------
+     0      5     138139      2762.78     361.95
+     1      2     138512      2770.24     360.97
+     2      4     137832      2756.64     362.76
+     3      3     137864      2757.28     362.67
+     4      0     138412      2768.24     361.24
+     6      1     137774      2755.48     362.91
+------------------------------------------------------------
+accuracy      4/6
+inferences    300
+us total      828533
+us per image  2761.77
+fps           362.08
+  im2col           239 us/image
+  transfer         445 us/image
+  gemm            1084 us/image
+  other            993 us/image
+  per layer (us/image)      CONV1     CONV2     CONV3
+    im2col                  87.66    70.00    82.57
+    transfer               148.59   148.71   148.47
+    gemm                   485.27   399.50   200.69
+    conv call             1222.43   748.36   480.75
+    (conv call = im2col + transfer + gemm + de-tiling of C;
+     scale, ReLU and pooling run outside it, in 'other')
+
+

@@ -577,7 +577,7 @@ int process_image_or_hang(uint16_t image_index, int inference_count){
 int main(){
 	int rvx_status;
 
-	uart_write_string(DEFAULT_UART, "URSA driver implementation v1\r\n");
+	uart_write_string(DEFAULT_UART, "URSA driver implementation v2 23_09\r\n");
 
 	//1
 	rvx_status = ursa_init();

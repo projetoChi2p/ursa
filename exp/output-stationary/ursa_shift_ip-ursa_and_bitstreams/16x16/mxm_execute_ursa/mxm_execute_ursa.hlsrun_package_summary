@@ -1,0 +1,165 @@
+<ENTRY>
+{
+ "thisFile": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/mxm_execute_ursa.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Mon Sep 21 23:39:07 2026",
+ "timestampMillis": "1790044747367",
+ "buildStep": {
+  "cmdId": "69cc7fba-bed0-4a29-b2a8-85a20f7a30c2",
+  "name": "vitis-run",
+  "logFile": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/logs/mxm_execute_ursa.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --package --config /home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg --work_dir mxm_execute_ursa ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/hls_config.cfg",
+   "--work_dir",
+   "mxm_execute_ursa"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Sep 21 23:39:07 2026",
+ "timestampMillis": "1790044747367",
+ "status": {
+  "cmdId": "69cc7fba-bed0-4a29-b2a8-85a20f7a30c2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Mon Sep 21 23:39:09 2026",
+ "timestampMillis": "1790044749908",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mxm_execute_ursa",
+     "file": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/mxm_execute_ursa.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/pe.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/pe.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/sa.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.cpp",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/core/shell.h",
+     "/home/ulisses/Projects/ursa/exp/output-stationary/vitis_component/inp_data_exp/hls_src/settings.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Mon Sep 21 23:39:09 2026",
+ "timestampMillis": "1790044749909",
+ "buildStep": {
+  "cmdId": "e55939e2-4952-468a-ae98-aab3efe7126d",
+  "name": "export_design",
+  "logFile": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp/mxm_execute_ursa/hls/hls.log",
+  "commandLine": "export_design -flow none",
+  "args": [
+   "-flow",
+   "none"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/ulisses/Projects/ursa/exp/output-stationary/vitis/hls_ursa_vanilla_exp"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Sep 21 23:39:09 2026",
+ "timestampMillis": "1790044749909",
+ "status": {
+  "cmdId": "e55939e2-4952-468a-ae98-aab3efe7126d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Sep 21 23:39:32 2026",
+ "timestampMillis": "1790044772602",
+ "status": {
+  "cmdId": "e55939e2-4952-468a-ae98-aab3efe7126d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Sep 21 23:39:32 2026",
+ "timestampMillis": "1790044772783",
+ "status": {
+  "cmdId": "69cc7fba-bed0-4a29-b2a8-85a20f7a30c2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Sep 21 23:39:32 2026",
+ "timestampMillis": "1790044772784",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Sep 21 23:39:32 2026",
+ "timestampMillis": "1790044772784",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -47,7 +47,7 @@
     typedef ap_int  <8>  data_a_t; //weight
     typedef ap_uint <8>  data_b_t; //pixel
     typedef ap_int  <32> data_c_t; //bramc
-    typedef ap_int  <20> macc_t;   //bramc
+    typedef ap_int  <ACC_BITS> macc_t;   //bramc
 #else
     typedef int8_t  data_a_t; //weight
     typedef uint8_t data_b_t; //pixel

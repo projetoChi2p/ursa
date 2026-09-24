@@ -1,0 +1,53 @@
+### CNN SAT-6 T3 URSA BRAM [v1.0] ###
+SA_SIZE=16, acc=20 bits
+net=T3 (trained weights)
+pe=POT (shift-add, weights rounded to 2^k, no retraining)
+cache I=on
+cache D=on
+FCLK0 = 123.075 MHz (fdiv=48 div0=13 div1=1 src=0)
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40010000 
+[init] MEM CONTROL   0x40000000 
+
+calibration
+  tick rate        333 ticks/us
+  usleep(1)        1.206 us
+  register read    0.167 us
+  polling          tight
+  bss pad          0 bytes
+
+engine=URSA layout=BRAM, 6 images (one per class), 50 inferences each
+------------------------------------------------------------
+V3= i 0 I 6223 g 5 n 5 40 0 0 0 817 3007
+V3= i 1 I 73380 g 2 n 2 156 1147 2199 1204 842 0
+V3= i 2 I 6744 g 4 n 4 168 450 0 0 951 0
+V3! i 3 I 66768 g 3 n 1 239 1064 464 726 479 2
+V3! i 4 I 79150 g 0 n 4 509 368 76 0 1130 33
+V3= i 6 I 76951 g 1 n 1 21 2679 1914 2060 1555 0
+------------------------------------------------------------
+ image  class     us_tot           us        fps
+------------------------------------------------------------
+     0      5     160830      3216.60     310.88
+     1      2     161124      3222.48     310.32
+     2      4     160465      3209.30     311.59
+     3      3     160523      3210.46     311.48
+     4      0     161056      3221.12     310.45
+     6      1     160460      3209.20     311.60
+------------------------------------------------------------
+accuracy      4/6
+inferences    300
+us total      964458
+us per image  3214.86
+fps           311.05
+  im2col           246 us/image
+  transfer         579 us/image
+  gemm            1154 us/image
+  other           1235 us/image
+  per layer (us/image)      CONV1     CONV2     CONV3
+    im2col                  89.37    72.22    85.56
+    transfer               193.26   193.43   193.16
+    gemm                   467.97   343.65   343.65
+    conv call             1427.71   784.63   688.33
+    (conv call = im2col + transfer + gemm + de-tiling of C;
+     scale, ReLU and pooling run outside it, in 'other')
+

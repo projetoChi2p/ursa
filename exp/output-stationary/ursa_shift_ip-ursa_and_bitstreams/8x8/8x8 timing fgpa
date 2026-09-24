@@ -1,0 +1,47 @@
+### CNN SAT-6 T3 URSA BRAM [v1.0] ###
+SA_SIZE=8, acc=20 bits
+net=T3 (trained weights)
+pe=POT (shift-add, weights rounded to 2^k, no retraining)
+cache I=on
+cache D=on
+FCLK0 = 199.998 MHz (fdiv=48 div0=8 div1=1 src=0)
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40010000 
+[init] MEM CONTROL   0x40000000 
+
+calibration
+  tick rate        333 ticks/us
+  usleep(1)        1.206 us
+  register read    0.135 us
+  polling          tight
+  bss pad          0 bytes
+
+engine=URSA layout=BRAM, 6 images (one per class), 50 inferences each
+------------------------------------------------------------
+V3= i 0 I 6223 g 5 n 5 40 0 0 0 817 3007
+V3= i 1 I 73380 g 2 n 2 156 1147 2199 1204 842 0
+V3= i 2 I 6744 g 4 n 4 168 450 0 0 951 0
+V3! i 3 I 66768 g 3 n 1 239 1064 464 726 479 2
+V3! i 4 I 79150 g 0 n 4 509 368 76 0 1130 33
+V3= i 6 I 76951 g 1 n 1 21 2679 1914 2060 1555 0
+------------------------------------------------------------
+ image  class     us_tot           us        fps
+------------------------------------------------------------
+     0      5     137333      2746.66     364.07
+     1      2     137683      2753.66     363.15
+     2      4     137005      2740.10     364.95
+     3      3     137083      2741.66     364.74
+     4      0     137567      2751.34     363.45
+     6      1     136906      2738.12     365.21
+------------------------------------------------------------
+accuracy      4/6
+inferences    300
+us total      823577
+us per image  2745.25
+fps           364.26
+  im2col           225 us/image
+  transfer         445 us/image
+  gemm            1084 us/image
+  other            991 us/image
+
+

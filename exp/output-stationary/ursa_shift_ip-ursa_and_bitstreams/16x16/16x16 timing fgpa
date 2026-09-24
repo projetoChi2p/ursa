@@ -1,0 +1,95 @@
+### CNN SAT-6 T3 URSA BRAM [v1.0] ###
+SA_SIZE=16, acc=20 bits
+net=T3 (trained weights)
+pe=POT (shift-add, weights rounded to 2^k, no retraining)
+cache I=on
+cache D=on
+FCLK0 = 123.075 MHz (fdiv=48 div0=13 div1=1 src=0)
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40010000 
+[init] MEM CONTROL   0x40000000 
+
+calibration
+  tick rate        333 ticks/us
+  usleep(1)        1.206 us
+  register read    0.167 us
+  polling          tight
+  bss pad          0 bytes
+
+engine=URSA layout=BRAM, 6 images (one per class), 50 inferences each
+------------------------------------------------------------
+V3= i 0 I 6223 g 5 n 5 40 0 0 0 817 3007
+V3= i 1 I 73380 g 2 n 2 156 1147 2199 1204 842 0
+V3= i 2 I 6744 g 4 n 4 168 450 0 0 951 0
+V3! i 3 I 66768 g 3 n 1 239 1064 464 726 479 2
+V3! i 4 I 79150 g 0 n 4 509 368 76 0 1130 33
+V3= i 6 I 76951 g 1 n 1 21 2679 1914 2060 1555 0
+------------------------------------------------------------
+ image  class     us_tot           us        fps
+------------------------------------------------------------
+     0      5     160212      3204.24     312.08
+     1      2     160539      3210.78     311.45
+     2      4     159797      3195.94     312.89
+     3      3     159862      3197.24     312.76
+     4      0     160366      3207.32     311.78
+     6      1     159736      3194.72     313.01
+------------------------------------------------------------
+accuracy      4/6
+inferences    300
+us total      960512
+us per image  3201.70
+fps           312.33
+  im2col           237 us/image
+  transfer         579 us/image
+  gemm            1154 us/image
+  other           1231 us/image
+
+
+
+=============================================
+### CNN SAT-6 T3 URSA BRAM [v1.0] ###
+SA_SIZE=16, acc=20 bits
+net=T3 (trained weights)
+pe=POT (shift-add, weights rounded to 2^k, no retraining)
+cache I=on
+cache D=on
+FCLK0 = 99.999 MHz (fdiv=48 div0=4 div1=4 src=0)
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40010000 
+[init] MEM CONTROL   0x40000000 
+
+calibration
+  tick rate        333 ticks/us
+  usleep(1)        1.208 us
+  register read    0.190 us
+  polling          tight
+  bss pad          0 bytes
+
+engine=URSA layout=BRAM, 6 images (one per class), 50 inferences each
+------------------------------------------------------------
+V3= i 0 I 6223 g 5 n 5 40 0 0 0 817 3007
+V3= i 1 I 73380 g 2 n 2 156 1147 2199 1204 842 0
+V3= i 2 I 6744 g 4 n 4 168 450 0 0 951 0
+V3! i 3 I 66768 g 3 n 1 239 1064 464 726 479 2
+V3! i 4 I 79150 g 0 n 4 509 368 76 0 1130 33
+V3= i 6 I 76951 g 1 n 1 21 2679 1914 2060 1555 0
+------------------------------------------------------------
+ image  class     us_tot           us        fps
+------------------------------------------------------------
+     0      5     183287      3665.74     272.79
+     1      2     183705      3674.10     272.17
+     2      4     182944      3658.88     273.30
+     3      3     183032      3660.64     273.17
+     4      0     183500      3670.00     272.47
+     6      1     182886      3657.72     273.39
+------------------------------------------------------------
+accuracy      4/6
+inferences    300
+us total      1099354
+us per image  3664.51
+fps           272.88
+  im2col           234 us/image
+  transfer         657 us/image
+  gemm            1419 us/image
+  other           1354 us/image
+
