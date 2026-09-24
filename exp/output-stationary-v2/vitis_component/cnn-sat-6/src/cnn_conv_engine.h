@@ -58,9 +58,11 @@ extern gpool_t g_pooling_buffer[POOLING_CH_OUT];
     #error "SA_SIZE ou BRAM_AW_SIZE nao definidos. Inclua ursa.h antes."
 #endif
 
-#define AW_READ_END_1 (ADDR_WEIGHTS_CONV1 + CONV1_PADDED_ROW * CONV1_COL)
-#define AW_READ_END_2 (ADDR_WEIGHTS_CONV2 + CONV2_PADDED_ROW * CONV2_COL)
-#define AW_READ_END_3 (ADDR_WEIGHTS_CONV3 + CONV3_PADDED_ROW * CONV3_COL)
+/* UM: 24/09/26 - the read window of A now uses the padded column count: the
+   v2 IP reads each row of A with a stride of PADDED_COL bytes. */
+#define AW_READ_END_1 (ADDR_WEIGHTS_CONV1 + CONV1_PADDED_ROW * CONV1_PADDED_COL)
+#define AW_READ_END_2 (ADDR_WEIGHTS_CONV2 + CONV2_PADDED_ROW * CONV2_PADDED_COL)
+#define AW_READ_END_3 (ADDR_WEIGHTS_CONV3 + CONV3_PADDED_ROW * CONV3_PADDED_COL)
 
 #if (AW_READ_END_1 > BRAM_AW_SIZE) || (AW_READ_END_2 > BRAM_AW_SIZE) || (AW_READ_END_3 > BRAM_AW_SIZE)
     #error "Leitura de A pelo URSA ultrapassa BRAM_AW_SIZE. Reordene as camadas."

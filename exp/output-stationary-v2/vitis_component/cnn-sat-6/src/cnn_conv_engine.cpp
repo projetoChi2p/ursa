@@ -263,24 +263,42 @@ static int populate_scratchpad_bi_with_im2col(
 }
 
 // Used internally by net_process_layer_pixel_conv_sa
-static int populate_outdata_with_ca(
-    const int32_t* ca,
-    unsigned int   wh_out,
-    unsigned int   ch_out,
-    unsigned int   n_c_cols_b_cols,
-    container_a_t* out_data
-){
-    for (unsigned int co = 0; co < ch_out; co++) {
-        for (unsigned int y = 0; y < wh_out; y++) {
-            for (unsigned int x = 0; x < wh_out; x++) {
-                unsigned int src_index = x + y * wh_out + co * n_c_cols_b_cols;
-                unsigned int dst_index = x + y * wh_out + co * wh_out * wh_out;
+// static int populate_outdata_with_ca(
+//     const int32_t* ca,
+//     unsigned int   wh_out,
+//     unsigned int   ch_out,
+//     unsigned int   n_c_cols_b_cols,
+//     container_a_t* out_data
+// ){
+//     for (unsigned int co = 0; co < ch_out; co++) {
+//         for (unsigned int y = 0; y < wh_out; y++) {
+//             for (unsigned int x = 0; x < wh_out; x++) {
+//                 unsigned int src_index = x + y * wh_out + co * n_c_cols_b_cols;
+//                 unsigned int dst_index = x + y * wh_out + co * wh_out * wh_out;
 
-                out_data[dst_index] = (container_a_t)ca[src_index];
-            }
-        }
-    }
+//                 out_data[dst_index] = (container_a_t)ca[src_index];
+//             }
+//         }
+//     }
   
+//     return EXIT_SUCCESS;
+// }
+
+//UM: 24/09/2026
+static int populate_outdata_with_ca(const int32_t* ca, unsigned wh_out,
+        unsigned ch_out, unsigned n_c_cols_b_cols, container_a_t* out_data)
+{
+    if (wh_out * wh_out == n_c_cols_b_cols) {
+        /* caminho contíguo: uma cópia em bloco em vez de ch_out*wh_out^2
+           leituras isoladas da BRAM */
+        memcpy(out_data, ca, (size_t)ch_out * n_c_cols_b_cols * sizeof(int32_t));
+        return EXIT_SUCCESS;
+    }
+    /* caminho geral, mantido para formas em que Q > wh_out^2 */
+    for (unsigned co = 0; co < ch_out; co++)
+        memcpy(out_data + co * wh_out * wh_out,
+               ca      + co * n_c_cols_b_cols,
+               (size_t)wh_out * wh_out * sizeof(int32_t));
     return EXIT_SUCCESS;
 }
 
@@ -376,8 +394,20 @@ static unsigned int save_layer_with_padding(
 {
     (void)layer_id;
 
+    /* UM: 24/09/26 - ROW-STRIDE RULE (URSA v2)
+       The v2 IP reads A in words of SA_SIZE bytes, so every row of A has to
+       start on a word boundary. The row stride is therefore M rounded up to a
+       multiple of SA_SIZE, and the extra bytes at the end of each row are
+       written as zero (the array never reads them: STREAM_K still walks only
+       the first M columns).
+       The columns used to be left unpadded, which matched the v1 IP - it read
+       A byte by byte with stride M - and silently corrupted every row after
+       the first under v2 whenever M was not a multiple of SA_SIZE. T3 CONV1
+       has M = 36: correct at 4x4, wrong at 8x8 and 16x16.
+       When M is already a multiple of SA_SIZE, padded_cols == col and the
+       layout is byte for byte the one this function produced before. */
     unsigned int padded_rows = ((row + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
-    unsigned int padded_cols = col;  // No padding for columns (M)
+    unsigned int padded_cols = ((col + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
     unsigned int count = 0;
     unsigned int weight_idx = 0;
 
@@ -396,60 +426,56 @@ static unsigned int save_layer_with_padding(
     return count;
 }
 
-static unsigned int save_layer_compact(
-    volatile weight_t *mem,
-    unsigned int      *index_ptr,
-    const weight_t    *weights,
-    unsigned int       row,
-    unsigned int       col)
-{
-    unsigned int count = row * col;
-    for (unsigned int i = 0; i < count; i++) {
-        mem[(*index_ptr)++] = A_STORE(weights[i]);
-    }
-    return count;
-}
+/* UM: 24/09/26 - save_layer_compact() was removed together with the
+   SA_SIZE >= 16 staging path below. It wrote the layers back to back with no
+   padding at all, which breaks the row-stride rule above. */
 
 #ifdef CHECK_WEIGHTS
-// Used internally by populate_aw_with_all_the_weights
+/* Used internally by populate_aw_with_all_the_weights.
+
+   UM: 24/09/26 - rewritten for the padded-column layout. The old version
+   assumed each layer's real weights were one contiguous run followed by the
+   padding, which held only while the columns were unpadded. With the row
+   stride padded, the real values of row r start at r*padded_col, so the check
+   has to walk the rows. */
+static int check_layer_in_mem(const weight_t *mem, unsigned int base,
+                              const weight_t *w,
+                              unsigned int row, unsigned int col)
+{
+    unsigned int padded_col = ((col + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
+    unsigned int idx = 0;
+
+    for (unsigned int r = 0; r < row; r++) {
+        for (unsigned int c = 0; c < col; c++) {
+            if (mem[base + r * padded_col + c] != w[idx++]) {
+                send_status((short)(base + r * padded_col + c), __LINE__);
+                return EXIT_FAILURE;
+            }
+        }
+    }
+    return EXIT_SUCCESS;
+}
+
 static int check_weigths_into_mem(weight_t* mem_check)
 {
-    unsigned int i, index = 0;
-    unsigned int offset_pad = 0;
-
 #ifdef CNN_NETWORK_T3
-    // layer 1
-    for (i = 0; i < TOTAL_NUM_WEIGHTS_1; i++) {
-        if (mem_check[index] != g_weights_q_1.weights[i]) {
-            send_status(mem_check[index], __LINE__);
-            return EXIT_FAILURE;
-        }
-        index++;
+    if (check_layer_in_mem(mem_check, ADDR_WEIGHTS_CONV1,
+                           g_weights_q_1.weights,
+                           CONV1_ROW, CONV1_COL) != EXIT_SUCCESS) {
+        return EXIT_FAILURE;
     }
-
-    offset_pad = TOTAL_NUM_WEIGHTS_WITH_PADDING_1 - TOTAL_NUM_WEIGHTS_1;
-    index = index + offset_pad;
-
-    // layer 2
-    for (i = 0; i < TOTAL_NUM_WEIGHTS_2; i++) {
-        if (mem_check[index] != g_weights_q_2.weights[i]) {
-            send_status(mem_check[index], __LINE__);
-            return EXIT_FAILURE;
-        }
-        index++;
+    if (check_layer_in_mem(mem_check, ADDR_WEIGHTS_CONV2,
+                           g_weights_q_2.weights,
+                           CONV2_ROW, CONV2_COL) != EXIT_SUCCESS) {
+        return EXIT_FAILURE;
     }
-
-    offset_pad = TOTAL_NUM_WEIGHTS_WITH_PADDING_2 - TOTAL_NUM_WEIGHTS_2;
-    index = index + offset_pad;
-
-    // layer 3
-    for (i = 0; i < TOTAL_NUM_WEIGHTS_3; i++) {
-        if (mem_check[index] != g_weights_q_3.weights[i]) {
-            send_status(mem_check[index], __LINE__);
-            return EXIT_FAILURE;
-        }
-        index++;
+    if (check_layer_in_mem(mem_check, ADDR_WEIGHTS_CONV3,
+                           g_weights_q_3.weights,
+                           CONV3_ROW, CONV3_COL) != EXIT_SUCCESS) {
+        return EXIT_FAILURE;
     }
+#else
+    (void)mem_check;
 #endif /* CNN_NETWORK_T3 */
 
     return EXIT_SUCCESS;
@@ -496,39 +522,12 @@ static int check_weigths_into_mem(weight_t* mem_check)
         return EXIT_SUCCESS;
     }
 
-#elif SA_SIZE >= 16
-    int populate_aw_with_all_the_weights(weight_t* aw)
-    {
-        unsigned int index = 0;
-        unsigned int total_weights = 0;
-
-    #ifdef CNN_NETWORK_T3
-
-        unsigned int count_weights_3 = save_layer_compact(aw, &index, g_weights_q_3.weights,
-                                        CONV3_CH_OUT, CONV3_WH_KERNEL * CONV3_WH_KERNEL * CONV3_CH_IN);
-
-        unsigned int count_weights_1 = save_layer_compact(aw, &index, g_weights_q_1.weights,
-                                        CONV1_CH_OUT, CONV1_WH_KERNEL * CONV1_WH_KERNEL * CONV1_CH_IN);
-
-        unsigned int count_weights_2 = save_layer_compact(aw, &index, g_weights_q_2.weights,
-                                        CONV2_CH_OUT, CONV2_WH_KERNEL * CONV2_WH_KERNEL * CONV2_CH_IN);
-
-        total_weights = count_weights_1 + count_weights_2 + count_weights_3;
-
-        if (total_weights != TOTAL_NUM_WEIGHTS) {
-            send_status(total_weights, __LINE__);
-            return EXIT_FAILURE;
-        }
-
-        /* Weights are static. This is the only flush of A in the whole run, and
-        it sits outside the timed interval. */
-        FLUSH_A(aw, (uint32_t)total_weights * sizeof(weight_t));
-
-    #endif /* CNN_NETWORK_T3 */
-
-        return EXIT_SUCCESS;
-    }
-
+/* UM: 24/09/26 - the SA_SIZE >= 16 branch that used to sit here is gone. It
+   staged the layers with save_layer_compact (no padding) and reordered them
+   so the three would fit in the 4 KB of BRAM_AW. That layout violates the
+   row-stride rule, so it cannot be used with the v2 IP. At 16x16 the padded
+   layout needs 5376 bytes and BRAM_AW has to grow to 8 KB. The path below now
+   serves every SA_SIZE. */
 #else
     //Used by INPUT
     int populate_aw_with_all_the_weights(weight_t* aw)

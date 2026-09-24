@@ -20,7 +20,7 @@
 // tree serves every configuration. The defaults below only apply to a manual
 // build with no -D flags.
 #ifndef SA_SIZE
-    #define SA_SIZE 4
+    #define SA_SIZE 8
 #endif
 
 #if !defined(BRAM) && !defined(OCM) && !defined(HYBRID)

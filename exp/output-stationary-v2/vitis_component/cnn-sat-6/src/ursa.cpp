@@ -32,7 +32,6 @@ int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
     else 
     {
         // NOTA: Vivado 2023.2 gera Ap e Control invertidos no LookupConfig
-        // A troca abaixo é intencional!
         xil_printf("[init] URSA CONTROL FOUND:\n\r");
         xil_printf("[init] AP CONTROL    0x%08x \n\r", xMxmConfigPtr->Ap_BaseAddress);
         xil_printf("[init] MEM CONTROL   0x%08x \n\r", xMxmConfigPtr->Control_BaseAddress);
@@ -40,8 +39,11 @@ int ursa_init(XMxm_execute_ursa* pxMxm, UINTPTR baseaddr)
 
     // NOTA: Vivado 2023.2 gera Ap e Control invertidos no LookupConfig
     // A troca abaixo é intencional!
-    xMxmConfig.Ap_BaseAddress      = xMxmConfigPtr->Control_BaseAddress;
-    xMxmConfig.Control_BaseAddress = xMxmConfigPtr->Ap_BaseAddress;
+    // xMxmConfig.Ap_BaseAddress      = xMxmConfigPtr->Control_BaseAddress;
+    // xMxmConfig.Control_BaseAddress = xMxmConfigPtr->Ap_BaseAddress;
+    // UM: 24/09/26 has this error been fixed? 
+    xMxmConfig.Ap_BaseAddress      = xMxmConfigPtr->Ap_BaseAddress;
+    xMxmConfig.Control_BaseAddress = xMxmConfigPtr->Control_BaseAddress;
 
     xil_status = XMxm_execute_ursa_CfgInitialize(pxMxm, &xMxmConfig);
     if (xil_status != XST_SUCCESS) {

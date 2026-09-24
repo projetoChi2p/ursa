@@ -16,6 +16,7 @@
     #include "xil_cache.h"
 
     #include "xil_io.h"
+    #include "xil_mmu.h"
 #endif
 
 #include "cnn_network.h"
@@ -543,10 +544,13 @@ int main(void)
   #endif
 
     // set_fclk0(14, 1);   /* 1600 / 14 = 114.29 MHz */
-    // set_fclk0(13, 1);   /* 1600 / 13 = 123.08 MHz */
-    set_fclk0(8, 1);    /* 1600 / 8 = 200 MHz */
-    print_fclk0();      /* esperado: FCLK0 = 123.075 MHz (fdiv=48 div0=13 div1=1 src=0) */
+    set_fclk0(13, 1);   /* 1600 / 13 = 123.08 MHz */
+    // set_fclk0(8, 1);    /* 1600 / 8  = 200 MHz */
+	// set_fclk0(8, 1);    /* 1600 / 7  = 228.57 MHz */
+    print_fclk0();      	/* esperado: FCLK0 = 123.075 MHz (fdiv=48 div0=13 div1=1 src=0) */
 
+    //UM: 24/09/26
+    Xil_SetTlbAttributes(0x40000000, DEVICE_MEMORY);
 
     /* dut */
     xil_status = ursa_init(&xUrsa0, XPAR_MXM_EXECUTE_URSA_0_BASEADDR);
