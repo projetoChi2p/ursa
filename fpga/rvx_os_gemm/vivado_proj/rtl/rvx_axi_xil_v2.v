@@ -80,7 +80,7 @@ module rvx_axi_xil_v2
         // This state initializes read transaction
         // once reads are done, the state machine 
         // changes state to INIT_COMPARE 
-    localparam [1:0] INIT_CAPTURE = 2'b11;
+    localparam [1:0] CONCLUDE_TRANSACTION = 2'b11;
         // This state issues the status of comparison 
         // of the written data with the read data	
 
@@ -127,7 +127,7 @@ module rvx_axi_xil_v2
 	//Captured read data
 	reg [C_M_AXI_DATA_WIDTH-1 : 0] 	captured_rdata;
     //Flag marks the completion of comparison of the read data with the expected read data
-    reg  	capture_done;
+    reg  	transaction_done;
     //Flag is asserted when the write index reaches the last write transction number
     reg  	last_write;
     //Flag is asserted when the read index reaches the last read transction number
@@ -168,8 +168,8 @@ module rvx_axi_xil_v2
 	//Read and Read Response (R)
 	assign axi_rready	= internal_rready;
 	//Example design I/O
-	assign rvx_read_response_o = capture_done && read_req_ff;  // is rvx_read_request_i a strobe or will it be kept asserted until completion
-	assign rvx_write_response_o = writes_done && write_req_ff; // is rvx_write_request_i a strobe or will it be kept asserted until completion
+	assign rvx_read_response_o = transaction_done && read_req_ff;  // is rvx_read_request_i a strobe or will it be kept asserted until completion
+	assign rvx_write_response_o = transaction_done && write_req_ff; // is rvx_write_request_i a strobe or will it be kept asserted until completion
     assign rvx_read_data_o = captured_rdata;
 	
 	
@@ -468,7 +468,7 @@ module rvx_axi_xil_v2
             write_issued  <= 1'b0;
             start_single_read  <= 1'b0;
             read_issued   <= 1'b0;
-            capture_done  <= 1'b0;
+            transaction_done  <= 1'b0;
             ERROR <= 1'b0;
         end
         else begin
@@ -477,7 +477,7 @@ module rvx_axi_xil_v2
                 
                 IDLE:
                     begin
-                        capture_done <= 1'b0;
+                        transaction_done <= 1'b0;
                         // This state is responsible to initiate
                         // AXI transaction when init_txn_pulse is asserted
                         if ( init_txn_pulse == 1'b1 ) begin
@@ -490,7 +490,7 @@ module rvx_axi_xil_v2
                             ERROR <= 1'b0;
                         end
                         else begin
-                            capture_done <= 1'b0;
+                            transaction_done <= 1'b0;
                             mst_exec_state  <= IDLE;
                         end
                     end
@@ -500,7 +500,7 @@ module rvx_axi_xil_v2
                     // issued until last_write signal is asserted.
                     // write controller
                     if (writes_done) begin
-                        mst_exec_state <= IDLE; //INIT_READ; // FBV TODO goto IDLE
+                        mst_exec_state <= CONCLUDE_TRANSACTION; //INIT_READ; // FBV TODO goto IDLE
                     end
                     else begin
                         mst_exec_state  <= INIT_WRITE;
@@ -524,7 +524,7 @@ module rvx_axi_xil_v2
                     // issued until last_read signal is asserted.
                     // read controller
                     if (reads_done) begin
-                        mst_exec_state <= INIT_CAPTURE;
+                        mst_exec_state <= CONCLUDE_TRANSACTION;
                     end
                     else begin
                         mst_exec_state  <= INIT_READ;
@@ -542,14 +542,14 @@ module rvx_axi_xil_v2
                         end
                     end
                 
-                INIT_CAPTURE:
+                CONCLUDE_TRANSACTION:
                     begin
                         // This state is responsible to issue the state of comparison
                         // of written data with the read data. If no error flags are set,
                         // compare_done signal will be asseted to indicate success.
                         ERROR <= error_reg;
                         mst_exec_state <= IDLE;
-                        capture_done <= 1'b1;
+                        transaction_done <= 1'b1;
                     end
                     
                 default:

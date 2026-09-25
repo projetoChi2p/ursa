@@ -1,9 +1,41 @@
+# -----------------------------------------------------------------------------
+# Programa a PL (bitstream) e carrega a aplicacao do ARM via JTAG (XSDB).
+# Chamado por 03_program_online_jtag.sh <bitstream.bit>
+# -----------------------------------------------------------------------------
 
+######################################
+# Configuracao da placa (ZedBoard)
+######################################
+set fpga_part_filter   "xc7z020*"   ;# so informativo; o filtro abaixo usa o literal
+set board_filter_regex "*"
+
+# Hardware da PL exportado pelo Vivado (.xsa). O ps7_init.tcl e extraido dele,
+# entao nao e preciso ter uma plataforma Vitis.
+#   Gerar (projeto implementado aberto):
+#     write_hw_platform -fixed -force -file <repo>/vivado_proj/build/rvx-ursa/rvx_zynq.xsa
+# Sobrescrever com: export URSA_XSA=/caminho/arquivo.xsa
+set script_folder [file dirname [file normalize [info script]]]
+if {[info exists ::env(URSA_XSA)]} {
+    set hardware_def_file [file normalize $::env(URSA_XSA)]
+} else {
+    set hardware_def_file [file normalize "${script_folder}/../../vivado_proj/build/rvx-ursa/rvx_zynq.xsa"]
+}
+
+# Aplicacao do ARM (opcional). Sem ela, o PS so e inicializado (clocks/resets da PL)
+# e o ARM fica parado; o RVX roda normalmente na PL.
+#   Usar uma: export URSA_ARM_ELF=/caminho/app.elf
+set arm_app_file ""
+if {[info exists ::env(URSA_ARM_ELF)]} {
+    set arm_app_file [file normalize $::env(URSA_ARM_ELF)]
+}
+
+######################################
+# Versao do Vivado (aceita .../Vivado/2023.2 e .../2025.1/Vivado)
+######################################
 set xil [lindex [split $::env(XILINX_VIVADO) ";"] 0]
-puts "$xil"
-
-# /opt/Xilinx/Vivado/2023.2/ids_lite/ISE
-regexp {Xilinx/Vivado/([0-9\.]+)$} "$xil" _x vivadoVer
+if {![regexp {(20[0-9]{2}\.[0-9])} $xil _x vivadoVer]} {
+    error "ERRO: nao consegui extrair a versao do Vivado de '$xil'."
+}
 puts "Vivado version: $vivadoVer"
 
 if { [string compare $vivadoVer "2023.2"] >= 0 } {
@@ -11,78 +43,58 @@ if { [string compare $vivadoVer "2023.2"] >= 0 } {
 } elseif { [string compare $vivadoVer "2018.3"] <= 0 } {
     set hw_def_ext "hdf"
 } else {
-    error "ERROR: Unknown Vivado version $vivadoVer."
-}
-
-
-set board_filter_regex "*"
-if {$argc == 1} {
-    set fpga_bitstream_file [lindex $argv 0]
-} else {
-    puts "There are $argc arguments to this script"
-    puts "The name of this script is $argv0"
-    if {$argc > 0} {puts "The other arguments are: $argv" }
-    error "ERROR: No valid params."
+    error "ERRO: versao do Vivado nao suportada: $vivadoVer"
 }
 
 ######################################
-set design_top         "z020_top"
-set arm_app            "hello"
+# Argumentos e checagens
 ######################################
-
-namespace eval _tcl {
-proc get_script_folder {} {
-   set script_path [file normalize [info script]]
-   set script_folder [file dirname $script_path]
-   return $script_folder
+if {$argc != 1} {
+    error "Uso: xsdb 03_program_online_jtag.tcl <bitstream.bit>"
 }
+set fpga_bitstream_file [file normalize [lindex $argv 0]]
+
+foreach f [list $fpga_bitstream_file $hardware_def_file] {
+    if {![file exists $f]} {
+        error "ERRO: arquivo nao encontrado: $f"
+    }
 }
-variable script_folder
-set script_folder [_tcl::get_script_folder]
+if {$arm_app_file ne "" && ![file exists $arm_app_file]} {
+    error "ERRO: URSA_ARM_ELF aponta para arquivo inexistente: $arm_app_file"
+}
 
-
-puts "Running from $script_folder"
-
-
-set arm_app_file        [file normalize "${script_folder}/../../vivado_proj/rvx_base_zybo_vitis_2023.2_v0.1/hello/build/hello.elf" ]
-set init_file           [file normalize "${script_folder}/../../vivado_proj/rvx_base_zybo_vitis_2023.2_v0.1/platform/export/platform/hw/ps7_init.tcl" ]
-set hardware_def_file   [file normalize "${script_folder}/../../vivado_proj/rvx_base_zybo_vitis_2023.2_v0.1/platform/export/platform/hw/rvx_zynq.xsa" ]
+# Extrai o ps7_init.tcl de dentro do .xsa (e um zip)
+set tmp_dir [file join $script_folder build xsa_extract]
+file mkdir $tmp_dir
+if {[catch {exec unzip -o -j $hardware_def_file ps7_init.tcl -d $tmp_dir} msg]} {
+    error "ERRO: nao consegui extrair ps7_init.tcl de $hardware_def_file\n$msg"
+}
+set init_file [file join $tmp_dir ps7_init.tcl]
 
 puts "Platform:        ${hardware_def_file}"
 puts "Preset:          ${init_file}"
 puts "Bitstream:       ${fpga_bitstream_file}"
-puts "Application:     ${arm_app_file}"
-puts "Board selection: ${board_filter_regex}"
-
+puts "Application:     [expr {$arm_app_file eq "" ? "(nenhuma, ARM parado)" : $arm_app_file}]"
+puts "FPGA filter:     ${fpga_part_filter}"
 
 set begin_secs [clock seconds]
 
+######################################
+# Programacao
+######################################
 connect -url tcp:127.0.0.1:3121
-
-#xsdb% connect -url tcp:127.0.0.1:3121                                                                                                
-#tcfchan#0                                                                                                                            
-#xsdb% targets                                                                                                                        
-#  1  APU
-#     2  ARM Cortex-A9 MPCore #0 (Running)
-#     3  ARM Cortex-A9 MPCore #1 (Running)
-#  4  xc7z010
 
 source $init_file
 
-
-targets -set -nocase -filter {name =~"APU*" && level==0 && jtag_cable_name =~ $board_filter_regex} -index 0
-#targets -set -nocase -filter {name =~"APU*" && level==0}
-
+targets -set -nocase -filter {name =~ "APU*" && level==0 && jtag_cable_name =~ $board_filter_regex} -index 0
 rst -system
 after 3000
 
-targets -set -nocase -filter {name =~"xc7z010*" && level==0 && jtag_cable_name =~ $board_filter_regex} -index 1
-#targets -set -nocase -filter {name =~"xc7z010*" && level==0}
+targets -set -nocase -filter {name =~ "xc7z020*" && level==0 && jtag_cable_name =~ $board_filter_regex} -index 1
 fpga -file ${fpga_bitstream_file}
 puts "FPGA bitstream loaded."
 
-targets -set -nocase -filter {name =~"APU*" && level==0 && jtag_cable_name =~ $board_filter_regex} -index 0
-#targets -set -nocase -filter {name =~"APU*" && level==0}
+targets -set -nocase -filter {name =~ "APU*" && level==0 && jtag_cable_name =~ $board_filter_regex} -index 0
 if { $hw_def_ext == "xsa" } {
     loadhw -hw ${hardware_def_file} -mem-ranges [list {0x40000000 0xbfffffff}]
     configparams force-mem-access 1
@@ -90,58 +102,30 @@ if { $hw_def_ext == "xsa" } {
     loadhw ${hardware_def_file}
 }
 puts "Hardware def loaded."
-
 after 500
 
-targets -set -nocase -filter {name =~"APU*" && level==0 && jtag_cable_name =~ $board_filter_regex} -index 0
-#targets -set -nocase -filter {name =~"APU*" && level==0}
-after 500
 ps7_init
 puts "PS7 init run."
 after 500
 ps7_post_config
-puts "PS7 post config. run."
-
+puts "PS7 post config run."
 after 500
 
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ $board_filter_regex} -index 0
-#targets -set -nocase -filter {name =~ "*A9*#0" && level==1}
-rst -processor
-after 2000
-dow ${arm_app_file}
-puts "Arm application loaded."
-
-#targets -set -nocase -filter {name =~ "*A9*#0" && level==1}
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ $board_filter_regex} -index 0
-con
+if {$arm_app_file ne ""} {
+    targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ $board_filter_regex} -index 0
+    rst -processor
+    after 2000
+    dow ${arm_app_file}
+    puts "Arm application loaded."
+    con
+} else {
+    puts "Sem aplicacao ARM: PS inicializado, ARM parado."
+}
 
 if { $hw_def_ext == "xsa" } {
     configparams force-mem-access 0
 }
 
 set end_secs [clock seconds]
-
 puts "\n\nElapsed time [expr {$end_secs - $begin_secs}] seconds"
 puts "PROGRAM_DONE"
-
-
-# Sample Vitis IDE log
-#16:49:41 INFO  : XSDB server has started successfully from frontend.
-#16:49:42 INFO  : Connection to XSDB Server established.
-#16:49:42 INFO  : Done
-#16:49:42 INFO  : connect -url tcp:127.0.0.1:3121
-#16:49:43 INFO  : bpremove -all
-#16:49:44 INFO  : Context for 'APU' is selected.
-#16:49:47 INFO  : 'after 3000' command is executed.
-#16:49:47 INFO  : targets -set -nocase -filter {name =~"APU*"}
-#16:49:47 INFO  : loadhw -hw /media/fabiob/portdev/nn-apsoc/development/engines/xilinx_finn/sat_6/integration_projects/sat6_zed_vitis_ide/workspace/platform/export/platform/hw/sat6_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
-#16:49:47 INFO  : configparams force-mem-access 1
-#16:49:47 INFO  : targets -set -nocase -filter {name =~"APU*"}
-#16:49:47 INFO  : source /media/fabiob/portdev/nn-apsoc/development/engines/xilinx_finn/sat_6/integration_projects/sat6_zed_vitis_ide/workspace/memory_tests/_ide/psinit/ps7_init.tcl
-#16:49:47 INFO  : ps7_init
-#16:49:47 INFO  : targets -set -nocase -filter {name =~ "*A9*#0"}
-#16:49:47 INFO  : rst -processor
-#16:49:47 INFO  : dow /media/fabiob/portdev/nn-apsoc/development/engines/xilinx_finn/sat_6/integration_projects/sat6_zed_vitis_ide/workspace/memory_tests/build/memory_tests.elf
-#16:49:47 INFO  : con
-#16:49:47 INFO  : configparams force-mem-access 0
-#16:49:48 INFO  : Testing the connection for 127.0.0.1

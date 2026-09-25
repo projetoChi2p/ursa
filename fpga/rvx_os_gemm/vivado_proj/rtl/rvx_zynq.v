@@ -62,17 +62,22 @@ module rvx_zynq
     
     
     localparam GPIO_WIDTH       = 1;
-    localparam MEMORY_INIT_FILE = "hello.mem"; //"mqhu_fuc.mem";
-    //localparam MEMORY_INIT_FILE = "memorytest.mem"; 
+//    localparam MEMORY_INIT_FILE = "hello.mem"; //"mqhu_fuc.mem";
+    localparam MEMORY_INIT_FILE = "driver-ursa.mem"; //"mqhu_fuc.mem";
+//    localparam MEMORY_INIT_FILE = "memorytest.mem";
+    //localparam MEMORY_SIZE      = 128*1024;
     localparam MEMORY_SIZE      = 128*1024;
+    //UM: Atualizar para 512
     localparam EXTERNAL_SIZE    = 512*1024; // See AXI block design base address and total crossbar range
     
     //localparam CORE_STEEL     = 1;
     //localparam CORE_STEEL_AXI = 2;
-//    localparam CORE_RVX       = 3;
-//    localparam CORE_RVX_AXI   = 4;
     
-//    localparam CORE_SEL = CORE_RVX_AXI; 
+    //UM:Comentar
+    //localparam CORE_RVX       = 3;
+    //localparam CORE_RVX_AXI   = 4;
+    
+    //localparam CORE_SEL = CORE_RVX_AXI; 
     
     wire BTN0;
     wire JE1;
@@ -138,9 +143,9 @@ module rvx_zynq
     wire [GPIO_WIDTH-1:0] gpio_oe;
     wire [GPIO_WIDTH-1:0] gpio_output;
        
-    wire      clock_fast;
-    wire      reset_fast;
-    wire      resetn_fast;
+//    wire      clock_fast;
+//    wire      reset_fast;
+//    wire      resetn_fast;
     wire      clock_slow;
     wire      reset_slow;
     wire      resetn_slow;
@@ -152,9 +157,13 @@ module rvx_zynq
     wire tick;
     wire reset_once;
     
-    
+    //UM: Manter apenas CLK Slow
+//    wire FCLK_100_CLK;
+//    wire [0:0]FCLK_100_RESET;
     wire FCLK_SLOW_CLK;
     wire [0:0]FCLK_SLOW_RESET_N;
+//    wire FCLK_FAST_CLK;
+//    wire [0:0]FCLK_FAST_RESET;
     
     
     
@@ -168,13 +177,25 @@ module rvx_zynq
     assign JE1 = uart_txd;
     assign uart_rxd = JE2;
     
+//UM: Comentar clk fast
+//    assign clock_fast = FCLK_FAST_CLK;
+//    assign reset_fast = FCLK_FAST_RESET;
+//    assign resetn_fast = ~reset_fast;
+    
     assign clock_slow = FCLK_SLOW_CLK;
+//    assign reset_slow = FCLK_SLOW_RESET || BTN0 || reset_once;
+//    assign resetn_slow = ~reset_slow;
+//UM: Atualizar reset
     assign reset_slow = (!FCLK_SLOW_RESET_N) || BTN0 || reset_once;
     assign resetn_slow = ~reset_slow;
+
 
     
     bd_ursa_wrapper
     bd_axi_i (
+//        .ACLK_SLOW(clock_slow),
+//        .ARESETN_SLOW(resetn_slow),
+//UM: Atualizar 
         .FCLK_CLK0_40(clock_slow),
         .RESET_N(resetn_slow),
         .S_AXI4_araddr(S_AXI4_araddr),
@@ -198,7 +219,7 @@ module rvx_zynq
         .S_AXI4_wvalid(S_AXI4_wvalid)
     );
 
-
+//UM: Comentar generate
 //    generate
 //    if (CORE_SEL==CORE_RVX) begin : rvx_core_g
         
@@ -327,8 +348,15 @@ module rvx_zynq
         .DDR_ras_n(DDR_ras_n),
         .DDR_reset_n(DDR_reset_n),
         .DDR_we_n(DDR_we_n),
+// UM: Atualizar CLKs
         .FCLK_CLK0_40(FCLK_SLOW_CLK),
         .RESET_N(FCLK_SLOW_RESET_N),
+//        .FCLK_100_CLK(FCLK_100_CLK),
+//        .FCLK_100_RESET(FCLK_100_RESET),
+//        .FCLK_SLOW_CLK(FCLK_SLOW_CLK),
+//        .FCLK_SLOW_RESET(FCLK_SLOW_RESET),
+//        .FCLK_FAST_CLK(FCLK_FAST_CLK),
+//        .FCLK_FAST_RESET(FCLK_FAST_RESET),
         .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn),
         .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp),
         .FIXED_IO_mio(FIXED_IO_mio),

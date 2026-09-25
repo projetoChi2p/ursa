@@ -292,7 +292,7 @@ int process_image_or_hang(uint16_t image_index, int inference_count){
 	}
 
   // INPUT WEIGHTS
-	if(inference_count==1){
+	if(inference_count==0){
 		if( populate_aw_with_all_the_weights(g_aw) != EXIT_SUCCESS){
 			return EXIT_FAILURE;
 		}
@@ -577,7 +577,10 @@ int process_image_or_hang(uint16_t image_index, int inference_count){
 int main(){
 	int rvx_status;
 
-	uart_write_string(DEFAULT_UART, "URSA driver implementation v2 23_09\r\n");
+	uart_write_string(DEFAULT_UART, "URSA driver implementation v2 25_09\r\n");
+
+	printf("[probe] 0x40000000 = 0x%08lx\n\r", (unsigned long)*(volatile uint32_t *)0x40000000);
+	printf("[probe] 0x40010000 = 0x%08lx\n\r", (unsigned long)*(volatile uint32_t *)0x40010000);
 
 	//1
 	rvx_status = ursa_init();
@@ -593,20 +596,22 @@ int main(){
 		return rvx_status;
 	}
 
-	printf(">\n\r");
-
-	process_image_or_hang(0, 0);
+	// printf(">\n\r");
+	// process_image_or_hang(0, 0);
 	// process_image_or_hang(1, 1);
 	// process_image_or_hang(2, 3);
 
 	//3
-	/*
 	rvx_status = ursa_test();
 	if (rvx_status != XST_SUCCESS) {
 		printf("[main] URSA test failed 0x%08x. Abort.\n\r", rvx_status);
 		return rvx_status;
 	}
-	*/
+	
+
+	printf("Two inferences for testing\n\r");
+	process_image_or_hang(0, 0);
+	process_image_or_hang(1, 1);
 	
   	// CNN processing test
 	// int image_index=0;

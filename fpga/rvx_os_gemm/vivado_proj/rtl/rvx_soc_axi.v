@@ -92,6 +92,7 @@ module rvx_soc_axi #(
   assign device_start_address [32*D3_GPIO     +: 32]  = 32'h8002_0000;
   assign device_region_size   [32*D3_GPIO     +: 32]  = 32;
 
+//UM: mudar para inici oda memória barramento
   assign device_start_address [32*D4_AXI      +: 32]  = 32'h4000_0000;
   assign device_region_size   [32*D4_AXI      +: 32]  = EXTERNAL_SIZE;
 
