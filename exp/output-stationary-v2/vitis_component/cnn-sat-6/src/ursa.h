@@ -114,16 +114,21 @@
 
 // ─── BRAMs (do Address Editor) ───────────────────────────────────────────────
 #ifdef BRAM
-    #define BRAM_AW_BASEADDR            0x40020000  // m_axi_aw → axi_bram_ctrl_0
-    #define BRAM_AW_SIZE                (0x0FFF+1)  // 4K
+    /* UM: 25/09/26 - BRAMs in their own 1 MB MMU section (0x401xxxxx), apart
+       from the AXI-Lite registers (0x400xxxxx). Must match bd_bram.tcl. */
+    #define BRAM_AW_BASEADDR            0x40100000
+    #if SA_SIZE >= 16
+        #define BRAM_AW_SIZE            (0x1FFF+1)  // 8K
+    #else
+        #define BRAM_AW_SIZE            (0x0FFF+1)  // 4K
+    #endif
 
-    #define BRAM_BI_BASEADDR            0x40030000  // m_axi_bi → axi_bram_ctrl_1
+    #define BRAM_BI_BASEADDR            0x40110000
     #define BRAM_BI_SIZE                (0x3FFF+1)  // 16K
 
-    #define BRAM_CA_BASEADDR            0x40040000  // m_axi_ca → axi_bram_ctrl_2
+    #define BRAM_CA_BASEADDR            0x40120000
     #define BRAM_CA_SIZE                (0x3FFF+1)  // 16K
 #endif
-
 #ifdef OCM
     //OCM: ps7_ram_0 : ORIGIN = 0x0, LENGTH = 0x30000
     #define BRAM_AW_BASEADDR 0x00010000

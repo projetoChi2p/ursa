@@ -550,7 +550,8 @@ int main(void)
     print_fclk0();      	/* esperado: FCLK0 = 123.075 MHz (fdiv=48 div0=13 div1=1 src=0) */
 
     //UM: 24/09/26
-    Xil_SetTlbAttributes(0x40000000, DEVICE_MEMORY);
+    Xil_SetTlbAttributes(0x40000000, DEVICE_MEMORY);   /* registradores */
+    Xil_SetTlbAttributes(0x40100000, DEVICE_MEMORY);   /* BRAMs */
 
     /* dut */
     xil_status = ursa_init(&xUrsa0, XPAR_MXM_EXECUTE_URSA_0_BASEADDR);

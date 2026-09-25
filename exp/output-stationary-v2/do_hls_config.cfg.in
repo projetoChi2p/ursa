@@ -1,0 +1,37 @@
+#zed
+part=xc7z020clg484-1
+
+[hls]
+flow_target=vivado
+package.output.format=ip_catalog
+package.output.syn=true
+
+tb.file=__ROOT_DIR__/sources/vanilla/tb/simple_mxm/matrices.cpp
+tb.file=__ROOT_DIR__/sources/vanilla/tb/simple_mxm/matrices.h
+tb.file=__ROOT_DIR__/sources/vanilla/tb/simple_mxm/tb_main.cpp
+
+syn.file=__ROOT_DIR__/sources/vanilla/src/settings.h
+syn.file=__ROOT_DIR__/sources/vanilla/src/core/pe.cpp
+syn.file=__ROOT_DIR__/sources/vanilla/src/core/pe.h
+syn.file=__ROOT_DIR__/sources/vanilla/src/core/sa.cpp
+syn.file=__ROOT_DIR__/sources/vanilla/src/core/sa.h
+syn.file=__ROOT_DIR__/sources/vanilla/src/core/shell.cpp
+syn.file=__ROOT_DIR__/sources/vanilla/src/core/shell.h
+
+syn.top=mxm_execute_ursa
+clock=__CLK__
+
+# UM: 25/09/26
+# The v2 shell reads A and B in words of SA_SIZE bytes, so the m_axi ports are
+# 8*SA_SIZE bits wide. m_axi_max_bitwidth is a CEILING: left at 32 it silently
+# truncates the ports at 8x8 and 16x16, and the IP then reads the wrong bytes.
+# The sweep substitutes it per size.
+syn.interface.m_axi_max_bitwidth=__MAXBW__
+syn.interface.m_axi_addr64=0
+
+package.ip.display_name=URSA __VARIANT__ __SZ__x__SZ__ acc__ACC__
+#package.ip.version=__IP_VERSION__
+syn.cflags=-DSA_SIZE=__SZ__ -DACC_BITS=__ACC__ -I__ROOT_DIR__/sources/vanilla/src
+tb.cflags=-DSA_SIZE=__SZ__ -DACC_BITS=__ACC__ -I__ROOT_DIR__/sources/vanilla/src
+
+#package.ip.description=URSA systolic array, __SZ__x__SZ__ PEs, A=int8, B=uint8, C=int32, accumulator __ACC__ bits

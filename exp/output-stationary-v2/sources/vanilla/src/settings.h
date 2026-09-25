@@ -44,9 +44,43 @@
 
 // Largest reduction dimension M the shell buffers on chip.
 // T3 needs 144 (3x3x16). The shell returns SA_ERROR if m exceeds it.
+// Must be a multiple of SA_SIZE (shell.cpp checks it).
 #ifndef MAX_M
     #define MAX_M 256
 #endif
+
+// ─── Memory windows of the block design ──────────────────────────────────────
+// UM: 25/09/26
+// Sizes in BYTES of the three BRAM windows the IP masters. They are a property
+// of the block design, not of the array, so they live here and the sweep never
+// has to edit shell.cpp.
+//
+// A grows with SA_SIZE: every row of A is padded to a multiple of SA_SIZE
+// (row-stride rule, see shell.cpp), so T3 needs 4032 bytes at 4x4, 4096 at 8x8
+// and 5376 at 16x16. The 4 KB window stops being enough at 16x16.
+#ifndef BRAM_AW_BYTES
+    #if SA_SIZE >= 16
+        #define BRAM_AW_BYTES (8*1024)
+    #else
+        #define BRAM_AW_BYTES (4*1024)
+    #endif
+#endif
+
+#ifndef BRAM_BI_BYTES
+    #define BRAM_BI_BYTES (16*1024)
+#endif
+
+#ifndef BRAM_CA_BYTES
+    #define BRAM_CA_BYTES (16*1024)
+#endif
+
+// Depths of the m_axi ports, in WORDS of the port's own width. Only cosim
+// reads these; synthesis ignores them. Deriving them from SA_SIZE keeps the
+// sweep from having to patch the pragmas for every array size.
+// A and B are SA_SIZE bytes per beat; C stays 4 bytes (int32).
+#define AW_DEPTH_WORDS (BRAM_AW_BYTES / SA_SIZE)
+#define BI_DEPTH_WORDS (BRAM_BI_BYTES / SA_SIZE)
+#define CA_DEPTH_WORDS (BRAM_CA_BYTES / 4)
 
 
 // Enable for debug
@@ -65,6 +99,13 @@
     typedef ap_int  <32> data_c_t; //bramc
     typedef ap_int  <ACC_BITS> macc_t;   //accumulator
     // UM: 23/09/26
+    // One AXI beat carries SA_SIZE bytes: one row of a B tile (one pixel per
+    // PE column) or SA_SIZE consecutive weights of one row of A.
+    // UM: 25/09/26 - SA_SIZE < 4 would ask for a port narrower than 32 bits,
+    // which axi_bram_ctrl does not support. Caught here rather than in Vivado.
+    #if SA_SIZE < 4
+        #error "SA_SIZE < 4 needs an m_axi port narrower than 32 bits; axi_bram_ctrl cannot do that."
+    #endif
     typedef ap_uint<8*SA_SIZE> sa_word_t;
     typedef sa_word_t a_word_t;
     typedef sa_word_t b_word_t;
