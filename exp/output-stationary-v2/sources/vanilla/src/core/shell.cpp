@@ -32,15 +32,26 @@
 // (m = 36, 144). At 8x8 and 16x16 conv1 has m = 36, which needs padding.
 // With the rule, the byte position inside a word is known at compile time,
 // so each beat lands in a single bank of a_buf and nothing conflicts.
+//
+// WORD SIZE BELOW 4x4 (UM: 27/09/26)
+// The port word is WORD_BYTES = max(SA_SIZE, 4) bytes (settings.h), because
+// axi_bram_ctrl does not go below 32 bits. For SA_SIZE >= 4 WORD_BYTES is
+// SA_SIZE and everything below expands to the code the 4x4, 8x8 and 16x16
+// IPs were validated with. For 2x2:
+//   - A rows are padded to a multiple of WORD_BYTES (4) instead of SA_SIZE;
+//     the A path is written in WORD_BYTES and needs nothing else.
+//   - A B tile row is SA_SIZE (2) bytes, half a word, and its position in the
+//     word depends on the tile column j and on q at run time. load_tile_b
+//     walks a byte offset and selects the lane with a 2:1 mux.
 //===============================================
 
 //===============================================
 // filling in inputs, from the on-chip tiles
 //===============================================
-#if (MAX_M % SA_SIZE) != 0
-    #error "MAX_M must be a multiple of SA_SIZE"
+#if (MAX_M % WORD_BYTES) != 0
+    #error "MAX_M must be a multiple of WORD_BYTES"
 #endif
-#define A_WORDS_MAX (MAX_M / SA_SIZE)   /* words per row of A, at most */
+#define A_WORDS_MAX (MAX_M / WORD_BYTES)   /* words per row of A, at most */
 
 static void fill_inputs_a(const a_word_t a_buf[SA_SIZE][A_WORDS_MAX],
                           data_a_t in_a[SA_SIZE], uint16_t t, uint16_t m)
@@ -51,10 +62,10 @@ static void fill_inputs_a(const a_word_t a_buf[SA_SIZE][A_WORDS_MAX],
         /*...... DATA REGION, zero outside it ...........*/
         if (t >= i && t < i + m) {
             const uint16_t k  = m - 1 - (t - i);          /* column of A */
-            const uint16_t wi = k / SA_SIZE;              /* word in the row */
-            const uint16_t by = k % SA_SIZE;              /* byte in the word */
-            // SA_SIZE is a power of two: the divide and modulo are a shift
-            // and a mask, and the byte select is an SA_SIZE:1 mux.
+            const uint16_t wi = k / WORD_BYTES;           /* word in the row */
+            const uint16_t by = k % WORD_BYTES;           /* byte in the word */
+            // WORD_BYTES is a power of two: the divide and modulo are a shift
+            // and a mask, and the byte select is a WORD_BYTES:1 mux.
             in_a[i] = (data_a_t)a_buf[i][wi].range(8*by + 7, 8*by);
         } else {
             in_a[i] = 0;
@@ -112,6 +123,7 @@ static void load_tile_a(const a_word_t *a, uint32_t word_off, uint16_t wpr,
     }
 }
 
+#if LANES_PER_WORD == 1
 /* B tile: row k holds SA_SIZE bytes at byte offset k*q + j*SA_SIZE. q and the
    tile offset are multiples of SA_SIZE, so each row is one aligned word.
    Byte jj of the word is column jj of the tile (AXI byte lane order). */
@@ -131,6 +143,35 @@ static void load_tile_b(const b_word_t *b, uint32_t word_off, uint32_t qw, uint1
         idx += qw;
     }
 }
+
+#else /* LANES_PER_WORD > 1, SA_SIZE < 4 */
+
+/* B tile, narrow array: row k holds SA_SIZE bytes at byte offset
+   k*q + j*SA_SIZE, which is SA_SIZE-aligned but not word-aligned. The word is
+   byte_off / WORD_BYTES and the lane inside it is
+   (byte_off % WORD_BYTES) / SA_SIZE. q only has to be a multiple of SA_SIZE,
+   so with q % WORD_BYTES != 0 the lane alternates from row to row; that is
+   why it is computed per row and not once per tile. */
+static void load_tile_b(const b_word_t *b, uint32_t byte_off, uint16_t q, uint16_t m,
+                        data_b_t b_buf[SA_SIZE][MAX_M])
+{
+    uint32_t off = byte_off;
+
+    LOAD_B: for (uint16_t k = 0; k < m; k++) {
+        #pragma HLS PIPELINE II=1
+        #pragma HLS LOOP_TRIPCOUNT min=36 max=144 avg=144
+        b_word_t w    = b[off / WORD_BYTES];
+        uint8_t  lane = (off % WORD_BYTES) / SA_SIZE;
+        for (uint16_t jj = 0; jj < SA_SIZE; jj++) {
+            #pragma HLS UNROLL
+            const uint16_t by = lane * SA_SIZE + jj;
+            b_buf[jj][k] = w.range(8*by + 7, 8*by);
+        }
+        off += q;
+    }
+}
+
+#endif /* LANES_PER_WORD */
 
 //===============================================
 // output-stationary top-function
@@ -188,7 +229,6 @@ sa_result_t mxm_execute_ursa(
     a_word_t a_buf[SA_SIZE][A_WORDS_MAX];
     #pragma HLS ARRAY_PARTITION variable=a_buf complete dim=1
     #pragma HLS BIND_STORAGE variable=a_buf type=ram_1p impl=lutram
-    //UM: 25/09/26 the above can remove for bram inference, better for the radiation.
 
     data_b_t b_buf[SA_SIZE][MAX_M];
     #pragma HLS ARRAY_PARTITION variable=b_buf complete dim=1
@@ -202,10 +242,13 @@ sa_result_t mxm_execute_ursa(
     const uint16_t call_a = a0_p / SA_SIZE;
     const uint16_t call_b = b0_q / SA_SIZE;
 
-    const uint16_t wpr      = (m + SA_SIZE - 1) / SA_SIZE;  /* A row stride, words */
+    const uint16_t wpr      = (m + WORD_BYTES - 1) / WORD_BYTES;  /* A row stride, words */
     const uint32_t stride_a = (uint32_t)SA_SIZE * wpr;      /* A tile, in words   */
     const uint32_t stride_c = (uint32_t)SA_SIZE * b0_q;
     const uint32_t qw       = b0_q / SA_SIZE;               /* B row stride, words */
+#if LANES_PER_WORD > 1
+    (void)qw;
+#endif
 
     uint32_t off_a = 0;   /* start of the current row of tiles, in A (words) */
     uint32_t off_c = 0;   /* start of the current row of tiles, in C */
@@ -221,7 +264,11 @@ sa_result_t mxm_execute_ursa(
         TILE_COL: for (uint16_t j = 0; j < call_b; j++) {
             #pragma HLS LOOP_TRIPCOUNT min=16 max=64 avg=16
 
+#if LANES_PER_WORD == 1
             load_tile_b(addr_b0, j, qw, m, b_buf);
+#else
+            load_tile_b(addr_b0, (uint32_t)j * SA_SIZE, b0_q, m, b_buf);
+#endif
 
             /* ---- SA computation ---- */
             STREAM_K: for (uint16_t t = 0; t < m + 2*(SA_SIZE-1); t++) {

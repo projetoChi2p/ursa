@@ -66,8 +66,9 @@ mkdir -p ${OUT_DIR}
 # ─── Sweep ────────────────────────────────────────────────────────────────
 # UM: 25/09/26 - v2 IP. 2x2 is out: its m_axi word would be 16 bits, below
 # what axi_bram_ctrl accepts (settings.h refuses to build it).
-ARRAY_SZ=(4 8 16)
-#ARRAY_SZ=(8)
+# UM: 27/09/26 - 2x2 is in again
+ARRAY_SZ=(2 4 8 16)
+#ARRAY_SZ=(2)
 
 ACC_BITS_LIST=(20)
 VARIANT=vanilla

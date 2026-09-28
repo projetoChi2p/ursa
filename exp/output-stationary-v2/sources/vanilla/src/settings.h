@@ -49,15 +49,37 @@
     #define MAX_M 256
 #endif
 
+// ─── AXI word ────────────────────────────────────────────────────────────────
+// UM: 27/09/26
+// The m_axi ports of A and B carry WORD_BYTES per beat. That is one row of a
+// B tile (SA_SIZE pixels) whenever SA_SIZE >= 4. Below 4 the row would be
+// narrower than 32 bits, which axi_bram_ctrl does not accept, so the word is
+// held at 4 bytes and each beat carries WORD_BYTES / SA_SIZE rows' worth of
+// lanes; the shell picks the right lane. Defined with #if, not with a ternary,
+// so that for SA_SIZE >= 4 every expression below expands to exactly the text
+// the 4x4, 8x8 and 16x16 IPs were synthesized and validated with.
+#if (SA_SIZE & (SA_SIZE - 1)) != 0
+    #error "SA_SIZE must be a power of two"
+#endif
+
+#if SA_SIZE < 4
+    #define WORD_BYTES 4
+#else
+    #define WORD_BYTES SA_SIZE
+#endif
+
+#define LANES_PER_WORD (WORD_BYTES / SA_SIZE)   /* 1 for SA_SIZE >= 4 */
+
 // ─── Memory windows of the block design ──────────────────────────────────────
 // UM: 25/09/26
 // Sizes in BYTES of the three BRAM windows the IP masters. They are a property
 // of the block design, not of the array, so they live here and the sweep never
 // has to edit shell.cpp.
 //
-// A grows with SA_SIZE: every row of A is padded to a multiple of SA_SIZE
-// (row-stride rule, see shell.cpp), so T3 needs 4032 bytes at 4x4, 4096 at 8x8
-// and 5376 at 16x16. The 4 KB window stops being enough at 16x16.
+// A grows with SA_SIZE: every row of A is padded to a multiple of WORD_BYTES
+// (row-stride rule, see shell.cpp), so T3 needs 3744 bytes at 2x2, 4032 at
+// 4x4, 4096 at 8x8 and 5376 at 16x16. The 4 KB window stops being enough at
+// 16x16.
 #ifndef BRAM_AW_BYTES
     #if SA_SIZE >= 16
         #define BRAM_AW_BYTES (8*1024)
@@ -75,11 +97,10 @@
 #endif
 
 // Depths of the m_axi ports, in WORDS of the port's own width. Only cosim
-// reads these; synthesis ignores them. Deriving them from SA_SIZE keeps the
-// sweep from having to patch the pragmas for every array size.
-// A and B are SA_SIZE bytes per beat; C stays 4 bytes (int32).
-#define AW_DEPTH_WORDS (BRAM_AW_BYTES / SA_SIZE)
-#define BI_DEPTH_WORDS (BRAM_BI_BYTES / SA_SIZE)
+// reads these; synthesis ignores them. A and B are WORD_BYTES per beat; C
+// stays 4 bytes (int32).
+#define AW_DEPTH_WORDS (BRAM_AW_BYTES / WORD_BYTES)
+#define BI_DEPTH_WORDS (BRAM_BI_BYTES / WORD_BYTES)
 #define CA_DEPTH_WORDS (BRAM_CA_BYTES / 4)
 
 
@@ -98,15 +119,11 @@
     typedef ap_uint <8>  data_b_t; //pixel
     typedef ap_int  <32> data_c_t; //bramc
     typedef ap_int  <ACC_BITS> macc_t;   //accumulator
-    // UM: 23/09/26
-    // One AXI beat carries SA_SIZE bytes: one row of a B tile (one pixel per
-    // PE column) or SA_SIZE consecutive weights of one row of A.
-    // UM: 25/09/26 - SA_SIZE < 4 would ask for a port narrower than 32 bits,
-    // which axi_bram_ctrl does not support. Caught here rather than in Vivado.
-    #if SA_SIZE < 4
-        #error "SA_SIZE < 4 needs an m_axi port narrower than 32 bits; axi_bram_ctrl cannot do that."
-    #endif
-    typedef ap_uint<8*SA_SIZE> sa_word_t;
+    // UM: 23/09/26, 27/09/26
+    // One AXI beat carries WORD_BYTES bytes: one row of a B tile (one pixel
+    // per PE column) for SA_SIZE >= 4, or LANES_PER_WORD of them below that;
+    // for A, WORD_BYTES consecutive weights of one row.
+    typedef ap_uint<8*WORD_BYTES> sa_word_t;
     typedef sa_word_t a_word_t;
     typedef sa_word_t b_word_t;
 #else

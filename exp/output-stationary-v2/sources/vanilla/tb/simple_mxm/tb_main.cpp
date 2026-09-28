@@ -1,12 +1,9 @@
-#include <stdio.h>
-#include <cstdlib>
-
-#include "matrices.h"
-
 // Host check of the v2 shell against a reference that wraps at ACC_BITS.
 #include <cstdio>
-// #include <cstdlib>
+#include <cstdlib>
 #include <cstring>
+#include "matrices.h"
+#include "../../src/core/shell.h"
 
 static void gold(const int8_t *a, const uint8_t *b, int32_t *c, int p, int m, int q) {
     const int shift = 32 - ACC_BITS;
@@ -21,19 +18,28 @@ static void gold(const int8_t *a, const uint8_t *b, int32_t *c, int p, int m, in
 }
 
 // B as the ARM writes it: row-major bytes. Packed into words little-endian,
-// which is what the AXI byte lanes deliver.
+// which is what the AXI byte lanes deliver. UM: 27/09/26 - the word is
+// WORD_BYTES, not SA_SIZE; the two differ below 4x4. The tail word is padded
+// with zeros when n_bytes is not a multiple of the word.
+static int words_for(int n_bytes) { return (n_bytes + WORD_BYTES - 1) / WORD_BYTES; }
+
 static void pack_b(const uint8_t *b, b_word_t *w, int n_bytes) {
-    for (int n = 0; n < n_bytes / SA_SIZE; n++) {
+    for (int n = 0; n < words_for(n_bytes); n++) {
         b_word_t v = 0;
-        for (int jj = 0; jj < SA_SIZE; jj++) v.range(8*jj+7, 8*jj) = b[n*SA_SIZE + jj];
+        for (int jj = 0; jj < WORD_BYTES; jj++) {
+            int idx = n*WORD_BYTES + jj;
+            v.range(8*jj+7, 8*jj) = (idx < n_bytes) ? b[idx] : 0;
+        }
         w[n] = v;
     }
 }
 
 // A as it must sit in memory: each row padded with zeros to m_a, a multiple
-// of SA_SIZE, then packed into words the same way as B.
+// of WORD_BYTES, then packed into words the same way as B.
+static int m_a_of(int m) { return ((m + WORD_BYTES - 1) / WORD_BYTES) * WORD_BYTES; }
+
 static int pack_a(const int8_t *a, a_word_t *w, int p, int m) {
-    const int m_a = ((m + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
+    const int m_a = m_a_of(m);
     uint8_t *tmp = new uint8_t[p * m_a];
     for (int i = 0; i < p; i++)
         for (int k = 0; k < m_a; k++)
@@ -50,8 +56,8 @@ static int run(int p, int m, int q, int mode, unsigned seed) {
     srand(seed);
     int8_t  *a  = new int8_t [p*m];
     uint8_t *b  = new uint8_t[m*q];
-    b_word_t *bw = new b_word_t[m*q/SA_SIZE];
-    a_word_t *aw = new a_word_t[p*(m+SA_SIZE)/SA_SIZE];
+    b_word_t *bw = new b_word_t[words_for(m*q)];
+    a_word_t *aw = new a_word_t[words_for(p*m_a_of(m))];
     int32_t *c  = new int32_t[p*q];
     int32_t *cg = new int32_t[p*q];
     for (int i = 0; i < p*m; i++) a[i] = mode == 1 ? 127 : mode == 2 ? -128 : (int8_t)(rand() & 0xFF);
@@ -69,7 +75,7 @@ static int run(int p, int m, int q, int mode, unsigned seed) {
 }
 
 int main() {
-    printf("SA_SIZE=%d ACC_BITS=%d MAX_M=%d\n", SA_SIZE, ACC_BITS, MAX_M);
+    printf("SA_SIZE=%d WORD_BYTES=%d ACC_BITS=%d MAX_M=%d\n", SA_SIZE, WORD_BYTES, ACC_BITS, MAX_M);
     int fail = 0;
     // T3 layers
     fail |= run(16,  36, 256, 0, 1);
@@ -79,6 +85,9 @@ int main() {
     fail |= run(SA_SIZE, 1, SA_SIZE, 0, 4);
     fail |= run(SA_SIZE, 2, SA_SIZE, 0, 5);
     fail |= run(2*SA_SIZE, 7, 3*SA_SIZE, 0, 6);
+    // q not a multiple of the word: below 4x4 the B lane alternates per row
+    fail |= run(2*SA_SIZE, 9, 5*SA_SIZE, 0, 10);
+    fail |= run(3*SA_SIZE, 33, 7*SA_SIZE, 0, 11);
     fail |= run(SA_SIZE, MAX_M, SA_SIZE, 0, 7);
     // saturated operands: 127*255*144 overflows 20 bits, so the wrap is exercised
     fail |= run(16, 144, 64, 1, 8);
@@ -93,59 +102,3 @@ int main() {
     printf(fail ? "*** FAIL ***\n" : "*** ALL PASS ***\n");
     return fail;
 }
-
-// int8_t   g_mem_a[MEM_DEPTH];
-// uint8_t  g_mem_b[MEM_DEPTH];
-// int32_t  g_mem_c[MEM_DEPTH];
-// int32_t  g_mem_c_gold[MEM_DEPTH];
-
-
-// int main()
-// {
-//     /* Shape and geometry, printed so a cosimulation log says which
-//        configuration produced it. */
-//     printf("=== URSA testbench ===\n");
-//     printf("SA_SIZE=%d  ACC_BITS=%d\n", SA_SIZE, ACC_BITS);
-//     printf("P=%d  Q=%d  M=%d\n", P, Q, M);
-//     printf("tiles=%d  k iterations per tile=%d\n",
-//            (P / SA_SIZE) * (Q / SA_SIZE), M + 2 * SA_SIZE - 2);
-
-//     if ((P % SA_SIZE) != 0 || (Q % SA_SIZE) != 0) {
-//         printf("[FAIL] P and Q must be multiples of SA_SIZE=%d\n", SA_SIZE);
-//         return 1;
-//     }
-
-//     init_matrix_a(g_mem_a, P, M);
-//     init_matrix_b(g_mem_b, M, Q);
-//     gold_mxm(g_mem_a, g_mem_b, g_mem_c_gold, P, M, Q);
-
-// #ifdef DEBUG
-//     printf("=== Input Matrices ===\n");
-//     print_matrix_a(g_mem_a, P, M);
-//     print_matrix_b(g_mem_b, M, Q);
-//     printf("=== Gold Result ===\n");
-//     print_matrix_c(g_mem_c_gold, P, Q);
-// #endif
-
-//     uint8_t sa_status = mxm_execute_ursa(g_mem_a, P,
-//                                          g_mem_b, Q,
-//                                          g_mem_c, M);
-
-// #ifdef DEBUG
-//     printf("=== URSA Result ===\n");
-//     print_matrix_c(g_mem_c, P, Q);
-// #endif
-
-//     if (sa_status != SA_SUCCESS) {
-//         printf("[FAIL] URSA returned status %u\n", (unsigned)sa_status);
-//         return 1;
-//     }
-
-//     if (compare_mxm(g_mem_c, g_mem_c_gold, P, Q)) {
-//         printf("[PASS] URSA output matches gold\n");
-//         return 0;
-//     }
-
-//     printf("[FAIL] URSA output does not match gold\n");
-//     return 1;
-// }

@@ -62,7 +62,7 @@ TOP_FUNCTION=mxm_execute_ursa
 # division, so 6, 10, 12 and 14 would run no cases at all.
 # UM: 25/09/26 - 2 was dropped: at SA_SIZE=2 the m_axi word is 16 bits and
 # axi_bram_ctrl does not go below 32. settings.h refuses to compile it.
-ARRAY_SZ=(4 8 16)
+ARRAY_SZ=(2 4 8 16)
 # ARRAY_SZ=(8)
 
 # Accumulator widths to synthesize. 20 is the design point used for the TNS
@@ -93,7 +93,9 @@ for acc in ${ACC_BITS_LIST[*]}; do
 
     # One AXI beat carries SA_SIZE bytes. This is a ceiling in the cfg, so it
     # has to grow with the array or the ports come out truncated.
-    maxbw=$(( 8 * sz ))
+    # maxbw=$(( 8 * sz ))
+    # UM: 27/09/26
+    maxbw=$(( 8 * (sz < 4 ? 4 : sz) ))
 
     if [ -f ${IP_REPO_PATH}/${config_name}.zip ]; then
         echo "*** IP ${config_name} found. Skip. ***"

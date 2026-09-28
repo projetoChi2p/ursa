@@ -3,6 +3,19 @@
 
 #include "ursa.h"
 
+/* ─── Row stride of A ────────────────────────────────────────────────────────
+   UM: 27/09/26 - the URSA v2 IP reads A in words of URSA_WORD_BYTES bytes:
+   SA_SIZE for arrays of 4x4 and up, and 4 below that, because axi_bram_ctrl
+   does not go under 32 bits. Every row of A is padded to a multiple of the
+   word, not of SA_SIZE. For SA_SIZE >= 4 the two are the same thing and the
+   layout does not change. Must match WORD_BYTES in the HLS settings.h.    */
+#if SA_SIZE < 4
+    #define URSA_WORD_BYTES 4
+#else
+    #define URSA_WORD_BYTES SA_SIZE
+#endif
+#define URSA_UP_WORD(v) ((((v) + URSA_WORD_BYTES - 1) / URSA_WORD_BYTES) * URSA_WORD_BYTES)
+
 /* Network selection comes from the build script. The default below applies
    only when none was passed; a bare #define here would collide with a
    -DCNN_NETWORK_T2 and leave two networks defined at once. */
@@ -123,7 +136,7 @@
     // UM: 24/09/26 - ROW-STRIDE RULE (URSA v2)
     // The v2 shell reads A in words of SA_SIZE bytes, so every row of A must
     // start on a word boundary: the row stride is CONV*_PADDED_COL, that is,
-    // M rounded up to a multiple of SA_SIZE, with the extra bytes written as
+    // M rounded up to a multiple of URSA_WORD_BYTES, with the extra bytes written as
     // zero. The columns used to be left unpadded, which was correct for the
     // v1 IP (it read A byte by byte with stride M) and silently wrong for v2
     // whenever M is not a multiple of SA_SIZE. T3 CONV1 has M = 36: fine at
@@ -137,21 +150,21 @@
     #define CONV1_ROW              (CONV1_CH_OUT)
     #define CONV1_COL              (CONV1_WH_KERNEL * CONV1_WH_KERNEL * CONV1_CH_IN)
     #define CONV1_PADDED_ROW       (((CONV1_ROW + SA_SIZE - 1) / SA_SIZE) * SA_SIZE)
-    #define CONV1_PADDED_COL       (((CONV1_COL + SA_SIZE - 1) / SA_SIZE) * SA_SIZE)
+    #define CONV1_PADDED_COL       URSA_UP_WORD(CONV1_COL)
     #define TOTAL_NUM_WEIGHTS_WITH_PADDING_1  (CONV1_PADDED_ROW * CONV1_PADDED_COL)
 
     // ---------- CONV2 ----------
     #define CONV2_ROW              (CONV2_CH_OUT)
     #define CONV2_COL              (CONV2_WH_KERNEL * CONV2_WH_KERNEL * CONV2_CH_IN)
     #define CONV2_PADDED_ROW       (((CONV2_ROW + SA_SIZE - 1) / SA_SIZE) * SA_SIZE)
-    #define CONV2_PADDED_COL       (((CONV2_COL + SA_SIZE - 1) / SA_SIZE) * SA_SIZE)
+    #define CONV2_PADDED_COL       URSA_UP_WORD(CONV2_COL)
     #define TOTAL_NUM_WEIGHTS_WITH_PADDING_2  (CONV2_PADDED_ROW * CONV2_PADDED_COL)
 
     // ---------- CONV3 ----------
     #define CONV3_ROW              (CONV3_CH_OUT)
     #define CONV3_COL              (CONV3_WH_KERNEL * CONV3_WH_KERNEL * CONV3_CH_IN)
     #define CONV3_PADDED_ROW       (((CONV3_ROW + SA_SIZE - 1) / SA_SIZE) * SA_SIZE)
-    #define CONV3_PADDED_COL       (((CONV3_COL + SA_SIZE - 1) / SA_SIZE) * SA_SIZE)
+    #define CONV3_PADDED_COL       URSA_UP_WORD(CONV3_COL)
     #define TOTAL_NUM_WEIGHTS_WITH_PADDING_3  (CONV3_PADDED_ROW * CONV3_PADDED_COL)
 
     // ---------- Total ----------
@@ -252,15 +265,15 @@
     #define CONV1_ROW        (CONV1_CH_OUT)
     #define CONV1_COL        (CONV1_WH_KERNEL * CONV1_WH_KERNEL * CONV1_CH_IN)
     #define CONV1_PADDED_ROW SYN_UP(CONV1_ROW)
-    #define CONV1_PADDED_COL SYN_UP(CONV1_COL)
+    #define CONV1_PADDED_COL URSA_UP_WORD(CONV1_COL)
     #define CONV2_ROW        (CONV2_CH_OUT)
     #define CONV2_COL        (CONV2_WH_KERNEL * CONV2_WH_KERNEL * CONV2_CH_IN)
     #define CONV2_PADDED_ROW SYN_UP(CONV2_ROW)
-    #define CONV2_PADDED_COL SYN_UP(CONV2_COL)
+    #define CONV2_PADDED_COL URSA_UP_WORD(CONV2_COL)
     #define CONV3_ROW        (CONV3_CH_OUT)
     #define CONV3_COL        (CONV3_WH_KERNEL * CONV3_WH_KERNEL * CONV3_CH_IN)
     #define CONV3_PADDED_ROW SYN_UP(CONV3_ROW)
-    #define CONV3_PADDED_COL SYN_UP(CONV3_COL)
+    #define CONV3_PADDED_COL URSA_UP_WORD(CONV3_COL)
 
     #define TOTAL_NUM_WEIGHTS_WITH_PADDING_1 (CONV1_PADDED_ROW * CONV1_PADDED_COL)
     #define TOTAL_NUM_WEIGHTS_WITH_PADDING_2 (CONV2_PADDED_ROW * CONV2_PADDED_COL)

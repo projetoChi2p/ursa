@@ -407,7 +407,8 @@ static unsigned int save_layer_with_padding(
        When M is already a multiple of SA_SIZE, padded_cols == col and the
        layout is byte for byte the one this function produced before. */
     unsigned int padded_rows = ((row + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
-    unsigned int padded_cols = ((col + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
+    /* UM: 27/09/26 - the word, not SA_SIZE: they differ only below 4x4. */
+    unsigned int padded_cols = URSA_UP_WORD(col);
     unsigned int count = 0;
     unsigned int weight_idx = 0;
 
@@ -442,7 +443,7 @@ static int check_layer_in_mem(const weight_t *mem, unsigned int base,
                               const weight_t *w,
                               unsigned int row, unsigned int col)
 {
-    unsigned int padded_col = ((col + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
+    unsigned int padded_col = URSA_UP_WORD(col);
     unsigned int idx = 0;
 
     for (unsigned int r = 0; r < row; r++) {

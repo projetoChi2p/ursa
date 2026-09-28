@@ -88,10 +88,10 @@ mkdir -p ${OUT_DIR} ${WORK_DIR}
 # exported from any of the new XSAs: the address map is the same at every
 # size (BRAMs at 0x401xxxxx, registers at 0x400xxxxx), only the bitstream
 # changes.
-ARRAY_SZ=(4 8 16)
+# ARRAY_SZ=(${SIZES:-2 4 8 16})
+ARRAY_SZ=(2 4 8 16)
 LAYOUTS=(bram)
-#ARRAY_SZ=(2 4 8 16)
-#LAYOUTS=(bram ocm hybrid)
+
 VARIANT=vanilla
 
 # # Test mode. Anything other than "free" builds the benchmark suite.
