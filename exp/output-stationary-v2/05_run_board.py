@@ -335,13 +335,28 @@ class SerialReader(threading.Thread):
 # Both cores are stopped before the bitstream is written. Stopping only core 0
 # leaves core 1 running, and on the ocm and hybrid designs that wedges the JTAG
 # link with AHB AP transaction errors, because the ACP shares the SCU.
+#
+# UM: 27/09/26 - the selection of core 1 is wrapped in catch. When the DAP is
+# wedged the ARM targets are not listed at all, and an uncaught "no targets
+# found" aborted the script before recover() could get a chance. Core 0 is
+# still required: without it nothing can be loaded, and the failure is what
+# triggers the recovery below.
+#
+# UM: 27/09/26 - preventive reset. Before touching the PL, the whole system is
+# reset from the APU target, which is what the Vitis IDE does with "Reset
+# entire system". It stops whatever the previous run left executing, so no
+# core can be in the middle of an AXI access to the PL when the bitstream is
+# replaced; that is the usual way the debug port ends up wedged ("AHB AP
+# transaction error"). ps7_init runs afterwards anyway, so nothing is lost.
+# Under catch: if the reset is refused, the run goes on as before and the
+# recovery in recover() is still there as a fallback. {reset} is empty when
+# --no-reset is given.
 XSCT_TEMPLATE = """
 connect
-targets -set -filter {{name =~ "ARM*#1"}}
-catch {{ stop }}
+if {{![catch {{targets -set -filter {{name =~ "ARM*#1"}}}}]}} {{ catch {{ stop }} }}
 targets -set -filter {{name =~ "ARM*#0"}}
 catch {{ stop }}
-after 500
+{reset}
 fpga -file {bit}
 source {ps7_init}
 ps7_init
@@ -355,6 +370,63 @@ after 500
 disconnect
 exit
 """
+
+
+# ─── Recovery from a wedged debug port ─────────────────────────────────────
+# UM: 27/09/26
+# "AHB AP transaction error" means a core is stuck in a bus transaction that
+# never completes, typically an access to the PL while it is being
+# reconfigured or left without a responding slave. The DAP then stops listing
+# the ARM targets and every later run fails the same way until the board is
+# power-cycled. That is not possible when nobody is in the lab, so the resets
+# reachable through JTAG are tried in order of increasing reach:
+#
+#   rst -dap      resets the debug port only
+#   rst -system   system reset of the PS, issued through the debug port
+#   rst -srst     drives the SRST line of the JTAG cable, if the board wires it
+#
+# After each one the script checks whether ARM #0 is visible again and stops
+# at the first that works. It prints RECOVER_OK=1 or RECOVER_OK=0; the caller
+# parses that line. Every step is under catch, because a reset that the board
+# or the cable does not support must not stop the next one from being tried.
+XSCT_RECOVER = """
+connect
+set ok 0
+foreach cmd {{rst -dap} {rst -system} {rst -srst}} {
+    foreach flt {{name =~ "APU*"} {name =~ "DAP*"}} {
+        if {![catch {targets -set -nocase -filter $flt}]} { break }
+    }
+    if {[catch {eval $cmd} err]} { puts "recover: $cmd -> $err" } else { puts "recover: $cmd done" }
+    after 1500
+    catch {disconnect}
+    after 500
+    connect
+    if {![catch {targets -set -filter {name =~ "ARM*#0"}}]} { set ok 1; break }
+}
+puts "RECOVER_OK=$ok"
+catch {disconnect}
+exit
+"""
+
+# Markers in xsct's output that point at a wedged debug port rather than at a
+# problem with the files being loaded.
+WEDGED_MARKERS = ("AHB AP transaction error", "no targets found")
+
+
+def recover(xsct, workdir):
+    """Try the JTAG resets in XSCT_RECOVER. True when ARM #0 is back."""
+    script = os.path.join(workdir, "recover.tcl")
+    with open(script, "w") as f:
+        f.write(XSCT_RECOVER)
+    try:
+        r = subprocess.run([xsct, script], capture_output=True, text=True, timeout=120)
+    except subprocess.TimeoutExpired:
+        print("  recover: xsct timed out")
+        return False
+    for line in r.stdout.splitlines():
+        if line.startswith("recover:"):
+            print("  " + line)
+    return "RECOVER_OK=1" in r.stdout
 
 
 def extract_ps7_init(xsa, workdir):
@@ -373,17 +445,69 @@ def extract_ps7_init(xsa, workdir):
     return path
 
 
-def run_one(xsct, bit, elf, ps7_init, workdir, verbose=False):
+# UM: 28/09/26 - same order as the colleague's working script: both cores
+# stopped first, then rst -system issued from the ARM #0 target (not the APU
+# target, whose reset timed out waiting for PLL lock), then 1 s to settle.
+# rst -processor before dow is kept: when rst -system fails and rst -srst is
+# used, the core keeps the previous program's MMU tables and dow fails with
+# "MMU section translation fault".
+# UM: 28/09/26 - on this board rst -system fails with "Cannot reset APU.
+# Timeout waiting for PLL lock". The error is no longer fatal: rst -srst
+# (PS_SRST_B through the cable) is tried instead, and the run continues,
+# because ps7_init reprograms the PLLs anyway.
+XSCT_RESET = """if {[catch {rst -system} err]} {
+    puts "URSA_RESET: rst -system failed: [lindex [split $err \\n] 0]"
+    if {[catch {rst -srst} err2]} {
+        puts "URSA_RESET: rst -srst failed: [lindex [split $err2 \\n] 0]"
+    } else {
+        puts "URSA_RESET: rst -srst done"
+    }
+    catch {connect}
+    targets -set -filter {name =~ "ARM*#0"}
+    catch {stop}
+} else {
+    puts "URSA_RESET: rst -system done"
+}
+after 1000"""
+XSCT_NO_RESET = "after 500"
+
+
+def run_one(xsct, bit, elf, ps7_init, workdir, verbose=False, reset=True):
     script = os.path.join(workdir, "run.tcl")
     with open(script, "w") as f:
-        f.write(XSCT_TEMPLATE.format(bit=bit, elf=elf, ps7_init=ps7_init))
+        f.write(XSCT_TEMPLATE.format(bit=bit, elf=elf, ps7_init=ps7_init,
+                                     reset=XSCT_RESET if reset else XSCT_NO_RESET))
 
     r = subprocess.run([xsct, script], capture_output=True, text=True, timeout=300)
     if verbose or r.returncode != 0:
         print(r.stdout[-2000:])
         if r.stderr:
             print(r.stderr[-2000:])
-    return r.returncode
+    wedged = any(k in (r.stdout + r.stderr) for k in WEDGED_MARKERS)
+    return r.returncode, wedged
+
+
+# Same search order as 02-04 (VITIS_VERSION / install roots).
+VITIS_VERSION = "2023.2"
+XILINX_ROOTS = ["/opt/Xilinx", "/tools/Xilinx", "/home/tools/Xilinx"]
+
+
+def find_xsct(name):
+    """Returns the path to xsct: --xsct if it is a file, else PATH (settings64.sh
+    already sourced), else $XILINX_VITIS/bin, else the standard install roots."""
+    if os.path.isfile(name):
+        return os.path.abspath(name)
+    found = shutil.which(name)
+    if found:
+        return found
+    cands = []
+    if os.environ.get("XILINX_VITIS"):
+        cands.append(os.path.join(os.environ["XILINX_VITIS"], "bin", "xsct"))
+    cands += [os.path.join(r, "Vitis", VITIS_VERSION, "bin", "xsct") for r in XILINX_ROOTS]
+    for c in cands:
+        if os.path.isfile(c):
+            return c
+    return None
 
 
 # --------------------------------------------------------------------------
@@ -439,7 +563,7 @@ def main():
     ap.add_argument("--port", default="/dev/ttyUSB0")
     ap.add_argument("--baud", type=int, default=115200)
     ap.add_argument("--sizes", type=int, nargs="+", default=[2, 4, 8, 16])
-    ap.add_argument("--layouts", nargs="+", default=["bram", "ocm", "hybrid"])
+    ap.add_argument("--layouts", nargs="+", default=["bram"])
     ap.add_argument("--variant", default="vanilla",
                     help="variant in the ELF name, suffix included "
                          "(for example vanilla-nci)")
@@ -460,12 +584,20 @@ def main():
                          "bitstream property and does not change the design.")
     ap.add_argument("--acc", type=int, default=20)
     ap.add_argument("--out", default=None, help="output CSV")
-    ap.add_argument("--timeout", type=float, default=120.0,
+    ap.add_argument("--timeout", type=float, default=300.0,
                     help="seconds to wait for one run to finish")
     ap.add_argument("--xsct", default="xsct")
     ap.add_argument("--echo", action="store_true",
                     help="print the serial output as it arrives")
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument("--no-reset", action="store_true",
+                    help="skip the system reset issued before each bitstream "
+                         "is loaded")
+    ap.add_argument("--no-recover", action="store_true",
+                    help="do not try the JTAG resets when the debug port is "
+                         "wedged (AHB AP transaction error)")
+    ap.add_argument("--recover-only", action="store_true",
+                    help="only try to recover a wedged board, then exit")
     a = ap.parse_args()
 
     fields = FIELDS_CNN if a.mode == "cnn" else FIELDS_GEMM
@@ -477,12 +609,24 @@ def main():
 
     scrub_s = "on" if a.scrub else "off"
 
-    # xsct is not on the PATH unless settings64.sh has been sourced. Failing
-    # here says so, instead of raising a subprocess traceback later.
-    if shutil.which(a.xsct) is None and not os.path.isfile(a.xsct):
-        print("ERROR: xsct not found: %s" % a.xsct)
-        print("       Source settings64.sh, or pass --xsct with the full path.")
+    # UM: 28/09/26 - xsct is looked up the same way 02-04 look up
+    # settings64.sh, so settings64.sh no longer has to be sourced by hand.
+    # Python cannot source a shell script into its own environment, but it
+    # does not need to: bin/xsct is a launcher that sets up its own
+    # environment (and starts hw_server from the same install).
+    a.xsct = find_xsct(a.xsct)
+    if a.xsct is None:
+        print("ERROR: xsct not found in PATH or in %s/Vitis/%s/bin"
+              % ("{" + ",".join(XILINX_ROOTS) + "}", VITIS_VERSION))
+        print("       Pass --xsct with the full path.")
         sys.exit(1)
+    print("xsct: %s" % a.xsct)
+
+    if a.recover_only:
+        wd = tempfile.mkdtemp(prefix="ursa_recover_")
+        ok = recover(a.xsct, wd)
+        print("recovered" if ok else "not recovered: the board needs a power cycle")
+        sys.exit(0 if ok else 1)
 
     root = os.path.abspath(os.path.expanduser(a.root))
     bitdir = os.path.join(root, "bitstreams")
@@ -555,7 +699,28 @@ def main():
             reader.start()
             time.sleep(0.5)
 
-            rc = run_one(a.xsct, bit, elf, ps7, workdir, a.verbose)
+            rc, wedged = run_one(a.xsct, bit, elf, ps7, workdir, a.verbose,
+                                         reset=not a.no_reset)
+
+            # UM: 27/09/26 - a wedged debug port gets one recovery and one
+            # retry. The serial reader is restarted so the retry's output is
+            # not mixed with whatever the failed attempt left in the buffer.
+            if rc != 0 and wedged and not a.no_recover:
+                print("  debug port wedged, trying JTAG resets")
+                reader.close()
+                if recover(a.xsct, workdir):
+                    print("  recovered, retrying")
+                    reader = SerialReader(a.port, a.baud, echo=a.echo, done_re=done_re)
+                    reader.start()
+                    time.sleep(0.5)
+                    rc, wedged = run_one(a.xsct, bit, elf, ps7, workdir, a.verbose,
+                                         reset=not a.no_reset)
+                else:
+                    print("  recovery failed: the board needs a power cycle")
+                    rows.append(blank_row(fields, a.mode, a.variant, a.mitig,
+                                          scrub_s, sz, layout, "board_wedged"))
+                    continue
+
             if rc != 0:
                 print("  xsct returned %d, skipping" % rc)
                 reader.close()
