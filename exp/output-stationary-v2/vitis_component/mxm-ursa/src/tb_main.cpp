@@ -58,7 +58,7 @@ static inline uint32_t a_row_stride(uint32_t m)
    IO PLL at 1600 MHz here: div0 = 13 -> 123.08 MHz, 16 -> 100 MHz.
    Only safe if the bitstream met timing at the resulting frequency.        */
 #ifndef FCLK0_DIV0
-    #define FCLK0_DIV0 13
+    #define FCLK0_DIV0 16
 #endif
 
 #ifdef VITIS
