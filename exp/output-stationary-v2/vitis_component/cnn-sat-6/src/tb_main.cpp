@@ -544,7 +544,7 @@ int main(void)
   #endif
 
     // set_fclk0(14, 1);   /* 1600 / 14 = 114.29 MHz */
-    // set_fclk0(13, 1);   /* 1600 / 13 = 123.08 MHz */
+    set_fclk0(13, 1);   /* 1600 / 13 = 123.08 MHz */
     // set_fclk0(8, 1);    /* 1600 / 8  = 200 MHz */
 	// set_fclk0(8, 1);    /* 1600 / 7  = 228.57 MHz */
     print_fclk0();      
