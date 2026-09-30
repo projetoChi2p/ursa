@@ -81,8 +81,9 @@ VARIANT=vanilla
 # UM: 25/09/26 - BRAM only for the v2 sweep. bd_bram.tcl reads the port
 # widths from the IP, so one script serves 4x4, 8x8 and 16x16. The OCM and
 # HYBRID scripts were exported for the v1 IP and have not been redone.
-#LAYOUTS=(bram ocm hybrid)
-LAYOUTS=(bram)
+# LAYOUTS=(bram ocm hybrid)
+LAYOUTS=(ocm hybrid)
+# LAYOUTS=(bram)
 
 # Parallel jobs for synthesis and implementation.
 JOBS=${JOBS:-12}

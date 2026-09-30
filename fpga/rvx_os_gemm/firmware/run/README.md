@@ -18,3 +18,7 @@ python3 ../11_yaml2mmi_128k.py
 i.e:  ./12_merge_bit.sh driver-ursa.elf 
 
 ./12_merge_bit.sh ../../driver/ursa_cnn/build/driver-ursa.elf
+
+# For running in Board
+
+./03_program_online.sh

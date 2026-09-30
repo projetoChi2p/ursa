@@ -563,7 +563,8 @@ def main():
     ap.add_argument("--port", default="/dev/ttyUSB0")
     ap.add_argument("--baud", type=int, default=115200)
     ap.add_argument("--sizes", type=int, nargs="+", default=[2, 4, 8, 16])
-    ap.add_argument("--layouts", nargs="+", default=["bram"])
+    # ap.add_argument("--layouts", nargs="+", default=["bram"])
+    ap.add_argument("--layouts", nargs="+", default=["bram", "ocm", "hybrid"])
     ap.add_argument("--variant", default="vanilla",
                     help="variant in the ELF name, suffix included "
                          "(for example vanilla-nci)")

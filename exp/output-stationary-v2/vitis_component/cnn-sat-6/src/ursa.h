@@ -129,26 +129,54 @@
     #define BRAM_CA_BASEADDR            0x40120000
     #define BRAM_CA_SIZE                (0x3FFF+1)  // 16K
 #endif
+
+/* UM: 30/09/26 - v2 port of OCM and HYBRID.
+   - A grows to 8 KB at 16x16 (row-stride rule, 5376 bytes for T3). In the v1
+     OCM map A was 4 KB at 0x10000 and B started at 0x11000, so at 16x16 A
+     would run into B. B and C move up by 4 KB at every size, one map for the
+     whole sweep.
+   - HYBRID: A leaves 0x40020000 for 0x40100000, the BRAM section of the v2
+     BRAM design. Must match bd_hybrid.tcl. main() already sets that section
+     to DEVICE_MEMORY.
+   - OCM end is now 0x1A000, inside ps7_ram_0 (0x0 .. 0x30000). lscript.ld
+     must place nothing in ps7_ram_0. */
 #ifdef OCM
     //OCM: ps7_ram_0 : ORIGIN = 0x0, LENGTH = 0x30000
-    #define BRAM_AW_BASEADDR 0x00010000
-    #define BRAM_AW_SIZE     (0x0FFF+1)
+    #define BRAM_AW_BASEADDR            0x00010000
+    #if SA_SIZE >= 16
+        #define BRAM_AW_SIZE            (0x1FFF+1)  // 8K
+    #else
+        #define BRAM_AW_SIZE            (0x0FFF+1)  // 4K
+    #endif
 
-    #define BRAM_BI_BASEADDR 0x00011000
-    #define BRAM_BI_SIZE     (0x3FFF+1)
-    
-    #define BRAM_CA_BASEADDR 0x00015000
-    #define BRAM_CA_SIZE     (0x3FFF+1)
+    #define BRAM_BI_BASEADDR            0x00012000
+    #define BRAM_BI_SIZE                (0x3FFF+1)  // 16K
+
+    #define BRAM_CA_BASEADDR            0x00016000
+    #define BRAM_CA_SIZE                (0x3FFF+1)  // 16K
 #endif
 
 #ifdef HYBRID
-    #define BRAM_AW_BASEADDR 0x40020000  // BRAM, axi_bram_ctrl_0
-    #define BRAM_AW_SIZE     (0x0FFF+1)  // 4K
+    #define BRAM_AW_BASEADDR            0x40100000  // PL BRAM, axi_bram_ctrl_0
+    #if SA_SIZE >= 16
+        #define BRAM_AW_SIZE            (0x1FFF+1)  // 8K
+    #else
+        #define BRAM_AW_SIZE            (0x0FFF+1)  // 4K
+    #endif
 
-    #define BRAM_BI_BASEADDR 0x00011000  // OCM
-    #define BRAM_BI_SIZE     (0x3FFF+1)  // 16K
-    #define BRAM_CA_BASEADDR 0x00015000  // OCM
-    #define BRAM_CA_SIZE     (0x3FFF+1)  // 16K
+    #define BRAM_BI_BASEADDR            0x00012000  // OCM
+    #define BRAM_BI_SIZE                (0x3FFF+1)  // 16K
+    #define BRAM_CA_BASEADDR            0x00016000  // OCM
+    #define BRAM_CA_SIZE                (0x3FFF+1)  // 16K
+#endif
+
+#if defined(OCM) || defined(HYBRID)
+    #if (BRAM_CA_BASEADDR + BRAM_CA_SIZE) > 0x00030000
+        #error "OCM windows run past ps7_ram_0"
+    #endif
+    #if defined(OCM) && (BRAM_AW_BASEADDR + BRAM_AW_SIZE) > BRAM_BI_BASEADDR
+        #error "OCM: A overlaps B"
+    #endif
 #endif
 
 // ─── Timeouts ────────────────────────────────────────────────────────────────

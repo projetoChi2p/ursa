@@ -90,7 +90,8 @@ mkdir -p ${OUT_DIR} ${WORK_DIR}
 # changes.
 # ARRAY_SZ=(${SIZES:-2 4 8 16})
 ARRAY_SZ=(2 4 8 16)
-LAYOUTS=(bram)
+# LAYOUTS=(bram)
+LAYOUTS=(bram ocm hybrid)
 
 VARIANT=vanilla
 
@@ -147,11 +148,24 @@ NAME=${VARIANT}
 [ "${CACHE_EN_D}" = "0" ] && NAME=${NAME}-ncd
 
 echo "Cache: I=${CACHE_I} D=${CACHE_D} (ELF name variant: ${NAME})"
+echo "Platform: ${PLATFORM_LAYOUT:-one per layout}"
 
 # Platform directory name per layout. The platform does not depend on the
 # cache configuration, so VARIANT is used here and not NAME.
+#
+# UM: 30/09/26 - PLATFORM_LAYOUT pins one platform for every layout. The
+# platform only brings the BSP and xparameters.h, and those are the same for
+# bram, ocm and hybrid: same IP, same driver, same AXI-Lite addresses
+# (0x40000000 / 0x40010000). The memory windows come from ursa.h through
+# -DBRAM/-DOCM/-DHYBRID, and the PS configuration (ACP on, for OCM and
+# hybrid) comes from the ps7_init of each build's own XSA when the board is
+# programmed, not from the platform.
+#   PLATFORM_LAYOUT=bram  (default) every layout builds against the BRAM one
+#   PLATFORM_LAYOUT=      empty: one platform per layout, as before
+PLATFORM_LAYOUT=${PLATFORM_LAYOUT-bram}
 platform_dir() {
-    echo "${VITIS_DIR}/platform-ursa-${VARIANT}-$1"
+    local l=${PLATFORM_LAYOUT:-$1}
+    echo "${VITIS_DIR}/platform-ursa-${VARIANT}-${l}"
 }
 
 JOBS=${JOBS:-$(nproc)}
