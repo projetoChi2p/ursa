@@ -89,9 +89,12 @@ mkdir -p ${OUT_DIR} ${WORK_DIR}
 # size (BRAMs at 0x401xxxxx, registers at 0x400xxxxx), only the bitstream
 # changes.
 # ARRAY_SZ=(${SIZES:-2 4 8 16})
-ARRAY_SZ=(2 4 8 16)
-# LAYOUTS=(bram)
-LAYOUTS=(bram ocm hybrid)
+#
+# UM: 13/10/26 - SA_SIZES and MEM_LAYOUTS narrow the sweep without editing
+# the script, e.g. SA_SIZES=8 MEM_LAYOUTS=bram for a single build. (Not
+# SIZES: that name is reused below for the ELF section sizes.)
+ARRAY_SZ=(${SA_SIZES:-2 4 8 16})
+LAYOUTS=(${MEM_LAYOUTS:-bram ocm hybrid})
 
 VARIANT=vanilla
 
@@ -111,12 +114,65 @@ VARIANT=vanilla
 #   bench  GEMM app, generated 14-case suite   (FREE_RUN=0)
 #   free   GEMM app, hand-written shape table  (FREE_RUN=1)
 #   cnn    CNN SAT-6 inference app             (FREE_RUN unused)
+#   net    one self-checking network test from netmendes/ (NET=<name>)
 MODE=${MODE:-bench}
+
+# ─── Network tests (MODE=net) ─────────────────────────────────────────────
+# UM: 13/10/26 - each <net>_hwtest.cpp in netmendes/ is a complete program:
+# network, int8 weights, test images and the golden logits of the bit-exact
+# host model. It brings its own main(), so it cannot share a build with
+# tb_main.cpp. The build takes only the platform files from cnn-sat-6/src
+# (NET_BASE_FILES) plus the one test file.
+#
+#   MODE=net NET=resnet18_cifar10_micro_vitmatched ./04_do_vitis.sh
+#   NET accepts the stem, <stem>_hwtest.cpp, or a path to the file.
+#
+# Optional:
+#   MAX_IMAGES=8   only the first 8 images (-DURT_MAX_IMAGES), smoke test
+#   LOGITS=1       print every image's logits (-DURT_PRINT_LOGITS); printed
+#                  outside the timed region, so the times are unaffected
+#   NET_DIR=...    where the tests live (default: netmendes/ next to this
+#                  script, else vitis_component/netmendes/)
+NET_BASE_FILES=(platform.cpp platform.h ursa.cpp ursa.h utils.cpp utils.h
+                lscript.ld CMakeLists.txt UserConfig.cmake
+                Empty_applicationExample.cmake)
+ELF_MODE=${MODE}
+EXTRA_DEFS=""
 
 case "${MODE}" in
     cnn)
         APP_SUBDIR=cnn-sat-6
         FREE_RUN=0
+        ;;
+    net)
+        APP_SUBDIR=cnn-sat-6          # platform files only, see above
+        FREE_RUN=0
+        if [ -z "${NET}" ]; then
+            echo "ERROR: MODE=net needs NET=<network>, e.g."
+            echo "       MODE=net NET=resnet18_cifar10_micro_vitmatched $0"
+            exit 1
+        fi
+        if [ -f "${NET}" ]; then
+            NET_FILE=$(realpath "${NET}")
+        else
+            NET_STEM=$(basename "${NET}" .cpp)
+            NET_STEM=${NET_STEM%_hwtest}
+            if [ -z "${NET_DIR}" ]; then
+                for d in ${ROOT_DIR}/netmendes ${ROOT_DIR}/vitis_component/netmendes; do
+                    [ -d "$d" ] && NET_DIR=$d && break
+                done
+            fi
+            NET_FILE=${NET_DIR}/${NET_STEM}_hwtest.cpp
+        fi
+        if [ ! -f "${NET_FILE}" ]; then
+            echo "ERROR: network test not found: ${NET_FILE}"
+            exit 1
+        fi
+        NET_STEM=$(basename "${NET_FILE}" .cpp)
+        NET_STEM=${NET_STEM%_hwtest}
+        # The network is part of the ELF name: net-<stem>_<variant>_<sz>_<layout>
+        ELF_MODE=net-${NET_STEM}
+        echo "Network test: ${NET_FILE}"
         ;;
     free)
         APP_SUBDIR=mxm-ursa
@@ -147,7 +203,30 @@ NAME=${VARIANT}
 [ "${CACHE_EN_I}" = "0" ] && NAME=${NAME}-nci
 [ "${CACHE_EN_D}" = "0" ] && NAME=${NAME}-ncd
 
-echo "Cache: I=${CACHE_I} D=${CACHE_D} (ELF name variant: ${NAME})"
+# UM: 13/10/26 - ENGINE=arm builds the CPU-only baseline (-DUSE_ARM) of the
+# same program. Software-only, like the cache flags, so it is an ELF suffix
+# and the bitstream keeps the plain variant (05: --hw-variant vanilla).
+ENGINE=${ENGINE:-ursa}
+if [ "${ENGINE}" = "arm" ]; then
+    EXTRA_DEFS="${EXTRA_DEFS};USE_ARM"
+    NAME=${NAME}-arm
+else
+    ENGINE=ursa
+    EXTRA_DEFS="${EXTRA_DEFS};USE_URSA"
+fi
+
+if [ "${MODE}" = "net" ]; then
+    if [ -n "${MAX_IMAGES}" ]; then
+        EXTRA_DEFS="${EXTRA_DEFS};URT_MAX_IMAGES=${MAX_IMAGES}"
+        NAME=${NAME}-img${MAX_IMAGES}
+    fi
+    if [ "${LOGITS}" = "1" ]; then
+        EXTRA_DEFS="${EXTRA_DEFS};URT_PRINT_LOGITS"
+        NAME=${NAME}-logits
+    fi
+fi
+
+echo "Cache: I=${CACHE_I} D=${CACHE_D}  Engine: ${ENGINE} (ELF name variant: ${NAME})"
 echo "Platform: ${PLATFORM_LAYOUT:-one per layout}"
 
 # Platform directory name per layout. The platform does not depend on the
@@ -200,7 +279,7 @@ for layout in ${LAYOUTS[*]}; do
     if [ -z "${XPFM}" ]; then
         echo "ERROR: no platform found under ${PLAT}"
         for sz in ${ARRAY_SZ[*]}; do
-            echo "${MODE}_${NAME}_${sz}x${sz}_${layout},${MODE},${VARIANT},${CACHE_EN_I},${CACHE_EN_D},${sz},${layout},no_platform,,," >> ${SUMMARY}
+            echo "${ELF_MODE}_${NAME}_${sz}x${sz}_${layout},${ELF_MODE},${VARIANT},${CACHE_EN_I},${CACHE_EN_D},${sz},${layout},no_platform,,," >> ${SUMMARY}
             FAILED=$((FAILED+1))
             COUNT=$((COUNT+1))
         done
@@ -221,17 +300,19 @@ for layout in ${LAYOUTS[*]}; do
 for sz in ${ARRAY_SZ[*]}; do
 
     COUNT=$((COUNT+1))
-    build_name="${MODE}_${NAME}_${sz}x${sz}_${layout}"
+    build_name="${ELF_MODE}_${NAME}_${sz}x${sz}_${layout}"
 
     echo ""
     echo "########################################################################"
     echo "# [${COUNT}/${TOTAL}] ${build_name}"
     echo "########################################################################"
 
-    if [ -f "${OUT_DIR}/${build_name}.elf" ]; then
-        echo "*** ELF found. Skip. ***"
+    # UM: 13/10/26 - FORCE=1 rebuilds an existing ELF, e.g. after a test file
+    # was regenerated under the same name.
+    if [ -f "${OUT_DIR}/${build_name}.elf" ] && [ "${FORCE}" != "1" ]; then
+        echo "*** ELF found. Skip. (FORCE=1 to rebuild) ***"
         SIZES=$(arm-none-eabi-size ${OUT_DIR}/${build_name}.elf 2>/dev/null | tail -1 | awk '{print $1","$2","$3}')
-        echo "${build_name},${MODE},${VARIANT},${CACHE_EN_I},${CACHE_EN_D},${sz},${layout},skipped,${SIZES}" >> ${SUMMARY}
+        echo "${build_name},${ELF_MODE},${VARIANT},${CACHE_EN_I},${CACHE_EN_D},${sz},${layout},skipped,${SIZES}" >> ${SUMMARY}
         continue
     fi
 
@@ -241,9 +322,18 @@ for sz in ${ARRAY_SZ[*]}; do
 
     # Symlink the shared sources in. aux_source_directory follows them, and
     # this keeps one copy of the code for all builds.
-    for f in ${SRC_DIR}/*; do
-        ln -sf "$f" ${BUILD}/src/
-    done
+    if [ "${MODE}" = "net" ]; then
+        # Platform files only: tb_main.cpp, cnn_conv_engine.cpp and the
+        # weight/image tables stay out, the test brings its own main().
+        for f in ${NET_BASE_FILES[*]}; do
+            ln -sf "${SRC_DIR}/${f}" ${BUILD}/src/
+        done
+        ln -sf "${NET_FILE}" ${BUILD}/src/
+    else
+        for f in ${SRC_DIR}/*; do
+            ln -sf "$f" ${BUILD}/src/
+        done
+    fi
 
     # APP_NAME is hardcoded in the stock CMakeLists.txt, so this build gets a
     # real copy with that one line rewritten. The symlink is dropped first,
@@ -259,7 +349,7 @@ for sz in ${ARRAY_SZ[*]}; do
           -DCMAKE_MODULE_PATH=${DOMAIN} \
           -DCMAKE_LIBRARY_PATH=${DOMAIN}/lib \
           -DCMAKE_INCLUDE_PATH=${DOMAIN}/include \
-          -DUSER_COMPILE_DEFINITIONS="SA_SIZE=${sz};${layout^^};FREE_RUN=${FREE_RUN};CACHE_EN_I=${CACHE_EN_I};CACHE_EN_D=${CACHE_EN_D}" \
+          -DUSER_COMPILE_DEFINITIONS="SA_SIZE=${sz};${layout^^};FREE_RUN=${FREE_RUN};CACHE_EN_I=${CACHE_EN_I};CACHE_EN_D=${CACHE_EN_D}${EXTRA_DEFS}" \
           > ${BUILD}/cmake.log 2>&1
     RC=$?
 

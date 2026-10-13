@@ -1,0 +1,1198 @@
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40000000 
+[init] MEM CONTROL   0x40010000 
+URSA network: resnet18_cifar10_micro_vitmatched
+[urt] SA_SIZE=16 ACC_BITS=20 MAX_M=256 guard=1 windows A/B/C=8192/16384/16384 B
+[urt] weights: 112384 B packed, streamed per call
+[urt]   conv1                        P=8    M=27    Q=1024  chunks=1 x 32  call=16x256  calls=4
+[urt]   layer1_0_conv1               P=8    M=72    Q=1024  chunks=1 x 80  call=16x224  calls=5
+[urt]   layer1_0_conv2               P=8    M=72    Q=1024  chunks=1 x 80  call=16x224  calls=5
+[urt]   layer1_1_conv1               P=8    M=72    Q=1024  chunks=1 x 80  call=16x224  calls=5
+[urt]   layer1_1_conv2               P=8    M=72    Q=1024  chunks=1 x 80  call=16x224  calls=5
+[urt]   layer2_0_conv1               P=13   M=72    Q=256   chunks=1 x 80  call=16x224  calls=2
+[urt]   layer2_0_conv2               P=13   M=117   Q=256   chunks=1 x 128 call=16x128  calls=2
+[urt]   layer2_0_shortcut_0          P=13   M=8     Q=256   chunks=1 x 16  call=16x256  calls=1
+[urt]   layer2_1_conv1               P=13   M=117   Q=256   chunks=1 x 128 call=16x128  calls=2
+[urt]   layer2_1_conv2               P=13   M=117   Q=256   chunks=1 x 128 call=16x128  calls=2
+[urt]   layer3_0_conv1               P=25   M=117   Q=64    chunks=1 x 128 call=32x64  calls=1
+[urt]   layer3_0_conv2               P=25   M=225   Q=64    chunks=1 x 240 call=32x64  calls=1
+[urt]   layer3_0_shortcut_0          P=25   M=13    Q=64    chunks=1 x 16  call=32x64  calls=1
+[urt]   layer3_1_conv1               P=25   M=225   Q=64    chunks=1 x 240 call=32x64  calls=1
+[urt]   layer3_1_conv2               P=25   M=225   Q=64    chunks=1 x 240 call=32x64  calls=1
+[urt]   layer4_0_conv1               P=43   M=225   Q=16    chunks=1 x 240 call=32x16  calls=2
+[urt]   layer4_0_conv2               P=43   M=387   Q=16    chunks=2 x 208 call=32x16  calls=4
+[urt]   layer4_0_shortcut_0          P=43   M=25    Q=16    chunks=1 x 32  call=48x16  calls=1
+[urt]   layer4_1_conv1               P=43   M=387   Q=16    chunks=2 x 208 call=32x16  calls=4
+[urt]   layer4_1_conv2               P=43   M=387   Q=16    chunks=2 x 208 call=32x16  calls=4
+[urt]   classifier                   P=10   M=43    Q=1     chunks=1 x 48  call=16x16  calls=1
+start
+<s>
+<i>0
+<s>
+<i>1
+<s>
+<i>2
+<s>
+<i>3
+<s>
+<i>4
+<s>
+<i>5
+<s>
+<i>6
+<s>
+<i>7
+<s>
+<i>8
+<s>
+<i>9
+<s>
+<i>10
+<s>
+<i>11
+<s>
+<i>12
+<s>
+<i>13
+<s>
+<i>14
+<s>
+<i>15
+<s>
+<i>16
+<s>
+<i>17
+<s>
+<i>18
+<s>
+<i>19
+<s>
+<i>20
+<s>
+<i>21
+<s>
+<i>22
+<s>
+<i>23
+<s>
+<i>24
+Inference 25/512. Current accuracy: 19/25 (76.00%)
+<s>
+<i>25
+<s>
+<i>26
+<s>
+<i>27
+<s>
+<i>28
+<s>
+<i>29
+<s>
+<i>30
+<s>
+<i>31
+<s>
+<i>32
+<s>
+<i>33
+<s>
+<i>34
+<s>
+<i>35
+<s>
+<i>36
+<s>
+<i>37
+<s>
+<i>38
+<s>
+<i>39
+<s>
+<i>40
+<s>
+<i>41
+<s>
+<i>42
+<s>
+<i>43
+<s>
+<i>44
+<s>
+<i>45
+<s>
+<i>46
+<s>
+<i>47
+<s>
+<i>48
+<s>
+<i>49
+Inference 50/512. Current accuracy: 39/50 (78.00%)
+<s>
+<i>50
+<s>
+<i>51
+<s>
+<i>52
+<s>
+<i>53
+<s>
+<i>54
+<s>
+<i>55
+<s>
+<i>56
+<s>
+<i>57
+<s>
+<i>58
+<s>
+<i>59
+<s>
+<i>60
+<s>
+<i>61
+<s>
+<i>62
+<s>
+<i>63
+<s>
+<i>64
+<s>
+<i>65
+<s>
+<i>66
+<s>
+<i>67
+<s>
+<i>68
+<s>
+<i>69
+<s>
+<i>70
+<s>
+<i>71
+<s>
+<i>72
+<s>
+<i>73
+<s>
+<i>74
+Inference 75/512. Current accuracy: 56/75 (74.66%)
+<s>
+<i>75
+<s>
+<i>76
+<s>
+<i>77
+<s>
+<i>78
+<s>
+<i>79
+<s>
+<i>80
+<s>
+<i>81
+<s>
+<i>82
+<s>
+<i>83
+<s>
+<i>84
+<s>
+<i>85
+<s>
+<i>86
+<s>
+<i>87
+<s>
+<i>88
+<s>
+<i>89
+<s>
+<i>90
+<s>
+<i>91
+<s>
+<i>92
+<s>
+<i>93
+<s>
+<i>94
+<s>
+<i>95
+<s>
+<i>96
+<s>
+<i>97
+<s>
+<i>98
+<s>
+<i>99
+Inference 100/512. Current accuracy: 78/100 (78.00%)
+<s>
+<i>100
+<s>
+<i>101
+<s>
+<i>102
+<s>
+<i>103
+<s>
+<i>104
+<s>
+<i>105
+<s>
+<i>106
+<s>
+<i>107
+<s>
+<i>108
+<s>
+<i>109
+<s>
+<i>110
+<s>
+<i>111
+<s>
+<i>112
+<s>
+<i>113
+<s>
+<i>114
+<s>
+<i>115
+<s>
+<i>116
+<s>
+<i>117
+<s>
+<i>118
+<s>
+<i>119
+<s>
+<i>120
+<s>
+<i>121
+<s>
+<i>122
+<s>
+<i>123
+<s>
+<i>124
+Inference 125/512. Current accuracy: 92/125 (73.60%)
+<s>
+<i>125
+<s>
+<i>126
+<s>
+<i>127
+<s>
+<i>128
+<s>
+<i>129
+<s>
+<i>130
+<s>
+<i>131
+<s>
+<i>132
+<s>
+<i>133
+<s>
+<i>134
+<s>
+<i>135
+<s>
+<i>136
+<s>
+<i>137
+<s>
+<i>138
+<s>
+<i>139
+<s>
+<i>140
+<s>
+<i>141
+<s>
+<i>142
+<s>
+<i>143
+<s>
+<i>144
+<s>
+<i>145
+<s>
+<i>146
+<s>
+<i>147
+<s>
+<i>148
+<s>
+<i>149
+Inference 150/512. Current accuracy: 111/150 (74.00%)
+<s>
+<i>150
+<s>
+<i>151
+<s>
+<i>152
+<s>
+<i>153
+<s>
+<i>154
+<s>
+<i>155
+<s>
+<i>156
+<s>
+<i>157
+<s>
+<i>158
+<s>
+<i>159
+<s>
+<i>160
+<s>
+<i>161
+<s>
+<i>162
+<s>
+<i>163
+<s>
+<i>164
+<s>
+<i>165
+<s>
+<i>166
+<s>
+<i>167
+<s>
+<i>168
+<s>
+<i>169
+<s>
+<i>170
+<s>
+<i>171
+<s>
+<i>172
+<s>
+<i>173
+<s>
+<i>174
+Inference 175/512. Current accuracy: 131/175 (74.85%)
+<s>
+<i>175
+<s>
+<i>176
+<s>
+<i>177
+<s>
+<i>178
+<s>
+<i>179
+<s>
+<i>180
+<s>
+<i>181
+<s>
+<i>182
+<s>
+<i>183
+<s>
+<i>184
+<s>
+<i>185
+<s>
+<i>186
+<s>
+<i>187
+<s>
+<i>188
+<s>
+<i>189
+<s>
+<i>190
+<s>
+<i>191
+<s>
+<i>192
+<s>
+<i>193
+<s>
+<i>194
+<s>
+<i>195
+<s>
+<i>196
+<s>
+<i>197
+<s>
+<i>198
+<s>
+<i>199
+Inference 200/512. Current accuracy: 152/200 (76.00%)
+<s>
+<i>200
+<s>
+<i>201
+<s>
+<i>202
+<s>
+<i>203
+<s>
+<i>204
+<s>
+<i>205
+<s>
+<i>206
+<s>
+<i>207
+<s>
+<i>208
+<s>
+<i>209
+<s>
+<i>210
+<s>
+<i>211
+<s>
+<i>212
+<s>
+<i>213
+<s>
+<i>214
+<s>
+<i>215
+<s>
+<i>216
+<s>
+<i>217
+<s>
+<i>218
+<s>
+<i>219
+<s>
+<i>220
+<s>
+<i>221
+<s>
+<i>222
+<s>
+<i>223
+<s>
+<i>224
+Inference 225/512. Current accuracy: 173/225 (76.88%)
+<s>
+<i>225
+<s>
+<i>226
+<s>
+<i>227
+<s>
+<i>228
+<s>
+<i>229
+<s>
+<i>230
+<s>
+<i>231
+<s>
+<i>232
+<s>
+<i>233
+<s>
+<i>234
+<s>
+<i>235
+<s>
+<i>236
+<s>
+<i>237
+<s>
+<i>238
+<s>
+<i>239
+<s>
+<i>240
+<s>
+<i>241
+<s>
+<i>242
+<s>
+<i>243
+<s>
+<i>244
+<s>
+<i>245
+<s>
+<i>246
+<s>
+<i>247
+<s>
+<i>248
+<s>
+<i>249
+Inference 250/512. Current accuracy: 193/250 (77.20%)
+<s>
+<i>250
+<s>
+<i>251
+<s>
+<i>252
+<s>
+<i>253
+<s>
+<i>254
+<s>
+<i>255
+<s>
+<i>256
+<s>
+<i>257
+<s>
+<i>258
+<s>
+<i>259
+<s>
+<i>260
+<s>
+<i>261
+<s>
+<i>262
+<s>
+<i>263
+<s>
+<i>264
+<s>
+<i>265
+<s>
+<i>266
+<s>
+<i>267
+<s>
+<i>268
+<s>
+<i>269
+<s>
+<i>270
+<s>
+<i>271
+<s>
+<i>272
+<s>
+<i>273
+<s>
+<i>274
+Inference 275/512. Current accuracy: 212/275 (77.09%)
+<s>
+<i>275
+<s>
+<i>276
+<s>
+<i>277
+<s>
+<i>278
+<s>
+<i>279
+<s>
+<i>280
+<s>
+<i>281
+<s>
+<i>282
+<s>
+<i>283
+<s>
+<i>284
+<s>
+<i>285
+<s>
+<i>286
+<s>
+<i>287
+<s>
+<i>288
+<s>
+<i>289
+<s>
+<i>290
+<s>
+<i>291
+<s>
+<i>292
+<s>
+<i>293
+<s>
+<i>294
+<s>
+<i>295
+<s>
+<i>296
+<s>
+<i>297
+<s>
+<i>298
+<s>
+<i>299
+Inference 300/512. Current accuracy: 233/300 (77.66%)
+<s>
+<i>300
+<s>
+<i>301
+<s>
+<i>302
+<s>
+<i>303
+<s>
+<i>304
+<s>
+<i>305
+<s>
+<i>306
+<s>
+<i>307
+<s>
+<i>308
+<s>
+<i>309
+<s>
+<i>310
+<s>
+<i>311
+<s>
+<i>312
+<s>
+<i>313
+<s>
+<i>314
+<s>
+<i>315
+<s>
+<i>316
+<s>
+<i>317
+<s>
+<i>318
+<s>
+<i>319
+<s>
+<i>320
+<s>
+<i>321
+<s>
+<i>322
+<s>
+<i>323
+<s>
+<i>324
+Inference 325/512. Current accuracy: 250/325 (76.92%)
+<s>
+<i>325
+<s>
+<i>326
+<s>
+<i>327
+<s>
+<i>328
+<s>
+<i>329
+<s>
+<i>330
+<s>
+<i>331
+<s>
+<i>332
+<s>
+<i>333
+<s>
+<i>334
+<s>
+<i>335
+<s>
+<i>336
+<s>
+<i>337
+<s>
+<i>338
+<s>
+<i>339
+<s>
+<i>340
+<s>
+<i>341
+<s>
+<i>342
+<s>
+<i>343
+<s>
+<i>344
+<s>
+<i>345
+<s>
+<i>346
+<s>
+<i>347
+<s>
+<i>348
+<s>
+<i>349
+Inference 350/512. Current accuracy: 268/350 (76.57%)
+<s>
+<i>350
+<s>
+<i>351
+<s>
+<i>352
+<s>
+<i>353
+<s>
+<i>354
+<s>
+<i>355
+<s>
+<i>356
+<s>
+<i>357
+<s>
+<i>358
+<s>
+<i>359
+<s>
+<i>360
+<s>
+<i>361
+<s>
+<i>362
+<s>
+<i>363
+<s>
+<i>364
+<s>
+<i>365
+<s>
+<i>366
+<s>
+<i>367
+<s>
+<i>368
+<s>
+<i>369
+<s>
+<i>370
+<s>
+<i>371
+<s>
+<i>372
+<s>
+<i>373
+<s>
+<i>374
+Inference 375/512. Current accuracy: 289/375 (77.06%)
+<s>
+<i>375
+<s>
+<i>376
+<s>
+<i>377
+<s>
+<i>378
+<s>
+<i>379
+<s>
+<i>380
+<s>
+<i>381
+<s>
+<i>382
+<s>
+<i>383
+<s>
+<i>384
+<s>
+<i>385
+<s>
+<i>386
+<s>
+<i>387
+<s>
+<i>388
+<s>
+<i>389
+<s>
+<i>390
+<s>
+<i>391
+<s>
+<i>392
+<s>
+<i>393
+<s>
+<i>394
+<s>
+<i>395
+<s>
+<i>396
+<s>
+<i>397
+<s>
+<i>398
+<s>
+<i>399
+Inference 400/512. Current accuracy: 308/400 (77.00%)
+<s>
+<i>400
+<s>
+<i>401
+<s>
+<i>402
+<s>
+<i>403
+<s>
+<i>404
+<s>
+<i>405
+<s>
+<i>406
+<s>
+<i>407
+<s>
+<i>408
+<s>
+<i>409
+<s>
+<i>410
+<s>
+<i>411
+<s>
+<i>412
+<s>
+<i>413
+<s>
+<i>414
+<s>
+<i>415
+<s>
+<i>416
+<s>
+<i>417
+<s>
+<i>418
+<s>
+<i>419
+<s>
+<i>420
+<s>
+<i>421
+<s>
+<i>422
+<s>
+<i>423
+<s>
+<i>424
+Inference 425/512. Current accuracy: 330/425 (77.64%)
+<s>
+<i>425
+<s>
+<i>426
+<s>
+<i>427
+<s>
+<i>428
+<s>
+<i>429
+<s>
+<i>430
+<s>
+<i>431
+<s>
+<i>432
+<s>
+<i>433
+<s>
+<i>434
+<s>
+<i>435
+<s>
+<i>436
+<s>
+<i>437
+<s>
+<i>438
+<s>
+<i>439
+<s>
+<i>440
+<s>
+<i>441
+<s>
+<i>442
+<s>
+<i>443
+<s>
+<i>444
+<s>
+<i>445
+<s>
+<i>446
+<s>
+<i>447
+<s>
+<i>448
+<s>
+<i>449
+Inference 450/512. Current accuracy: 352/450 (78.22%)
+<s>
+<i>450
+<s>
+<i>451
+<s>
+<i>452
+<s>
+<i>453
+<s>
+<i>454
+<s>
+<i>455
+<s>
+<i>456
+<s>
+<i>457
+<s>
+<i>458
+<s>
+<i>459
+<s>
+<i>460
+<s>
+<i>461
+<s>
+<i>462
+<s>
+<i>463
+<s>
+<i>464
+<s>
+<i>465
+<s>
+<i>466
+<s>
+<i>467
+<s>
+<i>468
+<s>
+<i>469
+<s>
+<i>470
+<s>
+<i>471
+<s>
+<i>472
+<s>
+<i>473
+<s>
+<i>474
+Inference 475/512. Current accuracy: 369/475 (77.68%)
+<s>
+<i>475
+<s>
+<i>476
+<s>
+<i>477
+<s>
+<i>478
+<s>
+<i>479
+<s>
+<i>480
+<s>
+<i>481
+<s>
+<i>482
+<s>
+<i>483
+<s>
+<i>484
+<s>
+<i>485
+<s>
+<i>486
+<s>
+<i>487
+<s>
+<i>488
+<s>
+<i>489
+<s>
+<i>490
+<s>
+<i>491
+<s>
+<i>492
+<s>
+<i>493
+<s>
+<i>494
+<s>
+<i>495
+<s>
+<i>496
+<s>
+<i>497
+<s>
+<i>498
+<s>
+<i>499
+Inference 500/512. Current accuracy: 385/500 (77.00%)
+<s>
+<i>500
+<s>
+<i>501
+<s>
+<i>502
+<s>
+<i>503
+<s>
+<i>504
+<s>
+<i>505
+<s>
+<i>506
+<s>
+<i>507
+<s>
+<i>508
+<s>
+<i>509
+<s>
+<i>510
+<s>
+<i>511
+Inference 512/512. Current accuracy: 397/512 (77.53%)
+Total mismatches: 115 / 512
+Correct predictions: 397 / 512 (77.53%)
+[cycles] total: 4412007204
+
+[profile] ===== hierarchical cycle profile =====
+[profile] 512 inferences; totals are inclusive of the subtree
+[profile]         cycles        %        per-inf device    node [kind]
+[profile]     4412007204   100.00        8617201           resnet18
+[profile]      360937396     8.18         704955 ursa        conv1 [UrsaConv2d]
+[profile]     2331594087    52.84        4553894             layer1
+[profile]     1164915657    26.40        2275225               0
+[profile]      450243989    10.20         879382 ursa            conv1 [UrsaConv2d]
+[profile]      449941272    10.19         878791 ursa            conv2 [UrsaConv2d]
+[profile]      264730396     6.00         517051 cpu             add [UrsaResAdd]
+[profile]     1166678430    26.44        2278668               1
+[profile]      449837867    10.19         878589 ursa            conv1 [UrsaConv2d]
+[profile]      449814998    10.19         878544 ursa            conv2 [UrsaConv2d]
+[profile]      267025565     6.05         521534 cpu             add_1 [UrsaResAdd]
+[profile]      956510483    21.67        1868184             layer2
+[profile]      513121539    11.63        1002190               0
+[profile]      141387016     3.20         276146 ursa            conv1 [UrsaConv2d]
+[profile]      168375884     3.81         328859 ursa            conv2 [UrsaConv2d]
+[profile]       97838091     2.21         191090                 shortcut
+[profile]       97838091     2.21         191090 ursa              0 [UrsaConv2d]
+[profile]      105520548     2.39         206094 cpu             add_2 [UrsaResAdd]
+[profile]      443388944    10.04         865994               1
+[profile]      168186306     3.81         328488 ursa            conv1 [UrsaConv2d]
+[profile]      167829982     3.80         327792 ursa            conv2 [UrsaConv2d]
+[profile]      107372656     2.43         209712 cpu             add_3 [UrsaResAdd]
+[profile]      476913675    10.80         931472             layer3
+[profile]      258589111     5.86         505056               0
+[profile]       67892241     1.53         132602 ursa            conv1 [UrsaConv2d]
+[profile]       87721300     1.98         171330 ursa            conv2 [UrsaConv2d]
+[profile]       53076425     1.20         103664                 shortcut
+[profile]       53076425     1.20         103664 ursa              0 [UrsaConv2d]
+[profile]       49899145     1.13          97459 cpu             add_4 [UrsaResAdd]
+[profile]      218324564     4.94         426415               1
+[profile]       79450744     1.80         155177 ursa            conv1 [UrsaConv2d]
+[profile]       87346673     1.97         170598 ursa            conv2 [UrsaConv2d]
+[profile]       51527147     1.16         100638 cpu             add_5 [UrsaResAdd]
+[profile]      279859013     6.34         546599             layer4
+[profile]      142893935     3.23         279089               0
+[profile]       40310377     0.91          78731 ursa            conv1 [UrsaConv2d]
+[profile]       58473590     1.32         114206 ursa            conv2 [UrsaConv2d]
+[profile]       22164225     0.50          43289                 shortcut
+[profile]       22164225     0.50          43289 ursa              0 [UrsaConv2d]
+[profile]       21945743     0.49          42862 cpu             add_6 [UrsaResAdd]
+[profile]      136965078     3.10         267509               1
+[profile]       56416440     1.27         110188 ursa            conv1 [UrsaConv2d]
+[profile]       58327074     1.32         113920 ursa            conv2 [UrsaConv2d]
+[profile]       22221564     0.50          43401 cpu             add_7 [UrsaResAdd]
+[profile]         997718     0.02           1948 cpu         global_pool [UrsaAdaptiveAvgPool]
+[profile]        5194832     0.11          10146 ursa        classifier [UrsaLinear]
+[profile]
+[profile] ----- by device -----
+[profile]         cycles        %   layers  device
+[profile]     3520766722    79.79       21  ursa
+[profile]      891240482    20.20        9  cpu
+[profile]
+[profile] ----- by operation -----
+[profile]         cycles        %   layers  operation
+[profile]     3515571890    79.68       20  UrsaConv2d
+[profile]      890242764    20.17        8  UrsaResAdd
+[profile]         997718     0.02        1  UrsaAdaptiveAvgPool
+[profile]        5194832     0.11        1  UrsaLinear
+[prof] 0 -1 0 4412007204 0 15360 - resnet18 -
+[prof] 1 0 1 360937396 360937396 512 UrsaConv2d conv1 ursa
+[prof] 2 0 1 2331594087 0 3072 - layer1 -
+[prof] 3 2 2 1164915657 0 1536 - layer1.0 -
+[prof] 4 3 3 450243989 450243989 512 UrsaConv2d layer1.0.conv1 ursa
+[prof] 5 3 3 449941272 449941272 512 UrsaConv2d layer1.0.conv2 ursa
+[prof] 6 3 3 264730396 264730396 512 UrsaResAdd layer1.0.add cpu
+[prof] 7 2 2 1166678430 0 1536 - layer1.1 -
+[prof] 8 7 3 449837867 449837867 512 UrsaConv2d layer1.1.conv1 ursa
+[prof] 9 7 3 449814998 449814998 512 UrsaConv2d layer1.1.conv2 ursa
+[prof] 10 7 3 267025565 267025565 512 UrsaResAdd layer1.1.add_1 cpu
+[prof] 11 0 1 956510483 0 3584 - layer2 -
+[prof] 12 11 2 513121539 0 2048 - layer2.0 -
+[prof] 13 12 3 141387016 141387016 512 UrsaConv2d layer2.0.conv1 ursa
+[prof] 14 12 3 168375884 168375884 512 UrsaConv2d layer2.0.conv2 ursa
+[prof] 15 12 3 97838091 0 512 - layer2.0.shortcut -
+[prof] 16 15 4 97838091 97838091 512 UrsaConv2d layer2.0.shortcut.0 ursa
+[prof] 17 12 3 105520548 105520548 512 UrsaResAdd layer2.0.add_2 cpu
+[prof] 18 11 2 443388944 0 1536 - layer2.1 -
+[prof] 19 18 3 168186306 168186306 512 UrsaConv2d layer2.1.conv1 ursa
+[prof] 20 18 3 167829982 167829982 512 UrsaConv2d layer2.1.conv2 ursa
+[prof] 21 18 3 107372656 107372656 512 UrsaResAdd layer2.1.add_3 cpu
+[prof] 22 0 1 476913675 0 3584 - layer3 -
+[prof] 23 22 2 258589111 0 2048 - layer3.0 -
+[prof] 24 23 3 67892241 67892241 512 UrsaConv2d layer3.0.conv1 ursa
+[prof] 25 23 3 87721300 87721300 512 UrsaConv2d layer3.0.conv2 ursa
+[prof] 26 23 3 53076425 0 512 - layer3.0.shortcut -
+[prof] 27 26 4 53076425 53076425 512 UrsaConv2d layer3.0.shortcut.0 ursa
+[prof] 28 23 3 49899145 49899145 512 UrsaResAdd layer3.0.add_4 cpu
+[prof] 29 22 2 218324564 0 1536 - layer3.1 -
+[prof] 30 29 3 79450744 79450744 512 UrsaConv2d layer3.1.conv1 ursa
+[prof] 31 29 3 87346673 87346673 512 UrsaConv2d layer3.1.conv2 ursa
+[prof] 32 29 3 51527147 51527147 512 UrsaResAdd layer3.1.add_5 cpu
+[prof] 33 0 1 279859013 0 3584 - layer4 -
+[prof] 34 33 2 142893935 0 2048 - layer4.0 -
+[prof] 35 34 3 40310377 40310377 512 UrsaConv2d layer4.0.conv1 ursa
+[prof] 36 34 3 58473590 58473590 512 UrsaConv2d layer4.0.conv2 ursa
+[prof] 37 34 3 22164225 0 512 - layer4.0.shortcut -
+[prof] 38 37 4 22164225 22164225 512 UrsaConv2d layer4.0.shortcut.0 ursa
+[prof] 39 34 3 21945743 21945743 512 UrsaResAdd layer4.0.add_6 cpu
+[prof] 40 33 2 136965078 0 1536 - layer4.1 -
+[prof] 41 40 3 56416440 56416440 512 UrsaConv2d layer4.1.conv1 ursa
+[prof] 42 40 3 58327074 58327074 512 UrsaConv2d layer4.1.conv2 ursa
+[prof] 43 40 3 22221564 22221564 512 UrsaResAdd layer4.1.add_7 cpu
+[prof] 44 0 1 997718 997718 512 UrsaAdaptiveAvgPool global_pool cpu
+[prof] 45 0 1 5194832 5194832 512 UrsaLinear classifier ursa
+[profile] measured 4412007204 of 4412007204 total cycles
+Done
+[urt] engine: URSA
+[urt] timer: 333333343 ticks/s
+[urt] per inference (us):
+[urt]   lower (im2col/transpose)         3498
+[urt]   transfer (A/B in, C out)         3823
+[urt]   gemm (URSA)                      7224
+[urt]   epilogue (requant)               6071
+[urt]   other (pool/add/... on ARM)       5232
+[urt]   total                           25851
+[urt] URSA calls per inference: 54, MACs per inference: 6274046
+[urt] golden check: 512/512 images bit-exact
+URT HW TEST PASS

@@ -10,10 +10,11 @@ xsct in batch mode to program the FPGA and start the program, while reading
 the UART on a background thread. A run ends when its terminator line appears,
 or when the timeout expires.
 
-Three test modes, matching 04_do_vitis.sh:
+Four test modes, matching 04_do_vitis.sh:
     bench   the generated 14-case suite, one row per case
     free    the hand-written shape table, one row per shape
     cnn     the CNN SAT-6 inference app, one row per image
+    net     a netmendes/ network test, one row per run (PASS/FAIL)
 The mode picks which ELF to load and which table format to parse.
 
 The ELF and the bitstream are chosen independently, because the two vary
@@ -39,6 +40,12 @@ Usage:
     python3 run_board.py --mode cnn \\
                          --variant vanilla-nci --hw-variant vanilla \\
                          --out results/cnn_nci.csv
+
+    # Network test from netmendes/ (self-checking against golden logits).
+    # One row per run in the CSV, plus <out>_layers.csv and logs/<elf>.log.
+    python3 run_board.py --mode net --net resnet18_cifar10_micro_vitmatched \\
+                         --sizes 8 --layouts bram \\
+                         --variant vanilla-nci-img8 --hw-variant vanilla --echo
 
     # Campaign design 14: same ELF as the vanilla 8x8 bram, TMR bitstream
     python3 run_board.py --mode cnn --sizes 8 --layouts bram \\
@@ -149,6 +156,147 @@ HEADER_RE = re.compile(r"SA_SIZE=(?P<sa>\d+), acc=(?P<acc>\d+) bits")
 CACHE_RE = re.compile(r"cache[ _]I\s*=\s*(?P<i>on|off)", re.IGNORECASE)
 
 
+# ─── Net mode (netmendes/*_hwtest.cpp) ───────────────────────────────────
+# UM: 13/10/26 - the network tests are self-checking: the board's int8 logits
+# are compared, bit for bit, with the logits of the host model of URSA. One
+# CSV row per run (not per image: the program prints no per-image result),
+# plus a per-layer CSV from the "[prof]" lines and the raw UART log.
+#
+# Capture must NOT stop at "Done": the test prints it before urt_report(),
+# which holds the stage split and the golden verdict. The verdict line closes
+# the run; the early-failure lines end it too, so they do not wait out the
+# timeout.
+NET_DONE_RE = re.compile(
+    r"^\s*(URT HW TEST (PASS|FAIL)"
+    r"|\[urt\] (URSA init failed|URSA setup failed|planning failed))")
+
+NET_NAME_RE    = re.compile(r"^URSA network:\s*(?P<net>\S+)")
+NET_CFG_RE     = re.compile(
+    r"^\[urt\] SA_SIZE=(?P<sa>\d+) ACC_BITS=(?P<acc>\d+) MAX_M=(?P<maxm>\d+) "
+    r"guard=(?P<guard>\d+)")
+NET_WEIGHTS_RE = re.compile(
+    r"^\[urt\] weights: (?P<bytes>\d+) B packed, (?P<where>resident|streamed)")
+NET_ENGINE_RE  = re.compile(r"^\[urt\] engine: (?P<engine>.+?)\s*$")
+NET_TICKS_RE   = re.compile(r"^\[urt\] timer: (?P<tps>\d+) ticks/s")
+# [urt]   lower (im2col/transpose)        1234
+NET_STAGE_RE   = re.compile(
+    r"^\[urt\]\s+(?P<stage>lower|transfer|gemm|epilogue|other|total)\b.*?"
+    r"(?P<us>\d+)\s*$")
+NET_CALLS_RE   = re.compile(
+    r"^\[urt\] URSA calls per inference: (?P<calls>\d+), "
+    r"MACs per inference: (?P<macs>\d+)")
+NET_CORRECT_RE = re.compile(r"^Correct predictions: (?P<ok>\d+) / (?P<tot>\d+)")
+NET_PROGRESS_RE = re.compile(r"^Inference (?P<i>\d+)/(?P<n>\d+)\.")
+NET_CYCLES_RE  = re.compile(r"^\[cycles\] total: (?P<ticks>\d+)")
+NET_GOLDEN_RE  = re.compile(
+    r"^\[urt\] golden check: (?P<ok>\d+)/(?P<tot>\d+) images bit-exact")
+NET_MISMATCH_RE = re.compile(r"^\[urt\] golden MISMATCH image (?P<image>\d+)")
+NET_VERDICT_RE = re.compile(r"^URT HW TEST (?P<v>PASS|FAIL)")
+NET_FATAL_RE   = re.compile(
+    r"^\[urt\] (?P<msg>URSA init failed|URSA setup failed|planning failed)")
+# [prof] index parent depth inclusive self calls kind path device
+NET_PROF_RE    = re.compile(
+    r"^\[prof\] (?P<index>\d+) (?P<parent>-?\d+) (?P<depth>\d+) "
+    r"(?P<inclusive>\d+) (?P<self>\d+) (?P<calls>\d+) "
+    r"(?P<kind>\S+) (?P<path>\S+) (?P<device>\S+)")
+
+
+def parse_net(text):
+    """Net mode: one row for the run, and one row per profiled layer.
+
+    The verdict is PASS or FAIL when the board got that far. A run that
+    stopped earlier keeps "incomplete" (or the fatal message), and
+    images_done says how far it went.
+    """
+    run = dict(net="", engine="", acc_bits="", max_m="", guard="",
+               weights_bytes="", weights="", images_done="",
+               accuracy="", golden="", verdict="", first_mismatches="",
+               lower_us="", transfer_us="", gemm_us="", epilogue_us="",
+               other_us="", total_us="", calls_per_inf="", macs_per_inf="",
+               total_ticks="", ticks_per_s="")
+    layers, mism = [], []
+    sa_size = None
+
+    for raw in text.splitlines():
+        line = raw.strip("\r")
+
+        m = NET_PROF_RE.match(line)
+        if m:
+            layers.append({k: m.group(k) for k in
+                           ("index", "parent", "depth", "inclusive", "self",
+                            "calls", "kind", "path", "device")})
+            continue
+        m = NET_NAME_RE.match(line)
+        if m:
+            run["net"] = m.group("net")
+            continue
+        m = NET_CFG_RE.match(line)
+        if m:
+            sa_size = int(m.group("sa"))
+            run.update(acc_bits=m.group("acc"), max_m=m.group("maxm"),
+                       guard=m.group("guard"))
+            continue
+        m = NET_WEIGHTS_RE.match(line)
+        if m:
+            run.update(weights_bytes=m.group("bytes"), weights=m.group("where"))
+            continue
+        m = NET_ENGINE_RE.match(line)
+        if m:
+            run["engine"] = m.group("engine")
+            continue
+        m = NET_TICKS_RE.match(line)
+        if m:
+            run["ticks_per_s"] = m.group("tps")
+            continue
+        m = NET_STAGE_RE.match(line)
+        if m:
+            run[m.group("stage") + "_us"] = int(m.group("us"))
+            continue
+        m = NET_CALLS_RE.match(line)
+        if m:
+            run.update(calls_per_inf=m.group("calls"),
+                       macs_per_inf=m.group("macs"))
+            continue
+        m = NET_PROGRESS_RE.match(line)
+        if m:
+            run["images_done"] = int(m.group("i"))
+            continue
+        m = NET_CORRECT_RE.match(line)
+        if m:
+            run["accuracy"] = "%s/%s" % (m.group("ok"), m.group("tot"))
+            continue
+        m = NET_CYCLES_RE.match(line)
+        if m:
+            run["total_ticks"] = m.group("ticks")
+            continue
+        m = NET_MISMATCH_RE.match(line)
+        if m:
+            mism.append(m.group("image"))
+            continue
+        m = NET_GOLDEN_RE.match(line)
+        if m:
+            run["golden"] = "%s/%s" % (m.group("ok"), m.group("tot"))
+            continue
+        m = NET_VERDICT_RE.match(line)
+        if m:
+            run["verdict"] = m.group("v")
+            continue
+        m = NET_FATAL_RE.match(line)
+        if m:
+            run["verdict"] = m.group("msg").replace(" ", "_")
+
+    run["first_mismatches"] = " ".join(mism)
+    if text.strip() and not run["verdict"]:
+        run["verdict"] = "incomplete"
+
+    rows = [run] if text.strip() else []
+    summary = None
+    if run["golden"]:
+        ok, tot = run["golden"].split("/")
+        summary = (int(ok), int(tot) - int(ok))
+    return rows, sa_size, summary, layers
+
+
 def parse_cnn(text):
     """CNN mode: one row per image, with the run-level numbers repeated.
 
@@ -231,6 +379,11 @@ def parse_output(text, mode):
     """Pull the per-row measurements and the summary out of one run."""
     if mode == "cnn":
         return parse_cnn(text)
+    if mode == "net":
+        # The cache state is not printed by the test; main() takes it from
+        # the variant name. The per-layer rows are parsed again in main().
+        rows, sa_size, summary, _ = parse_net(text)
+        return rows, sa_size, summary, ""
 
     rows, sa_size, summary, cache_i = [], None, None, ""
 
@@ -535,6 +688,19 @@ FIELDS_CNN = ["mode", "variant", "mitig", "scrub", "cache_i",
               "im2col_us", "transfer_us", "gemm_us", "other_us",
               "pooling"]
 
+# One row per run. The stage times are microseconds per inference.
+FIELDS_NET = ["mode", "net", "variant", "mitig", "scrub", "cache_i",
+              "sa_size", "layout", "engine", "acc_bits", "max_m", "guard",
+              "weights_bytes", "weights", "images_done",
+              "accuracy", "golden", "verdict", "first_mismatches",
+              "lower_us", "transfer_us", "gemm_us", "epilogue_us",
+              "other_us", "total_us", "calls_per_inf", "macs_per_inf",
+              "total_ticks", "ticks_per_s"]
+
+FIELDS_NET_LAYERS = ["net", "variant", "mitig", "sa_size", "layout",
+                     "index", "parent", "depth", "path", "kind", "device",
+                     "calls", "inclusive", "self"]
+
 # Kept for anything that still imports the old name.
 FIELDS = FIELDS_GEMM
 
@@ -549,6 +715,8 @@ def blank_row(fields, mode, variant, mitig, scrub, sz, layout, status):
              sa_size=sz, layout=layout)
     if "check" in r:
         r["check"] = status
+    elif "verdict" in r:
+        r["verdict"] = status
     else:
         r["accuracy"] = status
     return r
@@ -558,9 +726,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=".",
                     help="project root holding bitstreams/ and elfs/")
-    ap.add_argument("--mode", choices=["bench", "free", "cnn"], default="bench",
+    ap.add_argument("--mode", choices=["bench", "free", "cnn", "net"],
+                    default="bench",
                     help="which ELF to load and which table format to parse")
-    ap.add_argument("--port", default="/dev/ttyUSB0")
+    ap.add_argument("--net", default=None,
+                    help="net mode: network test name, as given to "
+                         "04_do_vitis.sh (stem, or <stem>_hwtest.cpp)")
+    ap.add_argument("--port", default="/dev/ttyUSB1")
     ap.add_argument("--baud", type=int, default=115200)
     ap.add_argument("--sizes", type=int, nargs="+", default=[2, 4, 8, 16])
     # ap.add_argument("--layouts", nargs="+", default=["bram"])
@@ -585,8 +757,10 @@ def main():
                          "bitstream property and does not change the design.")
     ap.add_argument("--acc", type=int, default=20)
     ap.add_argument("--out", default=None, help="output CSV")
-    ap.add_argument("--timeout", type=float, default=300.0,
-                    help="seconds to wait for one run to finish")
+    ap.add_argument("--timeout", type=float, default=None,
+                    help="seconds to wait for one run to finish "
+                         "(default 300; 1800 in net mode, where a run is "
+                         "hundreds of inferences of a larger network)")
     ap.add_argument("--xsct", default="xsct")
     ap.add_argument("--echo", action="store_true",
                     help="print the serial output as it arrives")
@@ -601,8 +775,26 @@ def main():
                     help="only try to recover a wedged board, then exit")
     a = ap.parse_args()
 
-    fields = FIELDS_CNN if a.mode == "cnn" else FIELDS_GEMM
-    done_re = CNN_DONE_RE if a.mode == "cnn" else SUMMARY_RE
+    fields = {"cnn": FIELDS_CNN, "net": FIELDS_NET}.get(a.mode, FIELDS_GEMM)
+    done_re = {"cnn": CNN_DONE_RE, "net": NET_DONE_RE}.get(a.mode, SUMMARY_RE)
+    if a.timeout is None:
+        a.timeout = 1800.0 if a.mode == "net" else 300.0
+
+    # Net mode: the ELF prefix carries the network, as 04_do_vitis.sh names
+    # it (net-<stem>_<variant>_<sz>x<sz>_<layout>.elf).
+    elf_mode = a.mode
+    net_stem = ""
+    if a.mode == "net":
+        if not a.net:
+            print("ERROR: --mode net needs --net <network>")
+            sys.exit(1)
+        net_stem = os.path.basename(a.net)
+        if net_stem.endswith(".cpp"):
+            net_stem = net_stem[:-4]
+        if net_stem.endswith("_hwtest"):
+            net_stem = net_stem[:-7]
+        elf_mode = "net-" + net_stem
+    layer_rows = []
 
     # The hardware does not change with the software sweep, so the bitstream
     # keeps the plain variant name unless told otherwise.
@@ -635,7 +827,7 @@ def main():
 
     # Default name carries the mode, the variant and the mitigation, so no two
     # configurations overwrite each other's record.
-    default_name = "times_%s_%s" % (a.mode, a.variant)
+    default_name = "times_%s_%s" % (elf_mode, a.variant)
     if a.mitig != "none":
         default_name += "_" + a.mitig
     if a.scrub:
@@ -673,7 +865,7 @@ def main():
 
             # The ELF never carries the mitigation: the host code is the same.
             elf = os.path.join(elfdir, "%s_%s_%dx%d_%s.elf"
-                               % (a.mode, a.variant, sz, sz, layout))
+                               % (elf_mode, a.variant, sz, sz, layout))
 
             print("\n" + "=" * 70)
             print(" [%d/%d] mode=%s  SA_SIZE=%d  layout=%s  variant=%s  mitig=%s"
@@ -737,6 +929,35 @@ def main():
             text = reader.text()
             got, sa_reported, summary, cache_i = parse_output(text, a.mode)
 
+            # Net mode: keep the raw UART log next to the CSV, one file per
+            # run, and collect the per-layer profile. The cache state comes
+            # from the variant name, since the test does not print it.
+            if a.mode == "net":
+                logdir = os.path.join(out_dir, "logs")
+                os.makedirs(logdir, exist_ok=True)
+                logname = os.path.basename(elf)[:-4]
+                if a.mitig != "none":
+                    logname += "_" + a.mitig
+                if a.scrub:
+                    logname += "_scrub"
+                with open(os.path.join(logdir, logname + ".log"), "w") as f:
+                    f.write(text)
+                _, _, _, layers = parse_net(text)
+                for l in layers:
+                    l.update(net=net_stem, variant=a.variant, mitig=a.mitig,
+                             sa_size=sz, layout=layout)
+                    layer_rows.append(l)
+                cache_i = "off" if "-nci" in a.variant else "on"
+                for c in got:
+                    if not c.get("net"):
+                        c["net"] = net_stem
+                if got and got[0]["verdict"] != "PASS":
+                    print("  verdict: %s (log: logs/%s.log)"
+                          % (got[0]["verdict"], logname))
+                    if got[0]["first_mismatches"]:
+                        print("  first mismatching images: "
+                              + got[0]["first_mismatches"])
+
             if not got:
                 print("  no rows captured. Is the port right?")
                 print("  captured %d bytes" % len(text))
@@ -773,7 +994,12 @@ def main():
                 r.update({k: v for k, v in c.items() if k in r})
                 rows.append(r)
 
-            if summary and a.mode == "cnn":
+            if a.mode == "net":
+                g = got[0]
+                print("  %s  golden %s  accuracy %s  %s us/inference"
+                      % (g["verdict"], g["golden"] or "-",
+                         g["accuracy"] or "-", g["total_us"] or "-"))
+            elif summary and a.mode == "cnn":
                 print("  %d images: %d correct, %d wrong"
                       % (len(got), summary[0], summary[1]))
             elif summary:
@@ -790,9 +1016,23 @@ def main():
 
     print("\n" + "=" * 70)
     print(" %d rows -> %s" % (len(rows), out_csv))
+
+    if a.mode == "net":
+        layers_csv = out_csv[:-4] + "_layers.csv" if out_csv.endswith(".csv") \
+            else out_csv + "_layers.csv"
+        with open(layers_csv, "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=FIELDS_NET_LAYERS)
+            w.writeheader()
+            for r in layer_rows:
+                w.writerow({k: r.get(k, "") for k in FIELDS_NET_LAYERS})
+        print(" %d layer rows -> %s" % (len(layer_rows), layers_csv))
+        print(" raw logs -> %s" % os.path.join(out_dir, "logs"))
     print("=" * 70)
 
-    if a.mode == "cnn":
+    if a.mode == "net":
+        ok = sum(1 for r in rows if r.get("verdict") == "PASS")
+        print(" %d PASS, %d not PASS" % (ok, len(rows) - ok))
+    elif a.mode == "cnn":
         ok = sum(1 for r in rows if r.get("correct") == "yes")
         bad = sum(1 for r in rows if r.get("correct") == "no")
         blank = sum(1 for r in rows if r.get("correct") == "")
