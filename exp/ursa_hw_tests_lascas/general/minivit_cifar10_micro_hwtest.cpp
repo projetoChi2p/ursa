@@ -1,6 +1,6 @@
 /* ==========================================================================
  * URSA hardware test: minivit_cifar10_micro
- * MiniViT-micro: attention matmuls on URSA, LayerNorm/softmax/GELU on the ARM
+ * MiniViT-micro, CIFAR-10 (General)
  * 1024 images, 10 classes. Host model of URSA: 79.00% top-1.
  *
  * Self-checking: the board's int8 logits must equal, bit for bit, the table
@@ -2245,6 +2245,9 @@ static const int8_t urt_golden_logits[1024][10] = {
     { -28, 54, -37, 12, -29, -32, 26, -22, -9, 70 }
 };
 
+
+static_assert(sizeof(all_input_images[0]) == 3072,
+              "exported images do not match the traced input (3, 32, 32): regenerate or re-export");
 
 
 // --- Class index of the largest logit -------------------------------------

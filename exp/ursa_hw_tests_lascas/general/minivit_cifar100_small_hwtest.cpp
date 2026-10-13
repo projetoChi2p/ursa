@@ -1,6 +1,6 @@
 /* ==========================================================================
  * URSA hardware test: minivit_cifar100_small
- * MiniViT-small, 100 classes: the largest CIFAR transformer
+ * MiniViT-small, CIFAR-100 (General)
  * 1024 images, 100 classes. Host model of URSA: 67.18% top-1.
  *
  * Self-checking: the board's int8 logits must equal, bit for bit, the table
@@ -2422,6 +2422,9 @@ static const int8_t urt_golden_logits[1024][100] = {
     { -1, -7, -11, 8, -12, -13, 8, 5, 14, 3, -17, -17, -20, 6, -4, -2, 3, -27, 90, -2, -15, -7, -9, -10, -20, -13, 4, 2, -24, -6, -3, -6, -4, 17, -10, 11, -22, 2, 2, 1, 10, -17, -4, -10, -5, -9, 12, 10, -6, -4, 22, 0, -12, -9, 8, 6, -13, -10, 8, 0, 7, 20, 11, -7, 17, -41, 4, 19, 10, 9, -9, -2, 11, 18, -5, -4, 40, -5, 24, 5, -15, -1, 0, 2, -19, -12, -7, -13, -9, 12, -21, -11, 25, 7, 7, 0, -9, 10, 15, -2 }
 };
 
+
+static_assert(sizeof(all_input_images[0]) == 3072,
+              "exported images do not match the traced input (3, 32, 32): regenerate or re-export");
 
 
 // --- Class index of the largest logit -------------------------------------
