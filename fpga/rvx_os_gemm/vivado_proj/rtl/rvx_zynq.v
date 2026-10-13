@@ -62,8 +62,8 @@ module rvx_zynq
     
     
     localparam GPIO_WIDTH       = 1;
-//    localparam MEMORY_INIT_FILE = "hello.mem"; //"mqhu_fuc.mem";
-    localparam MEMORY_INIT_FILE = "driver-ursa.mem"; //"mqhu_fuc.mem";
+    localparam MEMORY_INIT_FILE = "hello.mem"; //"mqhu_fuc.mem";
+//    localparam MEMORY_INIT_FILE = "driver-ursa.mem"; //"mqhu_fuc.mem";
 //    localparam MEMORY_INIT_FILE = "memorytest.mem";
     //localparam MEMORY_SIZE      = 128*1024;
     localparam MEMORY_SIZE      = 128*1024;
