@@ -1,0 +1,5 @@
+mode,net,variant,mitig,scrub,cache_i,sa_size,layout,engine,acc_bits,max_m,guard,weights_bytes,weights,images_done,accuracy,golden,verdict,first_mismatches,lower_us,transfer_us,gemm_us,epilogue_us,other_us,total_us,calls_per_inf,macs_per_inf,total_ticks,ticks_per_s
+net,resnet18_cifar100_tiny_vitmatched,vanilla,none,off,on,2,ocm,URSA,20,256,1,557392,streamed,512,281/512,512/512,PASS,,6541,9005,372123,11696,10065,409431,207,26997460,69876302772,333333343
+net,resnet18_cifar100_tiny_vitmatched,vanilla,none,off,on,4,ocm,URSA,20,256,1,565712,streamed,512,281/512,512/512,PASS,,6690,8879,103737,11715,10112,141134,208,26997460,24087025137,333333343
+net,resnet18_cifar100_tiny_vitmatched,vanilla,none,off,on,8,ocm,URSA,20,256,1,587008,streamed,512,281/512,512/512,PASS,,6684,9089,30989,11720,10116,68600,208,26997460,11707803008,333333343
+net,resnet18_cifar100_tiny_vitmatched,vanilla,none,off,on,16,ocm,URSA,20,256,1,635904,streamed,512,281/512,512/512,PASS,,6684,9431,15270,11728,10119,53235,128,26997460,9085444609,333333343

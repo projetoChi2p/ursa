@@ -1,0 +1,5 @@
+mode,net,variant,mitig,scrub,cache_i,sa_size,layout,engine,acc_bits,max_m,guard,weights_bytes,weights,images_done,accuracy,golden,verdict,first_mismatches,lower_us,transfer_us,gemm_us,epilogue_us,other_us,total_us,calls_per_inf,macs_per_inf,total_ticks,ticks_per_s
+net,vgg16_cifar10_small_vitmatched,vanilla,none,off,on,2,ocm,URSA,20,256,1,1630304,streamed,512,431/512,512/512,PASS,,4084,12460,481591,8173,204,506515,482,34940852,86445255396,333333343
+net,vgg16_cifar10_small_vitmatched,vanilla,none,off,on,4,ocm,URSA,20,256,1,1651792,streamed,512,431/512,512/512,PASS,,4142,11564,132393,8183,204,156489,496,34940852,26707474817,333333343
+net,vgg16_cifar10_small_vitmatched,vanilla,none,off,on,8,ocm,URSA,20,256,1,1692736,streamed,512,431/512,512/512,PASS,,4303,12297,40674,8182,205,65663,524,34940852,11206584456,333333343
+net,vgg16_cifar10_small_vitmatched,vanilla,none,off,on,16,ocm,URSA,20,256,1,1711104,streamed,512,431/512,512/512,PASS,,4450,13449,22558,8187,205,48851,292,34940852,8337367722,333333343
