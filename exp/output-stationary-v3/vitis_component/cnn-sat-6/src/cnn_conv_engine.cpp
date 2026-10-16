@@ -1,0 +1,1232 @@
+#include "cnn_conv_engine.h"
+#include <string.h>
+#include "ursa_v3_layout.h"
+
+/* The three large buffers below are streamed against each other: im2col
+   reads the pixel buffer and writes the scratchpad, the scale and ReLU walk
+   the feature buffer. The L1 data cache is 32 KB in 4 ways, so 8 KB per way,
+   and buffers whose addresses differ by a multiple of 8 KB fight for the same
+   sets. Without an explicit alignment the linker places them wherever .bss
+   happens to land, and any unrelated change to a global shifts them. Pinning
+   the alignment does not eliminate conflicts, but it makes them a property of
+   the design rather than of the last edit.                                 */
+#define URSA_BUF_ALIGN __attribute__((aligned(32)))
+
+pixel_t  g_pixel_buffer[PIXEL_BUFFER_N][PIXEL_BUFFER_SIZE] URSA_BUF_ALIGN;
+macc_t   g_feature_buffer[FEATURE_BUFFER_N][FEATURE_BUFFER_SIZE] URSA_BUF_ALIGN;
+gpool_t  g_pooling_buffer[POOLING_CH_OUT];
+
+#define SCRATCHPAD_W_SIZE (16*1024)
+#define SCRATCHPAD_I_SIZE (16*1024)
+#define SCRATCHPAD_A_SIZE (16*1024)
+
+#ifdef USE_ARM
+weight_t      g_scratchpad_aw[SCRATCHPAD_W_SIZE] URSA_BUF_ALIGN;
+container_a_t g_scratchpad_ca[SCRATCHPAD_A_SIZE] URSA_BUF_ALIGN;  // feature map
+#endif
+
+pixel_t g_scratchpad_bi[SCRATCHPAD_I_SIZE] URSA_BUF_ALIGN;        // im2col result, both engines
+
+#ifdef USE_URSA
+/* UM: 15/10/26 - URSA v3, host side.
+   B: im2col writes the plain row-major matrix (sequential stores, the
+      fastest it can be); populate_bi packs it to the v3 tile-major layout in
+      DDR with word copies and sends it to the window in one block copy.
+      Writing the packed layout straight from im2col was tried and was slower:
+      im2col 221 -> 624 us per image (8x8), for 24 us saved in the transfer.
+   C: the conv copies C out of the window in one block into g_v3_c, still
+      tile-major. The de-tiling is done by the next pass over C, the
+      requantization in net_process_layer_mul_in_place, which reads g_v3_c
+      and writes the feature buffer in CHW order. g_v3_c_pending hands the
+      shape over and makes sure each C is consumed once (other: 529 -> 460 us).
+   History (8x8, BRAM, per image): packing B and de-tiling C against the
+   window cost transfer 276 us and other 948 us (v2: 138 and 494). */
+static uint8_t g_v3_b[BRAM_BI_SIZE] URSA_BUF_ALIGN;
+static int32_t g_v3_c[BRAM_CA_SIZE / sizeof(int32_t)] URSA_BUF_ALIGN;
+static struct {
+    int      pending;      /* 1: g_v3_c holds a C not yet de-tiled */
+    uint8_t  out_buffer;   /* feature buffer it belongs to          */
+    uint16_t q;            /* columns of C (aligned)                */
+    uint8_t  ch_out;
+    uint16_t wh_out;
+} g_v3_c_pending = {0, 0, 0, 0, 0};
+#endif
+
+#ifdef VITIS
+/* Per-layer split. The stage channels above give totals per inference; this
+   table keeps the same three stages per convolution, plus the whole call
+   (everything inside net_process_layer_pixel_conv_sa, which also covers the
+   de-tiling of C). Indexed [stage][conv_seq]. Accumulated in 64 bits, since a
+   run of 300 inferences overflows 32-bit ticks in the gemm row.
+   Cost: one extra free-running counter read per stage boundary, the same kind
+   of read the stage channels already do.                                  */
+#define PROF_IM2COL   0
+#define PROF_TRANSFER 1
+#define PROF_GEMM     2
+#define PROF_CALL     3
+static uint64_t    s_layer_ticks[4][CONV_PROFILE_LAYERS];
+static app_timer_t s_stage_t0[4];
+static uint8_t     s_cur_layer = 0;
+
+void conv_engine_profile_reset(void)
+{
+    app_timer_start(TIMER_IM2COL);
+    app_timer_start(TIMER_TRANSFER);
+    app_timer_start(TIMER_GEMM);
+    for (int st = 0; st < 4; st++)
+        for (int l = 0; l < CONV_PROFILE_LAYERS; l++)
+            s_layer_ticks[st][l] = 0;
+}
+
+/* channel 1..3 -> row 0..2 */
+#define STAGE_START(ch)  do { app_timer_continue(ch);                               \
+                              s_stage_t0[(ch) - 1] = app_timer_now(); } while (0)
+#define STAGE_STOP(ch)   do { app_timer_stop(ch);                                   \
+                              s_layer_ticks[(ch) - 1][s_cur_layer] +=               \
+                                  app_timer_subtract(s_stage_t0[(ch) - 1],          \
+                                                     app_timer_now()); } while (0)
+
+void conv_engine_print_layer_profile(uint32_t n_inferences)
+{
+    static const char *name[4] = { "im2col", "transfer", "gemm", "conv call" };
+    uint64_t div = (uint64_t)n_inferences * APP_TIMER_COUNTS_PER_MICROSECOND;
+    if (div == 0) return;
+
+    fprintf(stderr, "  per layer (us/image)      CONV1     CONV2     CONV3\n");
+    for (int st = 0; st < 4; st++) {
+        fprintf(stderr, "    %-12s        ", name[st]);
+        for (int l = 0; l < CONV_PROFILE_LAYERS; l++) {
+            uint64_t x100 = (s_layer_ticks[st][l] * 100u) / div;
+            fprintf(stderr, " %5lu.%02lu", (unsigned long)(x100 / 100u),
+                    (unsigned long)(x100 % 100u));
+        }
+        fprintf(stderr, "\n");
+    }
+    fprintf(stderr, "    (conv call = im2col + transfer + gemm + de-tiling of C;\n"
+                    "     scale, ReLU and pooling run outside it, in 'other')\n");
+}
+#else
+/* Host build: no timers. The stage split is a board measurement. */
+void conv_engine_profile_reset(void) { }
+void conv_engine_print_layer_profile(uint32_t n_inferences) { (void)n_inferences; }
+#define STAGE_START(ch)  do {} while (0)
+#define STAGE_STOP(ch)   do {} while (0)
+#endif
+
+/* ─── Cache maintenance ──────────────────────────────────────────────────────
+   Same rule as the benchmark. Under BRAM nothing is cacheable and no
+   maintenance is needed. Under OCM all three matrices sit in cacheable
+   memory. Under HYBRID only B and C do, because A stays in BRAM.
+
+   The difference from the benchmark is when this runs. There, A and B are
+   written once and the flush sits outside the timed interval. Here B is
+   rebuilt and C is read back on every layer, so both are inside it. Only A
+   keeps the benchmark's behaviour, and it is flushed once by
+   populate_aw_with_all_the_weights.                                         */
+#if defined(VITIS) && defined(USE_URSA) && CACHE_EN_D
+    #if defined(OCM)
+        #define FLUSH_A(p, n)      Xil_DCacheFlushRange((INTPTR)(p), (uint32_t)(n))
+        #define FLUSH_B(p, n)      Xil_DCacheFlushRange((INTPTR)(p), (uint32_t)(n))
+        #define FLUSH_C(p, n)      Xil_DCacheFlushRange((INTPTR)(p), (uint32_t)(n))
+        #define INVALIDATE_C(p, n) Xil_DCacheInvalidateRange((INTPTR)(p), (uint32_t)(n))
+    #elif defined(HYBRID)
+        #define FLUSH_A(p, n)      do {} while (0)
+        #define FLUSH_B(p, n)      Xil_DCacheFlushRange((INTPTR)(p), (uint32_t)(n))
+        #define FLUSH_C(p, n)      Xil_DCacheFlushRange((INTPTR)(p), (uint32_t)(n))
+        #define INVALIDATE_C(p, n) Xil_DCacheInvalidateRange((INTPTR)(p), (uint32_t)(n))
+    #else /* BRAM */
+        #define FLUSH_A(p, n)      do {} while (0)
+        #define FLUSH_B(p, n)      do {} while (0)
+        #define FLUSH_C(p, n)      do {} while (0)
+        #define INVALIDATE_C(p, n) do {} while (0)
+    #endif
+#else
+    #define FLUSH_A(p, n)      do {} while (0)
+    #define FLUSH_B(p, n)      do {} while (0)
+    #define FLUSH_C(p, n)      do {} while (0)
+    #define INVALIDATE_C(p, n) do {} while (0)
+#endif
+
+//===============================================
+// Helpers
+//===============================================
+
+static inline uint16_t align_up_sa(uint16_t v)
+{
+#if USE_ALIGNED_ARRAY_SIZE
+    return (uint16_t)(((v + USE_ALIGNED_ARRAY_SIZE - 1) / USE_ALIGNED_ARRAY_SIZE) * USE_ALIGNED_ARRAY_SIZE);
+#else
+    return v;
+#endif
+}
+
+// Used internally by net_process_layer_pixel_conv_sa
+static void aligned_sa_p(uint8_t ch_out, uint16_t* l_c_rows_a_rows)
+{
+    (*l_c_rows_a_rows) = align_up_sa(ch_out);
+}
+
+#ifdef USE_ARM
+static int populate_weight_scratchpad(
+    weight_t* weights,
+    uint8_t   wh_kernel,
+    uint8_t   ch_in,
+    uint8_t   ch_out,
+    weight_t* scratchpad_aw,
+    uint16_t* l_c_rows_a_rows
+)
+{
+    weight_t *data_col = scratchpad_aw;
+
+    uint16_t aligned_ch_out = align_up_sa(ch_out);
+
+    (*l_c_rows_a_rows) = aligned_ch_out;
+    int32_t scratchpad_weights = aligned_ch_out * ch_in * wh_kernel * wh_kernel;
+
+    if ( SCRATCHPAD_W_SIZE < scratchpad_weights )
+    {
+        send_status(scratchpad_weights, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    for (uint16_t co = 0; co < ch_out; co++)
+    {
+        for (uint16_t ci = 0; ci < ch_in; ci++)
+        {
+            for (uint16_t j = 0; j < wh_kernel; j++)
+            {
+                for (uint16_t i = 0; i < wh_kernel; i++)
+                {
+                    // Weights are organized in memory as [chout, chin, k, k], e.g. [16, 4, 3, 3]
+                    uint32_t w_offset = co * (ch_in*wh_kernel*wh_kernel) +
+                                        ci * (wh_kernel*wh_kernel) +
+                                        j  * wh_kernel +
+                                        i;
+                    *(data_col++) = weights[w_offset];
+                }
+            }
+        }
+    }
+
+    return EXIT_SUCCESS;
+}
+#endif /* USE_ARM */
+
+
+// From Berkeley Vision's Caffe
+// Refer to Caffe's license : https://github.com/BVLC/caffe/blob/master/LICENSE
+static inline uint8_t is_a_ge_zero_and_a_lt_b(int a, int b)
+{
+    return (unsigned int)a < (unsigned int)(b);
+}
+
+// The image lowering (im2col) always runs on the ARM. Both engines consume
+// the lowered matrix B from g_scratchpad_bi.
+static int populate_scratchpad_bi_with_im2col(
+        const pixel_t *data_im,
+        const uint8_t  channels,
+        const uint16_t height, const uint16_t width,
+        const uint8_t  kernel_h, const uint8_t kernel_w,
+        const uint8_t  pad_h, const uint8_t pad_w,
+        const uint8_t  stride_h, const uint8_t stride_w,
+        pixel_t       *scratchpad_bi,
+        uint16_t      *n_c_cols_b_cols
+)
+{
+    pixel_t *data_col = scratchpad_bi;
+
+    const uint16_t output_h = (height + 2 * pad_h - ((kernel_h - 1) + 1)) / stride_h + 1;
+    const uint16_t output_w = (width  + 2 * pad_w - ((kernel_w - 1) + 1)) / stride_w + 1;
+
+    uint16_t aligned_wh_out = align_up_sa((uint16_t)(output_h * output_w));
+
+    (*n_c_cols_b_cols) = aligned_wh_out;
+
+    uint32_t scratchpad_pixels = ((channels * kernel_h * kernel_w) * aligned_wh_out);
+    if ( SCRATCHPAD_I_SIZE < scratchpad_pixels ) {
+        send_status(scratchpad_pixels, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    const int channel_size = height * width;
+
+    for (uint8_t channel = channels; channel--; data_im += channel_size) {
+        for (uint8_t kernel_row = 0; kernel_row < kernel_h; kernel_row++) {
+            for (uint8_t kernel_col = 0; kernel_col < kernel_w; kernel_col++) {
+
+                int input_row = -pad_h + kernel_row;
+
+                for (int output_rows = output_h; output_rows; output_rows--) {
+                    if (!is_a_ge_zero_and_a_lt_b(input_row, height)) {
+                        for (int output_cols = output_w; output_cols; output_cols--) {
+                            *(data_col++) = 0;
+                        }
+                    }
+                    else {
+                        int input_col = -pad_w + kernel_col;
+
+                        for (int output_col = output_w; output_col; output_col--) {
+                            if (is_a_ge_zero_and_a_lt_b(input_col, width)) {
+                                *(data_col++) = data_im[input_row * width + input_col];
+                            } else {
+                                *(data_col++) = 0;
+                            }
+                            input_col += stride_w;
+                        }
+                    }
+                    input_row += stride_h;
+                }
+
+                // Zero padding up to the SA-aligned column count
+                for (int k = (output_h*output_w); k < aligned_wh_out; k++) {
+                    *(data_col++) = 0;
+                }
+            }
+        }
+    }
+
+    return EXIT_SUCCESS;
+}
+
+// Used internally by net_process_layer_pixel_conv_sa
+// static int populate_outdata_with_ca(
+//     const int32_t* ca,
+//     unsigned int   wh_out,
+//     unsigned int   ch_out,
+//     unsigned int   n_c_cols_b_cols,
+//     container_a_t* out_data
+// ){
+//     for (unsigned int co = 0; co < ch_out; co++) {
+//         for (unsigned int y = 0; y < wh_out; y++) {
+//             for (unsigned int x = 0; x < wh_out; x++) {
+//                 unsigned int src_index = x + y * wh_out + co * n_c_cols_b_cols;
+//                 unsigned int dst_index = x + y * wh_out + co * wh_out * wh_out;
+
+//                 out_data[dst_index] = (container_a_t)ca[src_index];
+//             }
+//         }
+//     }
+  
+//     return EXIT_SUCCESS;
+// }
+
+//UM: 24/09/2026
+#ifdef USE_URSA
+/* UM: 15/10/26 - URSA v3: C is tile-major. Tile n = it*(Q/SA) + jt holds
+   SA*SA int32, row-major inside the tile. Here C only leaves the window, in
+   one block copy; it is de-tiled by net_process_layer_mul_in_place.
+   out_buffer identifies the feature buffer the C belongs to. */
+static int populate_outdata_with_ca(const int32_t* ca, unsigned wh_out,
+        unsigned ch_out, unsigned n_c_cols_b_cols, uint8_t out_buffer)
+{
+    const unsigned rows = ((ch_out + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
+    const uint32_t bytes = (uint32_t)rows * n_c_cols_b_cols * sizeof(int32_t);
+    if (bytes > sizeof(g_v3_c)) {
+        send_status(bytes, __LINE__);
+        return EXIT_FAILURE;
+    }
+    memcpy(g_v3_c, ca, bytes);
+    g_v3_c_pending.pending    = 1;
+    g_v3_c_pending.out_buffer = out_buffer;
+    g_v3_c_pending.q          = (uint16_t)n_c_cols_b_cols;
+    g_v3_c_pending.ch_out     = (uint8_t)ch_out;
+    g_v3_c_pending.wh_out     = (uint16_t)wh_out;
+    return EXIT_SUCCESS;
+}
+#else
+static int populate_outdata_with_ca(const int32_t* ca, unsigned wh_out,
+        unsigned ch_out, unsigned n_c_cols_b_cols, container_a_t* out_data)
+{
+    if (wh_out * wh_out == n_c_cols_b_cols) {
+        /* caminho contíguo: uma cópia em bloco em vez de ch_out*wh_out^2
+           leituras isoladas da BRAM */
+        memcpy(out_data, ca, (size_t)ch_out * n_c_cols_b_cols * sizeof(int32_t));
+        return EXIT_SUCCESS;
+    }
+    /* caminho geral, mantido para formas em que Q > wh_out^2 */
+    for (unsigned co = 0; co < ch_out; co++)
+        memcpy(out_data + co * wh_out * wh_out,
+               ca      + co * n_c_cols_b_cols,
+               (size_t)wh_out * wh_out * sizeof(int32_t));
+    return EXIT_SUCCESS;
+}
+#endif /* USE_URSA */
+
+//  /$$   /$$ /$$$$$$$   /$$$$$$   /$$$$$$
+// | $$  | $$| $$__  $$ /$$__  $$ /$$__  $$
+// | $$  | $$| $$  \ $$| $$  \__/| $$  \ $$
+// | $$  | $$| $$$$$$$/|  $$$$$$ | $$$$$$$$
+// | $$  | $$| $$__  $$ \____  $$| $$__  $$
+// | $$  | $$| $$  \ $$ /$$  \ $$| $$  | $$
+// |  $$$$$$/| $$  | $$|  $$$$$$/| $$  | $$
+//  \______/ |__/  |__/ \______/ |__/  |__/
+
+/* ─── Power-of-two weights (PE_POT) ──────────────────────────────────────────
+   The shift PE reads a 4-bit code per weight from A:
+       bit 3 sign, bits 2..0 code; 0 -> zero, k -> 2^(k-1)  (1 .. 64)
+   Code 0 is zero on purpose: padding rows and the array's skew inject 0.
+
+   pot_prepare_weights() rounds the trained int8 weights to the nearest power
+   of two, IN PLACE, once, before staging. Both engines then use the same
+   rounded values, so URSA and the ARM reference must agree bit for bit.
+   Magnitudes up to 127 are served by a per-layer offset: the layer is halved
+   before rounding (so 128 becomes representable as 64) and its float scale
+   is doubled, whichever of the two gives the smaller squared error. This is
+   post-training rounding, no retraining: accuracy is expected to drop.    */
+#ifdef PE_POT
+static inline int pot_round(int a)          /* a >= 0 -> nearest of {0,1,2,..,64} */
+{
+    if (a == 0) return 0;
+    int best = 1;
+    for (int p = 2; p <= 64; p <<= 1) {
+        if ((a > p ? a - p : p - a) < (a > best ? a - best : best - a)) best = p;
+    }
+    return best;
+}
+
+static inline int div_pow2_round(int v, int o) /* round half away from zero */
+{
+    if (o == 0) return v;
+    int a = v < 0 ? -v : v;
+    a = (a + (1 << (o - 1))) >> o;
+    return v < 0 ? -a : a;
+}
+
+static void pot_quantize_layer(weight_t* w, unsigned int n, float* scale)
+{
+    long long err[2] = {0, 0};
+    for (int o = 0; o < 2; o++) {
+        for (unsigned int i = 0; i < n; i++) {
+            int v = div_pow2_round(w[i], o);
+            int q = pot_round(v < 0 ? -v : v) * (v < 0 ? -1 : 1);
+            long long d = (long long)w[i] - (long long)(q << o);
+            err[o] += d * d;
+        }
+    }
+    int o = (err[1] < err[0]) ? 1 : 0;
+    for (unsigned int i = 0; i < n; i++) {
+        int v = div_pow2_round(w[i], o);
+        w[i] = (weight_t)(pot_round(v < 0 ? -v : v) * (v < 0 ? -1 : 1));
+    }
+    if (o) *scale *= 2.0f;
+}
+
+void pot_prepare_weights(void)
+{
+    pot_quantize_layer(g_weights_q_1.weights, TOTAL_NUM_WEIGHTS_1, &g_weights_scale_1);
+    pot_quantize_layer(g_weights_q_2.weights, TOTAL_NUM_WEIGHTS_2, &g_weights_scale_2);
+    pot_quantize_layer(g_weights_q_3.weights, TOTAL_NUM_WEIGHTS_3, &g_weights_scale_3);
+}
+
+/* value (0 or +-2^k, k = 0..6) -> 4-bit code as stored in A */
+static inline weight_t pot_encode(weight_t v)
+{
+    if (v == 0) return 0;
+    int a = v < 0 ? -v : v;
+    int k = 0;
+    while ((1 << k) < a) k++;
+    return (weight_t)(((v < 0) ? 0x8 : 0x0) | (k + 1));
+}
+    #define A_STORE(v) pot_encode(v)
+#else
+    #define A_STORE(v) (v)
+#endif
+
+// Used internally by populate_aw_with_all_the_weights
+static unsigned int save_layer_with_padding(
+    volatile weight_t *mem,
+    unsigned int      *index_ptr,
+    const weight_t    *weights,
+    unsigned int       row,
+    unsigned int       col,
+    unsigned int       layer_id
+)
+{
+    (void)layer_id;
+
+    /* UM: 24/09/26 - ROW-STRIDE RULE (URSA v2)
+       The v2 IP reads A in words of SA_SIZE bytes, so every row of A has to
+       start on a word boundary. The row stride is therefore M rounded up to a
+       multiple of SA_SIZE, and the extra bytes at the end of each row are
+       written as zero (the array never reads them: STREAM_K still walks only
+       the first M columns).
+       The columns used to be left unpadded, which matched the v1 IP - it read
+       A byte by byte with stride M - and silently corrupted every row after
+       the first under v2 whenever M was not a multiple of SA_SIZE. T3 CONV1
+       has M = 36: correct at 4x4, wrong at 8x8 and 16x16.
+       When M is already a multiple of SA_SIZE, padded_cols == col and the
+       layout is byte for byte the one this function produced before. */
+    unsigned int padded_rows = ((row + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
+    /* UM: 27/09/26 - the word, not SA_SIZE: they differ only below 4x4. */
+    unsigned int padded_cols = URSA_UP_WORD(col);
+
+    /* UM: 15/10/26 - URSA v3. A is tile-major (ursa_v3_layout.h): row tile
+       it, word w, byte l*SA + i = A[it*SA + i][w*LANES + l]. The layer keeps
+       the v2 slot (padded_rows * padded_cols bytes, so the ADDR_WEIGHTS_*
+       map of cnn_network.h is unchanged); the v3 packing needs at most that
+       much and the rest of the slot is zero. The slot start is a multiple of
+       the word, as the IP requires. */
+    const unsigned int slot = padded_rows * padded_cols;
+    const int L  = ursa3_lanes(SA_SIZE);
+    const int WB = ursa3_wb(SA_SIZE);
+    const int kw = ursa3_kw(SA_SIZE, (int)col);
+    const unsigned int base = *index_ptr;
+
+    for (unsigned int n = 0; n < slot; n++) mem[base + n] = 0;
+
+    for (unsigned int r = 0; r < row; r++) {
+        const unsigned int it = r / SA_SIZE, i = r % SA_SIZE;
+        for (unsigned int k = 0; k < col; k++) {
+            const unsigned int w = k / L, l = k % L;
+            mem[base + (it * kw + w) * WB + l * SA_SIZE + i] =
+                A_STORE(weights[r * col + k]);
+        }
+    }
+
+    *index_ptr += slot;
+    return slot;
+}
+
+/* UM: 24/09/26 - save_layer_compact() was removed together with the
+   SA_SIZE >= 16 staging path below. It wrote the layers back to back with no
+   padding at all, which breaks the row-stride rule above. */
+
+#ifdef CHECK_WEIGHTS
+/* Used internally by populate_aw_with_all_the_weights.
+
+   UM: 24/09/26 - rewritten for the padded-column layout. The old version
+   assumed each layer's real weights were one contiguous run followed by the
+   padding, which held only while the columns were unpadded. With the row
+   stride padded, the real values of row r start at r*padded_col, so the check
+   has to walk the rows. */
+static int check_layer_in_mem(const weight_t *mem, unsigned int base,
+                              const weight_t *w,
+                              unsigned int row, unsigned int col)
+{
+    /* v3 tile-major layout, as written by save_layer_with_padding. */
+    const int L  = ursa3_lanes(SA_SIZE);
+    const int WB = ursa3_wb(SA_SIZE);
+    const int kw = ursa3_kw(SA_SIZE, (int)col);
+    unsigned int idx = 0;
+
+    for (unsigned int r = 0; r < row; r++) {
+        for (unsigned int c = 0; c < col; c++) {
+            const unsigned int a = base + ((r / SA_SIZE) * kw + c / L) * WB
+                                 + (c % L) * SA_SIZE + (r % SA_SIZE);
+            if (mem[a] != A_STORE(w[idx++])) {
+                send_status((short)a, __LINE__);
+                return EXIT_FAILURE;
+            }
+        }
+    }
+    return EXIT_SUCCESS;
+}
+
+static int check_weigths_into_mem(weight_t* mem_check)
+{
+#ifdef CNN_NETWORK_T3
+    if (check_layer_in_mem(mem_check, ADDR_WEIGHTS_CONV1,
+                           g_weights_q_1.weights,
+                           CONV1_ROW, CONV1_COL) != EXIT_SUCCESS) {
+        return EXIT_FAILURE;
+    }
+    if (check_layer_in_mem(mem_check, ADDR_WEIGHTS_CONV2,
+                           g_weights_q_2.weights,
+                           CONV2_ROW, CONV2_COL) != EXIT_SUCCESS) {
+        return EXIT_FAILURE;
+    }
+    if (check_layer_in_mem(mem_check, ADDR_WEIGHTS_CONV3,
+                           g_weights_q_3.weights,
+                           CONV3_ROW, CONV3_COL) != EXIT_SUCCESS) {
+        return EXIT_FAILURE;
+    }
+#else
+    (void)mem_check;
+#endif /* CNN_NETWORK_T3 */
+
+    return EXIT_SUCCESS;
+}
+#endif /* CHECK_WEIGHTS */
+
+#if defined(CNN_NETWORK_SYN)
+    /* Synthetic network. Every layer is stored with its rows padded to a
+       multiple of SA_SIZE (zero rows only exist when C_OUT is not already a
+       multiple, which is precisely the case the experiment wants to price).
+       If the three layers do not fit in the 4 KB of A, they alias at address
+       0 and only the largest one is staged; see cnn_network.h.            */
+    int populate_aw_with_all_the_weights(weight_t* aw)
+    {
+        unsigned int index = 0;
+        unsigned int total_weights = 0;
+
+    #if SYN_WEIGHTS_ALIASED
+        if (TOTAL_NUM_WEIGHTS == TOTAL_NUM_WEIGHTS_WITH_PADDING_3) {
+            total_weights = save_layer_with_padding(aw, &index, g_weights_q_3.weights,
+                                CONV3_ROW, CONV3_COL, 3);
+        } else if (TOTAL_NUM_WEIGHTS == TOTAL_NUM_WEIGHTS_WITH_PADDING_2) {
+            total_weights = save_layer_with_padding(aw, &index, g_weights_q_2.weights,
+                                CONV2_ROW, CONV2_COL, 2);
+        } else {
+            total_weights = save_layer_with_padding(aw, &index, g_weights_q_1.weights,
+                                CONV1_ROW, CONV1_COL, 1);
+        }
+    #else
+        total_weights += save_layer_with_padding(aw, &index, g_weights_q_1.weights,
+                                CONV1_ROW, CONV1_COL, 1);
+        total_weights += save_layer_with_padding(aw, &index, g_weights_q_2.weights,
+                                CONV2_ROW, CONV2_COL, 2);
+        total_weights += save_layer_with_padding(aw, &index, g_weights_q_3.weights,
+                                CONV3_ROW, CONV3_COL, 3);
+    #endif
+
+        if (total_weights != TOTAL_NUM_WEIGHTS) {
+            send_status(total_weights, __LINE__);
+            return EXIT_FAILURE;
+        }
+
+        FLUSH_A(aw, (uint32_t)total_weights * sizeof(weight_t));
+        return EXIT_SUCCESS;
+    }
+
+/* UM: 24/09/26 - the SA_SIZE >= 16 branch that used to sit here is gone. It
+   staged the layers with save_layer_compact (no padding) and reordered them
+   so the three would fit in the 4 KB of BRAM_AW. That layout violates the
+   row-stride rule, so it cannot be used with the v2 IP. At 16x16 the padded
+   layout needs 5376 bytes and BRAM_AW has to grow to 8 KB. The path below now
+   serves every SA_SIZE. */
+#else
+    //Used by INPUT
+    int populate_aw_with_all_the_weights(weight_t* aw)
+    {
+        unsigned int index = 0;
+        unsigned int total_weights = 0;
+
+    #ifdef CNN_NETWORK_T3
+
+        unsigned int count_weights_1 = save_layer_with_padding(aw, &index, g_weights_q_1.weights,
+                                    CONV1_CH_OUT, CONV1_WH_KERNEL * CONV1_WH_KERNEL * CONV1_CH_IN, 1);
+
+        unsigned int count_weights_2 = save_layer_with_padding(aw, &index, g_weights_q_2.weights,
+                                    CONV2_CH_OUT, CONV2_WH_KERNEL * CONV2_WH_KERNEL * CONV2_CH_IN, 2);
+
+        unsigned int count_weights_3 = save_layer_with_padding(aw, &index, g_weights_q_3.weights,
+                                    CONV3_CH_OUT, CONV3_WH_KERNEL * CONV3_WH_KERNEL * CONV3_CH_IN, 3);
+
+        total_weights = count_weights_1 + count_weights_2 + count_weights_3;
+
+        if (total_weights != TOTAL_NUM_WEIGHTS) {
+            send_status(total_weights, __LINE__);
+            return EXIT_FAILURE;
+        }
+
+    #ifdef CHECK_WEIGHTS
+        if (check_weigths_into_mem(aw) != EXIT_SUCCESS) {
+            return EXIT_FAILURE;
+        }
+    #endif
+
+        /* Weights are static. This is the only flush of A in the whole run, and
+        it sits outside the timed interval. */
+        FLUSH_A(aw, (uint32_t)total_weights * sizeof(weight_t));
+
+    #endif /* CNN_NETWORK_T3 */
+
+        return EXIT_SUCCESS;
+    }
+#endif
+
+#ifdef USE_URSA
+static int populate_bi_with_scratchpad_bi(
+    const pixel_t* buffer_in,
+    uint32_t       m,
+    uint32_t       q,
+    pixel_t*       bi
+)
+{
+    /* UM: 15/10/26 - URSA v3: pack the row-major B into the tile-major
+       layout in DDR (cached), then one block copy into the window.
+       Element (k, j) goes to (jt*kw + k/L)*WB + (k%L)*SA + j%SA. For
+       SA_SIZE >= 4 each chunk is SA_SIZE bytes, 4-byte aligned on both sides
+       (q is a multiple of SA_SIZE and both buffers are 32-byte aligned), and
+       is moved in 32-bit words. */
+    const uint32_t nb = ursa3_b_bytes(SA_SIZE, (int)m, (int)q);
+    if (nb > BRAM_BI_SIZE) {
+        send_status(nb, __LINE__);
+        return EXIT_FAILURE;
+    }
+#if SA_SIZE >= 4
+    {
+        /* Column tile outer, k inner: the destination is written strictly
+           in order (one column tile is m*SA contiguous bytes), the source
+           is read with stride q. A first version with k outer wrote with
+           stride m*SA and measured transfer 170 us per image (8x8). */
+        const uint32_t tb = q / SA_SIZE;
+        uint32_t *d = (uint32_t *)g_v3_b;
+        for (uint32_t jt = 0; jt < tb; jt++) {
+            const uint8_t *col = buffer_in + jt * SA_SIZE;
+            for (uint32_t k = 0; k < m; k++) {
+                const uint32_t *src = (const uint32_t *)(col + k * q);
+                for (int x = 0; x < SA_SIZE / 4; x++) *d++ = src[x];
+            }
+        }
+    }
+#else
+    ursa3_pack_b(g_v3_b, buffer_in, (int)q, SA_SIZE, (int)m, (int)q);
+#endif
+    memcpy((void*)bi, (const void*)g_v3_b, nb);
+    return EXIT_SUCCESS;
+}
+#endif /* USE_URSA */
+
+
+//      /$$$$$$  /$$$$$$$  /$$      /$$
+//     /$$__  $$| $$__  $$| $$$    /$$$
+//    | $$  \ $$| $$  \ $$| $$$$  /$$$$
+//    | $$$$$$$$| $$$$$$$/| $$ $$/$$ $$
+//    | $$__  $$| $$__  $$| $$  $$$| $$
+//    | $$  | $$| $$  \ $$| $$\  $ | $$
+//    | $$  | $$| $$  | $$| $$ \/  | $$
+//    |__/  |__/|__/  |__/|__/     |__/
+
+#ifdef USE_ARM
+// Software GEMM reference, used when the accelerator is not present
+static int mxm_execute_arm(
+    weight_t*      aw,
+    pixel_t*       bi,
+    container_a_t* ca,
+    uint16_t       l_c_rows_a_rows,
+    uint16_t       n_c_cols_b_cols,
+    uint16_t       m_a_cols_b_rows
+){
+    uint16_t r, c, k;
+
+    for (r = 0; r < l_c_rows_a_rows; r++) {
+        for (c = 0; c < n_c_cols_b_cols; c++) {
+            container_a_t sum = 0;
+
+            for (k = 0; k < m_a_cols_b_rows; k++) {
+                weight_t w = aw[r * m_a_cols_b_rows + k];
+                pixel_t  i = bi[k * n_c_cols_b_cols + c];
+
+                sum += (container_a_t)w * (container_a_t)i;
+            }
+
+            ca[r * n_c_cols_b_cols + c] = sum;
+        }
+    }
+
+    return EXIT_SUCCESS;
+}
+#endif /* USE_ARM */
+
+// 8888888                            888
+//   888                              888
+//   888                              888
+//   888   88888b.  88888b.  888  888 888888
+//   888   888 "88b 888 "88b 888  888 888
+//   888   888  888 888  888 888  888 888
+//   888   888  888 888 d88P Y88b 888 Y88b.
+// 8888888 888  888 88888P"   "Y88888  "Y888
+//                  888
+//                  888
+//                  888
+int populate_test_image_chw_on_pixel_buffer(uint8_t out_buffer, uint8_t* pixels)
+{
+    int image_pixels = (IMAGE_SZ_IN*IMAGE_SZ_IN*IMAGE_CH_IN);
+
+    if (out_buffer >= PIXEL_BUFFER_N) {
+        send_status(out_buffer, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    if (PIXEL_BUFFER_SIZE < image_pixels) {
+        send_status(image_pixels, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    for (int ch = 0; ch < IMAGE_CH_IN; ch++) {
+        for (int r = 0; r < IMAGE_SZ_IN; r++) {
+            for (int c = 0; c < IMAGE_SZ_IN; c++) {
+                int hwc_offset = r*(IMAGE_SZ_IN*IMAGE_CH_IN) +
+                                 c*(IMAGE_CH_IN) +
+                                 ch;
+
+                int chw_offset = ch*(IMAGE_SZ_IN*IMAGE_SZ_IN) +
+                                 r*(IMAGE_SZ_IN) +
+                                 c;
+
+                g_pixel_buffer[out_buffer][chw_offset] = pixel_from_uint8(pixels[hwc_offset]);
+            }
+        }
+    }
+
+    return EXIT_SUCCESS;
+}
+
+
+// http://patorjk.com/software/taag/#f=Colossal
+//  .d8888b.                                   .d8888b.        d8888
+// d88P  Y88b                                 d88P  Y88b      d88888
+// 888    888                                 Y88b.          d88P888
+// 888         .d88b.  88888b.  888  888       "Y888b.      d88P 888
+// 888        d88""88b 888 "88b 888  888          "Y88b.   d88P  888
+// 888    888 888  888 888  888 Y88  88P            "888  d88P   888
+// Y88b  d88P Y88..88P 888  888  Y8bd8P       Y88b  d88P d8888888888
+//  "Y8888P"   "Y88P"  888  888   Y88P         "Y8888P" d88P     888
+
+static int net_process_layer_pixel_conv_sa_body(
+        uint8_t   in_buffer,
+        uint8_t   out_buffer,
+        weight_t* weights,
+        uint8_t   stride,
+        uint8_t   wh_kernel,
+        uint8_t   ch_in,
+        uint16_t  wh_in,
+        uint8_t   ch_out,
+        uint16_t  wh_out,
+        // URSA
+        uint32_t           addr_weights,
+        weight_t*          aw,
+        pixel_t*           bi,
+        int32_t*           ca,
+#ifdef VITIS
+        XMxm_execute_ursa* pxMxm,
+#endif
+        uint8_t            conv_seq
+    )
+{
+    int rc;
+
+    (void)conv_seq;
+
+#ifdef USE_ARM
+    // The accelerator buffers are not used by the software engine
+    (void)addr_weights; (void)aw; (void)bi; (void)ca;
+    #ifdef VITIS
+    (void)pxMxm;
+    #endif
+#endif
+
+#ifdef USE_URSA
+    // Weights are pre-loaded once into aw by populate_aw_with_all_the_weights
+    (void)weights;
+#endif
+
+    if (in_buffer >= PIXEL_BUFFER_N)
+    {
+        send_status(in_buffer, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    if (out_buffer >= FEATURE_BUFFER_N)
+    {
+        send_status(out_buffer, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    pixel_t* in_data  = &(g_pixel_buffer[in_buffer][0]);
+    macc_t*  out_data = &(g_feature_buffer[out_buffer][0]);
+
+    // WEIGHTS: A is (ch_out) x (k*k*ch_in)
+    unsigned int row = ch_out;
+    unsigned int col = wh_kernel * wh_kernel * ch_in;
+
+    unsigned int layer_weights = align_up_sa(row) * align_up_sa(col);
+
+    if (SCRATCHPAD_W_SIZE < layer_weights)
+    {
+        send_status(layer_weights, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    // INPUTS: B is (k*k*ch_in) x (wh_out*wh_out)
+    row = wh_kernel * wh_kernel * ch_in;
+    col = wh_out * wh_out;
+
+    unsigned int layer_im2col = align_up_sa(row) * align_up_sa(col);
+
+    if (SCRATCHPAD_I_SIZE < layer_im2col)
+    {
+        send_status(layer_im2col, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    // FEATURES
+    int layer_features = (wh_out * wh_out * ch_out);
+    if (SCRATCHPAD_A_SIZE < layer_features)
+    {
+        send_status(layer_features, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    if (FEATURE_BUFFER_SIZE < layer_features)
+    {
+        send_status(layer_features, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    uint16_t l_c_rows_a_rows;
+    uint16_t n_c_cols_b_cols;
+    uint16_t m_a_cols_b_rows;
+
+    m_a_cols_b_rows = wh_kernel * wh_kernel * ch_in;
+
+    uint8_t pad = wh_kernel / 2;
+
+    /* ─── Stage 1: image lowering, always on the ARM ─────────────────────── */
+    STAGE_START(TIMER_IM2COL);
+    if ( (rc = populate_scratchpad_bi_with_im2col(
+        in_data,
+        ch_in, wh_in, wh_in,
+        wh_kernel, wh_kernel,
+        pad, pad,
+        stride, stride,
+        g_scratchpad_bi,
+        &n_c_cols_b_cols
+    ) ) != EXIT_SUCCESS )
+    {
+        send_status(rc, __LINE__);
+        return rc;
+    }
+    STAGE_STOP(TIMER_IM2COL);
+
+    aligned_sa_p(ch_out, &l_c_rows_a_rows);
+
+    /* ─── Stage 2 and 3: transfer and GEMM ───────────────────────────────── */
+#ifdef USE_ARM
+
+    if ( (rc = populate_weight_scratchpad(
+        weights,
+        wh_kernel,
+        ch_in,
+        ch_out,
+        g_scratchpad_aw,
+        &l_c_rows_a_rows
+    ) ) != EXIT_SUCCESS )
+    {
+        send_status(rc, __LINE__);
+        return rc;
+    }
+
+    STAGE_START(TIMER_GEMM);
+    if ( (rc = mxm_execute_arm(
+        g_scratchpad_aw,
+        g_scratchpad_bi,
+        g_scratchpad_ca,
+        l_c_rows_a_rows,
+        n_c_cols_b_cols,
+        m_a_cols_b_rows
+    ) ) != EXIT_SUCCESS )
+    {
+        send_status(rc, __LINE__);
+        return rc;
+    }
+    STAGE_STOP(TIMER_GEMM);
+
+    const int32_t* ca_result = (const int32_t*)g_scratchpad_ca;
+
+#endif /* USE_ARM */
+
+#ifdef USE_URSA
+
+    uint32_t bytes_b = ursa3_b_bytes(SA_SIZE, m_a_cols_b_rows, n_c_cols_b_cols);   /* v3 packed */
+    uint32_t bytes_c = (uint32_t)l_c_rows_a_rows * n_c_cols_b_cols * sizeof(int32_t);
+
+    /* Stage 2: the lowered image is copied into the B window and pushed out
+       of the data cache. Unlike the benchmark, this happens on every layer,
+       because B is rebuilt from a different activation map each time. */
+    STAGE_START(TIMER_TRANSFER);
+
+    if ( (rc = populate_bi_with_scratchpad_bi(
+        g_scratchpad_bi,
+        m_a_cols_b_rows,
+        n_c_cols_b_cols,
+        bi
+    ) ) != EXIT_SUCCESS )
+    {
+        send_status(rc, __LINE__);
+        return rc;
+    }
+
+    FLUSH_B(bi, bytes_b);
+    FLUSH_C(ca, bytes_c);
+
+    STAGE_STOP(TIMER_TRANSFER);
+
+    /* Stage 3: the accelerator. */
+    uint32_t addr_a = BRAM_AW_BASEADDR + addr_weights * sizeof(weight_t);
+    uint32_t addr_b = BRAM_BI_BASEADDR;
+    uint32_t addr_c = BRAM_CA_BASEADDR;
+
+    STAGE_START(TIMER_GEMM);
+
+    uint8_t sa_status = mxm_execute_ursa(
+        pxMxm,
+        l_c_rows_a_rows, n_c_cols_b_cols, m_a_cols_b_rows,
+        addr_a, addr_b, addr_c
+    );
+
+    STAGE_STOP(TIMER_GEMM);
+
+    if (sa_status != SA_SUCCESS) {
+        xil_printf("[cnn_conv_engine] MXM Compute failed 0x%08x. Abort.\n\r", sa_status);
+        return sa_status;
+    }
+
+    INVALIDATE_C(ca, bytes_c);
+
+    const int32_t* ca_result = (const int32_t*)ca;
+
+#endif /* USE_URSA */
+
+    //===========================================
+    // Feature map de-tiling
+    //===========================================
+    layer_features = l_c_rows_a_rows * n_c_cols_b_cols;
+    if (SCRATCHPAD_A_SIZE < layer_features) {
+        send_status(layer_features, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    if ( (rc = populate_outdata_with_ca(
+        ca_result,
+        wh_out,
+        ch_out,
+        n_c_cols_b_cols,
+#ifdef USE_URSA
+        out_buffer
+#else
+        out_data
+#endif
+    ) ) != EXIT_SUCCESS )
+    {
+        send_status(rc, __LINE__);
+        return rc;
+    }
+
+    return EXIT_SUCCESS;
+}
+
+/* Public entry: times the whole call per layer, then runs the body. */
+int net_process_layer_pixel_conv_sa(
+        uint8_t   in_buffer,
+        uint8_t   out_buffer,
+        weight_t* weights,
+        uint8_t   stride,
+        uint8_t   wh_kernel,
+        uint8_t   ch_in,
+        uint16_t  wh_in,
+        uint8_t   ch_out,
+        uint16_t  wh_out,
+        // URSA
+        uint32_t           addr_weights,
+        weight_t*          aw,
+        pixel_t*           bi,
+        int32_t*           ca,
+#ifdef VITIS
+        XMxm_execute_ursa* pxMxm,
+#endif
+        uint8_t            conv_seq
+    )
+{
+#ifdef VITIS
+    s_cur_layer = (conv_seq < CONV_PROFILE_LAYERS) ? conv_seq : (CONV_PROFILE_LAYERS - 1);
+    app_timer_t t0 = app_timer_now();
+#endif
+    int rc = net_process_layer_pixel_conv_sa_body(
+        in_buffer, out_buffer, weights, stride, wh_kernel, ch_in, wh_in,
+        ch_out, wh_out, addr_weights, aw, bi, ca,
+#ifdef VITIS
+        pxMxm,
+#endif
+        conv_seq);
+#ifdef VITIS
+    s_layer_ticks[PROF_CALL][s_cur_layer] += app_timer_subtract(t0, app_timer_now());
+#endif
+    return rc;
+}
+
+//  .d88888b.                             888
+// d88P" "Y88b                            888
+// 888     888                            888
+// 888     888 888  888  8888b.  88888b.  888888
+// 888     888 888  888     "88b 888 "88b 888
+// 888 Y8b 888 888  888 .d888888 888  888 888
+// Y88b.Y8b88P Y88b 888 888  888 888  888 Y88b.
+//  "Y888888"   "Y88888 "Y888888 888  888  "Y888
+//        Y8b
+
+int net_process_layer_mul_in_place(uint8_t in_out_buffer, float scale, uint8_t ch_out, uint16_t wh_out)
+{
+    int layer_features = (wh_out*wh_out*ch_out);
+
+    if (FEATURE_BUFFER_SIZE < layer_features) {
+        send_status(layer_features, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    macc_t* in_out_data = &(g_feature_buffer[in_out_buffer][0]);
+
+#ifdef USE_URSA
+    /* URSA v3: the C of the conv that wrote this buffer is still tile-major
+       in g_v3_c. De-tile and scale in one pass: element (co, j) of C, j <
+       wh_out^2, is at ((co/SA)*(Q/SA) + j/SA)*SA*SA + (co%SA)*SA + j%SA. The
+       arithmetic per element is the one of the loop below. */
+    if (g_v3_c_pending.pending) {
+        if (g_v3_c_pending.out_buffer != in_out_buffer ||
+            g_v3_c_pending.ch_out != ch_out || g_v3_c_pending.wh_out != wh_out) {
+            send_status(in_out_buffer, __LINE__);
+            return EXIT_FAILURE;
+        }
+        const unsigned hw = (unsigned)wh_out * wh_out;
+        const unsigned tb = g_v3_c_pending.q / SA_SIZE;
+        for (unsigned co = 0; co < ch_out; co++) {
+            const int32_t *row = g_v3_c + (co / SA_SIZE) * tb * SA_SIZE * SA_SIZE
+                                        + (co % SA_SIZE) * SA_SIZE;
+            macc_t *dst = in_out_data + co * hw;
+            for (unsigned j0 = 0; j0 < hw; j0 += SA_SIZE) {
+                const int32_t *src = row + (j0 / SA_SIZE) * SA_SIZE * SA_SIZE;
+                const unsigned nj = (hw - j0 < SA_SIZE) ? (hw - j0) : SA_SIZE;
+                for (unsigned x = 0; x < nj; x++) {
+                    float f = macc_to_float((macc_t)src[x]);
+                    f *= scale;
+                    dst[j0 + x] = (macc_t)f;
+                }
+            }
+        }
+        g_v3_c_pending.pending = 0;
+        return EXIT_SUCCESS;
+    }
+#endif
+
+    /* macc_to_float(f) with a float argument converted to macc_t on the way
+       in, back to float on the way out, then to macc_t again on assignment.
+       The result was correct, by truncation toward zero at each step, but it
+       is three conversions where one cast says the same thing. There is no
+       float_to_macc in ursa_math.h, and there does not need to be. */
+    for (int i = 0; i < layer_features; i++) {
+        float f;
+        f = macc_to_float(in_out_data[i]);
+        f *= scale;
+        in_out_data[i] = (macc_t)f;
+    }
+
+    return EXIT_SUCCESS;
+}
+
+// 8888888b.          888                    .d8888b.            .d8888b.  888
+// 888   Y88b         888                   d88P  "88b          d88P  Y88b 888
+// 888    888         888                   Y88b. d88P          888    888 888
+// 888   d88P .d88b.  888     888  888       "Y8888P"           888        888  8888b.  88888b.d88b.  88888b.
+// 8888888P" d8P  Y8b 888     888  888      .d88P88K.d88P       888        888     "88b 888 "888 "88b 888 "88b
+// 888 T88b  88888888 888     888  888      888"  Y888P"        888    888 888 .d888888 888  888  888 888  888
+// 888  T88b Y8b.     888     Y88b 888      Y88b .d8888b        Y88b  d88P 888 888  888 888  888  888 888 d88P
+// 888   T88b "Y8888  88888888 "Y88888       "Y8888P" Y88b       "Y8888P"  888 "Y888888 888  888  888 88888P"
+
+int net_process_layer_relu_and_clamp(
+    uint8_t  in_buffer,
+    uint8_t  out_buffer,
+    uint16_t max_value,
+    uint8_t  ch_out,
+    uint16_t wh_out
+    )
+{
+    unsigned int global_y;
+    unsigned int global_x;
+    unsigned int global_co;
+
+    if (in_buffer >= PIXEL_BUFFER_N) {
+        send_status(in_buffer, __LINE__);
+        return EXIT_FAILURE;
+    }
+    if (out_buffer >= FEATURE_BUFFER_N) {
+        send_status(out_buffer, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    macc_t*  in_data  = &(g_feature_buffer[out_buffer][0]);
+    pixel_t* out_data = &(g_pixel_buffer[in_buffer][0]);
+
+    int layer_features = (wh_out*wh_out*ch_out);
+
+    if (FEATURE_BUFFER_SIZE < layer_features) {
+        send_status(layer_features, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    if (PIXEL_BUFFER_SIZE < layer_features) {
+        send_status(layer_features, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    for (global_y = 0; global_y < wh_out; global_y++) {
+        for (global_x = 0; global_x < wh_out; global_x++) {
+            for (global_co = 0; global_co < ch_out; global_co++) {
+                unsigned int idx = global_x + global_y*wh_out + global_co*wh_out*wh_out;
+                macc_t out = in_data[idx];
+
+                if (out < 0) {
+                    out_data[idx] = 0;
+                }
+                else if (out > max_value) {
+                    out_data[idx] = max_value;
+                }
+                else {
+                    out_data[idx] = out;
+                }
+            }
+        }
+    }
+
+    return EXIT_SUCCESS;
+}
+
+
+// 8888888b.                   888 d8b
+// 888   Y88b                  888 Y8P
+// 888    888                  888
+// 888   d88P .d88b.   .d88b.  888 888 88888b.   .d88b.
+// 8888888P" d88""88b d88""88b 888 888 888 "88b d88P"88b
+// 888       888  888 888  888 888 888 888  888 888  888
+// 888       Y88..88P Y88..88P 888 888 888  888 Y88b 888
+// 888        "Y88P"   "Y88P"  888 888 888  888  "Y88888
+//                                                   888
+//                                              Y8b d88P
+//                                               "Y88P"
+
+int net_process_global_pool(uint8_t in_buffer)
+{
+    int co;
+    gpool_t ch_out_sum;
+
+    if (in_buffer >= PIXEL_BUFFER_N) {
+        send_status(in_buffer, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    pixel_t* in_data  = &(g_pixel_buffer[in_buffer][0]);
+    gpool_t* out_data = &(g_pooling_buffer[0]);
+
+    if ((sizeof(g_pooling_buffer)/sizeof(g_pooling_buffer[0])) < POOLING_CH_OUT) {
+        send_status(POOLING_CH_OUT, __LINE__);
+        return EXIT_FAILURE;
+    }
+
+    for (co = 0; co < POOLING_CH_OUT; co++) {
+        ch_out_sum = 0;
+
+        for (int y_row_out = 0; y_row_out < POOLING_WH_IN; y_row_out++) {
+            for (int x_col_out = 0; x_col_out < POOLING_WH_IN; x_col_out++) {
+                int co_offset         = co*POOLING_WH_IN*POOLING_WH_IN;
+                int co_row_offset     = y_row_out*POOLING_WH_IN + co_offset;
+                int addr_pixel_offset = x_col_out + co_row_offset;
+                pixel_t data;
+                data = in_data[addr_pixel_offset];
+                ch_out_sum = add_pooling(ch_out_sum, data);
+            }
+        }
+        out_data[co] = ch_out_sum;
+    }
+
+    return EXIT_SUCCESS;
+}

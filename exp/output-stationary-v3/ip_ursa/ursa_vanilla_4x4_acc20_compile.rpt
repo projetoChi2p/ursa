@@ -1,0 +1,326 @@
+
+
+================================================================
+== Synthesis Summary Report of 'mxm_execute_ursa'
+================================================================
++ General Information: 
+    * Date:           Thu Oct 15 22:12:09 2026
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        ursa
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+----------+-----------+------------+-----+
+    |                Modules                | Issue|      | Latency |  Latency  | Iteration|         |  Trip |          |         |          |           |            |     |
+    |                & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined|  BRAM   |    DSP   |     FF    |     LUT    | URAM|
+    +---------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+----------+-----------+------------+-----+
+    |+ mxm_execute_ursa                     |     -|  0.00|    10151|  1.015e+05|         -|    10152|      -|        no|  16 (5%)|  24 (10%)|  6522 (6%)|  7392 (13%)|    -|
+    | + ursa_dataflow*                      |     -|  0.00|    10148|  1.015e+05|         -|    10139|      -|  dataflow|        -|  24 (10%)|  3526 (3%)|   4444 (8%)|    -|
+    |  + read_a                             |     -|  0.00|     9266|  9.266e+04|         -|     9266|      -|        no|        -|   2 (~0%)|  374 (~0%)|    906 (1%)|    -|
+    |   o RA_ROW                            |     -|  7.30|     9256|  9.256e+04|      2314|        -|      4|        no|        -|         -|          -|           -|    -|
+    |    + read_a_Pipeline_RA_FIRST         |     -|  0.00|      147|  1.470e+03|         -|      147|      -|        no|        -|         -|   69 (~0%)|   104 (~0%)|    -|
+    |     o RA_FIRST                        |     -|  7.30|      145|  1.450e+03|         3|        1|    144|       yes|        -|         -|          -|           -|    -|
+    |    + read_a_Pipeline_RA_REPLAY        |     -|  1.33|     2162|  2.162e+04|         -|     2162|      -|        no|        -|         -|   84 (~0%)|   199 (~0%)|    -|
+    |     o RA_REPLAY                       |     -|  7.30|     2160|  2.160e+04|         2|        1|   2160|       yes|        -|         -|          -|           -|    -|
+    |  + read_b                             |     -|  0.00|     9230|  9.230e+04|         -|     9230|      -|        no|        -|    3 (1%)|  485 (~0%)|   449 (~0%)|    -|
+    |   + read_b_Pipeline_RB_ROW_RB_STREAM  |     -|  0.00|     9227|  9.227e+04|         -|     9227|      -|        no|        -|         -|  257 (~0%)|   333 (~0%)|    -|
+    |    o RB_ROW_RB_STREAM                 |     -|  7.30|     9225|  9.225e+04|        11|        1|   9216|       yes|        -|         -|          -|           -|    -|
+    |  + ursa_dataflow_Block_entry3_proc    |     -|  1.70|        0|      0.000|         -|        0|      -|        no|        -|   1 (~0%)|   30 (~0%)|    26 (~0%)|    -|
+    |  + compute                            |     -|  0.03|    10138|  1.014e+05|         -|    10138|      -|        no|        -|   18 (8%)|  1655 (1%)|   1453 (2%)|    -|
+    |   + compute_Pipeline_CK               |     -|  0.46|    10133|  1.013e+05|         -|    10133|      -|        no|        -|   16 (7%)|  1393 (1%)|   1162 (2%)|    -|
+    |    o CK                               |     -|  7.30|    10131|  1.013e+05|         5|        1|  10128|       yes|        -|         -|          -|           -|    -|
+    |  + entry_proc                         |     -|  3.67|        0|      0.000|         -|        0|      -|        no|        -|         -|    3 (~0%)|    29 (~0%)|    -|
+    |  + write_c                            |     -|  0.00|     2060|  2.060e+04|         -|     2060|      -|        no|        -|         -|  282 (~0%)|   1016 (1%)|    -|
+    |   + write_c_Pipeline_WC               |     -|  0.00|     2052|  2.052e+04|         -|     2052|      -|        no|        -|         -|  186 (~0%)|    761 (1%)|    -|
+    |    o WC                               |     -|  7.30|     2050|  2.050e+04|         4|        1|   2048|       yes|        -|         -|          -|           -|    -|
+    +---------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+----------+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|           | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_aw  | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 64           | 16           | 8           | 8           | BRAM=4            |
+| m_axi_bi  | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 64           | 16           | 8           | 8           | BRAM=4            |
+| m_axi_ca  | 64 -> 64   | 32            | 0       | slave  | 0        | 0         | 16           | 64           | 8           | 8           | BRAM=8            |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_ap      | 32         | 6             | 24     | 1        |
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register  | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_ap      | CTRL      | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_ap      | GIER      | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_ap      | IP_IER    | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_ap      | IP_ISR    | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_ap      | ap_return | 0x10   | 32    | R      | Data signal of ap_return         |                                                                      |
+| s_axi_ap      | a0_p      | 0x18   | 32    | W      | Data signal of a0_p              |                                                                      |
+| s_axi_ap      | b0_q      | 0x20   | 32    | W      | Data signal of b0_q              |                                                                      |
+| s_axi_ap      | m         | 0x28   | 32    | W      | Data signal of m                 |                                                                      |
+| s_axi_control | addr_a0   | 0x10   | 32    | W      | Data signal of addr_a0           |                                                                      |
+| s_axi_control | addr_b0   | 0x18   | 32    | W      | Data signal of addr_b0           |                                                                      |
+| s_axi_control | addr_c0   | 0x20   | 32    | W      | Data signal of addr_c0           |                                                                      |
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------------+
+| Argument | Direction | Datatype            |
++----------+-----------+---------------------+
+| addr_a0  | in        | ap_uint<32> const * |
+| a0_p     | in        | unsigned short      |
+| addr_b0  | in        | ap_uint<32> const * |
+| b0_q     | in        | unsigned short      |
+| addr_c0  | out       | ap_uint<64>*        |
+| m        | in        | unsigned short      |
+| return   | out       | unsigned char       |
++----------+-----------+---------------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+-------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                             |
++----------+---------------+-----------+----------+-------------------------------------+
+| addr_a0  | m_axi_aw      | interface |          |                                     |
+| addr_a0  | s_axi_control | register  | offset   | name=addr_a0 offset=0x10 range=32   |
+| a0_p     | s_axi_ap      | register  |          | name=a0_p offset=0x18 range=32      |
+| addr_b0  | m_axi_bi      | interface |          |                                     |
+| addr_b0  | s_axi_control | register  | offset   | name=addr_b0 offset=0x18 range=32   |
+| b0_q     | s_axi_ap      | register  |          | name=b0_q offset=0x20 range=32      |
+| addr_c0  | m_axi_ca      | interface |          |                                     |
+| addr_c0  | s_axi_control | register  | offset   | name=addr_c0 offset=0x20 range=32   |
+| m        | s_axi_ap      | register  |          | name=m offset=0x28 range=32         |
+| return   | s_axi_ap      | register  |          | name=ap_return offset=0x10 range=32 |
++----------+---------------+-----------+----------+-------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+----------+-------+-----------+------------------------------------------------------------------------------------------------+
+| HW Interface | Direction | Length   | Width | Loop      | Loop Location                                                                                  |
++--------------+-----------+----------+-------+-----------+------------------------------------------------------------------------------------------------+
+| m_axi_aw     | read      | variable | 32    | RA_FIRST  | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:71:12  |
+| m_axi_bi     | read      | variable | 32    | RB_STREAM | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:109:13 |
+| m_axi_ca     | write     | variable | 64    | WC        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:230:9  |
++--------------+-----------+----------+-------+-----------+------------------------------------------------------------------------------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+------------------------------------------------------------------------------------------------+-----------+--------------+----------+-----------+------------------------------------------------------------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location                                                                                | Direction | Burst Status | Length   | Loop      | Loop Location                                                                                  | Resolution | Problem                                                                                               |
++--------------+----------+------------------------------------------------------------------------------------------------+-----------+--------------+----------+-----------+------------------------------------------------------------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| m_axi_aw     | a        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:74:24  | read      | Widen Fail   |          | RA_FIRST  | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:71:12  | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_aw     | a        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:74:24  | read      | Inferred     | variable | RA_ROW    | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:66:13  |            |                                                                                                       |
+| m_axi_bi     | b        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:112:24 | read      | Widen Fail   |          | RB_STREAM | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:109:13 | 214-353    | Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_bi     | b        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:112:24 | read      | Fail         |          | RB_ROW    | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:107:13 | 214-229    | Could not analyze pattern                                                                             |
+| m_axi_bi     | b        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:112:24 | read      | Inferred     | variable | RB_STREAM | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:109:13 |            |                                                                                                       |
+| m_axi_ca     | c        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:243:14 | write     | Widen Fail   |          | WC        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:230:9  | 214-353    | Could not widen since type i64 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_ca     | c        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:243:14 | write     | Inferred     | variable | WC        | /home/ulisses/Projects/ursa/exp/output-stationary-v3/sources/vanilla/src/core/shell.cpp:230:9  |            |                                                                                                       |
++--------------+----------+------------------------------------------------------------------------------------------------+-----------+--------------+----------+-----------+------------------------------------------------------------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+-------------+-----+-----------+---------+
+| Name                                  | DSP | Pragma | Variable    | Op  | Impl      | Latency |
++---------------------------------------+-----+--------+-------------+-----+-----------+---------+
+| + mxm_execute_ursa                    | 24  |        |             |     |           |         |
+|   add_ln306_fu_164_p2                 |     |        | add_ln306   | add | fabric    | 0       |
+|  + ursa_dataflow                      | 24  |        |             |     |           |         |
+|   + read_a                            | 2   |        |             |     |           |         |
+|     sub24_fu_240_p2                   |     |        | sub24       | add | fabric    | 0       |
+|     mul_16ns_15s_31_1_1_U17           | 1   |        | n_words     | mul | auto      | 0       |
+|     sub51_fu_261_p2                   |     |        | sub51       | add | fabric    | 0       |
+|     mul_16ns_14ns_30_1_1_U16          | 1   |        | mul_ln66    | mul | auto      | 0       |
+|     add_ln66_fu_275_p2                |     |        | add_ln66    | add | fabric    | 0       |
+|    + read_a_Pipeline_RA_FIRST         | 0   |        |             |     |           |         |
+|      add_ln71_fu_133_p2               |     |        | add_ln71    | add | fabric    | 0       |
+|    + read_a_Pipeline_RA_REPLAY        | 0   |        |             |     |           |         |
+|      n_4_fu_115_p2                    |     |        | n_4         | add | fabric    | 0       |
+|      add_ln93_fu_138_p2               |     |        | add_ln93    | add | fabric    | 0       |
+|   + read_b                            | 3   |        |             |     |           |         |
+|     mul_16ns_14ns_30_1_1_U35          | 1   |        | n_words     | mul | auto      | 0       |
+|     mul_14ns_30ns_44_2_1_U34          | 2   |        | bound       | mul | auto      | 1       |
+|    + read_b_Pipeline_RB_ROW_RB_STREAM | 0   |        |             |     |           |         |
+|      add_ln107_fu_173_p2              |     |        | add_ln107   | add | fabric    | 0       |
+|      add_ln109_fu_190_p2              |     |        | add_ln109   | add | fabric    | 0       |
+|   + ursa_dataflow_Block_entry3_proc   | 1   |        |             |     |           |         |
+|     mul_14ns_14ns_28_1_1_U3           | 1   |        | n_tiles     | mul | auto      | 0       |
+|   + compute                           | 18  |        |             |     |           |         |
+|     T_fu_94_p2                        |     |        | T           | add | fabric    | 0       |
+|     mul_28ns_16ns_32_3_1_U70          | 2   |        | total       | mul | auto      | 2       |
+|     add21_i_fu_111_p2                 |     |        | add21_i     | add | fabric    | 0       |
+|     sub111_i_fu_117_p2                |     |        | sub111_i    | add | fabric    | 0       |
+|    + compute_Pipeline_CK              | 16  |        |             |     |           |         |
+|      n_6_fu_737_p2                    |     |        | n_6         | add | fabric    | 0       |
+|      drain_5_fu_1291_p2               |     |        | drain_5     | add | fabric    | 0       |
+|      mac_muladd_8ns_8s_20s_20_4_1_U44 | 1   |        | mul_ln20    | mul | dsp_slice | 3       |
+|      mac_muladd_8ns_8s_20s_20_4_1_U44 | 1   |        | sa_pe_ba_16 | add | dsp_slice | 3       |
+|      mac_muladd_8ns_8s_20s_20_4_1_U45 | 1   |        | mul_ln20_1  | mul | dsp_slice | 3       |
+|      mac_muladd_8ns_8s_20s_20_4_1_U45 | 1   |        | sa_pe_ba_17 | add | dsp_slice | 3       |
+|      mac_muladd_8ns_8s_20s_20_4_1_U46 | 1   |        | mul_ln20_2  | mul | dsp_slice | 3       |
+|      mac_muladd_8ns_8s_20s_20_4_1_U46 | 1   |        | sa_pe_ba_18 | add | dsp_slice | 3       |
+|      mac_muladd_8ns_8s_20s_20_4_1_U47 | 1   |        | mul_ln20_3  | mul | dsp_slice | 3       |
+|      mac_muladd_8ns_8s_20s_20_4_1_U47 | 1   |        | sa_pe_ba_19 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U48 | 1   |        | mul_ln20_4  | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U48 | 1   |        | sa_pe_ba_20 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U49 | 1   |        | mul_ln20_5  | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U49 | 1   |        | sa_pe_ba_21 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U50 | 1   |        | mul_ln20_6  | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U50 | 1   |        | sa_pe_ba_22 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U51 | 1   |        | mul_ln20_7  | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U51 | 1   |        | sa_pe_ba_23 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U52 | 1   |        | mul_ln20_8  | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U52 | 1   |        | sa_pe_ba_24 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U53 | 1   |        | mul_ln20_9  | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U53 | 1   |        | sa_pe_ba_25 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U54 | 1   |        | mul_ln20_10 | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U54 | 1   |        | sa_pe_ba_26 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U55 | 1   |        | mul_ln20_11 | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U55 | 1   |        | sa_pe_ba_27 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U56 | 1   |        | mul_ln20_12 | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U56 | 1   |        | sa_pe_ba_28 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U57 | 1   |        | mul_ln20_13 | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U57 | 1   |        | sa_pe_ba_29 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U58 | 1   |        | mul_ln20_14 | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U58 | 1   |        | sa_pe_ba_30 | add | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U59 | 1   |        | mul_ln20_15 | mul | dsp_slice | 3       |
+|      mac_muladd_8s_8ns_20s_20_4_1_U59 | 1   |        | sa_pe_ba_31 | add | dsp_slice | 3       |
+|      t_3_fu_762_p2                    |     |        | t_3         | add | fabric    | 0       |
+|   + write_c                           | 0   |        |             |     |           |         |
+|    + write_c_Pipeline_WC              | 0   |        |             |     |           |         |
+|      add_ln230_fu_164_p2              |     |        | add_ln230   | add | fabric    | 0       |
+|      add_ln239_fu_225_p2              |     |        | add_ln239   | add | fabric    | 0       |
+|      add_ln239_1_fu_247_p2            |     |        | add_ln239_1 | add | fabric    | 0       |
+|      add_ln245_fu_182_p2              |     |        | add_ln245   | add | fabric    | 0       |
++---------------------------------------+-----+--------+-------------+-----+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++------------------------------+--------------+-------------+------+------+--------+-------------------------+--------+---------+------------------+
+| Name                         | Usage        | Type        | BRAM | URAM | Pragma | Variable                | Impl   | Latency | Bitwidth, Depth, |
+|                              |              |             |      |      |        |                         |        |         | Banks            |
++------------------------------+--------------+-------------+------+------+--------+-------------------------+--------+---------+------------------+
+| + mxm_execute_ursa           |              |             | 16   | 0    |        |                         |        |         |                  |
+|   ap_s_axi_U                 | interface    | s_axilite   |      |      |        |                         |        |         |                  |
+|   control_s_axi_U            | interface    | s_axilite   |      |      |        |                         |        |         |                  |
+|   aw_m_axi_U                 | interface    | m_axi       | 4    |      |        |                         |        |         |                  |
+|   bi_m_axi_U                 | interface    | m_axi       | 4    |      |        |                         |        |         |                  |
+|   ca_m_axi_U                 | interface    | m_axi       | 8    |      |        |                         |        |         |                  |
+|  + ursa_dataflow             |              |             | 0    | 0    |        |                         |        |         |                  |
+|    c_c_U                     | fifo channel | scalar prop |      |      |        | c_c                     | srl    | 0       | 32, 4, 1         |
+|    n_tiles_loc_c13_channel_U | fifo channel | task level  |      |      |        | n_tiles_loc_c13_channel | srl    | 0       | 28, 2, 1         |
+|    s_a_U                     | fifo channel | stream      |      |      |        | s_a                     | srl    | 0       | 32, 32, 1        |
+|    kw_c_U                    | fifo channel | scalar prop |      |      |        | kw_c                    | srl    | 0       | 16, 2, 1         |
+|    s_b_U                     | fifo channel | stream      |      |      |        | s_b                     | srl    | 0       | 32, 32, 1        |
+|    s_c_U                     | fifo channel | stream      |      |      |        | s_c                     | srl    | 0       | 80, 8, 1         |
+|    n_tiles_loc_c_U           | fifo channel | scalar prop |      |      |        | n_tiles_loc_c           | srl    | 0       | 28, 2, 1         |
+|   + read_a                   |              |             | 0    | 0    |        |                         |        |         |                  |
+|     a_buf_U                  | ram_2p array |             |      |      | yes    | a_buf                   | lutram | 1       | 32, 256, 1       |
++------------------------------+--------------+-------------+------+------+--------+-------------------------+--------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| Type            | Options                                                                                                                                                                | Location                                                               |
++-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| inline          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:11 in sa_init                       |
+| array_partition | variable=sa->pe complete dim=0                                                                                                                                         | ../sources/vanilla/src/core/sa.cpp:12 in sa_init, sa->pe               |
+| array_partition | variable=sa->in_mtx_a_li complete                                                                                                                                      | ../sources/vanilla/src/core/sa.cpp:13 in sa_init, sa->in_mtx_a_li      |
+| array_partition | variable=sa->in_mtx_b_tw complete                                                                                                                                      | ../sources/vanilla/src/core/sa.cpp:14 in sa_init, sa->in_mtx_b_tw      |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:16 in sa_init                       |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:18 in sa_init                       |
+| inline          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:27 in sa_reset                      |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:29 in sa_reset                      |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:31 in sa_reset                      |
+| inline          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:38 in sa_compute                    |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:43 in sa_compute                    |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:50 in sa_compute                    |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:52 in sa_compute                    |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:59 in sa_compute                    |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:61 in sa_compute                    |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:68 in sa_compute                    |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:70 in sa_compute                    |
+| inline          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:79 in sa_row                        |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/sa.cpp:82 in sa_row                        |
+| bind_storage    | variable=a_buf type=ram_2p impl=lutram                                                                                                                                 | ../sources/vanilla/src/core/shell.cpp:63 in read_a, a_buf              |
+| loop_tripcount  | min=1 max=4 avg=2                                                                                                                                                      | ../sources/vanilla/src/core/shell.cpp:69 in read_a                     |
+| pipeline        | II=(4 / 4)                                                                                                                                                             | ../sources/vanilla/src/core/shell.cpp:72 in read_a                     |
+| loop_tripcount  | min=36 max=144 avg=144                                                                                                                                                 | ../sources/vanilla/src/core/shell.cpp:73 in read_a                     |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:77 in read_a                     |
+| pipeline        | II=(4 / 4)                                                                                                                                                             | ../sources/vanilla/src/core/shell.cpp:86 in read_a                     |
+| loop_tripcount  | min=0 max=2160 avg=2160                                                                                                                                                | ../sources/vanilla/src/core/shell.cpp:87 in read_a                     |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:90 in read_a                     |
+| loop_tripcount  | min=1 max=4 avg=2                                                                                                                                                      | ../sources/vanilla/src/core/shell.cpp:108 in read_b                    |
+| pipeline        | II=(4 / 4)                                                                                                                                                             | ../sources/vanilla/src/core/shell.cpp:110 in read_b                    |
+| loop_tripcount  | min=144 max=2304 avg=2304                                                                                                                                              | ../sources/vanilla/src/core/shell.cpp:111 in read_b                    |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:114 in read_b                    |
+| array_partition | variable=dA complete dim=0                                                                                                                                             | ../sources/vanilla/src/core/shell.cpp:140 in compute, dA               |
+| array_partition | variable=dB complete dim=0                                                                                                                                             | ../sources/vanilla/src/core/shell.cpp:141 in compute, dB               |
+| array_partition | variable=shadow complete dim=0                                                                                                                                         | ../sources/vanilla/src/core/shell.cpp:144 in compute, shadow           |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:147 in compute                   |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:150 in compute                   |
+| pipeline        | II=1                                                                                                                                                                   | ../sources/vanilla/src/core/shell.cpp:162 in compute                   |
+| loop_tripcount  | min=166 max=10128 avg=2536                                                                                                                                             | ../sources/vanilla/src/core/shell.cpp:163 in compute                   |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:182 in compute                   |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:192 in compute                   |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:206 in compute                   |
+| pipeline        | II=1                                                                                                                                                                   | ../sources/vanilla/src/core/shell.cpp:231 in write_c                   |
+| loop_tripcount  | min=32 max=2048 avg=512                                                                                                                                                | ../sources/vanilla/src/core/shell.cpp:232 in write_c                   |
+| unroll          |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:237 in write_c                   |
+| dataflow        |                                                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:255 in ursa_dataflow             |
+| stream          | variable=s_a depth=32                                                                                                                                                  | ../sources/vanilla/src/core/shell.cpp:260 in ursa_dataflow, s_a        |
+| stream          | variable=s_b depth=32                                                                                                                                                  | ../sources/vanilla/src/core/shell.cpp:261 in ursa_dataflow, s_b        |
+| stream          | variable=s_c depth=2*4                                                                                                                                                 | ../sources/vanilla/src/core/shell.cpp:262 in ursa_dataflow, s_c        |
+| bind_storage    | variable=s_a type=fifo impl=srl                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:265 in ursa_dataflow, s_a        |
+| bind_storage    | variable=s_b type=fifo impl=srl                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:266 in ursa_dataflow, s_b        |
+| bind_storage    | variable=s_c type=fifo impl=srl                                                                                                                                        | ../sources/vanilla/src/core/shell.cpp:267 in ursa_dataflow, s_c        |
+| interface       | mode=m_axi port=addr_a0 bundle=aw offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=((4*1024) / 4)  | ../sources/vanilla/src/core/shell.cpp:289 in mxm_execute_ursa, addr_a0 |
+| interface       | mode=m_axi port=addr_b0 bundle=bi offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=64 max_write_burst_length=16 depth=((16*1024) / 4) | ../sources/vanilla/src/core/shell.cpp:293 in mxm_execute_ursa, addr_b0 |
+| interface       | mode=m_axi port=addr_c0 bundle=ca offset=slave num_read_outstanding=8 num_write_outstanding=8 max_read_burst_length=16 max_write_burst_length=64 depth=((16*1024) / 8) | ../sources/vanilla/src/core/shell.cpp:297 in mxm_execute_ursa, addr_c0 |
+| interface       | mode=s_axilite port=return bundle=ap register                                                                                                                          | ../sources/vanilla/src/core/shell.cpp:301 in mxm_execute_ursa, return  |
+| interface       | mode=s_axilite port=a0_p bundle=ap register                                                                                                                            | ../sources/vanilla/src/core/shell.cpp:302 in mxm_execute_ursa, a0_p    |
+| interface       | mode=s_axilite port=b0_q bundle=ap register                                                                                                                            | ../sources/vanilla/src/core/shell.cpp:303 in mxm_execute_ursa, b0_q    |
+| interface       | mode=s_axilite port=m bundle=ap register                                                                                                                               | ../sources/vanilla/src/core/shell.cpp:304 in mxm_execute_ursa, m       |
++-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+
