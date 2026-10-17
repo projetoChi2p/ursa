@@ -1,0 +1,7 @@
+# Only declares the build backend, so pip performs a standard (PEP 517/660)
+# build that honours --no-build-isolation. torch is deliberately not listed:
+# an isolated build would download the default CUDA wheel. Build with
+#   pip install --no-build-isolation -e .
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
