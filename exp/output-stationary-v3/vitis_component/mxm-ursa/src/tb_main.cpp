@@ -298,6 +298,37 @@ static int plan_layer(const ursa_layer_t *L, lplan_t *pl)
 
 static bench_c_t s_acc[BRAM_CA_SIZE / sizeof(bench_c_t)] __attribute__((aligned(32)));
 
+/* UM: 16/10/26 - cache upkeep of the windows. The OCM windows are cacheable
+   and the ACP port is not coherent here (AxUSER = 0), so what the ARM writes
+   must be flushed before the call and C must be invalidated before it is read.
+   HYBRID keeps A in PL BRAM (device memory, nothing to do). On BRAM all three
+   are device memory and these are empty. The cost is part of us_xfer, as it
+   is in the runtime. */
+static inline void win_flush_a(uint32_t n)
+{
+#if defined(VITIS) && CACHE_EN_D && defined(OCM)
+    Xil_DCacheFlushRange((INTPTR)g_aw, n);
+#else
+    (void)n;
+#endif
+}
+static inline void win_flush_b(uint32_t n)
+{
+#if defined(VITIS) && CACHE_EN_D && (defined(OCM) || defined(HYBRID))
+    Xil_DCacheFlushRange((INTPTR)g_bi, n);
+#else
+    (void)n;
+#endif
+}
+static inline void win_inval_c(uint32_t n)
+{
+#if defined(VITIS) && CACHE_EN_D && (defined(OCM) || defined(HYBRID))
+    Xil_DCacheInvalidateRange((INTPTR)g_ca, n);
+#else
+    (void)n;
+#endif
+}
+
 /* One pass over the calls of a layer. xfer = 0: calls only. */
 static uint8_t run_layer(const ursa_layer_t *L, const lplan_t *pl, int xfer)
 {
@@ -308,15 +339,22 @@ static uint8_t run_layer(const ursa_layer_t *L, const lplan_t *pl, int xfer)
         for (uint32_t c = 0; c < pl->n_chunks; c++) {
             const uint32_t k0  = c * pl->m_chunk;
             const uint32_t len = (L->M - k0 < pl->m_chunk) ? L->M - k0 : pl->m_chunk;
-            if (xfer)
-                memcpy((void *)g_bi, s_pb, ursa3_b_bytes(SA_SIZE, (int)len, (int)qc));
+            if (xfer) {
+                const uint32_t nb = (uint32_t)ursa3_b_bytes(SA_SIZE, (int)len, (int)qc);
+                memcpy((void *)g_bi, s_pb, nb);
+                win_flush_b(nb);
+            }
             for (uint32_t p0 = 0; p0 < pl->P_pad; p0 += pl->pc) {
                 const uint32_t pc = (pl->P_pad - p0 < pl->pc) ? pl->P_pad - p0 : pl->pc;
-                if (xfer)
-                    memcpy((void *)g_aw, s_pa, (pc / SA_SIZE) * (uint32_t)ursa3_kw(SA_SIZE, (int)len) * wb);
+                if (xfer) {
+                    const uint32_t na = (pc / SA_SIZE) * (uint32_t)ursa3_kw(SA_SIZE, (int)len) * wb;
+                    memcpy((void *)g_aw, s_pa, na);
+                    win_flush_a(na);
+                }
                 st |= run_ursa(pc, qc, len);
                 if (xfer) {
                     const uint32_t n = pc * qc;
+                    win_inval_c(n * sizeof(bench_c_t));
                     if (c == 0) {
                         memcpy(s_acc, (const void *)g_ca, n * sizeof(bench_c_t));
                     } else {

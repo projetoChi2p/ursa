@@ -63,6 +63,20 @@ if [ -z "$XILINX_VITIS" ]; then
     exit 1
 fi
 
+# XILINX_VITIS may be inherited from a shell where only part of the Vitis
+# environment is on PATH (e.g. after sourcing the Vivado settings). Make sure
+# the bare-metal ARM toolchain is reachable before CMake looks for it.
+if ! command -v arm-none-eabi-g++ >/dev/null 2>&1; then
+    ARM_GCC_BIN=${XILINX_VITIS}/gnu/aarch32/lin/gcc-arm-none-eabi/bin
+    if [ -x "${ARM_GCC_BIN}/arm-none-eabi-g++" ]; then
+        export PATH=${ARM_GCC_BIN}:${PATH}
+    else
+        echo "arm-none-eabi-g++ not found (looked in PATH and ${ARM_GCC_BIN})."
+        echo "Source ${XILINX_VITIS}/settings64.sh and try again."
+        exit 1
+    fi
+fi
+
 # The CMake bundled with Vitis links against libidn.so.11, which recent Ubuntu
 # releases no longer ship, so it fails to start. The system CMake builds this
 # project fine; only the toolchain file has to come from the platform.
@@ -94,7 +108,10 @@ mkdir -p ${OUT_DIR} ${WORK_DIR}
 # the script, e.g. SA_SIZES=8 MEM_LAYOUTS=bram for a single build. (Not
 # SIZES: that name is reused below for the ELF section sizes.)
 ARRAY_SZ=(${SA_SIZES:-2 4 8 16})
-LAYOUTS=(${MEM_LAYOUTS:-bram})   # v3: BRAM only
+# UM: 16/10/26 - v3 builds all three layouts. Default stays bram; ask for the
+# others with MEM_LAYOUTS="bram ocm hybrid". Same platform for all (see
+# PLATFORM_LAYOUT below); the PS setup comes from each bitstream's XSA.
+LAYOUTS=(${MEM_LAYOUTS:-bram})
 
 VARIANT=vanilla
 
@@ -164,6 +181,15 @@ case "${MODE}" in
                 done
             fi
             NET_FILE=${NET_DIR}/${NET_STEM}_hwtest.cpp
+            # v3: the tests live in satellite/ and general/ under NET_DIR
+            if [ ! -f "${NET_FILE}" ]; then
+                for sub in satellite general; do
+                    if [ -f "${NET_DIR}/${sub}/${NET_STEM}_hwtest.cpp" ]; then
+                        NET_FILE=${NET_DIR}/${sub}/${NET_STEM}_hwtest.cpp
+                        break
+                    fi
+                done
+            fi
         fi
         if [ ! -f "${NET_FILE}" ]; then
             echo "ERROR: network test not found: ${NET_FILE}"

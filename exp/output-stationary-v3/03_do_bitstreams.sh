@@ -91,9 +91,11 @@ export URSA_PL_MHZ=${PL_MHZ}
 # UM: 25/09/26 - BRAM only for the v2 sweep. bd_bram.tcl reads the port
 # widths from the IP, so one script serves 4x4, 8x8 and 16x16. The OCM and
 # HYBRID scripts were exported for the v1 IP and have not been redone.
-# v3: BRAM only. bd_bram.tcl reads the port widths from the IP, so the 64-bit
-# C port of v3 gets a 64-bit axi_bram_ctrl with no change. OCM and hybrid
-# were never redone after v1.
+# v3: all three block designs read the port widths from the IP, so they take
+# the v3 IP unchanged: bd_bram.tcl gives the 64-bit C port a 64-bit
+# axi_bram_ctrl; bd_ocm.tcl and bd_hybrid.tcl (ported for v2 on 30/09/26)
+# send B and C, and A under OCM, through an interconnect into the 64-bit ACP,
+# which converts the width. Default bram; MEM_LAYOUTS="ocm hybrid" for the rest.
 LAYOUTS=(${MEM_LAYOUTS:-bram})
 
 # Parallel jobs for synthesis and implementation.

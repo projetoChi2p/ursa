@@ -1,0 +1,485 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri Oct 16 17:37:15 2026
+| Host         : ulisses-desktop running 64-bit Ubuntu 26.04.1 LTS
+| Command      : report_timing_summary -file /home/ulisses/Projects/ursa/exp/output-stationary-v3/bitstreams/ursa_vanilla-f123_16x16_acc20_ocm_timing.rpt
+| Design       : ursa_vanilla_ocm_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule     Severity  Description                   Violations  
+-------  --------  ----------------------------  ----------  
+LUTAR-1  Warning   LUT drives async reset alert  7           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (0)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (0)
+-------------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     -0.788      -19.770                     65                90418        0.019        0.000                      0                90418        2.812        0.000                       0                 25658  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock       Waveform(ns)         Period(ns)      Frequency(MHz)
+-----       ------------         ----------      --------------
+clk_fpga_0  {0.000 4.063}        8.125           123.077         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_fpga_0         -0.788      -19.770                     65                90194        0.019        0.000                      0                90194        2.812        0.000                       0                 25658  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group         From Clock         To Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------         ----------         --------               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**async_default**  clk_fpga_0         clk_fpga_0               3.262        0.000                      0                  224        0.394        0.000                      0                  224  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_fpga_0
+  To Clock:  clk_fpga_0
+
+Setup :           65  Failing Endpoints,  Worst Slack       -0.788ns,  Total Violation      -19.770ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.019ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        2.812ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -0.788ns  (required time - arrival time)
+  Source:                 ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/total_reg_148_reg[-1111111110]__1/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@4.062ns period=8.125ns})
+  Destination:            ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/buff0_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@4.062ns period=8.125ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.125ns  (clk_fpga_0 rise@8.125ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        8.792ns  (logic 3.854ns (43.837%)  route 4.938ns (56.163%))
+  Logic Levels:           14  (CARRY4=8 LUT3=2 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.056ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.737ns = ( 10.861 - 8.125 ) 
+    Source Clock Delay      (SCD):    3.022ns
+    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.244ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    ursa_vanilla_ocm_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  ursa_vanilla_ocm_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=25659, routed)       1.728     3.022    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/ap_clk
+    SLICE_X65Y37         FDRE                                         r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/total_reg_148_reg[-1111111110]__1/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X65Y37         FDRE (Prop_fdre_C_Q)         0.456     3.478 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/total_reg_148_reg[-1111111110]__1/Q
+                         net (fo=36, routed)          1.244     4.722    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/buff0_reg[31]_i_40_0[1]
+    SLICE_X69Y38         LUT6 (Prop_lut6_I1_O)        0.124     4.846 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/i___1244_i_1/O
+                         net (fo=2, routed)           0.651     5.497    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/total_reg_148_reg[-1111111103]__0[2]
+    SLICE_X66Y38         LUT6 (Prop_lut6_I0_O)        0.124     5.621 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/i___1244/O
+                         net (fo=1, routed)           0.000     5.621    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148_n_1671
+    SLICE_X66Y38         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380     6.001 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[19]_i_30/CO[3]
+                         net (fo=1, routed)           0.000     6.001    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[19]_i_30_n_7
+    SLICE_X66Y39         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     6.240 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[23]_i_26/O[2]
+                         net (fo=2, routed)           0.786     7.026    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[23]_i_26_n_12
+    SLICE_X65Y37         LUT3 (Prop_lut3_I0_O)        0.301     7.327 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0[19]_i_21/O
+                         net (fo=2, routed)           0.993     8.320    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0[19]_i_21_n_7
+    SLICE_X67Y39         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385     8.705 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[19]_i_15/CO[3]
+                         net (fo=1, routed)           0.000     8.705    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[19]_i_15_n_7
+    SLICE_X67Y40         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.819 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[23]_i_15/CO[3]
+                         net (fo=1, routed)           0.000     8.819    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[23]_i_15_n_7
+    SLICE_X67Y41         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.933 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[27]_i_15/CO[3]
+                         net (fo=1, routed)           0.000     8.933    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[27]_i_15_n_7
+    SLICE_X67Y42         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     9.267 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[31]_i_19/O[1]
+                         net (fo=3, routed)           0.325     9.592    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[31]_i_19_n_13
+    SLICE_X68Y42         LUT3 (Prop_lut3_I1_O)        0.303     9.895 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0[27]_i_11/O
+                         net (fo=2, routed)           0.351    10.246    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0[27]_i_11_n_7
+    SLICE_X69Y42         LUT5 (Prop_lut5_I1_O)        0.124    10.370 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0[27]_i_3/O
+                         net (fo=2, routed)           0.588    10.958    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0[27]_i_3_n_7
+    SLICE_X71Y41         LUT6 (Prop_lut6_I0_O)        0.124    11.082 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0[27]_i_7/O
+                         net (fo=1, routed)           0.000    11.082    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0[27]_i_7_n_7
+    SLICE_X71Y41         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398    11.480 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/mul_24ns_16ns_32_3_1_U310/buff0_reg[27]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    11.480    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/buff0_reg[31]_1[0]
+    SLICE_X71Y42         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    11.814 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/buff0_reg[31]_i_1/O[1]
+                         net (fo=1, routed)           0.000    11.814    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/buff0_reg[31]_i_1_n_13
+    SLICE_X71Y42         FDRE                                         r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/buff0_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      8.125     8.125 r  
+    PS7_X0Y0             PS7                          0.000     8.125 r  ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088     9.213    ursa_vanilla_ocm_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     9.304 r  ursa_vanilla_ocm_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=25659, routed)       1.557    10.861    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/ap_clk
+    SLICE_X71Y42         FDRE                                         r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/buff0_reg[29]/C
+                         clock pessimism              0.230    11.091    
+                         clock uncertainty           -0.127    10.964    
+    SLICE_X71Y42         FDRE (Setup_fdre_C_D)        0.062    11.026    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/mul_24ns_16ns_32_3_1_U310/buff0_reg[29]
+  -------------------------------------------------------------------
+                         required time                         11.026    
+                         arrival time                         -11.814    
+  -------------------------------------------------------------------
+                         slack                                 -0.788    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.019ns  (arrival time - required time)
+  Source:                 ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg__9/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@4.062ns period=8.125ns})
+  Destination:            ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg[-1111111104]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@4.062ns period=8.125ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.359ns  (logic 0.141ns (39.254%)  route 0.218ns (60.746%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.265ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.190ns
+    Source Clock Delay      (SCD):    0.890ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    ursa_vanilla_ocm_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  ursa_vanilla_ocm_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=25659, routed)       0.554     0.890    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/ap_clk
+    SLICE_X51Y35         FDRE                                         r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg__9/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X51Y35         FDRE (Prop_fdre_C_Q)         0.141     1.031 r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg__9/Q
+                         net (fo=1, routed)           0.218     1.249    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg__9_n_7
+    SLICE_X45Y35         FDRE                                         r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg[-1111111104]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    ursa_vanilla_ocm_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  ursa_vanilla_ocm_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=25659, routed)       0.824     1.190    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/ap_clk
+    SLICE_X45Y35         FDRE                                         r  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg[-1111111104]/C
+                         clock pessimism             -0.035     1.155    
+    SLICE_X45Y35         FDRE (Hold_fdre_C_D)         0.075     1.230    ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/grp_ursa_dataflow_fu_148/compute_U0/grp_compute_Pipeline_CK_fu_74/mac_muladd_8s_8ns_20s_20_4_1_U282/mxm_execute_ursa_mac_muladd_8s_8ns_20s_20_4_1_DSP48_1_U/p_reg_reg[-1111111104]
+  -------------------------------------------------------------------
+                         required time                         -1.230    
+                         arrival time                           1.249    
+  -------------------------------------------------------------------
+                         slack                                  0.019    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_fpga_0
+Waveform(ns):       { 0.000 4.062 }
+Period(ns):         8.125
+Sources:            { ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0] }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.944         8.125       5.181      RAMB36_X3Y17  ursa_vanilla_ocm_i/mxm_execute_ursa_0/inst/aw_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg_0/CLKARDCLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.063       2.813      SLICE_X36Y55  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg_0_31_0_5/RAMA/CLK
+High Pulse Width  Slow    RAMD32/CLK          n/a            1.250         4.063       2.813      SLICE_X36Y55  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg_0_31_0_5/RAMA/CLK
+
+
+
+---------------------------------------------------------------------------------------------------
+Path Group:  **async_default**
+From Clock:  clk_fpga_0
+  To Clock:  clk_fpga_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        3.262ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.394ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             3.262ns  (required time - arrival time)
+  Source:                 ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/C
+                            (rising edge-triggered cell FDPE clocked by clk_fpga_0  {rise@0.000ns fall@4.062ns period=8.125ns})
+  Destination:            ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR
+                            (recovery check against rising-edge clock clk_fpga_0  {rise@0.000ns fall@4.062ns period=8.125ns})
+  Path Group:             **async_default**
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Requirement:            8.125ns  (clk_fpga_0 rise@8.125ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        4.285ns  (logic 0.773ns (18.040%)  route 3.512ns (81.960%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.046ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.760ns = ( 10.885 - 8.125 ) 
+    Source Clock Delay      (SCD):    3.036ns
+    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.244ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    ursa_vanilla_ocm_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  ursa_vanilla_ocm_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=25659, routed)       1.742     3.036    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/dest_clk
+    SLICE_X26Y34         FDPE                                         r  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y34         FDPE (Prop_fdpe_C_Q)         0.478     3.514 f  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/Q
+                         net (fo=3, routed)           1.995     5.509    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.rst_wr_reg2
+    SLICE_X26Y58         LUT3 (Prop_lut3_I2_O)        0.295     5.804 f  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gpregsm1.curr_fwft_state[1]_i_2/O
+                         net (fo=32, routed)          1.517     7.321    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/AR[0]
+    SLICE_X13Y49         FDCE                                         f  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      8.125     8.125 r  
+    PS7_X0Y0             PS7                          0.000     8.125 r  ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088     9.213    ursa_vanilla_ocm_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     9.304 r  ursa_vanilla_ocm_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=25659, routed)       1.581    10.885    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/clk
+    SLICE_X13Y49         FDCE                                         r  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/C
+                         clock pessimism              0.230    11.115    
+                         clock uncertainty           -0.127    10.988    
+    SLICE_X13Y49         FDCE (Recov_fdce_C_CLR)     -0.405    10.583    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]
+  -------------------------------------------------------------------
+                         required time                         10.583    
+                         arrival time                          -7.321    
+  -------------------------------------------------------------------
+                         slack                                  3.262    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.394ns  (arrival time - required time)
+  Source:                 ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@4.062ns period=8.125ns})
+  Destination:            ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[0]/CLR
+                            (removal check against rising-edge clock clk_fpga_0  {rise@0.000ns fall@4.062ns period=8.125ns})
+  Path Group:             **async_default**
+  Path Type:              Removal (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.587ns  (logic 0.186ns (31.675%)  route 0.401ns (68.325%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.260ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.892ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    ursa_vanilla_ocm_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  ursa_vanilla_ocm_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=25659, routed)       0.556     0.892    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/clk
+    SLICE_X49Y51         FDRE                                         r  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y51         FDRE (Prop_fdre_C_Q)         0.141     1.033 f  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]/Q
+                         net (fo=1, routed)           0.158     1.191    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc[1]
+    SLICE_X49Y51         LUT3 (Prop_lut3_I0_O)        0.045     1.236 f  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gpregsm1.curr_fwft_state[1]_i_2/O
+                         net (fo=33, routed)          0.243     1.479    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_reg_0
+    SLICE_X50Y51         FDCE                                         f  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[0]/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  ursa_vanilla_ocm_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    ursa_vanilla_ocm_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  ursa_vanilla_ocm_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=25659, routed)       0.821     1.187    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/clk
+    SLICE_X50Y51         FDCE                                         r  ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[0]/C
+                         clock pessimism             -0.035     1.152    
+    SLICE_X50Y51         FDCE (Remov_fdce_C_CLR)     -0.067     1.085    ursa_vanilla_ocm_i/axi_interconnect_1/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.085    
+                         arrival time                           1.479    
+  -------------------------------------------------------------------
+                         slack                                  0.394    
+
+
+
+
+

@@ -1,0 +1,13 @@
+mode,net,variant,mitig,scrub,cache_i,sa_size,layout,engine,acc_bits,max_m,guard,weights_bytes,weights,images_done,accuracy,golden,verdict,first_mismatches,lower_us,transfer_us,gemm_us,epilogue_us,other_us,total_us,calls_per_inf,macs_per_inf,total_ticks,ticks_per_s
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,2,bram,URSA,20,256,1,1646056,streamed,32,32/32,32/32,PASS,,700633,2782543,13223859,1298218,1118144,19123400,19035,5173861656,203982941491,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,4,bram,URSA,20,256,1,1655888,streamed,32,32/32,32/32,PASS,,703440,2554319,3535339,1299022,1117721,9209843,21626,5173861656,98238328874,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,8,bram,URSA,20,256,1,1706880,streamed,32,32/32,32/32,PASS,,695843,2500669,1005370,1301105,1115819,6618807,22598,5173861656,70600620089,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,16,bram,URSA,20,256,1,1818368,streamed,32,32/32,32/32,PASS,,689930,2867225,423132,1299274,1103920,6383484,15293,5173861656,68090501950,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,2,ocm,URSA,20,256,1,1646056,streamed,32,32/32,32/32,PASS,,697885,1834371,13242980,1302441,1118200,18195879,19035,5173861656,194089384926,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,4,ocm,URSA,20,256,1,1655888,streamed,32,32/32,32/32,PASS,,703232,1612509,3764139,1300640,1117226,8497748,21626,5173861656,90642647996,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,8,ocm,URSA,20,256,1,1706880,streamed,32,32/32,32/32,PASS,,697591,1619905,1237800,1297166,1116834,5969298,22598,5173861656,63672519818,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,16,ocm,URSA,20,256,1,1818368,streamed,32,32/32,32/32,PASS,,690000,1785573,912007,1303561,1103137,5794280,15293,5173861656,61805655221,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,2,hybrid,URSA,20,256,1,1646056,streamed,32,32/32,32/32,PASS,,696895,1975858,13219221,1302110,1118039,18312125,19035,5173861656,195329346253,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,4,hybrid,URSA,20,256,1,1655888,streamed,32,32/32,32/32,PASS,,701773,1744514,3604284,1296495,1116702,8463770,21626,5173861656,90280226496,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,8,hybrid,URSA,20,256,1,1706880,streamed,32,32/32,32/32,PASS,,694830,1758172,1142100,1296352,1115917,6007373,22598,5173861656,64078647784,333333343
+net,resnet18_patternnet_small_vitmatched,vanilla,none,off,on,16,hybrid,URSA,20,256,1,1818368,streamed,32,32/32,32/32,PASS,,690666,1963936,809646,1303104,1103291,5870644,15293,5173861656,62620208352,333333343

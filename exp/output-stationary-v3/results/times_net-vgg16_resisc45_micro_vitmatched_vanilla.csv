@@ -1,0 +1,13 @@
+mode,net,variant,mitig,scrub,cache_i,sa_size,layout,engine,acc_bits,max_m,guard,weights_bytes,weights,images_done,accuracy,golden,verdict,first_mismatches,lower_us,transfer_us,gemm_us,epilogue_us,other_us,total_us,calls_per_inf,macs_per_inf,total_ticks,ticks_per_s
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,2,bram,URSA,20,256,1,91544,streamed,32,29/32,32/32,PASS,,58899,120363,264318,99163,2813,545559,659,102370338,5819301778,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,4,bram,URSA,20,256,1,94192,streamed,32,29/32,32/32,PASS,,59086,113673,79233,99030,2820,353845,699,102370338,3774353952,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,8,bram,URSA,20,256,1,103104,streamed,32,29/32,32/32,PASS,,59378,113982,23913,98800,2822,298897,703,102370338,3188235707,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,16,bram,URSA,20,256,1,118272,streamed,32,29/32,32/32,PASS,,59671,158705,23925,99110,2825,344237,756,102370338,3671867971,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,2,ocm,URSA,20,256,1,91544,streamed,32,29/32,32/32,PASS,,58832,78081,264667,99132,2814,503528,659,102370338,5370967991,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,4,ocm,URSA,20,256,1,94192,streamed,32,29/32,32/32,PASS,,59051,70103,84645,98789,2821,315411,699,102370338,3364393581,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,8,ocm,URSA,20,256,1,103104,streamed,32,29/32,32/32,PASS,,59342,72617,28871,99012,2822,262666,703,102370338,2801779604,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,16,ocm,URSA,20,256,1,118272,streamed,32,29/32,32/32,PASS,,59504,98153,37136,98833,2826,296454,756,102370338,3162182359,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,2,hybrid,URSA,20,256,1,91544,streamed,32,29/32,32/32,PASS,,58830,79654,264143,99267,2814,504709,659,102370338,5383571119,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,4,hybrid,URSA,20,256,1,94192,streamed,32,29/32,32/32,PASS,,59018,71943,82155,98988,2821,314928,699,102370338,3359232244,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,8,hybrid,URSA,20,256,1,103104,streamed,32,29/32,32/32,PASS,,59330,74937,27313,98991,2821,263395,703,102370338,2809548362,333333343
+net,vgg16_resisc45_micro_vitmatched,vanilla,none,off,on,16,hybrid,URSA,20,256,1,118272,streamed,32,29/32,32/32,PASS,,59374,101632,35126,98837,2825,297795,756,102370338,3176489582,333333343

@@ -1046,11 +1046,28 @@ def main():
             else:
                 print("  %d rows captured (no summary line)" % len(got))
 
-    with open(out_csv, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader()
-        for r in rows:
-            w.writerow(r)
+    def merge_write(path, fieldnames, new_rows):
+        """UM: 16/10/26 - keep the rows of other (sa_size, layout) pairs that
+        an earlier run left in the same CSV. Rows of the pairs run now are
+        replaced. Before this, a run with --layouts ocm hybrid overwrote the
+        bram rows of the same file."""
+        ran = set((str(r.get("sa_size")), r.get("layout")) for r in new_rows)
+        kept = []
+        if os.path.exists(path):
+            with open(path, newline="") as f:
+                for r in csv.DictReader(f):
+                    if (r.get("sa_size"), r.get("layout")) not in ran:
+                        kept.append({k: r.get(k, "") for k in fieldnames})
+        with open(path, "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=fieldnames)
+            w.writeheader()
+            for r in kept + list(new_rows):
+                w.writerow({k: r.get(k, "") for k in fieldnames})
+        return len(kept)
+
+    kept = merge_write(out_csv, fields, rows)
+    if kept:
+        print(" (%d rows of other sizes/layouts kept from the previous file)" % kept)
 
     print("\n" + "=" * 70)
     print(" %d rows -> %s" % (len(rows), out_csv))
@@ -1058,11 +1075,7 @@ def main():
     if a.mode == "net":
         layers_csv = out_csv[:-4] + "_layers.csv" if out_csv.endswith(".csv") \
             else out_csv + "_layers.csv"
-        with open(layers_csv, "w", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=FIELDS_NET_LAYERS)
-            w.writeheader()
-            for r in layer_rows:
-                w.writerow({k: r.get(k, "") for k in FIELDS_NET_LAYERS})
+        merge_write(layers_csv, FIELDS_NET_LAYERS, layer_rows)
         print(" %d layer rows -> %s" % (len(layer_rows), layers_csv))
         print(" raw logs -> %s" % os.path.join(out_dir, "logs"))
     print("=" * 70)

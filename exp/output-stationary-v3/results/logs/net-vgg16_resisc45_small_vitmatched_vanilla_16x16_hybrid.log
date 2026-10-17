@@ -1,0 +1,182 @@
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40000000 
+[init] MEM CONTROL   0x40010000 
+URSA network: vgg16_resisc45_small_vitmatched
+[urt] SA_SIZE=16 ACC_BITS=20 MAX_M=256 guard=1 windows A/B/C=8192/16384/16384 B
+[urt] weights: 1716736 B packed, streamed per call
+[urt]   conv1_1                      P=21   M=27    Q=50176 chunks=1 x 32  call=16x256  calls=392
+[urt]   conv1_2                      P=21   M=189   Q=50176 chunks=1 x 192 call=32x80  calls=628
+[urt]   conv2_1                      P=43   M=189   Q=12544 chunks=1 x 192 call=32x80  calls=314
+[urt]   conv2_2                      P=43   M=387   Q=12544 chunks=2 x 208 call=32x64  calls=784
+[urt]   conv3_1                      P=85   M=387   Q=3136  chunks=2 x 208 call=32x64  calls=294
+[urt]   conv3_2                      P=85   M=765   Q=3136  chunks=3 x 256 call=32x64  calls=441
+[urt]   conv3_3                      P=85   M=765   Q=3136  chunks=3 x 256 call=32x64  calls=441
+[urt]   conv4_1                      P=170  M=765   Q=784   chunks=5 x 160 call=48x80  calls=200
+[urt]   conv4_2                      P=170  M=1530  Q=784   chunks=12 x 128 call=64x64  calls=468
+[urt]   conv4_3                      P=170  M=1530  Q=784   chunks=6 x 256 call=32x64  calls=468
+[urt]   conv5_1                      P=170  M=1530  Q=196   chunks=11 x 144 call=32x112  calls=132
+[urt]   conv5_2                      P=170  M=1530  Q=196   chunks=10 x 160 call=48x80  calls=120
+[urt]   conv5_3                      P=170  M=1530  Q=196   chunks=6 x 256 call=32x64  calls=144
+[urt]   classifier                   P=45   M=170   Q=1     chunks=1 x 176 call=48x16  calls=1
+start
+<s>
+<i>0
+Inference 1/32. Current accuracy: 1/1 (100.00%)
+<s>
+<i>1
+Inference 2/32. Current accuracy: 2/2 (100.00%)
+<s>
+<i>2
+Inference 3/32. Current accuracy: 2/3 (66.66%)
+<s>
+<i>3
+Inference 4/32. Current accuracy: 3/4 (75.00%)
+<s>
+<i>4
+Inference 5/32. Current accuracy: 4/5 (80.00%)
+<s>
+<i>5
+Inference 6/32. Current accuracy: 5/6 (83.33%)
+<s>
+<i>6
+Inference 7/32. Current accuracy: 6/7 (85.71%)
+<s>
+<i>7
+Inference 8/32. Current accuracy: 7/8 (87.50%)
+<s>
+<i>8
+Inference 9/32. Current accuracy: 8/9 (88.88%)
+<s>
+<i>9
+Inference 10/32. Current accuracy: 9/10 (90.00%)
+<s>
+<i>10
+Inference 11/32. Current accuracy: 10/11 (90.90%)
+<s>
+<i>11
+Inference 12/32. Current accuracy: 11/12 (91.66%)
+<s>
+<i>12
+Inference 13/32. Current accuracy: 12/13 (92.30%)
+<s>
+<i>13
+Inference 14/32. Current accuracy: 13/14 (92.85%)
+<s>
+<i>14
+Inference 15/32. Current accuracy: 14/15 (93.33%)
+<s>
+<i>15
+Inference 16/32. Current accuracy: 15/16 (93.75%)
+<s>
+<i>16
+Inference 17/32. Current accuracy: 16/17 (94.11%)
+<s>
+<i>17
+Inference 18/32. Current accuracy: 17/18 (94.44%)
+<s>
+<i>18
+Inference 19/32. Current accuracy: 18/19 (94.73%)
+<s>
+<i>19
+Inference 20/32. Current accuracy: 19/20 (95.00%)
+<s>
+<i>20
+Inference 21/32. Current accuracy: 19/21 (90.47%)
+<s>
+<i>21
+Inference 22/32. Current accuracy: 20/22 (90.90%)
+<s>
+<i>22
+Inference 23/32. Current accuracy: 21/23 (91.30%)
+<s>
+<i>23
+Inference 24/32. Current accuracy: 22/24 (91.66%)
+<s>
+<i>24
+Inference 25/32. Current accuracy: 23/25 (92.00%)
+<s>
+<i>25
+Inference 26/32. Current accuracy: 24/26 (92.30%)
+<s>
+<i>26
+Inference 27/32. Current accuracy: 25/27 (92.59%)
+<s>
+<i>27
+Inference 28/32. Current accuracy: 26/28 (92.85%)
+<s>
+<i>28
+Inference 29/32. Current accuracy: 27/29 (93.10%)
+<s>
+<i>29
+Inference 30/32. Current accuracy: 28/30 (93.33%)
+<s>
+<i>30
+Inference 31/32. Current accuracy: 29/31 (93.54%)
+<s>
+<i>31
+Inference 32/32. Current accuracy: 30/32 (93.75%)
+Total mismatches: 2 / 32
+Correct predictions: 30 / 32 (93.75%)
+[cycles] total: 14492002519
+
+[profile] ===== hierarchical cycle profile =====
+[profile] 32 inferences; totals are inclusive of the subtree
+[profile]         cycles        %        per-inf device    node [kind]
+[profile]    14492002519   100.00      452875078           vgg16
+[profile]     1698583705    11.72       53080740 ursa        conv1_1 [UrsaConv2d]
+[profile]     3260996930    22.50      101906154 ursa        conv1_2 [UrsaConv2d+POOL]
+[profile]     1122094124     7.74       35065441 ursa        conv2_1 [UrsaConv2d]
+[profile]     1856097765    12.80       58003055 ursa        conv2_2 [UrsaConv2d+POOL]
+[profile]      770951477     5.31       24092233 ursa        conv3_1 [UrsaConv2d]
+[profile]     1169920337     8.07       36560010 ursa        conv3_2 [UrsaConv2d]
+[profile]     1193001798     8.23       37281306 ursa        conv3_3 [UrsaConv2d+POOL]
+[profile]      576971166     3.98       18030348 ursa        conv4_1 [UrsaConv2d]
+[profile]     1152368016     7.95       36011500 ursa        conv4_2 [UrsaConv2d]
+[profile]      880618702     6.07       27519334 ursa        conv4_3 [UrsaConv2d+POOL]
+[profile]      281310179     1.94        8790943 ursa        conv5_1 [UrsaConv2d]
+[profile]      281347914     1.94        8792122 ursa        conv5_2 [UrsaConv2d]
+[profile]      245583013     1.69        7674469 ursa        conv5_3 [UrsaConv2d]
+[profile]        1107611     0.00          34612 cpu         global_pool [UrsaAdaptiveAvgPool]
+[profile]        1049782     0.00          32805 ursa        classifier [UrsaLinear]
+[profile]
+[profile] ----- by device -----
+[profile]         cycles        %   layers  device
+[profile]    14490894908    99.99       14  ursa
+[profile]        1107611     0.00        1  cpu
+[profile]
+[profile] ----- by operation -----
+[profile]         cycles        %   layers  operation
+[profile]     7299129931    50.36        9  UrsaConv2d
+[profile]     7190715195    49.61        4  UrsaConv2d+POOL
+[profile]        1107611     0.00        1  UrsaAdaptiveAvgPool
+[profile]        1049782     0.00        1  UrsaLinear
+[prof] 0 -1 0 14492002519 0 480 - vgg16 -
+[prof] 1 0 1 1698583705 1698583705 32 UrsaConv2d conv1_1 ursa
+[prof] 2 0 1 3260996930 3260996930 32 UrsaConv2d+POOL conv1_2 ursa
+[prof] 3 0 1 1122094124 1122094124 32 UrsaConv2d conv2_1 ursa
+[prof] 4 0 1 1856097765 1856097765 32 UrsaConv2d+POOL conv2_2 ursa
+[prof] 5 0 1 770951477 770951477 32 UrsaConv2d conv3_1 ursa
+[prof] 6 0 1 1169920337 1169920337 32 UrsaConv2d conv3_2 ursa
+[prof] 7 0 1 1193001798 1193001798 32 UrsaConv2d+POOL conv3_3 ursa
+[prof] 8 0 1 576971166 576971166 32 UrsaConv2d conv4_1 ursa
+[prof] 9 0 1 1152368016 1152368016 32 UrsaConv2d conv4_2 ursa
+[prof] 10 0 1 880618702 880618702 32 UrsaConv2d+POOL conv4_3 ursa
+[prof] 11 0 1 281310179 281310179 32 UrsaConv2d conv5_1 ursa
+[prof] 12 0 1 281347914 281347914 32 UrsaConv2d conv5_2 ursa
+[prof] 13 0 1 245583013 245583013 32 UrsaConv2d conv5_3 ursa
+[prof] 14 0 1 1107611 1107611 32 UrsaAdaptiveAvgPool global_pool cpu
+[prof] 15 0 1 1049782 1049782 32 UrsaLinear classifier ursa
+[profile] measured 14492002519 of 14492002519 total cycles
+Done
+[urt] engine: URSA
+[urt] timer: 333333343 ticks/s
+[urt] per inference (us):
+[urt]   lower (im2col/transpose)       218183
+[urt]   transfer (A/B in, C out)       532889
+[urt]   gemm (URSA)                    202614
+[urt]   epilogue (requant)             392815
+[urt]   other (pool/add/... on ARM)      12123
+[urt]   total                         1358625
+[urt] URSA calls per inference: 4827, MACs per inference: 1712026098
+[urt] golden check: 32/32 images bit-exact
+URT HW TEST PASS

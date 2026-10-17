@@ -1,0 +1,249 @@
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40000000 
+[init] MEM CONTROL   0x40010000 
+URSA network: resnet18_resisc45_small_vitmatched
+[urt] SA_SIZE=4 ACC_BITS=20 MAX_M=256 guard=1 windows A/B/C=4096/16384/16384 B
+[urt] weights: 1657456 B packed, streamed per call
+[urt]   conv1                        P=24   M=27    Q=50176 chunks=1 x 28  call=8x512  calls=294
+[urt]   layer1_0_conv1               P=24   M=216   Q=50176 chunks=1 x 216 call=16x72  calls=1394
+[urt]   layer1_0_conv2               P=24   M=216   Q=50176 chunks=1 x 216 call=16x72  calls=1394
+[urt]   layer1_1_conv1               P=24   M=216   Q=50176 chunks=1 x 216 call=16x72  calls=1394
+[urt]   layer1_1_conv2               P=24   M=216   Q=50176 chunks=1 x 216 call=16x72  calls=1394
+[urt]   layer2_0_conv1               P=49   M=216   Q=12544 chunks=1 x 216 call=16x72  calls=700
+[urt]   layer2_0_conv2               P=49   M=441   Q=12544 chunks=3 x 148 call=24x108  calls=1053
+[urt]   layer2_0_shortcut_0          P=49   M=24    Q=12544 chunks=1 x 24  call=52x76  calls=166
+[urt]   layer2_1_conv1               P=49   M=441   Q=12544 chunks=2 x 224 call=16x72  calls=1400
+[urt]   layer2_1_conv2               P=49   M=441   Q=12544 chunks=4 x 112 call=28x144  calls=704
+[urt]   layer3_0_conv1               P=98   M=441   Q=3136  chunks=3 x 148 call=24x108  calls=450
+[urt]   layer3_0_conv2               P=98   M=882   Q=3136  chunks=5 x 180 call=20x88  calls=900
+[urt]   layer3_0_shortcut_0          P=98   M=49    Q=3136  chunks=1 x 52  call=20x204  calls=80
+[urt]   layer3_1_conv1               P=98   M=882   Q=3136  chunks=4 x 224 call=16x72  calls=1232
+[urt]   layer3_1_conv2               P=98   M=882   Q=3136  chunks=4 x 224 call=16x72  calls=1232
+[urt]   layer4_0_conv1               P=196  M=882   Q=784   chunks=4 x 224 call=16x72  calls=572
+[urt]   layer4_0_conv2               P=196  M=1764  Q=784   chunks=7 x 252 call=16x64  calls=1183
+[urt]   layer4_0_shortcut_0          P=196  M=98    Q=784   chunks=1 x 100 call=40x100  calls=40
+[urt]   layer4_1_conv1               P=196  M=1764  Q=784   chunks=11 x 164 call=24x96  calls=891
+[urt]   layer4_1_conv2               P=196  M=1764  Q=784   chunks=7 x 252 call=16x64  calls=1183
+[urt]   classifier                   P=45   M=196   Q=1     chunks=1 x 196 call=20x4  calls=3
+start
+<s>
+<i>0
+Inference 1/32. Current accuracy: 1/1 (100.00%)
+<s>
+<i>1
+Inference 2/32. Current accuracy: 2/2 (100.00%)
+<s>
+<i>2
+Inference 3/32. Current accuracy: 3/3 (100.00%)
+<s>
+<i>3
+Inference 4/32. Current accuracy: 4/4 (100.00%)
+<s>
+<i>4
+Inference 5/32. Current accuracy: 5/5 (100.00%)
+<s>
+<i>5
+Inference 6/32. Current accuracy: 6/6 (100.00%)
+<s>
+<i>6
+Inference 7/32. Current accuracy: 7/7 (100.00%)
+<s>
+<i>7
+Inference 8/32. Current accuracy: 8/8 (100.00%)
+<s>
+<i>8
+Inference 9/32. Current accuracy: 8/9 (88.88%)
+<s>
+<i>9
+Inference 10/32. Current accuracy: 9/10 (90.00%)
+<s>
+<i>10
+Inference 11/32. Current accuracy: 9/11 (81.81%)
+<s>
+<i>11
+Inference 12/32. Current accuracy: 10/12 (83.33%)
+<s>
+<i>12
+Inference 13/32. Current accuracy: 11/13 (84.61%)
+<s>
+<i>13
+Inference 14/32. Current accuracy: 12/14 (85.71%)
+<s>
+<i>14
+Inference 15/32. Current accuracy: 13/15 (86.66%)
+<s>
+<i>15
+Inference 16/32. Current accuracy: 14/16 (87.50%)
+<s>
+<i>16
+Inference 17/32. Current accuracy: 15/17 (88.23%)
+<s>
+<i>17
+Inference 18/32. Current accuracy: 16/18 (88.88%)
+<s>
+<i>18
+Inference 19/32. Current accuracy: 17/19 (89.47%)
+<s>
+<i>19
+Inference 20/32. Current accuracy: 18/20 (90.00%)
+<s>
+<i>20
+Inference 21/32. Current accuracy: 18/21 (85.71%)
+<s>
+<i>21
+Inference 22/32. Current accuracy: 19/22 (86.36%)
+<s>
+<i>22
+Inference 23/32. Current accuracy: 20/23 (86.95%)
+<s>
+<i>23
+Inference 24/32. Current accuracy: 21/24 (87.50%)
+<s>
+<i>24
+Inference 25/32. Current accuracy: 22/25 (88.00%)
+<s>
+<i>25
+Inference 26/32. Current accuracy: 23/26 (88.46%)
+<s>
+<i>26
+Inference 27/32. Current accuracy: 24/27 (88.88%)
+<s>
+<i>27
+Inference 28/32. Current accuracy: 25/28 (89.28%)
+<s>
+<i>28
+Inference 29/32. Current accuracy: 26/29 (89.65%)
+<s>
+<i>29
+Inference 30/32. Current accuracy: 27/30 (90.00%)
+<s>
+<i>30
+Inference 31/32. Current accuracy: 28/31 (90.32%)
+<s>
+<i>31
+Inference 32/32. Current accuracy: 29/32 (90.62%)
+Total mismatches: 3 / 32
+Correct predictions: 29 / 32 (90.62%)
+[cycles] total: 61991660633
+
+[profile] ===== hierarchical cycle profile =====
+[profile] 32 inferences; totals are inclusive of the subtree
+[profile]         cycles        %        per-inf device    node [kind]
+[profile]    61991660633   100.00     1937239394           resnet18
+[profile]     1841975493     2.97       57561734 ursa        conv1 [UrsaConv2d]
+[profile]    22223401415    35.84      694481294             layer1
+[profile]    11102393289    17.90      346949790               0
+[profile]     4355323429     7.02      136103857 ursa            conv1 [UrsaConv2d]
+[profile]     4343344831     7.00      135729525 ursa            conv2 [UrsaConv2d]
+[profile]     2403725029     3.87       75116407 cpu             add [UrsaResAdd]
+[profile]    11121008126    17.93      347531503               1
+[profile]     4357159724     7.02      136161241 ursa            conv1 [UrsaConv2d]
+[profile]     4344081081     7.00      135752533 ursa            conv2 [UrsaConv2d]
+[profile]     2419767321     3.90       75617728 cpu             add_1 [UrsaResAdd]
+[profile]    16315600732    26.31      509862522             layer2
+[profile]     7795517550    12.57      243609923               0
+[profile]     2025062254     3.26       63283195 ursa            conv1 [UrsaConv2d]
+[profile]     3662583115     5.90      114455722 ursa            conv2 [UrsaConv2d]
+[profile]      889009126     1.43       27781535                 shortcut
+[profile]      889009126     1.43       27781535 ursa              0 [UrsaConv2d]
+[profile]     1218863055     1.96       38089470 cpu             add_2 [UrsaResAdd]
+[profile]     8520083182    13.74      266252599               1
+[profile]     3437600210     5.54      107425006 ursa            conv1 [UrsaConv2d]
+[profile]     3843025562     6.19      120094548 ursa            conv2 [UrsaConv2d]
+[profile]     1239457410     1.99       38733044 cpu             add_3 [UrsaResAdd]
+[profile]    11781918272    19.00      368184946             layer3
+[profile]     5677932221     9.15      177435381               0
+[profile]     1675725208     2.70       52366412 ursa            conv1 [UrsaConv2d]
+[profile]     2875759657     4.63       89867489 ursa            conv2 [UrsaConv2d]
+[profile]      534391353     0.86       16699729                 shortcut
+[profile]      534391353     0.86       16699729 ursa              0 [UrsaConv2d]
+[profile]      592056003     0.95       18501750 cpu             add_4 [UrsaResAdd]
+[profile]     6103986051     9.84      190749564               1
+[profile]     2765521823     4.46       86422556 ursa            conv1 [UrsaConv2d]
+[profile]     2768040053     4.46       86501251 ursa            conv2 [UrsaConv2d]
+[profile]      570424175     0.92       17825755 cpu             add_5 [UrsaResAdd]
+[profile]     9818709377    15.83      306834668             layer4
+[profile]     4404406177     7.10      137637693               0
+[profile]     1300765090     2.09       40648909 ursa            conv1 [UrsaConv2d]
+[profile]     2509681433     4.04       78427544 ursa            conv2 [UrsaConv2d]
+[profile]      297623952     0.48        9300748                 shortcut
+[profile]      297623952     0.48        9300748 ursa              0 [UrsaConv2d]
+[profile]      296335702     0.47        9260490 cpu             add_6 [UrsaResAdd]
+[profile]     5414303200     8.73      169196975               1
+[profile]     2607403793     4.20       81481368 ursa            conv1 [UrsaConv2d]
+[profile]     2497769344     4.02       78055292 ursa            conv2 [UrsaConv2d]
+[profile]      309130063     0.49        9660314 cpu             add_7 [UrsaResAdd]
+[profile]        8818451     0.01         275576 cpu         global_pool [UrsaAdaptiveAvgPool]
+[profile]        1236893     0.00          38652 ursa        classifier [UrsaLinear]
+[profile]
+[profile] ----- by device -----
+[profile]         cycles        %   layers  device
+[profile]    52933083424    85.38       21  ursa
+[profile]     9058577209    14.61        9  cpu
+[profile]
+[profile] ----- by operation -----
+[profile]         cycles        %   layers  operation
+[profile]    52931846531    85.38       20  UrsaConv2d
+[profile]     9049758758    14.59        8  UrsaResAdd
+[profile]        8818451     0.01        1  UrsaAdaptiveAvgPool
+[profile]        1236893     0.00        1  UrsaLinear
+[prof] 0 -1 0 61991660633 0 960 - resnet18 -
+[prof] 1 0 1 1841975493 1841975493 32 UrsaConv2d conv1 ursa
+[prof] 2 0 1 22223401415 0 192 - layer1 -
+[prof] 3 2 2 11102393289 0 96 - layer1.0 -
+[prof] 4 3 3 4355323429 4355323429 32 UrsaConv2d layer1.0.conv1 ursa
+[prof] 5 3 3 4343344831 4343344831 32 UrsaConv2d layer1.0.conv2 ursa
+[prof] 6 3 3 2403725029 2403725029 32 UrsaResAdd layer1.0.add cpu
+[prof] 7 2 2 11121008126 0 96 - layer1.1 -
+[prof] 8 7 3 4357159724 4357159724 32 UrsaConv2d layer1.1.conv1 ursa
+[prof] 9 7 3 4344081081 4344081081 32 UrsaConv2d layer1.1.conv2 ursa
+[prof] 10 7 3 2419767321 2419767321 32 UrsaResAdd layer1.1.add_1 cpu
+[prof] 11 0 1 16315600732 0 224 - layer2 -
+[prof] 12 11 2 7795517550 0 128 - layer2.0 -
+[prof] 13 12 3 2025062254 2025062254 32 UrsaConv2d layer2.0.conv1 ursa
+[prof] 14 12 3 3662583115 3662583115 32 UrsaConv2d layer2.0.conv2 ursa
+[prof] 15 12 3 889009126 0 32 - layer2.0.shortcut -
+[prof] 16 15 4 889009126 889009126 32 UrsaConv2d layer2.0.shortcut.0 ursa
+[prof] 17 12 3 1218863055 1218863055 32 UrsaResAdd layer2.0.add_2 cpu
+[prof] 18 11 2 8520083182 0 96 - layer2.1 -
+[prof] 19 18 3 3437600210 3437600210 32 UrsaConv2d layer2.1.conv1 ursa
+[prof] 20 18 3 3843025562 3843025562 32 UrsaConv2d layer2.1.conv2 ursa
+[prof] 21 18 3 1239457410 1239457410 32 UrsaResAdd layer2.1.add_3 cpu
+[prof] 22 0 1 11781918272 0 224 - layer3 -
+[prof] 23 22 2 5677932221 0 128 - layer3.0 -
+[prof] 24 23 3 1675725208 1675725208 32 UrsaConv2d layer3.0.conv1 ursa
+[prof] 25 23 3 2875759657 2875759657 32 UrsaConv2d layer3.0.conv2 ursa
+[prof] 26 23 3 534391353 0 32 - layer3.0.shortcut -
+[prof] 27 26 4 534391353 534391353 32 UrsaConv2d layer3.0.shortcut.0 ursa
+[prof] 28 23 3 592056003 592056003 32 UrsaResAdd layer3.0.add_4 cpu
+[prof] 29 22 2 6103986051 0 96 - layer3.1 -
+[prof] 30 29 3 2765521823 2765521823 32 UrsaConv2d layer3.1.conv1 ursa
+[prof] 31 29 3 2768040053 2768040053 32 UrsaConv2d layer3.1.conv2 ursa
+[prof] 32 29 3 570424175 570424175 32 UrsaResAdd layer3.1.add_5 cpu
+[prof] 33 0 1 9818709377 0 224 - layer4 -
+[prof] 34 33 2 4404406177 0 128 - layer4.0 -
+[prof] 35 34 3 1300765090 1300765090 32 UrsaConv2d layer4.0.conv1 ursa
+[prof] 36 34 3 2509681433 2509681433 32 UrsaConv2d layer4.0.conv2 ursa
+[prof] 37 34 3 297623952 0 32 - layer4.0.shortcut -
+[prof] 38 37 4 297623952 297623952 32 UrsaConv2d layer4.0.shortcut.0 ursa
+[prof] 39 34 3 296335702 296335702 32 UrsaResAdd layer4.0.add_6 cpu
+[prof] 40 33 2 5414303200 0 96 - layer4.1 -
+[prof] 41 40 3 2607403793 2607403793 32 UrsaConv2d layer4.1.conv1 ursa
+[prof] 42 40 3 2497769344 2497769344 32 UrsaConv2d layer4.1.conv2 ursa
+[prof] 43 40 3 309130063 309130063 32 UrsaResAdd layer4.1.add_7 cpu
+[prof] 44 0 1 8818451 8818451 32 UrsaAdaptiveAvgPool global_pool cpu
+[prof] 45 0 1 1236893 1236893 32 UrsaLinear classifier ursa
+[profile] measured 61991660633 of 61991660633 total cycles
+Done
+[urt] engine: URSA
+[urt] timer: 333333343 ticks/s
+[urt] per inference (us):
+[urt]   lower (im2col/transpose)       544459
+[urt]   transfer (A/B in, C out)      1092514
+[urt]   gemm (URSA)                   2330411
+[urt]   epilogue (requant)             995065
+[urt]   other (pool/add/... on ARM)     849266
+[urt]   total                         5811718
+[urt] URSA calls per inference: 17659, MACs per inference: 3961240948
+[urt] golden check: 32/32 images bit-exact
+URT HW TEST PASS

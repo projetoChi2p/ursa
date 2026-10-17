@@ -1,0 +1,13 @@
+mode,net,variant,mitig,scrub,cache_i,sa_size,layout,engine,acc_bits,max_m,guard,weights_bytes,weights,images_done,accuracy,golden,verdict,first_mismatches,lower_us,transfer_us,gemm_us,epilogue_us,other_us,total_us,calls_per_inf,macs_per_inf,total_ticks,ticks_per_s
+net,minivit_patternnet_micro,vanilla,none,off,on,2,bram,URSA,20,256,1,121632,streamed,32,31/32,32/32,PASS,,6094,21775,73529,35598,47292,184290,171,34744128,1965765942,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,4,bram,URSA,20,256,1,121728,streamed,32,31/32,32/32,PASS,,5546,20186,19959,35665,47268,128627,171,34744128,1372024932,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,8,bram,URSA,20,256,1,121728,streamed,32,31/32,32/32,PASS,,5618,20097,5970,35664,47356,114706,184,34744128,1223535783,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,16,bram,URSA,20,256,1,122112,streamed,32,31/32,32/32,PASS,,5634,22320,4239,35630,47362,115188,173,34744128,1228672954,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,2,ocm,URSA,20,256,1,121632,streamed,32,31/32,32/32,PASS,,6121,16122,73645,35668,47450,179009,171,34744128,1909438914,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,4,ocm,URSA,20,256,1,121728,streamed,32,31/32,32/32,PASS,,5526,14360,22341,35682,47369,125279,171,34744128,1336318115,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,8,ocm,URSA,20,256,1,121728,streamed,32,31/32,32/32,PASS,,5635,14404,7511,35644,47398,110594,184,34744128,1179677119,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,16,ocm,URSA,20,256,1,122112,streamed,32,31/32,32/32,PASS,,5670,15124,6577,35660,47286,110318,173,34744128,1176735877,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,2,hybrid,URSA,20,256,1,121632,streamed,32,31/32,32/32,PASS,,6130,16314,73508,35630,47310,178894,171,34744128,1908209607,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,4,hybrid,URSA,20,256,1,121728,streamed,32,31/32,32/32,PASS,,5499,14535,21753,35661,47323,124773,171,34744128,1330922065,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,8,hybrid,URSA,20,256,1,121728,streamed,32,31/32,32/32,PASS,,5611,14701,7156,35692,47443,110606,184,34744128,1179797611,333333343
+net,minivit_patternnet_micro,vanilla,none,off,on,16,hybrid,URSA,20,256,1,122112,streamed,32,31/32,32/32,PASS,,5634,15422,6249,35571,47392,110270,173,34744128,1176216009,333333343

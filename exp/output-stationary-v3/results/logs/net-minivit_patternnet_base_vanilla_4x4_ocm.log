@@ -1,0 +1,472 @@
+[init] URSA CONTROL FOUND:
+[init] AP CONTROL    0x40000000 
+[init] MEM CONTROL   0x40010000 
+URSA network: minivit_patternnet_base
+[urt] SA_SIZE=4 ACC_BITS=20 MAX_M=256 guard=1 windows A/B/C=4096/16384/16384 B
+[urt] weights: 3694080 B packed, streamed per call
+[urt]   patch_embed                  P=192  M=768   Q=196   chunks=10 x 80  call=20x196  calls=100
+[urt]   encoder_0_self_attn_wq       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_0_self_attn_wk       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_0_self_attn_wv       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_0_self_attn_wo       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_0_ffn_fc1            P=768  M=192   Q=197   chunks=1 x 192 call=20x84  calls=117
+[urt]   encoder_0_ffn_fc2            P=192  M=768   Q=197   chunks=4 x 192 call=20x84  calls=120
+[urt]   encoder_1_self_attn_wq       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_1_self_attn_wk       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_1_self_attn_wv       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_1_self_attn_wo       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_1_ffn_fc1            P=768  M=192   Q=197   chunks=1 x 192 call=20x84  calls=117
+[urt]   encoder_1_ffn_fc2            P=192  M=768   Q=197   chunks=3 x 256 call=16x64  calls=144
+[urt]   encoder_2_self_attn_wq       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_2_self_attn_wk       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_2_self_attn_wv       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_2_self_attn_wo       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_2_ffn_fc1            P=768  M=192   Q=197   chunks=2 x 96  call=40x100  calls=80
+[urt]   encoder_2_ffn_fc2            P=192  M=768   Q=197   chunks=3 x 256 call=16x64  calls=144
+[urt]   encoder_3_self_attn_wq       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_3_self_attn_wk       P=192  M=192   Q=197   chunks=1 x 192 call=20x84  calls=30
+[urt]   encoder_3_self_attn_wv       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_3_self_attn_wo       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_3_ffn_fc1            P=768  M=192   Q=197   chunks=2 x 96  call=40x100  calls=80
+[urt]   encoder_3_ffn_fc2            P=192  M=768   Q=197   chunks=5 x 156 call=24x104  calls=80
+[urt]   encoder_4_self_attn_wq       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_4_self_attn_wk       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_4_self_attn_wv       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_4_self_attn_wo       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_4_ffn_fc1            P=768  M=192   Q=197   chunks=2 x 96  call=40x100  calls=80
+[urt]   encoder_4_ffn_fc2            P=192  M=768   Q=197   chunks=4 x 192 call=20x84  calls=120
+[urt]   encoder_5_self_attn_wq       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_5_self_attn_wk       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_5_self_attn_wv       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_5_self_attn_wo       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_5_ffn_fc1            P=768  M=192   Q=197   chunks=2 x 96  call=40x100  calls=80
+[urt]   encoder_5_ffn_fc2            P=192  M=768   Q=197   chunks=6 x 128 call=32x128  calls=72
+[urt]   encoder_6_self_attn_wq       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_6_self_attn_wk       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_6_self_attn_wv       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_6_self_attn_wo       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_6_ffn_fc1            P=768  M=192   Q=197   chunks=2 x 96  call=40x100  calls=80
+[urt]   encoder_6_ffn_fc2            P=192  M=768   Q=197   chunks=3 x 256 call=16x64  calls=144
+[urt]   encoder_7_self_attn_wq       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_7_self_attn_wk       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_7_self_attn_wv       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_7_self_attn_wo       P=192  M=192   Q=197   chunks=2 x 96  call=40x100  calls=20
+[urt]   encoder_7_ffn_fc1            P=768  M=192   Q=197   chunks=2 x 96  call=40x100  calls=80
+[urt]   encoder_7_ffn_fc2            P=192  M=768   Q=197   chunks=3 x 256 call=16x64  calls=144
+[urt]   head                         P=38   M=192   Q=1     chunks=4 x 48  call=40x4  calls=4
+start
+<s>
+<i>0
+[urt] golden MISMATCH image 0, first at class 0 (got -7, expected -6)
+[urt]   got      -7 -11 -12 -17 16 7 -26 -2 -4 4 -4 13 11 1 115 -22 ...
+[urt]   expected -6 -16 -18 -24 14 11 -20 -1 -6 8 -7 16 11 -1 115 -17 ...
+Inference 1/32. Current accuracy: 1/1 (100.00%)
+<s>
+<i>1
+[urt] golden MISMATCH image 1, first at class 0 (got 5, expected 11)
+[urt]   got      5 -13 -9 10 13 1 -24 -21 -5 -2 -15 1 20 -13 20 -23 ...
+[urt]   expected 11 -15 -8 5 10 -1 -27 -26 0 -3 -11 4 17 -19 10 -20 ...
+Inference 2/32. Current accuracy: 2/2 (100.00%)
+<s>
+<i>2
+[urt] golden MISMATCH image 2, first at class 0 (got 1, expected -3)
+[urt]   got      1 0 9 -10 -4 -8 8 -20 -12 -7 -10 -5 1 0 -8 1 ...
+[urt]   expected -3 4 8 -13 -11 -9 8 -22 -13 0 -9 1 -2 -3 -7 2 ...
+Inference 3/32. Current accuracy: 3/3 (100.00%)
+<s>
+<i>3
+[urt] golden MISMATCH image 3, first at class 0 (got -1, expected 0)
+[urt]   got      -1 -6 2 -10 -13 -2 -6 -9 -2 -14 -18 20 -11 -18 5 -11 ...
+[urt]   expected 0 -4 0 -12 -10 -2 -3 -14 0 -11 -14 21 -14 -18 1 -11 ...
+Inference 4/32. Current accuracy: 4/4 (100.00%)
+<s>
+<i>4
+Inference 5/32. Current accuracy: 5/5 (100.00%)
+<s>
+<i>5
+Inference 6/32. Current accuracy: 6/6 (100.00%)
+<s>
+<i>6
+Inference 7/32. Current accuracy: 7/7 (100.00%)
+<s>
+<i>7
+Inference 8/32. Current accuracy: 8/8 (100.00%)
+<s>
+<i>8
+Inference 9/32. Current accuracy: 9/9 (100.00%)
+<s>
+<i>9
+Inference 10/32. Current accuracy: 10/10 (100.00%)
+<s>
+<i>10
+Inference 11/32. Current accuracy: 11/11 (100.00%)
+<s>
+<i>11
+Inference 12/32. Current accuracy: 12/12 (100.00%)
+<s>
+<i>12
+Inference 13/32. Current accuracy: 13/13 (100.00%)
+<s>
+<i>13
+Inference 14/32. Current accuracy: 14/14 (100.00%)
+<s>
+<i>14
+Inference 15/32. Current accuracy: 15/15 (100.00%)
+<s>
+<i>15
+Inference 16/32. Current accuracy: 16/16 (100.00%)
+<s>
+<i>16
+Inference 17/32. Current accuracy: 17/17 (100.00%)
+<s>
+<i>17
+Inference 18/32. Current accuracy: 18/18 (100.00%)
+<s>
+<i>18
+Inference 19/32. Current accuracy: 19/19 (100.00%)
+<s>
+<i>19
+Inference 20/32. Current accuracy: 20/20 (100.00%)
+<s>
+<i>20
+Inference 21/32. Current accuracy: 21/21 (100.00%)
+<s>
+<i>21
+Inference 22/32. Current accuracy: 22/22 (100.00%)
+<s>
+<i>22
+Inference 23/32. Current accuracy: 23/23 (100.00%)
+<s>
+<i>23
+Inference 24/32. Current accuracy: 24/24 (100.00%)
+<s>
+<i>24
+Inference 25/32. Current accuracy: 25/25 (100.00%)
+<s>
+<i>25
+Inference 26/32. Current accuracy: 26/26 (100.00%)
+<s>
+<i>26
+Inference 27/32. Current accuracy: 27/27 (100.00%)
+<s>
+<i>27
+Inference 28/32. Current accuracy: 28/28 (100.00%)
+<s>
+<i>28
+Inference 29/32. Current accuracy: 29/29 (100.00%)
+<s>
+<i>29
+Inference 30/32. Current accuracy: 30/30 (100.00%)
+<s>
+<i>30
+Inference 31/32. Current accuracy: 31/31 (100.00%)
+<s>
+<i>31
+Inference 32/32. Current accuracy: 32/32 (100.00%)
+Total mismatches: 0 / 32
+Correct predictions: 32 / 32 (100.00%)
+[cycles] total: 17723001827
+
+[profile] ===== hierarchical cycle profile =====
+[profile] 32 inferences; totals are inclusive of the subtree
+[profile]         cycles        %        per-inf device    node [kind]
+[profile]    17723001827   100.00      553843807           minivit
+[profile]      361727765     2.04       11303992 ursa        patch_embed [UrsaLinear]
+[profile]        3453908     0.01         107934 cpu         cat [UrsaCat]
+[profile]       59804963     0.33        1868905 cpu         add [UrsaResAdd]
+[profile]    17296620932    97.59      540519404             encoder
+[profile]     2102717782    11.86       65709930               0
+[profile]     1004745399     5.66       31398293                 self_attn
+[profile]       21689654     0.12         677801 cpu               norm [UrsaLayerNorm]
+[profile]      111547180     0.62        3485849 ursa              wq [UrsaLinear]
+[profile]       97932996     0.55        3060406 ursa              wk [UrsaLinear]
+[profile]       97844319     0.55        3057634 ursa              wv [UrsaLinear]
+[profile]      376969712     2.12       11780303 ursa+cpu          matmul [UrsaMatmul+SOFTMAX]
+[profile]      125586304     0.70        3924572 ursa              matmul_1 [UrsaMatmul]
+[profile]      111219829     0.62        3475619 ursa              wo [UrsaLinear]
+[profile]       61955405     0.34        1936106 cpu               add_1 [UrsaResAdd]
+[profile]     1097972383     6.19       34311636                 ffn
+[profile]       21666969     0.12         677092 cpu               norm [UrsaLayerNorm]
+[profile]      381641908     2.15       11926309 ursa              fc1 [UrsaLinear]
+[profile]      322573221     1.82       10080413 cpu               gelu [UrsaGelu]
+[profile]      304245316     1.71        9507666 ursa              fc2 [UrsaLinear]
+[profile]       67844969     0.38        2120155 cpu               add_2 [UrsaResAdd]
+[profile]     2069470336    11.67       64670948               1
+[profile]      972845880     5.48       30401433                 self_attn
+[profile]       21791314     0.12         680978 cpu               norm [UrsaLayerNorm]
+[profile]       97759941     0.55        3054998 ursa              wq [UrsaLinear]
+[profile]       97726562     0.55        3053955 ursa              wk [UrsaLinear]
+[profile]       97724019     0.55        3053875 ursa              wv [UrsaLinear]
+[profile]      365596512     2.06       11424891 ursa+cpu          matmul_2 [UrsaMatmul+SOFTMAX]
+[profile]      131041466     0.73        4095045 ursa              matmul_3 [UrsaMatmul]
+[profile]       98180473     0.55        3068139 ursa              wo [UrsaLinear]
+[profile]       63025593     0.35        1969549 cpu               add_3 [UrsaResAdd]
+[profile]     1096624456     6.18       34269514                 ffn
+[profile]       21898553     0.12         684329 cpu               norm [UrsaLayerNorm]
+[profile]      383884697     2.16       11996396 ursa              fc1 [UrsaLinear]
+[profile]      323266457     1.82       10102076 cpu               gelu [UrsaGelu]
+[profile]      298798136     1.68        9337441 ursa              fc2 [UrsaLinear]
+[profile]       68776613     0.38        2149269 cpu               add_4 [UrsaResAdd]
+[profile]     2148132472    12.12       67129139               2
+[profile]      998303141     5.63       31196973                 self_attn
+[profile]       21962419     0.12         686325 cpu               norm [UrsaLayerNorm]
+[profile]       98139206     0.55        3066850 ursa              wq [UrsaLinear]
+[profile]       98110813     0.55        3065962 ursa              wk [UrsaLinear]
+[profile]      111292748     0.62        3477898 ursa              wv [UrsaLinear]
+[profile]      368909738     2.08       11528429 ursa+cpu          matmul_4 [UrsaMatmul+SOFTMAX]
+[profile]      123523289     0.69        3860102 ursa              matmul_5 [UrsaMatmul]
+[profile]      111605321     0.62        3487666 ursa              wo [UrsaLinear]
+[profile]       64759607     0.36        2023737 cpu               add_5 [UrsaResAdd]
+[profile]     1149829331     6.48       35932166                 ffn
+[profile]       22045650     0.12         688926 cpu               norm [UrsaLayerNorm]
+[profile]      441292285     2.48       13790383 ursa              fc1 [UrsaLinear]
+[profile]      322785414     1.82       10087044 cpu               gelu [UrsaGelu]
+[profile]      299845925     1.69        9370185 ursa              fc2 [UrsaLinear]
+[profile]       63860057     0.36        1995626 cpu               add_6 [UrsaResAdd]
+[profile]     2165073307    12.21       67658540               3
+[profile]     1004109661     5.66       31378426                 self_attn
+[profile]       22032571     0.12         688517 cpu               norm [UrsaLayerNorm]
+[profile]       98295323     0.55        3071728 ursa              wq [UrsaLinear]
+[profile]       98243696     0.55        3070115 ursa              wk [UrsaLinear]
+[profile]      111511351     0.62        3484729 ursa              wv [UrsaLinear]
+[profile]      373838500     2.10       11682453 ursa+cpu          matmul_6 [UrsaMatmul+SOFTMAX]
+[profile]      127766373     0.72        3992699 ursa              matmul_7 [UrsaMatmul]
+[profile]      111536439     0.62        3485513 ursa              wo [UrsaLinear]
+[profile]       60885408     0.34        1902669 cpu               add_7 [UrsaResAdd]
+[profile]     1160963646     6.55       36280113                 ffn
+[profile]       21966450     0.12         686451 cpu               norm [UrsaLayerNorm]
+[profile]      440130452     2.48       13754076 ursa              fc1 [UrsaLinear]
+[profile]      321240004     1.81       10038750 cpu               gelu [UrsaGelu]
+[profile]      312704821     1.76        9772025 ursa              fc2 [UrsaLinear]
+[profile]       64921919     0.36        2028809 cpu               add_8 [UrsaResAdd]
+[profile]     2193221114    12.37       68538159               4
+[profile]     1037332811     5.85       32416650                 self_attn
+[profile]       21990099     0.12         687190 cpu               norm [UrsaLayerNorm]
+[profile]      111472304     0.62        3483509 ursa              wq [UrsaLinear]
+[profile]      111395597     0.62        3481112 ursa              wk [UrsaLinear]
+[profile]      111171158     0.62        3474098 ursa              wv [UrsaLinear]
+[profile]      375660470     2.11       11739389 ursa+cpu          matmul_8 [UrsaMatmul+SOFTMAX]
+[profile]      132256577     0.74        4133018 ursa              matmul_9 [UrsaMatmul]
+[profile]      111314303     0.62        3478571 ursa              wo [UrsaLinear]
+[profile]       62072303     0.35        1939759 cpu               add_9 [UrsaResAdd]
+[profile]     1155888303     6.52       36121509                 ffn
+[profile]       22241557     0.12         695048 cpu               norm [UrsaLayerNorm]
+[profile]      440695189     2.48       13771724 ursa              fc1 [UrsaLinear]
+[profile]      320375225     1.80       10011725 cpu               gelu [UrsaGelu]
+[profile]      306178822     1.72        9568088 ursa              fc2 [UrsaLinear]
+[profile]       66397510     0.37        2074922 cpu               add_10 [UrsaResAdd]
+[profile]     2221776655    12.53       69430520               5
+[profile]     1048362206     5.91       32761318                 self_attn
+[profile]       22063459     0.12         689483 cpu               norm [UrsaLayerNorm]
+[profile]      111348018     0.62        3479625 ursa              wq [UrsaLinear]
+[profile]      111209052     0.62        3475282 ursa              wk [UrsaLinear]
+[profile]      111327450     0.62        3478982 ursa              wv [UrsaLinear]
+[profile]      379034858     2.13       11844839 ursa+cpu          matmul_10 [UrsaMatmul+SOFTMAX]
+[profile]      134730163     0.76        4210317 ursa              matmul_11 [UrsaMatmul]
+[profile]      111460376     0.62        3483136 ursa              wo [UrsaLinear]
+[profile]       67188830     0.37        2099650 cpu               add_11 [UrsaResAdd]
+[profile]     1173414449     6.62       36669201                 ffn
+[profile]       22327592     0.12         697737 cpu               norm [UrsaLayerNorm]
+[profile]      440515124     2.48       13766097 ursa              fc1 [UrsaLinear]
+[profile]      320392570     1.80       10012267 cpu               gelu [UrsaGelu]
+[profile]      325015080     1.83       10156721 ursa              fc2 [UrsaLinear]
+[profile]       65164083     0.36        2036377 cpu               add_12 [UrsaResAdd]
+[profile]     2194939781    12.38       68591868               6
+[profile]     1044236090     5.89       32632377                 self_attn
+[profile]       22175038     0.12         692969 cpu               norm [UrsaLayerNorm]
+[profile]      111323227     0.62        3478850 ursa              wq [UrsaLinear]
+[profile]      111147116     0.62        3473347 ursa              wk [UrsaLinear]
+[profile]      111211305     0.62        3475353 ursa              wv [UrsaLinear]
+[profile]      373970563     2.11       11686580 ursa+cpu          matmul_12 [UrsaMatmul+SOFTMAX]
+[profile]      136556868     0.77        4267402 ursa              matmul_13 [UrsaMatmul]
+[profile]      111466429     0.62        3483325 ursa              wo [UrsaLinear]
+[profile]       66385544     0.37        2074548 cpu               add_13 [UrsaResAdd]
+[profile]     1150703691     6.49       35959490                 ffn
+[profile]       22203425     0.12         693857 cpu               norm [UrsaLayerNorm]
+[profile]      441075900     2.48       13783621 ursa              fc1 [UrsaLinear]
+[profile]      321232488     1.81       10038515 cpu               gelu [UrsaGelu]
+[profile]      300098599     1.69        9378081 ursa              fc2 [UrsaLinear]
+[profile]       66093279     0.37        2065414 cpu               add_14 [UrsaResAdd]
+[profile]     2201289485    12.42       68790296               7
+[profile]     1055978478     5.95       32999327                 self_attn
+[profile]       22172425     0.12         692888 cpu               norm [UrsaLayerNorm]
+[profile]      111572716     0.62        3486647 ursa              wq [UrsaLinear]
+[profile]      111519122     0.62        3484972 ursa              wk [UrsaLinear]
+[profile]      111262434     0.62        3476951 ursa              wv [UrsaLinear]
+[profile]      384056261     2.16       12001758 ursa+cpu          matmul_14 [UrsaMatmul+SOFTMAX]
+[profile]      136591885     0.77        4268496 ursa              matmul_15 [UrsaMatmul]
+[profile]      111557765     0.62        3486180 ursa              wo [UrsaLinear]
+[profile]       67245870     0.37        2101433 cpu               add_15 [UrsaResAdd]
+[profile]     1145311007     6.46       35790968                 ffn
+[profile]       21963705     0.12         686365 cpu               norm [UrsaLayerNorm]
+[profile]      440392763     2.48       13762273 ursa              fc1 [UrsaLinear]
+[profile]      323678386     1.82       10114949 cpu               gelu [UrsaGelu]
+[profile]      298234813     1.68        9319837 ursa              fc2 [UrsaLinear]
+[profile]       61041340     0.34        1907541 cpu               add_16 [UrsaResAdd]
+[profile]         129983     0.00           4061 cpu         ln_final [UrsaLayerNorm]
+[profile]        1264276     0.00          39508 ursa        head [UrsaLinear]
+[profile]
+[profile] ----- by device -----
+[profile]         cycles        %   layers  device
+[profile]    10696223384    60.35       58  ursa
+[profile]     4028741829    22.73       43  cpu
+[profile]     2998036614    16.91        8  ursa+cpu
+[profile]
+[profile] ----- by operation -----
+[profile]         cycles        %   layers  operation
+[profile]     9648170459    54.43       50  UrsaLinear
+[profile]        3453908     0.01        1  UrsaCat
+[profile]     1097423293     6.19       17  UrsaResAdd
+[profile]      352320863     1.98       17  UrsaLayerNorm
+[profile]     2998036614    16.91        8  UrsaMatmul+SOFTMAX
+[profile]     1048052925     5.91        8  UrsaMatmul
+[profile]     2575543765    14.53        8  UrsaGelu
+[prof] 0 -1 0 17723001827 0 3488 - minivit -
+[prof] 1 0 1 361727765 361727765 32 UrsaLinear patch_embed ursa
+[prof] 2 0 1 3453908 3453908 32 UrsaCat cat cpu
+[prof] 3 0 1 59804963 59804963 32 UrsaResAdd add cpu
+[prof] 4 0 1 17296620932 0 3328 - encoder -
+[prof] 5 4 2 2102717782 0 416 - encoder.0 -
+[prof] 6 5 3 1004745399 0 256 - encoder.0.self_attn -
+[prof] 7 6 4 21689654 21689654 32 UrsaLayerNorm encoder.0.self_attn.norm cpu
+[prof] 8 6 4 111547180 111547180 32 UrsaLinear encoder.0.self_attn.wq ursa
+[prof] 9 6 4 97932996 97932996 32 UrsaLinear encoder.0.self_attn.wk ursa
+[prof] 10 6 4 97844319 97844319 32 UrsaLinear encoder.0.self_attn.wv ursa
+[prof] 11 6 4 376969712 376969712 32 UrsaMatmul+SOFTMAX encoder.0.self_attn.matmul ursa+cpu
+[prof] 12 6 4 125586304 125586304 32 UrsaMatmul encoder.0.self_attn.matmul_1 ursa
+[prof] 13 6 4 111219829 111219829 32 UrsaLinear encoder.0.self_attn.wo ursa
+[prof] 14 6 4 61955405 61955405 32 UrsaResAdd encoder.0.self_attn.add_1 cpu
+[prof] 15 5 3 1097972383 0 160 - encoder.0.ffn -
+[prof] 16 15 4 21666969 21666969 32 UrsaLayerNorm encoder.0.ffn.norm cpu
+[prof] 17 15 4 381641908 381641908 32 UrsaLinear encoder.0.ffn.fc1 ursa
+[prof] 18 15 4 322573221 322573221 32 UrsaGelu encoder.0.ffn.gelu cpu
+[prof] 19 15 4 304245316 304245316 32 UrsaLinear encoder.0.ffn.fc2 ursa
+[prof] 20 15 4 67844969 67844969 32 UrsaResAdd encoder.0.ffn.add_2 cpu
+[prof] 21 4 2 2069470336 0 416 - encoder.1 -
+[prof] 22 21 3 972845880 0 256 - encoder.1.self_attn -
+[prof] 23 22 4 21791314 21791314 32 UrsaLayerNorm encoder.1.self_attn.norm cpu
+[prof] 24 22 4 97759941 97759941 32 UrsaLinear encoder.1.self_attn.wq ursa
+[prof] 25 22 4 97726562 97726562 32 UrsaLinear encoder.1.self_attn.wk ursa
+[prof] 26 22 4 97724019 97724019 32 UrsaLinear encoder.1.self_attn.wv ursa
+[prof] 27 22 4 365596512 365596512 32 UrsaMatmul+SOFTMAX encoder.1.self_attn.matmul_2 ursa+cpu
+[prof] 28 22 4 131041466 131041466 32 UrsaMatmul encoder.1.self_attn.matmul_3 ursa
+[prof] 29 22 4 98180473 98180473 32 UrsaLinear encoder.1.self_attn.wo ursa
+[prof] 30 22 4 63025593 63025593 32 UrsaResAdd encoder.1.self_attn.add_3 cpu
+[prof] 31 21 3 1096624456 0 160 - encoder.1.ffn -
+[prof] 32 31 4 21898553 21898553 32 UrsaLayerNorm encoder.1.ffn.norm cpu
+[prof] 33 31 4 383884697 383884697 32 UrsaLinear encoder.1.ffn.fc1 ursa
+[prof] 34 31 4 323266457 323266457 32 UrsaGelu encoder.1.ffn.gelu cpu
+[prof] 35 31 4 298798136 298798136 32 UrsaLinear encoder.1.ffn.fc2 ursa
+[prof] 36 31 4 68776613 68776613 32 UrsaResAdd encoder.1.ffn.add_4 cpu
+[prof] 37 4 2 2148132472 0 416 - encoder.2 -
+[prof] 38 37 3 998303141 0 256 - encoder.2.self_attn -
+[prof] 39 38 4 21962419 21962419 32 UrsaLayerNorm encoder.2.self_attn.norm cpu
+[prof] 40 38 4 98139206 98139206 32 UrsaLinear encoder.2.self_attn.wq ursa
+[prof] 41 38 4 98110813 98110813 32 UrsaLinear encoder.2.self_attn.wk ursa
+[prof] 42 38 4 111292748 111292748 32 UrsaLinear encoder.2.self_attn.wv ursa
+[prof] 43 38 4 368909738 368909738 32 UrsaMatmul+SOFTMAX encoder.2.self_attn.matmul_4 ursa+cpu
+[prof] 44 38 4 123523289 123523289 32 UrsaMatmul encoder.2.self_attn.matmul_5 ursa
+[prof] 45 38 4 111605321 111605321 32 UrsaLinear encoder.2.self_attn.wo ursa
+[prof] 46 38 4 64759607 64759607 32 UrsaResAdd encoder.2.self_attn.add_5 cpu
+[prof] 47 37 3 1149829331 0 160 - encoder.2.ffn -
+[prof] 48 47 4 22045650 22045650 32 UrsaLayerNorm encoder.2.ffn.norm cpu
+[prof] 49 47 4 441292285 441292285 32 UrsaLinear encoder.2.ffn.fc1 ursa
+[prof] 50 47 4 322785414 322785414 32 UrsaGelu encoder.2.ffn.gelu cpu
+[prof] 51 47 4 299845925 299845925 32 UrsaLinear encoder.2.ffn.fc2 ursa
+[prof] 52 47 4 63860057 63860057 32 UrsaResAdd encoder.2.ffn.add_6 cpu
+[prof] 53 4 2 2165073307 0 416 - encoder.3 -
+[prof] 54 53 3 1004109661 0 256 - encoder.3.self_attn -
+[prof] 55 54 4 22032571 22032571 32 UrsaLayerNorm encoder.3.self_attn.norm cpu
+[prof] 56 54 4 98295323 98295323 32 UrsaLinear encoder.3.self_attn.wq ursa
+[prof] 57 54 4 98243696 98243696 32 UrsaLinear encoder.3.self_attn.wk ursa
+[prof] 58 54 4 111511351 111511351 32 UrsaLinear encoder.3.self_attn.wv ursa
+[prof] 59 54 4 373838500 373838500 32 UrsaMatmul+SOFTMAX encoder.3.self_attn.matmul_6 ursa+cpu
+[prof] 60 54 4 127766373 127766373 32 UrsaMatmul encoder.3.self_attn.matmul_7 ursa
+[prof] 61 54 4 111536439 111536439 32 UrsaLinear encoder.3.self_attn.wo ursa
+[prof] 62 54 4 60885408 60885408 32 UrsaResAdd encoder.3.self_attn.add_7 cpu
+[prof] 63 53 3 1160963646 0 160 - encoder.3.ffn -
+[prof] 64 63 4 21966450 21966450 32 UrsaLayerNorm encoder.3.ffn.norm cpu
+[prof] 65 63 4 440130452 440130452 32 UrsaLinear encoder.3.ffn.fc1 ursa
+[prof] 66 63 4 321240004 321240004 32 UrsaGelu encoder.3.ffn.gelu cpu
+[prof] 67 63 4 312704821 312704821 32 UrsaLinear encoder.3.ffn.fc2 ursa
+[prof] 68 63 4 64921919 64921919 32 UrsaResAdd encoder.3.ffn.add_8 cpu
+[prof] 69 4 2 2193221114 0 416 - encoder.4 -
+[prof] 70 69 3 1037332811 0 256 - encoder.4.self_attn -
+[prof] 71 70 4 21990099 21990099 32 UrsaLayerNorm encoder.4.self_attn.norm cpu
+[prof] 72 70 4 111472304 111472304 32 UrsaLinear encoder.4.self_attn.wq ursa
+[prof] 73 70 4 111395597 111395597 32 UrsaLinear encoder.4.self_attn.wk ursa
+[prof] 74 70 4 111171158 111171158 32 UrsaLinear encoder.4.self_attn.wv ursa
+[prof] 75 70 4 375660470 375660470 32 UrsaMatmul+SOFTMAX encoder.4.self_attn.matmul_8 ursa+cpu
+[prof] 76 70 4 132256577 132256577 32 UrsaMatmul encoder.4.self_attn.matmul_9 ursa
+[prof] 77 70 4 111314303 111314303 32 UrsaLinear encoder.4.self_attn.wo ursa
+[prof] 78 70 4 62072303 62072303 32 UrsaResAdd encoder.4.self_attn.add_9 cpu
+[prof] 79 69 3 1155888303 0 160 - encoder.4.ffn -
+[prof] 80 79 4 22241557 22241557 32 UrsaLayerNorm encoder.4.ffn.norm cpu
+[prof] 81 79 4 440695189 440695189 32 UrsaLinear encoder.4.ffn.fc1 ursa
+[prof] 82 79 4 320375225 320375225 32 UrsaGelu encoder.4.ffn.gelu cpu
+[prof] 83 79 4 306178822 306178822 32 UrsaLinear encoder.4.ffn.fc2 ursa
+[prof] 84 79 4 66397510 66397510 32 UrsaResAdd encoder.4.ffn.add_10 cpu
+[prof] 85 4 2 2221776655 0 416 - encoder.5 -
+[prof] 86 85 3 1048362206 0 256 - encoder.5.self_attn -
+[prof] 87 86 4 22063459 22063459 32 UrsaLayerNorm encoder.5.self_attn.norm cpu
+[prof] 88 86 4 111348018 111348018 32 UrsaLinear encoder.5.self_attn.wq ursa
+[prof] 89 86 4 111209052 111209052 32 UrsaLinear encoder.5.self_attn.wk ursa
+[prof] 90 86 4 111327450 111327450 32 UrsaLinear encoder.5.self_attn.wv ursa
+[prof] 91 86 4 379034858 379034858 32 UrsaMatmul+SOFTMAX encoder.5.self_attn.matmul_10 ursa+cpu
+[prof] 92 86 4 134730163 134730163 32 UrsaMatmul encoder.5.self_attn.matmul_11 ursa
+[prof] 93 86 4 111460376 111460376 32 UrsaLinear encoder.5.self_attn.wo ursa
+[prof] 94 86 4 67188830 67188830 32 UrsaResAdd encoder.5.self_attn.add_11 cpu
+[prof] 95 85 3 1173414449 0 160 - encoder.5.ffn -
+[prof] 96 95 4 22327592 22327592 32 UrsaLayerNorm encoder.5.ffn.norm cpu
+[prof] 97 95 4 440515124 440515124 32 UrsaLinear encoder.5.ffn.fc1 ursa
+[prof] 98 95 4 320392570 320392570 32 UrsaGelu encoder.5.ffn.gelu cpu
+[prof] 99 95 4 325015080 325015080 32 UrsaLinear encoder.5.ffn.fc2 ursa
+[prof] 100 95 4 65164083 65164083 32 UrsaResAdd encoder.5.ffn.add_12 cpu
+[prof] 101 4 2 2194939781 0 416 - encoder.6 -
+[prof] 102 101 3 1044236090 0 256 - encoder.6.self_attn -
+[prof] 103 102 4 22175038 22175038 32 UrsaLayerNorm encoder.6.self_attn.norm cpu
+[prof] 104 102 4 111323227 111323227 32 UrsaLinear encoder.6.self_attn.wq ursa
+[prof] 105 102 4 111147116 111147116 32 UrsaLinear encoder.6.self_attn.wk ursa
+[prof] 106 102 4 111211305 111211305 32 UrsaLinear encoder.6.self_attn.wv ursa
+[prof] 107 102 4 373970563 373970563 32 UrsaMatmul+SOFTMAX encoder.6.self_attn.matmul_12 ursa+cpu
+[prof] 108 102 4 136556868 136556868 32 UrsaMatmul encoder.6.self_attn.matmul_13 ursa
+[prof] 109 102 4 111466429 111466429 32 UrsaLinear encoder.6.self_attn.wo ursa
+[prof] 110 102 4 66385544 66385544 32 UrsaResAdd encoder.6.self_attn.add_13 cpu
+[prof] 111 101 3 1150703691 0 160 - encoder.6.ffn -
+[prof] 112 111 4 22203425 22203425 32 UrsaLayerNorm encoder.6.ffn.norm cpu
+[prof] 113 111 4 441075900 441075900 32 UrsaLinear encoder.6.ffn.fc1 ursa
+[prof] 114 111 4 321232488 321232488 32 UrsaGelu encoder.6.ffn.gelu cpu
+[prof] 115 111 4 300098599 300098599 32 UrsaLinear encoder.6.ffn.fc2 ursa
+[prof] 116 111 4 66093279 66093279 32 UrsaResAdd encoder.6.ffn.add_14 cpu
+[prof] 117 4 2 2201289485 0 416 - encoder.7 -
+[prof] 118 117 3 1055978478 0 256 - encoder.7.self_attn -
+[prof] 119 118 4 22172425 22172425 32 UrsaLayerNorm encoder.7.self_attn.norm cpu
+[prof] 120 118 4 111572716 111572716 32 UrsaLinear encoder.7.self_attn.wq ursa
+[prof] 121 118 4 111519122 111519122 32 UrsaLinear encoder.7.self_attn.wk ursa
+[prof] 122 118 4 111262434 111262434 32 UrsaLinear encoder.7.self_attn.wv ursa
+[prof] 123 118 4 384056261 384056261 32 UrsaMatmul+SOFTMAX encoder.7.self_attn.matmul_14 ursa+cpu
+[prof] 124 118 4 136591885 136591885 32 UrsaMatmul encoder.7.self_attn.matmul_15 ursa
+[prof] 125 118 4 111557765 111557765 32 UrsaLinear encoder.7.self_attn.wo ursa
+[prof] 126 118 4 67245870 67245870 32 UrsaResAdd encoder.7.self_attn.add_15 cpu
+[prof] 127 117 3 1145311007 0 160 - encoder.7.ffn -
+[prof] 128 127 4 21963705 21963705 32 UrsaLayerNorm encoder.7.ffn.norm cpu
+[prof] 129 127 4 440392763 440392763 32 UrsaLinear encoder.7.ffn.fc1 ursa
+[prof] 130 127 4 323678386 323678386 32 UrsaGelu encoder.7.ffn.gelu cpu
+[prof] 131 127 4 298234813 298234813 32 UrsaLinear encoder.7.ffn.fc2 ursa
+[prof] 132 127 4 61041340 61041340 32 UrsaResAdd encoder.7.ffn.add_16 cpu
+[prof] 133 0 1 129983 129983 32 UrsaLayerNorm ln_final cpu
+[prof] 134 0 1 1264276 1264276 32 UrsaLinear head ursa
+[profile] measured 17723001827 of 17723001827 total cycles
+Done
+[urt] engine: URSA
+[urt] timer: 333333343 ticks/s
+[urt] per inference (us):
+[urt]   lower (im2col/transpose)        50710
+[urt]   transfer (A/B in, C out)       236320
+[urt]   gemm (URSA)                    521396
+[urt]   epilogue (requant)             376746
+[urt]   other (pool/add/... on ARM)     476358
+[urt]   total                         1661531
+[urt] URSA calls per inference: 3118, MACs per inference: 845301888
+[urt] golden check: 0/32 images bit-exact
+URT HW TEST FAIL
