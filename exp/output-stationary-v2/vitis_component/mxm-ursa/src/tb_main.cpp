@@ -316,6 +316,23 @@ static inline void win_inval_c(uint32_t n)
 #endif
 }
 
+/* UM: 26/10/26 - copy into a window. On BRAM the windows are device memory,
+   where an unaligned word access raises a data abort and the board hangs
+   with no output. memcpy uses word stores, so a B row that starts off a word
+   boundary (SA_SIZE = 2 with a q tile of 30 columns, e.g. the last tile of a
+   Q = 197 layer) stopped the 2x2 BRAM run at its second layer. Unaligned
+   copies go byte by byte; the aligned ones, which are all the others, keep
+   memcpy. OCM and HYBRID put B in normal memory and are not affected. */
+static inline void win_copy(uint8_t *dst, const uint8_t *src, uint32_t n)
+{
+    if ((((uintptr_t)dst | n) & 3u) == 0) {
+        memcpy(dst, src, n);
+    } else {
+        volatile uint8_t *d = dst;
+        for (uint32_t i = 0; i < n; i++) d[i] = src[i];
+    }
+}
+
 /* One pass over the calls of a layer. xfer = 0: calls only. */
 static uint8_t run_layer(const ursa_layer_t *L, const lplan_t *pl, int xfer)
 {
@@ -328,10 +345,10 @@ static uint8_t run_layer(const ursa_layer_t *L, const lplan_t *pl, int xfer)
             const uint32_t mw  = a_row_stride(len);
             if (xfer) {
                 if (qc == pl->Q_pad) {
-                    memcpy((void *)g_bi, s_b, len * qc);
+                    win_copy((uint8_t *)g_bi, (const uint8_t *)s_b, len * qc);
                 } else {
                     for (uint32_t r = 0; r < len; r++)
-                        memcpy((uint8_t *)g_bi + r * qc, (const uint8_t *)s_b + r * qc, qc);
+                        win_copy((uint8_t *)g_bi + r * qc, (const uint8_t *)s_b + r * qc, qc);
                 }
                 win_flush_b(len * qc);
             }
