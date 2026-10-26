@@ -63,6 +63,20 @@ if [ -z "$XILINX_VITIS" ]; then
     exit 1
 fi
 
+# XILINX_VITIS may be inherited from a shell where only part of the Vitis
+# environment is on PATH (e.g. after sourcing the Vivado settings). Make sure
+# the bare-metal ARM toolchain is reachable before CMake looks for it.
+if ! command -v arm-none-eabi-g++ >/dev/null 2>&1; then
+    ARM_GCC_BIN=${XILINX_VITIS}/gnu/aarch32/lin/gcc-arm-none-eabi/bin
+    if [ -x "${ARM_GCC_BIN}/arm-none-eabi-g++" ]; then
+        export PATH=${ARM_GCC_BIN}:${PATH}
+    else
+        echo "arm-none-eabi-g++ not found (looked in PATH and ${ARM_GCC_BIN})."
+        echo "Source ${XILINX_VITIS}/settings64.sh and try again."
+        exit 1
+    fi
+fi
+
 # The CMake bundled with Vitis links against libidn.so.11, which recent Ubuntu
 # releases no longer ship, so it fails to start. The system CMake builds this
 # project fine; only the toolchain file has to come from the platform.
@@ -115,6 +129,8 @@ VARIANT=vanilla
 #   free   GEMM app, hand-written shape table  (FREE_RUN=1)
 #   cnn    CNN SAT-6 inference app             (FREE_RUN unused)
 #   net    one self-checking network test from netmendes/ (NET=<name>)
+#   layers GEMM app, every layer of ursa_layers.h   (FREE_RUN=2)
+#          FCLK_DIV0=13 builds the 123.08 MHz ELF (suffix -div13)
 MODE=${MODE:-bench}
 
 # ─── Network tests (MODE=net) ─────────────────────────────────────────────
@@ -178,6 +194,13 @@ case "${MODE}" in
         APP_SUBDIR=mxm-ursa
         FREE_RUN=1
         ;;
+    layers)
+        # UM: 26/10/26 - GEMM time of every layer in mxm-ursa/src/ursa_layers.h
+        # (the v3 table, bench_layers/gen_layers.py in the v3 folder), split
+        # into URSA calls as the v2 network runtime does.
+        APP_SUBDIR=mxm-ursa
+        FREE_RUN=2
+        ;;
     *)
         MODE=bench
         APP_SUBDIR=mxm-ursa
@@ -224,6 +247,16 @@ if [ "${MODE}" = "net" ]; then
         EXTRA_DEFS="${EXTRA_DEFS};URT_PRINT_LOGITS"
         NAME=${NAME}-logits
     fi
+fi
+
+# UM: 26/10/26 - FCLK_DIV0 sets FCLK0 at run time (IO PLL 1600 MHz / div0):
+# 16 -> 100 MHz, 13 -> 123.08 MHz. Software-only, so it is an ELF suffix
+# (-div13) and the bitstream keeps its name (05: --variant vanilla-div13
+# --hw-variant vanilla). This is how the v2 123 MHz runs were made: the
+# 100 MHz bitstream with the clock raised by the application.
+if [ -n "${FCLK_DIV0}" ]; then
+    EXTRA_DEFS="${EXTRA_DEFS};FCLK0_DIV0=${FCLK_DIV0}"
+    NAME=${NAME}-div${FCLK_DIV0}
 fi
 
 echo "Cache: I=${CACHE_I} D=${CACHE_D}  Engine: ${ENGINE} (ELF name variant: ${NAME})"

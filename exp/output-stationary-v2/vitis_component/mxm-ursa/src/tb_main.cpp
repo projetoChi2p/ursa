@@ -217,6 +217,151 @@ uint8_t run_ursa(uint32_t p, uint32_t q, uint32_t m)
 #endif
 }
 
+/* ─── Layer bench (FREE_RUN == 2) ──────────────────────────────────────────
+   UM: 26/10/26 - port of the v3 layer bench to v2, so the two versions run
+   the same table: every GEMM layer of ursa_layers.h (netmendes satellite nets
+   and the ImageNet nets of the related work, bench_layers/gen_layers.py in
+   the v3 folder), split into URSA calls the way the v2 network runtime does
+   it (urt_plan / urt_tile / urt_gemm_run in the netmendes tests):
+     - the reduction in chunks of at most URSA_MAX_M, each a multiple of the
+       word (no accumulator guard: that depends on the weights);
+     - calls as wide in Q, then as tall in P, as the three windows allow,
+       with the v2 sizes (A: pc x up(m, word), B: m x qc, C: pc x qc x 4)
+       and A streamed per call;
+     - loop order q tile -> M chunk -> p tile, as urt_gemm_run.
+   Two timed passes per layer:
+     us_gemm  the URSA calls only (operands left in the windows);
+     us_xfer  the same calls plus what the runtime does around each one: B
+              copied in per (q tile, chunk), row by row when the call is
+              narrower than the layer, A copied in per call, C flushed
+              before and copied out after each call, and added on the ARM
+              for chunks after the first.
+   Operand values are whatever is in the windows: time does not depend on
+   them, and correctness is covered by the bench and free suites.         */
+#if FREE_RUN == 2
+#include "ursa_layers.h"
+
+typedef struct {
+    uint32_t P_pad, Q_pad, m_chunk, n_chunks, pc, qc, calls;
+} lplan_t;
+
+static int plan_layer(const ursa_layer_t *L, lplan_t *pl)
+{
+    pl->P_pad = ((L->P + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
+    pl->Q_pad = ((L->Q + SA_SIZE - 1) / SA_SIZE) * SA_SIZE;
+
+    uint32_t n = (L->M + URSA_MAX_M - 1) / URSA_MAX_M;
+    for (;; n++) {
+        uint32_t mc = (L->M + n - 1) / n;
+        mc = a_row_stride(mc);
+        if (mc <= URSA_MAX_M) { pl->m_chunk = mc; break; }
+    }
+    if (pl->m_chunk > L->M) pl->m_chunk = L->M;
+    pl->n_chunks = (L->M + pl->m_chunk - 1) / pl->m_chunk;
+
+    const uint32_t mw_max = a_row_stride(pl->m_chunk);
+    long best = -1;
+    for (uint32_t qc = SA_SIZE; qc <= pl->Q_pad; qc += SA_SIZE) {
+        if (pl->m_chunk * qc * sizeof(bench_b_t) > BRAM_BI_SIZE) break;
+        uint32_t pc = (BRAM_CA_SIZE / sizeof(bench_c_t)) / qc;
+        if (pc > pl->P_pad) pc = pl->P_pad;
+        const uint32_t pa = BRAM_AW_SIZE / mw_max;
+        if (pc > pa) pc = pa;
+        pc = (pc / SA_SIZE) * SA_SIZE;
+        if (pc < SA_SIZE) break;
+        const long calls = (long)((pl->P_pad + pc - 1) / pc) * ((pl->Q_pad + qc - 1) / qc);
+        if (best < 0 || calls <= best) { best = calls; pl->pc = pc; pl->qc = qc; }
+    }
+    if (best < 0) return -1;
+    pl->calls = (uint32_t)best * pl->n_chunks;
+    return 0;
+}
+
+static bench_c_t s_acc[BRAM_CA_SIZE / sizeof(bench_c_t)] __attribute__((aligned(32)));
+static bench_c_t s_cst[BRAM_CA_SIZE / sizeof(bench_c_t)] __attribute__((aligned(32)));
+
+/* Cache upkeep of the windows, as URT_FLUSH_* / URT_INVALIDATE_C in the v2
+   runtime. OCM: all three windows are cacheable. HYBRID: A is in PL BRAM
+   (device memory, nothing to do). BRAM: all device memory, all empty. */
+static inline void win_flush_a(uint32_t n)
+{
+#if defined(VITIS) && CACHE_EN_D && defined(OCM)
+    Xil_DCacheFlushRange((INTPTR)g_aw, n);
+#else
+    (void)n;
+#endif
+}
+static inline void win_flush_b(uint32_t n)
+{
+#if defined(VITIS) && CACHE_EN_D && (defined(OCM) || defined(HYBRID))
+    Xil_DCacheFlushRange((INTPTR)g_bi, n);
+#else
+    (void)n;
+#endif
+}
+static inline void win_flush_c(uint32_t n)
+{
+#if defined(VITIS) && CACHE_EN_D && (defined(OCM) || defined(HYBRID))
+    Xil_DCacheFlushRange((INTPTR)g_ca, n);
+#else
+    (void)n;
+#endif
+}
+static inline void win_inval_c(uint32_t n)
+{
+#if defined(VITIS) && CACHE_EN_D && (defined(OCM) || defined(HYBRID))
+    Xil_DCacheInvalidateRange((INTPTR)g_ca, n);
+#else
+    (void)n;
+#endif
+}
+
+/* One pass over the calls of a layer. xfer = 0: calls only. */
+static uint8_t run_layer(const ursa_layer_t *L, const lplan_t *pl, int xfer)
+{
+    uint8_t st = SA_SUCCESS;
+    for (uint32_t q0 = 0; q0 < pl->Q_pad; q0 += pl->qc) {
+        const uint32_t qc = (pl->Q_pad - q0 < pl->qc) ? pl->Q_pad - q0 : pl->qc;
+        for (uint32_t c = 0; c < pl->n_chunks; c++) {
+            const uint32_t k0  = c * pl->m_chunk;
+            const uint32_t len = (L->M - k0 < pl->m_chunk) ? L->M - k0 : pl->m_chunk;
+            const uint32_t mw  = a_row_stride(len);
+            if (xfer) {
+                if (qc == pl->Q_pad) {
+                    memcpy((void *)g_bi, s_b, len * qc);
+                } else {
+                    for (uint32_t r = 0; r < len; r++)
+                        memcpy((uint8_t *)g_bi + r * qc, (const uint8_t *)s_b + r * qc, qc);
+                }
+                win_flush_b(len * qc);
+            }
+            for (uint32_t p0 = 0; p0 < pl->P_pad; p0 += pl->pc) {
+                const uint32_t pc = (pl->P_pad - p0 < pl->pc) ? pl->P_pad - p0 : pl->pc;
+                const uint32_t n  = pc * qc;
+                if (xfer) {
+                    memcpy((void *)g_aw, s_a, pc * mw);
+                    win_flush_a(pc * mw);
+                    win_flush_c(n * sizeof(bench_c_t));
+                }
+                st |= run_ursa(pc, qc, len);
+                if (xfer) {
+                    win_inval_c(n * sizeof(bench_c_t));
+                    if (c == 0) {
+                        for (uint32_t r = 0; r < pc; r++)
+                            memcpy(s_acc + r * qc, (const bench_c_t *)g_ca + r * qc,
+                                   qc * sizeof(bench_c_t));
+                    } else {
+                        memcpy(s_cst, (const void *)g_ca, n * sizeof(bench_c_t));
+                        for (uint32_t i = 0; i < n; i++) s_acc[i] += s_cst[i];
+                    }
+                }
+            }
+        }
+    }
+    return st;
+}
+#endif /* FREE_RUN == 2 */
+
 // http://patorjk.com/software/taag/#f=Colossal
 // 888b     d888          d8b
 // 8888b   d8888          Y8P
@@ -325,7 +470,57 @@ int main(void)
     }
   #endif
 
-#if FREE_RUN
+#if FREE_RUN == 2
+    {
+        uint32_t li;
+        (void)idx;
+        fprintf(stderr, "\n### MODE RUN LAYERS ###\n");
+        fprintf(stderr, "SA_SIZE=%d, acc=%d bits, word=%d B, max M=%d, %lu layers, windows A/B/C=%d/%d/%d B\n\n",
+                SA_SIZE, BENCH_ACC_BITS, URSA_WORD_BYTES, URSA_MAX_M,
+                (unsigned long)URSA_NUM_LAYERS,
+                (int)BRAM_AW_SIZE, (int)BRAM_BI_SIZE, (int)BRAM_CA_SIZE);
+        fprintf(stderr, "L,group,net,layer,P,M,Q,macs,calls,m_chunk,n_chunks,pc,qc,us_gemm,us_xfer\n");
+
+        for (li = 0; li < URSA_NUM_LAYERS; ++li) {
+            const ursa_layer_t *L = &ursa_layers[li];
+            lplan_t pl;
+            uint32_t us_g = 0, us_x = 0;
+            uint8_t st = SA_SUCCESS;
+
+            if (plan_layer(L, &pl) != 0) {
+                fprintf(stderr, "L,%s,%s,%s,%u,%lu,%lu,0,0,0,0,0,0,0,0  NO-PLAN\n",
+                        L->group, L->net, L->name, L->P, (unsigned long)L->M, (unsigned long)L->Q);
+                ++fail;
+                continue;
+            }
+  #ifdef VITIS
+            if (li == 0) (void)run_ursa(pl.pc, pl.qc, pl.m_chunk);    /* warm-up */
+            app_timer_start(0);
+            st |= run_layer(L, &pl, 0);
+            app_timer_stop(0);
+            us_g = app_timer_total_us(0);
+
+            app_timer_start(0);
+            st |= run_layer(L, &pl, 1);
+            app_timer_stop(0);
+            us_x = app_timer_total_us(0);
+  #else
+            st |= run_layer(L, &pl, 0);
+            st |= run_layer(L, &pl, 1);
+  #endif
+            if (st == SA_SUCCESS) ++pass; else ++fail;
+            fprintf(stderr, "L,%s,%s,%s,%u,%lu,%lu,%llu,%lu,%lu,%lu,%lu,%lu,%lu,%lu%s\n",
+                    L->group, L->net, L->name, L->P, (unsigned long)L->M, (unsigned long)L->Q,
+                    (unsigned long long)L->P * L->M * L->Q,
+                    (unsigned long)pl.calls, (unsigned long)pl.m_chunk, (unsigned long)pl.n_chunks,
+                    (unsigned long)pl.pc, (unsigned long)pl.qc,
+                    (unsigned long)us_g, (unsigned long)us_x,
+                    st == SA_SUCCESS ? "" : "  STATUS-ERR");
+        }
+        fprintf(stderr, "\n%lu passed, %lu failed\n",
+                (unsigned long)pass, (unsigned long)fail);
+    }
+#elif FREE_RUN
     /* ─── Free run ───────────────────────────────────────────────────────────
        Hand-picked shapes instead of the generated suite.
 

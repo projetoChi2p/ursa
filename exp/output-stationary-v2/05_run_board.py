@@ -375,8 +375,38 @@ def parse_cnn(text):
     return rows, sa_size, summary, cache_i
 
 
+# Layer bench (port of v3): one "L,..." line per layer (FREE_RUN == 2 in mxm-ursa).
+LAYER_KEYS = ["group", "net", "layer", "P", "M", "Q", "macs", "calls", "m_chunk",
+              "n_chunks", "pc", "qc", "us_gemm", "us_xfer"]
+
+
+def parse_layers(text):
+    rows, sa_size, summary = [], None, None
+    for line in text.splitlines():
+        h = HEADER_RE.search(line)
+        if h:
+            sa_size = int(h.group("sa"))
+            continue
+        s = SUMMARY_RE.match(line)
+        if s:
+            summary = (int(s.group("pass")), int(s.group("fail")))
+            continue
+        if line.startswith("L,") and not line.startswith("L,group"):
+            parts = line.strip().split(",")
+            if len(parts) < 1 + len(LAYER_KEYS):
+                continue
+            r = dict(zip(LAYER_KEYS, parts[1:1 + len(LAYER_KEYS)]))
+            last = r["us_xfer"].split()
+            r["us_xfer"] = last[0] if last else ""
+            r["check"] = "FAIL" if ("STATUS-ERR" in line or "NO-PLAN" in line) else "ok"
+            rows.append(r)
+    return rows, sa_size, summary, ""
+
+
 def parse_output(text, mode):
     """Pull the per-row measurements and the summary out of one run."""
+    if mode == "layers":
+        return parse_layers(text)
     if mode == "cnn":
         return parse_cnn(text)
     if mode == "net":
@@ -705,6 +735,10 @@ FIELDS_NET_LAYERS = ["net", "variant", "mitig", "sa_size", "layout",
 FIELDS = FIELDS_GEMM
 
 
+FIELDS_LAYERS = ["mode", "variant", "mitig", "scrub", "cache_i",
+                 "sa_size", "layout"] + LAYER_KEYS + ["check"]
+
+
 def blank_row(fields, mode, variant, mitig, scrub, sz, layout, status):
     """A row standing in for a run that never produced output.
 
@@ -726,7 +760,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=".",
                     help="project root holding bitstreams/ and elfs/")
-    ap.add_argument("--mode", choices=["bench", "free", "cnn", "net"],
+    ap.add_argument("--mode", choices=["bench", "free", "cnn", "net", "layers"],
                     default="bench",
                     help="which ELF to load and which table format to parse")
     ap.add_argument("--net", default=None,
@@ -775,10 +809,11 @@ def main():
                     help="only try to recover a wedged board, then exit")
     a = ap.parse_args()
 
-    fields = {"cnn": FIELDS_CNN, "net": FIELDS_NET}.get(a.mode, FIELDS_GEMM)
+    fields = {"cnn": FIELDS_CNN, "net": FIELDS_NET, "layers": FIELDS_LAYERS}.get(a.mode, FIELDS_GEMM)
     done_re = {"cnn": CNN_DONE_RE, "net": NET_DONE_RE}.get(a.mode, SUMMARY_RE)
     if a.timeout is None:
-        a.timeout = 1800.0 if a.mode == "net" else 300.0
+        # layers: v2 2x2 needs about 20-30 min for the whole table
+        a.timeout = {"net": 1800.0, "layers": 3600.0}.get(a.mode, 300.0)
 
     # Net mode: the ELF prefix carries the network, as 04_do_vitis.sh names
     # it (net-<stem>_<variant>_<sz>x<sz>_<layout>.elf).
@@ -1008,11 +1043,28 @@ def main():
             else:
                 print("  %d rows captured (no summary line)" % len(got))
 
-    with open(out_csv, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader()
-        for r in rows:
-            w.writerow(r)
+    def merge_write(path, fieldnames, new_rows):
+        """UM: 16/10/26 - keep the rows of other (sa_size, layout) pairs that
+        an earlier run left in the same CSV. Rows of the pairs run now are
+        replaced. Before this, a run with --layouts ocm hybrid overwrote the
+        bram rows of the same file."""
+        ran = set((str(r.get("sa_size")), r.get("layout")) for r in new_rows)
+        kept = []
+        if os.path.exists(path):
+            with open(path, newline="") as f:
+                for r in csv.DictReader(f):
+                    if (r.get("sa_size"), r.get("layout")) not in ran:
+                        kept.append({k: r.get(k, "") for k in fieldnames})
+        with open(path, "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=fieldnames)
+            w.writeheader()
+            for r in kept + list(new_rows):
+                w.writerow({k: r.get(k, "") for k in fieldnames})
+        return len(kept)
+
+    kept = merge_write(out_csv, fields, rows)
+    if kept:
+        print(" (%d rows of other sizes/layouts kept from the previous file)" % kept)
 
     print("\n" + "=" * 70)
     print(" %d rows -> %s" % (len(rows), out_csv))
@@ -1020,11 +1072,7 @@ def main():
     if a.mode == "net":
         layers_csv = out_csv[:-4] + "_layers.csv" if out_csv.endswith(".csv") \
             else out_csv + "_layers.csv"
-        with open(layers_csv, "w", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=FIELDS_NET_LAYERS)
-            w.writeheader()
-            for r in layer_rows:
-                w.writerow({k: r.get(k, "") for k in FIELDS_NET_LAYERS})
+        merge_write(layers_csv, FIELDS_NET_LAYERS, layer_rows)
         print(" %d layer rows -> %s" % (len(layer_rows), layers_csv))
         print(" raw logs -> %s" % os.path.join(out_dir, "logs"))
     print("=" * 70)
